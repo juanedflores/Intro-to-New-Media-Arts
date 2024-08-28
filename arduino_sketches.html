@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Arduino Sketches</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      canvas {
+        display: none;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV BAR FILTER AND SEARCH -->
+    <div uk-filter="target: .js-filter">
+      <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
+        <div class="nav-overlay uk-navbar-left">
+          <!-- OFFCANVAS BUTTON -->
+          <button id="canvas-button" class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #off-canvas;">
+            <span uk-icon="icon: menu; ratio: 1.5;" style="color: black"></span>
+          </button>
+
+          <a class="uk-navbar-item uk-logo" href="#" style="border: 1px solid #cccccc">ART 150 - Intro to New Media Arts</a>
+
+          <ul class="uk-navbar-nav" style="">
+            <li class=""><a href="index.html">Week Overview</a></li>
+            <li class=""><a href="artist_database.html">Artworks</a></li>
+            <li class=""><a href="electronic_component_database.html">Electronics</a></li>
+            <!--<li class=""><a href="mechanisms_database.html">Machines / Movements</a></li>-->
+            <li class="uk-active" style="background: #c9c9c9"><a href="arduino_sketches.html">Arduino</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- OFFCANVAS -->
+      <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+          <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+            <li uk-filter-control="filter: .all"><a href="#">All</a></li>
+            <li uk-filter-control="filter: .basics" class="uk-parent">
+              <a href="#">Basics</a>
+              <ul class="uk-nav-sub">
+                <li uk-filter-control="filter: .terminology"><a href="#">Basic Familiarity</a></li>
+                <li uk-filter-control="filter: .blink"><a href="#">Blink</a></li>
+                <li uk-filter-control="filter: .fade"><a href="#">Fade / Fading</a></li>
+                <li uk-filter-control="filter: .button"><a href="#">Button</a></li>
+                <li uk-filter-control="filter: .analogRead"><a href="#">analogRead</a></li>
+                <li uk-filter-control="filter: .led-toggle"><a href="#">LED Toggle</a></li>
+                <li uk-filter-control="filter: .led-functions"><a href="#">Functions</a></li>
+              </ul>
+            </li>
+            <!--<li uk-filter-control="filter: .intermediate" class="uk-parent">-->
+            <!--  <a href="#">Intermediate</a>-->
+            <!--  <ul class="uk-nav-sub">-->
+            <!--    <li uk-filter-control="filter: .led-crossfade"><a href="#">LED Crossfade</a></li>-->
+            <!--  </ul>-->
+            <!--</li>-->
+            <!--<li class="uk-parent">-->
+            <!--  <a href="#">DC Motor Control</a>-->
+            <!--</li>-->
+            <!--<li class="uk-parent">-->
+            <!--  <a href="#">Servo Motor Control</a>-->
+            <!--  <ul class="uk-nav-sub">-->
+            <!--    <li uk-filter-control="filter: .servo-basic"><a href="#">Servo Basic</a></li>-->
+            <!--    <li uk-filter-control="filter: .sweep"><a href="#">Sweep</a></li>-->
+            <!--    <li uk-filter-control="filter: .servo-pot"><a href="#">Servo w/Potentiometer</a></li>-->
+            <!--  </ul>-->
+            <!--</li>-->
+            <!--<li uk-filter-control="filter: .stepper-motor" class="uk-parent">-->
+            <!--  <a href="#">Stepper Motor Control</a>-->
+            <!--  <ul class="uk-nav-sub">-->
+            <!--    <li uk-filter-control="filter: .stepper-tmc2208"><a href="#">Stepper Basic TMC2208</a></li>-->
+            <!--    <li uk-filter-control="filter: .stepper-l298n"><a href="#">Stepper Basic L298N</a></li>-->
+            <!--  </ul>-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </div>
+      <!-- TOC -->
+      <aside id="left-col" class="uk-light">
+        <div class="bar-wrap" style="padding-top: 100px">
+          <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+            <li uk-filter-control="filter: .all"><a href="#">All</a></li>
+            <li uk-filter-control="filter: .basics" class="uk-parent">
+              <a href="#">Basics</a>
+              <ul class="uk-nav-sub">
+                <li uk-filter-control="filter: .terminology"><a href="#">Basic Familiarity</a></li>
+                <li uk-filter-control="filter: .blink"><a href="#">Blink</a></li>
+                <li uk-filter-control="filter: .fade"><a href="#">Fade / Fading</a></li>
+                <li uk-filter-control="filter: .button"><a href="#">Button</a></li>
+                <li uk-filter-control="filter: .analogRead"><a href="#">analogRead</a></li>
+                <li uk-filter-control="filter: .led-toggle"><a href="#">LED Toggle</a></li>
+                <li uk-filter-control="filter: .led-functions"><a href="#">Functions</a></li>
+              </ul>
+            </li>
+            <!--<li uk-filter-control="filter: .intermediate" class="uk-parent">-->
+            <!--  <a href="#">Intermediate</a>-->
+            <!--  <ul class="uk-nav-sub">-->
+            <!--    <li uk-filter-control="filter: .led-crossfade"><a href="#">LED Crossfade</a></li>-->
+            <!--  </ul>-->
+            <!--</li>-->
+            <!--<li class="uk-parent">-->
+            <!--  <a href="#">DC Motor Control</a>-->
+            <!--</li>-->
+            <!--<li uk-filter-control="filter: .servo-motor" class="uk-parent">-->
+            <!--  <a href="#">Servo Motor Control</a>-->
+            <!--  <ul class="uk-nav-sub">-->
+            <!--    <li uk-filter-control="filter: .servo-basic"><a href="#">Servo Basic</a></li>-->
+            <!--    <li uk-filter-control="filter: .sweep"><a href="#">Sweep</a></li>-->
+            <!--    <li uk-filter-control="filter: .servo-pot"><a href="#">Servo w/Potentiometer</a></li>-->
+            <!--  </ul>-->
+            <!--</li>-->
+            <!--<li uk-filter-control="filter: .stepper-motor" class="uk-parent">-->
+            <!--  <a href="#">Stepper Motor Control</a>-->
+            <!--  <ul class="uk-nav-sub">-->
+            <!--    <li uk-filter-control="filter: .stepper-tmc2208"><a href="#">Stepper Basic TMC2208</a></li>-->
+            <!--    <li uk-filter-control="filter: .stepper-l298n"><a href="#">Stepper Basic L298N</a></li>-->
+            <!--  </ul>-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </aside>
+      <!-- ENTRIES -->
+      <div id="right-col">
+        <div class="uk-container uk-margin-medium-top">
+          <ul class="uk-margin week-content js-filter">
+            <li class="basics terminology all">
+              <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/terminology/terminology.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>
+                <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">
+                  <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="pages/arduino_sketches/terminology/terminology.png" alt="" />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Basic Familiarity</h3>
+                    <span>Week 2</span>
+                    <p style="color: black">Get familiar with the Arduino board and programming concepts.</p>
+                    <span class="uk-label" style="background-color: #630b7f">Basics</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!--<li class="basics blink all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/blink/blink.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/blink/blink.jpg" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Blink (Turn On and Off)</h3>-->
+            <!--        <span>Week 2</span>-->
+            <!--        <p style="color: black">The most basic example. Learn how to power something on and off.</p>-->
+            <!--        <span class="uk-label" style="background-color: #630b7f">Basics</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="basics fade all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/fading/fading.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/fading/fading_circuit.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Fade / Fading</h3>-->
+            <!--        <span>Week 4</span>-->
+            <!--        <p style="color: black">A basic example to showcase Pulse Width Modulation, conditional statements and for loops.</p>-->
+            <!--        <span class="uk-label" style="background-color: #630b7f">Basics</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="basics button all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/button/button.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/button/button_circuit.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Button</h3>-->
+            <!--        <span>Week 4</span>-->
+            <!--        <p style="color: black">An example that uses a button to turn an LED on and off depending on whether its pressed or not pressed.</p>-->
+            <!--        <span class="uk-label" style="background-color: #630b7f">Basics</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="basics analogRead all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/analogReadSerial/analogReadSerial.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/analogReadSerial/analog_circuit.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">analogReadSerial</h3>-->
+            <!--        <span>Week 4</span>-->
+            <!--        <p style="color: black">An example that uses an analog signal as an input. Introduces the serial monitor to see data.</p>-->
+            <!--        <span class="uk-label" style="background-color: #630b7f">Basics</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="basics led-toggle all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/toggle_led/toggle_led.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/toggle_led/toggle_led_wiring.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">LED Toggle w/Button</h3>-->
+            <!--        <span>Week 5</span>-->
+            <!--        <p style="color: black">An example that uses a button to toggle an LED on and off.</p>-->
+            <!--        <span class="uk-label" style="background-color: #630b7f">Basics</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="basics led-functions all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/led_flash/led_flash.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/led_flash/flash_circuit.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">LED Flash w/Functions</h3>-->
+            <!--        <span>Week 5</span>-->
+            <!--        <p style="color: black">An example that uses function called flash() to make an LED flash.</p>-->
+            <!--        <span class="uk-label" style="background-color: #630b7f">Basics</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="servo-motor servo-basic all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/servo_basic/servo_basic.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/servo_basic/servo_basic_wiring.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Servo Minimal Example</h3>-->
+            <!--        <span>Week 5</span>-->
+            <!--        <p style="color: black">An example that showcases the most minimal example with servo motors.</p>-->
+            <!--        <span class="uk-label" style="background-color: #5c8621">Servo Control</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="servo-motor sweep all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/sweep/sweep.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/sweep/sweep_wiring.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Sweep</h3>-->
+            <!--        <span>Week 5</span>-->
+            <!--        <p style="color: black">An example that showcases how to change position of servo motor.</p>-->
+            <!--        <span class="uk-label" style="background-color: #5c8621">Servo Control</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="servo-motor servo-pot all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/knob/knob.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/knob/knob_wiring.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Servo Control w/Potentiometer (Knob)</h3>-->
+            <!--        <span>Week 5</span>-->
+            <!--        <p style="color: black">An example that controls servo motor with a potentiometer.</p>-->
+            <!--        <span class="uk-label" style="background-color: #5c8621">Servo Control</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="stepper-motor stepper-tmc2208 all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/stepper_basic_tmc2208/stepper_basic_tmc2208.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/stepper_basic_tmc2208/stepper_basic_tmc2208.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Basic example using TMC2208 Driver</h3>-->
+            <!--        <span>Week 6</span>-->
+            <!--        <p style="color: black">An example that controls a stepper motor with a TMC2208 driver.</p>-->
+            <!--        <span class="uk-label" style="background-color: #af0c50">Stepper Control</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="stepper-motor stepper-l298n all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/stepper_basic_l298n/stepper_basic_l298n.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="./pages/arduino_sketches/stepper_basic_l298n/stepper_basic_l298n.webp" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Basic example using L298N Driver</h3>-->
+            <!--        <span>Week 6</span>-->
+            <!--        <p style="color: black">An example that controls a stepper motor with a l298N driver and the Stepper.h Arduino library.</p>-->
+            <!--        <span class="uk-label" style="background-color: #af0c50">Stepper Control</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="stepper-motor stepper-knob all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='pages/arduino_sketches/stepper_knob/stepper_knob.html'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="https://docs.arduino.cc/static/dd8b041c102ef04806dd69b305c5f03b/d587d/bipolarKnob_bbsm.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Stepper Knob</h3>-->
+            <!--        <span>Week 6</span>-->
+            <!--        <p style="color: black">Control the speed of the Stepper with a potentiometer.</p>-->
+            <!--        <span class="uk-label" style="background-color: #af0c50">Stepper Control</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="intermediate led-crossfade all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='https://docs.arduino.cc/learn/electronics/potentiometer-basics/'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img class="uk-cover" style="width: 100%; height: 100%; object-fit: cover" src="https://docs.arduino.cc/static/cd251a1c1ed8b6a98a0785e55608cac0/29114/potentiometer-circuit.png" alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">Crossfading</h3>-->
+            <!--        <span>Week 7</span>-->
+            <!--        <p style="color: black">A more complex example with LEDs and potentiometer.</p>-->
+            <!--        <span class="uk-label" style="background-color: #f6d92b">Intermediate</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+            <!--<li class="intermediate led-crossfade all">-->
+            <!--  <div class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin" onclick="location.href='https://www.arduino.cc/reference/en/language/functions/random-numbers/random/'" style="border: 1px solid #000000; border-radius: 3px" uk-grid>-->
+            <!--    <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">-->
+            <!--      <img-->
+            <!--        class="uk-cover"-->
+            <!--        style="width: 100%; height: 100%; object-fit: cover"-->
+            <!--        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjE4IiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDIxOCAxNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGlkPSJDbGlwIHBhdGggZ3JvdXAiPgo8bWFzayBpZD0ibWFzazBfNTUwNl81MzI1MiIgc3R5bGU9Im1hc2stdHlwZTpsdW1pbmFuY2UiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIyMTgiIGhlaWdodD0iMTcwIj4KPGcgaWQ9ImNsaXBwYXRoLTEiPgo8cGF0aCBpZD0iVmVjdG9yIiBkPSJNMjE4IDExLjcyOFYxNTguMjkzQzIxOCAxNjQuNzU5IDIxMi43NjYgMTcwIDIwNi4zMDkgMTcwSDExLjY5MDRDNS4yMzM5OCAxNzAgMCAxNjQuNzU5IDAgMTU4LjI5NFYxMS43MDY2QzAgNS4yNDEyMyA1LjIzNDEgMCAxMS42OTA3IDBIMjA2LjI4OEMyMTIuNzU2IDAgMjE4IDUuMjUwODIgMjE4IDExLjcyOFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPC9tYXNrPgo8ZyBtYXNrPSJ1cmwoI21hc2swXzU1MDZfNTMyNTIpIj4KPGcgaWQ9Ikdyb3VwIj4KPGcgaWQ9Ikdyb3VwXzIiPgo8cGF0aCBpZD0iVmVjdG9yXzIiIGQ9Ik0yMTggMC4wMjEzNzQxVjE3MEgwVjBIMjE3Ljk3OUMyMTcuOTkgMCAyMTggMC4wMDk1NjgwMyAyMTggMC4wMjEzNzQxWiIgZmlsbD0iIzFGMjcyQSIvPgo8cGF0aCBpZD0iVmVjdG9yXzMiIGQ9Ik0yMTYuMzQ2IDQ5LjAyNDRIMTkuNTY2NFYxNjguMzY4SDIxNi4zNDZWNDkuMDI0NFoiIGZpbGw9IiMzNzQxNDYiLz4KPHBhdGggaWQ9IlZlY3Rvcl80IiBkPSJNMTkuNTY2MiA0OS4wMjQ0SDBWMTcwSDE5LjU2NjJWNDkuMDI0NFoiIGZpbGw9IiMzMDMwMzAiLz4KPHBhdGggaWQ9IlZlY3Rvcl81IiBkPSJNMzMuMzAxNCA2OS40NDRDMzIuOTQyIDY5LjQ0NCAzMi41ODAxIDY5LjMyMjUgMzIuMjgyMyA2OS4wNzQ1QzMxLjYwNjQgNjguNTA5OCAzMS41MTQ5IDY3LjUwNCAzMi4wNzg0IDY2LjgyNzJMMzQuODQ0OCA2My41MDNMMzIuMDc4NCA2MC4xNzk0QzMxLjUxNTIgNTkuNTAyNiAzMS42MDY0IDU4LjQ5NjggMzIuMjgyMyA1Ny45MzIxQzMyLjk1NzggNTcuMzY4OCAzMy45NjI2IDU3LjQ1OTEgMzQuNTI2MiA1OC4xMzY2TDM4LjE0MjcgNjIuNDgxNkMzOC42MzUzIDYzLjA3MyAzOC42MzUzIDYzLjkzMjQgMzguMTQyNyA2NC41MjQ0TDM0LjUyNjIgNjguODcwMUMzNC4yMTEzIDY5LjI0ODMgMzMuNzU3OSA2OS40NDQgMzMuMzAxNCA2OS40NDRaIiBmaWxsPSIjOTBBNUE1Ii8+CjxwYXRoIGlkPSJWZWN0b3JfNiIgZD0iTTMzLjMwMTQgOTQuODI1MUMzMi45NDIgOTQuODI1MSAzMi41ODAxIDk0LjcwMzYgMzIuMjgyMyA5NC40NTU2QzMxLjYwNjQgOTMuODkwOSAzMS41MTQ5IDkyLjg4NTEgMzIuMDc4NCA5Mi4yMDgzTDM0Ljg0NDggODguODg0MUwzMi4wNzg0IDg1LjU1OTlDMzEuNTE0OSA4NC44ODMxIDMxLjYwNjQgODMuODc3MiAzMi4yODIzIDgzLjMxMjZDMzIuOTU3OCA4Mi43NDkyIDMzLjk2MzMgODIuODQwOCAzNC41MjYyIDgzLjUxN0wzOC4xNDI3IDg3Ljg2MjZDMzguNjM1MyA4OC40NTQxIDM4LjYzNTMgODkuMzE0MSAzOC4xNDI3IDg5LjkwNTVMMzQuNTI2MiA5NC4yNTExQzM0LjIxMTMgOTQuNjI5NCAzMy43NTc5IDk0LjgyNTEgMzMuMzAxNCA5NC44MjUxWiIgZmlsbD0iIzkwQTVBNSIvPgo8cGF0aCBpZD0iVmVjdG9yXzciIGQ9Ik0zMy4zMDE0IDEzNy4xMjdDMzIuOTQyIDEzNy4xMjcgMzIuNTgwMSAxMzcuMDA2IDMyLjI4MjMgMTM2Ljc1OEMzMS42MDY0IDEzNi4xOTMgMzEuNTE0OSAxMzUuMTg3IDMyLjA3ODQgMTM0LjUxTDM0Ljg0NDggMTMxLjE4NkwzMi4wNzg0IDEyNy44NjJDMzEuNTE0OSAxMjcuMTg1IDMxLjYwNjQgMTI2LjE3OSAzMi4yODIzIDEyNS42MTVDMzIuOTU3OCAxMjUuMDUxIDMzLjk2MzMgMTI1LjE0MiAzNC41MjYyIDEyNS44MTlMMzguMTQyNyAxMzAuMTY1QzM4LjYzNTMgMTMwLjc1NiAzOC42MzUzIDEzMS42MTYgMzguMTQyNyAxMzIuMjA3TDM0LjUyNjIgMTM2LjU1M0MzNC4yMTEzIDEzNi45MzEgMzMuNzU3OSAxMzcuMTI3IDMzLjMwMTQgMTM3LjEyN1oiIGZpbGw9IiM5MEE1QTUiLz4KPHBhdGggaWQ9IlZlY3Rvcl84IiBkPSJNMTA1LjYzNiA2NS4wOTlINDkuMDU4MUM0OC4xNzgxIDY1LjA5OSA0Ny40NjQ4IDY0LjM4NDggNDcuNDY0OCA2My41MDM2QzQ3LjQ2NDggNjIuNjIyNCA0OC4xNzgxIDYxLjkwODIgNDkuMDU4MSA2MS45MDgySDEwNS42MzZDMTA2LjUxNiA2MS45MDgyIDEwNy4yMyA2Mi42MjI0IDEwNy4yMyA2My41MDM2QzEwNy4yMyA2NC4zODQ4IDEwNi41MTYgNjUuMDk5IDEwNS42MzYgNjUuMDk5WiIgZmlsbD0iIzAwOTk5RSIvPgo8cGF0aCBpZD0iVmVjdG9yXzkiIGQ9Ik0xNDEuMDk2IDY1LjA5OUgxMTkuMDAzQzExOC4xMjMgNjUuMDk5IDExNy40MSA2NC4zODQ4IDExNy40MSA2My41MDM2QzExNy40MSA2Mi42MjI0IDExOC4xMjMgNjEuOTA4MiAxMTkuMDAzIDYxLjkwODJIMTQxLjA5NkMxNDEuOTc2IDYxLjkwODIgMTQyLjY4OSA2Mi42MjI0IDE0Mi42ODkgNjMuNTAzNkMxNDIuNjg5IDY0LjM4NDggMTQxLjk3NiA2NS4wOTkgMTQxLjA5NiA2NS4wOTlaIiBmaWxsPSIjRkY1QjAwIi8+CjxwYXRoIGlkPSJWZWN0b3JfMTAiIGQ9Ik0xMjQuODg5IDczLjU1OEg0OS4wNTgxQzQ4LjE3ODEgNzMuNTU4IDQ3LjQ2NDggNzIuODQzOCA0Ny40NjQ4IDcxLjk2MjZDNDcuNDY0OCA3MS4wODE0IDQ4LjE3ODEgNzAuMzY3MiA0OS4wNTgxIDcwLjM2NzJIMTI0Ljg4OUMxMjUuNzY5IDcwLjM2NzIgMTI2LjQ4MiA3MS4wODE0IDEyNi40ODIgNzEuOTYyNkMxMjYuNDgyIDcyLjg0MzggMTI1Ljc2OSA3My41NTggMTI0Ljg4OSA3My41NThaIiBmaWxsPSIjOTBBNUE1Ii8+CjxwYXRoIGlkPSJWZWN0b3JfMTEiIGQ9Ik0xNzUuNTc5IDczLjU1OEgxMzcuNjY0QzEzNi43ODQgNzMuNTU4IDEzNi4wNyA3Mi44NDM4IDEzNi4wNyA3MS45NjI2QzEzNi4wNyA3MS4wODE0IDEzNi43ODQgNzAuMzY3MiAxMzcuNjY0IDcwLjM2NzJIMTc1LjU3OUMxNzYuNDU5IDcwLjM2NzIgMTc3LjE3MiA3MS4wODE0IDE3Ny4xNzIgNzEuOTYyNkMxNzcuMTcyIDcyLjg0MzggMTc2LjQ1OSA3My41NTggMTc1LjU3OSA3My41NThaIiBmaWxsPSIjOTBBNUE1Ii8+CjxwYXRoIGlkPSJWZWN0b3JfMTIiIGQ9Ik0xNDkuNTc2IDkwLjQ3OTlINDkuMDU4MUM0OC4xNzgxIDkwLjQ3OTkgNDcuNDY0OCA4OS43NjU3IDQ3LjQ2NDggODguODg0NUM0Ny40NjQ4IDg4LjAwMzMgNDguMTc4MSA4Ny4yODkxIDQ5LjA1ODEgODcuMjg5MUgxNDkuNTc2QzE1MC40NTYgODcuMjg5MSAxNTEuMTcgODguMDAzMyAxNTEuMTcgODguODg0NUMxNTEuMTcgODkuNzY1NyAxNTAuNDU2IDkwLjQ3OTkgMTQ5LjU3NiA5MC40Nzk5WiIgZmlsbD0iIzkwQTVBNSIvPgo8cGF0aCBpZD0iVmVjdG9yXzEzIiBkPSJNNzIuNjUwNSA5OC45Mzk4SDQ5LjA1ODFDNDguMTc4MSA5OC45Mzk4IDQ3LjQ2NDggOTguMjI1NyA0Ny40NjQ4IDk3LjM0NDRDNDcuNDY0OCA5Ni40NjMyIDQ4LjE3ODEgOTUuNzQ5IDQ5LjA1ODEgOTUuNzQ5SDcyLjY1MDVDNzMuNTMwNSA5NS43NDkgNzQuMjQzNyA5Ni40NjMyIDc0LjI0MzcgOTcuMzQ0NEM3NC4yNDM3IDk4LjIyNTcgNzMuNTMwNSA5OC45Mzk4IDcyLjY1MDUgOTguOTM5OFoiIGZpbGw9IiNGRjVCMDAiLz4KPHBhdGggaWQ9IlZlY3Rvcl8xNCIgZD0iTTc5LjM4NzIgMTA3LjRINDkuMDU4MUM0OC4xNzgxIDEwNy40IDQ3LjQ2NDggMTA2LjY4NiA0Ny40NjQ4IDEwNS44MDRDNDcuNDY0OCAxMDQuOTIzIDQ4LjE3ODEgMTA0LjIwOSA0OS4wNTgxIDEwNC4yMDlINzkuMzg3MkM4MC4yNjcyIDEwNC4yMDkgODAuOTgwNCAxMDQuOTIzIDgwLjk4MDQgMTA1LjgwNEM4MC45ODA0IDEwNi42ODYgODAuMjY3MiAxMDcuNCA3OS4zODcyIDEwNy40WiIgZmlsbD0iI0ZGNUIwMCIvPgo8cGF0aCBpZD0iVmVjdG9yXzE1IiBkPSJNNzYuOTczMSAxMTUuODYxSDQ5LjA1ODFDNDguMTc4MSAxMTUuODYxIDQ3LjQ2NDggMTE1LjE0NyA0Ny40NjQ4IDExNC4yNjVDNDcuNDY0OCAxMTMuMzg0IDQ4LjE3ODEgMTEyLjY3IDQ5LjA1ODEgMTEyLjY3SDc2Ljk3MzFDNzcuODUzMSAxMTIuNjcgNzguNTY2MyAxMTMuMzg0IDc4LjU2NjMgMTE0LjI2NUM3OC41NjYzIDExNS4xNDcgNzcuODUzMSAxMTUuODYxIDc2Ljk3MzEgMTE1Ljg2MVoiIGZpbGw9IiNGRjVCMDAiLz4KPHBhdGggaWQ9IlZlY3Rvcl8xNiIgZD0iTTE3Ny41NDggOTguOTM5OEg5MC44MzU0Qzg5Ljk1NTQgOTguOTM5OCA4OS4yNDIyIDk4LjIyNTcgODkuMjQyMiA5Ny4zNDQ0Qzg5LjI0MjIgOTYuNDYzMiA4OS45NTU0IDk1Ljc0OSA5MC44MzU0IDk1Ljc0OUgxNzcuNTQ4QzE3OC40MjggOTUuNzQ5IDE3OS4xNDEgOTYuNDYzMiAxNzkuMTQxIDk3LjM0NDRDMTc5LjE0MSA5OC4yMjU3IDE3OC40MjggOTguOTM5OCAxNzcuNTQ4IDk4LjkzOThaIiBmaWxsPSIjOTBBNUE1Ii8+CjxwYXRoIGlkPSJWZWN0b3JfMTciIGQ9Ik0xODcuNzU4IDEwNy40SDkwLjgzNTRDODkuOTU1NCAxMDcuNCA4OS4yNDIyIDEwNi42ODYgODkuMjQyMiAxMDUuODA0Qzg5LjI0MjIgMTA0LjkyMyA4OS45NTU0IDEwNC4yMDkgOTAuODM1NCAxMDQuMjA5SDE4Ny43NThDMTg4LjYzOCAxMDQuMjA5IDE4OS4zNTEgMTA0LjkyMyAxODkuMzUxIDEwNS44MDRDMTg5LjM1MSAxMDYuNjg2IDE4OC42MzggMTA3LjQgMTg3Ljc1OCAxMDcuNFoiIGZpbGw9IiM5MEE1QTUiLz4KPHBhdGggaWQ9IlZlY3Rvcl8xOCIgZD0iTTE4My4wMzMgMTE1Ljg2MUg5MC44MzU0Qzg5Ljk1NTQgMTE1Ljg2MSA4OS4yNDIyIDExNS4xNDcgODkuMjQyMiAxMTQuMjY1Qzg5LjI0MjIgMTEzLjM4NCA4OS45NTU0IDExMi42NyA5MC44MzU0IDExMi42N0gxODMuMDMzQzE4My45MTMgMTEyLjY3IDE4NC42MjYgMTEzLjM4NCAxODQuNjI2IDExNC4yNjVDMTg0LjYyNiAxMTUuMTQ3IDE4My45MTMgMTE1Ljg2MSAxODMuMDMzIDExNS44NjFaIiBmaWxsPSIjOTBBNUE1Ii8+CjxwYXRoIGlkPSJWZWN0b3JfMTkiIGQ9Ik02Ni4wMjk0IDM3Ljk4MTRIMTkuNTY2NFY1MS4wNjYzSDY2LjAyOTRWMzcuOTgxNFoiIGZpbGw9IiMzNzQxNDYiLz4KPHBhdGggaWQ9IlZlY3Rvcl8yMCIgZD0iTTUyLjU4NSA0Ni4xOTI4SDMzLjIxNTNDMzIuMzM1MyA0Ni4xOTI4IDMxLjYyMjEgNDUuNDc4NiAzMS42MjIxIDQ0LjU5NzRDMzEuNjIyMSA0My43MTYxIDMyLjMzNTMgNDMuMDAyIDMzLjIxNTMgNDMuMDAySDUyLjU4NUM1My40NjUgNDMuMDAyIDU0LjE3ODIgNDMuNzE2MSA1NC4xNzgyIDQ0LjU5NzRDNTQuMTc4MiA0NS40Nzg2IDUzLjQ2NSA0Ni4xOTI4IDUyLjU4NSA0Ni4xOTI4WiIgZmlsbD0iIzkwQTVBNSIvPgo8cGF0aCBpZD0iVmVjdG9yXzIxIiBkPSJNMjE4IDAuMDAwMjYyOTE2VjI1Ljk1NDlMMjE4IDI1Ljk1NTFIMFYwSDIxOEwyMTggMC4wMDAyNjI5MTZaIiBmaWxsPSIjQzZEMUQxIi8+CjxwYXRoIGlkPSJWZWN0b3JfMjIiIGQ9Ik0yMDYuMjg4IDMuMTkwODJDMjEwLjk4OSAzLjE5MDgyIDIxNC44MTQgNy4wMjA1OSAyMTQuODE0IDExLjcyOFYxNTguMjkzQzIxNC44MTQgMTYyLjk4OSAyMTAuOTk5IDE2Ni44MDkgMjA2LjMwOSAxNjYuODA5SDExLjY5MDRDNy4wMDEzIDE2Ni44MDkgMy4xODY0NyAxNjIuOTg5IDMuMTg2NDcgMTU4LjI5NFYxMS43MDY2QzMuMTg2NDcgNy4wMTA5MyA3LjAwMTQ0IDMuMTkwODIgMTEuNjkwNyAzLjE5MDgySDIwNi4yODhaTTIwNi4yODggMEgxMS42OTA3QzUuMjM0MDcgMCAwIDUuMjQxMTggMCAxMS43MDY2VjE1OC4yOTRDMCAxNjQuNzU5IDUuMjMzOTcgMTcwIDExLjY5MDQgMTcwSDIwNi4zMDlDMjEyLjc2NiAxNzAgMjE4IDE2NC43NTkgMjE4IDE1OC4yOTNWMTEuNzI4QzIxOCA1LjI1MDg0IDIxMi43NTYgMCAyMDYuMjg4IDBaIiBmaWxsPSIjOTBBNUE1Ii8+CjxwYXRoIGlkPSJWZWN0b3JfMjMiIGQ9Ik0xOC45OTEyIDE4LjkzNDVDMjEuNTczIDE4LjkzNDUgMjMuNjY1OSAxNi44Mzg3IDIzLjY2NTkgMTQuMjUzNEMyMy42NjU5IDExLjY2ODEgMjEuNTczIDkuNTcyMjcgMTguOTkxMiA5LjU3MjI3QzE2LjQwOTQgOS41NzIyNyAxNC4zMTY0IDExLjY2ODEgMTQuMzE2NCAxNC4yNTM0QzE0LjMxNjQgMTYuODM4NyAxNi40MDk0IDE4LjkzNDUgMTguOTkxMiAxOC45MzQ1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggaWQ9IlZlY3Rvcl8yNCIgZD0iTTM0LjE1NTIgMTguOTM0NUMzNi43MzcgMTguOTM0NSAzOC44MyAxNi44Mzg3IDM4LjgzIDE0LjI1MzRDMzguODMgMTEuNjY4MSAzNi43MzcgOS41NzIyNyAzNC4xNTUyIDkuNTcyMjdDMzEuNTczNCA5LjU3MjI3IDI5LjQ4MDUgMTEuNjY4MSAyOS40ODA1IDE0LjI1MzRDMjkuNDgwNSAxNi44Mzg3IDMxLjU3MzQgMTguOTM0NSAzNC4xNTUyIDE4LjkzNDVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBpZD0iVmVjdG9yXzI1IiBkPSJNNDkuMzIwMyAxOC45MzQ1QzUxLjkwMjEgMTguOTM0NSA1My45OTUgMTYuODM4NyA1My45OTUgMTQuMjUzNEM1My45OTUgMTEuNjY4MSA1MS45MDIxIDkuNTcyMjcgNDkuMzIwMyA5LjU3MjI3QzQ2LjczODUgOS41NzIyNyA0NC42NDU1IDExLjY2ODEgNDQuNjQ1NSAxNC4yNTM0QzQ0LjY0NTUgMTYuODM4NyA0Ni43Mzg1IDE4LjkzNDUgNDkuMzIwMyAxOC45MzQ1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggaWQ9IlZlY3Rvcl8yNiIgZD0iTTExLjI0NDQgMzQuODQyQzEyLjgzMDEgMzQuODQyIDE0LjExNTYgMzMuNTU0OCAxNC4xMTU2IDMxLjk2NjlDMTQuMTE1NiAzMC4zNzkgMTIuODMwMSAyOS4wOTE4IDExLjI0NDQgMjkuMDkxOEM5LjY1ODY1IDI5LjA5MTggOC4zNzMxNyAzMC4zNzkgOC4zNzMxNyAzMS45NjY5QzguMzczMTcgMzMuNTU0OCA5LjY1ODY1IDM0Ljg0MiAxMS4yNDQ0IDM0Ljg0MloiIGZpbGw9IiMwMDk1OUIiLz4KPHBhdGggaWQ9IlZlY3Rvcl8yNyIgZD0iTTExLjI0NDQgNDcuMjk2MUMxMi44MzAxIDQ3LjI5NjEgMTQuMTE1NiA0Ni4wMDg5IDE0LjExNTYgNDQuNDIxQzE0LjExNTYgNDIuODMzMSAxMi44MzAxIDQxLjU0NTkgMTEuMjQ0NCA0MS41NDU5QzkuNjU4NjUgNDEuNTQ1OSA4LjM3MzE3IDQyLjgzMzEgOC4zNzMxNyA0NC40MjFDOC4zNzMxNyA0Ni4wMDg5IDkuNjU4NjUgNDcuMjk2MSAxMS4yNDQ0IDQ3LjI5NjFaIiBmaWxsPSIjMzc0MTQ2Ii8+CjxwYXRoIGlkPSJWZWN0b3JfMjgiIGQ9Ik0xMS4yNDQ0IDU5Ljc1MDJDMTIuODMwMSA1OS43NTAyIDE0LjExNTYgNTguNDYzIDE0LjExNTYgNTYuODc1MUMxNC4xMTU2IDU1LjI4NzIgMTIuODMwMSA1NCAxMS4yNDQ0IDU0QzkuNjU4NjUgNTQgOC4zNzMxNyA1NS4yODcyIDguMzczMTcgNTYuODc1MUM4LjM3MzE3IDU4LjQ2MyA5LjY1ODY1IDU5Ljc1MDIgMTEuMjQ0NCA1OS43NTAyWiIgZmlsbD0iIzM3NDE0NiIvPgo8cGF0aCBpZD0iVmVjdG9yXzI5IiBkPSJNMTEuMjQ0NCA3Mi4yMDUzQzEyLjgzMDEgNzIuMjA1MyAxNC4xMTU2IDcwLjkxODEgMTQuMTE1NiA2OS4zMzAyQzE0LjExNTYgNjcuNzQyMyAxMi44MzAxIDY2LjQ1NTEgMTEuMjQ0NCA2Ni40NTUxQzkuNjU4NjUgNjYuNDU1MSA4LjM3MzE3IDY3Ljc0MjMgOC4zNzMxNyA2OS4zMzAyQzguMzczMTcgNzAuOTE4MSA5LjY1ODY1IDcyLjIwNTMgMTEuMjQ0NCA3Mi4yMDUzWiIgZmlsbD0iIzM3NDE0NiIvPgo8cGF0aCBpZD0iVmVjdG9yXzMwIiBkPSJNMTEuMjQ0NCA4NC42NTk0QzEyLjgzMDEgODQuNjU5NCAxNC4xMTU2IDgzLjM3MjIgMTQuMTE1NiA4MS43ODQzQzE0LjExNTYgODAuMTk2NCAxMi44MzAxIDc4LjkwOTIgMTEuMjQ0NCA3OC45MDkyQzkuNjU4NjUgNzguOTA5MiA4LjM3MzE3IDgwLjE5NjQgOC4zNzMxNyA4MS43ODQzQzguMzczMTcgODMuMzcyMiA5LjY1ODY1IDg0LjY1OTQgMTEuMjQ0NCA4NC42NTk0WiIgZmlsbD0iIzM3NDE0NiIvPgo8cGF0aCBpZD0iVmVjdG9yXzMxIiBkPSJNMjEuNDI0OSAzNC44NDJDMjMuMDEwNiAzNC44NDIgMjQuMjk2MSAzMy41NTQ4IDI0LjI5NjEgMzEuOTY2OUMyNC4yOTYxIDMwLjM3OSAyMy4wMTA2IDI5LjA5MTggMjEuNDI0OSAyOS4wOTE4QzE5LjgzOTIgMjkuMDkxOCAxOC41NTM3IDMwLjM3OSAxOC41NTM3IDMxLjk2NjlDMTguNTUzNyAzMy41NTQ4IDE5LjgzOTIgMzQuODQyIDIxLjQyNDkgMzQuODQyWiIgZmlsbD0iIzAwOTU5QiIvPgo8cGF0aCBpZD0iVmVjdG9yXzMyIiBkPSJNMzEuNjAzNiAzNC44NDJDMzMuMTg5MyAzNC44NDIgMzQuNDc0OCAzMy41NTQ4IDM0LjQ3NDggMzEuOTY2OUMzNC40NzQ4IDMwLjM3OSAzMy4xODkzIDI5LjA5MTggMzEuNjAzNiAyOS4wOTE4QzMwLjAxNzkgMjkuMDkxOCAyOC43MzI0IDMwLjM3OSAyOC43MzI0IDMxLjk2NjlDMjguNzMyNCAzMy41NTQ4IDMwLjAxNzkgMzQuODQyIDMxLjYwMzYgMzQuODQyWiIgZmlsbD0iIzAwOTU5QiIvPgo8cGF0aCBpZD0iVmVjdG9yXzMzIiBkPSJNNzAuNTEyNiAyOS4wOTE4SDQxLjcwMTNDNDAuMTE1NiAyOS4wOTE4IDM4LjgzMDEgMzAuMzc5IDM4LjgzMDEgMzEuOTY2OUMzOC44MzAxIDMzLjU1NDggNDAuMTE1NiAzNC44NDIgNDEuNzAxMyAzNC44NDJINzAuNTEyNkM3Mi4wOTgzIDM0Ljg0MiA3My4zODM4IDMzLjU1NDggNzMuMzgzOCAzMS45NjY5QzczLjM4MzggMzAuMzc5IDcyLjA5ODMgMjkuMDkxOCA3MC41MTI2IDI5LjA5MThaIiBmaWxsPSIjOTBBNUE1Ii8+CjwvZz4KPC9nPgo8L2c+CjwvZz4KPC9zdmc+Cg=="-->
+            <!--        alt="" />-->
+            <!--      <canvas width="600" height="400"></canvas>-->
+            <!--    </div>-->
+            <!--    <div>-->
+            <!--      <div class="uk-card-body">-->
+            <!--        <h3 class="uk-card-title">random()</h3>-->
+            <!--        <span>Week 6</span>-->
+            <!--        <p style="color: black">The random() function.</p>-->
+            <!--        <span class="uk-label" style="background-color: #ab8a69">Functions</span>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

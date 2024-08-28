@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="pandoc" />
+
+  <title>Mechanisms, Movement, & Meaning</title>
+
+  <!-- UIKit files -->
+  <link rel="stylesheet" href="../../css/uikit.min.css" />
+  <script src="../../js/uikit.min.js"></script>
+  <script src="../../js/uikit-icons.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+
+  <!-- Code Style -->
+  <link rel="stylesheet" href="../../css/pojoaque.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+  <!-- hljs -->
+  <script>
+    hljs.highlightAll();
+  </script>
+
+  <!-- Makes Inline Code Similar Style to hljs theme -->
+  <script charset="utf-8">
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+      document.querySelectorAll('p code').forEach((el) => {
+        el.classList.add('language-plaintext');
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
+
+  <!-- Blog Style CSS -->
+  <link rel="stylesheet" href="../../css/blog_style.css" />
+
+  <!-- Includes other header content if needed -->
+  $for(header-includes)$ $header-includes$ $endfor$
+</head>
+
+<body>
+  <!-- NAV AND HEADING -->
+  <div class="uk-flex uk-flex-left uk-background-cover" style="background: black; height: 50px" uk-sticky>
+    <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
+      <span uk-icon="icon: menu; ratio: 1.5;" style="color: white"></span>
+    </button>
+
+    <!-- HEADING -->
+    <h2 id="heading"
+      class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+      style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px">
+      <a class="uk-text" style="color: white; font-weight: normal; font-size: 0.6em" href="../blog.html">ARTTECH 2010
+        Mechanisms, Movement, & Meaning</a>
+    </h2>
+  </div>
+
+  <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <!-- TABLE OF CONTENTS -->
+    <div id="blog-toc" style="top: 50px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div class="uk-offcanvas-bar">
+        <a href="../index.html" uk-icon="icon: home;"></a>
+        <hr />
+        <h3>Table of Contents</h3>
+        <div>$toc$</div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll">$body$</div>
+  </div>
+
+  <!-- highlightjs badge -->
+  <script src="../../js/highlightjs-badge.js"></script>
+
+  <script>
+    var pres = document.querySelectorAll('pre>code');
+    for (var i = 0; i < pres.length; i++) {
+      hljs.highlightBlock(pres[i]);
+    }
+    var options = {
+      contentSelector: '#ArticleBody',
+      // CSS class(es) used to render the copy icon.
+      copyIconClass: 'fa fa-copy',
+      // CSS class(es) used to render the done icon.
+      checkIconClass: 'fa fa-check text-success',
+    };
+    window.highlightJsBadge(options);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+pre {
+  padding: 0;
+}
+
+/* For Future Juan: 
+* I don't remember why I put this here */
+:target:before {
+  content: '';
+  display: block;
+  height: 50px;
+  margin: -50px 0 0;
+}
+
+@font-face {
+  font-family: 'Inter-ExtraLight';
+  src: url('../../fonts/Inter-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter-Black';
+  src: url('../../fonts/Inter-Black.ttf') format('truetype');
+}
+
+strong {
+  text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #f2f2f2;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+#blogEntryArea {
+  background: #f2f2f2;
+  padding-bottom: 1em;
+}
+
+#contentArea {
+  background: white;
+  padding-bottom: 1em;
+  border: black solid 1px;
+}
+
+div uk-container {
+  /* background: #f2f2f2; */
+  /* background: red; */
+}
+
+a {
+  /* color: #87fbe9; */
+}
+
+p {
+  font-size: 1.1em;
+  color: black;
+  font-family: 'Inter-ExtraLight', sans-serif;
+}
+
+img {
+  margin: 0;
+}
+
+p img {
+  display: block;
+  margin: auto;
+  padding: 1em;
+  /* width: 100%; */
+  filter: drop-shadow(0px 10px 4px #4444dd);
+}
+
+ul li {
+  font-family: 'Inter-ExtraLight', sans-serif;
+}
+
+ol li {
+  font-family: 'Inter-ExtraLight', sans-serif;
+}
+
+.title {
+  color: black;
+  font-size: 2.4em;
+  font-family: 'Inter-Black';
+  padding-bottom: 1em;
+  background: white;
+  line-height: 100%;
+}
+
+#cover-img {
+  background-color: black;
+  max-height: 500px;
+  margin-bottom: 20px !important;
+  border-bottom: black solid 1px;
+  /* filter: drop-shadow(0px 10px 20px #4444dd); */
+}
+
+.date-created {
+  /* color: #b9b9b9; */
+  color: red !important;
+  font-family: 'Inter-ExtraLight', sans-serif;
+  padding-top: 14px;
+  line-height: 2.5;
+}
+
+img.uk-cover {
+  border-left: gray solid 1px;
+}
+
+img.uk-cover:hover {
+  border: gray solid 1px;
+}
+
+#footnotes {
+  font-family: 'Times New Roman';
+  font-size: 12px;
+}
+
+h1 {
+  color: black;
+  font-family: 'Inter-ExtraLight';
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: 'Inter-Black';
+  padding-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: black;
+  font-family: 'Inter-Black';
+  border-bottom: 0.5px solid #ffffff;
+  padding-bottom: 0.5em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1em;
+  color: #2b2b2b;
+  font-family: 'Inter-Black';
+  border-bottom: 0.5px solid #ffffff;
+  padding-bottom: 0.5em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 19px;
+}
+
+blockquote {
+  background: #cfcfcf;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.uk-card {
+  border: 1px solid #000000;
+}
+
+hr {
+  border: 1px solid #4444dd;
+}
+
+pre {
+  border: solid black;
+  background-color: #181914;
+}
+
+pre code.hljs {
+  display: block;
+}
+
+code.hljs {
+  display: inline;
+  background-color: #181914;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.uk-accordion-title {
+  background: #ccd3d5;
+  padding: 10px;
+}
+
+.uk-card-title {
+  font-family: 'Inter-Black';
+  /* font-weight: bold; */
+  font-size: 1.7em;
+  line-height: 120%;
+  padding-bottom: 100p;
+}
+
+.entry {
+  cursor: pointer;
+  padding: 0;
+  margin: 1em;
+}
+
+#heading {
+  font-size: 1.7em;
+}
+
+#rnbo-root {
+  background: #f2f2f2;
+  padding: 2em;
+  border: black solid 1px;
+  font-family: Arial;
+  width: 50%;
+  margin: auto auto 20px auto;
+}
+
+.ezdac-button {
+  background: url('../../resources/ezdac_off.svg') no-repeat left top;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.param-label {
+  padding-right: 10px;
+  display: block;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+}
+
+.caption {
+  font-size: 15px;
+}
+
+/**
+ * For mobile devices
+ */
+@media screen and (max-width: 580px) {
+  .title {
+    font-size: 1.8em;
+  }
+
+  h3.uk-card-title {
+    padding: 300px;
+  }
+
+  div.uk-card-body {
+    padding: 0.8em 0.8em 1.2em 0.8em;
+  }
+
+  div.uk-card-body span {
+    font-size: 0.8em;
+  }
+
+  img.uk-cover {
+    height: 200px !important;
+  }
+
+  img {
+    min-width: 250px;
+  }
+
+  #heading {
+    font-size: 4.8vw;
+  }
+
+  #content-area {
+    padding: 3px;
+  }
+
+  #cover-img {
+    max-height: 260px;
+  }
+
+  .date-created {
+    font-size: 13px !important;
+  }
+
+  span.uk-label {
+    font-size: 0.7em;
+  }
+
+  a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 0.95em;
+    margin-top: 0.6em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  h3.uk-card-title {
+    font-size: 1.1em;
+    padding: 0;
+    margin: 0;
+  }
+
+  #js-scroll-trigger {
+    font-size: 1em;
+  }
+
+  #rnbo-root {
+    width: 100%;
+  }
+
+  .caption {
+    font-size: 14px;
+  }
+}

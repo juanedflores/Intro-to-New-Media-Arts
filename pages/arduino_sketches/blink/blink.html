@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Blink (On and Off)</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+    <script src="../../../js/uikit-icons.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts -->
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #555 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body>
+    <!-- NAV AND HEADING -->
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html" style="border: 1px solid #cccccc">Mechanisms, Movement, and Meaning</a>
+
+        <ul class="uk-navbar-nav" style="">
+          <li class=""><a href="">Blink (On and Off)</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search" autofocus />
+          </form>
+        </div>
+
+        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+      </div>
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <hr />
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#sketch-summary" id="toc-sketch-summary">Sketch
+Summary</a></li>
+<li><a href="#the-sketch" id="toc-the-sketch">The Sketch</a>
+<ul>
+<li><a href="#code-walkthrough" id="toc-code-walkthrough">Code
+Walkthrough</a></li>
+<li><a href="#code-result" id="toc-code-result">Code Result</a></li>
+<li><a href="#changing-values" id="toc-changing-values">Changing
+Values</a></li>
+<li><a href="#connecting-a-red-led"
+id="toc-connecting-a-red-led">Connecting a Red LED</a></li>
+</ul></li>
+</ul></div>
+      </div>
+    </div>
+
+    <aside id="left-col" class="uk-light">
+      <div class="bar-wrap" style="padding-top: 100px">
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#sketch-summary" id="toc-sketch-summary">Sketch
+Summary</a></li>
+<li><a href="#the-sketch" id="toc-the-sketch">The Sketch</a>
+<ul>
+<li><a href="#code-walkthrough" id="toc-code-walkthrough">Code
+Walkthrough</a></li>
+<li><a href="#code-result" id="toc-code-result">Code Result</a></li>
+<li><a href="#changing-values" id="toc-changing-values">Changing
+Values</a></li>
+<li><a href="#connecting-a-red-led"
+id="toc-connecting-a-red-led">Connecting a Red LED</a></li>
+</ul></li>
+</ul></div>
+      </div>
+    </aside>
+
+    <div id="right-col">
+      <div class="uk-container uk-margin-medium-top"><h2
+id="sketch-summary">Sketch Summary</h2>
+<p>This is considered the
+<a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">“hello
+world”</a> of Arduino programming. It is good to start with and to test
+that your Arduino is working because it does not need any extra
+electronics.</p>
+<p>It takes advantage of the built-in LED on the Arduino. You can
+program it right away. The LED has the letter <code>L</code> next to
+it.</p>
+<p><img style="height:300px" src="./images/built_in_LED.jpg"></img></p>
+<h2 id="the-sketch">The Sketch</h2>
+<p>From Arduino “Examples”:</p>
+<p>Go to the menu bar:
+<code>File -&gt; Examples -&gt; 01.Basics -&gt; Blink</code></p>
+<ul uk-accordion>
+<li class=" uk-open">
+<a id="code-file" class="uk-accordion-title" href="#">Makefile</a>
+<div class="uk-accordion-content">
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// initialize digital pin LED_BUILTIN as an output.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  pinMode<span class="op">(</span>LED_BUILTIN<span class="op">,</span> OUTPUT<span class="op">);</span> <span class="co">// also can be pinMode(13, OUTPUT);</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">// the loop function runs over and over again forever</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  digitalWrite<span class="op">(</span>LED_BUILTIN<span class="op">,</span> HIGH<span class="op">);</span>  <span class="co">// turn the LED on (HIGH is the voltage level)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span>                      <span class="co">// wait for a second</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  digitalWrite<span class="op">(</span>LED_BUILTIN<span class="op">,</span> LOW<span class="op">);</span>   <span class="co">// turn the LED off by making the voltage LOW</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  delay<span class="op">(</span><span class="dv">1000</span><span class="op">);</span>                      <span class="co">// wait for a second</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</div>
+</li>
+</ul>
+<h3 id="code-walkthrough">Code Walkthrough</h3>
+<hr />
+<p><code>void setup() {};</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  pinMode<span class="op">(</span>LED_BUILTIN<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>From the
+<a href="http://engineering.nyu.edu/gk12/amps-cbri/pdf/ArduinoBooks/Arduino%20Programming%20Notebook.pdf">Arduino
+Programming Notebook:</a></p>
+<blockquote>
+<p>The setup() function is called once when your program starts. Use it
+to initialize pin modes, or begin serial. It must be included in a
+program even if there are no statements to run.</p>
+</blockquote>
+<hr />
+<p><code>pinMode(LED_BUILTIN, OUTPUT);</code></p>
+<blockquote>
+<p>Used in void setup() to configure a specified pin to behave either as
+an INPUT or an OUTPUT.</p>
+</blockquote>
+<p>The variable <code>LED_BUILTIN</code> in this code is referencing pin
+13, which is connected to the built-in LED.</p>
+<hr />
+<p><code>void loop() {}</code></p>
+<blockquote>
+<p>After calling the setup() function, the loop() function does
+precisely what its name suggests, and loops consecutively, allowing the
+program to change, respond, and control the Arduino board.</p>
+</blockquote>
+<hr />
+<p><code>digitalWrite(LED_BUILTIN, HIGH);</code></p>
+<blockquote>
+<p>These constants define pin levels as HIGH or LOW and are used when
+reading or writing to digital pins. HIGH is defined as logic level 1,
+ON, or 5 volts while LOW is logic level 0, OFF, or 0 volts.</p>
+</blockquote>
+<hr />
+<p><code>delay(1000);</code></p>
+<blockquote>
+<p>Pauses a program for the amount of time as specified in milliseconds,
+where 1000 equals 1 second.</p>
+</blockquote>
+<hr />
+<h3 id="code-result">Code Result</h3>
+<p>If the code uploads to the Arduino successfully, the built-in LED
+should be turning on for one second, and turning off for one second
+repeatedly.</p>
+<h3 id="changing-values">Changing Values</h3>
+<p>Try changing these values to something smaller, like 100
+milliseconds:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  pinMode<span class="op">(</span>LED_BUILTIN<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  digitalWrite<span class="op">(</span>LED_BUILTIN<span class="op">,</span> HIGH<span class="op">);</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  delay<span class="op">(</span><span class="dv">100</span><span class="op">);</span>                      <span class="co">// wait for 100ms</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  digitalWrite<span class="op">(</span>LED_BUILTIN<span class="op">,</span> LOW<span class="op">);</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  delay<span class="op">(</span><span class="dv">100</span><span class="op">);</span>                      <span class="co">// wait for 100ms</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Uploading the code should result in a faster blinking LED.</p>
+<h3 id="connecting-a-red-led">Connecting a Red LED</h3>
+<p>You can connect a red LED directly to pin 13 and GND on the board
+like this:</p>
+<p><img style="height:300px" src="./images/LED.jpg"></img></p>
+<p>This will blink the red LED in sync with the built-in LED. However,
+you should have a resistor connected in the circuit to prevent the red
+LED from burning out.</p>
+<p>The actual wiring should look like this:</p>
+<p><img style="height:300px" src="./images/led_circuit.png"></img></p>
+<p>To answer why that is, check out this source:</p>
+<p><a href="https://eepower.com/resistor-guide/resistor-applications/resistor-for-led/#">Resistors
+in LED circuits</a></p></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+      var options = {
+        contentSelector: '#right-col',
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fa fa-copy',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fa fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+    <br />
+    <br />
+    <br />
+  </body>
+</html>

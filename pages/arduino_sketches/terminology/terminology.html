@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="pandoc" />
+
+  <title>Terminology</title>
+
+  <!-- UIKit files -->
+  <link rel="stylesheet" href="../../../css/uikit.min.css" />
+  <script src="../../../js/uikit.min.js"></script>
+  <script src="../../../js/uikit-icons.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+
+  <!-- Code Style -->
+  <link rel="stylesheet" href="../../../css/pojoaque.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+  <!-- hljs -->
+  <script>
+    hljs.highlightAll();
+  </script>
+
+  <!-- Makes Inline Code Similar Style to hljs theme -->
+  <script charset="utf-8">
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+      document.querySelectorAll('p code').forEach((el) => {
+        el.classList.add('language-plaintext');
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
+
+  <!-- Blog Style CSS -->
+  <link rel="stylesheet" href="../../../css/blog_style.css" />
+
+  <style>
+    #left-col {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: #222;
+      width: 260px;
+      z-index: 1;
+    }
+
+    .bar-wrap {
+      padding: 2rem;
+    }
+
+    #right-col {
+      margin-left: 260px;
+    }
+
+    .uk-navbar-container {
+      z-index: 2;
+    }
+
+    #canvas-button {
+      display: none;
+    }
+
+    .uk-logo {
+      font-size: 1.4em;
+    }
+
+    @media screen and (max-width: 700px) {
+      #right-col {
+        margin-left: 0px;
+      }
+
+      #left-col {
+        visibility: hidden;
+      }
+
+      #canvas-button {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 494px) {
+      .uk-logo {
+        font-size: 1em;
+      }
+
+      .uk-navbar-nav>li>a {
+        font-size: 10px;
+      }
+    }
+  </style>
+
+  <style>
+    td.hljs-ln-numbers {
+      text-align: center;
+      color: #ccc;
+      border-right: 1px solid #999;
+      vertical-align: top;
+      padding-right: 5px;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    td.hljs-ln-code {
+      padding-left: 10px;
+    }
+
+    .hljs-ln td.hljs-ln-numbers {
+      padding-left: 10px;
+    }
+
+    code {
+      padding: 15px;
+    }
+
+    .code-badge {
+      display: flex !important;
+      flex-direction: row !important;
+      background: #555 !important;
+      padding: 8px !important;
+      position: absolute !important;
+      right: 0px !important;
+    }
+
+    .code-badge-copy-icon {
+      font-size: 1.3em !important;
+    }
+
+    .hide-on-load {
+      display: none;
+    }
+
+    .code-badge-pre {
+      overflow: hidden;
+    }
+
+    .hljs {
+      overflow: auto;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+
+  <!-- Includes other header content if needed -->
+
+</head>
+
+<body>
+  <!-- NAV AND HEADING -->
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="nav-overlay uk-navbar-left">
+      <a class="uk-navbar-item uk-logo" href="../../../index.html" style="border: 1px solid #cccccc">ART 150 - Intro to
+        New Media Arts</a>
+
+      <ul class="uk-navbar-nav" style="">
+        <li class=""><a href="">Terminology</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+      <div class="uk-navbar-item uk-width-expand">
+        <form class="uk-search uk-search-navbar uk-width-1-1">
+          <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search" autofocus />
+        </form>
+      </div>
+
+      <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+    </div>
+  </nav>
+
+  <!-- OFFCANVAS -->
+  <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+    <div class="uk-offcanvas-bar">
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <hr />
+      <h3>Table of Contents</h3>
+      <div>
+        <ul>
+          <li><a href="#get-familiar-with-the-arduino-software" id="toc-get-familiar-with-the-arduino-software">Get
+              Familiar with the
+              Arduino Software</a></li>
+          <li><a href="#arduino-syntax" id="toc-arduino-syntax">Arduino
+              Syntax</a></li>
+          <li><a href="#the-arduino-software-ide" id="toc-the-arduino-software-ide">The Arduino Software (IDE)</a>
+            <ul>
+              <li><a href="#verify-button" id="toc-verify-button">Verify
+                  Button</a></li>
+              <li><a href="#upload-button" id="toc-upload-button">Upload
+                  Button</a></li>
+              <li><a href="#selecting-board-port" id="toc-selecting-board-port">Selecting Board &amp; Port</a></li>
+              <li><a href="#example-sketches" id="toc-example-sketches">Example
+                  Sketches</a></li>
+              <li><a href="#other-helpful-resources" id="toc-other-helpful-resources">Other Helpful Resources</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <aside id="left-col" class="uk-light">
+    <div class="bar-wrap" style="padding-top: 100px">
+      <h3>Table of Contents</h3>
+      <div>
+        <ul>
+          <li><a href="#get-familiar-with-the-arduino-software" id="toc-get-familiar-with-the-arduino-software">Get
+              Familiar with the
+              Arduino Software</a></li>
+          <li><a href="#arduino-syntax" id="toc-arduino-syntax">Arduino
+              Syntax</a></li>
+          <li><a href="#the-arduino-software-ide" id="toc-the-arduino-software-ide">The Arduino Software (IDE)</a>
+            <ul>
+              <li><a href="#verify-button" id="toc-verify-button">Verify
+                  Button</a></li>
+              <li><a href="#upload-button" id="toc-upload-button">Upload
+                  Button</a></li>
+              <li><a href="#selecting-board-port" id="toc-selecting-board-port">Selecting Board &amp; Port</a></li>
+              <li><a href="#example-sketches" id="toc-example-sketches">Example
+                  Sketches</a></li>
+              <li><a href="#other-helpful-resources" id="toc-other-helpful-resources">Other Helpful Resources</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <div id="right-col">
+    <div class="uk-container uk-margin-medium-top">
+      <h2 id="get-familiar-with-the-arduino-software">Get Familiar with the
+        Arduino Software</h2>
+      <p>The programs written in the Arduino Software are called
+        <strong>sketches</strong>.
+      </p>
+      <h2 id="arduino-syntax">Arduino Syntax</h2>
+      <p>Syntax refers to the rules that define the structure of a language.
+        In computer programming, the code must be written a certain way in order
+        for it to be understood by a compiler or interpreter.</p>
+      <p>Arduino is a C-like language, which follows the convention of using
+        curly brackets <code>{}</code> and semicolons <code>;</code>, for
+        example. If the software is telling you there is an error, it might mean
+        that there is a missing semicolon or curly bracket.</p>
+      <p>For more specific rules on the programming language, refer to this
+        <a target="\_blank"
+          href="http://engineering.nyu.edu/gk12/amps-cbri/pdf/ArduinoBooks/Arduino%20Programming%20Notebook.pdf">Arduino
+          Programming Notebook</a> by Brian W. Evans.
+      </p>
+      <h2 id="the-arduino-software-ide">The Arduino Software (IDE)</h2>
+      <p>An IDE is an <strong>integrated development environment</strong>. It
+        is a software that provides a developer with tools to write code
+        efficiently. The Arduino software is specifically for writing and
+        uploading code to your Arduino board. It comes with some features:</p>
+      <h3 id="verify-button">Verify Button</h3>
+      <p>On the top left, there is a button with a checkmark. This is the
+        <strong>Verify</strong> button. When you press this button, the software
+        checks for any errors in your code.
+      </p>
+      <p><img src="./images/verify.png"></img></p>
+      <h3 id="upload-button">Upload Button</h3>
+      <p>The upload button, when pressed, will upload your code to your
+        arduino.</p>
+      <p><img src="./images/upload.png"></img></p>
+      <h3 id="selecting-board-port">Selecting Board &amp; Port</h3>
+      <p>When you connect your Arduino to your computer via USB cable, you
+        should be able to select it from this drop down menu.</p>
+      <p><img src="./images/board.png"></img></p>
+      <p>Another way to select your board, is through the menu bar.</p>
+      <p><img style="height:300px" src="./images/port.png"></img></p>
+      <p><strong>Tools -&gt; Port: ““</strong></p>
+      <p>A port is referring to the name of the Arduino connected to your USB
+        port. It may look something like this depending on what kind of
+        operating system you are using:</p>
+      <ul>
+        <li><code>/dev/cu.usbmodem14101 (Arduino Uno)</code></li>
+        <li><code>COM3 (Arduino Uno)</code></li>
+        <li><code>/dev/ttyACM0 (Arduino Uno)</code></li>
+      </ul>
+      <h3 id="example-sketches">Example Sketches</h3>
+      <p>To look at some of the examples that come with the Arduino
+        software:</p>
+      <p><img style="height:300px" src="./images/file.png"></img></p>
+      <p><img style="height:300px" src="./images/examples.png"></img></p>
+      <p>Notice the Blink example. This is usually the example that most
+        people start with.</p>
+      <h3 id="other-helpful-resources">Other Helpful Resources</h3>
+      <ul>
+        <li><a href="https://itp.nyu.edu/physcomp/lessons/programming-terms-and-programming-environments/">ITP
+            Physical Computing - Programming Terms</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- highlightjs badge -->
+  <script src="../../../js/highlightjs-badge.js"></script>
+
+  <script>
+    var pres = document.querySelectorAll('pre>code');
+    for (var i = 0; i < pres.length; i++) {
+      hljs.highlightBlock(pres[i]);
+    }
+    var options = {
+      contentSelector: '#right-col',
+      // CSS class(es) used to render the copy icon.
+      copyIconClass: 'fa fa-copy',
+      // CSS class(es) used to render the done icon.
+      checkIconClass: 'fa fa-check text-success',
+    };
+    window.highlightJsBadge(options);
+  </script>
+  <br />
+  <br />
+  <br />
+</body>
+
+</html>
