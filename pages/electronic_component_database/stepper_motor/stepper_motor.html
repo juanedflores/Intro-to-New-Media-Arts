@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Stepper Motor</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+    <script src="../../../js/uikit-icons.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts -->
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #555 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body>
+    <!-- NAV AND HEADING -->
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html" style="border: 1px solid #cccccc">Mechanisms, Movement, and Meaning</a>
+
+        <ul class="uk-navbar-nav" style="">
+          <li class=""><a href="">Stepper Motor</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search" autofocus />
+          </form>
+        </div>
+
+        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+      </div>
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <hr />
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#what-is-a-stepper-motor"
+id="toc-what-is-a-stepper-motor">What is a Stepper Motor?</a></li>
+<li><a href="#how-a-servo-motor-works"
+id="toc-how-a-servo-motor-works">How a Servo Motor Works</a></li>
+<li><a href="#types" id="toc-types">Types</a></li>
+</ul></div>
+      </div>
+    </div>
+
+    <aside id="left-col" class="uk-light">
+      <div class="bar-wrap" style="padding-top: 100px">
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#what-is-a-stepper-motor"
+id="toc-what-is-a-stepper-motor">What is a Stepper Motor?</a></li>
+<li><a href="#how-a-servo-motor-works"
+id="toc-how-a-servo-motor-works">How a Servo Motor Works</a></li>
+<li><a href="#types" id="toc-types">Types</a></li>
+</ul></div>
+      </div>
+    </aside>
+
+    <div id="right-col">
+      <div class="uk-container uk-margin-medium-top"><p><a href="https://a.co/d/ijV096r">ULN2003
+5V Stepper Motor + ULN2003 Driver Board</a></p>
+<p><img width="300" src="https://m.media-amazon.com/images/I/51Q1rbvHk3L._SL1000_.jpg"></img></p>
+<p><a href="https://a.co/d/6N1kFIj"> Nema 17 Stepper Motor</a></p>
+<p><img width="300" src="https://m.media-amazon.com/images/I/51KUKuBXogL._SL1000_.jpg"></img></p>
+<p><a href="https://a.co/d/hngccl2">TMC2208 Stepper Motor Driver</a></p>
+<p><img width="300" src="https://m.media-amazon.com/images/I/7142W8cAl7L._SL1500_.jpg"></img></p>
+<p>(Price Range varies depending on the size).</p>
+<p><a href="https://www.amazon.com/Stepper-Motor/s?k=Stepper+Motor">Amazon
+Stepper Motor Search</a></p>
+<h4 id="what-is-a-stepper-motor">What is a Stepper Motor?</h4>
+<p>The word stepper is referring to the motor’s ability to move in small
+rotational steps, making it possible to have high-precision position
+control in 360 degrees. Each step is caused by one pulse of
+electricity.</p>
+<p>A common stepper motor will have 200 steps in one full rotation,
+making each step 1.8 degrees. It is possible to get even finer
+resolutions. This technique is called <strong>Half Stepping</strong> and
+<strong>Microstepping</strong>.</p>
+<p>The advantage of a stepper motor versus normal DC brushed motors and
+servos is that they can quickly locate themselves to a known and
+repeatable position or interval, and then hold that position for as long
+as required. They are idea for short, quick moves.</p>
+<p>The speed of rotation is directly proportional to the frequency of
+pulses being sent.</p>
+<h4 id="how-a-servo-motor-works">How a Servo Motor Works</h4>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/09Mpkjcr0bo?si=g8QD3Wry7OdiwBfv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<h4 id="types">Types</h4>
+<p>Stepper motors might have NEMA in their name, for example NEMA 17.
+This stands for the National Electrical Manufacturers Association (NEMA)
+which defines a set of standards used to dictate tolerances for many
+products, including step motors.</p>
+<p>Step motors are categorized by NEMA frame size, such as “size 11” or
+“size 23” or “size 34”. NEMA 17 stepper motors are those that have a 1.8
+degree step angle (200 steps/revolution) with a 1.7 x 1.7 inch
+faceplate. 17 comes from the size of the faceplate in inches when
+divided by 10.</p></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+      var options = {
+        contentSelector: '#right-col',
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fa fa-copy',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fa fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+    <br />
+    <br />
+    <br />
+  </body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Fading</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+    <script src="../../../js/uikit-icons.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts -->
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #555 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body>
+    <!-- NAV AND HEADING -->
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html" style="border: 1px solid #cccccc">Mechanisms, Movement, and Meaning</a>
+
+        <ul class="uk-navbar-nav" style="">
+          <li class=""><a href="">Fading</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search" autofocus />
+          </form>
+        </div>
+
+        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+      </div>
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <hr />
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#digital-vs-analog-signals"
+id="toc-digital-vs-analog-signals">Digital vs Analog Signals</a></li>
+</ul></div>
+      </div>
+    </div>
+
+    <aside id="left-col" class="uk-light">
+      <div class="bar-wrap" style="padding-top: 100px">
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#digital-vs-analog-signals"
+id="toc-digital-vs-analog-signals">Digital vs Analog Signals</a></li>
+</ul></div>
+      </div>
+    </aside>
+
+    <div id="right-col">
+      <div class="uk-container uk-margin-medium-top"><p>The “Fade” and
+“Fading” examples showcase the use of Pulse Width Modulation (PWM).</p>
+<blockquote>
+<p>“Pulse Width Modulation, or PWM, is a technique for getting analog
+results with digital means.”</p>
+</blockquote>
+<h4 id="digital-vs-analog-signals">Digital vs Analog Signals</h4>
+<p>A digital signal is a signal of discrete values, while an analog
+signal is a continous signal.</p>
+<p>PWM is a digital signal, because it has two states, it is either on
+or off (<code>HIGH</code> or <code>LOW</code>). This is essentially a
+square wave.</p>
+<p>On some microcontrollers PWM is only available on selected pins.
+Please consider the pinout diagram of your board to find out which ones
+you can use for PWM. They are denoted with a tilde sign (~).</p>
+<p><code>File-&gt;Sketchbook-&gt;Examples-&gt;Basics-&gt;Fade</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> led <span class="op">=</span> <span class="dv">9</span><span class="op">;</span>         <span class="co">// the PWM pin the LED is attached to</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> brightness <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>  <span class="co">// how bright the LED is</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> fadeAmount <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>  <span class="co">// how many points to fade the LED by</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">// the setup routine runs once when you press reset:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">// declare pin 9 to be an output:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  pinMode<span class="op">(</span>led<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">// the loop routine runs over and over again forever:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// set the brightness of pin 9:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  analogWrite<span class="op">(</span>led<span class="op">,</span> brightness<span class="op">);</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">// change the brightness for next time through the loop:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  brightness <span class="op">=</span> brightness <span class="op">+</span> fadeAmount<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">// reverse the direction of the fading at the ends of the fade:</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>brightness <span class="op">&lt;=</span> <span class="dv">0</span> <span class="op">||</span> brightness <span class="op">&gt;=</span> <span class="dv">255</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    fadeAmount <span class="op">=</span> <span class="op">-</span>fadeAmount<span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">// wait for 30 milliseconds to see the dimming effect</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  delay<span class="op">(</span><span class="dv">30</span><span class="op">);</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>This example introduces a programming concept called
+<strong>conditional statements</strong>.</p>
+<p><code>File-&gt;Sketchbook-&gt;Examples-&gt;Analog-&gt;Fading</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> ledPin <span class="op">=</span> <span class="dv">9</span><span class="op">;</span>  <span class="co">// LED connected to digital pin 9</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// nothing happens in setup</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">// fade in from min to max in increments of 5 points:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> fadeValue <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> fadeValue <span class="op">&lt;=</span> <span class="dv">255</span><span class="op">;</span> fadeValue <span class="op">+=</span> <span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// sets the value (range from 0 to 255):</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>ledPin<span class="op">,</span> fadeValue<span class="op">);</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// wait for 30 milliseconds to see the dimming effect</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">30</span><span class="op">);</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">// fade out from max to min in increments of 5 points:</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> fadeValue <span class="op">=</span> <span class="dv">255</span><span class="op">;</span> fadeValue <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">;</span> fadeValue <span class="op">-=</span> <span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">// sets the value (range from 0 to 255):</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>ledPin<span class="op">,</span> fadeValue<span class="op">);</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">// wait for 30 milliseconds to see the dimming effect</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">30</span><span class="op">);</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>This example introduces a programming concept called <strong>for
+loops</strong>.</p>
+<p>You could do this with a motor instead of an LED, but a motor
+requires more current than the Arduino can handle. If we tried to
+connect the motor straight to an Arduino pin, there is a good chance
+that it could damage the Arduino.</p>
+<p>To hook up a motor to an arduino, use this schematic:</p>
+<p><img style="height:300px" src="./images/motor_schematic.jpg"></img></p>
+<p>This is only for low voltage motors, to power higher voltage motors,
+you will need a different power source.</p></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+      var options = {
+        contentSelector: '#right-col',
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fa fa-copy',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fa fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+    <br />
+    <br />
+    <br />
+  </body>
+</html>

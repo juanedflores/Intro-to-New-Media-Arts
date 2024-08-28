@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Servo Basic Example</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+    <script src="../../../js/uikit-icons.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts -->
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #555 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body>
+    <!-- NAV AND HEADING -->
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html" style="border: 1px solid #cccccc">Mechanisms, Movement, and Meaning</a>
+
+        <ul class="uk-navbar-nav" style="">
+          <li class=""><a href="">Servo Basic Example</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search" autofocus />
+          </form>
+        </div>
+
+        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+      </div>
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <hr />
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#the-servo-library" id="toc-the-servo-library">The Servo
+Library</a></li>
+<li><a href="#most-minimal-example" id="toc-most-minimal-example">Most
+Minimal Example</a></li>
+<li><a href="#breakdown" id="toc-breakdown">Breakdown</a></li>
+<li><a href="#play-around" id="toc-play-around">Play Around</a></li>
+</ul></div>
+      </div>
+    </div>
+
+    <aside id="left-col" class="uk-light">
+      <div class="bar-wrap" style="padding-top: 100px">
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#the-servo-library" id="toc-the-servo-library">The Servo
+Library</a></li>
+<li><a href="#most-minimal-example" id="toc-most-minimal-example">Most
+Minimal Example</a></li>
+<li><a href="#breakdown" id="toc-breakdown">Breakdown</a></li>
+<li><a href="#play-around" id="toc-play-around">Play Around</a></li>
+</ul></div>
+      </div>
+    </aside>
+
+    <div id="right-col">
+      <div class="uk-container uk-margin-medium-top"><h4
+id="the-servo-library">The Servo Library</h4>
+<p>To facilitate the code when working with servo motors, we should use
+the Servo library. A library is code that someone else wrote to makes it
+easier to make something happen without knowing the ins and outs of how
+to program it. It also makes the code a lot more readable.</p>
+<p>To install a library, go the left hand side and click on the books
+icon.</p>
+<p><img style="height:300px" src="./images/library.png"></img></p>
+<p>Next, use the search bar to find the servo library by Michael
+Margolis, and install it.</p>
+<p><img style="height:300px" src="./images/library_search.png"></img></p>
+<p>After installing, example sketches should be found in the Examples
+menu bar under “Examples from Custom Libraries”.
+<code>File -&gt; Examples -&gt; Servo</code>.</p>
+<h4 id="most-minimal-example">Most Minimal Example</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Servo.h&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Servo myservo<span class="op">;</span>  <span class="co">// create servo object to control a servo</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  myservo<span class="op">.</span>attach<span class="op">(</span><span class="dv">9</span><span class="op">);</span>  <span class="co">// attaches the servo on pin 9 to the servo object</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  myservo<span class="op">.</span>write<span class="op">(</span><span class="dv">180</span><span class="op">);</span>  <span class="co">// tell servo to go to position in variable &#39;pos&#39;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h4 id="breakdown">Breakdown</h4>
+<hr />
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Servo.h&gt;</span></span></code></pre></div>
+<p>To include the library, you have to write this statement.
+<code>#include</code> is written followed by the name of the file that
+has the code for the library written. This Servo.h file is what the
+library is. It is surrounded by these angle brackets.</p>
+<p><a target="\_blank" href="https://www.arduino.cc/reference/en/language/structure/further-syntax/include/">From
+the Arduino Website</a></p>
+<hr />
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Servo myservo<span class="op">;</span>  <span class="co">// create servo object to control a servo</span></span></code></pre></div>
+<p>For this library, there is an object called Servo, and it is given
+the variable name <code>myservo</code>.</p>
+<blockquote>
+<p>In programming, an object is similar to a library, in that it hides a
+bundle of code that makes it possible to create a reference of a thing
+with certain attributes. For example, an object called Human might have
+properties such as age, height, name.. and can perform actions like
+<code>human.walk()</code>, <code>human.sleep()</code>,
+<code>human.eat()</code>. In this code’s case, there is an object called
+Servo that has the properties of a servo motor, with actions like
+<code>attach()</code> and <code>write()</code>.</p>
+</blockquote>
+<hr />
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>myservo<span class="op">.</span>attach<span class="op">(</span><span class="dv">9</span><span class="op">);</span>  <span class="co">// attaches the servo on pin 9 to the servo object</span></span></code></pre></div>
+<p>As said in the comment, this line tells Arduino that this servo is
+connected to pin 9.</p>
+<hr />
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>myservo<span class="op">.</span>write<span class="op">(</span><span class="dv">180</span><span class="op">);</span>  <span class="co">// tell servo to go to position in variable &#39;pos&#39;</span></span></code></pre></div>
+<p>The <code>write()</code> method changes the position of the servo and
+takes an angle between 0 - 180 degrees.</p>
+<h4 id="play-around">Play Around</h4>
+<p>Try changing the number in <code>write()</code> to see where the
+servo moves.</p></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+      var options = {
+        contentSelector: '#right-col',
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fa fa-copy',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fa fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+    <br />
+    <br />
+    <br />
+  </body>
+</html>
