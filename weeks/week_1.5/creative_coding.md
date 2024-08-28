@@ -1,5 +1,5 @@
 ---
-What is New Media?
+title: What is New Media?
 ---
 
 ## Week 1, Day 2 - What is New Media?

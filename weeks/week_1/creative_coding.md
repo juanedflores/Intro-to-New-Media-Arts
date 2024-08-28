@@ -1,5 +1,5 @@
 ---
-Kinetic Art Showcase 
+title: Kinetic Art Showcase 
 ---
 
 ## Week 1 - Kinetic Art Showcase
