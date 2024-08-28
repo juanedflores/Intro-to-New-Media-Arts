@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="pandoc" />
+
+  <title></title>
+
+  <!-- UIKit files -->
+  <link rel="stylesheet" href="../../css/uikit.min.css" />
+  <script src="../../js/uikit.min.js"></script>
+  <script src="../../js/uikit-icons.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+
+  <!-- Code Style -->
+  <link rel="stylesheet" href="../../css/pojoaque.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+  <!-- hljs -->
+  <script>
+    hljs.highlightAll();
+  </script>
+
+  <!-- Makes Inline Code Similar Style to hljs theme -->
+  <script charset="utf-8">
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+      document.querySelectorAll('p code').forEach((el) => {
+        el.classList.add('language-plaintext');
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
+
+  <!-- Blog Style CSS -->
+  <link rel="stylesheet" href="../../css/blog_style.css" />
+
+  <!-- Includes other header content if needed -->
+  
+</head>
+
+<body>
+  <!-- NAV AND HEADING -->
+  <div class="uk-flex uk-flex-left uk-background-cover" style="background: black; height: 50px" uk-sticky>
+    <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
+      <span uk-icon="icon: menu; ratio: 1.5;" style="color: white"></span>
+    </button>
+
+    <!-- HEADING -->
+    <h2 id="heading"
+      class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+      style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px">
+      <a class="uk-text" style="color: white; font-weight: normal; font-size: 0.6em" href="../../index.html">ARTTECH
+        2010 Mechanisms, Movement, & Meaning</a>
+    </h2>
+  </div>
+
+  <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <!-- TABLE OF CONTENTS -->
+    <div id="blog-toc" style="top: 50px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div class="uk-offcanvas-bar">
+        <a href="../index.html" uk-icon="icon: home;"></a>
+        <hr />
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#this-is-my-heading" id="toc-this-is-my-heading">This is my
+heading</a>
+<ul>
+<li><a href="#this-is-another-heading"
+id="toc-this-is-another-heading">This is another heading</a>
+<ul>
+<li><a href="#this-is-even-more-text"
+id="toc-this-is-even-more-text">This is even more text</a>
+<ul>
+<li><a href="#this-is-the-heading-4" id="toc-this-is-the-heading-4">This
+is the heading 4</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><h1
+id="this-is-my-heading">This is my heading</h1>
+<p>This is <code>some body</code> text.lskdjfla:lskdjfl sdfjo</p>
+<h2 id="this-is-another-heading">This is another heading</h2>
+<p>this is more body text.</p>
+<h3 id="this-is-even-more-text">This is even more text</h3>
+<h4 id="this-is-the-heading-4">This is the heading 4</h4>
+<p>tada alsdfjaljf asdfdfjsll sdflasksofdaof sodfjdsflsaa</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;hello&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;hey&quot;</span>)</span></code></pre></div>
+<p>update update</p></div>
+  </div>
+
+  <!-- highlightjs badge -->
+  <script src="../../js/highlightjs-badge.js"></script>
+
+  <script>
+    var pres = document.querySelectorAll('pre>code');
+    for (var i = 0; i < pres.length; i++) {
+      hljs.highlightBlock(pres[i]);
+    }
+    var options = {
+      contentSelector: '#ArticleBody',
+      // CSS class(es) used to render the copy icon.
+      copyIconClass: 'fa fa-copy',
+      // CSS class(es) used to render the done icon.
+      checkIconClass: 'fa fa-check text-success',
+    };
+    window.highlightJsBadge(options);
+  </script>
+</body>
+
+</html>
