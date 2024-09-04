@@ -1,7 +1,3 @@
----
-title: What is New Media?
----
-
 ## Week 1, Day 2 - What is New Media?
 <!-- .slide: class=".uk-width-1-1 uk-height-large" -->  
 
