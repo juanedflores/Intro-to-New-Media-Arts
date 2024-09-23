@@ -144,7 +144,7 @@ Sense human motion using video processing
 
 #### Masaki Fujihata
 
-<a href="https://zkm.de/en/artwork/beyond-pages"><img src="https://zkm.de/system/files/styles/img_node_media_detail_zoom/private/field_media_image/2023/03/02/120523/MM_00033_fujihata_beyond-pages_005.jpg"></img></a>
+<a href="https://zkm.de/en/artwork/beyond-pages"><img src="https://zkm.de/system/files/styles/img_node_media_detail_zoom/private/field_media_image/2023/03/02/120523/MM_00033_fujihata_beyond-pages_005.jpg?itok=9tbsGTPC"></img></a>
 
 ---
 
@@ -154,8 +154,75 @@ Sense human motion using video processing
 
 ---
 
+#### Electronics Refresher
+
+Build a simple LED circuit with 1k Resistor
+
+<img src="/images/simple_led.png" style="visibility: hidden;">
+
+---
+
+#### Electronics Refresher
+
+Build a simple LED circuit with 1k Resistor
+
+<img src="/images/simple_led.png">
+
+---
+
+#### Variable Resistors
+
+<embed type="text/html" src="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html" width="100%" height="500px" />
+
+---
+
 #### Capacitors
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CVywtFTEz3I?si=uipQXjdj7MkaF6KA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 https://www.build-electronic-circuits.com/how-does-a-capacitor-work/
+
+---
+
+#### Blinking LED Circuit
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PPbiplBq7Z4?si=ogmtFSA0AuAWmqWe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+- 330 uF capacitor
+- 2N2222 transistor
+- LED
+- 1K ohm resistor
+- 100 ohm resistor
+
+---
+
+#### Finished Circuit
+
+<img src="/images/blinking_led_simple/1.png">
+
+---
+
+#### Step 1
+
+<img src="/images/blinking_led_simple/2.png">
+
+---
+
+#### Step 2
+
+<img src="/images/blinking_led_simple/3.png">
+
+---
+
+#### Step 3
+
+<img src="/images/blinking_led_simple/4.png">
+
+---
+
+#### Step 4
+
+<img src="/images/blinking_led_simple/5.png">
+
+---
 
