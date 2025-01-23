@@ -170,6 +170,25 @@
 
   <body>
     <!-- NAV AND HEADING -->
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html" style="border: 1px solid #cccccc">ART 150 - Intro to New Media Art</a>
+
+        <ul class="uk-navbar-nav" style="">
+          <li class=""><a href="">$if(heading)$$heading$$endif$</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+          <form class="uk-search uk-search-navbar uk-width-1-1">
+            <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search" autofocus />
+          </form>
+        </div>
+
+        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+      </div>
+    </nav>
 
     <!-- OFFCANVAS -->
     <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>

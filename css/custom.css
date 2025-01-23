@@ -10,3 +10,13 @@ body {
   width: 100%;
   aspect-ratio: 4 / 3;
 }
+
+.section_header {
+  color: white;
+}
+
+.slides_section {
+  padding: 10px;
+  background-color: #282a35;
+  margin-bottom: 30px;
+}

@@ -125,8 +125,10 @@ h1 {
 h2 {
   font-size: 1.5em;
   font-weight: bold;
-  font-family: 'Inter-Black';
-  padding-bottom: 0.5em;
+  font-family: 'Inter-ExtraLight';
+  /*padding-bottom: 0.5em;*/
+  text-align: center;
+  margin: 0;
 }
 
 h3 {

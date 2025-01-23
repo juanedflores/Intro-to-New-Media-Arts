@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+    <script src="../../../js/uikit-icons.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts -->
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #555 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body>
+    <!-- NAV AND HEADING -->
+
+    <!-- OFFCANVAS -->
+    <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <hr />
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#week-2" id="toc-week-2">Week 2</a>
+<ul>
+<li><a href="#lets-talk-about-the-arduino-nano-33-iot"
+id="toc-lets-talk-about-the-arduino-nano-33-iot">Let’s Talk about the
+Arduino Nano 33 iOT</a></li>
+<li><a href="#imu-chip" id="toc-imu-chip">IMU Chip</a></li>
+<li><a href="#the-acceleromter" id="toc-the-acceleromter">The
+Acceleromter</a></li>
+<li><a href="#the-gyroscopegyrometer"
+id="toc-the-gyroscopegyrometer">The Gyroscope/Gyrometer</a></li>
+<li><a href="#input-and-output-pins-on-the-arduino"
+id="toc-input-and-output-pins-on-the-arduino">Input and Output Pins on
+the Arduino</a></li>
+<li><a href="#real-time-clock" id="toc-real-time-clock">Real-Time
+Clock</a></li>
+<li><a href="#quick-introduction-to-tinkercad-and-your-first-circuit"
+id="toc-quick-introduction-to-tinkercad-and-your-first-circuit">Quick
+Introduction to Tinkercad and your first circuit</a></li>
+</ul></li>
+<li><a href="#terminology" id="toc-terminology">Terminology</a></li>
+</ul></div>
+      </div>
+    </div>
+
+    <aside id="left-col" class="uk-light">
+      <div class="bar-wrap" style="padding-top: 100px">
+        <h3>Table of Contents</h3>
+        <div><ul>
+<li><a href="#week-2" id="toc-week-2">Week 2</a>
+<ul>
+<li><a href="#lets-talk-about-the-arduino-nano-33-iot"
+id="toc-lets-talk-about-the-arduino-nano-33-iot">Let’s Talk about the
+Arduino Nano 33 iOT</a></li>
+<li><a href="#imu-chip" id="toc-imu-chip">IMU Chip</a></li>
+<li><a href="#the-acceleromter" id="toc-the-acceleromter">The
+Acceleromter</a></li>
+<li><a href="#the-gyroscopegyrometer"
+id="toc-the-gyroscopegyrometer">The Gyroscope/Gyrometer</a></li>
+<li><a href="#input-and-output-pins-on-the-arduino"
+id="toc-input-and-output-pins-on-the-arduino">Input and Output Pins on
+the Arduino</a></li>
+<li><a href="#real-time-clock" id="toc-real-time-clock">Real-Time
+Clock</a></li>
+<li><a href="#quick-introduction-to-tinkercad-and-your-first-circuit"
+id="toc-quick-introduction-to-tinkercad-and-your-first-circuit">Quick
+Introduction to Tinkercad and your first circuit</a></li>
+</ul></li>
+<li><a href="#terminology" id="toc-terminology">Terminology</a></li>
+</ul></div>
+      </div>
+    </aside>
+
+    <div id="right-col">
+      <div class="uk-container uk-margin-medium-top"><h1
+id="week-2">Week 2</h1>
+<h2 id="lets-talk-about-the-arduino-nano-33-iot">Let’s Talk about the
+Arduino Nano 33 iOT</h2>
+<p><img
+src="https://robocraze.com/cdn/shop/products/abx00032_iso_e270eaa5-4d04-47f7-a810-16acc9fc5b16.jpg" /></p>
+<p>There are two features that we will use in class:</p>
+<ul>
+<li>Accelerometer and Gyroscope: to use <strong>movement</strong>
+data.</li>
+<li>Real Time Clock: to use <strong>time</strong> data.</li>
+</ul>
+<hr />
+<h2 id="imu-chip">IMU Chip</h2>
+<ul uk-accordion style="pading-bottom: 5vh">
+<li class=" uk-open">
+<a id="code-file" class="uk-accordion-title" href="#">Inertial Motion
+Units (IMUs)</a>
+<div class="uk-accordion-content" style="padding-bottom:5vh">
+<img src="https://docs.arduino.cc/static/0df056d8311183483ccf7a9bf699940d/29114/nano33IOT_02_IMU.png"></img>
+<p>
+</p>
+<h4 id="IC">
+Integrated Circuits (ICs)
+</h4>
+<p>
+Inertial Motion Units (IMUs) is what combines and contains the circuitry
+for the accelerometer and gyrometer. It’s in a chip called the LSM6DS3.
+</p>
+<p>
+These tiny black squares and rectangles are called <b>Integrated
+Circuits or ICs</b>
+</p>
+</div>
+<p>This chip can be used by using the Arduino <strong>LSM6DS3</strong>
+Library:</p>
+<p><a target="_blank">https://docs.arduino.cc/libraries/arduino_lsm6ds3/</a></p>
+<h2 id="the-acceleromter">The Acceleromter</h2>
+<h4 id="Accelerometer">
+</h4>
+<blockquote>
+<p>An accelerometer is an electromechanical device used to measure
+acceleration forces.</p>
+</blockquote>
+<ul>
+<li>Measures linear acceleration (changes in speed and direction)</li>
+</ul>
+<p><img
+src="https://docs.arduino.cc/static/03722b13858adabb450adfbb02aa5601/29114/nano33IOT_01_acceleration.png" /></p>
+<h2 id="the-gyroscopegyrometer">The Gyroscope/Gyrometer</h2>
+<h4 id="Gyrometer">
+</h4>
+<blockquote>
+<p>A gyroscope sensor is a device that can measure and maintain the
+orientation and angular velocity of an object.</p>
+</blockquote>
+<ul>
+<li>Measures angular velocity (changes in rotation) (can also detect
+vibrations)</li>
+</ul>
+<p><img
+src="https://docs.arduino.cc/static/3675ad70bcac369f6a2fb3b459ebd636/29114/nano33IOT_02_gyroscope.png" /></p>
+<div style="display: flex; padding:10vh">
+<iframe style="margin:auto" width="560" height="315" src="https://www.youtube.com/embed/yqFfmwVufMo?si=mfZZj_5_dKTLgiO6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<ul uk-accordion style="pading-bottom: 5vh">
+<li class=" uk-open">
+<a id="code-file" class="uk-accordion-title" href="#">Classic
+Gyroscope</a>
+<div class="uk-accordion-content" style="padding-bottom:5vh;">
+<h4>
+Classic Gyroscope
+</h4>
+<p>
+from Ancient Greek γῦρος gŷros, <b>“round”</b> and σκοπέω skopéō, <b>“to
+look”</b>
+</p>
+<span style="display: flex;">
+<img style="margin: auto" src="https://www.researchgate.net/profile/Joerg-Wagner-4/publication/348937199/figure/fig2/AS:986422769111040@1612192923009/The-very-first-gyroscope-of-1810-the-Machine-of-Bohnenberger-Tuebingen-Germany-a.png"></img>
+</span>
+<p>
+Above is The very first gyroscope of 1810-the Machine of Bohnenberger,
+Tuebingen, Germany. (a) Original drawing; (b) Photo; and (c) 2.5D
+digital twin by CV/photogrammetry.
+</p>
+<span style="display:flex">
+<iframe style="margin:auto" width="560" height="315" src="https://www.youtube.com/embed/cquvA_IpEsA?si=Epptuzit49JDv6g2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</span>
+<p>
+Toy Gyroscope
+</p>
+</div>
+<h2 id="input-and-output-pins-on-the-arduino">Input and Output Pins on
+the Arduino</h2>
+<embed style="margin-top:4vh; margin-bottom:4vh" src="https://docs.arduino.cc/resources/pinouts/ABX00027-full-pinout.pdf" width="100%" height="600" 
+ type="application/pdf">
+<p>You can find the above PDF on the Arduino section of the website. Or
+at the official Arduino documentation page.</p>
+<p><a href="https://docs.arduino.cc/resources/pinouts/ABX00027-full-pinout.pdf">Link
+to PDF</a></p>
+<p>This Arduino has: - 14 (22)* digital I/O pins - 8 analog input
+pins</p>
+<p>Note: The 8 analog pins can also be used as extra digitial I/O pins,
+to make a total of 22 digital pins.</p>
+<p>Notice the color key below of the first page of the PDF:</p>
+<p><img src="https://i.imgur.com/q7sjr03.png" /></p>
+<hr />
+<h2 id="real-time-clock">Real-Time Clock</h2>
+<h4 id="RTC">
+</h4>
+<p>A real-time clock is a clock that keeps track of the current time and
+can be used to program specific actions at a certain time.</p>
+<p>This feature can be used by using the <strong>RTCZero</strong>
+Arduino Library:</p>
+<p><a href="https://docs.arduino.cc/libraries/rtczero/">https://docs.arduino.cc/libraries/rtczero/</a></p>
+<h2 id="quick-introduction-to-tinkercad-and-your-first-circuit">Quick
+Introduction to Tinkercad and your first circuit</h2>
+<p><strong>Student instructions</strong></p>
+<p>Class link:</p>
+<p>Go to your class with this link:
+https://www.tinkercad.com/joinclass/GUEBYGHMG Enter your Nickname
+assigned by your teacher.</p>
+<p>https://www.tinkercad.com/joinclass/GUEBYGHMG</p>
+<h1 id="terminology">Terminology</h1>
+<ul>
+<li><a href="#IC">Integrated Circuit</a></li>
+<li><a href="#Accelerometer">Accelerometer Circuit</a></li>
+<li><a href="#Gyrometer">Gyrometer</a></li>
+<li><a href="#RTC">Real-Time Clock</a></li>
+<li><a href="https://docs.arduino.cc/libraries/">Arduino
+Library</a></li>
+</ul></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+      var options = {
+        contentSelector: '#right-col',
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fa fa-copy',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fa fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+    <br />
+    <br />
+    <br />
+  </body>
+</html>
