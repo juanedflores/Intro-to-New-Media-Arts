@@ -7,7 +7,7 @@ Based on Solarized Style from http://ethanschoonover.com/solarized
 */
 
 .hljs {
-  color: #dccf8f;
+  color: rgb(243, 201, 91);
   /* background: url(../resources/pojoaque.jpg) repeat scroll left top #181914; */
 }
 
@@ -28,14 +28,14 @@ Based on Solarized Style from http://ethanschoonover.com/solarized
 .hljs-string,
 .hljs-doctag,
 .hljs-regexp {
-  color: #468966;
+  color: #7788aa;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-built_in,
 .hljs-name {
-  color: #ffb03b;
+  color: rgb(243, 201, 91);
 }
 
 .hljs-variable,

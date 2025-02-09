@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="pandoc" />
+
+  <title></title>
+
+  <!-- UIKit files -->
+  <link rel="stylesheet" href="../../css/uikit.min.css" />
+  <script src="../../js/uikit.min.js"></script>
+  <script src="../../js/uikit-icons.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+  <!-- Code Style -->
+  <link rel="stylesheet" href="../../css/pojoaque.css" />
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+  <script src="../../js/highlight.min.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+  <!-- hljs -->
+  <script>
+      hljs.highlightAll();
+  </script>
+
+  <!-- Makes Inline Code Similar Style to hljs theme -->
+  <script charset="utf-8">
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+      document.querySelectorAll('p code').forEach((el) => {
+        el.classList.add('language-plaintext');
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
+
+  <style>
+    #left-col {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: #222;
+      width: 260px;
+      z-index: 1;
+    }
+
+    .bar-wrap {
+      padding: 2rem;
+    }
+
+    #right-col {
+      margin-left: 260px;
+    }
+
+    .uk-navbar-container {
+      z-index: 2;
+    }
+
+    #canvas-button {
+      display: none;
+    }
+
+    .uk-logo {
+      font-size: 1.4em;
+    }
+
+    @media screen and (max-width: 700px) {
+      #right-col {
+        margin-left: 0px;
+      }
+
+      #left-col {
+        visibility: hidden;
+      }
+
+      #canvas-button {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 494px) {
+      .uk-logo {
+        font-size: 1em;
+      }
+
+      .uk-navbar-nav>li>a {
+        font-size: 10px;
+      }
+    }
+  </style>
+
+  <style>
+    td.hljs-ln-numbers {
+      text-align: center;
+      color: #ccc;
+      border-right: 1px solid #999;
+      vertical-align: top;
+      padding-right: 5px;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    td.hljs-ln-code {
+      padding-left: 10px;
+    }
+
+    .hljs-ln td.hljs-ln-numbers {
+      padding-left: 10px;
+    }
+
+    code {
+      padding: 15px;
+    }
+
+    .code-badge {
+      display: flex !important;
+      flex-direction: row !important;
+      background: #4444dd !important;
+      opacity: 0.9 !important;
+      padding: 8px !important;
+      position: absolute !important;
+      right: 0px !important;
+    }
+
+    .code-badge-copy-icon {
+      font-size: 1.3em !important;
+    }
+
+    .hide-on-load {
+      display: none;
+    }
+
+    .code-badge-pre {
+      overflow: hidden;
+    }
+
+    .hljs {
+      overflow: auto;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+  <!--background: #555 !important;-->
+
+  <!-- Blog Style CSS -->
+  <link rel="stylesheet" href="../../css/blog_style.css" />
+
+  <!-- Includes other header content if needed -->
+  
+</head>
+
+<body>
+  <!-- NAV AND HEADING -->
+  <div class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 50px">
+    <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)"
+      uk-toggle="target: #blog-toc">
+      <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    </button>
+
+    <h2 id="heading" style="width: 100%; pointer-events: none"
+      class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+      style="font-family: 'Inter-ExtraLight', serif; color: white">
+      <a class="uk-text" style="color: black; font-weight: normal; font-size: 1em">Preview</a>
+    </h2>
+  </div>
+
+  <!-- OFFCANVAS -->
+  <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <!-- TABLE OF CONTENTS -->
+    <div id="blog-toc" style="top: 50px; background-color: yellow"
+      uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div class="uk-offcanvas-bar">
+        <h3 style="color: white">Table of Contents</h3>
+        <div><ul>
+<li><a href="#blog-workflow-with-neovim"
+id="toc-blog-workflow-with-neovim">Blog Workflow with Neovim</a>
+<ul>
+<li><a href="#snippets" id="toc-snippets">Snippets</a></li>
+<li><a href="#markview.nvim"
+id="toc-markview.nvim">markview.nvim</a></li>
+<li><a href="#styling" id="toc-styling">Styling</a></li>
+<li><a href="#code-inline-and-blocks"
+id="toc-code-inline-and-blocks">Code Inline and Blocks</a></li>
+</ul></li>
+</ul></div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div id="ArticleBody" class="uk-container uk-margin uk-overflow-auto" style="overflow-y: scroll"><h1
+id="blog-workflow-with-neovim">Blog Workflow with Neovim</h1>
+<h2 id="snippets">Snippets</h2>
+<p>With <code>blink.cmp</code> and <code>friendly-snippets</code>, I am
+provided with some useful snippets. For example to create a 2x3
+table:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="er">&quot;Insert</span> <span class="er">2x3</span> <span class="er">table&quot;:</span> <span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;prefix&quot;</span><span class="fu">:</span> <span class="st">&quot;2x3table&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;| ${1:Column1} | ${2:Column2} | ${3:Column3} |&quot;</span><span class="ot">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;| --------------- | --------------- | --------------- |&quot;</span><span class="ot">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |&quot;</span><span class="ot">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;${0}&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Insert table with 2 rows and 3 columns. First row is heading.&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code></pre></div>
+<p>Start typing the prefix <code>2x3table~</code> and hit
+<code>&lt;C-y&gt;</code> to autocomplete selection when it comes up.
+Then just press <code>&lt;CR&gt;</code> to confirm. The snippet will be
+be placed down in the editor and you can start writing inside the cells
+one by one by pressing Tab to go to the next one.</p>
+<table>
+<thead>
+<tr>
+<th>Column1</th>
+<th>Column2</th>
+<th>Column3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item1.1</td>
+<td>Item2.1</td>
+<td>Item3.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="markview.nvim">markview.nvim</h2>
+<p>This is rendered like this in nvim because of <a
+href="https://github.com/OXY2DEV/markview.nvim">markview</a> <img
+src="./images/table_vim.png" alt="table_vim" /></p>
+<hr />
+<h2 id="styling">Styling</h2>
+<p>On the table example shown above, I am using <a
+href="https://getuikit.com/docs/introduction">UIkit</a> styling.</p>
+<p>All tables are added these classes: <code>uk-table</code>,
+<code>uk-table-striped</code>, <code>uk-table-hover</code>, and
+<code>uk-table-middle</code>.</p>
+<p>They are added after page is loaded with this function (using
+JQuery).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">table_hl</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">$</span>(<span class="st">&#39;table&#39;</span>)<span class="op">.</span><span class="fu">addClass</span>(<span class="st">&#39;uk-table&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">$</span>(<span class="st">&#39;table&#39;</span>)<span class="op">.</span><span class="fu">addClass</span>(<span class="st">&#39;uk-table-striped&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">$</span>(<span class="st">&#39;table&#39;</span>)<span class="op">.</span><span class="fu">addClass</span>(<span class="st">&#39;uk-table-hover&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">$</span>(<span class="st">&#39;table&#39;</span>)<span class="op">.</span><span class="fu">addClass</span>(<span class="st">&#39;uk-table-middle&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table_hl</span>()<span class="op">;</span></span></code></pre></div>
+<h2 id="code-inline-and-blocks">Code Inline and Blocks</h2>
+<p>I am using <a href="https://highlightjs.org/">highlight.js</a> to
+highlight code blocks with a custom css theme. Documentation on how to
+use is provided <a
+href="https://highlightjs.readthedocs.io/en/latest/readme.html">here</a>.
+Additionally, I added badges on the top right of code blocks to make it
+easy to copy the content with icons for better user experience. The
+addon is called <a
+href="https://github.com/RickStrahl/highlightjs-badge">highlightjs-badge</a>.</p>
+<p>You can overwrite the default styling by defining new rules in the
+html file under <code>&lt;style&gt;&lt;/style&gt;</code> tags.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.code-badge</span> {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">padding</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">background</span><span class="ch">:</span> <span class="cn">pink</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.code-badge-copy-icon</span> {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.3</span><span class="dt">em</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code></pre></div></div>
+  </div>
+
+  <!-- highlightjs badge -->
+  <script src="../../js/highlightjs-badge.js"></script>
+
+  <script>
+    // apply HighlightJS
+    var pres = document.querySelectorAll('pre>code');
+    for (var i = 0; i < pres.length; i++) {
+      hljs.highlightBlock(pres[i]);
+    }
+
+    // add HighlightJS-badge (options are optional)
+    var options = {
+      // optional
+      contentSelector: '#ArticleBody',
+
+      // CSS class(es) used to render the copy icon.
+      copyIconClass: 'fas fa-solid fa-clone',
+      // CSS class(es) used to render the done icon.
+      checkIconClass: 'fas fa-check text-success',
+    };
+    window.highlightJsBadge(options);
+  </script>
+
+  <script src="../../js/styling.js"></script>
+
+  <br />
+  <br />
+  <br />
+</body>
+
+</html>

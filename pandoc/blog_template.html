@@ -1,216 +1,243 @@
 <!DOCTYPE html>
 <html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content="pandoc" />
 
-    <title>$if(heading)$$heading$$endif$</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="pandoc" />
 
-    <!-- UIKit files -->
-    <link rel="stylesheet" href="../../../css/uikit.min.css" />
-    <script src="../../../js/uikit.min.js"></script>
-    <script src="../../../js/uikit-icons.min.js"></script>
+  <title>$if(heading)$$heading$$endif$</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+  <!-- UIKit files -->
+  <link rel="stylesheet" href="../../css/uikit.min.css" />
+  <script src="../../js/uikit.min.js"></script>
+  <script src="../../js/uikit-icons.min.js"></script>
 
-    <!-- Fonts -->
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
 
-    <!-- Code Style -->
-    <link rel="stylesheet" href="../../../css/pojoaque.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-    <!-- hljs -->
-    <script>
+  <!-- Code Style -->
+  <link rel="stylesheet" href="../../css/pojoaque.css" />
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+  <script src="../../js/highlight.min.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+  <!-- hljs -->
+  <script>
       hljs.highlightAll();
-    </script>
+  </script>
 
-    <!-- Makes Inline Code Similar Style to hljs theme -->
-    <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
-          hljs.highlightElement(el);
-        });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
-          hljs.highlightElement(el);
-        });
+  <!-- Makes Inline Code Similar Style to hljs theme -->
+  <script charset="utf-8">
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
       });
-    </script>
+      document.querySelectorAll('p code').forEach((el) => {
+        el.classList.add('language-plaintext');
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
 
-    <!-- Blog Style CSS -->
-    <link rel="stylesheet" href="../../../css/blog_style.css" />
+  <style>
+    #left-col {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: #222;
+      width: 260px;
+      z-index: 1;
+    }
 
-    <style>
-      #left-col {
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-        background-color: #222;
-        width: 260px;
-        z-index: 1;
-      }
+    .bar-wrap {
+      padding: 2rem;
+    }
 
-      .bar-wrap {
-        padding: 2rem;
-      }
+    #right-col {
+      margin-left: 260px;
+    }
 
+    .uk-navbar-container {
+      z-index: 2;
+    }
+
+    #canvas-button {
+      display: none;
+    }
+
+    .uk-logo {
+      font-size: 1.4em;
+    }
+
+    @media screen and (max-width: 700px) {
       #right-col {
-        margin-left: 260px;
+        margin-left: 0px;
       }
 
-      .uk-navbar-container {
-        z-index: 2;
+      #left-col {
+        visibility: hidden;
       }
 
       #canvas-button {
-        display: none;
+        display: block;
       }
+    }
 
+    @media screen and (max-width: 494px) {
       .uk-logo {
-        font-size: 1.4em;
+        font-size: 1em;
       }
 
-      @media screen and (max-width: 700px) {
-        #right-col {
-          margin-left: 0px;
-        }
-
-        #left-col {
-          visibility: hidden;
-        }
-
-        #canvas-button {
-          display: block;
-        }
+      .uk-navbar-nav>li>a {
+        font-size: 10px;
       }
+    }
+  </style>
 
-      @media screen and (max-width: 494px) {
-        .uk-logo {
-          font-size: 1em;
-        }
+  <style>
+    td.hljs-ln-numbers {
+      text-align: center;
+      color: #ccc;
+      border-right: 1px solid #999;
+      vertical-align: top;
+      padding-right: 5px;
 
-        .uk-navbar-nav > li > a {
-          font-size: 10px;
-        }
-      }
-    </style>
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-    <style>
-      td.hljs-ln-numbers {
-        text-align: center;
-        color: #ccc;
-        border-right: 1px solid #999;
-        vertical-align: top;
-        padding-right: 5px;
+    td.hljs-ln-code {
+      padding-left: 10px;
+    }
 
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+    .hljs-ln td.hljs-ln-numbers {
+      padding-left: 10px;
+    }
 
-      td.hljs-ln-code {
-        padding-left: 10px;
-      }
+    code {
+      padding: 15px;
+    }
 
-      .hljs-ln td.hljs-ln-numbers {
-        padding-left: 10px;
-      }
+    .code-badge {
+      display: flex !important;
+      flex-direction: row !important;
+      background: #4444dd !important;
+      opacity: 0.9 !important;
+      padding: 8px !important;
+      position: absolute !important;
+      right: 0px !important;
+    }
 
-      code {
-        padding: 15px;
-      }
+    .code-badge-copy-icon {
+      font-size: 1.3em !important;
+    }
 
-      .code-badge {
-        display: flex !important;
-        flex-direction: row !important;
-        background: #555 !important;
-        padding: 8px !important;
-        position: absolute !important;
-        right: 0px !important;
-      }
+    .hide-on-load {
+      display: none;
+    }
 
-      .code-badge-copy-icon {
-        font-size: 1.3em !important;
-      }
+    .code-badge-pre {
+      overflow: hidden;
+    }
 
-      .hide-on-load {
-        display: none;
-      }
+    .hljs {
+      overflow: auto;
+    }
 
-      .code-badge-pre {
-        overflow: hidden;
-      }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+  <!--background: #555 !important;-->
 
-      .hljs {
-        overflow: auto;
-      }
+  <!-- Blog Style CSS -->
+  <link rel="stylesheet" href="../../css/blog_style.css" />
 
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-      }
-    </style>
+  <!-- Includes other header content if needed -->
+  $for(header-includes)$ $header-includes$ $endfor$
+</head>
 
-    <!-- Includes other header content if needed -->
-    $for(header-includes)$ $header-includes$ $endfor$
-  </head>
+<body>
+  <!-- NAV AND HEADING -->
+  <div class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 50px">
+    <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)"
+      uk-toggle="target: #blog-toc">
+      <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    </button>
 
-  <body>
-    <!-- NAV AND HEADING -->
+    <h2 id="heading" style="width: 100%; pointer-events: none"
+      class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+      style="font-family: 'Inter-ExtraLight', serif; color: white">
+      <a class="uk-text" style="color: black; font-weight: normal; font-size: 1em">$title$</a>
+    </h2>
+  </div>
 
-    <!-- OFFCANVAS -->
-    <div id="off-canvas" class="bar-wrap uk-light" style="padding-top: 100px" uk-offcanvas>
+  <!-- OFFCANVAS -->
+  <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <!-- TABLE OF CONTENTS -->
+    <div id="blog-toc" style="top: 50px; background-color: yellow"
+      uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
       <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <hr />
-        <h3>Table of Contents</h3>
+        <h3 style="color: white">Table of Contents</h3>
         <div>$toc$</div>
       </div>
     </div>
 
-    <aside id="left-col" class="uk-light">
-      <div class="bar-wrap" style="padding-top: 100px">
-        <h3>Table of Contents</h3>
-        <div>$toc$</div>
-      </div>
-    </aside>
+    <!-- BODY -->
+    <div id="ArticleBody" class="uk-container uk-margin uk-overflow-auto" style="overflow-y: scroll">$body$</div>
+  </div>
 
-    <div id="right-col">
-      <div class="uk-container uk-margin-medium-top">$body$</div>
-    </div>
+  <!-- highlightjs badge -->
+  <script src="../../js/highlightjs-badge.js"></script>
 
-    <!-- highlightjs badge -->
-    <script src="../../../js/highlightjs-badge.js"></script>
+  <script>
+    // apply HighlightJS
+    var pres = document.querySelectorAll('pre>code');
+    for (var i = 0; i < pres.length; i++) {
+      hljs.highlightBlock(pres[i]);
+    }
 
-    <script>
-      var pres = document.querySelectorAll('pre>code');
-      for (var i = 0; i < pres.length; i++) {
-        hljs.highlightBlock(pres[i]);
-      }
-      var options = {
-        contentSelector: '#right-col',
-        // CSS class(es) used to render the copy icon.
-        copyIconClass: 'fa fa-copy',
-        // CSS class(es) used to render the done icon.
-        checkIconClass: 'fa fa-check text-success',
-      };
-      window.highlightJsBadge(options);
-    </script>
-    <br />
-    <br />
-    <br />
-  </body>
+    // add HighlightJS-badge (options are optional)
+    var options = {
+      // optional
+      contentSelector: '#ArticleBody',
+
+      // CSS class(es) used to render the copy icon.
+      copyIconClass: 'fas fa-solid fa-clone',
+      // CSS class(es) used to render the done icon.
+      checkIconClass: 'fas fa-check text-success',
+    };
+    window.highlightJsBadge(options);
+  </script>
+
+  <script src="../../js/styling.js"></script>
+
+  <br />
+  <br />
+  <br />
+</body>
+
 </html>

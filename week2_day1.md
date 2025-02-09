@@ -1,13 +1,7 @@
----
-title: Week 2
----
+# Week 2
+## Let's Talk about the Arduino Nano 33 iOT
 
-# Introducing the Arduino Nano 33 IoT
-
-<span>
-![Arduino Nano 33 IoT](https://robocraze.com/cdn/shop/products/abx00032_iso_e270eaa5-4d04-47f7-a810-16acc9fc5b16.jpg)
-</span>
-
+![Image](https://robocraze.com/cdn/shop/products/abx00032_iso_e270eaa5-4d04-47f7-a810-16acc9fc5b16.jpg)
 There are two features that we will use in class:
 
 - Accelerometer and Gyroscope: to use **movement** data.
@@ -17,7 +11,8 @@ There are two features that we will use in class:
 
 ## IMU Chip
 
-<ul uk-accordion style="pading-bottom: 5vh"> <li class=" uk-open">
+<ul uk-accordion style="pading-bottom: 5vh">
+<li class=" uk-open">
 <a id="code-file" class="uk-accordion-title" href="#">Inertial Motion Units (IMUs)</a>
 <div class="uk-accordion-content" style="padding-bottom:5vh">
 <img src="https://docs.arduino.cc/static/0df056d8311183483ccf7a9bf699940d/29114/nano33IOT_02_IMU.png"></img>
@@ -53,8 +48,7 @@ This chip can be used by using the Arduino **LSM6DS3** Library:
 <div style="display: flex; padding:10vh">
 <iframe style="margin:auto" width="560" height="315" src="https://www.youtube.com/embed/yqFfmwVufMo?si=mfZZj_5_dKTLgiO6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-
----
+    
 
 <ul uk-accordion style="pading-bottom: 5vh">
 <li class=" uk-open">
@@ -81,9 +75,6 @@ This chip can be used by using the Arduino **LSM6DS3** Library:
 
  You can find the above PDF on the Arduino section of the website. Or at the official Arduino documentation page.
 
-
-test
-test
 
 <a href="https://docs.arduino.cc/resources/pinouts/ABX00027-full-pinout.pdf">Link to PDF</a>
 
