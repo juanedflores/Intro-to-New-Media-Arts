@@ -85,8 +85,11 @@ h1 {
   text-align: center;
   padding-bottom: 10px;
   border-bottom: black solid 4px;
-  /*text-transform: capitalize;*/
   text-transform: uppercase;
+  color: black;
+  font-family: 'Inter-Black';
+  font-weight: bolder;
+  font-size: 40px;
 }
 
 h2,
@@ -206,14 +209,6 @@ img.uk-cover:hover {
 #footnotes {
   font-family: 'Times New Roman';
   font-size: 12px;
-}
-
-h1 {
-  color: black;
-  font-family: 'Inter-Black';
-  /*font-family: 'Rozha One';*/
-  font-weight: bolder;
-  font-size: 40px;
 }
 
 h2 {
@@ -360,6 +355,10 @@ input {
     font-size: 1.8em;
   }
 
+  h1 {
+    font-size: 25px;
+  }
+
   h3.uk-card-title {
     padding: 300px;
   }
@@ -401,7 +400,7 @@ input {
   }
 
   a {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   p {
