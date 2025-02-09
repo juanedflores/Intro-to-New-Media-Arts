@@ -11,7 +11,8 @@
   <!-- UIKit files -->
   <link rel="stylesheet" href="../../css/uikit.min.css" />
   <script src="../../js/uikit.min.js"></script>
-  <script src="../../js/uikit-icons.min.js"></script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
@@ -212,6 +213,16 @@ id="toc-markview.nvim">markview.nvim</a></li>
 <li><a href="#styling" id="toc-styling">Styling</a></li>
 <li><a href="#code-inline-and-blocks"
 id="toc-code-inline-and-blocks">Code Inline and Blocks</a></li>
+<li><a href="#accordion-content" id="toc-accordion-content">Accordion
+Content</a>
+<ul>
+<li><a href="#heading-3" id="toc-heading-3">Heading 3</a>
+<ul>
+<li><a href="#heading-4" id="toc-heading-4">Heading 4</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#admonitions-callouts"
+id="toc-admonitions-callouts">Admonitions / Callouts</a></li>
 </ul></li>
 </ul></div>
       </div>
@@ -256,6 +267,7 @@ one by one by pressing Tab to go to the next one.</p>
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="markview.nvim">markview.nvim</h2>
 <p>This is rendered like this in nvim because of <a
 href="https://github.com/OXY2DEV/markview.nvim">markview</a> <img
@@ -277,6 +289,7 @@ JQuery).</p>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table_hl</span>()<span class="op">;</span></span></code></pre></div>
+<hr />
 <h2 id="code-inline-and-blocks">Code Inline and Blocks</h2>
 <p>I am using <a href="https://highlightjs.org/">highlight.js</a> to
 highlight code blocks with a custom css theme. Documentation on how to
@@ -297,7 +310,94 @@ class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.code-badge-copy-icon</span> {</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.3</span><span class="dt">em</span> <span class="at">!important</span><span class="op">;</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code></pre></div></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code></pre></div>
+<hr />
+<h2 id="accordion-content">Accordion Content</h2>
+<p>I can make content that is collapsible. This could be useful for when
+I want to add extra information that is not absolutely required to know.
+Could be like fun facts.</p>
+<ul uk-accordion style='pading-bottom: 5vh'>
+<li class='uk-open'>
+<a id='code-file' class='uk-accordion-title' href='#'>Test Header</a>
+<section id="heading-3" class="uk-accordion-content"
+style="padding-bottom:20px; margin-bottom:20px">
+<h3>Heading 3</h3>
+<p><img src="./images/accordion.png" /></p>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<p><strong>bold text</strong></p>
+<p><em>italic text</em></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec
+lorem a justo tempus finibus quis et urna. Aliquam ac lobortis massa.
+Nam ultricies dignissim quam. Vestibulum eget rhoncus arcu. Fusce
+faucibus elit enim, et commodo enim rhoncus vitae. Sed tempor quam quis
+ex eleifend, vel tristique risus ullamcorper. Vivamus ornare feugiat
+arcu non porta. Curabitur enim lacus, consequat eget ante eu, elementum
+finibus felis. Etiam justo leo, feugiat id ligula quis, elementum
+sodales ante. Pellentesque gravida scelerisque ligula, id posuere libero
+vehicula et. Nam tortor mauris, efficitur quis mi vitae, tincidunt
+iaculis elit. Cras et egestas nisl. Suspendisse feugiat massa lectus, ut
+dapibus velit ullamcorper ac. Integer fermentum magna sed dolor
+tincidunt, ac vehicula velit cursus. Nam ac consequat tortor, eget
+scelerisque sem. Praesent efficitur velit justo, quis varius neque
+placerat at.</p>
+</section>
+<p>The html for this accordion div is this:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> uk-accordion style</span><span class="op">=</span><span class="st">&#39;pading-bottom: 5vh&#39;</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">&#39;uk-open&#39;</span><span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> id</span><span class="op">=</span><span class="st">&#39;code-file&#39;</span><span class="ot"> class</span><span class="op">=</span><span class="st">&#39;uk-accordion-title&#39;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&#39;#&#39;</span><span class="dt">&gt;</span>Test Header<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&#39;uk-accordion-content&#39;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&#39;padding-bottom:5vh; margin-bottom:5vh&#39;</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>I made a VSCode style json snippet for this:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="er">&quot;Accordion&quot;:</span> <span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;&lt;ul uk-accordion style=&#39;pading-bottom: 5vh&#39;&gt; &lt;li class=&#39;uk-open&#39;&gt;&quot;</span><span class="ot">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;&lt;a id=&#39;code-file&#39; class=&#39;uk-accordion-title&#39; href=&#39;#&#39;&gt;${1:header}&lt;/a&gt;&quot;</span><span class="ot">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;&lt;div class=&#39;uk-accordion-content&#39; style=&#39;padding-bottom:5vh; margin-bottom:5vh&#39;&gt;&quot;</span><span class="ot">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;${2:content}&quot;</span><span class="ot">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;&lt;/div&gt;&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Accordion Content&quot;</span><span class="fu">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;prefix&quot;</span><span class="fu">:</span> <span class="st">&quot;acc&quot;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code></pre></div>
+<hr />
+<h2 id="admonitions-callouts">Admonitions / Callouts</h2>
+<p>Admonitions can be useful as a brief pause to what is being
+shown.</p>
+<blockquote class="info">
+<span class="uk-label">Info</span>
+<p>
+This is some extra info.
+</p>
+<p>
+Highlights information that users should take into account, even when
+skimming.
+</p>
+<div>
+<p><img src="./images/info.png" width=500px style=""></img></p>
+</div>
+</blockquote>
+<blockquote class="warning">
+<span class="uk-label uk-label-warning">Warning</span>
+<p>
+This is a warning. Don’t do this!
+</p>
+</blockquote>
+<blockquote class="error">
+<span class="uk-label uk-label-danger">Error</span>
+<p>
+This is an error. Please please don’t do this. Dangerous!
+</p>
+</blockquote>
+<blockquote class="success">
+<span class="uk-label uk-label-success">Success</span>
+<p>
+Some good news, it works! Success.
+</p>
+</blockquote>
+<p>I added snippets for all of these.</p>
+<hr /></div>
   </div>
 
   <!-- highlightjs badge -->

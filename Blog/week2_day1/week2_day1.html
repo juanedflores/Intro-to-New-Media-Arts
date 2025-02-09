@@ -11,22 +11,31 @@
   <!-- UIKit files -->
   <link rel="stylesheet" href="../../css/uikit.min.css" />
   <script src="../../js/uikit.min.js"></script>
-  <script src="../../js/uikit-icons.min.js"></script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
 
-  <!-- Fonts -->
-  <!-- Ajax Style -->
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
   <!-- Code Style -->
-  <link rel="stylesheet" href="../../../css/pojoaque.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+  <link rel="stylesheet" href="../../css/pojoaque.css" />
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+  <script src="../../js/highlight.min.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
 
   <!-- hljs -->
   <script>
-    hljs.highlightAll();
+      hljs.highlightAll();
   </script>
 
   <!-- Makes Inline Code Similar Style to hljs theme -->
@@ -131,7 +140,8 @@
     .code-badge {
       display: flex !important;
       flex-direction: row !important;
-      background: #555 !important;
+      background: #4444dd !important;
+      opacity: 0.9 !important;
       padding: 8px !important;
       position: absolute !important;
       right: 0px !important;
@@ -162,6 +172,7 @@
       z-index: -1;
     }
   </style>
+  <!--background: #555 !important;-->
 
   <!-- Blog Style CSS -->
   <link rel="stylesheet" href="../../css/blog_style.css" />
@@ -175,7 +186,7 @@
   <div class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 50px">
     <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)"
       uk-toggle="target: #blog-toc">
-      <span class="" uk-icon="icon: list; ratio: 2.0;" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+      <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
     </button>
 
     <h2 id="heading" style="width: 100%; pointer-events: none"
@@ -218,7 +229,7 @@ Introduction to Tinkercad and your first circuit</a></li>
     </div>
 
     <!-- BODY -->
-    <div id=" ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><h1
+    <div id="ArticleBody" class="uk-container uk-margin uk-overflow-auto" style="overflow-y: scroll"><h1
 id="introducing-the-arduino-nano-33-iot">Introducing the Arduino Nano 33
 IoT</h1>
 <p><span> <img
@@ -359,19 +370,27 @@ Library</a></li>
   <script src="../../js/highlightjs-badge.js"></script>
 
   <script>
+    // apply HighlightJS
     var pres = document.querySelectorAll('pre>code');
     for (var i = 0; i < pres.length; i++) {
       hljs.highlightBlock(pres[i]);
     }
+
+    // add HighlightJS-badge (options are optional)
     var options = {
-      contentSelector: '#right-col',
+      // optional
+      contentSelector: '#ArticleBody',
+
       // CSS class(es) used to render the copy icon.
-      copyIconClass: 'fa fa-copy',
+      copyIconClass: 'fas fa-solid fa-clone',
       // CSS class(es) used to render the done icon.
-      checkIconClass: 'fa fa-check text-success',
+      checkIconClass: 'fas fa-check text-success',
     };
     window.highlightJsBadge(options);
   </script>
+
+  <script src="../../js/styling.js"></script>
+
   <br />
   <br />
   <br />

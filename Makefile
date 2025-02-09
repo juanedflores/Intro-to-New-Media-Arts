@@ -1,7 +1,9 @@
 PANDOCFLAGSHTML =                                           \
   --table-of-contents                                       \
+  --mathjax                                                 \
+  --standalone                                              \
   --toc-depth=4                                             \
-  --from=markdown+markdown_in_html_blocks+bracketed_spans   \
+  --from=markdown+markdown_in_html_blocks                   \
   --template=./pandoc/blog_template.html
 
 # a wildcard that searches recursively

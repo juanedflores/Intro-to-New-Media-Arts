@@ -6,6 +6,14 @@ pre {
   padding: 0;
 }
 
+bold {
+}
+
+mark {
+  color: rgb(56, 79, 172);
+  background: rgb(243, 201, 91);
+}
+
 p  {
   font-weight: bold !important;
 }
@@ -37,6 +45,8 @@ p  {
 
 strong {
   text-decoration: underline;
+  font-family: 'Inter-Black';
+  font-weight: bolder;
 }
 
 /*html {*/
@@ -84,12 +94,15 @@ p {
 h1 {
   text-align: center;
   padding-bottom: 10px;
-  border-bottom: black solid 4px;
+  padding-top: 10px;
+  border-bottom: rgb(56, 79, 172) ridge 8px;
   text-transform: uppercase;
   color: black;
   font-family: 'Inter-Black';
   font-weight: bolder;
   font-size: 40px;
+  background-color: rgb(243, 201, 91);
+  color: rgb(56, 79, 172);
 }
 
 h2,
@@ -246,6 +259,41 @@ blockquote {
   background: #cfcfcf;
   padding: 10px;
   font-size: 18px;
+  /*border-left: blue solid 5px;*/
+}
+
+.info {
+  background: #b3c9ff;
+  padding: 10px;
+  font-size: 18px;
+  border-left: blue solid 5px;
+  padding-left: 20px;
+  font-style: normal;
+}
+
+.info > p {
+  font-weight: bold;
+}
+
+.warning {
+  background: #f9e7b8;
+  padding: 10px;
+  font-size: 18px;
+  border-left: rgb(243, 201, 91) solid 5px;
+}
+
+.error {
+  background: #fba99e;
+  padding: 10px;
+  font-size: 18px;
+  border-left: rgb(197, 75, 59) solid 5px;
+}
+
+.success {
+  background: #d4ffef;
+  padding: 10px;
+  font-size: 18px;
+  border-left: #32d296 solid 5px;
 }
 
 .uk-card {
