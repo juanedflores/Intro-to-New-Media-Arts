@@ -1,0 +1,295 @@
+/*    
+    Copyright (C) Paul Falstad and Iain Sharp
+    
+    This file is part of CircuitJS1.
+
+    CircuitJS1 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version.
+
+    CircuitJS1 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CircuitJS1.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package com.lushprojects.circuitjs1.client;
+
+import java.util.Vector;
+
+class WireRouter {
+    /*
+    CirSim sim;
+    int x, y, x2, y2;
+    
+    WireRouter() {
+	sim = CirSim.theSim;
+    }
+    
+        int gridSizeX, gridSizeY, map[][];
+        Rectangle bounds;
+        
+        void calcWireMap() {
+            int i;
+            if (sim.elmList == null)
+        		return;
+            bounds = sim.getCircuitBounds();
+            bounds.enlargeToContain(x,  y);
+            bounds.enlargeToContain(x2, y2);
+            int gridSize = sim.gridSize;
+            
+            // make extra room in case we need it
+            bounds = new Rectangle(bounds.x-gridSize*2, bounds.y-gridSize*2, bounds.width+gridSize*4, bounds.height+gridSize*4);
+            gridSizeX = (int) (bounds.width / gridSize + 1);
+            gridSizeY = (int) (bounds.height / gridSize + 1);
+            map = new int[gridSizeX][gridSizeY];
+            for (i = 0; i != sim.elmList.size(); i++) {
+        		CircuitElm elm = sim.elmList.get(i);
+        		elm.addToRoutingMap(this);
+            }
+            int x,y;
+            for (y = 0; y != gridSizeY; y++) {
+        		String str = "";
+        		for (x = 0; x != gridSizeX; x++)
+        		    str += map[x][y] & 3;
+        		sim.console(str);
+            }
+        }
+        
+        void addWireToRoutingMap(int xa, int ya, int xb, int yb) {
+            int gridSize = sim.gridSize;
+		if (xa != xb) {
+		    int x1 = (int) ((Math.min(xa, xb)-bounds.x) / gridSize);
+		    int x2 = (int) ((Math.max(xa, xb)-bounds.x) / gridSize);
+		    int y  = (int) ((ya-bounds.y) / gridSize);
+		    int xi;
+		    for (xi = x1; xi < x2; xi++)
+			map[xi][y] |= 1;
+		    map[x1-1][y] |= 4;
+		    map[x1][y] |= 8;
+		    map[x1][y-1] |= 8;
+		    map[x2][y] |= 4;
+		    map[x2][y] |= 8;
+		    map[x2][y-1] |= 8;
+		} else if (ya != yb) {
+		    int y1 = (int) ((Math.min(ya, yb)-bounds.y) / gridSize);
+		    int y2 = (int) ((Math.max(ya, yb)-bounds.y) / gridSize);
+		    int x  = (int) ((xa-bounds.x) / gridSize);
+		    int yi;
+		    for (yi = y1; yi < y2; yi++)
+			map[x][yi] |= 2;
+		    map[x][y1-1] |= 8;
+		    map[x][y2] |= 8;
+		    map[x][y1] |= 4;
+		    map[x-1][y1] |= 4;
+		    map[x][y2] |= 4;
+		    map[x-1][y2] |= 4;
+		}
+        }
+        
+        void addRect(int x1p, int y1p, int x2p, int y2p) {
+            int x, y;
+            if (x1p > x2p) {
+        		x = x1p; x1p = x2p; x2p = x;
+            }
+            if (y1p > y2p) {
+        		y = y1p; y1p = y2p; y2p = y;
+            }
+            int x1 = (int)Math.ceil ((x1p-bounds.x)/(double)sim.gridSize);
+            int x2 = (int)Math.floor((x2p-bounds.x)/(double)sim.gridSize);
+            int y1 = (int)Math.ceil ((y1p-bounds.y)/(double)sim.gridSize);
+            int y2 = (int)Math.floor((y2p-bounds.y)/(double)sim.gridSize);
+            
+            // don't allow wires to be routed inside the rectangle
+            for (x = x1; x < x2; x++) {
+        		for (y = y1; y < y2; y++)
+        		    map[x][y] |= 3;
+        		map[x][y2] |= 1;
+            }
+            for (y = y1; y < y2; y++)
+        		map[x][y] |= 2;
+            
+            // check if x1 or x2 are slightly outside the grid, and if so, prevent wires to be routed over the boundary 
+            if (x1p-bounds.x < x1*sim.gridSize)
+        		for (y = y1; y <= y2; y++)
+        		    map[x1-1][y] |= 1;
+            if (x2p-bounds.x > x2*sim.gridSize)
+        		for (y = y1; y <= y2; y++)
+        		    map[x2][y] |= 1;
+            if (y1p-bounds.y < y1*sim.gridSize)
+        		for (x = x1; x <= x2; x++)
+        		    map[x][y1-1] |= 2;
+            if (y2p-bounds.y > y2*sim.gridSize)
+        		for (x = x1; x <= x2; x++)
+        		    map[x][y2] |= 2;
+        	}
+        
+        void addComponent(Point p1, Point p2, int hw) {
+//            hw = sim.gridSize;
+            if (p1.x == p2.x)
+        		addRect(p1.x-hw, p1.y, p1.x+hw, p2.y);
+            else if (p1.y == p2.y)
+        		addRect(p1.x, p1.y-hw, p2.x, p1.y+hw);
+        }
+
+        void addComponentWithValues(Point p1, Point p2, int hw) {
+          if (p1.x == p2.x)
+      		addRect(p1.x-hw, p1.y, p1.x+sim.gridSize, p2.y);
+          else if (p1.y == p2.y)
+      		addRect(p1.x, p1.y-sim.gridSize, p2.x, p1.y+hw);
+      }
+        
+        class QueueEntry {
+            QueueEntry(int x_, int y_, int dir_) { x = x_; y = y_; dir = dir_; }
+            int x, y, dir;
+        };
+
+        Vector<Point> points;
+        
+        void routeWire(int x_, int y_, int x2_, int y2_) {
+            x = x_;
+            y = y_;
+            x2 = x2_;
+            y2 = y2_;
+            if (x == x2 && y == y2)
+        		return;
+            calcWireMap();
+            points = new Vector<Point>();
+            int gridSize = sim.gridSize;
+            int xe = (x-bounds.x)/gridSize;
+            int ye = (y-bounds.y)/gridSize;
+            int x2e = (x2-bounds.x)/gridSize;
+            int y2e = (y2-bounds.y)/gridSize;
+            sim.console("routewire " + xe + "," + ye + " " + x2e + "," + y2e);
+            sim.console("gridsize = " + gridSizeX + " " + gridSizeY);
+            
+            map[xe][ye] &= ~(4|8);
+            map[xe-1][ye] &= ~4;
+            map[xe][ye-1] &= ~8;
+            map[x2e][y2e] &= ~(4|8);
+            map[x2e-1][y2e] &= ~4;
+            map[x2e][y2e-1] &= ~8;
+            
+//            points.add(new Point(x, y));
+//            if (x != x2)
+//        		points.add(new Point(x2, y));
+//            points.add(new Point(x2, y2));
+ * 
+            int leeMap[][] = new int[gridSizeX][gridSizeY];
+            Vector<QueueEntry> queue = new Vector<QueueEntry>();
+            queue.add(new QueueEntry(x2e, y2e, 0));
+            queue.add(new QueueEntry(x2e, y2e, 1));
+            leeMap[x2e][y2e] = 1;
+{
+            int i;
+            for (i = 0; i != gridSizeX; i++)
+		leeMap[i][0] = leeMap[i][gridSizeY-1] = 10000;
+            for (i = 0; i != gridSizeY; i++)
+		leeMap[0][i] = leeMap[gridSizeX-1][i] = 10000;
+}
+sim.console("lm " + x2e + " " + y2e + " " + map[x2e][y2e]);
+               
+            int steps = 0;
+            Vector<QueueEntry> newQueue = new Vector<QueueEntry>();
+            int dir = 0;
+            while (true) {
+        		if (queue.size() == 0) {
+        		    sim.console("switching to newqueue");
+        		    queue = newQueue;
+        		    newQueue = new Vector<QueueEntry>();
+        		    if (queue.size() == 0)
+        			break;
+        		}
+//        		sim.debugger();
+        		steps++;
+        		if (steps > 100000) {
+            		sim.console("couldn't find route!");
+            		sim.debugger();
+            		points.add(new Point(x2, y2));
+            		return;
+        		}
+//        		sim.console("steps = " + steps);
+        		QueueEntry qe = queue.remove(0);
+        		int xi = qe.x;
+        		int yi = qe.y;
+        		dir = qe.dir;
+        		if (xi == xe && yi == ye) {
+//        		    sim.console("got xe ye " + xe + " " + ye);
+        		    break;
+        		}
+        		int v = leeMap[xi][yi];
+//        		sim.console("processing " + xi +"," + yi + " = " + v);
+        		if (dir == 0) {
+        		    if ((map[xi][yi] & 5) == 0 && leeMap[xi+1][yi] == 0) {
+        			queue.add(new QueueEntry(xi+1, yi, 0));
+        			leeMap[xi+1][yi] = v+1;
+        		    }
+        		    if ((map[xi-1][yi] & 5) == 0 && leeMap[xi-1][yi] == 0) {
+        			queue.add(new QueueEntry(xi-1, yi, 0));
+        			leeMap[xi-1][yi] = v+1;
+        		    }
+        		    newQueue.add(new QueueEntry(xi, yi, 1));
+        		}
+        		if (dir == 1) {
+        		    if ((map[xi][yi] & 10) == 0 && leeMap[xi][yi+1] == 0) {
+        			queue.add(new QueueEntry(xi, yi+1, 1));
+        			leeMap[xi][yi+1] = v+1;
+        		    }
+        		    if ((map[xi][yi-1] & 10) == 0 && leeMap[xi][yi-1] == 0) {
+        			queue.add(new QueueEntry(xi, yi-1, 1));
+        			leeMap[xi][yi-1] = v+1;
+        		    }
+        		    newQueue.add(new QueueEntry(xi, yi, 0));
+        		}
+            }
+            points.add(new Point(x, y));
+            if (queue.size() == 0) {
+        		sim.console("couldn't find route!");
+        		sim.debugger();
+        		points.add(new Point(x2, y2));
+        		return;
+            }
+            steps = 0;
+            while (true) {
+//              sim.console("segments = " + (++steps));
+                if (steps++ > 100)
+                    break;
+                int val = leeMap[xe][ye];
+                sim.console("lee " + xe + "," + ye + "," + dir + "= " + val);
+                if (xe == x2e && ye == y2e)
+                    break;
+                if (dir == 0) {
+                    int val1 = leeMap[xe+1][ye];
+                    int val2 = leeMap[xe-1][ye];
+                    if (val1 != 0 && val1 < val && (map[xe][ye] & 5) == 0) {
+                        xe++; val = val1; 
+                    } else if (val2 != 0 && val2 < val && (map[xe-1][ye] & 5) == 0) {
+                        xe--; val = val2;
+                    } else {
+                		dir = 1-dir;
+                		points.add(new Point(bounds.x+gridSize*xe, bounds.y+gridSize*ye));
+                		continue;
+                    }
+                } else {
+                    int val3 = leeMap[xe][ye+1];
+                    int val4 = leeMap[xe][ye-1];
+                    if (val3 != 0 && val3 < val && (map[xe][ye] & 10) == 0) {
+                        ye++; val = val3;
+                    } else if (val4 != 0 && val4 < val && (map[xe][ye-1] & 10) == 0) {
+                        ye--; val = val4;
+                    } else {
+                		dir = 1-dir;
+                		points.add(new Point(bounds.x+gridSize*xe, bounds.y+gridSize*ye));
+                		continue;
+                    }
+                }
+            }
+            sim.console("found route in " + steps + " steps");
+            points.add(new Point(x2, y2));
+        }
+*/
+    }

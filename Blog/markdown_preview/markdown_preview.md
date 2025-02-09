@@ -161,4 +161,8 @@ I added snippets for all of these.
 
 ## Youtube Videos
 
-<iframe class="uk-padding" src="https://www.youtube-nocookie.com/embed/5vRAACeebjI?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false"></iframe>
+<iframe style="padding-top:25px; padding-bottom:25px" src="https://www.youtube-nocookie.com/embed/5vRAACeebjI?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false"></iframe>
+
+## Falstad Circuit Simulation
+
+<iframe id="circuitFrame" src="../../CircuitJS/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKADcQAWbFLnv3pl5UqnWlAkwELMIV7dBGXoTEghakABM6AMwCGAVwA2AFwZG6m8JKixWAJwFOVo-lTDwWAdxAu1S31UFKBYgA" width="800" height="550" uk-responsive></iframe>
