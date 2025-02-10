@@ -1,10 +1,9 @@
 PANDOCFLAGSHTML =                                           \
   --table-of-contents                                       \
   --mathjax                                                 \
-  --standalone                                              \
-  --toc-depth=4                                             \
+  --top-level-division=part                                 \
   --from=markdown+markdown_in_html_blocks                   \
-  --template=./pandoc/blog_template.html
+  # --template=./pandoc/blog_template.html                    \
 
 # a wildcard that searches recursively
 rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
@@ -17,7 +16,7 @@ all: $(HTML)
 
 %.html: %.md
 	@echo $@
-	pandoc $< -o $@ -F "mermaid-filter" $(PANDOCFLAGSHTML)
+	pando --section-divs --number-sections $< -o $@ -F "mermaid-filter" -t html5 $(PANDOCFLAGSHTML)
 
 clean:
 	rm $(HTML)
