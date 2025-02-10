@@ -10,7 +10,6 @@ function table_hl() {
 //}
 
 function sections() {
-  console.log('SECTIONS');
   var all = $('.level2');
   for (var i = 0; i < all.length; i++) {
     if (i % 2 == 0) {

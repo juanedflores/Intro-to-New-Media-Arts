@@ -161,7 +161,7 @@ I added snippets for all of these.
 
 ## Youtube Videos
 
-<iframe style="background: black; margin-top:25px; padding-bottom:25px" src="https://www.youtube-nocookie.com/embed/5vRAACeebjI?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false"></iframe>
+<iframe style="background: black; margin-top:25px; margin-bottom:25px" src="https://www.youtube-nocookie.com/embed/5vRAACeebjI?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false"></iframe>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec lorem a justo tempus finibus quis et urna. Aliquam ac lobortis massa. Nam ultricies dignissim quam. Vestibulum eget rhoncus arcu. Fusce faucibus elit enim, et commodo enim rhoncus vitae. Sed tempor quam quis ex eleifend, vel tristique risus ullamcorper. Vivamus ornare feugiat arcu non porta. Curabitur enim lacus, consequat eget ante eu, elementum finibus felis. Etiam justo leo, feugiat id ligula quis, elementum sodales ante. Pellentesque gravida scelerisque ligula, id posuere libero vehicula et. Nam tortor mauris, efficitur quis mi vitae, tincidunt iaculis elit. Cras et egestas nisl. Suspendisse feugiat massa lectus, ut dapibus velit ullamcorper ac. Integer fermentum magna sed dolor tincidunt, ac vehicula velit cursus. Nam ac consequat tortor, eget scelerisque sem. Praesent efficitur velit justo, quis varius neque placerat at. 
 
@@ -285,3 +285,6 @@ uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
 ```
 
 I use [pandoc](https://pandoc.org/) to convert my markdown file to html upon saving. You can see that pandoc takes my headers and places them in place of the `$toc$` variable.
+
+ddiddn
+d
