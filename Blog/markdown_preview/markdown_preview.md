@@ -181,7 +181,9 @@ This is an applet for electronic circuit simulation.  Press "Run / Stop" to star
 
 The embed this in the website I looked at this [page](https://www.falstad.com/circuit/doc/js-interface.html). I had to download an offline version, put it in my Applications folder, copy the contents of:
 
-`/Applications/CircuitJS1.app/Contents/Resources/app/war`
+```
+/Applications/CircuitJS1.app/Contents/Resources/app/war
+```
 
 to somewhere in this project directory.
 
@@ -283,8 +285,3 @@ uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
 ```
 
 I use [pandoc](https://pandoc.org/) to convert my markdown file to html upon saving. You can see that pandoc takes my headers and places them in place of the `$toc$` variable.
-
-test
-
-ttts
-ddddddddd
