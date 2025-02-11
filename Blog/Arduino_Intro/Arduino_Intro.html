@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="pandoc" />
+
+  <title></title>
+
+  <!-- UIKit files -->
+  <link rel="stylesheet" href="../../css/uikit.min.css" />
+  <script src="../../js/uikit.min.js"></script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+  <!-- Code Style -->
+  <link rel="stylesheet" href="../../css/pojoaque.css" />
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+  <script src="../../js/highlight.min.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+  <!-- hljs -->
+  <script>
+      hljs.highlightAll();
+  </script>
+
+  <!-- Makes Inline Code Similar Style to hljs theme -->
+  <script charset="utf-8">
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+      document.querySelectorAll('p code').forEach((el) => {
+        el.classList.add('language-plaintext');
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
+
+  <style>
+    #left-col {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: #222;
+      width: 260px;
+      z-index: 1;
+    }
+
+    .bar-wrap {
+      padding: 2rem;
+    }
+
+    #right-col {
+      margin-left: 260px;
+    }
+
+    .uk-navbar-container {
+      z-index: 2;
+    }
+
+    #canvas-button {
+      display: none;
+    }
+
+    .uk-logo {
+      font-size: 1.4em;
+    }
+
+    @media screen and (max-width: 700px) {
+      #right-col {
+        margin-left: 0px;
+      }
+
+      #left-col {
+        visibility: hidden;
+      }
+
+      #canvas-button {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 494px) {
+      .uk-logo {
+        font-size: 1em;
+      }
+
+      .uk-navbar-nav>li>a {
+        font-size: 10px;
+      }
+    }
+  </style>
+
+  <style>
+    td.hljs-ln-numbers {
+      text-align: center;
+      color: #ccc;
+      border-right: 1px solid #999;
+      vertical-align: top;
+      padding-right: 5px;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    td.hljs-ln-code {
+      padding-left: 10px;
+    }
+
+    .hljs-ln td.hljs-ln-numbers {
+      padding-left: 10px;
+    }
+
+    code {
+      padding: 15px;
+    }
+
+    .code-badge {
+      display: flex !important;
+      flex-direction: row !important;
+      background: #4444dd !important;
+      opacity: 0.9 !important;
+      padding: 8px !important;
+      position: absolute !important;
+      right: 0px !important;
+    }
+
+    .code-badge-copy-icon {
+      font-size: 1.3em !important;
+    }
+
+    .hide-on-load {
+      display: none;
+    }
+
+    .code-badge-pre {
+      overflow: hidden;
+    }
+
+    .hljs {
+      overflow: auto;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+  <!--background: #555 !important;-->
+
+  <!-- Blog Style CSS -->
+  <link rel="stylesheet" href="../../css/blog_style.css" />
+
+  <!-- Includes other header content if needed -->
+  
+</head>
+
+<!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
+
+<body class="uk-background-fixed" style="background: #3c64a7">
+  <!-- NAV AND HEADING -->
+  <div class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 50px">
+    <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)"
+      uk-toggle="target: #blog-toc">
+      <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    </button>
+
+    <h2 id="heading" style="width: 100%; pointer-events: none"
+      class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+      style="font-family: 'Inter-ExtraLight', serif; color: white">
+      <a class="uk-text" style="color: black; font-weight: normal; font-size: 1em">Intro
+to Arduino</a>
+    </h2>
+  </div>
+
+  <!-- OFFCANVAS -->
+  <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <!-- TABLE OF CONTENTS -->
+    <div id="blog-toc" style="top: 50px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div class="uk-offcanvas-bar">
+        <h3 style="color: white">Table of Contents</h3>
+        <div><ul>
+<li><a href="#arduino-rgb-led-fade-example"
+id="toc-arduino-rgb-led-fade-example">Arduino RGB LED Fade
+Example</a></li>
+</ul></div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="arduino-rgb-led-fade-example" class="level1">
+<h1>Arduino RGB LED Fade Example</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">   Fade</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">   This example shows how to fade an LED on pin 9 using the analogWrite()</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">   function.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">   The analogWrite() function uses PWM, so if you want to change the pin you&#39;re</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">   using, be sure to use another PWM capable pin. On most Arduino, the PWM pins</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">   are identified with a &quot;~&quot; sign, like ~3, ~5, ~6, ~9, ~10 and ~11.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">   This example code is in the public domain.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">   https://www.arduino.cc/en/Tutorial/BuiltInExamples/Fade</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"> */</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> ledr <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> ledg <span class="op">=</span> <span class="dv">11</span><span class="op">;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> ledb <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> brightnessr <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> brightnessg <span class="op">=</span> <span class="dv">90</span><span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> brightnessb <span class="op">=</span> <span class="dv">150</span><span class="op">;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> fadeAmountr <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> fadeAmountg <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> fadeAmountb <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">// the setup routine runs once when you press reset:</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">// declare pin 9 to be an output:</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledr<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledg<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledb<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">// the loop routine runs over and over again forever:</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="co">// set the brightness of pin 9:</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>ledr<span class="op">,</span> brightnessr<span class="op">);</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>ledg<span class="op">,</span> brightnessg<span class="op">);</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    analogWrite<span class="op">(</span>ledb<span class="op">,</span> brightnessb<span class="op">);</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="co">// change the brightness for next time through the loop:</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    brightnessr <span class="op">=</span> brightnessr <span class="op">+</span> fadeAmountr<span class="op">;</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    brightnessg <span class="op">=</span> brightnessg <span class="op">+</span> fadeAmountg<span class="op">;</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    brightnessb <span class="op">=</span> brightnessb <span class="op">+</span> fadeAmountb<span class="op">;</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="co">// reverse the direction of the fading at the ends of the fade:</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>brightnessr <span class="op">&lt;=</span> <span class="dv">0</span> <span class="op">||</span> brightnessr <span class="op">&gt;=</span> <span class="dv">255</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        fadeAmountr <span class="op">=</span> <span class="op">-</span>fadeAmountr<span class="op">;</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>brightnessr <span class="op">&lt;=</span> <span class="dv">0</span> <span class="op">||</span> brightnessr <span class="op">&gt;=</span> <span class="dv">255</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        fadeAmountg <span class="op">=</span> <span class="op">-</span>fadeAmountg<span class="op">;</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>brightnessr <span class="op">&lt;=</span> <span class="dv">0</span> <span class="op">||</span> brightnessr <span class="op">&gt;=</span> <span class="dv">255</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        fadeAmountb <span class="op">=</span> <span class="op">-</span>fadeAmountb<span class="op">;</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="co">// wait for 30 milliseconds to see the dimming effect</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    delay<span class="op">(</span><span class="dv">30</span><span class="op">);</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section></div>
+  </div>
+
+  <!-- highlightjs badge -->
+  <script src="../../js/highlightjs-badge.js"></script>
+
+  <script>
+    // apply HighlightJS
+    var pres = document.querySelectorAll('pre>code');
+    for (var i = 0; i < pres.length; i++) {
+      hljs.highlightBlock(pres[i]);
+    }
+
+    // add HighlightJS-badge (options are optional)
+    var options = {
+      // optional
+      contentSelector: '#ArticleBody',
+
+      // CSS class(es) used to render the copy icon.
+      copyIconClass: 'fas fa-solid fa-clone',
+      // CSS class(es) used to render the done icon.
+      checkIconClass: 'fas fa-check text-success',
+    };
+    window.highlightJsBadge(options);
+  </script>
+
+  <script src="../../js/styling.js"></script>
+
+  <br />
+  <br />
+  <br />
+</body>
+
+</html>
