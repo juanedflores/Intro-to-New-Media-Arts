@@ -4,6 +4,11 @@ title: Intro to Arduino
 
 # Arduino RGB LED Fade Example
 
+## Diagram
+
+![RGB Fritzing Image](images/diagram.png)
+
+## Code
 ```c
 /*
    Fade
