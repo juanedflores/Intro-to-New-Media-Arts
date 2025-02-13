@@ -1,310 +1,190 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>ART 150 - Intro to New Media</title>
-
-  <!-- UIKit files -->
-  <link rel="stylesheet" href="css/uikit.min.css" />
-  <script src="js/uikit.min.js"></script>
-  <script src="js/uikit-icons.min.js"></script>
-
-  <!--Google Fonts-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet" />
-
-  <!--Custom CSS-->
-  <link rel="stylesheet" href="css/custom.css" />
-  <link rel="stylesheet" href="css/blog_style.css" />
-
-  <style>
-    .anonymous-pro-regular {
-      font-family: 'Anonymous Pro', monospace;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .anonymous-pro-bold {
-      font-family: 'Anonymous Pro', monospace;
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    .anonymous-pro-regular-italic {
-      font-family: 'Anonymous Pro', monospace;
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .anonymous-pro-bold-italic {
-      font-family: 'Anonymous Pro', monospace;
-      font-weight: 700;
-      font-style: italic;
-    }
-
-    #left-col {
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-      background-color: #222;
-      width: 260px;
-      z-index: 1;
-    }
-
-    .bar-wrap {
-      padding: 2rem;
-    }
-
-    #right-col {
-      margin-left: 260px;
-    }
-
-    .uk-navbar-container {
-      z-index: 2;
-    }
-
-    #canvas-button {
-      display: none;
-    }
-
-    .uk-logo {
-      font-size: 1.4em;
-    }
-
-    @media screen and (max-width: 700px) {
-      #right-col {
-        margin-left: 0px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ART 150 - Intro to New Media</title>
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="js/jquery3.js"></script>
+    <script>
+      function table_hl() {
+        $('table').addClass('uk-table');
+        $('table').addClass('uk-table-striped');
+        $('table').addClass('uk-table-hover');
+        $('table').addClass('uk-table-middle');
       }
-
-      #left-col {
-        visibility: hidden;
+    </script>
+    <script src="./js/load_pages.js"></script>
+    <script src="./js/styling.js"></script>
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
       }
+    </style>
+  </head>
 
-      #canvas-button {
-        display: block;
-      }
-    }
-
-    @media screen and (max-width: 494px) {
-      .uk-logo {
-        font-size: 1em;
-      }
-
-      .uk-navbar-nav>li>a {
-        font-size: 10px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <!-- NAV BAR FILTER AND SEARCH -->
-  <div uk-filter="target: .js-filter">
-    <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
-      <div class="nav-overlay uk-navbar-left">
-        <!-- OFFCANVAS BUTTON -->
-        <button id="canvas-button" class="uk-button uk-button-default" type="button" style="border: none"
-          uk-toggle="target: #off-canvas;">
-          <span uk-icon="icon: menu; ratio: 1.5;" style="color: black"></span>
+  <body onresize="resize_function()">
+    <div>
+      <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
+        <button id="menu_button" class="uk-button uk-button-default desktop" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #small-menu">
+          <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
         </button>
-
-        <a class="uk-navbar-item uk-logo" href="#" style="border: 1px solid #cccccc">ART 150 - Intro to New Media
-          Arts</a>
-
-        <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="background: #c9c9c9"><a href="index.html">Home / Week Overview</a></li>
-          <li class=""><a href="artist_database.html">Artworks</a></li>
-          <li class=""><a href="electronic_component_database.html">Electronics</a></li>
-          <li class=""><a href="arduino_sketches.html">Arduino</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- TOC -->
-    <aside id="left-col" class="uk-light">
-      <div class="bar-wrap" style="padding-top: 100px">
-        <ul class="uk-nav-default uk-nav-parent-icon uk-nav" uk-switcher="connect: .week-content">
-          <li>
-            <a href="#">Syllabus</a>
-          </li>
-          <li>
-            <a href="#">Material Gathering</a>
-          </li>
-          <li>
-            <a href="#">Useful Resources</a>
+        <button id="menu_button" class="uk-button uk-button-default mobile" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #offcanvas-usage">
+          <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+        </button>
+        <div class="nav-overlay uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="#">INTRO THE NEW MEDIA ART</a>
+          <ul class="uk-navbar-nav" style="">
+            <li class="uk-active" style=""><a href="index.html">Home / Week Overview</a></li>
+            <!--<li class=""><a href="electronic_component_database.html">Electronics</a></li>-->
+            <!--<li class=""><a href="arduino_sketches.html">Arduino</a></li>-->
+          </ul>
+        </div>
+        <div style="background: #222222; width: 275px" id="offcanvas-usage" uk-offcanvas="mode: push">
+          <button style="padding: 20px" class="uk-offcanvas-close" type="button" uk-close></button>
+          <div class="bar-wrap" style="padding-top: 50px">
+            <li class="uk-active" style="list-style-type: none"><a style="padding: 0" class="uk-button" href="index.html">Home / Week Overview</a></li>
+            <!--<li class="" style="list-style-type: none"><a style="padding: 0" class="uk-button" href="electronic_component_database.html">Electronics</a></li>-->
+            <!--<li class="" style="list-style-type: none"><a style="padding: 0" class="uk-button" href="arduino_sketches.html">Arduino</a></li>-->
+            <div id="small-menu" style="padding-top: 20px">
+              <hr />
+              <li>
+                <a class="uk-button uk-button-default" onclick="load_syllabus()" href="#">Syllabus</a>
+              </li>
+              <li>
+                <a class="uk-button uk-button-default" onclick="load_materials()" href="#">Material Sourcing</a>
+              </li>
+              <li>
+                <a class="uk-button uk-button-default" onclick="load_resources()" href="#">Useful Resources</a>
+              </li>
+            </div>
             <hr />
-          </li>
-          <li class="uk-parent">
-            <a href="#">Week 1</a>
-            <ul class="uk-nav-sub">
-              <li>
-                <a href="#Day 1">Day 1</a>
+            <ul class="uk-nav-default uk-nav-parent-icon uk-nav" uk-switcher="connect: .week-content">
+              <!--<li class="">-->
+              <!--  <a onclick="week1()" href="#">Week 1</a>-->
+              <!--</li>-->
+              <!--<li class="">-->
+              <!--  <a onclick="week2()" href="#">Week 2</a>-->
+              <!--</li>-->
+              <!--<li class="uk-active">-->
+              <!--  <a onclick="week3()" href="#">Week 3</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week4()" href="#">Week 4</a>-->
+              <!--</li>-->
+              <li class="uk-inactive">
+                <a onclick="week5()" href="#">Week 5</a>
               </li>
-              <li>
-                <a href="#Day 2">Day 2</a>
-              </li>
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week6()" href="#">Week 6</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week7()" href="#">Week 7</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week8()" href="#">Week 8</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week9()" href="#">Week 9</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week7()" href="#">Week 10</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week8()" href="#">Week 11</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week9()" href="#">Week 12</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week7()" href="#">Week 13</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week8()" href="#">Week 14</a>-->
+              <!--</li>-->
+              <!--<li class="uk-inactive">-->
+              <!--  <a onclick="week9()" href="#">Week 15</a>-->
+              <!--</li>-->
             </ul>
-          </li>
-          <li class="uk-parent uk-active">
-            <a href="#">Week 2</a>
-            <ul class="uk-nav-sub">
-              <li>
-                <a href="#Day 1">Day 1</a>
-              </li>
-              <li>
-                <a href="#Day 2">Day 2</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </aside>
-    <div id="right-col">
-      <div class="uk-container uk-margin-medium-top">
-        <ul class="uk-switcher uk-margin week-content">
-          <!-- COURSE SUMMARY -->
-          <div style="font-family: anonymous-pro-bold">
-            <h3>Course Description</h3>
-
-            <p style="font-size: 20px">
-              Introduction to New Media Arts is a studio based course which provides an overview of the theories and
-              practices of New Media Arts. Students will learn fundamental practices of electronic arts and interaction
-              design including but not limited to circuit design, basic to intermediate
-              electronics, and programming for interactivity. Through hands-on exercises, students will explore basic
-              electronic techniques and use programming to control interactive art, sound, light, and environments.
-              Students will also be introduced to various professional new media artists and
-              their work through survey lectures rooted in the history, theory, and current practices of responsive and
-              new media art.
-            </p>
-            <h4><strong>This course requires a laptop to be used in class. Students will be asked to install all
-                necessary free software:</strong></h4>
-            <ul style="padding-bottom: 4vh">
-              <li>
-                <p style="font-size: 30px">
-                  <a href="https://www.arduino.cc/en/software">Arduino IDE</a>
-                </p>
-              </li>
-            </ul>
+          </div>
+        </div>
+      </nav>
+      <aside id="left-col" class="uk-light">
+        <div class="bar-wrap" style="padding-top: 100px">
+          <div id="small-menu">
             <hr />
-
-            <h3 style="text-algin: center">Course Syllabus</h3>
-            <object class="pdf" data="ART_150_SYLLABUS_JEF.pdf" width="800" height="500"></object>
+            <li>
+              <a class="uk-button uk-button-default" onclick="load_syllabus()" href="#">Syllabus</a>
+            </li>
+            <!--<li>-->
+            <!--  <a class="uk-button uk-button-default" onclick="load_materials()" href="#">Material Sourcing</a>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--  <a class="uk-button uk-button-default" onclick="load_resources()" href="#">Useful Resources</a>-->
+            <!--</li>-->
           </div>
-          <div>
-            <h3>Material Gathering</h3>
-            <ul>
-              <li>
-                <a href="https://www.servocity.com/">Servocity</a>
-              </li>
-              <li>
-                <a href="https://openbuildspartstore.com/">Openbuilds</a>
-              </li>
-              <li>
-                <a href="https://www.mcmaster.com/products/power-transmission/">Mcmaster-Carr: Power Transmission</a>
-              </li>
-              <li>
-                <a href="https://www.sparkfun.com/categories/31">Sparkfun: Robotics</a>
-              </li>
-              <li>
-                <a
-                  href="https://www.vexrobotics.com/catalogsearch/result/?q=__empty__&vex_product_type=Motion&vex_site=product_hits&zendesk_vexroboticshelp_articles%5BrefinementList%5D%5Blocale.name%5D%5B0%5D=English">Vexrobotics</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>Useful Resources</h3>
-            <h4>Online Complimentary Learning Material</h4>
-            <ul>
-              <li>
-                <a href="https://makeabilitylab.github.io/physcomp/">makeabilitylab</a>
-              </li>
-              <li>
-                <a href="https://itp.nyu.edu/physcomp/introduction-to-the-nano-33-iot/">ITP Physical Computing Course
-                  with Arduino Nano 33 IoT</a>
-              </li>
-            </ul>
-            <h4>Modern, Contemporary and Media Art History + Databases</h4>
-            <ul>
-              <li>
-                <a href="https://smarthistory.org/">SmArtHistory</a>
-              </li>
-              <li>
-                <a href="https://www.ubu.com/">UbuWeb</a>
-              </li>
-              <li>
-                <a href="http://www.mediaartnet.org/">Media Art Net</a>
-              </li>
-              <li>
-                <a href="https://artelectronicmedia.com/en/">Art and Electronic Media</a>
-              </li>
-              <li>
-                <a href="https://channel.louisiana.dk/topics/art">Louisiana Channel</a>
-              </li>
-              <li>
-                <a href="https://www.vdb.org/">Video Data Bank</a>
-              </li>
-            </ul>
-            <h4>Books / Magazines / Blogs:</h4>
-            <ul>
-              <li>
-                <a href="https://cabaret.co.uk/product/cabaret-mechanical-movement/">Book: Cabaret Mechanical
-                  Movement</a>
-              </li>
-              <li>
-                <a href="https://rhizome.org/">Rhizome</a>
-                <span> - leading media art publication, including ArtBase, an archive of digital art.</span>
-              </li>
-            </ul>
-          </div>
-          <!-- WEEK 1 -->
-          <div>
-            <h1 id="Day 1">Tuesday 14th, 2025</h1>
-            <section class="slides_section">
-              <h2 class="section_header">Slides</h2>
-              <a href="weeks/week_1_day1/index.html">(Click here to open in new tab)</a>
-              <embed type="text/html" src="weeks/week_1_day1/index.html" width="100%" height="500px"
-                style="border: solid black 1px" />
-              <h2 class="section_header">Notes</h2>
-              <a href="Blog/week1_day1/week1_day1.html">(Click here to open in new tab)</a>
-              <embed type="text/html" src="Blog/week1_day1/week1_day1.html" width="100%" height="500px"
-                style="border: solid black 1px" />
-            </section>
-
-            <hr />
-
-            <h1 id="Day 2">Thursday 16th, 2025</h1>
-            <section>
-              <embed type="text/html" src="weeks/week_1_day2/index.html" width="100%" height="500px" />
-            </section>
-            <hr style="padding-bottom: 10vh" />
-          </div>
-          <!-- WEEK 2 -->
-          <div>
-            <h1 id="Day 2">Thursday 23rd, 2025</h1>
-            <section class="slides_section">
-              <h2 class="section_header">Slides</h2>
-              <a href="weeks/week_2_day1/index.html">(Click here to open in new tab)</a>
-              <embed type="text/html" src="weeks/week_2_day1/index.html" width="100%" height="500px"
-                style="border: solid black 1px" />
-              <h2 class="section_header">Notes</h2>
-              <a href="Blog/week2_day1/week2_day1.html">(Click here to open in new tab)</a>
-              <embed type="text/html" src="Blog/week2_day1/week2_day1.html" width="100%" height="500px"
-                style="border: solid black 1px" />
-              <a href="Blog/week2_day1/week2_day1.html">(Click here to open in new tab)</a>
-              <!--<hr style="padding-bottom: 10vh" />-->
-            </section>
-          </div>
-        </ul>
-      </div>
+          <hr />
+          <ul class="uk-nav-default uk-nav-parent-icon uk-nav" uk-switcher="connect: .week-content">
+            <!--<li class="">-->
+            <!--  <a onclick="week1()" href="#">Week 1</a>-->
+            <!--</li>-->
+            <!--<li class="">-->
+            <!--  <a onclick="week2()" href="#">Week 2</a>-->
+            <!--</li>-->
+            <!--<li class="uk-active">-->
+            <!--  <a onclick="week3()" href="#">Week 3</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week4()" href="#">Week 4</a>-->
+            <!--</li>-->
+            <li class="uk-active">
+              <a onclick="week5()" href="#">Week 5</a>
+            </li>
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week6()" href="#">Week 6</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week7()" href="#">Week 7</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week8()" href="#">Week 8</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week9()" href="#">Week 9</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week7()" href="#">Week 10</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week8()" href="#">Week 11</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week9()" href="#">Week 12</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week7()" href="#">Week 13</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week8()" href="#">Week 14</a>-->
+            <!--</li>-->
+            <!--<li class="uk-inactive">-->
+            <!--  <a onclick="week9()" href="#">Week 15</a>-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </aside>
+      <div id="right-col"></div>
     </div>
-  </div>
-</body>
-
+    <script>
+      week5();
+    </script>
+  </body>
 </html>

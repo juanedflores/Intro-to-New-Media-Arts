@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$ $if(date-meta)$
+    <meta name="date" content="$date-meta$" />
+    $endif$
+
+    <title>$if(heading)$$heading$$endif$</title>
+
+    <link rel="stylesheet" href="./css/uikit.min.css" />
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/uikit-icons.min.js"></script>
+    <script src="./js/inline.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
+
+    <style type="text/css" media="screen">
+      .cardtitle {
+        font-family: 'Prompt', sans-serif;
+        font-size: 18px;
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #555 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
+    <!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
+
+    $for(header-includes)$ $header-includes$ $endfor$
+  </head>
+
+  <body>
+    <div class="uk-container uk-margin-large-bottom">
+      <div class="uk-container uk-background-default" uk-sticky="show-on-up: true; animation: uk-animation-slide-top">
+        <div uk-grid>
+          <div class="uk-align-center">
+            <!-- HEADING -->
+            $if(heading)$
+            <h2 class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom">
+              <a class="uk-link-heading" href="./index.html">
+                <span class="uk-text-background-primary uk-text-bold" style="font-family: 'Frank Ruhl Libre', serif">
+                  Juan Ed
+                  <del class="uk-text-light">uardo</del>
+                  Flores
+                </span>
+              </a>
+            </h2>
+            $endif$
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="uk-button uk-button-default uk-width-expand" type="button"><span uk-icon="icon: menu"></span></button>
+            <div id="dropdown" class="uk-text-center" uk-dropdown="pos: bottom-justify; delay-hide: 50">
+              <ul class="uk-nav uk-dropdown-nav">
+                <li><a href="./projects.html">Work</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./cv.html">CV</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="uk-container uk-width-1-2@s uk-position-absolute">
+          <button class="uk-transition-fade uk-text-muted uk-button uk-button-link uk-align-left uk-background-muted" uk-toggle="target: #work-filter">[ filter ]</button>
+        </div>
+
+        <div class="uk-container uk-width-1-2@s">
+          <hr />
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="uk-width-2-3@s uk-align-center" id="contentArea" uk-filter="target: .js-filter">
+        <div class="uk-child-width-1-2@s uk-text-center" uk-grid="masonry: true">
+          <!-- OFFCANVAS FILTER -->
+          <div id="work-filter" uk-offcanvas>
+            <div class="uk-offcanvas-bar">
+              <button class="uk-offcanvas-close uk-padding-small uk-position-top-right" type="button" uk-close></button>
+              <div uk-filter="target: .js-filter">
+                <ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
+                  <li class="uk-background-primary uk-width-3-4" uk-filter-control=".all">
+                    <a href="#">All Projects</a>
+                  </li>
+                  <li uk-filter-control=".printmaking">
+                    <a href="#">Printmaking</a>
+                  </li>
+                  <li uk-filter-control=".sculpture">
+                    <a href="#">Sculpture</a>
+                  </li>
+                  <li uk-filter-control=".video">
+                    <a href="#">Video</a>
+                  </li>
+                  <li uk-filter-control=".painting">
+                    <a href="#">Painting</a>
+                  </li>
+                  <li uk-filter-control=".sound">
+                    <a href="#">Sound</a>
+                  </li>
+                  <li uk-filter-control=".live-coding">
+                    <a href="#">Live Coding</a>
+                  </li>
+                  <li uk-filter-control=".installation">
+                    <a href="#">Installation</a>
+                  </li>
+                  <li uk-filter-control=".performance">
+                    <a href="#">Performance</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <ul class="js-filter uk-child-width-1-2@s uk-text-center" uk-grid="masonry: true">
+            <li class="video painting installation all">
+              <a href="./work/residue.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-link uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    Residue
+                  </h5>
+                  <img src="portfolio/residue/residue_004.jpg" alt="residue" uk-image />
+                </div>
+              </a>
+            </li>
+            <li class="printmaking sculpture installation all">
+              <a href="./work/stations.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    Stations
+                  </h5>
+                  <img src="./portfolio/stations/stations_001.JPG" alt="stations" uk-image />
+                </div>
+              </a>
+            </li>
+            <li class="sound installation all">
+              <a href="./work/spectrum.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    Spectrum
+                  </h5>
+                  <img src="./portfolio/spectrum/spectrum_002.jpg" alt="spectrum" uk-image />
+                </div>
+              </a>
+            </li>
+            <li class="installation creative-coding interactive all">
+              <a href="./work/post-data.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    Post-Data
+                  </h5>
+                  <img src="./portfolio/post-data/post-data_004.jpg" alt="post-data" uk-image />
+                </div>
+              </a>
+            </li>
+            <li class="sound all">
+              <a href="./work/toy-instruments.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    Toy Instrument Compositions
+                  </h5>
+                  <img src="./portfolio/toy-instruments/toy-instruments_005.jpg" alt="toy-instruments" uk-image />
+                </div>
+              </a>
+            </li>
+            <li class="live-coding performance creative-coding all">
+              <a href="./work/these-eyes.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    These Eyes
+                  </h5>
+                  <img src="./portfolio/these-eyes/these-eyes_002.jpg" alt="these-eyes" uk-image />
+                </div>
+              </a>
+            </li>
+            <li class="performance sound all">
+              <a href="./work/transmitter.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    Transmitter
+                  </h5>
+                  <img src="./portfolio/transmitter/transmitter_007.jpg" alt="transmitter" uk-image />
+                </div>
+              </a>
+            </li>
+            <li class="creative-coding all">
+              <a href="./work/debris.html">
+                <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
+                  <h5 class="cardtitle">
+                    <span class="uk-link-heading"></span>
+                    Debris
+                  </h5>
+                  <img src="./portfolio/debris/debris_002.png" alt="debris" uk-image />
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -17,10 +18,7 @@
     <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
-      < !--Ajax Style-- >
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
     <!-- Code Style -->
@@ -32,19 +30,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon" />
-
     <!-- hljs -->
     <script>
       hljs.highlightAll();
     </script>
-
-    <style>
-      body,
-      html {
-        background: rgb(210, 230, 250);
-      }
-    </style>
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
@@ -192,28 +181,22 @@
 
   <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
 
-  <body class="uk-background-fixed">
+  <body class="uk-background-fixed" style="background: #3c64a7">
     <!-- NAV AND HEADING -->
-    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
+    <div class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 50px">
       <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
         <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
       </button>
 
-      <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../index.html">PROTOTYPING METHODS LAB</a>
-        <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html">$title$</a></li>
-        </ul>
-      </div>
-      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text">$title$</a>-->
-      <!--</h2>-->
-    </nav>
+      <h2 id="heading" style="width: 100%; pointer-events: none" class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: white">
+        <a class="uk-text" style="color: black; font-weight: normal; font-size: 1em">$title$</a>
+      </h2>
+    </div>
 
     <!-- OFFCANVAS -->
     <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
       <!-- TABLE OF CONTENTS -->
-      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div id="blog-toc" style="top: 50px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div>$toc$</div>
@@ -252,8 +235,5 @@
     <br />
     <br />
     <br />
-    <!--<script>-->
-    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
-    <!--</script>-->
   </body>
 </html>
