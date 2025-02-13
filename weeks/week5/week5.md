@@ -57,7 +57,7 @@ title:
 
 <li class="week3 basic_equipment all">
 <div>
-<a href="/Arduino/sweep/sweep.html">
+<a href="./Arduino/sweep/sweep.html">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7FCBCD">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">Servo Motor Sweep</h3>
