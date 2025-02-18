@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../css/uikit.min.css" />
+    <script src="../../js/uikit.min.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../css/pojoaque.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+    <script src="../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../css/custom.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
+      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
+        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+      </button>
+
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../index.html">PROTOTYPING METHODS LAB</a>
+        <ul class="uk-navbar-nav" style="">
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">week
+6</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">week 6</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#button" id="toc-button">Button</a>
+<ul>
+<li><a href="#how-does-a-button-work"
+id="toc-how-does-a-button-work">How does a button work?</a></li>
+<li><a href="#circuit-demonstration"
+id="toc-circuit-demonstration">Circuit Demonstration</a></li>
+<li><a href="#the-button-sketch" id="toc-the-button-sketch">The Button
+Sketch</a></li>
+<li><a href="#in-tinkercad" id="toc-in-tinkercad">In TinkerCAD</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="button" class="level1">
+<h1>Button</h1>
+<section id="how-does-a-button-work" class="level2">
+<h2>How does a button work?</h2>
+<p>The button is just a simple way of completing or breaking a circuit
+with the simple act of “pushing” or “pressing” a button.</p>
+<p>You could just manually join or unjoin two bare wires together to do
+this, but a button makes this convenient.</p>
+<p>Often electronics kits come with a cheap button that looks like
+this:</p>
+<div>
+<p><img src="./images/button.png" width=400 style=""></img></p>
+</div>
+<p>But it can take many forms and sizes.</p>
+<div>
+<p><img src="./images/buttons.jpg" width=400 style=""></img></p>
+</div>
+<p>Generally, the pinout looks something like this:</p>
+<div>
+<p><img src="./images/pinout.gif" width=300 style=""></img></p>
+</div>
+<p>Here is a screenshot in Fritzing to show that the pins in red are
+connected whether the button is pressed or not. Same with the blue
+pins.</p>
+<div>
+<p><img src="./images/fritzing.png" width=400 style=""></img></p>
+</div>
+<hr />
+</section>
+<section id="circuit-demonstration" class="level2">
+<h2>Circuit Demonstration</h2>
+<p>Let’s do a circuit that turns an LED on when we press the button
+without any programming.</p>
+<div>
+<p><img src="./images/button_analog.png" width=400 style=""></img></p>
+</div>
+<p>First I connect the button so that it crosses over the middle of the
+breadboard. It might be easier to think of this middle line as a river,
+and the button as a bridge. Also notice that if you were to squish the
+button like a bug, the legs spread out to resemble more like a
+bridge.</p>
+<p>Next I placed an LED on one side of the button, with one leg (the
+cathode) connected to the right side of the bridge.</p>
+<p>On the left side of the bridge I placed the current limiting resistor
+for the LED. This is connected to ground.</p>
+<div>
+<p><img src="./images/button_analog2.png" width=400 style=""></img></p>
+</div>
+<p>The last step would be to connect the positive rail to the <span
+style="color:red"><strong>anode</strong></span>.</p>
+<p>Pressing the button should now light up the LED. This is because when
+you press the button, you are <strong>completing the circuit</strong>.
+When you release, you are <strong>breaking</strong> the circuit.</p>
+<div>
+<p><img src="./images/tinkercad1.png" width=600 style=""></img></p>
+</div>
+<p>By the way, because we have power going through each side of the
+power rails, an alternative way of wiring this is like this:</p>
+<div>
+<p><img src="./images/tinkercad2.png" width=600 style=""></img></p>
+</div>
+<p>Do you see why this completes the circuit?</p>
+<hr />
+</section>
+<section id="the-button-sketch" class="level2">
+<h2>The Button Sketch</h2>
+<p>Go to:</p>
+<p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
+<strong>02.Digital</strong> &gt; <strong>Button</strong></p>
+<p>This is <code>Button.ino</code>.</p>
+<p>Of course we should always look at the link provided in the block
+comment:</p>
+<p><a
+href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button</a></p>
+<div>
+<p><img src="https://docs.arduino.cc/static/fb8449b4834dfbbf3c03223c8bc3e5b5/29114/schematic.png" width=100% style=""></img></p>
+</div>
+<p>It is using the UNO, but the wiring is pretty much the same.</p>
+<p>We are connecting one side of the switch to (+) (In our case,
+3.3V).</p>
+<div>
+<p><img src="./images/button_sketch1.png" width=400 style=""></img></p>
+</div>
+<p>And the other side to a 10k Ohm Resistor.</p>
+<blockquote class="warning">
+<span class="uk-label uk-label-warning">Warning</span>
+<p>
+The images show a resistor with color bands of a 220 ohm resistor, but
+it should be 10k.
+</p>
+</blockquote>
+<div>
+<p><img src="./images/10k.png" width=100% style=""></img></p>
+</div>
+<div>
+<p><img src="./images/button_sketch2.png" width=400 style=""></img></p>
+</div>
+<p>This other side of the button is ALSO connected to digital pin 2.</p>
+<div>
+<p><img src="./images/button_sketch3.png" width=400 style=""></img></p>
+</div>
+<p>Lastly, the other side of the resistor is connected to
+<strong>Ground</strong>.</p>
+<div>
+<p><img src="./images/button_sketch4.png" width=400 style=""></img></p>
+</div>
+<p>Pressing the button should turn on the built-in LED. You can confirm
+this by connecting an LED to pin 13 like how we did in the Blink
+example.</p>
+<hr />
+</section>
+<section id="in-tinkercad" class="level2">
+<h2>In TinkerCAD</h2>
+<p>In TinkerCAD, it comes with some premade circuits with the Arduino
+Code.</p>
+<p>You can find it in the dropbar menu on the right hand side:</p>
+<div>
+<p><img src="./images/tinkercad_categories.png" width=400 style=""></img></p>
+</div>
+<p>This is the Button example:</p>
+<div>
+<p><img src="./images/tinker_cad_button2.png" width=100% style=""></img></p>
+</div>
+<p>Redrawn to fit in a breadboard like we did with the Nano:</p>
+<div>
+<p><img src="./images/tinker_cad_button.png" width=100% style=""></img></p>
+</div>
+<p>To find the code editor:</p>
+<div>
+<p><img src="./images/tinkercad_code.png" width=400 style=""></img></p>
+</div>
+<p>The first thing you will see is a block code editor similar to the <a
+href="https://scratch.mit.edu/">Scratch Programming Language</a>.</p>
+<div>
+<p><img src="./images/scratch.png" width=500 style=""></img></p>
+</div>
+<p>To go to the text version of the code, like what we would see in the
+Arduino IDE. Select “Text” from this dropbar menu:</p>
+<div>
+<p><img src="./images/text.png" width=500 style=""></img></p>
+</div>
+<p>You can enter the <strong>Button</strong> example here:</p>
+<div>
+<p><img src="./images/text2.png" width=500 style=""></img></p>
+</div>
+<p>And click “Start Simulation” to see if it works.</p>
+</section>
+</section></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: '#ArticleBody',
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fas fa-solid fa-clone',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fas fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>
