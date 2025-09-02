@@ -3,20 +3,57 @@ title: Week 2
 ---
 
 <section class="slides_section">
-<embed type="text/html" src="slides/week2/index.html" width="100%" height="500px" />
+<embed type="text/html" src="slides/week_2_day1/index.html" width="100%" height="500px" />
 </section>
+
+[Open Slides in New Tab](./slides/week_2_day1/index.html)
 
 ---
 
 ### Agenda
 
-- Housekeeping: materials and classroom
-- Discussion - Reading of "The Design of Everyday Things"
-- See and talk about real examples (Products, Art)
-- Example Arduino Projects
-- Intro to Electronics with TinkerCAD
+- Housekeeping
+- Video Games, Glitch, Hacking, and AI
+- Digital vs Analog?
+- Demo contact Microphone and Electromagnetic Pickup with Oscilloscope
 
-TinkerCAD Link: [https://www.tinkercad.com/joinclass/M7FHRCKW5](https://www.tinkercad.com/joinclass/M7FHRCKW5)
+---
+
+### To Watch
+
+Circuit Bending: Reed Ghazala:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KHDL9iGxDPM?si=hxGtC_tZ80xMMK2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Data Bending: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z_Rut5gjwfE?si=8T4R1ima0FEPgb0C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<a href="https://medium.com/ai-music/using-audacity-for-video-glitch-effects-9739e99351c0">Video Data Bend Article</a>
+
+Peter Vogel
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lan6iu3hyz8?si=wD3CDyo2aMNi77zi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Nic Collins
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4T7qkYY7LZM?si=tAEndFcUm3AaxcXn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6bCB4yFJ5MA?si=bv2JRkLySzDOoncL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sBlIRdnPciw?si=lIQS30hNbvAv3snw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Christina Kubisch
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5tCphr8pbFk?si=W7XYPgvdN06nMpqh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<a href="https://art21.org/watch/art-in-the-twenty-first-century/s2/tim-hawkinson-in-time-segment/">Tim Hawkinson</a>
+
+<img src="/slides/week_2_day1/images/hawkinson.jpg"></img>
+
+Arduino Project with 3 Servo Motors
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H712Cc5Ca94?si=tFXS_XeexPJjMc5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -27,12 +64,12 @@ TinkerCAD Link: [https://www.tinkercad.com/joinclass/M7FHRCKW5](https://www.tink
 
 <li class="week3 basic_equipment all">
 <div>
-<a href="./Blog/intro_to_electronics/intro_to_electronics.html">
+<a href="./Blog/sensors/sensors.html">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
-<h3 class="cardtitle">TinkerCAD and Intro to Electronics</h3>
+<h3 class="cardtitle">Inputs: Sensors</h3>
 <div style="display: inline">
-<img src="./Blog/intro_to_electronics/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+<img src="/slides/week_2_day1/images/sensors.png" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(56, 79, 172)c">Lesson</span>
 </div>
 </div>
@@ -41,55 +78,21 @@ TinkerCAD Link: [https://www.tinkercad.com/joinclass/M7FHRCKW5](https://www.tink
 </div>
 </li>
 
-<li class="week3 basic_equipment all" style="pointer-events:none">
+<li class="week3 basic_equipment all">
 <div>
-<a href="/Electronics/breadboards/breadboards.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Breadboards</h3>
+<a href="https://www.bfi.org.uk/sight-and-sound/features/art-within-machine-how-machinima-turns-camera-videogames">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Machinima</h3>
 <div style="display: inline">
-<img src="./Electronics/breadboards/images/cover.webp" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #4c370c">Tools</span>
+<img src="/slides/week_2_day1/images/machinima.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(200, 200, 40)c">Article</span>
 </div>
 </div>
 </a>
 </div>
 </div>
 </li>
-
-<li  style="pointer-events:none">
-<div>
-<a href="/Electronics/resistor/resistors.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Resistors</h3>
-<div style="display: inline">
-<img src="./Electronics/resistor/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #fed72c">Electronics</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
-
-<li  style="pointer-events:none">
-<div>
-<a href="/Electronics/diode/diodes.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Diodes</h3>
-<div style="display: inline">
-<img src="./Electronics/diode/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #fed72c">Electronics</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
-
-
 
 </ul>
 </div>
