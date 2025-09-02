@@ -25,11 +25,12 @@ Circuit Bending: Reed Ghazala:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KHDL9iGxDPM?si=hxGtC_tZ80xMMK2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Data Bending: 
+Data Bending / Moshing: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_Rut5gjwfE?si=8T4R1ima0FEPgb0C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <a href="https://medium.com/ai-music/using-audacity-for-video-glitch-effects-9739e99351c0">Video Data Bend Article</a>
+<a href="http://datamoshing.com/">Data Moshing Website</a>
 
 Peter Vogel
 
@@ -62,21 +63,21 @@ Arduino Project with 3 Servo Motors
 <div class="uk-margin" style="padding: 30px; ">
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
 
-<li class="week3 basic_equipment all">
-<div>
-<a href="./Blog/sensors/sensors.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
-<h3 class="cardtitle">Inputs: Sensors</h3>
-<div style="display: inline">
-<img src="/slides/week_2_day1/images/sensors.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: rgb(56, 79, 172)c">Lesson</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+<!-- <li class="week3 basic_equipment all"> -->
+<!-- <div> -->
+<!-- <a href="./Blog/sensors/sensors.html"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style=""> -->
+<!-- <h3 class="cardtitle">Inputs: Sensors</h3> -->
+<!-- <div style="display: inline"> -->
+<!-- <img src="/slides/week_2_day1/images/sensors.png" alt="" style="padding-bottom: 10px" uk-image /> -->
+<!-- <span class="uk-label" style="background-color: rgb(56, 79, 172)c">Lesson</span> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
 
 <li class="week3 basic_equipment all">
 <div>
@@ -87,6 +88,38 @@ Arduino Project with 3 Servo Motors
 <div style="display: inline">
 <img src="/slides/week_2_day1/images/machinima.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Article</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://youtu.be/vIQ74_DRWEM?feature=shared">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Demoscene</h3>
+<div style="display: inline">
+<img src="/slides/week_2_day1/images/demoscene.webp" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://youtu.be/vIQ74_DRWEM?feature=shared">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Analog Vs. Digital Signals</h3>
+<div style="display: inline">
+<img src="/slides/week_2_day1/images/signals.png" alt="" style="padding-bottom: 11px" uk-image />
+<span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
 </div>
 </div>
 </a>
