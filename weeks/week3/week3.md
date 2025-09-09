@@ -8,6 +8,10 @@ title: Week 3
 - Intro to TinkerCAD
 - Demo with Power Supply and Multimeter
 
+Join Class:
+
+https://www.tinkercad.com/joinclass/VTMN2KKWT
+
 ---
 
 ### Topics
@@ -40,7 +44,11 @@ title: Week 3
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SGvOmwZvhVk?si=o8FJIdctVGWd6Qct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X_crwFuPht4?si=vqZozjdt20niplFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0EieZIeOy4c?si=8JICrRtkXNrqW90P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <!-- <li class="week3 basic_equipment all" style="pointer-events:none"> -->
 <!-- <div> -->
