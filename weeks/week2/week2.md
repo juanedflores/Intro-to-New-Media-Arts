@@ -10,12 +10,19 @@ title: Week 2
 
 ---
 
-### Agenda
+### Tuesday Agenda
 
 - Housekeeping
 - Video Games, Glitch, Hacking, and AI
-- Digital vs Analog?
+- Digital vs Analog? Demo Oscilloscope
+- Demo Glitch Art Using Audacity and Text Editors
+
+---
+
+### Thursday Agenda
+
 - Demo contact Microphone and Electromagnetic Pickup with Oscilloscope
+- Circuit Bending: Intervention in Existing Circuitry (Low-Voltage)
 
 ---
 
@@ -122,6 +129,7 @@ Arduino Project with 3 Servo Motors
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
 </div>
 </div>
+<a href="https://makeabilitylab.github.io/physcomp/sensors/assets/images/SignalAcquisitionPipeline_Wikipedia.png"></a>
 </a>
 </div>
 </div>
