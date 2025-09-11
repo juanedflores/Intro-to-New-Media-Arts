@@ -2,15 +2,21 @@
 title: Week 3
 ---
 
-### Agenda
+### Tuesday Agenda
 
 - Cory Arcangel Artist Talk
 - Intro to TinkerCAD
 - Demo with Power Supply and Multimeter
 
-Join Class:
+### Thursday Agenda
 
-https://www.tinkercad.com/joinclass/VTMN2KKWT
+- Artist Showcase: Tim Hawkinson
+- TinkerCAD Ohms Law
+- Multimeter Demo
+- Paper Circuits
+
+
+<a href="http://highlowtech.org/">highlowtech</a>
 
 ---
 
@@ -50,53 +56,3 @@ https://www.tinkercad.com/joinclass/VTMN2KKWT
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0EieZIeOy4c?si=8JICrRtkXNrqW90P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<!-- <li class="week3 basic_equipment all" style="pointer-events:none"> -->
-<!-- <div> -->
-<!-- <a href="/Electronics/breadboards/breadboards.html"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"> -->
-<!-- <h3 class="cardtitle">Breadboards</h3> -->
-<!-- <div style="display: inline"> -->
-<!-- <img src="./Blog/intro_to_electronics/images/cover.webp" alt="" style="padding-bottom: 10px" uk-image /> -->
-<!-- <span class="uk-label" style="background-color: #4c370c">Tools</span> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </a> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </li> -->
-<!---->
-<!-- <li  style="pointer-events:none"> -->
-<!-- <div> -->
-<!-- <a href="/Electronics/resistor/resistors.html"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"> -->
-<!-- <h3 class="cardtitle">Resistors</h3> -->
-<!-- <div style="display: inline"> -->
-<!-- <img src="./Blog/intro_to_electronics/images/cover.png" alt="" style="padding-bottom: 10px" uk-image /> -->
-<!-- <span class="uk-label" style="background-color: #fed72c">Electronics</span> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </a> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </li> -->
-<!---->
-<!-- <li  style="pointer-events:none"> -->
-<!-- <div> -->
-<!-- <a href="/Electronics/diode/diodes.html"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"> -->
-<!-- <h3 class="cardtitle">Diodes</h3> -->
-<!-- <div style="display: inline"> -->
-<!-- <img src="./Blog/intro_to_electronics/diode/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image /> -->
-<!-- <span class="uk-label" style="background-color: #fed72c">Electronics</span> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </a> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </li> -->
-
-<!-- </ul> -->
-<!-- </div> -->

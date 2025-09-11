@@ -2,6 +2,7 @@
   font-family: 'Inter-ExtraLight';
   src: url('../fonts/Inter-ExtraLight.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Inter-Black';
   src: url('../fonts/Inter-Black.ttf') format('truetype');
@@ -31,11 +32,11 @@ a {
   font-family: 'Inter-Black';
 }
 
-.uk-nav-default > li.uk-active > a {
+.uk-nav-default>li.uk-active>a {
   color: white;
 }
 
-.menu_header > h3 {
+.menu_header>h3 {
   background: #222222;
   color: rgb(238, 221, 195);
   padding: 10px;
@@ -55,13 +56,13 @@ hr {
   background-color: gray;
 }
 
-.uk-inactive > a {
+.uk-inactive>a {
   color: #363131 !important;
   pointer-events: none;
   width: 100%;
 }
 
-.uk-nav-default > li {
+.uk-nav-default>li {
   position: relative;
 }
 
@@ -72,7 +73,7 @@ li {
   font-weight: bold;
 }
 
-.uk-nav:not(.arduino-menu) > li > a {
+.uk-nav:not(.arduino-menu)>li>a {
   /*display: block !important;*/
 }
 
@@ -85,19 +86,19 @@ li {
 /*  float: right;*/
 /*}*/
 
-.uk-nav-default > .uk-active > a::after {
+.uk-nav-default>.uk-active>a::after {
   content: '>';
   font-family: 'Inter-ExtraLight', sans-serif;
   text-align: right;
   float: right;
 }
 
-.uk-table > table {
+.uk-table>table {
   width: 100% !important;
 }
 
 .uk-table th {
-  padding: 0 !important;
+  /* padding: 0 !important; */
   background: rgb(220, 220, 220);
   color: #363131;
 }
@@ -146,14 +147,14 @@ nav {
   font-family: 'Inter-Black';
 }
 
-#small-menu > li > a {
+#small-menu>li>a {
   color: white;
   font-family: 'Inter-Black';
   text-align: left;
   padding-left: 0;
 }
 
-.uk-navbar-nav > li > a {
+.uk-navbar-nav>li>a {
   font-family: 'Inter-Black';
   color: white;
 }
@@ -209,7 +210,7 @@ h1 {
   z-index: 1;
 }
 
-#small-menu > li {
+#small-menu>li {
   list-style-type: none;
 }
 
@@ -261,7 +262,7 @@ h1 {
     font-size: 1em;
   }
 
-  .uk-navbar-nav > li > a {
+  .uk-navbar-nav>li>a {
     font-size: 10px;
   }
 }
@@ -319,7 +320,7 @@ ul {
   padding: 0;
 }
 
-#agenda > ul > li {
+#agenda>ul>li {
   /*list-style: '- ';*/
   list-style-type: circle;
   margin-left: 20px;
@@ -347,15 +348,14 @@ ul {
   }
 }
 
-@media screen and (max-width: 700px) {
-}
+@media screen and (max-width: 700px) {}
 
 @media screen and (max-width: 494px) {
   .uk-logo {
     font-size: 1em;
   }
 
-  .uk-navbar-nav > li > a {
+  .uk-navbar-nav>li>a {
     font-size: 10px;
   }
 }

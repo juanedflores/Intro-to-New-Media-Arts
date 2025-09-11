@@ -13,11 +13,11 @@ TinkerCAD is a web based design tool. It can do 3D design, but we are going to b
   Your browser does not support the video tag.
 </video>
 
-Below is an embed of the TinkerCAD circuit project that I shared in class. Feel free to interact with it or viewing through the shared classroom designs.
+Below is an embed of the TinkerCAD circuit project that I shared in class. Feel free to interact with it or view through the shared classroom designs.
 
 ---
 
-<iframe width="100%" height="453" src="https://www.tinkercad.com/embed/e9qoAI7nafb?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<iframe width="725" height="453" src="https://www.tinkercad.com/embed/dlR74SGKKF7?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
 <blockquote class="info">
 <span class="uk-label">Note</span>
@@ -123,12 +123,12 @@ LEDs and diodes both work in a similar way, with the only difference being that 
 <span class="uk-label">Note</span>
 <p>There is a separate post that goes into more detail about diodes. Feel free to skip it for now. We just want to build a circuit.</p>
 
-<div style="width: 100%; display: flex; padding-top: 25px;">
+<div style="width: 50%; display: flex; margin:auto; padding-top: 25px;">
 <div style="width: 70%; margin: auto;">
 
 <li class="" style="list-style-type: none; margin: auto">
 <div>
-<a href="./Electronics/diode/diode.html">
+<a href="../../Electronics/diode/diode.html">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Diode</h3>
@@ -249,4 +249,10 @@ Makeability Lab
 
 ## Terminology
 
-- Closed and Open Circuit
+Units of Measurement:
+
+- Volts; (V); For Electromotive Force  
+- Amps ; (A); For Current  
+- Ohms; (Ω); For Resistance  
+
+<div class="" style=""><table class="uk-overflow-auto uk-table uk-table-divider uk-table-justify uk-table-middle" style="padding:70px"; margin:auto;> <thead> <tr> <th>Quantity</th> <th style="padding:20px">Symbol</th> <th>Unit of Measurement</th style="padding:30px;"> <th>Unit abbreviation</th> </tr> </thead> <tbody> <tr> <td>Current</td> <td><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 119%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.494em; padding-bottom: 0.284em; padding-right: 0.064em;">I</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">I</script></td> <td>Ampere (or Amp)</td> <td>A</td> </tr> <tr> <td>Voltage</td> <td><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 119%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-4" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-5" class="mjx-mrow"><span id="MJXc-Node-6" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.494em; padding-bottom: 0.284em; padding-right: 0.186em;">V</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">V</script></td> <td>Volt</td> <td>V</td> </tr> <tr> <td>Resistance</td> <td><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 119%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-7" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-8" class="mjx-mrow"><span id="MJXc-Node-9" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.494em; padding-bottom: 0.284em;">R</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math></span></span><script type="math/tex" id="MathJax-Element-3">R</script></td> <td>Ohm</td> <td>Ω</td> </tr> </tbody> </table></div>
