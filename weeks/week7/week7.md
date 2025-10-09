@@ -28,7 +28,7 @@ title: Week 7
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">E-Textiles</h3>
 <div style="display: inline">
-<img src="./Blog/E-Textiles/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="/Blog/E-Textiles/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: #1e87f0">Topic</span>
 </div>
 </div>
