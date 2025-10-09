@@ -16,7 +16,7 @@ all: $(HTML)
 
 %.html: %.md
 	@echo $@
-	pandoc $< -o $@ -F "mermaid-filter" $(PANDOCFLAGSHTML)
+	pandoc $< -o $@ $(PANDOCFLAGSHTML)
 
 clean:
 	rm $(HTML)
