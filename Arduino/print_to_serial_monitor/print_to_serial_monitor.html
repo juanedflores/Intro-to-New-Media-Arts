@@ -200,13 +200,14 @@
       </button>
 
       <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../index.html">PROTOTYPING METHODS LAB</a>
+        <a class="uk-navbar-item uk-logo" href="../../index.html">INTRO TO NEW MEDIA ART</a>
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html"></a></li>
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">Print
+to Serial Monitor</a></li>
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text"></a>-->
+      <!--  <a class="uk-text">Print to Serial Monitor</a>-->
       <!--</h2>-->
     </nav>
 
@@ -217,11 +218,13 @@
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div><ul>
-<li><a href="#arduino-rgb-led-fade-example"
-id="toc-arduino-rgb-led-fade-example">Arduino RGB LED Fade Example</a>
+<li><a href="#serial-monitor" id="toc-serial-monitor">Serial Monitor</a>
 <ul>
-<li><a href="#diagram" id="toc-diagram">Diagram</a></li>
-<li><a href="#code" id="toc-code">Code</a></li>
+<li><a href="#what-is-it-where-is-it"
+id="toc-what-is-it-where-is-it">What is it? Where is it?</a>
+<ul>
+<li><a href="#serial-port" id="toc-serial-port">Serial Port</a></li>
+</ul></li>
 </ul></li>
 </ul></div>
         </div>
@@ -229,36 +232,92 @@ id="toc-arduino-rgb-led-fade-example">Arduino RGB LED Fade Example</a>
 
       <!-- BODY -->
       <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
-id="arduino-rgb-led-fade-example" class="level1">
-<h1>Arduino RGB LED Fade Example</h1>
-<section id="diagram" class="level2">
-<h2>Diagram</h2>
-<figure>
-<img
-src="https://docs.arduino.cc/static/046ce7765be1351d3201bb46e6fdb71c/29114/servo-basic-circuit.png"
-alt="RGB Fritzing Image" />
-<figcaption aria-hidden="true">RGB Fritzing Image</figcaption>
-</figure>
+id="serial-monitor" class="level1">
+<h1>Serial Monitor</h1>
+<section id="what-is-it-where-is-it" class="level2">
+<h2>What is it? Where is it?</h2>
+<p>First, think back to when we were learning the Arduino software
+graphical user interface (GUI). To upload our code we learned how to
+make sure of two things:</p>
+<section id="how-to-select-the-correct-board-that-we-are-using"
+class="level6">
+<h6>1.) How to select the correct board that we are using</h6>
 </section>
-<section id="code" class="level2">
-<h2>Code</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Servo.h&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Servo myservo<span class="op">;</span>  <span class="co">// create servo object to control a servo</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> potpin <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>  <span class="co">// analog pin used to connect the potentiometer</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> val<span class="op">;</span>    <span class="co">// variable to read the value from the analog pin</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  myservo<span class="op">.</span>attach<span class="op">(</span><span class="dv">9</span><span class="op">);</span>  <span class="co">// attaches the servo on pin 9 to the servo object</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  val <span class="op">=</span> analogRead<span class="op">(</span>potpin<span class="op">);</span>            <span class="co">// reads the value of the potentiometer (value between 0 and 1023)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  val <span class="op">=</span> map<span class="op">(</span>val<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1023</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">180</span><span class="op">);</span>     <span class="co">// scale it to use it with the servo (value between 0 and 180)</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  myservo<span class="op">.</span>write<span class="op">(</span>val<span class="op">);</span>                  <span class="co">// sets the servo position according to the scaled value</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  delay<span class="op">(</span><span class="dv">15</span><span class="op">);</span>                           <span class="co">// waits for the servo to get there</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<section
+id="how-to-make-sure-we-are-connected-to-the-correct-port-that-our-arduino-is-connected-to."
+class="level6">
+<h6>2.) How to make sure we are connected to the correct
+<strong>port</strong> that our Arduino is connected to.</h6>
+</section>
+<section id="what-it-is" class="level5">
+<h5>What it is</h5>
+<p>The port that we are connected to is the <strong>“Serial
+Port”</strong>. The serial port is used to achieve a communication
+between the computer and the Arduino board using a process called
+“Serial Communication”. You can think of it as both your computer and
+your Arduino board having a conversation, where they take turns sending
+messages to each other.</p>
+<p><strong>Serial Cables</strong></p>
+<div class="uk-column-1-2">
+<p>
+Serial cables today (USB)
+</p>
+<p>
+<img src="./images/new_serial.jpg"></img>
+</p>
+<p>
+Serial cables back then (RS-422)
+</p>
+<p>
+<img src="./images/old_serial.webp"></img>
+</p>
+</div>
+<p>You can actually see some visual feedback of the communication by
+looking at some board’s RX and TX LEDs. The RX LED blinks when the board
+is <strong>(r)eceiving</strong> information from the computer, and the
+TX LED blinks when the board is <strong>(t)ransmitting</strong>
+information to the computer.</p>
+<p>
+<img width="400" src="./images/arduino_LEDs.jpg"></img>
+</p>
+<p>To see the actual messages the Arduino is <strong>sending</strong> to
+our computer, we use the <strong>Serial Monitor</strong>.</p>
+</section>
+<section id="where-it-is" class="level5">
+<h5>Where it is</h5>
+<p>The Serial Monitor can be accessed by clicking on the magnifying
+glass icon in the top right corner of the Arduino IDE, and the Serial
+Monitor window will pop up on the bottom of the screen.</p>
+<p>
+<img width="100%" src="./images/serial_monitor.png"></img>
+</p>
+<hr />
+</section>
+<section id="serial-port" class="level3">
+<h3>Serial Port</h3>
+<blockquote class="info">
+<p><span class="uk-label">Note</span></p>
+<p>
+Check out the official Arduino documentation on the Serial Monitor:
+<a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor/">Serial
+Monitor: Arduino Documentation</a>
+</p>
+<p>
+<strong>Makeabilitylab</strong> has a more in-depth post about the
+serial monitor.
+</p>
+<p>
+Check it out here:
+<a href="https://makeabilitylab.github.io/physcomp/communication/serial-intro.html ">Intro
+the Serial Monitor</a>
+</p>
+<p>
+How to use Debug with Serial:
+<a href="https://makeabilitylab.github.io/physcomp/arduino/serial-print.html#step-3-open-serial-monitor-in-the-arduino-ide">Debugging
+with Serial</a>
+</p>
+</blockquote>
+</section>
 </section>
 </section></div>
     </div>

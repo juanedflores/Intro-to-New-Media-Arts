@@ -1,4 +1,4 @@
-pre {
+
   padding: 0;
 }
 
@@ -14,6 +14,20 @@ p  {
   font-weight: bold !important;
 }
 .uk-table td {
+}
+
+blockquote p strong {
+  font-size: 1.1em;
+  font-family: 'Inter-ExtraLight', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+p strong {
+  font-size: 1.1em;
+  font-family: 'Inter-ExtraLight', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0 !important;
 }
 
 ::selection {

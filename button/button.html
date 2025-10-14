@@ -200,7 +200,7 @@
       </button>
 
       <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../index.html">INTRO TO NEW MEDIA ART</a>
+        <a class="uk-navbar-item uk-logo" href="../../index.html">PROTOTYPING METHODS LAB</a>
         <ul class="uk-navbar-nav" style="">
           <li class="uk-active" style="pointer-events: none"><a href="index.html"></a></li>
         </ul>
@@ -219,6 +219,18 @@
           <div><ul>
 <li><a href="#button" id="toc-button">Button</a>
 <ul>
+<li><a href="#how-does-a-button-work"
+id="toc-how-does-a-button-work">How does a button work?</a></li>
+<li><a href="#pinout" id="toc-pinout">Pinout</a>
+<ul>
+<li><a href="#switches" id="toc-switches">Switches</a></li>
+<li><a href="#toggle-vs.-push" id="toc-toggle-vs.-push">Toggle
+vs. Push</a></li>
+<li><a href="#the-button-legs" id="toc-the-button-legs">The button
+legs</a></li>
+</ul></li>
+<li><a href="#circuit-demonstration"
+id="toc-circuit-demonstration">Circuit Demonstration</a></li>
 <li><a href="#the-button-sketch" id="toc-the-button-sketch">The Button
 Sketch</a>
 <ul>
@@ -251,6 +263,150 @@ statements</a></li>
       <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
 id="button" class="level1">
 <h1>Button</h1>
+<section id="how-does-a-button-work" class="level2">
+<h2>How does a button work?</h2>
+<p>The button is just a simple way of completing or breaking a circuit
+with the simple act of “pushing” or “pressing” a button.</p>
+<p>You could just manually join or unjoin two bare wires together with
+your hands to do this, but a button is a convenient way to interface
+(interact) with a circuit.</p>
+<p>Often electronics kits come with a cheap tactile button that looks
+like this:</p>
+<div>
+<p><img src="./images/button.png" width=400 style=""></img></p>
+</div>
+<p>But it can take many forms and sizes.</p>
+<div>
+<p><img src="./images/buttons.jpg" width=400 style=""></img></p>
+</div>
+<p>Take a look at <a href="https://teenage.engineering/">Teenage
+Engineering</a>’s pocket operator products that use a similar looking
+tactile button.</p>
+<iframe style="background: black; margin-top:25px; margin-bottom:25px;" src="https://player.vimeo.com/video/935417234?h=6ec9ce8838?autoplay=1&amp;loop=1" width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true; autoplay: true; loop: true">
+</iframe>
+<p>And a case that would cover the look of those buttons:</p>
+<div>
+<p><img src="https://images.prismic.io/teenageengineering/83dc95b0-467b-4637-a60c-df6f4833505f_ca-x_yellow.png?auto=compress,format&w=2000" width=600 style=""></img></p>
+</div>
+<hr />
+</section>
+<section id="pinout" class="level2">
+<h2>Pinout</h2>
+<section id="switches" class="level3">
+<h3>Switches</h3>
+<p>First it might help to explain that a button is essentially a push
+<strong>switch</strong>.</p>
+<p>The schematic symbol for a generic switch is intuitive. It represents
+a wire that is either broken or not broken.</p>
+<p>The following shows a switch symbol that shows that it is
+<strong>open</strong>. Current <em>CANNOT</em> pass through the
+wire.</p>
+<div>
+<p><img src="./images/switch_open.svg" width=400 style="border: none;"></img></p>
+</div>
+<p>This symbol shows the switch <strong>closed</strong>, meaning that
+the circuit is not broken. Current <em>CAN</em> pass through the
+wire.</p>
+<div>
+<p><img src="./images/switch_closed.svg" width=400 style="border: none; padding-top:20px; padding-bottom:20px"></img></p>
+</div>
+<p>This is how an On-Off switch works. It is a <strong>toggle</strong>
+switch.</p>
+<div>
+<p><img src="./images/switch.jpeg" width=400 style=""></img></p>
+</div>
+</section>
+<section id="toggle-vs.-push" class="level3">
+<h3>Toggle vs. Push</h3>
+<p>Try interacting with the switch in this simulation showing a simple
+led-resistor circuit with a generic switch. (You may need to click the
+“RUN / Stop” button)</p>
+<iframe style="padding-top:25px;" id="circuitFrame" src="../../CircuitJS/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKADcRsEUQAWOTtxBo8UMf2pUp0BCwDOgniIoZCw-GKoAzAIYAbOXRZhCPBKvWjza-lR4ATOroCuegC4M9de+E1RYrABOKjYCXDy2YmDwLEA" width="800" height="550" uk-responsive>
+</iframe>
+<p>The next simulation is using a push switch instead (push button).
+Notice the difference.</p>
+<iframe style="padding-top:25px;" id="circuitFrame" src="../../CircuitJS/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKADcRsEUQAWOTtxBo8UMf2pUp0BCzCEeCDIWH4KyvgJ4ATOgDMAhgFcANgBcGJutvBjpkVgCd1K-lS483YsPBYBnQR4RF1VRKggzRyM6FiA
+" width="800" height="550" uk-responsive>
+</iframe>
+<p>As you can see, the circuit is complete ONLY so long as the button is
+pressed. It is a <strong>momentary</strong> switch.</p>
+<p>The schematic symbol for a push button looks a bit different but
+makes sense when you think about it.</p>
+<div>
+<p><img src="./images/button_schematic.png" width=500 style=""></img></p>
+</div>
+<p>The two wires on the left and right are connected when the plate
+above them is pushed down.</p>
+<div>
+<p><img src="./images/button_plate.png" width=400 style=""></img></p>
+</div>
+</section>
+<section id="the-button-legs" class="level3">
+<h3>The button legs</h3>
+<p>The button has 4 pins which makes this a bit confusing. It’s still a
+single switch, but both sides of the ‘wire’ are accessible through a
+pair of legs instead of one.</p>
+<div>
+<p><img src="./images/internally_connected.png" width=100% style=""></img></p>
+</div>
+<span>
+<p style="text-align:center; color: #aeaeae">
+<i>illustration from makeabilitylab showing the internally connected
+legs</i>
+</p>
+<p></span></p>
+<p>Below is a screenshot in Fritzing to show that the pins in red are
+connected whether the button is pressed or not. Same with the blue pins.
+They are <strong>internally connected</strong>.</p>
+<div>
+<p><img src="./images/fritzing.jpg" width=400 style=""></img></p>
+</div>
+<p>This means that when you press the button, the red and blue pins are
+connected together. It might seem hard to orient the button to know
+which pins are internally connected. If you extend the legs as if the
+button was a squished bug on a flat surface, the legs point away from
+the button. The legs that follow the same line are internally connected.
+It should also look like an ‘H’ or part of a railroad track.</p>
+<p>The makeability blog post on <a
+href="https://makeabilitylab.github.io/physcomp/arduino/buttons.html">buttons</a>
+is pretty good in explaining this.</p>
+<hr />
+</section>
+</section>
+<section id="circuit-demonstration" class="level2">
+<h2>Circuit Demonstration</h2>
+<p>Let’s do a circuit that turns an LED on when we press the button
+without any programming.</p>
+<div>
+<p><img src="./images/button_analog.png" width=400 style=""></img></p>
+</div>
+<p>First I connect the button so that it crosses over the middle of the
+breadboard. It might be easier to think of this middle line as a river,
+and the button as a bridge. Also notice that with the legs extended they
+resemble more like a bridge.</p>
+<p>Next I placed an LED on one side of the button, with one leg (the
+cathode) connected to the right side of the bridge.</p>
+<p>On the left side of the bridge I placed the current limiting resistor
+for the LED. This is connected to ground.</p>
+<div>
+<p><img src="./images/button_analog2.png" width=400 style=""></img></p>
+</div>
+<p>The last step would be to connect the positive rail to the <span
+style="color:red"><strong>anode</strong></span>.</p>
+<p>Pressing the button should now light up the LED. This is because when
+you press the button, you are <strong>completing the circuit</strong>.
+When you release, you are <strong>breaking</strong> the circuit.</p>
+<div>
+<p><img src="./images/tinkercad1.png" width=600 style=""></img></p>
+</div>
+<p>By the way, because we have power going through each side of the
+power rails, an alternative way of wiring this is like this:</p>
+<div>
+<p><img src="./images/tinkercad2.png" width=600 style=""></img></p>
+</div>
+<p>Do you see why this completes the circuit?</p>
+<hr />
+</section>
 <section id="the-button-sketch" class="level2">
 <h2>The Button Sketch</h2>
 <p>Go to:</p>
@@ -259,10 +415,8 @@ id="button" class="level1">
 <p>This is <code>Button.ino</code>.</p>
 <p>Of course we should always look at the link provided in the block
 comment:</p>
-<p>
-<a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">Arduino
-Button Sketch: Official Arduino Documentation</a>
-</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button</span></code></pre></div>
 <div>
 <p><img src="https://docs.arduino.cc/static/fb8449b4834dfbbf3c03223c8bc3e5b5/29114/schematic.png" width=100% style=""></img></p>
 </div>
@@ -353,8 +507,8 @@ button.</p>
 <h4>Constants</h4>
 <p>In this sketch we have two statements that introduce a new keyword
 called <code>const</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> buttonPin <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>  <span class="co">// the number of the pushbutton pin</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> ledPin <span class="op">=</span> <span class="dv">13</span><span class="op">;</span>    <span class="co">// the number of the LED pin</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> buttonPin <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>  <span class="co">// the number of the pushbutton pin</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> ledPin <span class="op">=</span> <span class="dv">13</span><span class="op">;</span>    <span class="co">// the number of the LED pin</span></span></code></pre></div>
 <p><code>const int buttonPin</code> means that <code>buttonPin</code>
 will remain <strong>constant</strong> and it is of type
 <code>int</code>. It is not a variable because in no moment will it
@@ -373,12 +527,12 @@ will hold the value of the button state (Is it pressed or not?
 straightforward. <code>ledPin</code> (<em>13</em>) is configured as an
 <code>OUTPUT</code>, and <code>buttonPin</code> (<em>2</em>) is
 configured as an <code>INPUT</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the LED pin as an output:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledPin<span class="op">,</span> OUTPUT<span class="op">);</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the pushbutton pin as an input:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>buttonPin<span class="op">,</span> INPUT<span class="op">);</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the LED pin as an output:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledPin<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the pushbutton pin as an input:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>buttonPin<span class="op">,</span> INPUT<span class="op">);</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section>
 <section id="loop" class="level4">
 <h4>loop()</h4>
@@ -387,8 +541,8 @@ state of the push button by using the function
 <code>digitalRead()</code>.</p>
 <section id="digitalread" class="level5">
 <h5>digitalRead()</h5>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// read the state of the pushbutton value:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>buttonState <span class="op">=</span> digitalRead<span class="op">(</span>buttonPin<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// read the state of the pushbutton value:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>buttonState <span class="op">=</span> digitalRead<span class="op">(</span>buttonPin<span class="op">);</span></span></code></pre></div>
 <p><code>digitalRead()</code> only takes one parameter, the pin number
 that is being used as an input.</p>
 </section>
@@ -397,13 +551,13 @@ that is being used as an input.</p>
 <h4>if statements, conditional statements</h4>
 <p>The remaining part of the <code>loop()</code> introduces something
 called a <strong>conditional statement</strong>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>buttonState <span class="op">==</span> HIGH<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// turn LED on:</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> HIGH<span class="op">);</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// turn LED off:</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> LOW<span class="op">);</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>buttonState <span class="op">==</span> HIGH<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// turn LED on:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> HIGH<span class="op">);</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// turn LED off:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> LOW<span class="op">);</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>This block of code translated to english is this:</p>
 <p><strong>If</strong> <span style="color: blue;">button is
 pressed</span> (buttonState is <code>HIGH</code>), <em>then</em> <span
@@ -434,33 +588,33 @@ Challenge</a></p>
 Sketch)</a>
 <div class="uk-accordion-content"
 style="padding-bottom:20px; margin-bottom:20px">
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// constants won&#39;t change. They&#39;re used here to set pin numbers:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> buttonPin <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>  <span class="co">// the number of the pushbutton pin</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> ledPin <span class="op">=</span> <span class="dv">13</span><span class="op">;</span>    <span class="co">// the number of the LED pin</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">// variables will change:</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> buttonState <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>  <span class="co">// variable for reading the pushbutton status</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the LED pin as an output:</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledPin<span class="op">,</span> OUTPUT<span class="op">);</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the pushbutton pin as an input:</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>buttonPin<span class="op">,</span> INPUT<span class="op">);</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// read the state of the pushbutton value:</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    buttonState <span class="op">=</span> digitalRead<span class="op">(</span>buttonPin<span class="op">);</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// check if the pushbutton is pressed. If it is, the buttonState is HIGH:</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>buttonState <span class="op">==</span> HIGH<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">// turn LED on:</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> HIGH<span class="op">);</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="co">// turn LED off:</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> LOW<span class="op">);</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// constants won&#39;t change. They&#39;re used here to set pin numbers:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> buttonPin <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>  <span class="co">// the number of the pushbutton pin</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> ledPin <span class="op">=</span> <span class="dv">13</span><span class="op">;</span>    <span class="co">// the number of the LED pin</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">// variables will change:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> buttonState <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>  <span class="co">// variable for reading the pushbutton status</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the LED pin as an output:</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledPin<span class="op">,</span> OUTPUT<span class="op">);</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the pushbutton pin as an input:</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>buttonPin<span class="op">,</span> INPUT<span class="op">);</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// read the state of the pushbutton value:</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    buttonState <span class="op">=</span> digitalRead<span class="op">(</span>buttonPin<span class="op">);</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// check if the pushbutton is pressed. If it is, the buttonState is HIGH:</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>buttonState <span class="op">==</span> HIGH<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">// turn LED on:</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> HIGH<span class="op">);</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="co">// turn LED off:</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> LOW<span class="op">);</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
 <hr />
 </section>
