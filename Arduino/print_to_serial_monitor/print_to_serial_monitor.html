@@ -225,6 +225,21 @@ id="toc-what-is-it-where-is-it">What is it? Where is it?</a>
 <ul>
 <li><a href="#serial-port" id="toc-serial-port">Serial Port</a></li>
 </ul></li>
+<li><a href="#a-minimal-arduino-sketch-to-print-to-the-serial-monitor"
+id="toc-a-minimal-arduino-sketch-to-print-to-the-serial-monitor">A
+Minimal Arduino Sketch to Print to the Serial Monitor</a></li>
+<li><a href="#sketch-breakdown" id="toc-sketch-breakdown">Sketch
+Breakdown</a>
+<ul>
+<li><a href="#our-count-variable" id="toc-our-count-variable">Our count
+variable</a></li>
+<li><a href="#initialize-serial-communication-in-setup"
+id="toc-initialize-serial-communication-in-setup">Initialize Serial
+Communication in setup()</a></li>
+<li><a href="#baud-rate" id="toc-baud-rate">Baud Rate</a></li>
+<li><a href="#serial.println"
+id="toc-serial.println">Serial.println()</a></li>
+</ul></li>
 </ul></li>
 </ul></div>
         </div>
@@ -280,6 +295,9 @@ information to the computer.</p>
 <p>
 <img width="400" src="./images/arduino_LEDs.jpg"></img>
 </p>
+<p>
+<img width="100%" src="./images/diagram.png"></img>
+</p>
 <p>To see the actual messages the Arduino is <strong>sending</strong> to
 our computer, we use the <strong>Serial Monitor</strong>.</p>
 </section>
@@ -317,6 +335,134 @@ How to use Debug with Serial:
 with Serial</a>
 </p>
 </blockquote>
+<hr />
+</section>
+</section>
+<section id="a-minimal-arduino-sketch-to-print-to-the-serial-monitor"
+class="level2">
+<h2>A Minimal Arduino Sketch to Print to the Serial Monitor</h2>
+<p>For this sketch, we don’t need to add any components. All we need is
+a USB connection to our Arduino board.</p>
+<p>Copy this code into your Arduino IDE:</p>
+<pre class="arduino"><code>int count = 0;
+
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // print out the current count
+  Serial.println(count);
+  // increment the count by 1
+  count = count + 1;
+  // pause the program for 1 second
+  delay(1000);
+}</code></pre>
+<p>Make sure you create a new sketch.</p>
+<p><code>File -&gt; New Sketch</code></p>
+<p>
+<img width="300" src="./images/new_sketch.png"></img>
+</p>
+<p>The default new sketch looks like this:</p>
+<pre class="arduino"><code>void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}</code></pre>
+<p>But just Ctrl + A to select all and delete using backspace. (Cmd + A
+for MacOS)</p>
+<p>Then paste the code above into the Arduino IDE using Ctrl + V. (Cmd +
+V for MacOS)</p>
+<hr />
+</section>
+<section id="sketch-breakdown" class="level2">
+<h2>Sketch Breakdown</h2>
+<p>
+</p>
+<section id="our-count-variable" class="level4">
+<h4>Our count variable</h4>
+<pre class="arduino"><code>int count = 0;</code></pre>
+<p>I am defining a variable called <code>count</code> of type
+<code>int</code> (integer) and initializing it with the value of
+<code>0</code>.</p>
+<p>We will be changing the value of <code>count</code> in the
+<code>loop()</code> function. Starting with incrementing it by
+<code>1</code> each time the loop() happens.</p>
+<p>We will be printing the value of <code>count</code> to the Serial
+Monitor.</p>
+</section>
+<section id="initialize-serial-communication-in-setup" class="level4">
+<h4>Initialize Serial Communication in setup()</h4>
+<p>To use the serial port for communication, we first need to initialize
+it in the <code>setup()</code> function using
+<code>Serial.begin()</code>.</p>
+<blockquote class="warning">
+<p><span class="uk-label"
+style="color:black; background:#fac100">Warning</span></p>
+<p>
+Remember that in programming, everything is case sensitive.
+serial.begin() will not be recognized by Arduino, it has to be
+Serial.begin().
+</p>
+</blockquote>
+<pre class="arduino"><code>void setup() {
+    // initialize serial communication at 9600 bits per second:
+    Serial.begin(9600);
+}</code></pre>
+<blockquote class="info">
+<p><span class="uk-label">Note</span></p>
+<p>
+Click this link to see the Arduino documentation of:
+<a href="https://docs.arduino.cc/language-reference/en/functions/communication/serial/begin/">Serial.begin()</a>
+</p>
+</blockquote>
+</section>
+<section id="baud-rate" class="level4">
+<h4>Baud Rate</h4>
+<p>Worrying about baud rate is a bit out of scope for this class, but it
+is important to know that both the Arduino and the Serial Monitor need
+to be set to the same baud rate in order to communicate properly.</p>
+<p>
+<img src="./images/baud.png"></img>
+</p>
+<p>Take note of the drop down menu on the top right of the Serial
+Monitor window. It is set to 9600 baud by default, which is the same as
+what we set in our code using <code>Serial.begin(9600);</code>.</p>
+<p>As long as these are matching, it should work as expected.</p>
+<p>From makeabilitylab explanation:
+<a href="https://makeabilitylab.github.io/physcomp/communication/serial-intro.html#baud-rate">https://makeabilitylab.github.io/physcomp/communication/serial-intro.html#baud-rate</a></p>
+<blockquote>
+<p>The baud rate specifies how fast data is sent over serial, which is
+expressed in bits-per-second (bps). For communicating with a computer,
+the Arduino docs recommend: 300 bps, 600, 1200, 2400, 4800, 9600, 14400,
+19200, 28800, 38400, 57600, or 115200. Both devices—in this case, the
+Arduino and the computer—need to be set to the same baud rate to
+communicate.</p>
+</blockquote>
+</section>
+<section id="serial.println" class="level4">
+<h4>Serial.println()</h4>
+<section id="print-out-text-strings" class="level5">
+<h5>Print out text (Strings)</h5>
+<p>When you are printing out text to the serial monitor, you are
+printing out a string of characters. In programming, we call this a
+<code>String</code>.</p>
+<blockquote class="info">
+<p><span class="uk-label">Info</span></p>
+<p>
+</p>
+</blockquote>
+<pre class="arduino"><code>void loop() {
+    // print out text to the Serial Monitor
+    Serial.pring(&quot;Hello World&quot;);
+}</code></pre>
+</section>
 </section>
 </section>
 </section></div>
