@@ -1,21 +1,52 @@
 @font-face {
-  font-family: 'Inter-ExtraLight';
-  src: url('../fonts/Inter-ExtraLight.ttf') format('truetype');
+  font-family: "Inter-ExtraLight";
+  src: url("../fonts/Inter-ExtraLight.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Inter-Black';
-  src: url('../fonts/Inter-Black.ttf') format('truetype');
+  font-family: "Inter-Black";
+  src: url("../fonts/Inter-Black.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'AlegreyaSansSC-Black';
-  src: url('../fonts/alegreya/AlegreyaSansSC-Black.ttf') format('truetype');
+  font-family: "Inter-VariableFont";
+  src: url("../fonts/Inter-VariableFont.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'AlegreyaSans-Black';
-  src: url('../fonts/alegreya/AlegreyaSans-Black.ttf') format('truetype');
+  font-family: "AlegreyaSansSC-Black";
+  src: url("../fonts/alegreya/AlegreyaSansSC-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AlegreyaSans-Black";
+  src: url("../fonts/alegreya/AlegreyaSans-Black.ttf") format("truetype");
+}
+
+.uk-first-column {
+  background-color: rgb(238, 241, 247);
+}
+
+/* .entry { */
+/*   max-height: 300px; */
+/*   margin-bottom: 40px; */
+/* } */
+
+/* #ListBody > li { */
+/*   height: 400px; */
+/* } */
+
+.uk-card-media-right {
+  height: auto;
+}
+
+.uk-card-body {
+  background-color: rgb(238, 241, 247);
+  /* height: 250px; */
+}
+
+.uk-card-small {
+  border-radius: 10px;
 }
 
 .mobile {
@@ -25,30 +56,30 @@
 h3,
 h4,
 h5 {
-  font-family: 'Inter-Black';
+  font-family: "Inter-Black";
 }
 
 a {
-  font-family: 'Inter-Black';
+  font-family: "Inter-Black";
 }
 
-.uk-nav-default>li.uk-active>a {
+.uk-nav-default > li.uk-active > a {
   color: white;
 }
 
-.menu_header>h3 {
+.menu_header > h3 {
   background: #222222;
   color: rgb(238, 221, 195);
   padding: 10px;
-  font-family: 'AlegreyaSansSC-Black';
+  font-family: "AlegreyaSansSC-Black";
 }
 
 .uk-card-title {
-  font-family: 'AlegreyaSans-Black';
+  font-family: "AlegreyaSans-Black";
 }
 
 .cardtitle {
-  font-family: 'AlegreyaSans-Black';
+  font-family: "AlegreyaSans-Black";
 }
 
 hr {
@@ -56,24 +87,39 @@ hr {
   background-color: gray;
 }
 
-.uk-inactive>a {
+.uk-inactive > a {
   color: #363131 !important;
   pointer-events: none;
   width: 100%;
 }
 
-.uk-nav-default>li {
+.uk-nav-default > li {
   position: relative;
 }
 
-li {
+.level3 > ul > li {
+  position: relative;
   font-size: 1em;
   color: black;
-  font-family: 'Inter-ExtraLight', sans-serif;
+  font-family: "Inter-VariableFont", sans-serif;
+  font-weight: bold;
+  list-style-type: square;
+  left: 20px;
+}
+
+div.uk-card-body > span {
+  font-family: "Inter-VariableFont", sans-serif;
   font-weight: bold;
 }
 
-.uk-nav:not(.arduino-menu)>li>a {
+div.uk-card-body > p {
+  font-family: "Inter-ExtraLight", sans-serif;
+  font-weight: normal;
+  font-size: 1.2em;
+  /* font-weight: bold; */
+}
+
+.uk-nav:not(.arduino-menu) > li > a {
   /*display: block !important;*/
 }
 
@@ -87,13 +133,13 @@ li {
 /*}*/
 
 .uk-nav-default>.uk-active>a::after {
-  content: '>';
-  font-family: 'Inter-ExtraLight', sans-serif;
+  content: ">";
+  font-family: "Inter-ExtraLight", sans-serif;
   text-align: right;
   float: right;
 }
 
-.uk-table>table {
+.uk-table > table {
   width: 100% !important;
 }
 
@@ -144,56 +190,56 @@ nav {
 }
 
 .section_header {
-  font-family: 'Inter-Black';
+  font-family: "Inter-Black";
 }
 
-#small-menu>li>a {
+#small-menu > li > a {
   color: white;
-  font-family: 'Inter-Black';
+  font-family: "Inter-Black";
   text-align: left;
   padding-left: 0;
 }
 
-.uk-navbar-nav>li>a {
-  font-family: 'Inter-Black';
+.uk-navbar-nav > li > a {
+  font-family: "Inter-Black";
   color: white;
 }
 
 .uk-logo {
   background: rgb(197, 75, 59) !important;
   /*font-family: 'Inter-Black';*/
-  font-family: 'AlegreyaSansSC-Black';
+  font-family: "AlegreyaSansSC-Black";
   color: white;
 }
 
 h1 {
-  font-family: 'AlegreyaSansSC-Black';
+  font-family: "AlegreyaSansSC-Black";
 }
 
 .menu_header {
-  font-family: 'AlegreyaSansSC-Black';
+  font-family: "AlegreyaSansSC-Black";
 }
 
 .anonymous-pro-regular {
-  font-family: 'Anonymous Pro', monospace;
+  font-family: "Anonymous Pro", monospace;
   font-weight: 400;
   font-style: normal;
 }
 
 .anonymous-pro-bold {
-  font-family: 'Anonymous Pro', monospace;
+  font-family: "Anonymous Pro", monospace;
   font-weight: 700;
   font-style: normal;
 }
 
 .anonymous-pro-regular-italic {
-  font-family: 'Anonymous Pro', monospace;
+  font-family: "Anonymous Pro", monospace;
   font-weight: 400;
   font-style: italic;
 }
 
 .anonymous-pro-bold-italic {
-  font-family: 'Anonymous Pro', monospace;
+  font-family: "Anonymous Pro", monospace;
   font-weight: 700;
   font-style: italic;
 }
@@ -210,7 +256,7 @@ h1 {
   z-index: 1;
 }
 
-#small-menu>li {
+#small-menu > li {
   list-style-type: none;
 }
 
@@ -262,7 +308,7 @@ h1 {
     font-size: 1em;
   }
 
-  .uk-navbar-nav>li>a {
+  .uk-navbar-nav > li > a {
     font-size: 10px;
   }
 }
@@ -320,7 +366,7 @@ ul {
   padding: 0;
 }
 
-#agenda>ul>li {
+#agenda > ul > li {
   /*list-style: '- ';*/
   list-style-type: circle;
   margin-left: 20px;
@@ -348,14 +394,15 @@ ul {
   }
 }
 
-@media screen and (max-width: 700px) {}
+@media screen and (max-width: 700px) {
+}
 
 @media screen and (max-width: 494px) {
   .uk-logo {
     font-size: 1em;
   }
 
-  .uk-navbar-nav>li>a {
+  .uk-navbar-nav > li > a {
     font-size: 10px;
   }
 }

@@ -265,3 +265,15 @@ A reed switch closes when a magnet is near it.
 - conditional statements (`if`, `else`)
 - `==` vs `=`, `equals to` vs. `is assigned the value of`
 - internally connected legs
+
+## Supplemental Material
+
+ITP NYU course that walks through using a button as a digital input.
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/374066875?h=c54de2b878" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+
+Tim Hunkin Youtube Channel:
+
+Overview of different types of switches, deconstruction, and technical description of how they work:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bno0HeQfxrU?si=qRmrIMbGkNz8tAaW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

@@ -1,4 +1,4 @@
-
+pre {
   padding: 0;
 }
 
@@ -187,10 +187,6 @@ p img {
   color: #54544d;
 }
 
-/*ul {*/
-/*  padding-left: 0 !important;*/
-/*}*/
-
 div > ul {
   font-family: 'Inter-Black';
   /*padding-left: 0px !important;*/
@@ -261,6 +257,10 @@ ol li {
 
 img.uk-cover {
   border-left: gray solid 1px;
+}
+
+div.entry:hover {
+  cursor: pointer;
 }
 
 img.uk-cover:hover {
@@ -360,8 +360,9 @@ blockquote {
 }
 
 hr {
-  border: 2px solid rgb(56, 79, 172);
+  border: 2px solid rgb(129, 161, 193);
   margin-bottom: 30px;
+  background-color: rgb(129, 161, 193) !important;
 }
 
 .level2 {
@@ -401,7 +402,7 @@ pre code.hljs {
   display: block;
 }
 
-code.hljs {
+code.
   display: inline;
   background-color: #222;
 }
