@@ -8,7 +8,7 @@ title: Week 9
 
 ### Tuesday Agenda:
 
-- Review Pulse Width Modulation (PWM)
+- Review Pulse Width Modulation (PWM) [Video](https://www.youtube.com/watch?v=X8dHbdhnGKY)
 - Introduce the Midterm Assignment (Due October 30th)
 - See example projects
 - Overview of switches and variable resistors. (photoresistor, FSR, tilt switch, flex sensor, etc)
