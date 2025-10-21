@@ -187,7 +187,7 @@ ART 150 student examples from the section taught by Sabrina Raaf:
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">Ivan Abreu: MULTIPLE VORTEX TORNADO (2013)</h3>
 <div style="display: inline">
-<img src="../../Assignments/Creative_Interfaces/images/pages.png" alt="" style="padding-bottom: 10px" uk-image />
+<img src="/../../Assignments/Creative_Interfaces/images/pages.png" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: #a3be8c">Inspiration</span>
 </div>
 </div>
@@ -203,7 +203,7 @@ ART 150 student examples from the section taught by Sabrina Raaf:
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">PlayDate</h3>
 <div style="display: inline">
-<img src="../../Assignments/Creative_Interfaces/images/playdate.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="/../../Assignments/Creative_Interfaces/images/playdate.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: #a3be8c">Inspiration</span>
 </div>
 </div>
