@@ -85,7 +85,7 @@ void setup() {
 
 void loop() {
     // read the state of your switch (is the circuit open or closed?)
-    sensorValue = digitalRead(2);
+    int sensorValue = digitalRead(2);
 
     // print results
     Serial.println(sensorValue);
