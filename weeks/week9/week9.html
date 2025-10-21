@@ -1,0 +1,309 @@
+<!doctype html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Mechanisms, Movement, & Meaning</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../css/uikit.min.css" />
+    <script src="../../js/uikit.min.js"></script>
+    <script src="../../js/uikit-icons.min.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../resources/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="../../css/custom.css" />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body uk-padding>
+    <div uk-width-2-3@m uk-height-medium>
+      <div
+        id="ArticleBody"
+        class="uk-card uk-card-default uk-card-body"
+        style="overflow-y: scroll; margin: 10px"
+      >
+        <section id="week-9" class="level1">
+        <h1>Week 9</h1>
+        <hr />
+        <section id="tuesday-agenda" class="level3">
+        <h3>Tuesday Agenda:</h3>
+        <ul>
+        <li>Review Pulse Width Modulation (PWM)</li>
+        <li>Introduce the Midterm Assignment (Due October 30th)</li>
+        <li>See example projects</li>
+        <li>Overview of switches and variable resistors. (photoresistor,
+        FSR, tilt switch, flex sensor, etc)</li>
+        <li>Workshop / Studio Time</li>
+        </ul>
+        <hr />
+        </section>
+        <section id="midterm-assignment-creative-interfaces"
+        class="level3">
+        <h3>Midterm Assignment: Creative Interfaces</h3>
+        <section id="description" class="level4">
+        <h4>Description</h4>
+        <p>We have looked at how switches (buttons) and variable
+        resistors (potentiometers) work. For your midterm assignment, I
+        want you to construct your own creative input device, using the
+        same electronic principles.</p>
+        <ul>
+        <li>Button: (Break or Make) a connection of a circuit. Open vs
+        Closed Circuit.</li>
+        <li>Potentiometer: Variable resistor</li>
+        </ul>
+        </section>
+        <section id="what-are-interfaces" class="level4">
+        <h4>What are Interfaces?</h4>
+        <p><strong>Formal Definition:</strong></p>
+        <p>When it comes to hardware, interfaces are the physical and
+        interactable means that bridge the communication between humans
+        and computers. They can take many forms, from traditional input
+        devices like keyboards and mice to more innovative and creative
+        designs that “enhance” user experience.</p>
+        <p>We can take a look around us and see many examples of it. We
+        use interfaces every day.</p>
+        </section>
+        <section id="the-point-of-the-assignment-the-challenge"
+        class="level4">
+        <h4>The Point of the Assignment; The Challenge:</h4>
+        <p>This is an art course, so we can stretch, challenge, discard,
+        or reinvent what an interface can be.</p>
+        <p>What if we challenged the word “enhace”?</p>
+        <p>What if we made something for people with disabilities? What
+        if it was for someone without hands, eyes, or ears? What if it
+        was for someone who could not speak?</p>
+        <p>What if we made something that was not for humans? What if it
+        was for animals? plants? for physical phenomena like wind or
+        light? For an imaginary being?</p>
+        <p>What if we made something that was not even useful at all?
+        What if it was just for fun? for play? for aesthetics? for a
+        pointless task? for a ritual? for a protest?</p>
+        <p>What if it was wearable? or portable? or stationary? what if
+        it was anchored to a specific location? what if it was extremely
+        heavy? or extremely light? Can you imagine an interface with a
+        bird’s feather?</p>
+        <p>What if it was large scale? or tiny?</p>
+        <p>What if it used unusual materials? or recycled materials? or
+        everyday materials? or organic materials? Can you imagine an
+        interface with a fork? or with a banana?</p>
+        <p>What if it required more than one person to use? What if it
+        was made for a community?</p>
+        <p>What if it was extremely simple? or extremely complex?</p>
+        <p><strong>Informal Definition:</strong></p>
+        <p>You can think of interfaces as the touchpoints, or the
+        computer’s “sensors” that allow it to perceive the world around
+        it.</p>
+        <hr />
+        </section>
+        <section id="assignment-parameters-and-requirements"
+        class="level4">
+        <h4>Assignment parameters and requirements:</h4>
+        <p><strong>The assignment is to design a physical interface that
+        could be imagined to be connected to a computer.</strong></p>
+        </section>
+        <section id="arduino" class="level4">
+        <h4>Arduino</h4>
+        <p>This assignment will not involve any major code writing
+        (unless you want to!!), but we do need to confirm that your
+        interface can be read by the Arduino and use the serial monitor
+        to print an imagined effect. for example, if button is on,
+        <code>Serial.println("LEDs turn on")</code>, if button is off,
+        <code>Serial.println("LEDs turn off")</code></p>
+        <p>You have the option of working with either a <strong>Digital
+        Input</strong> using <code>digitalRead()</code> (on/off; 2
+        possible states) switch or an <strong>Analog Input</strong>
+        using <code>analogRead()</code> (0-1023; 1024 possible
+        states).</p>
+        <p>Therefore, your design must be able to work using these
+        Arduino sketches:</p>
+        <p><code>DigitalRead.ino</code>:</p>
+        <pre class="arduino"><code>void setup() {
+    // Your switch should be connected to Pin 2
+    pinMode(2, INPUT);
+    // Using serial monitor to confirm input is working
+    Serial.begin(9600);
+}
+
+void loop() {
+    // read the state of your switch (is the circuit open or closed?)
+    sensorValue = digitalRead(2);
+
+    // print results
+    Serial.println(sensorValue);
+}</code></pre>
+        <p><code>AnalogRead.ino</code>:</p>
+        <pre class="arduino"><code>void setup() {
+    // Your sensor should be connected to Pin 2
+    pinMode(2, INPUT);
+    // Using serial monitor to confirm input is working
+    Serial.begin(9600);
+}
+
+void loop() {
+    // read the value coming from your sensor (What voltage level is it? 0-3.3V)
+    int sensorValue = analogRead(A0);
+
+    // print results
+    Serial.println(sensorValue);
+}</code></pre>
+        <p>Be imaginative with your design, even if it is made with
+        materials like cardboard, paper, aluminum foil, or tape. Think
+        of it as a prototype for a more refined version of your
+        interface. Don’t let the materials limit your ideas. We will be
+        sharing with the class on the due date.</p>
+        </section>
+        </section>
+        <section id="requirements" class="level3">
+        <h3>Requirements:</h3>
+        <ul>
+        <li>Physical Interface Object</li>
+        <li>Confirm can be read by one of two Arduino Sketches</li>
+        <li>Project Documentation (take pictures of the object by itself
+        and of it being used)</li>
+        <li>A post on Blackboard that describes your interface, how it
+        is used, what it is for, with images provided.</li>
+        </ul>
+        <p style="color: red;">
+        <strong>Due Date: October 30th, 2025</strong>
+        </p>
+        </section>
+        <section id="section" class="level3">
+        <h3></h3>
+        <p>To get you to start thinking about what kind of interface you
+        want to create, here are some examples of switches and variable
+        resistors that you can use as a starting point.</p>
+        <p><a
+        href="https://www.instructables.com/Switches/">Instructables:
+        Switches</a></p>
+        <p>Here is a list of switches that exist, along with any
+        tutorials on how to make one from scratch:</p>
+        <ul>
+        <li>Push Button Switch:</li>
+        </ul>
+        <p>[Instructables(https://www.instructables.com/How-to-Make-a-Push-Button-Switch/)]</p>
+        <p>Hint: Springs!</p>
+        <ul>
+        <li>Toggle Switch:</li>
+        </ul>
+        <p><a
+        href="https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/">Instructables</a></p>
+        <ul>
+        <li>Tilt Switch:</li>
+        </ul>
+        <p><a
+        href="https://www.instructables.com/Build-your-own-tilt-switch/">Instructables</a><br />
+        <a href="https://www.youtube.com/watch?v=jEqb6r3WV30">Youtube
+        Video</a></p>
+        <p>Here is a list of variable resistors:</p>
+        <ul>
+        <li>Potentiometer:</li>
+        </ul>
+        <p><a
+        href="https://www.instructables.com/Make-a-Pencils-Lead-Potentiometer-Experimentatio/">Instructables</a></p>
+        <ul>
+        <li>Photoresistor (LDR):</li>
+        </ul>
+        <p><a
+        href="www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/">Instructables</a></p>
+        <ul>
+        <li>Force Sensitive Resistor (FSR):</li>
+        </ul>
+        <p><a
+        href="https://www.instructables.com/Velostat-Homemade-Pressure-Sensor-Mat/">Instructables</a></p>
+        <ul>
+        <li>Flex Sensor:</li>
+        </ul>
+        <p><a
+        href="www.instructables.com/Stickytape-Sensors/">Instructables</a></p>
+        <hr />
+        <p>ART 150 student examples from the section taught by Sabrina
+        Raaf:</p>
+        <p><a
+        href="https://art150.nma-course.online/category/all-posts/creative-switch/">art150.nma</a></p>
+        <hr />
+        <section id="interfaces-real-world-examples" class="level4">
+        <h4>Interfaces: Real World Examples</h4>
+        <div class="uk-margin" style="padding: 30px;">
+        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+        <li>
+        <div>
+        <a href="https://vimeo.com/257009815">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="background: #a3be8c">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+        <h3 class="cardtitle">
+        Ivan Abreu: MULTIPLE VORTEX TORNADO (2013)
+        </h3>
+        <div style="display: inline">
+        <p><img src="../../Assignments/Creative_Interfaces/images/pages.png" alt="" style="padding-bottom: 10px" uk-image />
+        <span class="uk-label"
+        style="background-color: #a3be8c">Inspiration</span></p>
+        </div>
+        </div>
+        <p></a></p>
+        </div>
+        </div>
+        </li>
+        <li>
+        <div>
+        <a href="https://play.date/">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="background: #a3be8c">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+        <h3 class="cardtitle">
+        PlayDate
+        </h3>
+        <div style="display: inline">
+        <p><img src="../../Assignments/Creative_Interfaces/images/playdate.jpg" alt="" style="padding-bottom: 10px" uk-image />
+        <span class="uk-label"
+        style="background-color: #a3be8c">Inspiration</span></p>
+        </div>
+        </div>
+        <p></a></p>
+        </div>
+        </div>
+        </li>
+        </ul>
+        </div>
+        <p>Take a look at this TED Talk by Holly Cohen:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-We84cxubCY?si=fiqwsISlsHhsAIe6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <hr />
+        </section>
+        </section>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

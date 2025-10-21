@@ -266,7 +266,7 @@ A reed switch closes when a magnet is near it.
 - `==` vs `=`, `equals to` vs. `is assigned the value of`
 - internally connected legs
 
-## Supplemental Material
+## Supplementary Material
 
 ITP NYU course that walks through using a button as a digital input.
 

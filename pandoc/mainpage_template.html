@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -13,7 +13,11 @@
     <script src="../../js/uikit-icons.min.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="../../css/custom.css" />
 
@@ -23,12 +27,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -40,7 +44,13 @@
 
   <body uk-padding>
     <div uk-width-2-3@m uk-height-medium>
-      <div id="ArticleBody" class="uk-card uk-card-default uk-card-body" style="overflow-y: scroll; margin: 10px">$body$</div>
+      <div
+        id="ArticleBody"
+        class="uk-card uk-card-default uk-card-body"
+        style="overflow-y: scroll; margin: 10px"
+      >
+        $body$
+      </div>
     </div>
   </body>
 </html>

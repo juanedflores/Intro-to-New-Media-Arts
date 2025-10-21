@@ -171,17 +171,9 @@ From makeabilitylab explanation: <a href="https://makeabilitylab.github.io/physc
 
 > The baud rate specifies how fast data is sent over serial, which is expressed in bits-per-second (bps). For communicating with a computer, the Arduino docs recommend: 300 bps, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, or 115200. Both devices—in this case, the Arduino and the computer—need to be set to the same baud rate to communicate.
 
-#### Serial.println()
-
 ##### Print out text (Strings)
 
 When you are printing out text to the serial monitor, you are printing out a string of characters. In programming, we call this a `String`.
-
-<blockquote class="info">
-<span class="uk-label">Info</span>
-
-<p></p>
-</blockquote>
 
 ```arduino
 void loop() {

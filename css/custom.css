@@ -107,6 +107,10 @@ hr {
   left: 20px;
 }
 
+div.uk-card-small {
+  background-color: white;
+}
+
 div.uk-card-body > span {
   font-family: "Inter-VariableFont", sans-serif;
   font-weight: bold;

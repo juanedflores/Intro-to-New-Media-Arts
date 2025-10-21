@@ -237,8 +237,6 @@ variable</a></li>
 id="toc-initialize-serial-communication-in-setup">Initialize Serial
 Communication in setup()</a></li>
 <li><a href="#baud-rate" id="toc-baud-rate">Baud Rate</a></li>
-<li><a href="#serial.println"
-id="toc-serial.println">Serial.println()</a></li>
 </ul></li>
 </ul></li>
 </ul></div>
@@ -445,19 +443,11 @@ the Arduino docs recommend: 300 bps, 600, 1200, 2400, 4800, 9600, 14400,
 Arduino and the computer—need to be set to the same baud rate to
 communicate.</p>
 </blockquote>
-</section>
-<section id="serial.println" class="level4">
-<h4>Serial.println()</h4>
 <section id="print-out-text-strings" class="level5">
 <h5>Print out text (Strings)</h5>
 <p>When you are printing out text to the serial monitor, you are
 printing out a string of characters. In programming, we call this a
 <code>String</code>.</p>
-<blockquote class="info">
-<p><span class="uk-label">Info</span></p>
-<p>
-</p>
-</blockquote>
 <pre class="arduino"><code>void loop() {
     // print out text to the Serial Monitor
     Serial.pring(&quot;Hello World&quot;);
