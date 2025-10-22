@@ -136,7 +136,7 @@ Here is a list of switches that exist, along with any tutorials on how to make o
 
 - Push Button Switch:
 
-[Instructables](https://www.instructables.com/How-to-Make-a-Push-Button-Switch/)]
+[Instructables](https://www.instructables.com/How-to-Make-a-Push-Button-Switch/)
 
 Hint: Springs!
 
@@ -157,7 +157,7 @@ Here is a list of variable resistors:
 
 - Photoresistor (LDR):
 
-[Instructables](www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/)
+[Instructables](https://www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/)
 
 - Force Sensitive Resistor (FSR):
 
@@ -165,7 +165,7 @@ Here is a list of variable resistors:
 
 - Flex Sensor:
 
-[Instructables](www.instructables.com/Stickytape-Sensors/)
+[Instructables](https://www.instructables.com/Stickytape-Sensors/)
 
 ---
 
