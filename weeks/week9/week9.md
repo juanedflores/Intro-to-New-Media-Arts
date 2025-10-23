@@ -11,8 +11,17 @@ title: Week 9
 - Review Pulse Width Modulation (PWM) [Video](https://www.youtube.com/watch?v=X8dHbdhnGKY)
 - Introduce the Midterm Assignment (Due October 30th)
 - See example projects
-- Overview of switches and variable resistors. (photoresistor, FSR, tilt switch, flex sensor, etc)
+- Overview of switches and variable resistors. (photoresistor, force sensor, tilt switch, flex sensor, etc)
 - Workshop / Studio Time
+
+---
+
+### Thursday Agenda:
+
+- Demo of Custom Switch and Example Post
+- More Examples of Custom Switches
+- Quick workshop to make a pressure switch with Velostat
+- Studio Time
 
 ---
 
@@ -36,6 +45,12 @@ We can take a look around us and see many examples of it. We use interfaces ever
 #### The Point of the Assignment; The Challenge:
 
 This is an art course, so we can stretch, challenge, discard, or reinvent what an interface can be.
+
+<!-- <section class="slides_section"> -->
+<!-- <embed type="text/html" src="Assignments/Creative_Interfaces/Creative_Interfaces_Slides/index.html" width="100%" height="500px" /> -->
+<!-- </section> -->
+<!---->
+<!-- [Open Slides in New Tab](Assignments/Creative_Interfaces/Creative_Interfaces_Slides/index.html) -->
 
 What if we challenged the word "enhace"?
 
@@ -136,18 +151,28 @@ Here is a list of switches that exist, along with any tutorials on how to make o
 
 - Push Button Switch:
 
-[Instructables](https://www.instructables.com/How-to-Make-a-Push-Button-Switch/)
+[Instructables](https://www.instructables.com/How-to-Make-a-Push-Button-Switch/)  
+[Push Button](https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Push+Button/356)  
+[Stomp/Foot Switch](https://makeymakey.com/pages/stomp-switch-start-and-stop-timer)  
+[DIYAbility](https://www.diyability.org/guide/make-a-simple-capability-switch/)
 
 Hint: Springs!
 
 - Toggle Switch:
 
-[Instructables](https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/)
+[Instructables](https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/)  
+[Lever Switch](https://learn.browndoggadgets.com/Guide/Paper+Circuits+Cubes+-+Lever+Switch/522)
+
+<p style="text-decoration: underline">Guides by Pete Prodoehl</p>
+
+[Slide Switch](https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Slide+Switch/253)  
+[Cardboard Knife Switch](https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Knife+Switch/203)
 
 - Tilt Switch:
 
 [Instructables](https://www.instructables.com/Build-your-own-tilt-switch/)  
-[Youtube Video](https://www.youtube.com/watch?v=jEqb6r3WV30)
+[Youtube Video](https://www.youtube.com/watch?v=jEqb6r3WV30)  
+[Tilt Joystick](https://makeymakey.com/pages/diy-tilt-joystick)
 
 Here is a list of variable resistors:
 
@@ -172,6 +197,19 @@ Here is a list of variable resistors:
 ART 150 student examples from the section taught by Sabrina Raaf:
 
 [art150.nma](https://art150.nma-course.online/category/all-posts/creative-switch/)
+
+---
+
+Custom Interfaces:
+
+- Crank Counter
+[Crank](https://learn.browndoggadgets.com/Guide/Crank+Counter/238)
+
+- Therapy Ball Controller 
+[Therapy Ball](makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons)
+
+- Hoola Hoop Controller
+[Hula Hoop Controller](https://makeymakey.com/pages/hula-hoop-controller)
 
 ---
 
@@ -212,6 +250,22 @@ ART 150 student examples from the section taught by Sabrina Raaf:
 </div>
 </li>
 
+<li>
+<div>
+<a href="https://dougengelbart.org/content/view/162/">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #a3be8c">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h3 class="cardtitle">The First Mouse and Joystick Prototypes</h3>
+<div style="display: inline">
+<img src="https://i0.wp.com/www.designative.info/blog/wp-content/uploads/2008/12/DouglasEngelbartInventorPCMouse.jpg?w=1536&ssl=1" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #a3be8c">Inspiration</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</li>
+
 </ul>
 </div>
 
@@ -220,5 +274,6 @@ Take a look at this TED Talk by Holly Cohen:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-We84cxubCY?si=fiqwsISlsHhsAIe6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
+
 
 
