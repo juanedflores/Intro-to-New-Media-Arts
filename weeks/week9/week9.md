@@ -206,7 +206,7 @@ Custom Interfaces:
 [Crank](https://learn.browndoggadgets.com/Guide/Crank+Counter/238)
 
 - Therapy Ball Controller 
-[Therapy Ball](makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons)
+[Therapy Ball](https://makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons)
 
 - Hoola Hoop Controller
 [Hula Hoop Controller](https://makeymakey.com/pages/hula-hoop-controller)
