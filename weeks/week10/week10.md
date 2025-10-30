@@ -21,3 +21,26 @@ title: Week 10
 How to Critique in an Art Classroom: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9neybpOvjaQ?si=39zhth3vy1onWFvx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+```txt
+<header image: An image that shows off your interface>
+
+Description:
+
+<This is where you will write a short description of what your interface does, inspirations, thoughts, etc.>
+
+London design studio Glithero has created a playful take on illumination, designing a lamp that turns on via a game of dominoes.
+
+Demonstration on How To Use:
+
+<This is where you will put more documentation showing your interface being used. The steps needed, how to hold it, etc.>
+
+Imagined Effect:
+
+<This is where you will imagine what the effect of your interface is. You May have already hooked up and LED, but if you could make your dream project, what would it do?>
+
+Beyond being a playful interactive object, the concept behind the design intended to make visible the technical process of lighting. “With so much technology in our lives it is easy to take for granted that even simple things such as turning on a light are made possible by the physical properties of materials”, explains Tim Simpson, co-founder of the design studio.
+
+
+```
