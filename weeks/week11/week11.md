@@ -15,6 +15,10 @@ title: Week 11
 ### Thursday Agenda
 
 - Buzzer Speakers Workshop
+- Active vs. Passive
+- Produce a Tone with `tone()`
+- Use a Potentiometer to change the frequency. Swap with a Photoresistor!
+- Time for group music?
 
 
 ---
@@ -155,7 +159,7 @@ Trash-Built Robotic Fish</h3>
 <a href="./Arduino/buzzer_speaker/buzzer_speaker.html">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Buzzer Speaker</h3>
+<h3 class="cardtitle">Buzzer Speaker Workshop</h3>
 <div style="display: inline">
 <img width=100% src="./Arduino/buzzer_speaker/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: #1e87f0">Arduino</span>
@@ -173,10 +177,29 @@ Trash-Built Robotic Fish</h3>
 
 ### Additional Material
 
+**How to use tone()**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gj-H_agfd6U?si=ZkY3PdbM0QYPxTjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+**Piezo Discs**
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wcJXA8IqYl8?si=nZEITUJr6qSgEyjM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bc-5m9vU8Nk?si=B2tDin4mG_H2Srtj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p></p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gj-H_agfd6U?si=ZkY3PdbM0QYPxTjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+**Nic Collins**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6ZxxuDNQuMQ?si=oIcW0HUW0pusjNVV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+[ITP NYU PHYSCOMP COURSE](https://itp.nyu.edu/physcomp/category/sound/)
+
+---
+
+**Transistors**
+
+[Transistors Youtube Video](https://www.youtube.com/watch?v=0Z8tslPvU0o)
