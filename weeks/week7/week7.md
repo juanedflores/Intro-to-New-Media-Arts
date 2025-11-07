@@ -52,7 +52,7 @@ title: Week 7
 
 <li>
 <div>
-<a href="/Arduino/getting_setup/getting_setup.html">
+<a href="./Arduino/getting_setup/getting_setup.html">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">Getting Setup with Arduino IDE</h3>
