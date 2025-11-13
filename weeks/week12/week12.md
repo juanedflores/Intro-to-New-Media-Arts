@@ -9,7 +9,9 @@ title: Week 12
 ### Thursday Agenda
 
 - Check in; Talk about the Final Project and Proposal due next Tuesday
+- Talk about Sensors
 - Arduino Accelerometer and Gyroscope
+- Final Project Meeting Times
 
 ---
 
@@ -32,6 +34,23 @@ title: Week 12
 </a>
 </div>
 </li>
+
+<li>
+<div>
+<a href="https://www.circuito.io/blog/arduino-sensors-explained/">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h3 class="cardtitle">Sensors Overview</h3>
+<div style="display: inline">
+<img width=100% src="https://www.watelectronics.com/wp-content/uploads/Arduino-Sensor.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #1e87f0">Resource</span>
+</div>
+</div>
+</a>
+</div>
+</li>
+
+
 
 
 </ul>
