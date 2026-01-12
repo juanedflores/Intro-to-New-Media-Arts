@@ -5,7 +5,7 @@ Note:
 
 ---
 
-#### What are you here? What are you searching for?
+#### Why are you here? What are you searching for?
 
 <a href="https://wayfinding-project.herokuapp.com/" target="_blank">Wayfinding</a>
 
@@ -202,7 +202,7 @@ Note:
 #### <a href="https://www.ivanabreu.net/#frontpage">Ivan Abreu</a>
 <!-- .slide: class=".uk-width-1-1" -->  
 
-<embed type="text/html" src="https://www.ivanabreu.net/?category=PsTByRn2jPhCoYgi7NU0#filteredcontent" width="900px" height="600px">
+<embed type="text/html" src="https://ivanabreu.studio/works/" width="900px" height="600px">
 
 Note:
 

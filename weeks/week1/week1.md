@@ -3,8 +3,10 @@ title: Week 1
 ---
 
 <section class="slides_section">
-<embed type="text/html" src="slides/week1/index.html" width="100%" height="500px" />
+<embed type="text/html" src="slides/week_1_day1/index.html" width="100%" height="500px" />
 </section>
+
+[Open Slides in New Tab](./slides/week_1_day1/index.html)
 
 ### Tuesday Agenda
 
