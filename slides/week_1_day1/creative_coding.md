@@ -5,9 +5,21 @@ Note:
 
 ---
 
-#### Why are you here? What are you searching for?
+#### Introduction: Where are we?
 
-<a href="https://wayfinding-project.herokuapp.com/" target="_blank">Wayfinding</a>
+
+---
+
+
+#### Introduction: Where are we?
+
+<embed src="https://drive.google.com/file/d/1MyRKBB3byx7iTgvKjPeehdOYpvGhXSbV/preview" width="70%" height="600px" height="1200px" allow="autoplay"></embed>
+
+---
+
+#### Introduction: Who am I?
+
+<embed type="image/jpeg" src="https://juanedflores.com/" width="1000" height="500" />
 
 ---
 
@@ -17,25 +29,22 @@ Note:
 
 ---
 
-#### Surveillance; Data
-
-<embed type="text/html" src="https://www2.elpasotexas.gov/misc/externally_linked/bridges/cameras.html" width="900px" height="600px">
+#### Who are you?
 
 ---
 
-#### Robotics; Telepresence;
+#### Who are you?
 
-<iframe width="920" height="600" src="https://www.youtube.com/embed/6FpkLAWrSQc?si=p0XYqceE1oMxjL25&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Introductions:
 
-<ul>
-    <li>
-    <a href="https://www.ekac.org/roboticart.html" target="_blank">Eduardo Kac on Robotics</a>
-    </li>
-    <li>
-    <a href="https://monoskop.org/images/e/eb/Kac_Eduardo_Telepresence_and_Bio_Art_Networking_Humans_Rabbits_and_Robots_2005.pdf" target="_blank">Eduardo Kac on Telepresence and Bio Art</a>
-    </li>
-</ul>
+- Name, Pronouns, Year
+- Why are you here? What interested you about this class?
 
+---
+
+#### Robotics; Telepresence; Surveillance; Live Data/Feeds
+
+<iframe width="720" height="500" src="https://www.youtube.com/embed/6FpkLAWrSQc?si=p0XYqceE1oMxjL25&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -45,9 +54,186 @@ Note:
 
 ---
 
-#### Sound Art;
+#### Sound Art
 
 <img width="400" height="300" src="../../images/about_me/DSC04583.jpg" alt="">
+
+---
+
+#### What this class is & what it is not
+
+---
+
+#### Drawing Bots; First Assignment
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0n3dIO6u9yU?si=lp-FKVzBAbjAOzes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+#### Background
+
+<!-- .slide: class="uk-column-1-2 uk-column-divider uk-vertical-align-middle" -->  
+
+<p style="font-size: 24pt; text-align: center; padding-top:0.1em;">Walking as a practice</p>
+<p style="font-size: 24pt; text-align: center; padding-top:0.1em;">Instruction-based</p>
+
+<img width=350 src="../../Blog/random_walk_workshop/media/walking_poems/control.png"></img>
+<img width=350 src="../../Blog/random_walk_workshop/media/walking_poems/walk_photo2.png"></img>
+
+---
+
+#### Programming Languages
+
+<!-- .slide: class=".uk-width-1-1 uk-height-large" -->  
+
+
+<p style="font-size: 24pt; text-align: center; padding-top:1em;">Where to start?</p>
+
+<img width=300 src="https://assets.superblog.ai/site_cuid_clvc4016q001j13bhaleswmt1/images/scratchcoursefinal34c62e4332-1716407240736-compressed.png"></img>
+
+---
+
+#### Programming Languages
+
+<!-- .slide: class="uk-column-1-2 uk-column-divider uk-vertical-align-middle" -->  
+
+
+<p style="font-size: 24pt; text-align: center; padding-top:1em;"><strong>Scratch</strong>: designed for new programmers, children, educators.</p>
+
+<img width=300 src="https://assets.superblog.ai/site_cuid_clvc4016q001j13bhaleswmt1/images/scratchcoursefinal34c62e4332-1716407240736-compressed.png"></img>
+
+<br>
+<br>
+<br>
+
+<img style="visibility: hidden;" src="https://cdn.prod.website-files.com/68bda8ed1023b7fed633b3c0/68df9c76662881d9ad7b5d00_684c3802c4e2fd8322d20f71_general-purpose-and-systems-programming-languages.webp"></img>
+
+---
+
+#### Programming Languages
+
+<!-- .slide: class="uk-column-1-2 uk-column-divider uk-vertical-align-middle" -->  
+
+
+<p style="font-size: 24pt; text-align: center; padding-top:1em;"><strong>Scratch</strong>: designed for new programmers, children, educators.</p>
+
+<img width=300 src="https://assets.superblog.ai/site_cuid_clvc4016q001j13bhaleswmt1/images/scratchcoursefinal34c62e4332-1716407240736-compressed.png"></img>
+
+<br>
+<br>
+<br>
+
+<img src="https://cdn.prod.website-files.com/68bda8ed1023b7fed633b3c0/68df9c76662881d9ad7b5d00_684c3802c4e2fd8322d20f71_general-purpose-and-systems-programming-languages.webp"></img>
+
+---
+
+#### Arduino; Our Computer
+
+<embed type="image/jpeg" src="https://docs.arduino.cc/learn/programming/reference/" width="1000" height="500" />
+
+---
+
+
+#### "<a href="https://github.com/terkelg/awesome-creative-coding">Creative Coding Languages</a>"
+
+<!-- .slide: class=".uk-width-1-1 uk-height-large" -->  
+
+<p style="font-size: 24pt; text-align: center; padding-top:1em;">Designed for artists turned programmers, programmers turned artists.</p>
+
+<img width=600 src="../../Blog/random_walk_workshop/media/creative_coding_list.png"></img>
+
+---
+
+#### GRASS (GRAphics Symbiosis System; 1973)
+
+<img width=600 src="https://www.evl.uic.edu/dan/images/group.jpg"></img>
+
+---
+
+#### Basic Programming Language (1964)
+
+<!-- .slide: class="uk-column-1-2 uk-column-divider uk-vertical-align-middle" -->  
+
+<img width=600 src="../../Blog/random_walk_workshop/media/basic.png"></img>
+
+<img width=600 src="https://i.imgur.com/UFC247G.png"></img>
+
+---
+
+#### The Computer Programme (1982)
+
+<img width=500 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSM55Cx3xD1qd2nEN3W8XvcC8LO11oeCWnV3cJy78hYkqqFEKyRVp3O6cJpRNaGO1UIglmLA&s=10"></img>
+
+---
+
+##### PICO-8 Fantasy Console (Released: 2015)
+
+<embed type="image/jpeg" src="https://www.lexaloffle.com/pico-8.php" width="1000" height="500" />
+
+---
+
+#### Computer Lib / Dream Machines (Ted Nelson; 1974)
+
+<img width=600 src="https://mdhughes.tech/wp-content/uploads/2021/05/computerlib-dreammachines.jpg"></img>
+
+---
+
+#### Live Coding as Performance
+
+<!-- .slide: class="uk-column-1-2 uk-column-divider uk-vertical-align-middle" -->  
+
+<p style="font-size: 24pt; text-align: center; padding-top:1em;">1970s w/ GRASS</p>
+<img width=600 src="https://blog.toplap.org/wp-content/uploads/sites/9/2014/12/Screen-Shot-2014-12-02-at-3.14.16-PM.png"></img>
+
+<img width=600 src="https://static01.nyt.com/images/2019/10/06/fashion/00clubcode-1/merlin_161398722_6c45769a-7664-47a0-af32-cd4c07b3ce8a-superJumbo.jpg?quality=75&auto=webp"></img>
+
+<p style="font-size: 18pt; text-align: center; padding-top:1em;">Live coding is a new direction in electronic music and video, and is getting somewhere interesting. Live coders expose and rewire the innards of software while it generates improvised music and/or visuals. All code manipulation is projected for your pleasure. Live coding works across musical genres, and has been seen in concert halls, late night jazz bars, as well as algoraves.</p>
+
+---
+
+#### Design By Numbers (John Maeda; 1994)
+
+<!-- .slide: class="uk-column-1-2 uk-column-divider uk-vertical-align-middle" -->  
+
+<img width=400 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPPL9GSUustpkPRVH_Sah3cjk_aHgWcNT9_VPZdgRYB__TlESADupgaeNTr_QYB82rvQ3fFH-7GFRRRRvWBMetfmHCDb702pYVZkL442QlIjWpa8cP3_8BmMrJqPqgEhJ27U8gaIA7pA/s570/title.jpg"></img>
+<img width=400 src="https://kristianziarkodesignblog.wordpress.com/wp-content/uploads/2014/05/5buntitled5d001-1.jpg?w=1400&h=1810"></img>
+
+---
+
+#### Processing (Ben Fry & Casey Reas; 2001)
+
+<!-- .slide: class=".uk-width-1-1 uk-height-large" -->  
+
+<embed type="image/jpeg" src="https://processing.org/" width="1000" height="500" />
+
+---
+
+#### Twine
+
+<!-- .slide: class="uk-column-1-2 uk-column-divider uk-vertical-align-middle" -->  
+
+<p style="font-size: 24pt; text-align: center; padding-top:0.1em;">"The Walking Net"</p>
+
+<img width=400 src="https://oldoperatingtheatre.com/wp-content/uploads/2022/07/twine-screenshot-2.png"></img>
+<img width=400 src="https://oldoperatingtheatre.com/wp-content/uploads/2022/07/twine-screenshot-1.png"></img>
+
+
+<img width=300 src="https://www.cyoa.com/cdn/shop/products/Picture_1143038_1200x1200.png?v=1606835282"></img>
+<p style="font-size: 18pt; text-align: center; padding-top:0.1em;">Choose your own adventure style</p>
+
+---
+
+#### Q: What is the point?
+
+<!-- .slide: class=".uk-width-1-1 uk-height-large" -->  
+
+<img width=800 src="../../Blog/random_walk_workshop/media/embody.png"></img>
+
+---
+
+#### Artist Showcase
+
+---
 
 #### <a href="https://johanneslangkamp.com/about">Johannes Langkamp</a>
 <!-- .slide: class=".uk-width-1-1" -->  
@@ -346,3 +532,12 @@ Note:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IazEJ0C8flU?si=e6_YzQgisNW433Uo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Note:
+
+---
+
+#### Why are you here? What are you searching for?
+
+<a href="https://wayfinding-project.herokuapp.com/" target="_blank">Wayfinding</a>
+
+---
+
