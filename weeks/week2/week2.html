@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html  dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -13,7 +13,11 @@
     <script src="../../js/uikit-icons.min.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="../../css/custom.css" />
 
@@ -23,12 +27,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -40,153 +44,131 @@
 
   <body uk-padding>
     <div uk-width-2-3@m uk-height-medium>
-      <div id="ArticleBody" class="uk-card uk-card-default uk-card-body" style="overflow-y: scroll; margin: 10px"><section class="slides_section">
-<embed type="text/html" src="slides/week_2_day1/index.html" width="100%" height="500px" />
-</section>
-<p><a href="./slides/week_2_day1/index.html">Open Slides in New
-Tab</a></p>
-<hr />
-<section id="tuesday-agenda" class="level3">
-<h3>Tuesday Agenda</h3>
-<ul>
-<li>Housekeeping</li>
-<li>Video Games, Glitch, Hacking, and AI</li>
-<li>Digital vs Analog? Demo Oscilloscope</li>
-<li>Demo Glitch Art Using Audacity and Text Editors</li>
-</ul>
-<hr />
-</section>
-<section id="thursday-agenda" class="level3">
-<h3>Thursday Agenda</h3>
-<ul>
-<li>Demo contact Microphone and Electromagnetic Pickup with
-Oscilloscope</li>
-<li>Circuit Bending: Intervention in Existing Circuitry
-(Low-Voltage)</li>
-</ul>
-<hr />
-</section>
-<section id="to-watch" class="level3">
-<h3>To Watch</h3>
-<p>Circuit Bending: Reed Ghazala:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KHDL9iGxDPM?si=hxGtC_tZ80xMMK2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<p>Data Bending / Moshing:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z_Rut5gjwfE?si=8T4R1ima0FEPgb0C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<p><a href="https://medium.com/ai-music/using-audacity-for-video-glitch-effects-9739e99351c0">Video
-Data Bend Article</a> <a href="http://datamoshing.com/">Data Moshing
-Website</a></p>
-<p>Peter Vogel</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Lan6iu3hyz8?si=wD3CDyo2aMNi77zi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<p>Nic Collins</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4T7qkYY7LZM?si=tAEndFcUm3AaxcXn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6bCB4yFJ5MA?si=bv2JRkLySzDOoncL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sBlIRdnPciw?si=lIQS30hNbvAv3snw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<p>Christina Kubisch</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5tCphr8pbFk?si=W7XYPgvdN06nMpqh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<p><a href="https://art21.org/watch/art-in-the-twenty-first-century/s2/tim-hawkinson-in-time-segment/">Tim
-Hawkinson</a></p>
-<p><img src="/slides/week_2_day1/images/hawkinson.jpg"></img></p>
-<p>Arduino Project with 3 Servo Motors</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H712Cc5Ca94?si=tFXS_XeexPJjMc5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<hr />
-</section>
-<section id="topics" class="level3">
-<h3>Topics</h3>
-<div class="uk-margin" style="padding: 30px; ">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-<!-- <li class="week3 basic_equipment all"> -->
-<!-- <div> -->
-<!-- <a href="./Blog/sensors/sensors.html"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)"> -->
-<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style=""> -->
-<!-- <h3 class="cardtitle">Inputs: Sensors</h3> -->
-<!-- <div style="display: inline"> -->
-<!-- <img src="/slides/week_2_day1/images/sensors.png" alt="" style="padding-bottom: 10px" uk-image /> -->
-<!-- <span class="uk-label" style="background-color: rgb(56, 79, 172)c">Lesson</span> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </a> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </li> -->
-<li class="week3 basic_equipment all">
-<div>
-<a href="https://www.bfi.org.uk/sight-and-sound/features/art-within-machine-how-machinima-turns-camera-videogames">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="background: rgb(210, 230, 250)">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="">
-<h3 class="cardtitle">
-Machinima
-</h3>
-<div style="display: inline">
-<p><img src="/slides/week_2_day1/images/machinima.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label"
-style="background-color: rgb(200, 200, 40)c">Article</span></p>
-</div>
-</div>
-<p></a></p>
-</div>
-</div>
-</li>
-<li class="week3 basic_equipment all">
-<div>
-<a href="https://youtu.be/vIQ74_DRWEM?feature=shared">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="background: rgb(210, 230, 250)">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="">
-<h3 class="cardtitle">
-Demoscene
-</h3>
-<div style="display: inline">
-<p><img src="/slides/week_2_day1/images/demoscene.webp" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label"
-style="background-color: rgb(200, 200, 40)c">Video</span></p>
-</div>
-</div>
-<p></a></p>
-</div>
-</div>
-</li>
-<li class="week3 basic_equipment all">
-<div>
-<a href="https://youtu.be/vIQ74_DRWEM?feature=shared">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="background: rgb(210, 230, 250)">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="">
-<h3 class="cardtitle">
-Analog Vs. Digital Signals
-</h3>
-<div style="display: inline">
-<p><img src="/slides/week_2_day1/images/signals.png" alt="" style="padding-bottom: 11px" uk-image />
-<span class="uk-label"
-style="background-color: rgb(200, 200, 40)c">Video</span></p>
-</div>
-</div>
-<p><a href="https://makeabilitylab.github.io/physcomp/sensors/assets/images/SignalAcquisitionPipeline_Wikipedia.png"></a>
-</a></p>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</section></div>
+      <div
+        id="ArticleBody"
+        class="uk-card uk-card-default uk-card-body"
+        style="overflow-y: scroll; margin: 10px"
+      >
+        <section class="slides_section">
+        <embed type="text/html" src="slides/week_2_day1/index.html" width="100%" height="500px" />
+        </section>
+        <p><a href="./slides/week_2_day1/index.html">Open Slides in New
+        Tab</a></p>
+        <hr />
+        <section id="wednesday-agenda" class="level3">
+        <h3>Wednesday Agenda</h3>
+        <ul>
+        <li>Housekeeping</li>
+        <li>Gallery 400 Exhibition Visit</li>
+        <li>Video Games, Glitch, Hacking, and AI</li>
+        <li>Digital vs Analog? Demo Oscilloscope</li>
+        <li>Demo Glitch Art Using Audacity and Text Editors</li>
+        <li>Demo contact Microphone and Electromagnetic Pickup with
+        Oscilloscope</li>
+        <li>Circuit Bending: Intervention in Existing Circuitry
+        (Low-Voltage)</li>
+        </ul>
+        <hr />
+        </section>
+        <section id="to-watch" class="level3">
+        <h3>To Watch</h3>
+        <p>Circuit Bending: Reed Ghazala:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KHDL9iGxDPM?si=hxGtC_tZ80xMMK2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p>Data Bending / Moshing:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_Rut5gjwfE?si=8T4R1ima0FEPgb0C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><a href="https://medium.com/ai-music/using-audacity-for-video-glitch-effects-9739e99351c0">Video
+        Data Bend Article</a> <a href="http://datamoshing.com/">Data
+        Moshing Website</a></p>
+        <p>Peter Vogel</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lan6iu3hyz8?si=wD3CDyo2aMNi77zi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p>Nic Collins</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4T7qkYY7LZM?si=tAEndFcUm3AaxcXn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6bCB4yFJ5MA?si=bv2JRkLySzDOoncL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sBlIRdnPciw?si=lIQS30hNbvAv3snw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p>Christina Kubisch</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5tCphr8pbFk?si=W7XYPgvdN06nMpqh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><a href="https://art21.org/watch/art-in-the-twenty-first-century/s2/tim-hawkinson-in-time-segment/">Tim
+        Hawkinson</a></p>
+        <p><img src="/slides/week_2_day1/images/hawkinson.jpg"></img></p>
+        <p>Arduino Project with 3 Servo Motors</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/H712Cc5Ca94?si=tFXS_XeexPJjMc5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <hr />
+        </section>
+        <section id="topics" class="level3">
+        <h3>Topics</h3>
+        <div class="uk-margin" style="padding: 30px; ">
+        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+        <!-- <li class="week3 basic_equipment all"> -->
+        <!-- <div> -->
+        <!-- <a href="./Blog/sensors/sensors.html"> -->
+        <!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)"> -->
+        <!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style=""> -->
+        <!-- <h3 class="cardtitle">Inputs: Sensors</h3> -->
+        <!-- <div style="display: inline"> -->
+        <!-- <img src="/slides/week_2_day1/images/sensors.png" alt="" style="padding-bottom: 10px" uk-image /> -->
+        <!-- <span class="uk-label" style="background-color: rgb(56, 79, 172)c">Lesson</span> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </a> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </li> -->
+        <li class="week3 basic_equipment all">
+        <div>
+        <a href="https://www.bfi.org.uk/sight-and-sound/features/art-within-machine-how-machinima-turns-camera-videogames">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="background: rgb(210, 230, 250)">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="">
+        <h3 class="cardtitle">
+        Machinima
+        </h3>
+        <div style="display: inline">
+        <p><img src="/slides/week_2_day1/images/machinima.jpg" alt="" style="padding-bottom: 10px" uk-image />
+        <span class="uk-label"
+        style="background-color: rgb(200, 200, 40)c">Article</span></p>
+        </div>
+        </div>
+        <p></a></p>
+        </div>
+        </div>
+        </li>
+        <li class="week3 basic_equipment all">
+        <div>
+        <a href="https://youtu.be/vIQ74_DRWEM?feature=shared">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="background: rgb(210, 230, 250)">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="">
+        <h3 class="cardtitle">
+        Demoscene
+        </h3>
+        <div style="display: inline">
+        <p><img src="/slides/week_2_day1/images/demoscene.webp" alt="" style="padding-bottom: 10px" uk-image />
+        <span class="uk-label"
+        style="background-color: rgb(200, 200, 40)c">Video</span></p>
+        </div>
+        </div>
+        <p></a></p>
+        </div>
+        </div>
+        </li>
+        </ul>
+        </div>
+        </section>
+      </div>
     </div>
   </body>
 </html>
