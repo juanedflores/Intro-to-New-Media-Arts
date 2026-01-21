@@ -19,6 +19,72 @@ This includes:
 
 ---
 
+#### <a target="_blank" href="https://www.moma.org/collection/works/120330?">Hole in Space</a>
+
+<p style="font-size: 17px; margin: 0; padding: 0;">Kit Galloway, Sherrie Rabinowitz</p>
+
+<img width=650 src="https://www.moma.org/d/c/installation_images/W1siZiIsIjUzNzA3MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=e999422f" alt="">
+
+Note: Before we go into the history, let's start with something light. Talk about the connection between the "Wayfinding" sketch and this installation by Kit and Sherrie.
+
+---
+
+####
+
+<!-- .slide: class=".uk-width-1-1" -->
+
+<iframe width="1080" height="680" src="https://www.youtube.com/embed/SyIJJr6Ldg8?si=0Omx3_ElSpdAkoDb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+####
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ARNtBm70wsY?si=OXSObpSc8l8P3-R6&amp;start=781" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+#### Art Studios
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QhQrywlzaVI?si=1achETnsylNV4yED" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+#### Cory Arcangel
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7DDfLOc-Dlc?si=41wUo4c4EeLLNuRt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+#### Are.na
+
+<embed type="text/html" src="https://www.are.na/share/NGKxjUX" width="900px" height="600px">
+
+---
+
+#### Telematic Art
+
+<embed type="text/html" src="https://en.wiktionary.org/wiki/tele-" width="900px" height="600px">
+
+---
+
+#### 40 years apart
+
+<a target="_blank" href="https://www.youtube.com/shorts/th55zWjsPco"><img width=400 src="./images/portal.png" alt=""></a>
+
+---
+
+#### So, What is New Media Art?
+
+Note: 
+- Interactive
+- Participatory
+- Collaborative
+- Community Oriented
+- Time-Based
+
+
+---
+
 #### Origins of New Media Art: The Military-Industrial Complex
 <!-- .slide: class=".uk-width-1-1" -->  
 
