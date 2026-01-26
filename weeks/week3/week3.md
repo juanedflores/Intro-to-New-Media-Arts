@@ -2,21 +2,21 @@
 title: Week 3
 ---
 
-### Tuesday Agenda
+### Monday Agenda
 
-- Cory Arcangel Artist Talk
+- Are.na (Intro and Create Profiles)
 - Intro to TinkerCAD
 - Demo with Power Supply and Multimeter
 
-### Thursday Agenda
+### Wednesday Agenda
 
 - Artist Showcase: Tim Hawkinson
-- TinkerCAD Ohms Law
+- TinkerCAD Ohms Law, Parellel and Series
 - Multimeter Demo
 - Paper Circuits
 
 
-<a href="http://highlowtech.org/">highlowtech</a>
+<a href="https://highlowtech.org/?p=2505">highlowtech: paper circuits tutorial</a>
 
 ---
 
@@ -48,11 +48,13 @@ title: Week 3
 ### Supplementary Material
 
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qG1TvHkE8J4?si=SFJkVNFtuD6CPMDW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SGvOmwZvhVk?si=o8FJIdctVGWd6Qct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X_crwFuPht4?si=vqZozjdt20niplFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0EieZIeOy4c?si=8JICrRtkXNrqW90P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-

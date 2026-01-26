@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html  dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -13,7 +13,11 @@
     <script src="../../js/uikit-icons.min.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="../../css/custom.css" />
 
@@ -23,12 +27,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -40,65 +44,73 @@
 
   <body uk-padding>
     <div uk-width-2-3@m uk-height-medium>
-      <div id="ArticleBody" class="uk-card uk-card-default uk-card-body" style="overflow-y: scroll; margin: 10px"><section
-id="tuesday-agenda" class="level3">
-<h3>Tuesday Agenda</h3>
-<ul>
-<li>Cory Arcangel Artist Talk</li>
-<li>Intro to TinkerCAD</li>
-<li>Demo with Power Supply and Multimeter</li>
-</ul>
-</section>
-<section id="thursday-agenda" class="level3">
-<h3>Thursday Agenda</h3>
-<ul>
-<li>Artist Showcase: Tim Hawkinson</li>
-<li>TinkerCAD Ohms Law</li>
-<li>Multimeter Demo</li>
-<li>Paper Circuits</li>
-</ul>
-<p><a href="http://highlowtech.org/">highlowtech</a></p>
-<hr />
-</section>
-<section id="topics" class="level3">
-<h3>Topics</h3>
-<div class="uk-margin" style="padding: 30px; ">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-<li class="week3 basic_equipment all">
-<div>
-<a href="./Blog/intro_to_electronics/intro_to_electronics.html">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="background: rgb(210, 230, 250)">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="">
-<h3 class="cardtitle">
-TinkerCAD and Intro to Electronics
-</h3>
-<div style="display: inline">
-<p><img src="./Blog/intro_to_electronics/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label"
-style="background-color: rgb(56, 79, 172)c">Lesson</span></p>
-</div>
-</div>
-<p></a></p>
-</div>
-</div>
-</li>
-</ul>
-</div>
-<hr />
-</section>
-<section id="supplementary-material" class="level3">
-<h3>Supplementary Material</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SGvOmwZvhVk?si=o8FJIdctVGWd6Qct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X_crwFuPht4?si=vqZozjdt20niplFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0EieZIeOy4c?si=8JICrRtkXNrqW90P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</section></div>
+      <div
+        id="ArticleBody"
+        class="uk-card uk-card-default uk-card-body"
+        style="overflow-y: scroll; margin: 10px"
+      >
+        <section id="monday-agenda" class="level3">
+        <h3>Monday Agenda</h3>
+        <ul>
+        <li>Are.na (Intro and Create Profiles)</li>
+        <li>Intro to TinkerCAD</li>
+        <li>Demo with Power Supply and Multimeter</li>
+        </ul>
+        </section>
+        <section id="wednesday-agenda" class="level3">
+        <h3>Wednesday Agenda</h3>
+        <ul>
+        <li>Artist Showcase: Tim Hawkinson</li>
+        <li>TinkerCAD Ohms Law, Parellel and Series</li>
+        <li>Multimeter Demo</li>
+        <li>Paper Circuits</li>
+        </ul>
+        <p><a href="https://highlowtech.org/?p=2505">highlowtech: paper
+        circuits tutorial</a></p>
+        <hr />
+        </section>
+        <section id="topics" class="level3">
+        <h3>Topics</h3>
+        <div class="uk-margin" style="padding: 30px; ">
+        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+        <li class="week3 basic_equipment all">
+        <div>
+        <a href="./Blog/intro_to_electronics/intro_to_electronics.html">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="background: rgb(210, 230, 250)">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="">
+        <h3 class="cardtitle">
+        TinkerCAD and Intro to Electronics
+        </h3>
+        <div style="display: inline">
+        <p><img src="./Blog/intro_to_electronics/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+        <span class="uk-label"
+        style="background-color: rgb(56, 79, 172)c">Lesson</span></p>
+        </div>
+        </div>
+        <p></a></p>
+        </div>
+        </div>
+        </li>
+        </ul>
+        </div>
+        <hr />
+        </section>
+        <section id="supplementary-material" class="level3">
+        <h3>Supplementary Material</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qG1TvHkE8J4?si=SFJkVNFtuD6CPMDW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><br></p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SGvOmwZvhVk?si=o8FJIdctVGWd6Qct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><br></p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/X_crwFuPht4?si=vqZozjdt20niplFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        </section>
+      </div>
     </div>
   </body>
 </html>

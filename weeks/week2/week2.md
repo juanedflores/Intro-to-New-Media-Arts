@@ -13,14 +13,18 @@ title: Week 2
 ### Wednesday Agenda
 
 - Housekeeping
-- Gallery 400 Exhibition Visit
+- Gallery 400 Exhibition Visit: <a target="_blank" href="https://gallery400.uic.edu/exhibition/imaginationdoctors/">Gallery 400 Website</a>
+ * <a target="_blank" href="https://mauriciolopezf.com/">Mauricio Lopez</a>
+- <a href="https://albertoaguilar.org/" target="_blank">Alberto Aguilar</a>
+- Net Art (<a href="https://anthology.rhizome.org/" target="_blank">net art anthology</a>)
 - Video Games, Glitch, Hacking, and AI
-- Digital vs Analog? Demo Oscilloscope
 - Demo Glitch Art Using Audacity and Text Editors
-- Demo contact Microphone and Electromagnetic Pickup with Oscilloscope
+- Demo contact Microphone and Electromagnetic Pickup with Oscilloscope ()
 - Circuit Bending: Intervention in Existing Circuitry (Low-Voltage)
 
 ---
+
+<embed type="text/pdf" src="https://gallery400.uic.edu/wp-content/uploads/2025/10/Imagination-Doctors-Press-Release.pdf" width="300" height="200">
 
 ### To Watch
 
