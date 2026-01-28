@@ -107,6 +107,10 @@ hr {
   left: 20px;
 }
 
+.uk-first-column {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 div.uk-card-small {
   background-color: white;
 }
