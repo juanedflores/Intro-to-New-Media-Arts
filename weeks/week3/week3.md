@@ -10,10 +10,11 @@ title: Week 3
 
 ### Wednesday Agenda
 
-- Artist Showcase: Tim Hawkinson
+- Talk about Are.na
 - TinkerCAD Ohms Law, Parellel and Series
 - Multimeter Demo
 - Paper Circuits
+- What is a short circuit? <a target="_blank" href="https://makeabilitylab.github.io/physcomp/electronics/electricity-basics.html#whats-a-short-circuit">Link</a>
 
 
 <a href="https://highlowtech.org/?p=2505">highlowtech: paper circuits tutorial</a>
@@ -25,21 +26,84 @@ title: Week 3
 <div class="uk-margin" style="padding: 30px; ">
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
 
+
+
 <li class="week3 basic_equipment all">
 <div>
 <a href="./Blog/intro_to_electronics/intro_to_electronics.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #fba99e">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">TinkerCAD and Intro to Electronics</h3>
 <div style="display: inline">
 <img src="./Blog/intro_to_electronics/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: rgb(56, 79, 172)c">Lesson</span>
+<span class="uk-label" style="background-color: #fba99e">Lesson</span>
 </div>
 </div>
 </a>
 </div>
+</li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="./Blog/series_parallel_circuits/series_parallel_circuits.html">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #fba99e">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Basic Circuits</h3>
+<div style="display: inline">
+<img src="./Blog/series_parallel_circuits/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #fba99e">Lesson</span>
+</div>
+</div>
+</a>
 </div>
 </li>
+
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://makeabilitylab.github.io/physcomp/electronics/ohms-law.html">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Ohms Law</h3>
+<div style="display: inline">
+<img src="https://cdn.shopify.com/s/files/1/0823/6200/7871/files/what-is-ohms-law-calculation_1.webp?v=1710796764" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(56, 79, 172)c">Online Article</span>
+</div>
+</div>
+</a>
+</div>
+</li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://makeabilitylab.github.io/physcomp/electronics/series-parallel.html">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Parallel and Series Circuits</h3>
+<div style="display: inline">
+<img src="https://www.makerspaces.com/wp-content/uploads/2020/09/parallel-animation-small.gif" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(56, 79, 172)c">Online Article</span>
+</div>
+</div>
+</a>
+</div>
+</li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://www.makerspaces.com/simple-series-and-parallel-paper-circuits/">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #bcd6ba">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Paper Circuits Workshop</h3>
+<div style="display: inline">
+<img src="https://www.makerspaces.com/wp-content/uploads/2016/08/simple-circuit-border.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #bcd6ba">Workshop</span>
+</div>
+</div>
+</a>
+</div>
+</li>
+
 </ul>
 </div>
 
@@ -58,3 +122,15 @@ title: Week 3
 <br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X_crwFuPht4?si=vqZozjdt20niplFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RWRbSn4uDow?si=vbTJce2_cvDjeya7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+
+---
+
+### Parallel Paper Circuit
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P-eOtQAcD1s?si=4WV8IUocr-cDYgXt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
