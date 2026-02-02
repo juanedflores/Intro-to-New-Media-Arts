@@ -5,7 +5,7 @@ title: Week 4
 ### Monday Agenda
 
 - Check in & Review: Using a multimeter
-- Artist Showcase: Zach Rotholz (<a href="https://www.zachrotholz.com/paper-speakers.html">link</a>) and Irene Posche (<a href="https://ireneposch.net/the-knitted-radio/">link</a>)
+- Artist Showcase: Zach Rotholz (<a href="https://www.zachrotholz.com/paper-speakers.html">link</a>), Irene Posche (<a href="https://ireneposch.net/the-knitted-radio/">link</a>), Michel de Broin <a href="https://micheldebroin.org/en/works/embrase-moi/">link</a>
 - Paper Circuits Attempt #2
 
 1. simple circuit template <a href="https://www.makerspaces.com/wp-content/uploads/2020/08/simple-circuit.pdf">pdf link</a>
