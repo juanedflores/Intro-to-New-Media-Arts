@@ -89,21 +89,6 @@ title: Week 3
 </div>
 </li>
 
-<li class="week3 basic_equipment all">
-<div>
-<a href="https://www.makerspaces.com/simple-series-and-parallel-paper-circuits/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #bcd6ba">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
-<h3 class="cardtitle">Paper Circuits Workshop</h3>
-<div style="display: inline">
-<img src="https://www.makerspaces.com/wp-content/uploads/2016/08/simple-circuit-border.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #bcd6ba">Workshop</span>
-</div>
-</div>
-</a>
-</div>
-</li>
-
 </ul>
 </div>
 
