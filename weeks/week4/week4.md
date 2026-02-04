@@ -47,6 +47,9 @@ title: Week 4
 - Check in
 - Soldering Workshop
 
+Soldering Guide <a href="https://www.makerspaces.com/wp-content/uploads/2017/04/How-To-Solder-Beginners-Guide.pdf">link</a>
+Robotics Knowledgebase Soldering Guide <a href="https://roboticsknowledgebase.com/wiki/fabrication/soldering/">link</a>
+
 ---
 
 ### Topics
@@ -54,9 +57,9 @@ title: Week 4
 <div class="uk-margin" style="padding: 30px; ">
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
 
-<li class="">
+<li class="" style="pointer-events: none;">
 <div>
-<a href="./Blog/protoboards/protoboards.html">
+<a href="./Blog/protoboards/protoboards.html" style="pointer-events: none;">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">Protoboards</h3>
@@ -72,7 +75,7 @@ title: Week 4
 
 <li class="">
 <div>
-<a href="./Blog/soldering_kits/soldering_kits.html">
+<a href="./Blog/soldering_kits/soldering_kits.html" style="pointer-events: none;">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">Soldering Kit Breakdown</h3>
@@ -88,7 +91,7 @@ title: Week 4
 
 <li>
 <div>
-<a href="./Blog/vibration_motor/vibration_motor.html">
+<a href="./Blog/vibration_motor/vibration_motor.html" style="pointer-events: none;">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">Vibration Motors</h3>
@@ -105,7 +108,7 @@ title: Week 4
 
 <li>
 <div>
-<a href="./Blog/hex_bug_workshop/hex_bug_workshop.html">
+<a href="./Blog/hex_bug_workshop/hex_bug_workshop.html" style="pointer-events: none;">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #bcd6ba">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h3 class="cardtitle">Vibration Motor and Soldering Workshop</h3>
