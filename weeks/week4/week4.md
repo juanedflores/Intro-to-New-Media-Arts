@@ -48,6 +48,7 @@ title: Week 4
 - Soldering Workshop
 
 Soldering Guide <a href="https://www.makerspaces.com/wp-content/uploads/2017/04/How-To-Solder-Beginners-Guide.pdf">link</a>
+
 Robotics Knowledgebase Soldering Guide <a href="https://roboticsknowledgebase.com/wiki/fabrication/soldering/">link</a>
 
 ---
