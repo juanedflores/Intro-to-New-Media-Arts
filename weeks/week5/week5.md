@@ -6,11 +6,23 @@ title:
 
 Vibration Motor and Drawing Machine Studio Days
 
-### The Assignment
+### Monday Agenda
 
 This week we are finishing soldering our vibration motor with LED circuit on our perforated boards.
 
 <a href="https://www.youtube.com/watch?v=l9Kbr8cPqOE">What is a perf board?</a>
+
+* Showcase some generative drawing examples.
+* Continue drawing machine workshop. Should be in **construction of body** phase.
+
+### Wednesday Agenda
+
+* Continue drawing machine workshop for until 4:45pm. Write formal instructions for your drawing.
+* Document our machines, drawings, and process.
+
+### The Assignment
+
+**Constructing the Body Phase**
 
 For our drawing machines, our finished soldered circuit is like the skeleton.
 
@@ -32,11 +44,26 @@ Once you have a goal in mind, you will encounter problems. Sometimes it is ok to
 
 ---
 
-Once you have a working prototype, continue to iterate through the possible movements and mark making types. Think of this as an exploration of a new paint brush. Experiment with different mark-making tools, colors, textures, etc.
+**Writing the formal Generative Drawing Instructions**
+
+Once you are reaching a final design. Get to know your machine as if it was a new tool you bought for art making. Explore its drawing behavior.
+
+Continue to iterate through the possible movements and mark making types. Think of this as an exploration of a new paint brush. Experiment with different mark-making tools, colors, textures, etc.
 
 Think of how to limit range, time constraints, starting/ending positions, etc.
 
-On Wednesday Feb 11th, we will share our robots with the class.
+
+---
+
+<span style="color: red">On Wednesday Feb 11th, we will share our robots with the class.</span>
+
+This assignment involves the documentation of three things:
+
+- Your constructed drawing machine
+- The Instructions to Carry out a Drawing
+- The Final Drawing
+
+In class, we will document our work together. But your midterm and final projects, you will be responsible for documenting your own projects.
 
 ### Drawing Bot Inspiration
 
@@ -67,6 +94,14 @@ Signed certificate & diagram
 
 ---
 
+#### Yoko Ono: Performance Scores
+
+<img width="300" src="https://visit.mcachicago.org/wp-content/uploads/2025/03/YO_007.webp"></img>
+
+Link to MCA Exhibition: <a href="https://visit.mcachicago.org/exhibitions/yoko-ono-music-of-the-mind/">link</a>
+
+---
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZrR_1x6lhMo?si=z8b9j_OC8qrpnAoa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Organized by AIGA at Harlem School for the Arts, animated by littleBits**
@@ -76,6 +111,14 @@ use of an autonomous system. In discussing generative art and its principles,
 participants are challenged to invent their own drawing bots.
 
 <br>
+
+---
+
+#### Generative Systems
+
+<img width="300" src="https://cdn.prod.website-files.com/6411e594fbd274173bf8c35c/667408fe78d11cb70f143009_AD_4nXcM7R3KilufepRzHUaT5_M9QRiZsZKbvLjb1QDxhAuy86kU3tEYbPppdGIaygIzoDGdW4d5ugXRzYiBG00B35UBad-9cliRS19mrl8scZYkO2shZLaaDT7DEKwylBOGojr73BZ1mcAHWw4lI0cQHqigMsg.jpeg"></img>
+
+<a href="www.lerandom.art/editorial/demystifying-generative-systems">Link</a>
 
 ---
 
