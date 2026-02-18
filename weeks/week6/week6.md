@@ -89,69 +89,25 @@ title: Week 6
 </div>
 </li>
 
-
-
-
-</ul>
-</div>
-
-
-## Drawing Machines Review
-
-<div style="padding: 20px">
-<ul
-class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match"
-uk-grid="masonry: pack"
->
-
-
 <li class="">
 <div>
-  <iframe
-    style="border: none"
-    width="100%"
-    height="590"
-    src="https://www.are.na/emmanuel-tapia/wheel-compass/embed"
-    title="Test"
-  ></iframe>
+<a href="https://www.youtube.com/watch?v=SLRYX879Py0&list=WL&index=2">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #faf0d3">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h3 class="cardtitle">Velostat Pressure Sensor Workshop</h3>
+<div style="display: inline">
+<img src="https://class.textile-academy.org/2024/grecia-segovia/images/week12/MATRIZ1.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #4c370c">Youtube Video</span>
+</div>
+</div>
+</a>
+</div>
 </div>
 </li>
 
-<li class="">
-<div>
-  <iframe
-    style="border: none"
-    width="100%"
-    height="590"
-    src="https://www.are.na/art-150-spring-2026/hope-s-portfolio-myvjycgqwq0/embed"
-    title="Test"
-  ></iframe>
-</div>
-</li>
 
-<li class="">
-<div>
-  <iframe
-    style="border: none"
-    width="100%"
-    height="590"
-    src="https://www.are.na/art-150-spring-2026/joshua-isaac-portfolio/embed"
-    title="Test"
-  ></iframe>
-</div>
-</li>
 
-<li class="">
-<div>
-  <iframe
-    style="border: none"
-    width="100%"
-    height="590"
-    src="https://www.are.na/art-150-spring-2026/mousmi-s-portfolio/embed"
-    title="Test"
-  ></iframe>
-</div>
-</li>
+
 
 
 
