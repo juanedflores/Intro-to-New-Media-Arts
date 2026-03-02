@@ -61,6 +61,64 @@
         <li>Digital Button Workshop</li>
         </ul>
         <hr />
+        <p>Patatype with me!</p>
+        <pre class="arduino"><code>#include &lt;SPI.h&gt;
+#include &lt;WiFiNINA.h&gt;
+#include &lt;WiFiUdp.h&gt;  // Required for UDP communication
+#include &lt;OSCMessage.h&gt;
+
+// Include the secrets file with your network credentials
+#include &quot;arduino_secrets.h&quot;
+
+char ssid[] = &quot;ssid&quot;;  // your network SSID (name)
+char pass[] = &quot;pass&quot;;   // your network password
+
+unsigned int localPort = 2390;  // local port to listen on
+char incomingPacket[255];       // buffer for incoming packets
+
+// 172.20.10.14
+IPAddress remoteIP(172, 20, 10, 14);  // The IP address of the destination device
+unsigned int remotePort = 8888;       // The destination port
+
+WiFiUDP Udp;
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  // attempt to connect to WiFi network:
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(&quot;Attempting to connect to SSID: &quot;);
+    Serial.println(ssid);
+    WiFi.begin(ssid, pass);
+    delay(10000);  // wait 10 seconds for connection
+  }
+  Serial.println(&quot;Connected to WiFi!&quot;);
+  Serial.print(&quot;IP Address: &quot;);
+  Serial.println(WiFi.localIP());  // Prints the fassigned IP address
+
+  // Initialize Udp on the local port
+  Udp.begin(localPort);
+}
+
+void loop() {
+  if (digitalRead(2) == HIGH) {
+    sendOSC();
+  }
+  delay(1);
+}
+
+void sendOSC() {
+  OSCMessage msg(&quot;/juan/1&quot;);
+
+  Udp.beginPacket(remoteIP, remotePort);
+  msg.send(Udp);    // send the bytes to the SLIP stream
+  Udp.endPacket();  // mark the end of the OSC Packet
+  msg.empty();      // free space occupied by message
+}
+</code></pre>
+        <hr />
         </section>
         <section id="interfaces" class="level3">
         <h3>Interfaces</h3>

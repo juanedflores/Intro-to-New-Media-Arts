@@ -15,6 +15,69 @@ title: Week 8
 
 ---
 
+Patatype with me!
+
+```arduino
+#include <SPI.h>
+#include <WiFiNINA.h>
+#include <WiFiUdp.h>  // Required for UDP communication
+#include <OSCMessage.h>
+
+// Include the secrets file with your network credentials
+#include "arduino_secrets.h"
+
+char ssid[] = "ssid";  // your network SSID (name)
+char pass[] = "pass";   // your network password
+
+unsigned int localPort = 2390;  // local port to listen on
+char incomingPacket[255];       // buffer for incoming packets
+
+// 172.20.10.14
+IPAddress remoteIP(172, 20, 10, 14);  // The IP address of the destination device
+unsigned int remotePort = 8888;       // The destination port
+
+WiFiUDP Udp;
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  // attempt to connect to WiFi network:
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print("Attempting to connect to SSID: ");
+    Serial.println(ssid);
+    WiFi.begin(ssid, pass);
+    delay(10000);  // wait 10 seconds for connection
+  }
+  Serial.println("Connected to WiFi!");
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());  // Prints the fassigned IP address
+
+  // Initialize Udp on the local port
+  Udp.begin(localPort);
+}
+
+void loop() {
+  if (digitalRead(2) == HIGH) {
+    sendOSC();
+  }
+  delay(1);
+}
+
+void sendOSC() {
+  OSCMessage msg("/juan/1");
+
+  Udp.beginPacket(remoteIP, remotePort);
+  msg.send(Udp);    // send the bytes to the SLIP stream
+  Udp.endPacket();  // mark the end of the OSC Packet
+  msg.empty();      // free space occupied by message
+}
+
+```
+
+---
+
 ### Interfaces
 
 To get you to start thinking about what kind of interface you want to create, here are some examples of switches and variable resistors that you can use as a starting point.
