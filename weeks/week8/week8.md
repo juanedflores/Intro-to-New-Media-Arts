@@ -6,18 +6,110 @@ title: Week 8
 
 ---
 
-### Tuesday Agenda:
+### Monday Agenda:
 
-- Last Class Review 
-- Printing to Serial Monitor
-- AnalogRead with Potentiometer
+- Reviewing readanalogserial, digital output 
+- Button sketch (if statements)
+- The Interface
+- Digital Button Workshop
 
 ---
 
-### Tuesday Topics:
+### Interfaces
+
+To get you to start thinking about what kind of interface you want to create, here are some examples of switches and variable resistors that you can use as a starting point.
+
+[Instructables: Switches](https://www.instructables.com/Switches/)
+
+Here is a list of switches that exist, along with any tutorials on how to make one from scratch:
+
+- Push Button Switch:
+
+[Instructables](https://www.instructables.com/How-to-Make-a-Push-Button-Switch/)  
+[Push Button](https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Push+Button/356)  
+[Stomp/Foot Switch](https://makeymakey.com/pages/stomp-switch-start-and-stop-timer)  
+[DIYAbility](https://www.diyability.org/guide/make-a-simple-capability-switch/)
+
+Hint: Springs!
+
+- Toggle Switch:
+
+[Instructables](https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/)  
+[Lever Switch](https://learn.browndoggadgets.com/Guide/Paper+Circuits+Cubes+-+Lever+Switch/522)
+
+<p style="text-decoration: underline">Guides by Pete Prodoehl</p>
+
+[Slide Switch](https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Slide+Switch/253)  
+[Cardboard Knife Switch](https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Knife+Switch/203)
+
+- Tilt Switch:
+
+[Instructables](https://www.instructables.com/Build-your-own-tilt-switch/)  
+[Youtube Video](https://www.youtube.com/watch?v=jEqb6r3WV30)  
+[Tilt Joystick](https://makeymakey.com/pages/diy-tilt-joystick)
+
+Here is a list of variable resistors:
+
+- Potentiometer:
+
+[Instructables](https://www.instructables.com/Make-a-Pencils-Lead-Potentiometer-Experimentatio/)
+
+- Photoresistor (LDR):
+
+[Instructables](https://www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/)
+
+- Force Sensitive Resistor (FSR):
+
+[Instructables](https://www.instructables.com/Velostat-Homemade-Pressure-Sensor-Mat/)
+
+- Flex Sensor:
+
+[Instructables](https://www.instructables.com/Stickytape-Sensors/)
+
+---
+
+ART 150 student examples from the section taught by Sabrina Raaf:
+
+[art150.nma](https://art150.nma-course.online/category/all-posts/creative-switch/)
+
+---
+
+Custom Interfaces:
+
+- Crank Counter
+[Crank](https://learn.browndoggadgets.com/Guide/Crank+Counter/238)
+
+- Therapy Ball Controller 
+[Therapy Ball](https://makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons)
+
+- Hoola Hoop Controller
+[Hula Hoop Controller](https://makeymakey.com/pages/hula-hoop-controller)
+
+---
+
+
+### Monday Topics:
 
 <div class="uk-margin" style="padding: 30px;">
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+
+<li>
+<div>
+<a href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<!-- <h3 class="cardtitle" style="background-color: #b48ead; padding: 5px;">Intro to the Serial Monitor</h3> -->
+<h3 class="cardtitle"">The Interface</h3>
+<div style="display: inline">
+<img src="https://liveinterfacesjournal.ulusofona.pt/wp-content/uploads/2026/01/MEM_fig1_ONCONTACT-1.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #b48ead">Topic</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</li>
+
 
 <li>
 <div>
@@ -29,6 +121,22 @@ title: Week 8
 <div style="display: inline">
 <img src="./Arduino/print_to_serial_monitor/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: #b48ead">Topic</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</li>
+
+<li>
+<div>
+<a href="./Arduino/button/button.html">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h3 class="cardtitle">Button</h3>
+<div style="display: inline">
+<img src="./Arduino/button/images/button.png" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #1e87f0">sketch</span>
 </div>
 </div>
 </a>
@@ -73,54 +181,54 @@ title: Week 8
 
 ---
 
-### Thursday Agenda:
+<!-- ### Thursday Agenda: -->
+<!---->
+<!-- - AnalogRead Review -->
+<!-- - AnalogWrite and PulseWidth Modulation (PWM) -->
+<!-- - Button Sketch (DigitalRead) -->
+<!---->
+<!-- --- -->
 
-- AnalogRead Review
-- AnalogWrite and PulseWidth Modulation (PWM)
-- Button Sketch (DigitalRead)
-
----
-
-### Thursday Topics:
-
-<div class="uk-margin" style="padding: 30px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-
-<li>
-<div>
-<a href="./Arduino/button/button.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Button</h3>
-<div style="display: inline">
-<img src="./Arduino/button/images/button.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #1e87f0">sketch</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
-
-<li>
-<div>
-<a href="./Arduino/analogwrite_pwm/analogwrite_pwm.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">AnalogWrite: Intro to Pulse Width Modulation (PWM)</h3>
-<div style="display: inline">
-<img src="./Arduino/analogwrite_pwm/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #b48ead">Topic</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
-
-</ul>
-</div>
-
+<!-- ### Thursday Topics: -->
+<!---->
+<!-- <div class="uk-margin" style="padding: 30px;"> -->
+<!-- <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack"> -->
+<!---->
+<!-- <li> -->
+<!-- <div> -->
+<!-- <a href="./Arduino/button/button.html"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"> -->
+<!-- <h3 class="cardtitle">Button</h3> -->
+<!-- <div style="display: inline"> -->
+<!-- <img src="./Arduino/button/images/button.png" alt="" style="padding-bottom: 10px" uk-image /> -->
+<!-- <span class="uk-label" style="background-color: #1e87f0">sketch</span> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
+<!---->
+<!-- <li> -->
+<!-- <div> -->
+<!-- <a href="./Arduino/analogwrite_pwm/analogwrite_pwm.html"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"> -->
+<!-- <h3 class="cardtitle">AnalogWrite: Intro to Pulse Width Modulation (PWM)</h3> -->
+<!-- <div style="display: inline"> -->
+<!-- <img src="./Arduino/analogwrite_pwm/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image /> -->
+<!-- <span class="uk-label" style="background-color: #b48ead">Topic</span> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
+<!---->
+<!-- </ul> -->
+<!-- </div> -->
+<!---->
 ---
 
 ### Supplementary Material

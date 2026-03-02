@@ -18,7 +18,7 @@ Of course we should always look at the link provided in the block comment:
 
 
 <div>
-<img src="https://docs.arduino.cc/static/fb8449b4834dfbbf3c03223c8bc3e5b5/29114/schematic.png" width=100% style=""></img>
+<img src="https://docs.arduino.cc/static/529466c29da40f5e0129591beec4f0ff/29114/circuit.png" width=100% style=""></img>
 </div>
 
 It is using the UNO, but the wiring is pretty much the same.

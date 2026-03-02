@@ -108,7 +108,8 @@ hr {
 }
 
 .uk-first-column {
-  background-color: rgba(0, 0, 0, 0) !important;
+  /* background-color: rgba(0, 0, 0, 0) !important; */
+  background-color: rgb(238, 241, 247) !important;
 }
 
 div.uk-card-small {
