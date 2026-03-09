@@ -152,7 +152,7 @@ It is good to click on these links to learn more about each example. It comes wi
 Clicking on the link reveals this image:
 
 <div>
-<img src="https://docs.arduino.cc/static/52c238dba09c2e40b69e0612ff02ef0f/29114/circuit.png" width=400 style=""></img>
+<img src="./images/led_circuit.png" width=400 style=""></img>
 </div>
 
 Let's recreate this with the Arduino Nano.
@@ -165,7 +165,7 @@ First it's important to note what it says on the sketch description:
 It says that there is a built-in LED on the board connected to pin 13. This is the same in the Arduino Nano.
 
 <div>
-<img src="https://docs.arduino.cc/static/c8dbeff786e52681c3d0e9ee9525e140/29114/schematic.png" width=100% style=""></img>
+<img src="./images/schematic.png" width=100% style=""></img>
 </div>
 
 The schematic given also makes it easier to see that the LED-resistor circuit is connected to pin 13 instead of the 3.3V pin that we connected to earlier. Pin 13, or D13, happens to be the pin above the 3.3V pin (with the orientation in the image below).
