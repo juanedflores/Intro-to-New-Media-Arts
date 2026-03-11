@@ -19,7 +19,7 @@ title: Week 9
 
 <li>
 <div>
-<a href="./Arduino/Keyboard/keyboard.html">
+<a href="./Arduino/Keyboard/Keyboard.html">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h4>Arduino as a Keyboard</h4>
