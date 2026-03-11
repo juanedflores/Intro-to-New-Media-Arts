@@ -2,7 +2,7 @@ int digitalSensor;
 
 void setup() {
   pinMode(2, INPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {

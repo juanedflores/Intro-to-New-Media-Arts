@@ -177,6 +177,7 @@
               <h6 style="color: rgb(243, 201, 91)">BY WEEK:</h6>
               <li uk-filter-control="filter: .week7"><a href="#">Week 7</a></li>
               <li uk-filter-control="filter: .week8"><a href="#">Week 8</a></li>
+              <li uk-filter-control="filter: .week9"><a href="#">Week 9</a></li>
             </ul>
             <hr style="background: #292926" />
           </div>
@@ -218,15 +219,24 @@
                 <li uk-filter-control="filter: .button">
                   <a href="#">Button</a>
                 </li>
-                <!-- <li uk-filter-control="filter: .analogread"> -->
-                <!--   <a href="#">AnalogRead</a> -->
-                <!-- </li> -->
               </ul>
             </li>
+            <li uk-filter-control="filter: .intermediate" class="uk-parent">
+              <a href="#"
+                >Intermediate<span class="uk-nav-parent-icon"></span
+              ></a>
+              <ul class="uk-nav-sub">
+                <li uk-filter-control="filter: .keyboard">
+                  <a href="#">Keyboard</a>
+                </li>
+              </ul>
+            </li>
+
             <hr style="background: #292926" />
             <h6 style="color: rgb(243, 201, 91)">BY WEEK:</h6>
             <li uk-filter-control="filter: .week7"><a href="#">Week 7</a></li>
             <li uk-filter-control="filter: .week8"><a href="#">Week 8</a></li>
+            <li uk-filter-control="filter: .week9"><a href="#">Week 9</a></li>
           </ul>
           <!--<hr />-->
         </div>
@@ -361,6 +371,39 @@
                     </p>
                     <span class="uk-label" style="background-color: #630b7f"
                       >Basics</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="intermediate week9 keyboard all">
+              <div
+                class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
+                onclick="location.href='./Arduino/Keyboard/Keyboard.html'"
+                uk-grid
+              >
+                <div
+                  class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container"
+                >
+                  <img
+                    class="uk-cover"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    src="./Arduino/Keyboard/images/cover.jpg"
+                    alt=""
+                  />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div style="border: #7fcbcd solid 16px">
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Keyboard</h3>
+                    <span>Week 9</span>
+                    <p style="color: black">
+                      How to simulate keyboard presses using the Keyboard
+                      library.
+                    </p>
+                    <span class="uk-label" style="background-color: #e649be"
+                      >Intermediate</span
                     >
                   </div>
                 </div>

@@ -19,13 +19,28 @@ title: Week 9
 
 <li>
 <div>
-<a href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/">
+<a href="./Arduino/Keyboard/keyboard.html">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h4>Arduino as a Keyboard</h4>
 <div style="display: inline">
-<img src="https://content.instructables.com/F4F/9GHG/LVTJLT4W/F4F9GHGLVTJLT4W.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #b48ead">Topic</span>
+<img src="./Arduino/Keyboard/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #2795F5">Blog</span>
+</div>
+</div>
+</a>
+</div>
+</li>
+
+<li>
+<div>
+<a href="./Arduino/Chataigne/Chataigne.html">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h4>Chataigne to Play Audio Files</h4>
+<div style="display: inline">
+<img src="./Arduino/Chataigne/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #2795F5">Blog</span>
 </div>
 </div>
 </a>
