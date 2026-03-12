@@ -92,7 +92,7 @@ With the module selected, find the port drop down menu in the inspector window:
 
 <img src="./images/port.png">
 
-Select the port that your Arduino is connected to.
+And select the port that your Arduino is connected to.
 
 <blockquote class="info">
 <span class="uk-label">Note</span>
@@ -108,5 +108,39 @@ Click the action state again:
 
 And navigate to the inspector window:
 
+Locate the "From Input Value" window inside "Conditions". If you still have the Keyboard keystroke listening input, remove it with the "x" button on the top right.
+
+<img src="./images/remove_keyboard.png">
+
+<img src="./images/serial_input.png">
+
 <img src="./images/input.png">
+
+If you check the "Learn" box, it will automatically attempt to listen to any input reading, and assume that this is the interaction you want (the sensor that you want to use).
+
+<img src="./images/learn.png">
+
+It has found that there is a value **A** being received, followed by a number.
+
+Pressing your button will result in the input window highlighting in green when the condition is met.
+
+Here you can change the condition operation. In my case, it by default made the condition of:
+
+<img src="./images/condition.png">
+
+```if A is equal to 1.000, then trigger something```
+
+This button makes it easy to create a toggle. When button is pressed, the state is toggled. In other words, like a light switch.
+
+<img src="./images/toggle.png">
+
+---
+
+Now for the consequence:
+
+The setup for playing an audio file is exactly the same as when we did it for the keyboard press!
+
+Notice that you can also do something if the condition is FALSE. For example, you can play one sound when condition is TRUE (buttonState is 1 or HIGH), and another when condition is FALSE (buttonState is 0 or LOW).
+
+<img src="./images/truefalse.png">
 

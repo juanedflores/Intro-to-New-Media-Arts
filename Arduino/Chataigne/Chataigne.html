@@ -315,7 +315,7 @@ void loop() {
 <p>With the module selected, find the port drop down menu in the
 inspector window:</p>
 <p><img src="./images/port.png"></p>
-<p>Select the port that your Arduino is connected to.</p>
+<p>And select the port that your Arduino is connected to.</p>
 <blockquote class="info">
 <span class="uk-label">Note</span>
 <p>
@@ -330,7 +330,36 @@ If you don’t, you might see this error message:
 <p>Click the action state again:</p>
 <p><img src="./images/action.png"></p>
 <p>And navigate to the inspector window:</p>
+<p>Locate the “From Input Value” window inside “Conditions”. If you
+still have the Keyboard keystroke listening input, remove it with the
+“x” button on the top right.</p>
+<p><img src="./images/remove_keyboard.png"></p>
+<p><img src="./images/serial_input.png"></p>
 <p><img src="./images/input.png"></p>
+<p>If you check the “Learn” box, it will automatically attempt to listen
+to any input reading, and assume that this is the interaction you want
+(the sensor that you want to use).</p>
+<p><img src="./images/learn.png"></p>
+<p>It has found that there is a value <strong>A</strong> being received,
+followed by a number.</p>
+<p>Pressing your button will result in the input window highlighting in
+green when the condition is met.</p>
+<p>Here you can change the condition operation. In my case, it by
+default made the condition of:</p>
+<p><img src="./images/condition.png"></p>
+<p><code>if A is equal to 1.000, then trigger something</code></p>
+<p>This button makes it easy to create a toggle. When button is pressed,
+the state is toggled. In other words, like a light switch.</p>
+<p><img src="./images/toggle.png"></p>
+<hr />
+<p>Now for the consequence:</p>
+<p>The setup for playing an audio file is exactly the same as when we
+did it for the keyboard press!</p>
+<p>Notice that you can also do something if the condition is FALSE. For
+example, you can play one sound when condition is TRUE (buttonState is 1
+or HIGH), and another when condition is FALSE (buttonState is 0 or
+LOW).</p>
+<p><img src="./images/truefalse.png"></p>
 </section>
 </div>
 </section>
