@@ -12,16 +12,61 @@ Go to:
 
 This is `Button.ino`.
 
-Of course we should always look at the link provided in the block comment:
+Take a look at the block comment, the grayed out text at the top of the sketch:
+
+```arduino
+/*
+  Button
+
+  Turns on and off a light emitting diode(LED) connected to digital pin 13,
+  when pressing a pushbutton attached to pin 2.
+
+  The circuit:
+  - LED attached from pin 13 to ground through 220 ohm resistor
+  - pushbutton attached to pin 2 from +5V
+  - 10K resistor attached to pin 2 from ground
+
+  - Note: on most Arduinos there is already an LED on the board
+    attached to pin 13.
+
+  created 2005
+  by DojoDave <http://www.0j0.org>
+  modified 30 Aug 2011
+  by Tom Igoe
+
+  This example code is in the public domain.
+
+  https://docs.arduino.cc/built-in-examples/digital/Button/
+*/
+```
+
+It describes what the sketch does. It will turn on the built-in LED when a button (connected to pin 2) is pressed.
+
+Notice also that there is a link at the bottom of it that leads to the arduino documentation:
+
+```bash
+https://docs.arduino.cc/built-in-examples/digital/Button/
+```
 
 <p><a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">Arduino Button Sketch: Official Arduino Documentation</a></p>
 
+---
+
+They graciously provide a nice wiring diagram and schematic that shows how a button is connected to pin 2.
 
 <div>
 <img src="https://docs.arduino.cc/static/529466c29da40f5e0129591beec4f0ff/29114/circuit.png" width=100% style=""></img>
 </div>
 
-It is using the UNO, but the wiring is pretty much the same.
+Their example uses the popular Arduino Uno, but the wiring for the nano is the same. You just need to reference the pinout sheet.
+
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+Reminder that the pinout sheet can be found on the Arduino tab of this website!
+</p>
+<p>Here is the link: <a target="_blank" href="https://docs.arduino.cc/resources/pinouts/ABX00027-full-pinout.pdf">pinout sheet</a></p>
+</blockquote>
 
 We are connecting one side of the switch to (+) (In our case, 3.3V).
 

@@ -79,6 +79,10 @@ html {
   /*scroll-behavior: smooth;*/
 }
 
+.uk-open {
+  margin: 0 !important;
+}
+
 #blogEntryArea {
   background: #f2f2f2;
   padding-bottom: 1em;
@@ -105,8 +109,8 @@ ul > li > a {
 }
 
 ul > li {
-  list-style-type: circle;
-  margin-left: 20px;
+  /* list-style-type: circle; */
+  /* margin-left: 20px; */
 }
 
 .uk-navbar-nav > li {
@@ -178,13 +182,20 @@ p img {
   padding-left: 20px !important;
   font-size: 14px;
   /*font-size: */
-  color: #54544d;
-  list-style-type: '- ';
+  /* color: rgb(210, 230, 250); */
+  color: red;
+  list-style-type: square;
   list-style-position: inside;
 }
 
+.uk-offcanvas-bar > div > ul > li > ul > li > ul > li {
+  color: #4444dd;
+}
+
+
+
 .uk-offcanvas-bar > div > ul > li > ul > li > ul li a {
-  color: #54544d;
+  color: rgb(210, 230, 250);
 }
 
 div > ul {

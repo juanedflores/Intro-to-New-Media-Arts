@@ -136,6 +136,7 @@ function week7() {
     function (data) {
       html = $.parseHTML(data);
       $("#right-col").html(html[31].innerHTML);
+      console.log(html[31].innerHTML);
     },
     "text",
   );
@@ -146,7 +147,7 @@ function week8() {
     "weeks/week8/week8.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );
@@ -157,7 +158,8 @@ function week9() {
     "weeks/week9/week9.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
+      console.log(html);
     },
     "text",
   );
@@ -168,7 +170,7 @@ function week10() {
     "weeks/week10/week10.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );
@@ -179,7 +181,7 @@ function week11() {
     "weeks/week11/week11.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );
@@ -190,7 +192,7 @@ function week12() {
     "weeks/week12/week12.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );
@@ -201,7 +203,7 @@ function week13() {
     "weeks/week13/week13.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );
@@ -212,7 +214,7 @@ function week14() {
     "weeks/week14/week14.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );
@@ -223,7 +225,7 @@ function week15() {
     "weeks/week15/week15.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );

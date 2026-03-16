@@ -25,6 +25,7 @@ It aims to be as simple as possible for basic interactions, but can be easily ex
 <span class="uk-label" style="background-color: #E6A749">Website</span>
 </div>
 </div>
+</div>
 </a>
 </div>
 </li>

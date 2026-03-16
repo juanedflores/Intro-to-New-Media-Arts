@@ -1,8 +1,12 @@
 ---
 title: Intro to the Keyboard Library
+mainlink: https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1&amp;origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1
+transcript: ./Keyboard/transcript.html
 ---
 
 # Keyboard
+
+testdfe
 
 ## Intro
 
@@ -12,14 +16,15 @@ First of all, keep in mind the official Arduino Documenation for a more complete
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
 
 <li style="width: 50%; margin: auto; padding-left: 0;">
-<div>
+<div class="uk-transition-toggle">
 <a href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge  uk-transition-scale-up" style="background: #7fcbcd; opacity: 100;">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h4>Keyboard</h4>
 <div style="display: inline">
 <img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: #7fcbcd">Docs</span>
+</div>
 </div>
 </div>
 </a>
@@ -58,9 +63,9 @@ void loop() {
 
 ---
 
-### KeyboarSerial.ino Code Breakdown
+## KeyboarSerial Code Breakdown
 
-#### The Keyboard Library
+### The Keyboard Library
 
 Notice the line:
 
@@ -74,7 +79,7 @@ This means we are using the `Keyboard` library. If not installed, locate it usin
 
 ---
 
-#### Initializing Keyboard Control
+### Initializing Keyboard Control
 
 The function `Keyboard.begin()` is inside setup() to start the process.
 
@@ -85,7 +90,7 @@ void setup() {
 }
 ```
 
-#### Read Incoming Serial Data
+### Read Incoming Serial Data
 
 `Serial.available()` is a function used to know when a message has been received and stored.
 
@@ -143,7 +148,7 @@ Serial.println(val, format)
 
 Now that we know about ASCII codes and how a minimal program that reads incoming serial data works, we can understand the last part of the `KeyboardSerial.ino` example.
 
-#### Keyboard.write()
+### Keyboard write()
 
 The `Keyboard.write()` function sends a keystroke to your computer as if a user has physically pressed a keyboard key.
 
@@ -203,7 +208,7 @@ In theory, sending a serial message to Arduino in the form of a letter, will res
 
 Try it! Type in the Serial Monitor and see it be replaced with a B when you press enter.
 
-### Simulate Key Press with a Button
+## Simulate Key Press with a Button
 
 We can modify the code to simulate a key press when receiving a `HIGH` state of a digitalInput (button/switch).
 
@@ -237,7 +242,7 @@ void loop() {
 
 ---
 
-### Using Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)
+## Using Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)
 
 Check out the Arduino documentation for this: <a href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/keyboardModifiers/">Keyboard Modifiers and Special Keys</a>
 

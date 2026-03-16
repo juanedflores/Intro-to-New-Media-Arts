@@ -4,6 +4,8 @@ title: Week 8
 
 # Week 8
 
+<div id="body" style="margin: 30px;">
+
 ---
 
 ### Monday Agenda:
@@ -305,3 +307,5 @@ Take a look at this TED Talk by Holly Cohen:
 ITP NYU course explaining digital output with Arduino Uno. Serves as a good review of what we have learned so far.
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/374067285?h=c6390e412a" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+
+</div>
