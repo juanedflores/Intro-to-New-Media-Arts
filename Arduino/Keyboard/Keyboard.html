@@ -34,15 +34,6 @@
 
     <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon" />
 
-    <!-- Plyr -->
-    <script src="../../js/plyr.js"></script>
-    <link rel="stylesheet" href="../../css/plyr.css"></link>
-
-    <!-- Hyperaudio-lite -->
-    <link rel="stylesheet" href="../../css/hyperaudio-lite-player.css">
-    <script src="../../js/velocity.js"></script> 
-
-    <!-- <script src="https://cdn.plyr.io/3.8.4/plyr.js"></script> -->
     <!-- hljs -->
     <script>
       hljs.highlightAll();
@@ -194,7 +185,6 @@
     <!-- Blog Style CSS -->
     <link rel="stylesheet" href="../../css/blog_style.css" />
     <link rel="stylesheet" href="../../css/custom.css" />
-    <link rel="stylesheet" href="../../css/split_screen.css" />
 
     <!-- Includes other header content if needed -->
     
@@ -202,7 +192,7 @@
 
   <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
 
-  <body class="uk-background-fixed" style="">
+  <body class="uk-background-fixed">
     <!-- NAV AND HEADING -->
     <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
       <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
@@ -216,15 +206,49 @@
 to the Keyboard Library</a></li>
         </ul>
       </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Intro to the Keyboard Library</a>-->
+      <!--</h2>-->
     </nav>
 
-        <!-- OFFCANVAS -->
-    <div class="uk-align-center uk-margin-remove-top uk-width-1-1@l uk-width-2-3@m" id="contentArea" style="">
-      <div id="split-container">
-        <div class="panel left" id="leftPanel"><section id="keyboard"
-class="level1">
+    <!-- OFFCANVAS -->
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#keyboard" id="toc-keyboard">Keyboard</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#keyboarserial-code-breakdown"
+id="toc-keyboarserial-code-breakdown">KeyboarSerial Code Breakdown</a>
+<ul>
+<li><a href="#the-keyboard-library" id="toc-the-keyboard-library">The
+Keyboard Library</a></li>
+<li><a href="#initializing-keyboard-control"
+id="toc-initializing-keyboard-control">Initializing Keyboard
+Control</a></li>
+<li><a href="#read-incoming-serial-data"
+id="toc-read-incoming-serial-data">Read Incoming Serial Data</a></li>
+<li><a href="#keyboard-write" id="toc-keyboard-write">Keyboard
+write()</a></li>
+</ul></li>
+<li><a href="#simulate-key-press-with-a-button"
+id="toc-simulate-key-press-with-a-button">Simulate Key Press with a
+Button</a></li>
+<li><a href="#using-special-keys-and-keyboard-modifiers-shift-ctrl-etc"
+id="toc-using-special-keys-and-keyboard-modifiers-shift-ctrl-etc">Using
+Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="keyboard" class="level1">
 <h1>Keyboard</h1>
-<p>testdfe</p>
 <section id="intro" class="level2">
 <h2>Intro</h2>
 <p>First of all, keep in mind the official Arduino Documenation for a
@@ -497,194 +521,7 @@ void loop() {
 }</code></pre>
 </section>
 </section></div>
-        <div class="resizer" style="user-select: none;" id="resizer"></div>
-        <div id="rightPanel" class="panel right">
-
-          <iframe id="hyperplayer" data-player-type="youtube" width="100%" height="480" frameborder="no" allow="autoplay"
-            src="https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1">
-          </iframe>
-
-          <div id="hypertranscript" class="hyperaudio-transcript" style="overflow-y:scroll; height:600px; position:relative; border-style:dashed; border-width: 1px; border-color:red; padding: 8px">
-                          <article>
-                            <section>
-                              <p>
-                                <span class="speaker" data-m="100" data-d="0">Hanan Flores: </span
-                                ><span data-m="100" data-d="270">I'm </span
-                                ><span data-m="390" data-d="410">so </span
-                                ><span data-m="820" data-d="400">happy </span
-                                ><span data-m="1250" data-d="129">to </span
-                                ><span data-m="1380" data-d="320">welcome </span
-                                ><span data-m="1700" data-d="199">you </span
-                                ><span data-m="1900" data-d="189">all </span
-                                ><span data-m="2120" data-d="520">today </span
-                                ><span data-m="3260" data-d="129">into </span
-                                ><span data-m="3390" data-d="169">all </span
-                                ><span data-m="3560" data-d="100">of </span
-                                ><span data-m="3660" data-d="89">our </span
-                                ><span data-m="3750" data-d="229">living </span
-                                ><span data-m="3980" data-d="340">rooms </span
-                                ><span data-m="4320" data-d="500">across </span
-                                ><span data-m="4830" data-d="190">the </span
-                                ><span data-m="5550" data-d="419">world </span
-                                ><span data-m="6510" data-d="209">to </span
-                                ><span data-m="6730" data-d="259">talk </span
-                                ><span data-m="7000" data-d="379">about </span
-                                ><span data-m="7470" data-d="320">a </span
-                                ><span data-m="7870" data-d="430">program </span
-                                ><span data-m="8300" data-d="130">that </span
-                                ><span data-m="8440" data-d="169">is </span
-                                ><span data-m="8620" data-d="279">very </span
-                                ><span data-m="8900" data-d="220">dear </span
-                                ><span data-m="9120" data-d="89">to </span
-                                ><span data-m="9220" data-d="210">my </span
-                                ><span data-m="9431" data-d="349">heart, </span
-                                ><span data-m="9849" data-d="269">the </span
-                                ><span data-m="10130" data-d="369">Ford </span
-                                ><span data-m="10500" data-d="29">and </span
-                                ><span data-m="10650" data-d="380">Mozilla </span
-                                ><span data-m="11059" data-d="199">Tech </span
-                                ><span data-m="11259" data-d="119">and </span
-                                ><span data-m="11380" data-d="429">Society </span
-                                ><span data-m="11809" data-d="419">Fellowship </span
-                                ><span data-m="12240" data-d="419">program. </span
-                                ><span data-m="13400" data-d="279">My </span
-                                ><span data-m="13679" data-d="250">name </span
-                                ><span data-m="13929" data-d="210">is </span
-                                ><span data-m="14150" data-d="289">Hanan </span
-                                ><span data-m="14440" data-d="100">Elmasu, </span
-                                ><span data-m="14541" data-d="100">and </span
-                                ><span data-m="14642" data-d="70">I'm </span
-                                ><span data-m="15330" data-d="99">the </span
-                                ><span data-m="15429" data-d="509">director </span
-                                ><span data-m="15950" data-d="129">of </span
-                                ><span data-m="16930" data-d="39">the </span
-                                ><span data-m="16969" data-d="250">Mozilla </span
-                                ><span data-m="17219" data-d="460">Foundation </span
-                                ><span data-m="17719" data-d="829">Fellowships </span
-                                ><span data-m="18600" data-d="100">and </span
-                                ><span data-m="18701" data-d="100">Awards </span
-                                ><span data-m="18802" data-d="440">program, </span
-                                ><span data-m="19243" data-d="230">and </span
-                                ><span data-m="19474" data-d="199">I'll </span
-                                ><span data-m="19674" data-d="149">be </span
-                                ><span data-m="19824" data-d="199">your </span
-                                ><span data-m="20024" data-d="190">co </span
-                                ><span data-m="20215" data-d="280">host </span
-                                ><span data-m="20496" data-d="100">for </span
-                                ><span data-m="20597" data-d="170">this </span
-                                ><span data-m="20768" data-d="699">conversation </span
-                                ><span data-m="21890" data-d="660">alongside </span
-                                ><span data-m="22550" data-d="390">someone </span
-                                ><span data-m="22940" data-d="140">I </span
-                                ><span data-m="23080" data-d="449">suspect </span
-                                ><span data-m="23530" data-d="219">many </span
-                                ><span data-m="23750" data-d="59">of </span
-                                ><span data-m="23810" data-d="100">you </span
-                                ><span data-m="23910" data-d="359">already </span
-                                ><span data-m="24270" data-d="370">know </span
-                                ><span data-m="24780" data-d="100">Alberto </span
-                                ><span data-m="24881" data-d="609">Cerda </span
-                                ><span data-m="25620" data-d="390">Silva, </span
-                                ><span data-m="26470" data-d="289">who's </span
-                                ><span data-m="26759" data-d="269">the </span
-                                ><span data-m="27059" data-d="320">program </span
-                                ><span data-m="27380" data-d="370">officer </span
-                                ><span data-m="27759" data-d="79">at </span
-                                ><span data-m="27840" data-d="320">Ford's </span
-                                ><span data-m="28179" data-d="300">Tech </span
-                                ><span data-m="28509" data-d="30">and </span
-                                ><span data-m="28540" data-d="390">Society </span
-                                ><span data-m="28931" data-d="500">program. </span
-                                ><span data-m="30360" data-d="370">And </span
-                                ><span data-m="30809" data-d="410">together </span
-                                ><span data-m="31219" data-d="160">with </span
-                                ><span data-m="31380" data-d="179">our </span
-                                ><span data-m="31559" data-d="250">four </span
-                                ><span data-m="31809" data-d="479">panelists </span
-                                ><span data-m="32290" data-d="299">today, </span
-                                ><span data-m="32589" data-d="240">we're </span
-                                ><span data-m="32860" data-d="130">going </span
-                                ><span data-m="32990" data-d="109">to </span
-                                ><span data-m="33100" data-d="270">take </span
-                                ><span data-m="33370" data-d="320">you </span
-                                ><span data-m="34330" data-d="100">on </span
-                                ><span data-m="34431" data-d="20">a </span
-                                ><span data-m="34452" data-d="229">little </span
-                                ><span data-m="34682" data-d="490">journey </span
-                                ><span data-m="35173" data-d="200">of </span
-                                ><span data-m="35374" data-d="310">this </span
-                                ><span data-m="35685" data-d="429">unique </span
-                                ><span data-m="36119" data-d="630">partnership </span
-                                ><span data-m="36790" data-d="130">to </span
-                                ><span data-m="36920" data-d="280">place </span
-                                ><span data-m="37230" data-d="560">technology </span
-                                ><span data-m="37790" data-d="700">strategist </span
-                                ><span data-m="38810" data-d="179">and </span
-                                ><span data-m="38990" data-d="219">civil </span
-                                ><span data-m="39210" data-d="439">society </span
-                                ><span data-m="39650" data-d="780">organizations </span
-                                ><span data-m="40500" data-d="409">across </span
-                                ><span data-m="40910" data-d="280">different </span
-                                ><span data-m="41190" data-d="320">parts </span
-                                ><span data-m="41510" data-d="39">of </span
-                                ><span data-m="41560" data-d="140">the </span
-                                ><span data-m="41700" data-d="399">world. </span>
-                              </p>
-                            </section>
-                          </article>                      </div>
-
-        </div>
-        <div id="blog-toc">
-          <h3 style="color: white">Table of Contents</h3>
-          <div class="toc-panel"><ul>
-<li><a href="#keyboard" id="toc-keyboard">Keyboard</a>
-<ul>
-<li><a href="#intro" id="toc-intro">Intro</a></li>
-<li><a href="#keyboarserial-code-breakdown"
-id="toc-keyboarserial-code-breakdown">KeyboarSerial Code Breakdown</a>
-<ul>
-<li><a href="#the-keyboard-library" id="toc-the-keyboard-library">The
-Keyboard Library</a></li>
-<li><a href="#initializing-keyboard-control"
-id="toc-initializing-keyboard-control">Initializing Keyboard
-Control</a></li>
-<li><a href="#read-incoming-serial-data"
-id="toc-read-incoming-serial-data">Read Incoming Serial Data</a></li>
-<li><a href="#keyboard-write" id="toc-keyboard-write">Keyboard
-write()</a></li>
-</ul></li>
-<li><a href="#simulate-key-press-with-a-button"
-id="toc-simulate-key-press-with-a-button">Simulate Key Press with a
-Button</a></li>
-<li><a href="#using-special-keys-and-keyboard-modifiers-shift-ctrl-etc"
-id="toc-using-special-keys-and-keyboard-modifiers-shift-ctrl-etc">Using
-Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</a></li>
-</ul></li>
-</ul></div>
-        </div>
-      </div>
     </div>
-
-    <script src="../../js/split_screen.js"></script>
-    <script src="../../js/handleVideoPlayers.js"></script>
-
-    <!-- hyperaudio-lite -->
-    <script src="../../js/hyperaudio-lite.js"></script>
-    <script src="../../js/hyperaudio-lite-extension.js"></script>
-    <script>
-      // minimizedMode is still experimental - it aims to show the current words in the title, which can be seen on the browser tab.
-      let minimizedMode = false;
-      let autoScroll = true;
-      let doubleClick = false;
-      let webMonetization = false;
-      let playOnClick = false;
-
-      new HyperaudioLite("hypertranscript", "hyperplayer", minimizedMode, autoScroll, doubleClick, webMonetization, playOnClick);
-    </script>
-
-    <br />
-    <br />
-    <br />
 
     <!-- highlightjs badge -->
     <script src="../../js/highlightjs-badge.js"></script>
@@ -699,7 +536,7 @@ Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</a></li>
       // add HighlightJS-badge (options are optional)
       var options = {
         // optional
-        contentSelector: '#leftPanel',
+        contentSelector: '#ArticleBody',
 
         // CSS class(es) used to render the copy icon.
         copyIconClass: 'fas fa-solid fa-clone',
@@ -709,8 +546,13 @@ Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</a></li>
       window.highlightJsBadge(options);
     </script>
 
-
     <script src="../../js/styling.js"></script>
 
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
   </body>
 </html>

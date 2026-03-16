@@ -1,12 +1,8 @@
 ---
 title: Intro to the Keyboard Library
 mainlink: https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1&amp;origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1
-transcript: ./Keyboard/transcript.html
 ---
-
 # Keyboard
-
-testdfe
 
 ## Intro
 

@@ -1,15 +1,13 @@
 from bs4 import BeautifulSoup
 import sys
 
-soup = BeautifulSoup(open(sys.argv[1], "r"))
+template_soup = BeautifulSoup(open(sys.argv[1], "r"))
+transcript_soup = BeautifulSoup(open(sys.argv[2], "r"))
 
 # Find the target div
-target_div = soup.find(id="target-div")
-
+target_div = template_soup.find(id="hypertranscript")
 target_div.clear()
-new_tag = soup.new_tag("p")
-new_tag.string = "This new content was set offline."
-target_div.append(new_tag)
+target_div.append(transcript_soup)
 
-# Print or save the modified HTML
-print(soup.prettify())
+with open(sys.argv[3], "w", encoding="utf-8") as file:
+    file.write(str(template_soup))
