@@ -25,6 +25,12 @@ title: Week 10
 
 ### Monday Agenda:
 
+
+<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
+<span class="uk-label uk-label-info">Materials Needed</span>
+<p>Take out everything you need to work on Midterm.</p>
+</blockquote>
+
 - Midterm Studio (Last class time day to work on midterm projects)
 
 ---

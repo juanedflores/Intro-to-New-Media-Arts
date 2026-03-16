@@ -6,7 +6,7 @@ mainlink: https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1&amp;origin=htt
 
 ## Intro
 
-First of all, keep in mind the official Arduino Documenation for a more complete reference:
+First of all, keep in mind the official Arduino Documentation for a more complete reference:
 
 <div class="uk-margin" style="padding: 30px; width: 100%;">
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
@@ -59,7 +59,7 @@ void loop() {
 
 ---
 
-## KeyboarSerial Code Breakdown
+## KeyboardSerial Code Breakdown
 
 ### The Keyboard Library
 
