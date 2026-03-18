@@ -29,7 +29,7 @@ onClassChange(node, (observer) => {
 });
 
 function scrollToHeading() {
-  const section = document.getElementById("keyboarserial-code-breakdown");
+  const section = document.getElementById("keyboardserial-code-breakdown");
   if (section) {
     section.scrollIntoView({
       behavior: "smooth", // Smooth scrolling animation

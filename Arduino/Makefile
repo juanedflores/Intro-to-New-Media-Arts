@@ -3,7 +3,7 @@ PANDOCFLAGSHTML =                                           \
   --section-divs                                            \
   --toc-depth=4                                             \
   --from=markdown+markdown_in_html_blocks+bracketed_spans+fenced_code_attributes  \
-  --template=../pandoc/blog_template.html
+  --template=../pandoc/blog_template_split.html
 
 
 # a wildcard that searches recursively

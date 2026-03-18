@@ -35,6 +35,19 @@ title: Week 10
 
 ---
 
+### Wednesday Agenda:
+
+<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
+<span class="uk-label uk-label-warning">Reminder</span>
+<p>Remember to post your project documentation (photos, videos) and a description on Blackboard!</p>
+</blockquote>
+
+
+- Midterm Critique (Last class time day to work on midterm projects)
+
+---
+
+
 <!-- ### Thursday Agenda: -->
 <!---->
 <!-- - Midterm Studio: 30 mins -->
