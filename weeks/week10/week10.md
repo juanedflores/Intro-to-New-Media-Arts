@@ -43,7 +43,7 @@ title: Week 10
 </blockquote>
 
 
-- Midterm Critique (Last class time day to work on midterm projects)
+- Midterm Critique
 
 ---
 
