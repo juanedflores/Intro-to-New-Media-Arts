@@ -9,13 +9,24 @@ title: Week 10
 <div id="body" style="margin: 30px;">
 
 <ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>ANNOUNCEMENTS</a>
+<a id='code-file' class='uk-accordion-title' href='#'>MONDAY</a>
 <div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+
+### Announcements
 
 <blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
 <span class="uk-label uk-label-warning">Reminder</span>
 <p>Monday is the last day to work on Midterms! Be ready to present for the critique this Wednesday.</p>
 </blockquote>
+
+<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
+<span class="uk-label uk-label-info">Materials Needed</span>
+<p>Take out everything you need to work on Midterm.</p>
+</blockquote>
+
+### Agenda:
+
+- Midterm Studio (Last class time day to work on midterm projects)
 
 </div>
 </li>
@@ -23,29 +34,24 @@ title: Week 10
 
 ---
 
-### Monday Agenda:
+<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
+<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
+<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
 
-
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<p>Take out everything you need to work on Midterm.</p>
-</blockquote>
-
-- Midterm Studio (Last class time day to work on midterm projects)
-
----
-
-### Wednesday Agenda:
+### Announcements
 
 <blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
 <span class="uk-label uk-label-warning">Reminder</span>
 <p>Remember to post your project documentation (photos, videos) and a description on Blackboard!</p>
 </blockquote>
 
+### Agenda:
 
 - Midterm Critique
 
----
+</div>
+</li>
+</ul>
 
 
 <!-- ### Thursday Agenda: -->

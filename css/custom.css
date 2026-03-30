@@ -467,7 +467,7 @@ ul {
   /*list-style: '- ';*/
   list-style-type: circle;
   margin-left: 20px;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
 #ListBody > li > div > div {
