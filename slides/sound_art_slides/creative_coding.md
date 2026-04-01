@@ -22,7 +22,7 @@ Note:
 
 <div>
 <a target="_blank" href="https://www.youtube.com/watch?v=kA-fihBFWBI">
-<img width=400 src="http://www.see-this-sound.at/files/510/large/large.JPG" alt="" style="padding-bottom: 10px" uk-image />
+<img width=400 src="https://www.diaart.org/media/w1050h700/object/neu-times-square-1975-7.jpg" alt="" style="padding-bottom: 10px" uk-image />
 </a>
 </div>
 
@@ -53,7 +53,7 @@ Note:
 <p style="font-size: 18px">At the premiere of 4'33'' in Woodstock, New York, David Tudor came on stage, sat at the piano, and made as if to play, but instead simply raised and lowered the keyboard cover at the beginning of each of the three movements, using a different piano pedal in each movement and timing himself with a stopwatch. For the rest of the piece, Tudor remained relatively motionless and silent. This performance was his interpretation of the John Cage's score, the first unpublished version of which consisted of blank paired staves with the timing added (30'', 2'23'', 1'40''). The first published form of the work, in 1960, is a text; it consists of three movements, each indicated simply by a Roman numeral and the word tacet.</p>
 
 <div>
-<a target="_blank" href="http://www.see-this-sound.at/works/82.html">
+<a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/4%2733%27_%28John_Cage%29_Original_Cover.webp/600px-4%2733%27_%28John_Cage%29_Original_Cover.webp.png">
 <img width=300 src="http://www.see-this-sound.at/files/286/original/original.jpg" alt="" style="padding-bottom: 10px" uk-image />
 </a>
 </div>
@@ -70,7 +70,7 @@ Note:
 
 <div>
 <a target="_blank" href="https://youtu.be/dElYX_yiyBQ?si=zhFxYV9Dh7W7pFPc">
-<img width=400 src="http://www.see-this-sound.at/files/619/large/large.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img width=400 src="https://www.ntticc.or.jp/uploads/assets/000/25786.562.large.jpg" alt="" style="padding-bottom: 10px" uk-image />
 </a>
 </div>
 

@@ -156,31 +156,34 @@
                     <a href="#">Blink</a>
                   </li>
                   <li uk-filter-control="filter: .serial">
-                    <a href="#">Print to Serial Montior</a>
+                    <a href="#">Print to Serial Monitor</a>
                   </li>
-                  <!-- <li uk-filter-control="filter: .button"> -->
-                  <!--   <a href="#">Button</a> -->
-                  <!-- </li> -->
-                  <li uk-filter-control="filter: .analogread">
-                    <a href="#">Analogread</a>
+                  <li uk-filter-control="filter: .button">
+                    <a href="#">Button</a>
                   </li>
                 </ul>
               </li>
-              <!-- <li uk-filter-control="filter: .challenges" class="uk-parent"> -->
-              <!--   <a href="#" -->
-              <!--     >Challenges<span class="uk-nav-parent-icon"></span -->
-              <!--   ></a> -->
-              <!--   <ul class="uk-nav-sub"> -->
-              <!-- <li uk-filter-control="filter: .dice_roller"> -->
-              <!--   <a href="#">Dice Roller</a> -->
-              <!-- </li> -->
-              <!--   </ul> -->
-              <!-- </li> -->
+              <li uk-filter-control="filter: .exploration" class="uk-parent">
+                <a href="#"
+                  >Exploration<span class="uk-nav-parent-icon"></span
+                ></a>
+                <ul class="uk-nav-sub">
+                  <li uk-filter-control="filter: .keyboard">
+                    <a href="#">Keyboard</a>
+                  </li>
+                  <li uk-filter-control="filter: .chataigne">
+                    <a href="#">Chataigne</a>
+                  </li>
+                </ul>
+              </li>
               <hr style="background: #292926" />
               <h6 style="color: rgb(243, 201, 91)">BY WEEK:</h6>
               <li uk-filter-control="filter: .week7"><a href="#">Week 7</a></li>
               <li uk-filter-control="filter: .week8"><a href="#">Week 8</a></li>
               <li uk-filter-control="filter: .week9"><a href="#">Week 9</a></li>
+              <li uk-filter-control="filter: .week11">
+                <a href="#">Week 11</a>
+              </li>
             </ul>
             <hr style="background: #292926" />
           </div>
@@ -224,13 +227,16 @@
                 </li>
               </ul>
             </li>
-            <li uk-filter-control="filter: .intermediate" class="uk-parent">
+            <li uk-filter-control="filter: .exploration" class="uk-parent">
               <a href="#"
                 >Exploration<span class="uk-nav-parent-icon"></span
               ></a>
               <ul class="uk-nav-sub">
                 <li uk-filter-control="filter: .keyboard">
                   <a href="#">Keyboard</a>
+                </li>
+                <li uk-filter-control="filter: .chataigne">
+                  <a href="#">Chataigne</a>
                 </li>
               </ul>
             </li>
@@ -240,6 +246,7 @@
             <li uk-filter-control="filter: .week7"><a href="#">Week 7</a></li>
             <li uk-filter-control="filter: .week8"><a href="#">Week 8</a></li>
             <li uk-filter-control="filter: .week9"><a href="#">Week 9</a></li>
+            <li uk-filter-control="filter: .week11"><a href="#">Week 11</a></li>
           </ul>
           <!--<hr />-->
         </div>
@@ -384,7 +391,7 @@
               </div>
             </li>
 
-            <li class="intermediate week9 keyboard all">
+            <li class="exploration week9 keyboard all">
               <div
                 class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
                 onclick="location.href='./Arduino/Keyboard/Keyboard.html'"
@@ -412,6 +419,49 @@
                     </p>
                     <span class="uk-label" style="background-color: #e649be"
                       >Exploration</span
+                    >
+                    <span class="uk-label" style="background-color: #999ed1"
+                      >Input / Sensors</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="exploration week9 chataigne all">
+              <div
+                class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
+                onclick="location.href='./Arduino/Chataigne/Chataigne.html'"
+                uk-grid
+              >
+                <div
+                  id="img_div"
+                  class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container"
+                >
+                  <img
+                    class="uk-cover"
+                    style="width: 100%; object-fit: cover"
+                    src="./Arduino/Chataigne/images/screenshot.png"
+                    alt=""
+                  />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div style="border: #7fcbcd solid 16px">
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Chataigne</h3>
+                    <span>Week 9</span>
+                    <p style="color: black">
+                      Connecting your Arduino to Chataigne to play an audio file
+                      on your computer.
+                    </p>
+                    <span class="uk-label" style="background-color: #e649be"
+                      >Exploration</span
+                    >
+                    <span class="uk-label" style="background-color: #d99e8f"
+                      >Output / Actuator</span
+                    >
+                    <span class="uk-label" style="background-color: #9ac78f"
+                      >Sound</span
                     >
                   </div>
                 </div>

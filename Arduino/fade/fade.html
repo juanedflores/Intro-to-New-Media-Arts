@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../css/uikit.min.css" />
+    <script src="../../js/uikit.min.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../css/pojoaque.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+    <script src="../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../css/custom.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
+      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
+        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+      </button>
+
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../index.html">INTRO TO NEW MEDIA ART</a>
+        <ul class="uk-navbar-nav" style="">
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">analogWrite,
+Introduction to PWM</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">analogWrite, Introduction to PWM</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#fade-and-intro-to-pwm" id="toc-fade-and-intro-to-pwm">Fade
+and Intro to PWM</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a>
+<ul>
+<li><a href="#the-idea" id="toc-the-idea">The Idea</a></li>
+</ul></li>
+<li><a href="#pulse-width-modulation"
+id="toc-pulse-width-modulation">Pulse Width Modulation</a></li>
+<li><a href="#code-breakdown" id="toc-code-breakdown">Code Breakdown</a>
+<ul>
+<li><a href="#declaring-our-variables"
+id="toc-declaring-our-variables">Declaring our Variables</a></li>
+<li><a href="#the-setup-function" id="toc-the-setup-function">The Setup
+Function</a></li>
+<li><a href="#the-loop-function" id="toc-the-loop-function">The Loop
+Function</a></li>
+</ul></li>
+<li><a href="#further-material" id="toc-further-material">Further
+Material</a>
+<ul>
+<li><a href="#video-tutorials" id="toc-video-tutorials">Video
+Tutorials</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="fade-and-intro-to-pwm" class="level1">
+<h1>Fade and Intro to PWM</h1>
+<section id="intro" class="level2">
+<h2>Intro</h2>
+<p>Locate the official Arduino Documentation for a more complete
+reference:</p>
+<div class="uk-margin uk-grid-small uk-child-width-expand@s"
+style="padding: 30px; width: 100%;">
+<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid>
+<li style="width: 45%; margin: auto; padding-left: 0;">
+<div class="uk-transition-toggle">
+<a target="_blank" href="https://docs.arduino.cc/built-in-examples/basics/Fade/">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
+style="background: #7fcbcd; opacity: 100;">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h4>
+Fade
+</h4>
+<div style="display: inline">
+<p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #7fcbcd">Docs</span></p>
+</div>
+</div>
+</div>
+<p></a></p>
+</div>
+</li>
+</ul>
+</div>
+<p>Locate the example.</p>
+<p>Go to:</p>
+<p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
+<strong>01.Basics</strong> &gt; <strong>Fade</strong></p>
+<section id="the-idea" class="level3">
+<h3>The Idea</h3>
+<p>The Fade example is one of the most basic examples intended to teach
+you how to use <code>analogWrite()</code>. Before we used digital output
+(<code>digitalWrite()</code>), to power an LED with either 3V or 0V.
+With analog output, we can power things with anything in between 0V and
+3V. So instead of just turning an LED fully on or fully off (2 possible
+states), we will be able to change the brightness with 256 possible
+values (8-bit resolution). This uses something called <strong>Pulse
+Width Modulation</strong> (PWM).</p>
+<p>The sketch description says:</p>
+<blockquote>
+<p>This example shows how to fade an LED on pin 9 using the
+analogWrite() function.</p>
+<p>
+</p>
+The analogWrite() function uses PWM, so if you want to change the pin
+you’re using, be sure to use another PWM capable pin. On most Arduino,
+the PWM pins are identified with a “~” sign, like ~3, ~5, ~6, ~9, ~10
+and ~11.
+</blockquote>
+</section>
+</section>
+<section id="pulse-width-modulation" class="level2">
+<h2>Pulse Width Modulation</h2>
+<div class="uk-margin uk-grid-small uk-child-width-expand@s"
+style="padding: 30px; width: 100%;">
+<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid>
+<li style="width: 45%; margin: auto; padding-left: 0;">
+<div class="uk-transition-toggle">
+<a target="_blank" href="https://docs.arduino.cc/learn/microcontrollers/analog-output/">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
+style="background: #7fcbcd; opacity: 100;">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h4>
+Basics of PWM
+</h4>
+<div style="display: inline">
+<p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #7fcbcd">Docs</span></p>
+</div>
+</div>
+</div>
+<p></a></p>
+</div>
+</li>
+</ul>
+</div>
+<p>According to the documentation:</p>
+<blockquote>
+Pulse Width Modulation, or PWM, is a technique for getting analog
+results with digital means. Digital control is used to create a square
+wave, a signal switched between on and off.
+</blockquote>
+<p><img width="60%" src="./images/pwm.gif" style="background-color: white"></p>
+<p>A PWM signal is actually square wave that is happening very fast.
+With this quick speed, if one full cycle (<code>T</code>) of the square
+wave is on half the time (and off half the time), we get a result of
+half of the operating voltage (3.3V). The “on time” of the square wave
+is called the <strong>pulse width</strong>. By changing the pulse width
+(the amount of time the square wave is on vs off), we can change the
+output voltage.</p>
+<p>An averaging of voltage is happening.</p>
+<div class="uk-text-center">
+<p><strong>With a 50% duty cycle:</strong></p>
+<p><code>analogWrite(127)</code></p>
+<p>3.3V * 0.5 = 1.65V</p>
+<p><strong>With a 25% duty cycle:</strong></p>
+<p><code>analogWrite(64)</code></p>
+<p>3.3V * 0.25 = 0.825V</p>
+<p><strong>With a 75% duty cycle:</strong></p>
+<p><code>analogWrite(191)</code></p>
+<p>3.3V * 0.25 = 2.475V</p>
+</div>
+<hr />
+<p>Remember the difference between analog and digital signals:</p>
+<div class="uk-text-center">
+<strong>Analog</strong>
+<p>
+A continuous signal.
+</p>
+<p><img width="60%" src="./images/analog.png"></p>
+</div>
+<div class="uk-text-center">
+<strong>Digital</strong>
+<p>
+Represents an analog signal a sequence of discrete values, typically
+using binary code (0s and 1s)
+</p>
+<p><img width="60%" src="./images/digital.png"></p>
+</div>
+</section>
+<section id="code-breakdown" class="level2">
+<h2>Code Breakdown</h2>
+<section id="declaring-our-variables" class="level3">
+<h3>Declaring our Variables</h3>
+<pre class="arduino"><code>int led = 9;         // the PWM pin the LED is attached to
+int brightness = 0;  // how bright the LED is
+int fadeAmount = 5;  // how many points to fade the LED by</code></pre>
+</section>
+<section id="the-setup-function" class="level3">
+<h3>The Setup Function</h3>
+<pre class="arduino"><code>void setup() {
+  // declare pin 9 to be an output:
+  pinMode(led, OUTPUT);
+}</code></pre>
+</section>
+<section id="the-loop-function" class="level3">
+<h3>The Loop Function</h3>
+<pre class="arduino"><code>void loop() {
+  // set the brightness of pin 9:
+  analogWrite(led, brightness);
+
+  // change the brightness for next time through the loop:
+  brightness = brightness + fadeAmount;
+
+  // reverse the direction of the fading at the ends of the fade:
+  if (brightness &lt;= 0 || brightness &gt;= 255) {
+    fadeAmount = -fadeAmount;
+  }
+  // wait for 30 milliseconds to see the dimming effect
+  delay(30);
+}</code></pre>
+</section>
+</section>
+<section id="further-material" class="level2">
+<h2>Further Material</h2>
+<section id="video-tutorials" class="level3">
+<h3>Video Tutorials</h3>
+<p>Intro to PWM using an Arduino Uno:</p>
+<p style="text-align: center; padding-top: 30px;">
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/TWGdfFVlroo?si=qYzmKRsL8Q8F3LWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/X8dHbdhnGKY?si=8kZkaZoMtDCemE2X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</section>
+</section>
+</section></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: '#ArticleBody',
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fas fa-solid fa-clone',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fas fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

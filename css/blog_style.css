@@ -109,8 +109,8 @@ ul > li > a {
 }
 
 ul > li {
-  /* list-style-type: circle; */
-  /* margin-left: 20px; */
+  list-style-type: circle;
+  margin-left: 20px;
 }
 
 .uk-navbar-nav > li {
