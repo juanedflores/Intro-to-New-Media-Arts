@@ -104,7 +104,7 @@ An averaging of voltage is happening.
 
 `analogWrite(191)`
 
-3.3V * 0.25 = 2.475V
+3.3V * 0.75 = 2.475V
 </div>
 
 ---
@@ -119,7 +119,7 @@ Remember the difference between analog and digital signals:
 
 <div class="uk-text-center">
 **Digital**
-<p>Represents an analog signal a sequence of discrete values, typically using binary code (0s and 1s)</p>
+<p>Represents an analog signal with a sequence of discrete values, typically using binary code (0s and 1s)</p>
 <img width="60%" src="./images/digital.png">
 </div>
 

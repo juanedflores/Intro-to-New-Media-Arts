@@ -161,6 +161,9 @@
                   <li uk-filter-control="filter: .button">
                     <a href="#">Button</a>
                   </li>
+                  <li uk-filter-control="filter: .fade">
+                    <a href="#">Fade</a>
+                  </li>
                 </ul>
               </li>
               <li uk-filter-control="filter: .exploration" class="uk-parent">
@@ -224,6 +227,9 @@
                 </li>
                 <li uk-filter-control="filter: .button">
                   <a href="#">Button</a>
+                </li>
+                <li uk-filter-control="filter: .fade">
+                  <a href="#">Fade</a>
                 </li>
               </ul>
             </li>
@@ -462,6 +468,40 @@
                     >
                     <span class="uk-label" style="background-color: #9ac78f"
                       >Sound</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="basics week11 fade all">
+              <div
+                class="entry uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
+                onclick="location.href='./Arduino/fade/fade.html'"
+                uk-grid
+              >
+                <div
+                  id="img_div"
+                  class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container"
+                >
+                  <img
+                    class="uk-cover"
+                    style="width: 100%; object-fit: cover"
+                    src="./Arduino/fade/images/led.png"
+                    alt=""
+                  />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div style="border: #7fcbcd solid 16px">
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Fade</h3>
+                    <span>Week 11</span>
+                    <p style="color: black">
+                      Fading the brightness of an LED with analogWrite() and
+                      Pulse Width Modulation.
+                    </p>
+                    <span class="uk-label" style="background-color: #630b7f"
+                      >Basics</span
                     >
                   </div>
                 </div>

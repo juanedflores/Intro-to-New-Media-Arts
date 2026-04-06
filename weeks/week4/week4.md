@@ -138,3 +138,5 @@ Robotics Knowledgebase Soldering Guide <a href="https://roboticsknowledgebase.co
 <br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3KePcASD0NQ?si=4bx3N9oj7d-2IZRG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<a href="https://www.fluxbench.com/tools/led-topologies/">parallel and series circuit simulator</a>

@@ -194,6 +194,8 @@ void loop() {
 
 This sketch is using a **for loop**.
 
+#### for loops
+
 <div class="uk-margin" style="padding: 30px; width: 100%;">
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
 
@@ -252,20 +254,22 @@ for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
 
 <div class="uk-text-center">
 
+##
+
 **`pos = 0`**
 
-The `pos` variable starts with a value of 0.
+The `pos` variable starts with an *initial* value of 0.
 
 **`pos <= 180`**
 
-The condition: Checks to see if `pos` is **less than or equal to** 180.
+The *condition*: Checks to see if `pos` is **less than or equal to** 180.
 
 **`pos += 1`**
 
-If the condition is true: Executes whatever is within the curly brackets of the loop, and `pos` is incremented by 1.
+If the condition is true: Executes whatever is within the curly brackets of the loop, and `pos` is *incremented* by 1.
 </div>
 
---
+##
 
 (The loop repeats until the condition is false, which is when `pos` reaches the value of 181. 181 is no longer less than or equal to 180)
 
