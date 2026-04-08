@@ -94,3 +94,49 @@ title: Week 12
 </ul>
 
 ---
+
+<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
+<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
+<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+
+### Announcements
+
+<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
+<span class="uk-label uk-label-info">Materials Needed</span>
+<p>You will need your electronics kits.</p>
+</blockquote>
+
+### Agenda:
+
+- Midterm Proposals
+- Ultrasonic Range Sensor
+- Try Out Sensors in our Supply / Experiment / Talk about Finals 1 on 1
+
+### Topics:
+
+<div class="uk-margin" style="padding: 15px;">
+<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+
+<li>
+<div class="uk-transition-toggle">
+<a href="https://www.diymachines.co.uk/hc-sr04-ultrasonic-sensor">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h4>Ultrasonic Range Sensor</h4>
+<div style="display: inline">
+<img src="https://irp.cdn-website.com/65e30418/dms3rep/multi/HC-SR04+Dimensions.gif" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
+<span class="uk-label" style="background-color: #999ed1">Input / Sensor</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+</li>
+
+</ul>
+</div>
+
+</div>
+</li>
+</ul>
