@@ -119,7 +119,7 @@ title: Week 12
 
 <li>
 <div class="uk-transition-toggle">
-<a href="https://www.diymachines.co.uk/hc-sr04-ultrasonic-sensor">
+<a href="https://gist.github.com/flakas/3294829">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
 <h4>Ultrasonic Range Sensor</h4>
