@@ -10,7 +10,7 @@ function load_syllabus() {
 
   // <iframe src="https://drive.google.com/file/d/1u4V9_REBTXOC-I3yt9WG8pIREeVYiro6/preview" width="100%" height="1000px" allow="autoplay"></iframe>
   var html = `
-    <iframe src="https://drive.google.com/file/d/1MyRKBB3byx7iTgvKjPeehdOYpvGhXSbV/preview" width="100%" height="1200px" allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1jGIHRsBMFxKVJi8767oNcbbqxm6r9Vwp/preview" width="100%" height="1200px" allow="autoplay"></iframe>
   `;
 
   //var html = `
@@ -72,6 +72,7 @@ function week1() {
     },
     "text",
   );
+  console.log("loaded");
 }
 
 function week2() {
