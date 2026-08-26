@@ -50,7 +50,8 @@
   width: 80%;
   font-family: "Inter-Black";
   background-color: rgba(243, 201, 91, 0);
-  color: white;
+  /* color: white; */
+  color: rgb(56, 79, 172);
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;

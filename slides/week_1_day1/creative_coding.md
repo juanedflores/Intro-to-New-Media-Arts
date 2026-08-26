@@ -13,7 +13,7 @@ Note:
 
 #### Introduction: Where are we?
 
-<embed src="https://drive.google.com/file/d/1MyRKBB3byx7iTgvKjPeehdOYpvGhXSbV/preview" width="70%" height="600px" height="1200px" allow="autoplay"></embed>
+<embed src="https://drive.google.com/file/d/1jGIHRsBMFxKVJi8767oNcbbqxm6r9Vwp/preview" width="50%" height="1200px" allow="autoplay"></embed>
 
 ---
 
@@ -61,6 +61,10 @@ Introductions:
 ---
 
 #### What this class is & what it is not
+
+Note:
+- It is not a computer science class. The goal is not to be computer experts, electrical engineers.
+- It is an art class. We are focused on creative ideas, making, discussions.
 
 ---
 
@@ -218,7 +222,7 @@ Introductions:
 <img width=400 src="https://oldoperatingtheatre.com/wp-content/uploads/2022/07/twine-screenshot-1.png"></img>
 
 
-<img width=300 src="https://www.cyoa.com/cdn/shop/products/Picture_1143038_1200x1200.png?v=1606835282"></img>
+<img width=300 src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OMuDv6mmmlCAA6EEsB-tZw.jpeg"></img>
 <p style="font-size: 18pt; text-align: center; padding-top:0.1em;">Choose your own adventure style</p>
 
 ---
