@@ -55,7 +55,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Machinima</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/machinima.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/machinima.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Article</span>
 </div>
 </div>
@@ -70,7 +70,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Demoscene</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/demoscene.webp" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/demoscene.webp" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
 </div>
 </div>
@@ -85,7 +85,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Circuit Bending</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/circuit_bending.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/circuit_bending.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
 </div>
 </div>
@@ -100,7 +100,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Glitch: Data Bending</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/glitch.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/glitch.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
 </div>
 </div>
@@ -125,7 +125,7 @@ title: Week 2
 
 <blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
 <span class="uk-label uk-label-warning">Reminder</span>
-<p>Research Assignment is due on Canvas September 9th. You have one week to do it! We will be looking at what you have found together as a class.</p>
+<p>Research Assignment is due on Are.na September 9th. You have one week to do it! We will be looking at what you have found together as a class.</p>
 </blockquote>
 
 
@@ -156,7 +156,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Portrait of Edmond de Belamy, Obvious</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/edmond.webp" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/edmond.webp" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
 </div>
 </div>
@@ -171,7 +171,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Ken Feingold</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/feingold.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/feingold.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Web</span>
 </div>
 </div>
@@ -187,7 +187,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Bina48, Stephanie Dinkins</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/bina.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/bina.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Web</span>
 </div>
 </div>
@@ -202,7 +202,7 @@ title: Week 2
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Learning to See, Memo Atken</h3>
 <div style="display: inline">
-<img src="/slides/week_2_day1/images/memo.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_2_day1/images/memo.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(200, 200, 40)c">Web</span>
 </div>
 </div>
