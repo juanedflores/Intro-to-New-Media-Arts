@@ -81,7 +81,7 @@ function week2() {
     "weeks/week2/week2.html",
     function (data) {
       html = $.parseHTML(data);
-      $("#right-col").html(html[31].innerHTML);
+      $("#right-col").html(html[33].innerHTML);
     },
     "text",
   );

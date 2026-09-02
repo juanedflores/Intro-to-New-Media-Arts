@@ -1,0 +1,178 @@
+---
+title: Week 2
+---
+
+# Week 2
+
+<div class="marquee"><p>Hack. Glitch. Machinima. Artificial Intelligence. Researching and Documenting with Are.na</p></div>
+
+<div id="body" style="margin: 30px;">
+
+<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
+<a id='code-file' class='uk-accordion-title' href='#'>MONDAY</a>
+<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+
+### ANNOUNCEMENTS:
+
+<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
+<span class="uk-label uk-label-warning">Reminder</span>
+<p>Please bring your computers to class on Wednesday (Sep 2nd)</p>
+</blockquote>
+
+<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
+<span class="uk-label uk-label-info">Materials Needed</span>
+<ul>
+<li>( None )</li>
+</ul>
+</blockquote>
+
+### AGENDA:
+
+- Demo: Fan activated by light
+- Circuit Bending 
+- Data Bending + (Demo: How to databend a BMP image with an audio editor and text editor)
+- Machinima
+
+### TOPICS:
+
+<section class="slides_section">
+<embed type="text/html" src="slides/week_2_day1/index.html" width="100%" height="500px" />
+</section>
+
+[Open Slides in New Tab](./slides/week_2_day1/index.html)
+
+</div>
+</ul>
+
+<div style="background:rgb(210, 230, 250); height: 50px; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;"></div>
+
+<ul uk-accordion style='pading-bottom: 5vh; margin-top: 35px;'> <li class='uk-open'>
+<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
+<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+
+### ANNOUNCEMENTS
+
+<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
+<span class="uk-label uk-label-warning">Reminder</span>
+<p>Research Assignment is due on Canvas September 9th. You have one week to do it! We will be looking at what you have found together as a class.</p>
+</blockquote>
+
+
+<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
+<span class="uk-label uk-label-info">Materials Needed</span>
+<ul>
+<li>Computers</li>
+</ul>
+</blockquote>
+
+### AGENDA
+
+- Demo?: Motor with Accelerometer
+- Creation of Are.na Accounts
+- Go Over The Research Assignment. (Due September 9th)
+- AI Talk
+
+<section class="slides_section">
+<embed type="text/html" src="slides/week_1_day2/index.html" width="100%" height="500px" />
+</section>
+
+[Open Slides in New Tab](./slides/week_1_day2/index.html)
+
+</div>
+</ul>
+</div>
+
+### to watch
+
+circuit bending: reed ghazala:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/khdl9igxdpm?si=hxgtc_tz80xmmk2d" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+data bending / moshing: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z_rut5gjwfe?si=8t4r1ima0fepgb0c" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<a href="https://medium.com/ai-music/using-audacity-for-video-glitch-effects-9739e99351c0">video data bend article</a>
+<a href="http://datamoshing.com/">data moshing website</a>
+
+peter vogel
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lan6iu3hyz8?si=wd3cdyo2amni77zi" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+nic collins
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4t7qkyy7lzm?si=taendfcum3aaxcxn" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6bcb4yfj5ma?si=bv2jrklyszdooncl" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sblirdnpciw?si=liqs30hnbvav3snw" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+christina kubisch
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5tcphr8pbfk?si=w7xypgvdn06nmpqh" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<a href="https://art21.org/watch/art-in-the-twenty-first-century/s2/tim-hawkinson-in-time-segment/">tim hawkinson</a>
+
+<img src="/slides/week_2_day1/images/hawkinson.jpg"></img>
+
+arduino project with 3 servo motors
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h712cc5ca94?si=tfxs_xeexpjjmc5q" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+### topics
+
+<div class="uk-margin" style="padding: 30px; ">
+<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+
+<!-- <li class="week3 basic_equipment all"> -->
+<!-- <div> -->
+<!-- <a href="./blog/sensors/sensors.html"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style=""> -->
+<!-- <h3 class="cardtitle">inputs: sensors</h3> -->
+<!-- <div style="display: inline"> -->
+<!-- <img src="/slides/week_2_day1/images/sensors.png" alt="" style="padding-bottom: 10px" uk-image /> -->
+<!-- <span class="uk-label" style="background-color: rgb(56, 79, 172)c">lesson</span> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://www.bfi.org.uk/sight-and-sound/features/art-within-machine-how-machinima-turns-camera-videogames">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Machinima</h3>
+<div style="display: inline">
+<img src="/slides/week_2_day1/images/machinima.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(200, 200, 40)c">Article</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://youtu.be/vIQ74_DRWEM?feature=shared">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Demoscene</h3>
+<div style="display: inline">
+<img src="/slides/week_2_day1/images/demoscene.webp" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(200, 200, 40)c">Video</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</li>
+
+</ul>
+</div>
