@@ -111,7 +111,7 @@ title: Week 3
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">What is a Short Circuit?</h3>
 <div style="display: inline">
-<img src="./../../slides/week_3_day1/images/short_circuit.webp" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_3_day1/images/short_circuit.webp" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(56, 79, 172)">Online Article</span>
 </div>
 </div>
@@ -126,7 +126,7 @@ title: Week 3
 <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
 <h3 class="cardtitle">Paper Circuits</h3>
 <div style="display: inline">
-<img src="./../../slides/week_3_day1/images/paper_circuits.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<img src="./slides/week_3_day1/images/paper_circuits.jpg" alt="" style="padding-bottom: 10px" uk-image />
 <span class="uk-label" style="background-color: rgb(56, 79, 172)">Online Article</span>
 </div>
 </div>
