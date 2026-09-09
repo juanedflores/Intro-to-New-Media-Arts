@@ -203,11 +203,11 @@
         <a class="uk-navbar-item uk-logo" href="../../index.html">INTRO TO NEW MEDIA ART</a>
         <ul class="uk-navbar-nav" style="">
           <li class="uk-active" style="pointer-events: none"><a href="index.html">Week
-2</a></li>
+3</a></li>
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text">Week 2</a>-->
+      <!--  <a class="uk-text">Week 3</a>-->
       <!--</h2>-->
     </nav>
 
@@ -231,12 +231,20 @@ Simplest Circuit</a>
 <li><a href="#electrical-conductor"
 id="toc-electrical-conductor">Electrical Conductor</a></li>
 </ul></li>
+<li><a href="#open-circuit-vs.-closed-circuit"
+id="toc-open-circuit-vs.-closed-circuit">Open Circuit vs. Closed
+Circuit</a></li>
+<li><a href="#short-circuit" id="toc-short-circuit">Short
+Circuit</a></li>
 <li><a href="#building-the-simple-circuit-in-tinkercad"
 id="toc-building-the-simple-circuit-in-tinkercad">Building the Simple
 Circuit in TinkerCAD</a>
 <ul>
 <li><a href="#start-a-simulation" id="toc-start-a-simulation">Start a
 Simulation</a></li>
+</ul></li>
+<li><a href="#leds" id="toc-leds">LEDs</a>
+<ul>
 <li><a href="#led-polarity" id="toc-led-polarity">LED Polarity</a>
 <ul>
 <li><a href="#leg-length" id="toc-leg-length">Leg Length</a></li>
@@ -250,7 +258,12 @@ the LED</a></li>
 <li><a href="#voltage-current-and-resistance"
 id="toc-voltage-current-and-resistance">Voltage, Current, and
 Resistance</a></li>
-<li><a href="#terminology" id="toc-terminology">Terminology</a></li>
+<li><a href="#terminology" id="toc-terminology">Terminology</a>
+<ul>
+<li><a href="#key-terms" id="toc-key-terms">Key Terms</a></li>
+<li><a href="#units-of-measurement" id="toc-units-of-measurement">Units
+of Measurement</a></li>
+</ul></li>
 </ul></li>
 </ul></div>
         </div>
@@ -269,9 +282,8 @@ way to introduce the basics of electronics.</p>
 <source src="https://ibles-content.tinkercad.com/static/tinkercad/marketing/circuits/hero-circuits-720.mp4" type="video/mp4" />
 Your browser does not support the video tag.
 </video>
-<p>Below is an embed of the TinkerCAD circuit project that I shared in
-class. Feel free to interact with it or view through the shared
-classroom designs.</p>
+<p>Below is an embed of the TinkerCAD circuit project that I will edit
+in class. Feel free to interact with it or open it.</p>
 <hr />
 <iframe width="725" height="453" src="https://www.tinkercad.com/embed/dlR74SGKKF7?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
 </iframe>
@@ -288,15 +300,15 @@ Fusion, EAGLE, and Maya.
 <h2>The Simplest Circuit</h2>
 <p>The simplest circuit is made of three parts:</p>
 <ul>
-<li>A power supply or (The Source)</li>
+<li>A power supply (The Source)</li>
 <li>Something that is being powered (The Load)</li>
-<li>A path for electrons to travel (Electrical Conductor)</li>
+<li>A path for electrons to travel (The Electrical Conductor)</li>
 </ul>
 <section id="the-source" class="level3">
 <h3>The Source</h3>
 <p>A <strong>power supply</strong> is what is supplying electrical
 energy. This can be a battery, which converts chemical energy into
-electrical.</p>
+electrical energy.</p>
 <div>
 <p><img src="images/source.png" width=400px style=""></img></p>
 </div>
@@ -319,8 +331,33 @@ copper.</p>
 <div>
 <p><img src="images/conductor.jpg" width=300px style=""></img></p>
 </div>
-<hr />
 </section>
+</section>
+<section id="open-circuit-vs.-closed-circuit" class="level2">
+<h2>Open Circuit vs. Closed Circuit</h2>
+<p><img src="images/open_closed_circuit.jpg"></img></p>
+<p>Now that we understand these three components, we need to understand
+what actually “completes” the circuit.</p>
+<p>In order to actually have electrons travel, we must
+<strong>close</strong> the loop back to the source (the battery).</p>
+</section>
+<section id="short-circuit" class="level2">
+<h2>Short Circuit</h2>
+<p><img width="50%" src="../../slides/week_3_day1/images/short_circuit.webp"></img></p>
+<p>We already saw what happens when a circuit is <em>broken</em> (an
+open circuit). A <strong>short circuit</strong> is the opposite kind of
+problem.</p>
+<p>Instead of no path, there’s an <em>extra</em> path — one that skips
+over the load entirely and connects the two wires directly to each
+other.</p>
+<p>Since a plain wire has almost no resistance, current rushes through
+it all at once instead of flowing through the load the way it’s supposed
+to.</p>
+<p>This isn’t just a “the LED won’t light up” problem — a short can
+drain a battery fast, and in a real circuit it can make the wires hot
+enough to be a fire hazard. That’s why “don’t let the wires touch” is a
+rule you’ll hear a lot when building circuits.</p>
+<hr />
 </section>
 <section id="building-the-simple-circuit-in-tinkercad" class="level2">
 <h2>Building the Simple Circuit in TinkerCAD</h2>
@@ -360,28 +397,43 @@ side.</p>
 class="tooltip" style="cursor: pointer;"
 data-uk-tooltip="A closed circuit is one that provides a continous path without interruption.">closed
 circuit</span>. In theory the LED should light up.</p>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+You can bend the wire to your liking by clicking anywhere on the canvas,
+but make sure that it ends at the connection point that you want.
+</p>
+</blockquote>
 <section id="start-a-simulation" class="level3">
 <h3>Start a Simulation</h3>
 <p>Click “Start Simulation” to start the simulation. You can also press
-Spacebar. Once it starts, you cannot make any edits. It will “simulate”
-a circuit meaning that it will work similarly to the real world. The
-image of the LED should light up.</p>
+Spacebar. <strong>Once it starts, you cannot make any edits</strong>. It
+will “simulate” a circuit meaning that it will work similarly to the
+real world. The image of the LED should light up.</p>
 <div>
 <p><img src="images/simulation.png" width=300px style=""></img></p>
 </div>
 <p>If this is your first time building a circuit, then it is 50% likely
 that your LED does not appear to be on. It should look like the
-following image.</p>
+following image. (I am using a yellow LED here, but you can use any
+color you want. The important part is that it lights up.)</p>
 <div>
 <p><img src="images/first_circuit.png" width=300px style=""></img></p>
 </div>
 <p>If it is not on, it is because the terminals of the battery need to
-be connected to the ‘correct’ leg.</p>
+be connected to the ‘correct’ leg. This introduces the concept of
+<strong>polarity</strong>.</p>
 </section>
+</section>
+<section id="leds" class="level2">
+<h2>LEDs</h2>
 <section id="led-polarity" class="level3">
 <h3>LED Polarity</h3>
 <p>LED stands for <strong><mark>Light-Emitting Diode</mark></strong>. A
-diode is another basic component.</p>
+<strong>diode</strong> is another basic component.</p>
+<div>
+<p><img src="images/schematic.png" width=300px style="padding:20px"></img></p>
+</div>
 <p>The short explanation is that it is a component that only allows
 electrical current to pass in <strong>one direction</strong>. It is like
 a one way street. So just like a battery, it has a <strong><span
@@ -392,49 +444,6 @@ style="color: red">positive</span></strong> and a
 negative goes to negative.</p>
 <p>LEDs and diodes both work in a similar way, with the only difference
 being that an LED is a diode that emits light when powered.</p>
-<blockquote class="info">
-<span class="uk-label">Note</span>
-<p>
-There is a separate post that goes into more detail about diodes. Feel
-free to skip it for now. We just want to build a circuit.
-</p>
-<div style="width: 50%; display: flex; margin:auto; padding-top: 25px;">
-<div style="width: 70%; margin: auto;">
-<li class style="list-style-type: none; margin: auto">
-<div>
-<a href="../../Electronics/diode/diode.html">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="background: rgb(210, 230, 250)">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="">
-<h3 class="cardtitle">
-Diode
-</h3>
-<div style="display: inline">
-<p><img src="../../Electronics/diode/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: rgb(56, 79, 172)c">Basic
-Component</span></p>
-</div>
-</div>
-<p></a></p>
-</div>
-</div>
-</li>
-</div>
-</div>
-</blockquote>
-<ul uk-accordion style='pading-bottom: 5vh'>
-<li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>Ground</a>
-<div class="uk-accordion-content"
-style="padding-bottom:20px; margin-bottom:20px">
-<p>Engineers, by convention, also call the <strong>NEGATIVE</strong>
-side the Ground side of the connection. Ground is a term used by
-engineers to indicate a lower voltage terminal with 0 (zero) relative
-volts.</p>
-</div>
 <section id="leg-length" class="level4">
 <h4>Leg Length</h4>
 <p>The most common way to determine which leg is which, is by seeing the
@@ -471,8 +480,8 @@ of the LED legs will reveal what it is.</p>
 <p><img src="images/anode.png" width="400px" style=""></img></p>
 </div>
 <p>I know <strong><span style="color: red">anode</span></strong> means
-positive, so I will connect it to the positive terminal of the coin cell
-battery.</p>
+positive, so I will connect it to the positive <strong>terminal</strong>
+of the coin cell battery.</p>
 <blockquote class="success">
 <span class="uk-label uk-label-success">Tip</span>
 <p>
@@ -513,19 +522,52 @@ need to understand a little bit about how electricity works.</p>
 </section>
 <section id="voltage-current-and-resistance" class="level2">
 <h2>Voltage, Current, and Resistance</h2>
+<p>A useful way to picture electricity is water moving through a
+hose:</p>
+<ul>
+<li><strong>Voltage</strong> is like water pressure — how hard the water
+is being pushed.</li>
+<li><strong>Current</strong> is like the flow rate — how much water is
+actually moving through per second.</li>
+<li><strong>Resistance</strong> is like how narrow the hose is — a
+narrower hose holds back more water for the same pressure.</li>
+</ul>
+<!-- TODO: insert water/hose analogy image here -->
+<p>An LED doesn’t resist current very much on its own. So when you
+connect it straight to a battery, the battery just keeps pushing as much
+current through as it can — which is exactly what you saw in the warning
+earlier: <strong>61.9mA</strong> flowing through, when the LED is only
+rated for <strong>20mA</strong>. Too much current burns through an LED
+the same way too much water pressure would burst certain pipes.</p>
+<p>A <strong>resistor</strong> does what it sounds like — it
+<em>resists</em> the flow of current. Adding one in the path pinches
+that flow back down. In the above example, it pinches it to a safe
+amount, the same way pinching a hose slows the water down.</p>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+LEDs have a “voltage threshold”. To put it simply, there is a minimum
+amount of voltage required for current to flow and for it to emit light.
+This threshold value varies between different color LEDs. For a typical
+red LED, it is usually around 1.8V, meaning that it needs a power source
+that can supply higher than that.
+</p>
+</blockquote>
+<hr />
 <blockquote class="warning">
 <span class="uk-label uk-label-warning">Warning</span>
 <p>
 Before I attempt to note down some of the basics of electronics, know
 that this takes time to learn. Knowing the how and why of things is
-definitely useful, satisfying, and recommended, unfortunately (or
+definitely useful, satisfying, and recommended. Unfortunately (or
 fortunately) with our time limitation it is impossible to go into it in
-depth. It can also be a little dull, tedious, and overwhelming. Because
-this is a design course and we are artists and designers, I am guessing
-we mostly want to start making things happen, and ponder about what our
-creations are doing. I also think it’s important to minimize the stress
-as much as possible and create an environment where you feel comfortable
-working in this area.
+depth, and is not really the point of the class anyway. It can be a
+little dull, tedious, and overwhelming. Because this is an art class and
+we are artists and designers, we mostly want to start making things
+happen and get our ideas from our heads into the world, and ponder about
+what our creations are doing. I think it’s important to minimize the
+stress as much as possible and create an environment where you feel
+comfortable working in this area.
 </p>
 <p>
 Trying to speed teach this material has been attempted many times in
@@ -554,7 +596,45 @@ Computing class.
 </section>
 <section id="terminology" class="level2">
 <h2>Terminology</h2>
-<p>Units of Measurement:</p>
+<section id="key-terms" class="level3">
+<h3>Key Terms</h3>
+<ul>
+<li><strong>Source (Power Supply)</strong> — What supplies electrical
+energy to a circuit, such as a battery.</li>
+<li><strong>Load</strong> — What consumes electrical energy, converting
+it into another form like light, motion, or heat.</li>
+<li><strong>Electrical Conductor</strong> — A material, usually a metal
+like copper, that allows electrons to move freely along a path.</li>
+<li><strong>Open Circuit</strong> — A break in the path that stops
+current from flowing.</li>
+<li><strong>Closed Circuit</strong> — A complete, unbroken loop that
+lets current flow all the way back to the source.</li>
+<li><strong>Short Circuit</strong> — An unintended low-resistance path
+that skips the load, causing a current surge.</li>
+<li><strong>Polarity</strong> — Having a positive side and a negative
+side, where current can only flow one particular way.</li>
+<li><strong>Diode</strong> — A component that only allows current to
+pass in one direction.</li>
+<li><strong>LED (Light-Emitting Diode)</strong> — A diode that emits
+light when current passes through it.</li>
+<li><strong>Anode</strong> — The positive leg (or side) of a diode or
+LED.</li>
+<li><strong>Cathode</strong> — The negative leg (or side) of a diode or
+LED.</li>
+<li><strong>Terminal</strong> — The point on a component, like a
+battery, where a wire connects.</li>
+<li><strong>Resistor</strong> — A component that resists the flow of
+current, often used to protect other components like LEDs.</li>
+<li><strong>Voltage</strong> — The “pressure” pushing electricity
+through a circuit.</li>
+<li><strong>Current</strong> — The rate at which electricity flows
+through a circuit.</li>
+<li><strong>Resistance</strong> — How much a material or component
+resists the flow of current.</li>
+</ul>
+</section>
+<section id="units-of-measurement" class="level3">
+<h3>Units of Measurement</h3>
 <ul>
 <li>Volts; (V); For Electromotive Force<br />
 </li>
@@ -565,6 +645,7 @@ Computing class.
 <div style="">
 <table class="uk-overflow-auto uk-table uk-table-divider uk-table-justify uk-table-middle" style="padding:70px"; margin:auto;> <thead> <tr> <th>Quantity</th> <th style="padding:20px">Symbol</th> <th>Unit of Measurement</th style="padding:30px;"> <th>Unit abbreviation</th> </tr> </thead> <tbody> <tr> <td>Current</td> <td><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 119%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.494em; padding-bottom: 0.284em; padding-right: 0.064em;">I</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">I</script></td> <td>Ampere (or Amp)</td> <td>A</td> </tr> <tr> <td>Voltage</td> <td><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 119%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-4" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-5" class="mjx-mrow"><span id="MJXc-Node-6" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.494em; padding-bottom: 0.284em; padding-right: 0.186em;">V</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">V</script></td> <td>Volt</td> <td>V</td> </tr> <tr> <td>Resistance</td> <td><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 119%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-7" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-8" class="mjx-mrow"><span id="MJXc-Node-9" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.494em; padding-bottom: 0.284em;">R</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math></span></span><script type="math/tex" id="MathJax-Element-3">R</script></td> <td>Ohm</td> <td>Ω</td> </tr> </tbody> </table>
 </div>
+</section>
 </section>
 </section></div>
     </div>

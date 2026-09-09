@@ -2,22 +2,40 @@
 title: Week 3
 ---
 
-### Monday Agenda
+# Week 3
 
-- Are.na (Intro and Create Profiles)
+<div class="marquee"><p>Electric Circuit Basics. Intro to TinkerCAD.</p></div>
+
+<div id="body" style="margin: 30px;">
+
+<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
+<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
+<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+
+### ANNOUNCEMENTS:
+
+<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
+<span class="uk-label uk-label-warning">Reminder</span>
+<p>Today we are looking at what 3 artists you all chose to link in your Are.na research channels. Please be ready to speak about what attracted you to these artists and why you chose them, how it's relevant to what we have seen in the past two weeks, and anything else that you would like to share.</p>
+<br>
+<a href="https://canvas.uic.edu/courses/51541/assignments/416824">https://canvas.uic.edu/courses/51541/assignments/416824</a>
+</blockquote>
+
+<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
+<span class="uk-label uk-label-info">Materials Needed</span>
+<ul>
+<li>Computers</li>
+</ul>
+</blockquote>
+
+### AGENDA:
+
+- Are.na checkin
+- Looking at your research and discussion
 - Intro to TinkerCAD
-- Demo with Power Supply and Multimeter
-
-### Wednesday Agenda
-
-- Talk about Are.na
-- TinkerCAD Ohms Law, Parellel and Series
 - Multimeter Demo
 - Paper Circuits
-- What is a short circuit? <a target="_blank" href="https://makeabilitylab.github.io/physcomp/electronics/electricity-basics.html#whats-a-short-circuit">Link</a>
-
-
-<a href="https://highlowtech.org/?p=2505">highlowtech: paper circuits tutorial</a>
+- TinkerCAD Ohms Law, Parellel and Series
 
 ---
 
@@ -25,8 +43,6 @@ title: Week 3
 
 <div class="uk-margin" style="padding: 30px; ">
 <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-
-
 
 <li class="week3 basic_equipment all">
 <div>
@@ -58,7 +74,6 @@ title: Week 3
 </div>
 </li>
 
-
 <li class="week3 basic_equipment all">
 <div>
 <a href="https://makeabilitylab.github.io/physcomp/electronics/ohms-law.html">
@@ -67,7 +82,7 @@ title: Week 3
 <h3 class="cardtitle">Ohms Law</h3>
 <div style="display: inline">
 <img src="https://cdn.shopify.com/s/files/1/0823/6200/7871/files/what-is-ohms-law-calculation_1.webp?v=1710796764" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: rgb(56, 79, 172)c">Online Article</span>
+<span class="uk-label" style="background-color: rgb(56, 79, 172)">Online Article</span>
 </div>
 </div>
 </a>
@@ -82,12 +97,43 @@ title: Week 3
 <h3 class="cardtitle">Parallel and Series Circuits</h3>
 <div style="display: inline">
 <img src="https://www.makerspaces.com/wp-content/uploads/2020/09/parallel-animation-small.gif" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: rgb(56, 79, 172)c">Online Article</span>
+<span class="uk-label" style="background-color: rgb(56, 79, 172)">Online Article</span>
 </div>
 </div>
 </a>
 </div>
 </li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://makeabilitylab.github.io/physcomp/electronics/electricity-basics.html#whats-a-short-circuit">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">What is a Short Circuit?</h3>
+<div style="display: inline">
+<img src="../../slides/week_3_day1/images/short_circuit.webp" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(56, 79, 172)">Online Article</span>
+</div>
+</div>
+</a>
+</div>
+</li>
+
+<li class="week3 basic_equipment all">
+<div>
+<a href="https://highlowtech.org/?p=2505">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: rgb(210, 230, 250)">
+<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="">
+<h3 class="cardtitle">Paper Circuits</h3>
+<div style="display: inline">
+<img src="../../slides/week_3_day1/images/paper_circuits.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: rgb(56, 79, 172)">Online Article</span>
+</div>
+</div>
+</a>
+</div>
+</li>
+
 
 </ul>
 </div>
@@ -119,3 +165,8 @@ title: Week 3
 ### Parallel Paper Circuit
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P-eOtQAcD1s?si=4WV8IUocr-cDYgXt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+</div>
+</ul>
+

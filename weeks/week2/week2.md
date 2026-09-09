@@ -138,7 +138,6 @@ title: Week 2
 
 ### AGENDA
 
-- Demo?: Motor with Accelerometer. Light controlled by sound?
 - Creation of Are.na Accounts
 - Go Over The Research Assignment. (Due September 9th)
 - AI Talk
