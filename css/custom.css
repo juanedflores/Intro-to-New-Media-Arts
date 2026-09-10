@@ -28,7 +28,6 @@
 }
 
 .uk-first-column {
-  /* background-color: rgb(238, 241, 247); */
   padding-left: 0;
 }
 
@@ -40,24 +39,17 @@
   width: auto;
   padding: 25px;
   margin-bottom: 0;
-  /* padding-bottom: 0; */
-  /* border-radius: 20px; */
-  /* top: -30px; */
-  /* left: -30px; */
 }
 
 .marquee {
   width: 80%;
   font-family: "Inter-Black";
   background-color: rgba(243, 201, 91, 0);
-  /* color: white; */
   color: rgb(56, 79, 172);
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
-  /* margin-left: 30px; */
-  /* margin: 0; */
   padding-top: 5px;
   position: absolute;
 }
@@ -76,39 +68,20 @@
   }
 }
 
-#ArticleBodyMain > section > #body > section > ul {
-  list-style-type: square;
-}
-
-#ArticleBodyMain > section > #body > section > ul > li {
-  font-family: "Inter-VariableFont";
-  margin-left: 30px;
-  color: rgb(56, 79, 172); /* bullet color */
-  font-weight: bold;
-  font-size: 18px;
-}
-
 h2 {
   font-size: 1.5em;
   font-weight: bold;
   font-family: "Inter-Black";
-  /*padding-bottom: 0.5em;*/
   text-align: left;
   margin: 0;
 }
 
 #ArticleBodyMain > section > #body {
   padding: 25px;
-  /* background-color: rgb(238, 241, 247); */
   background-color: white;
-  /* border-radius: 20px; */
-  /* top: -30px; */
-  /* left: -30px; */
 }
 
 #topbar {
-  /* position: relative; */
-  /* height: 100px; */
   background-color: black;
 }
 
@@ -125,22 +98,12 @@ h2 {
   max-width: 100%;
 }
 
-/* .entry { */
-/*   max-height: 300px; */
-/*   margin-bottom: 40px; */
-/* } */
-
-/* #ListBody > li { */
-/*   height: 400px; */
-/* } */
-
 .uk-card-media-right {
   height: auto;
 }
 
 .uk-card-body {
   background-color: rgb(238, 241, 247);
-  /* height: 250px; */
 }
 
 .uk-card-small {
@@ -205,11 +168,6 @@ hr {
   left: 20px;
 }
 
-.uk-first-column {
-  /* background-color: rgba(0, 0, 0, 0) !important; */
-  /* background-color: rgb(238, 241, 247) !important; */
-}
-
 div.uk-card-small {
   background-color: white;
 }
@@ -223,23 +181,9 @@ div.uk-card-body > p {
   font-family: "Inter-ExtraLight", sans-serif;
   font-weight: normal;
   font-size: 1.2em;
-  /* font-weight: bold; */
 }
 
-.uk-nav:not(.arduino-menu) > li > a {
-  /*display: block !important;*/
-}
-
-/*.uk-nav-default:not(.arduino-menu) > .uk-active > a::after {*/
-/*  content: '>';*/
-/*  font-family: 'Inter-ExtraLight', sans-serif;*/
-/*  /*position: absolute;*/
-*/
-/*  text-align: right;*/
-/*  float: right;*/
-/*}*/
-
-.uk-nav-default>.uk-active>a::after {
+.uk-nav-default > .uk-active > a::after {
   content: ">";
   font-family: "Inter-ExtraLight", sans-serif;
   text-align: right;
@@ -251,7 +195,6 @@ div.uk-card-body > p {
 }
 
 .uk-table th {
-  /* padding: 0 !important; */
   background: rgb(220, 220, 220);
   color: #363131;
 }
@@ -261,26 +204,12 @@ div.uk-card-body > p {
   width: 100%;
 }
 
-/*WHAAT IS THIS*/
-/*.pdf,*/
-/*html,*/
-/*body {*/
-/*  height: 100%;*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*}*/
-/**/
 .pdf,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-
-/*.pdf {*/
-/*  width: 100%;*/
-/*  aspect-ratio: 4 / 3;*/
-/*}*/
 
 .section_header {
   color: white;
@@ -314,7 +243,6 @@ nav {
 
 .uk-logo {
   background: rgb(197, 75, 59) !important;
-  /*font-family: 'Inter-Black';*/
   font-family: "AlegreyaSansSC-Black";
   color: white;
 }
@@ -473,35 +401,33 @@ ul {
   padding: 0;
 }
 
-#agenda > ul > li {
-  /*list-style: '- ';*/
-  list-style-type: circle;
+/* [id^="agenda"] also matches agenda-1, agenda-2, etc., which pandoc
+   generates for the 2nd+ "Agenda" heading on a page (e.g. a Monday day
+   and a Wednesday day each have their own Agenda section). */
+[id^="agenda"] > ul > li {
   margin-left: 20px;
-  /* font-size: 20px; */
+  font-family: "Inter-VariableFont";
+  color: rgb(56, 79, 172); /* bullet color */
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #ListBody > li > div > div {
   display: flex;
   background: rgb(238, 241, 247);
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 #ListBody > li > div > #img_div {
   display: flex;
   background: black;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 #ListBody > li > div > div > img {
-  /* max-height: 312px; */
   height: 100%;
   margin: auto;
 }
 
 .uk-accordion-title {
-  /* background: #fba99e; */
   background: #2c3f89;
   padding: 10px;
 }
@@ -509,15 +435,12 @@ ul {
 .uk-accordion-title {
   font-family: "Inter-Black";
   border-radius: 25px;
-  /* border: rgb(197, 75, 59) solid 2px; */
-  /* color: #2c3f89; */
   color: white;
   padding-left: 20px;
 }
 
 .uk-accordion-content {
   border-radius: 15px / 50px;
-  /* background: rgb(197, 75, 59); */
   padding: 20px;
 }
 

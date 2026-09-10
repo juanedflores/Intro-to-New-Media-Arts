@@ -13,8 +13,10 @@ local card_styles = {
   video    = { bg = "#ffd97d",            label_bg = "#ffd97d",            tag = "Video" },
 }
 
+local section_divs_opts = pandoc.WriterOptions({ ["section_divs"] = true })
+
 local function inner_html(el)
-  return pandoc.write(pandoc.Pandoc(el.content), "html")
+  return pandoc.write(pandoc.Pandoc(el.content), "html", section_divs_opts)
 end
 
 local function render_card(el)
