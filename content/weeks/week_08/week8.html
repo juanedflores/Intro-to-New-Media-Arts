@@ -1,0 +1,333 @@
+<div id="ArticleBodyMain"><section id="week-8" class="level1">
+<h1>Week 8</h1>
+<div id="body" style="margin: 30px;">
+<hr />
+<section id="monday-agenda" class="level3">
+<h3>Monday Agenda:</h3>
+<ul>
+<li>Reviewing readanalogserial, digital output</li>
+<li>Button sketch (if statements)</li>
+<li>The Interface</li>
+<li>Digital Button Workshop</li>
+</ul>
+<hr />
+<p>Patatype with me!</p>
+<pre class="arduino"><code>#include &lt;SPI.h&gt;
+#include &lt;WiFiNINA.h&gt;
+#include &lt;WiFiUdp.h&gt;  // Required for UDP communication
+#include &lt;OSCMessage.h&gt;
+
+// Include the secrets file with your network credentials
+#include &quot;arduino_secrets.h&quot;
+
+char ssid[] = &quot;ssid&quot;;  // your network SSID (name)
+char pass[] = &quot;pass&quot;;   // your network password
+
+unsigned int localPort = 2390;  // local port to listen on
+char incomingPacket[255];       // buffer for incoming packets
+
+// 172.20.10.14
+IPAddress remoteIP(172, 20, 10, 14);  // The IP address of the destination device
+unsigned int remotePort = 8888;       // The destination port
+
+WiFiUDP Udp;
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  // attempt to connect to WiFi network:
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(&quot;Attempting to connect to SSID: &quot;);
+    Serial.println(ssid);
+    WiFi.begin(ssid, pass);
+    delay(10000);  // wait 10 seconds for connection
+  }
+  Serial.println(&quot;Connected to WiFi!&quot;);
+  Serial.print(&quot;IP Address: &quot;);
+  Serial.println(WiFi.localIP());  // Prints the fassigned IP address
+
+  // Initialize Udp on the local port
+  Udp.begin(localPort);
+}
+
+void loop() {
+  if (digitalRead(2) == HIGH) {
+    sendOSC();
+  }
+  delay(1);
+}
+
+void sendOSC() {
+  OSCMessage msg(&quot;/juan/1&quot;);
+
+  Udp.beginPacket(remoteIP, remotePort);
+  msg.send(Udp);    // send the bytes to the SLIP stream
+  Udp.endPacket();  // mark the end of the OSC Packet
+  msg.empty();      // free space occupied by message
+}
+</code></pre>
+<hr />
+</section>
+<section id="interfaces" class="level3">
+<h3>Interfaces</h3>
+<p>To get you to start thinking about what kind of interface you want to
+create, here are some examples of switches and variable resistors that
+you can use as a starting point.</p>
+<p><a href="https://www.instructables.com/Switches/">Instructables:
+Switches</a></p>
+<p>Here is a list of switches that exist, along with any tutorials on
+how to make one from scratch:</p>
+<ul>
+<li>Push Button Switch:</li>
+</ul>
+<p><a
+href="https://www.instructables.com/How-to-Make-a-Push-Button-Switch/">Instructables</a><br />
+<a
+href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Push+Button/356">Push
+Button</a><br />
+<a
+href="https://makeymakey.com/pages/stomp-switch-start-and-stop-timer">Stomp/Foot
+Switch</a><br />
+<a
+href="https://www.diyability.org/guide/make-a-simple-capability-switch/">DIYAbility</a></p>
+<p>Hint: Springs!</p>
+<ul>
+<li>Toggle Switch:</li>
+</ul>
+<p><a
+href="https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/">Instructables</a><br />
+<a
+href="https://learn.browndoggadgets.com/Guide/Paper+Circuits+Cubes+-+Lever+Switch/522">Lever
+Switch</a></p>
+<p style="text-decoration: underline">
+Guides by Pete Prodoehl
+</p>
+<p><a
+href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Slide+Switch/253">Slide
+Switch</a><br />
+<a
+href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Knife+Switch/203">Cardboard
+Knife Switch</a></p>
+<ul>
+<li>Tilt Switch:</li>
+</ul>
+<p><a
+href="https://www.instructables.com/Build-your-own-tilt-switch/">Instructables</a><br />
+<a href="https://www.youtube.com/watch?v=jEqb6r3WV30">Youtube
+Video</a><br />
+<a href="https://makeymakey.com/pages/diy-tilt-joystick">Tilt
+Joystick</a></p>
+<p>Here is a list of variable resistors:</p>
+<ul>
+<li>Potentiometer:</li>
+</ul>
+<p><a
+href="https://www.instructables.com/Make-a-Pencils-Lead-Potentiometer-Experimentatio/">Instructables</a></p>
+<ul>
+<li>Photoresistor (LDR):</li>
+</ul>
+<p><a
+href="https://www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/">Instructables</a></p>
+<ul>
+<li>Force Sensitive Resistor (FSR):</li>
+</ul>
+<p><a
+href="https://www.instructables.com/Velostat-Homemade-Pressure-Sensor-Mat/">Instructables</a></p>
+<ul>
+<li>Flex Sensor:</li>
+</ul>
+<p><a
+href="https://www.instructables.com/Stickytape-Sensors/">Instructables</a></p>
+<hr />
+<p>ART 150 student examples from the section taught by Sabrina Raaf:</p>
+<p><a
+href="https://art150.nma-course.online/category/all-posts/creative-switch/">art150.nma</a></p>
+<hr />
+<p>Custom Interfaces:</p>
+<ul>
+<li><p>Crank Counter <a
+href="https://learn.browndoggadgets.com/Guide/Crank+Counter/238">Crank</a></p></li>
+<li><p>Therapy Ball Controller <a
+href="https://makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons">Therapy
+Ball</a></p></li>
+<li><p>Hoola Hoop Controller <a
+href="https://makeymakey.com/pages/hula-hoop-controller">Hula Hoop
+Controller</a></p></li>
+</ul>
+<hr />
+</section>
+<section id="monday-topics" class="level3">
+<h3>Monday Topics:</h3>
+<div class="uk-margin" style="padding: 30px;">
+<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+<li>
+<div>
+<a href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+style="background: #7fcbcd">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<!-- <h3 class="cardtitle" style="background-color: #b48ead; padding: 5px;">Intro to the Serial Monitor</h3> -->
+<h3 class="cardtitle"">The Interface</h3>
+<div style="display: inline">
+<p><img src="https://liveinterfacesjournal.ulusofona.pt/wp-content/uploads/2026/01/MEM_fig1_ONCONTACT-1.jpg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label"
+style="background-color: #b48ead">Topic</span></p>
+</div>
+</div>
+<p></a></p>
+</div>
+</div>
+</li>
+<li>
+<div>
+<a href="./content/Arduino/print_to_serial_monitor/print_to_serial_monitor.html">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+style="background: #7fcbcd">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<!-- <h3 class="cardtitle" style="background-color: #b48ead; padding: 5px;">Intro to the Serial Monitor</h3> -->
+<h3 class="cardtitle"">Intro to the Serial Monitor</h3>
+<div style="display: inline">
+<p><img src="./content/Arduino/print_to_serial_monitor/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label"
+style="background-color: #b48ead">Topic</span></p>
+</div>
+</div>
+<p></a></p>
+</div>
+</div>
+</li>
+<li>
+<div>
+<a href="./content/Arduino/button/button.html">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+style="background: #7fcbcd">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h3 class="cardtitle">
+Button
+</h3>
+<div style="display: inline">
+<p><img src="./content/Arduino/button/images/button.png" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label"
+style="background-color: #1e87f0">sketch</span></p>
+</div>
+</div>
+<p></a></p>
+</div>
+</div>
+</li>
+<li>
+<div>
+<a href="https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/analog-in-with-an-arduino/">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+style="background: #7fcbcd">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h3 class="cardtitle">
+AnalogRead with Potentiometer
+</h3>
+<div style="display: inline">
+<p><img src="./content/Arduino/analogread/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label"
+style="background-color: #1e87f0">Sketch</span></p>
+</div>
+</div>
+<p></a></p>
+</div>
+</div>
+</li>
+<li>
+<div>
+<a href="./content/Arduino/map/map.html">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+style="background: #7fcbcd">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h3 class="cardtitle">
+map() function
+</h3>
+<div style="display: inline">
+<p><img src="./content/Arduino/map/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label"
+style="background-color: #4c566a">Function</span></p>
+</div>
+</div>
+<p></a></p>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr />
+<p>Take a look at this TED Talk by Holly Cohen:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-We84cxubCY?si=fiqwsISlsHhsAIe6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+<!-- ### Thursday Agenda: -->
+<!---->
+<!-- - AnalogRead Review -->
+<!-- - AnalogWrite and PulseWidth Modulation (PWM) -->
+<!-- - Button Sketch (DigitalRead) -->
+<!---->
+<!-- --- -->
+<!-- ### Thursday Topics: -->
+<!---->
+<!-- <div class="uk-margin" style="padding: 30px;"> -->
+<!-- <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack"> -->
+<!---->
+<!-- <li> -->
+<!-- <div> -->
+<!-- <a href="./content/Arduino/button/button.html"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"> -->
+<!-- <h3 class="cardtitle">Button</h3> -->
+<!-- <div style="display: inline"> -->
+<!-- <img src="./content/Arduino/button/images/button.png" alt="" style="padding-bottom: 10px" uk-image /> -->
+<!-- <span class="uk-label" style="background-color: #1e87f0">sketch</span> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
+<!---->
+<!-- <li> -->
+<!-- <div> -->
+<!-- <a href="./content/Arduino/analogwrite_pwm/analogwrite_pwm.html"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd"> -->
+<!-- <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"> -->
+<!-- <h3 class="cardtitle">AnalogWrite: Intro to Pulse Width Modulation (PWM)</h3> -->
+<!-- <div style="display: inline"> -->
+<!-- <img src="./content/Arduino/analogwrite_pwm/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image /> -->
+<!-- <span class="uk-label" style="background-color: #b48ead">Topic</span> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
+<!---->
+<!-- </ul> -->
+<!-- </div> -->
+</section>
+<section id="section" class="level2">
+<h2><!----></h2>
+<section id="supplementary-material" class="level3">
+<h3>Supplementary Material</h3>
+<p>ITP NYU course explaining digital output with Arduino Uno. Serves as
+a good review of what we have learned so far.</p>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/374067285?h=c6390e412a" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen>
+</iframe>
+<p>One button games: <a href="https://c1ic.mx/menu.html">link</a></p>
+</section>
+</section>
+</div>
+</section></div>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/custom.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
+      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
+        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+      </button>
+
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <ul class="uk-navbar-nav" style="">
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">Print
+to Serial Monitor</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Print to Serial Monitor</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#serial-monitor" id="toc-serial-monitor">Serial Monitor</a>
+<ul>
+<li><a href="#what-is-it-where-is-it"
+id="toc-what-is-it-where-is-it">What is it? Where is it?</a>
+<ul>
+<li><a href="#serial-port" id="toc-serial-port">Serial Port</a></li>
+</ul></li>
+<li><a href="#a-minimal-arduino-sketch-to-print-to-the-serial-monitor"
+id="toc-a-minimal-arduino-sketch-to-print-to-the-serial-monitor">A
+Minimal Arduino Sketch to Print to the Serial Monitor</a></li>
+<li><a href="#sketch-breakdown" id="toc-sketch-breakdown">Sketch
+Breakdown</a>
+<ul>
+<li><a href="#our-count-variable" id="toc-our-count-variable">Our count
+variable</a></li>
+<li><a href="#initialize-serial-communication-in-setup"
+id="toc-initialize-serial-communication-in-setup">Initialize Serial
+Communication in setup()</a></li>
+<li><a href="#baud-rate" id="toc-baud-rate">Baud Rate</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="serial-monitor" class="level1">
+<h1>Serial Monitor</h1>
+<section id="what-is-it-where-is-it" class="level2">
+<h2>What is it? Where is it?</h2>
+<p>First, think back to when we were learning the Arduino software
+graphical user interface (GUI). To upload our code we learned how to
+make sure of two things:</p>
+<section id="how-to-select-the-correct-board-that-we-are-using"
+class="level6">
+<h6>1.) How to select the correct board that we are using</h6>
+</section>
+<section
+id="how-to-make-sure-we-are-connected-to-the-correct-port-that-our-arduino-is-connected-to."
+class="level6">
+<h6>2.) How to make sure we are connected to the correct
+<strong>port</strong> that our Arduino is connected to.</h6>
+</section>
+<section id="what-it-is" class="level5">
+<h5>What it is</h5>
+<p>The port that we are connected to is the <strong>“Serial
+Port”</strong>. The serial port is used to achieve a communication
+between the computer and the Arduino board using a process called
+“Serial Communication”. You can think of it as both your computer and
+your Arduino board having a conversation, where they take turns sending
+messages to each other.</p>
+<p><strong>Serial Cables</strong></p>
+<div class="uk-column-1-2">
+<p>
+Serial cables today (USB)
+</p>
+<p>
+<img src="./images/new_serial.jpg"></img>
+</p>
+<p>
+Serial cables back then (RS-422)
+</p>
+<p>
+<img src="./images/old_serial.webp"></img>
+</p>
+</div>
+<p>You can actually see some visual feedback of the communication by
+looking at some board’s RX and TX LEDs. The RX LED blinks when the board
+is <strong>(r)eceiving</strong> information from the computer, and the
+TX LED blinks when the board is <strong>(t)ransmitting</strong>
+information to the computer.</p>
+<p>
+<img width="400" src="./images/arduino_LEDs.jpg"></img>
+</p>
+<p>
+<img width="100%" src="./images/diagram.png"></img>
+</p>
+<p>To see the actual messages the Arduino is <strong>sending</strong> to
+our computer, we use the <strong>Serial Monitor</strong>.</p>
+</section>
+<section id="where-it-is" class="level5">
+<h5>Where it is</h5>
+<p>The Serial Monitor can be accessed by clicking on the magnifying
+glass icon in the top right corner of the Arduino IDE, and the Serial
+Monitor window will pop up on the bottom of the screen.</p>
+<p>
+<img width="100%" src="./images/serial_monitor.png"></img>
+</p>
+<hr />
+</section>
+<section id="serial-port" class="level3">
+<h3>Serial Port</h3>
+<blockquote class="info">
+<p><span class="uk-label">Note</span></p>
+<p>
+Check out the official Arduino documentation on the Serial Monitor:
+<a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor/">Serial
+Monitor: Arduino Documentation</a>
+</p>
+<p>
+<strong>Makeabilitylab</strong> has a more in-depth post about the
+serial monitor.
+</p>
+<p>
+Check it out here:
+<a href="https://makeabilitylab.github.io/physcomp/communication/serial-intro.html ">Intro
+the Serial Monitor</a>
+</p>
+<p>
+How to use Debug with Serial:
+<a href="https://makeabilitylab.github.io/physcomp/arduino/serial-print.html#step-3-open-serial-monitor-in-the-arduino-ide">Debugging
+with Serial</a>
+</p>
+</blockquote>
+<hr />
+</section>
+</section>
+<section id="a-minimal-arduino-sketch-to-print-to-the-serial-monitor"
+class="level2">
+<h2>A Minimal Arduino Sketch to Print to the Serial Monitor</h2>
+<p>For this sketch, we don’t need to add any components. All we need is
+a USB connection to our Arduino board.</p>
+<p>Copy this code into your Arduino IDE:</p>
+<pre class="arduino"><code>int count = 0;
+
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // print out the current count
+  Serial.println(count);
+  // increment the count by 1
+  count = count + 1;
+  // pause the program for 1 second
+  delay(1000);
+}</code></pre>
+<p>Make sure you create a new sketch.</p>
+<p><code>File -&gt; New Sketch</code></p>
+<p>
+<img width="300" src="./images/new_sketch.png"></img>
+</p>
+<p>The default new sketch looks like this:</p>
+<pre class="arduino"><code>void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}</code></pre>
+<p>But just Ctrl + A to select all and delete using backspace. (Cmd + A
+for MacOS)</p>
+<p>Then paste the code above into the Arduino IDE using Ctrl + V. (Cmd +
+V for MacOS)</p>
+<hr />
+</section>
+<section id="sketch-breakdown" class="level2">
+<h2>Sketch Breakdown</h2>
+<p>
+</p>
+<section id="our-count-variable" class="level4">
+<h4>Our count variable</h4>
+<pre class="arduino"><code>int count = 0;</code></pre>
+<p>I am defining a variable called <code>count</code> of type
+<code>int</code> (integer) and initializing it with the value of
+<code>0</code>.</p>
+<p>We will be changing the value of <code>count</code> in the
+<code>loop()</code> function. Starting with incrementing it by
+<code>1</code> each time the loop() happens.</p>
+<p>We will be printing the value of <code>count</code> to the Serial
+Monitor.</p>
+</section>
+<section id="initialize-serial-communication-in-setup" class="level4">
+<h4>Initialize Serial Communication in setup()</h4>
+<p>To use the serial port for communication, we first need to initialize
+it in the <code>setup()</code> function using
+<code>Serial.begin()</code>.</p>
+<blockquote class="warning">
+<p><span class="uk-label"
+style="color:black; background:#fac100">Warning</span></p>
+<p>
+Remember that in programming, everything is case sensitive.
+serial.begin() will not be recognized by Arduino, it has to be
+Serial.begin().
+</p>
+</blockquote>
+<pre class="arduino"><code>void setup() {
+    // initialize serial communication at 9600 bits per second:
+    Serial.begin(9600);
+}</code></pre>
+<blockquote class="info">
+<p><span class="uk-label">Note</span></p>
+<p>
+Click this link to see the Arduino documentation of:
+<a href="https://docs.arduino.cc/language-reference/en/functions/communication/serial/begin/">Serial.begin()</a>
+</p>
+</blockquote>
+</section>
+<section id="baud-rate" class="level4">
+<h4>Baud Rate</h4>
+<p>Worrying about baud rate is a bit out of scope for this class, but it
+is important to know that both the Arduino and the Serial Monitor need
+to be set to the same baud rate in order to communicate properly.</p>
+<p>
+<img src="./images/baud.png"></img>
+</p>
+<p>Take note of the drop down menu on the top right of the Serial
+Monitor window. It is set to 9600 baud by default, which is the same as
+what we set in our code using <code>Serial.begin(9600);</code>.</p>
+<p>As long as these are matching, it should work as expected.</p>
+<p>From makeabilitylab explanation:
+<a href="https://makeabilitylab.github.io/physcomp/communication/serial-intro.html#baud-rate">https://makeabilitylab.github.io/physcomp/communication/serial-intro.html#baud-rate</a></p>
+<blockquote>
+<p>The baud rate specifies how fast data is sent over serial, which is
+expressed in bits-per-second (bps). For communicating with a computer,
+the Arduino docs recommend: 300 bps, 600, 1200, 2400, 4800, 9600, 14400,
+19200, 28800, 38400, 57600, or 115200. Both devices—in this case, the
+Arduino and the computer—need to be set to the same baud rate to
+communicate.</p>
+</blockquote>
+<section id="print-out-text-strings" class="level5">
+<h5>Print out text (Strings)</h5>
+<p>When you are printing out text to the serial monitor, you are
+printing out a string of characters. In programming, we call this a
+<code>String</code>.</p>
+<pre class="arduino"><code>void loop() {
+    // print out text to the Serial Monitor
+    Serial.pring(&quot;Hello World&quot;);
+}</code></pre>
+</section>
+</section>
+</section>
+</section></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: '#ArticleBody',
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fas fa-solid fa-clone',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fas fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

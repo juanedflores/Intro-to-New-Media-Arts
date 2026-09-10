@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
+<html  dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="pandoc" />
 
-    <title>$if(heading)$$heading$$endif$</title>
+    <title></title>
 
     <!-- UIKit files -->
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
@@ -197,7 +197,7 @@
     <link rel="stylesheet" href="../../../css/split_screen.css" />
 
     <!-- Includes other header content if needed -->
-    $for(header-includes)$ $header-includes$ $endfor$
+    
   </head>
 
   <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
@@ -212,7 +212,8 @@
       <div class="nav-overlay uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html">$title$</a></li>
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">Custom
+Speaker Workshop</a></li>
         </ul>
       </div>
     </nav>
@@ -220,7 +221,104 @@
         <!-- OFFCANVAS -->
     <div class="uk-align-center uk-margin-remove-top uk-width-1-1@l uk-width-2-3@m" id="contentArea" style="">
       <div id="split-container">
-        <div class="panel left" id="leftPanel">$body$</div>
+        <div class="panel left" id="leftPanel"><section
+id="diy-speakers" class="level1">
+<h1>DIY Speakers</h1>
+<section id="intro" class="level2">
+<h2>Intro</h2>
+<p>How do you listen to music? Whether you use headphones or a large
+sound system you are undoubtedly using some combination of speakers, but
+how do speakers create sound? In this activity you will construct your
+own speaker in order to learn how electromagnetism is used to fill the
+air with sound.</p>
+<p>The sound we hear is a result of our brains interpreting the changes
+in air pressure detected by our ear drums. These changes in air pressure
+are what we call sound waves. When air is mechanically compressed and
+stretched the air molecules bump into each other, causing the pattern to
+move through the air where it hits your eardrum and your brain
+interprets it as a sound. This mechanical stretching and compressing of
+the air is caused by physical objects vibrating at various frequencies
+in the world around you. The faster the vibrations are the higher the
+frequency of the sound waves created, which your brain interprets as a
+higher pitched sound.</p>
+<section id="what-is-a-speaker" class="level3">
+<h3>What is a Speaker?</h3>
+<p><img width="70%" src="https://geekpackhack.com/wp-content/uploads/2020/01/Parts-of-a-speaker-image.jpg"></img></p>
+<p>A speaker is an electro‐mechanical device designed to transform
+electric signals into mechanical motions that generate sound. Sounds are
+typically stored on a computer as a compressed file that contains
+information about the frequency and intensity of the sound. When these
+files are “played” the computer decompresses the file and sends electric
+signals corresponding to the sound data through whatever output medium
+you are using. These electric signals turn on an electro‐magnet, called
+the voice coil, which reverses polarity depending on the signals it is
+receiving. A permanent magnet, located either inside the electro‐magnet,
+or surrounding it, forces the electro‐magnet to move up and down as the
+polarity changes. This up and down motion is amplified by a diaphragm
+affixed to the electro‐ magnet. As the diaphragm vibrates
+back‐and‐forth, it creates sound waves.</p>
+</section>
+<section id="what-you-will-need" class="level3">
+<h3>What you will need</h3>
+<blockquote class="info">
+<span class="uk-label">Materials Needed</span>
+<ul>
+<li>
+[x] A cup or alternative
+</li>
+<li>
+[x] Copper Wire
+</li>
+<li>
+[x] A permanent Magnet
+</li>
+<li>
+[x] audio cable
+</li>
+<li>
+[x] 2 alligator clips
+</li>
+<li>
+[x] Breadboard
+</li>
+<li>
+[x] Audio Amplifier Module
+</li>
+</ul>
+</blockquote>
+</section>
+<section id="steps" class="level3">
+<h3>Steps</h3>
+<ul>
+<li>Create an electromagnet (by making a coil with copper wire)</li>
+<li>Tape electromagnet to cup and connect the 2 wires to amplifier.</li>
+<li>Connect audio cable wires to amplifier.</li>
+<li>Power the amplifier with 5V.</li>
+<li>Connect audio jack to audio playing device.</li>
+</ul>
+<p>After this works, try with 8ohm speaker!</p>
+<p>Then try with Piezoelectric Disk.</p>
+</section>
+<section id="construction" class="level3">
+<h3>Construction</h3>
+<p>Video for those who missed class:</p>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/liSEwqdq7aA?si=IDP36FucyuIPw4-N&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</section>
+<section id="further-material" class="level3">
+<h3>Further Material</h3>
+<ul>
+<li><a href="https://konp.plusea.at/?p=24">A Kit-of-No-Parts
+Workshops</a></li>
+<li><a href="https://sites.temple.edu/tudsc/2023/09/20/building-a-paper-speaker-from-scratch/">Temple
+U Paper Speaker</a></li>
+<li><a href="https://www.instructables.com/Electromagnetic-Microphone/">Electromagnetic-Microphone</a></li>
+<li><a href="https://www.instructables.com/Simplified-Electronics-Microphone-DIY-How-It-Works/">Make
+a Microphone Instructables</a></li>
+</ul>
+</section>
+</section>
+</section></div>
         <div class="resizer" style="user-select: none;" id="resizer"></div>
         <div id="rightPanel" class="panel right">
 
@@ -234,7 +332,22 @@
         </div>
         <div id="blog-toc" class="uk-offcanvas-bar" style="position: relative; left: 0;">
           <h3 style="color: white">Table of Contents</h3>
-          <div class="toc-panel">$toc$</div>
+          <div class="toc-panel"><ul>
+<li><a href="#diy-speakers" id="toc-diy-speakers">DIY Speakers</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a>
+<ul>
+<li><a href="#what-is-a-speaker" id="toc-what-is-a-speaker">What is a
+Speaker?</a></li>
+<li><a href="#what-you-will-need" id="toc-what-you-will-need">What you
+will need</a></li>
+<li><a href="#steps" id="toc-steps">Steps</a></li>
+<li><a href="#construction" id="toc-construction">Construction</a></li>
+<li><a href="#further-material" id="toc-further-material">Further
+Material</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
         </div>
       </div>
     </div>

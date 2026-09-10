@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/custom.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
+      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
+        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+      </button>
+
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <ul class="uk-navbar-nav" style="">
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">week
+7</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">week 7</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#getting-set-up" id="toc-getting-set-up">Getting Set Up</a>
+<ul>
+<li><a href="#the-arduino-nano-33-iot"
+id="toc-the-arduino-nano-33-iot">The Arduino Nano 33 IoT</a>
+<ul>
+<li><a href="#features" id="toc-features">Features</a></li>
+<li><a href="#differences" id="toc-differences">Differences</a>
+<ul>
+<li><a href="#v-logic" id="toc-v-logic">3.3V Logic</a></li>
+<li><a href="#micro-usb-and-board-care"
+id="toc-micro-usb-and-board-care">Micro-USB and Board Care</a></li>
+<li><a href="#more-specs" id="toc-more-specs">More Specs</a></li>
+</ul></li>
+<li><a href="#what-is-arduino" id="toc-what-is-arduino">What is
+Arduino?</a></li>
+<li><a href="#pinout" id="toc-pinout">Pinout</a></li>
+</ul></li>
+<li><a href="#arduino-ide" id="toc-arduino-ide">Arduino IDE</a>
+<ul>
+<li><a href="#install-arduino-samd-boards"
+id="toc-install-arduino-samd-boards">Install Arduino SAMD
+Boards</a></li>
+<li><a href="#selecting-your-board-and-port"
+id="toc-selecting-your-board-and-port">Selecting your board and port</a>
+<ul>
+<li><a href="#selecting-the-board"
+id="toc-selecting-the-board">Selecting the Board</a></li>
+<li><a href="#port" id="toc-port">port</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#upload" id="toc-upload">Upload</a>
+<ul>
+<li><a href="#example-sketches-and-uploading"
+id="toc-example-sketches-and-uploading">Example Sketches and
+Uploading</a></li>
+<li><a href="#output-window" id="toc-output-window">Output
+Window</a></li>
+<li><a href="#verify" id="toc-verify">Verify</a></li>
+</ul></li>
+<li><a href="#code-not-uploading" id="toc-code-not-uploading">Code not
+Uploading?</a></li>
+<li><a href="#glossary" id="toc-glossary">Glossary</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="getting-set-up" class="level1">
+<h1>Getting Set Up</h1>
+<section id="the-arduino-nano-33-iot" class="level2">
+<h2>The Arduino Nano 33 IoT</h2>
+<p>There are many getting started tutorials with the Arduino online.
+Usually these guides are using the Arduino Uno. It is good to be aware
+about this, so that you know the differences and similaritites between
+them. What you see below is the Uno.</p>
+<div>
+<p><img src="./images/uno.png" width=400px style="border: none"></img></p>
+</div>
+<span>
+<p style="text-align:center; color: #aeaeae">
+<i>Arduino Uno</i>
+</p>
+<p></span></p>
+<hr />
+<div>
+<p><img src="./getting_setup.svg" width=400px style="border: none"></img></p>
+</div>
+<span>
+<p style="text-align:center; color: #aeaeae">
+<i>Arduino Nano 33 IoT</i>
+</p>
+<p></span></p>
+<p>And this is the Arduino Nano 33 IoT. The reason I chose to work with
+this board is because thinking of IoT devices is becoming increasingly
+important. NYU’s ITP physical computing class also uses this
+<a href="https://itp.nyu.edu/physcomp/introduction-to-the-nano-33-iot/">board</a>,
+and list their own
+<a href="https://itp.nyu.edu/physcomp/resources/picking-a-microcontroller/">reasons</a>.</p>
+<p>The Nano is also nice because of what its name implies. It’s smaller
+and more compact. Making it easier to embed into an early prototype,
+making projects less bulky. It also comes with a few built-in
+features.</p>
+<section id="features" class="level3">
+<h3>Features</h3>
+<p>The Arduino Nano is pretty much the same price and comes with these
+features:</p>
+<ul>
+<li>IoT capabilities (Wi-fi &amp; Bluetooth connectivity)</li>
+<li>Acceleromter/Gyroscope (IMU)</li>
+<li>Real-time clock (RTC)</li>
+<li>Can be used to operate as a mouse, keyboard, or USB MIDI device</li>
+</ul>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+There is also a newer Arduino Uno called the Rev 4 with Wi-fi and RTC
+capabilities. To see a full list of all the boards available check out
+their <a href="https://www.arduino.cc/en/hardware">Hardware</a>.
+</p>
+</blockquote>
+</section>
+<section id="differences" class="level3">
+<h3>Differences</h3>
+<section id="v-logic" class="level4">
+<h4>3.3V Logic</h4>
+<blockquote class="warning">
+<span class="uk-label uk-label-warning">Warning</span>
+<p>
+The biggest difference between this board and the Arduino Uno is that
+this is <strong>3.3V logic device</strong>. Meaning the output that is
+coming from the board pins are 3.3V, not 5V. This also means that it is
+<strong>NOT 5V tolerant</strong>, which means you could potentially
+damage the board by introducing it to a circuit meant for 5V.
+</p>
+</blockquote>
+</section>
+<section id="micro-usb-and-board-care" class="level4">
+<h4>Micro-USB and Board Care</h4>
+<p>Another difference that is worth saying is that this board uses a
+<strong>micro USB cable</strong> rather than USB type B. I have found
+that proper storage and care of these boards is important. The micro-usb
+port is prone to ripping off the board and it is not easy to repair, so
+it is good to be mindful of this.</p>
+<blockquote class="warning">
+<span class="uk-label uk-label-warning">Warning</span>
+<p>
+Don’t leave your usb cable on the board when putting it away in a bag.
+Make sure to remove the cable and to store it safely in a container if
+you are going to be moving around with it.
+</p>
+</blockquote>
+</section>
+<section id="more-specs" class="level4">
+<h4>More Specs</h4>
+<ul uk-accordion style='pading-bottom: 5vh'>
+<li class='uk-close'>
+<a id='code-file' class='uk-accordion-title' href='#'>Specs</a>
+<div class="uk-accordion-content"
+style="padding-bottom:20px; margin-bottom:20px; background: rgb(243, 201, 91);">
+<p>These details might not be so interesting to a beginner, but this
+board is:</p>
+<ul>
+<li>Considerably faster. (48MHz clock vs 16MHz clock speed) (32-bit vs
+8-bit processor)</li>
+<li>Has more memory. (32KB SRAM/256KB flash vs 2KB/32KB)</li>
+</ul>
+<p>The nano uses an
+<a href="https://www.mouser.com/new/microchip/microchip-technology-sam-d21-mcus/?srsltid=AfmBOooLuzYW-O9P4MNH5tzGV1_M3A7YrtO_CGZK6REXWpHsHzIb4Z--">ARM
+Cortex-M0 32-bit SAMD21 processor.</a></p>
+<p>Check out ITP’s explanation of what microprocessors and
+microcontrollers are: <a
+href="https://itp.nyu.edu/physcomp/lessons/microcontrollers-the-basics/">https://itp.nyu.edu/physcomp/lessons/microcontrollers-the-basics/</a>.</p>
+</div>
+</section>
+</section>
+<section id="what-is-arduino" class="level3">
+<h3>What is Arduino?</h3>
+<div>
+<p><img src="./images/logo.png" width=300px style="border: none;"></img></p>
+</div>
+<p>Arduino is an open-source electronics platform with the goal of
+making it easier to make electronic programmable things. Arduino is just
+one part of a big family of platforms that make programming more
+accessible to people who don’t necessarily come from an engineering
+background.</p>
+<p>Arduino comes with its own programming language and is considered to
+be in the world of creative coding/computing, which has a history since
+the
+<a href="https://laserpilot.medium.com/a-history-of-creative-coding-8771524b9775">1960s</a>.
+The definition is quite loose, but it often means that we are focused on
+writing code for creative expression and for the quick realization of
+ideas. We are not trying to produce the most clean, elegant, or
+efficient code. The right attitude is to be curious, let yourself be
+inspired, and to not get discouraged right away.</p>
+<p>This is why Arduino code files are called <strong>sketches</strong>.
+And the same is true for other creative coding languages like
+<a href="https://processingfoundation.org/">Processing</a>. Think of
+making things in this environment similarly to sketching things in a
+sketchbook.</p>
+<p>The Arduino boards are considered to be
+<strong>microcontrollers</strong>. They are like computers for the
+physical world.</p>
+<p>Before Arduino, microcontrollers existed, but making things like this
+often required more time and being a bit more savvy with technology.</p>
+<div>
+<p><img src="./images/eduardo.jpg" width=300px style=""></img></p>
+</div>
+<span>
+<p style="text-align:center; color: #aeaeae">
+<i>Eduardo Kac with his <strong>Ornitorrinco</strong> project (1989 -
+1996).</i>
+</p>
+<p></span></p>
+<p>I am in agreement with Jon E. Froehlich highlighting this
+philosophy:</p>
+<blockquote>
+<p><strong><mark>Learn by Doing</mark></strong></p>
+<p>A key pedagogical philosophy underlying our teaching is learn by
+doing. From years of experience, we’ve found that the best way to teach
+physical computing is via hands-on exercises. So, we expect that you
+will build along with our guides and lessons.</p>
+</blockquote>
+<p>How much you get out of this class is completely up to you! Learning
+Arduino is like learning a new language and it is usually not enough to
+just watch me code things. The best way to learn is by putting in the
+time to explore and do things in class and on your own time.</p>
+</section>
+<section id="pinout" class="level3">
+<h3>Pinout</h3>
+<p>Get familiar with this
+<a href="https://docs.arduino.cc/resources/pinouts/ABX00027-full-pinout.pdf">document</a>
+and with the word <strong>pinout</strong>. We will be looking at it a
+lot to know which pin is which. One inconvenient thing about this board
+is that the pin labels are on the bottom of the board, and they won’t be
+visible when we place them on breadboards. So we will be looking at this
+PDF often.</p>
+<div>
+<p><img src="./images/pinout.png" width=500 style=""></img></p>
+</div>
+<span>
+<p style="text-align:center; color: #aeaeae">
+<i>Screenshot of the PDF provided by the Arduino website.</i>
+</p>
+<p></span></p>
+<div>
+<p><img src="./images/breadboard.png" width=400 style=""></img></p>
+</div>
+<span>
+<p style="text-align:center; color: #aeaeae">
+<i>Fritzing screenshot.</i>
+</p>
+<p></span></p>
+<p>This image shows how you would place your Arduino on the breadboard
+and how you would access the pins. By now you should have an idea of how
+a breadboard works.</p>
+<p>It is more convenient to place your nano with the Micro-USB port
+facing away from the breadboard and on the side starting with row 1.
+This way you can easily connect to it and so that we can be on the same
+page when talking about a pin on the board. If I say pin D2, I can also
+say row 11 on the F-J side (or right side).</p>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+Notice that on the breadboard there are labels on the columns that go
+from letters A-J, and the rows go from numbers 1 and increment to
+however many rows there are.
+</p>
+</blockquote>
+</section>
+</section>
+<section id="arduino-ide" class="level2">
+<h2>Arduino IDE</h2>
+<p>Now that we have talked about <strong>hardware</strong>, let’s talk
+about <strong>software</strong>.</p>
+<p>Go to this <a href="https://www.arduino.cc/en/software">link</a> to
+download the Arduino IDE (Integrated Development Environment). This is
+the program that we use that provides us with a code editor and all the
+other tools needed to work with the Arduino boards.</p>
+<div>
+<p><img src="./images/download.png" width=600 style=""></img></p>
+</div>
+<p>Click the appropriate download link for your operating system. If you
+are using a Mac with M1 or M2 chips, yours is “macOS Apple Silicon”.</p>
+<p>Once you have it downloaded, try opening it and it should look
+something like this:</p>
+<div>
+<p><img src="./images/ide.png" width=500 style=""></img></p>
+</div>
+<p>First things first, we want to confirm that we can successfully
+upload something to the board. Before we can do that, we need to
+download something so that the Arduino program knows what board we are
+working with.</p>
+<section id="install-arduino-samd-boards" class="level3">
+<h3>Install Arduino SAMD Boards</h3>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+This info is coming also from the
+<a href="https://www.arduino.cc/en/Guide/NANO33IoT">Arduino website</a>
+</p>
+</blockquote>
+<p>Since our Nano uses the SAMD processor, we need to install the SAMD
+Core.</p>
+<p>On your menu bar go to: <strong>Tools</strong> &gt; <strong>Boards
+Manager..</strong></p>
+<p>And on the search bar type “SAMD”. What pops up should be “Arduino
+SAMD Boards (32-bits ARM Cortex-M0+)”. Click “Install”.</p>
+<p>Also note that on the left menu bar that the boards manager can be
+accessed under this icon:</p>
+<div>
+<p><img src="./images/boards.png" width=300 style=""></img></p>
+</div>
+</section>
+<section id="selecting-your-board-and-port" class="level3">
+<h3>Selecting your board and port</h3>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+This guide is also provided by the Arduino
+<a href="https://support.arduino.cc/hc/en-us/articles/4406856349970-Select-board-and-port-in-Arduino-IDE">website.</a>
+</p>
+</blockquote>
+<section id="selecting-the-board" class="level4">
+<h4>Selecting the Board</h4>
+<p>Now all that should be left is to select your board and start
+uploading to it. First <strong>make sure your board is connected via
+USB</strong>.</p>
+<p>Now that you installed the SAMD core, you should be able to find the
+Arduino Nano 33 IoT under:</p>
+<p><strong>Tools</strong> &gt; <strong>Board</strong> &gt;
+<strong>Arduino SAMD Boards</strong> &gt; <strong>Arduino Nano 33
+IoT</strong></p>
+</section>
+<section id="port" class="level4">
+<h4>port</h4>
+<p>Once selected, you need to select which <strong>port</strong> the
+Arduino is connected to. Port is referring to serial port, as in USB
+serial port.</p>
+<p>Go to:</p>
+<p><strong>Tools</strong> &gt; <strong>Port</strong> &gt; <strong>‘The
+Port Name that your Nano is connected to’</strong></p>
+<p>The port name could look something like this:</p>
+<ul>
+<li><code>COM3 (Arduino Uno)</code></li>
+<li><code>/dev/cu.usbmodem14101 (Arduino Uno)</code></li>
+<li><code>/dev/ttyACM0 (Arduino Uno)</code></li>
+</ul>
+<p>Usually the name of the board shows up in the name, so it should say
+Arduino NANO 33 IoT instead of Uno in parentheses.</p>
+<p>The last step is to make sure that the board name shows up at the
+top.</p>
+<div>
+<p><img src="./images/top.png" width=400 style=""></img></p>
+</div>
+</section>
+</section>
+</section>
+<section id="upload" class="level2">
+<h2>Upload</h2>
+<p>The last things we will familiarize ourselves with in this program
+for now are the “Upload” and “Verify” buttons, and how to get to the
+example sketches.</p>
+<section id="example-sketches-and-uploading" class="level3">
+<h3>Example Sketches and Uploading</h3>
+<p>You should know how to navigate to the example sketches. Let’s start
+with the <em>Blink</em> example.</p>
+<p>On the top menu bar go to <strong>File</strong> &gt;
+<strong>Examples</strong> &gt; <strong>01.Basics</strong> &gt;
+<strong>Blink</strong></p>
+<p>This is the
+<a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">“Hello
+World”</a> program for the Arduino. We will use it to confirm that our
+computers can successfully upload programs to our boards.</p>
+<p>Don’t worry about what it is doing for now. Locate the upload button
+on the top, represented by an arrow.</p>
+<div>
+<p><img src="./images/upload.png" width=200 style=""></img></p>
+</div>
+<p>Try clicking on it and notice what happens on the bottom of the
+window.</p>
+</section>
+<section id="output-window" class="level3">
+<h3>Output Window</h3>
+<p>On the bottom there should be text appearing after clicking upload.
+Either it will feel like a success, or it will print red text to inform
+you about an ERROR. If there were no errors, then you should be ready to
+go.</p>
+</section>
+<section id="verify" class="level3">
+<h3>Verify</h3>
+<p>Verify is not super important right now, but know that this button is
+to check that the code in the sketch is free of <strong>syntax
+errors</strong>. It is represented by a checkmark icon:</p>
+<div>
+<p><img src="./images/verify.png" width=200 style=""></img></p>
+</div>
+<p>The Upload Button also does this initially before uploading to the
+board. Clicking “Verify” is faster if you just want to confirm that the
+code is upload-ready.</p>
+</section>
+</section>
+<section id="code-not-uploading" class="level2">
+<h2>Code not Uploading?</h2>
+<p>It is good to know of the thngs you can try if your board is not
+being detected or if your code is not uploading.</p>
+<p>Unfortunately it can be finicky to work with these boards and its
+different depending on your computer. If you are having problems with
+your board not being detected try this:</p>
+<ul>
+<li>Restarting the Arduino program</li>
+<li>Unplugging and replugging your arduino</li>
+<li>Trying a different USB port</li>
+<li>Pressing the
+<a href="https://support.arduino.cc/hc/en-us/articles/5779192727068-Reset-your-board">Reset
+button</a></li>
+</ul>
+<p>It might feel like these methods shouldn’t be the solution, but it
+often is.</p>
+<p>When you start getting into building circuits with the board. Another
+reason your board might not be detected is because there is a
+<strong>short</strong> somewhere.</p>
+</section>
+<section id="glossary" class="level2">
+<h2>Glossary</h2>
+<ul>
+<li>Sketches</li>
+<li>Microcontroller</li>
+<li>Pinout</li>
+<li>IoT</li>
+<li>IDE (Integrated Development Environment)</li>
+<li>Port</li>
+<li>Hardware/Software</li>
+</ul>
+</section>
+</section></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: '#ArticleBody',
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fas fa-solid fa-clone',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fas fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

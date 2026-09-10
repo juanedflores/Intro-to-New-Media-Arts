@@ -113,7 +113,16 @@ h2 {
 }
 
 #right-col {
-  /* background-color: red; */
+  background-color: white;
+  padding: 20px;
+  border: 20px solid rgb(210, 230, 250);
+}
+
+#right-col iframe,
+#right-col embed,
+#right-col img,
+#right-col video {
+  max-width: 100%;
 }
 
 /* .entry { */
@@ -531,6 +540,7 @@ ul {
 
   #right-col {
     margin-left: 0px;
+    border: none;
   }
 }
 

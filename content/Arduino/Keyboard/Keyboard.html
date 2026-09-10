@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
+      < !--Ajax Style-- >
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/custom.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
+      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
+        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+      </button>
+
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <ul class="uk-navbar-nav" style="">
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">Intro
+to the Keyboard Library</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Intro to the Keyboard Library</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#keyboard" id="toc-keyboard">Keyboard</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#keyboardserial-code-breakdown"
+id="toc-keyboardserial-code-breakdown">KeyboardSerial Code Breakdown</a>
+<ul>
+<li><a href="#the-keyboard-library" id="toc-the-keyboard-library">The
+Keyboard Library</a></li>
+<li><a href="#initializing-keyboard-control"
+id="toc-initializing-keyboard-control">Initializing Keyboard
+Control</a></li>
+<li><a href="#read-incoming-serial-data"
+id="toc-read-incoming-serial-data">Read Incoming Serial Data</a></li>
+<li><a href="#keyboard-write" id="toc-keyboard-write">Keyboard
+write()</a></li>
+</ul></li>
+<li><a href="#simulate-key-press-with-a-button"
+id="toc-simulate-key-press-with-a-button">Simulate Key Press with a
+Button</a></li>
+<li><a href="#using-special-keys-and-keyboard-modifiers-shift-ctrl-etc"
+id="toc-using-special-keys-and-keyboard-modifiers-shift-ctrl-etc">Using
+Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="keyboard" class="level1">
+<h1>Keyboard</h1>
+<section id="intro" class="level2">
+<h2>Intro</h2>
+<p>First of all, keep in mind the official Arduino Documentation for a
+more complete reference:</p>
+<div class="uk-margin" style="padding: 30px; width: 100%;">
+<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+<li style="width: 50%; margin: auto; padding-left: 0;">
+<div class="uk-transition-toggle">
+<a href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
+style="background: #7fcbcd; opacity: 100;">
+<div
+class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<h4>
+Keyboard
+</h4>
+<div style="display: inline">
+<p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
+<span class="uk-label" style="background-color: #7fcbcd">Docs</span></p>
+</div>
+</div>
+</div>
+<p></a></p>
+</div>
+</li>
+</ul>
+</div>
+<p>Let’s locate one of the built-in examples.</p>
+<p>Go to:</p>
+<p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
+<strong>09.USB</strong> &gt; <strong>Keyboard</strong> &gt;
+<strong>KeyboardSerial</strong></p>
+<pre class="arduino"><code>#include &quot;Keyboard.h&quot;
+
+void setup() {
+  // open the serial port:
+  Serial.begin(9600);
+  // initialize control over the keyboard:
+  Keyboard.begin();
+}
+
+void loop() {
+  // check for incoming serial data:
+  if (Serial.available() &gt; 0) {
+    // read incoming serial data:
+    char inChar = Serial.read();
+    // Type the next ASCII value from what you received:
+    Keyboard.write(inChar + 1);
+  }
+}</code></pre>
+<hr />
+</section>
+<section id="keyboardserial-code-breakdown" class="level2">
+<h2>KeyboardSerial Code Breakdown</h2>
+<section id="the-keyboard-library" class="level3">
+<h3>The Keyboard Library</h3>
+<p>Notice the line:</p>
+<pre class="arduino"><code>#include &quot;Keyboard.h&quot;</code></pre>
+<p>This means we are using the <code>Keyboard</code> library. If not
+installed, locate it using the library manager.</p>
+<p><img src="./images/library.png"></p>
+<hr />
+</section>
+<section id="initializing-keyboard-control" class="level3">
+<h3>Initializing Keyboard Control</h3>
+<p>The function <code>Keyboard.begin()</code> is inside setup() to start
+the process.</p>
+<pre class="arduino"><code>void setup() {
+  // initialize control over the keyboard:
+  Keyboard.begin();
+}</code></pre>
+</section>
+<section id="read-incoming-serial-data" class="level3">
+<h3>Read Incoming Serial Data</h3>
+<p><code>Serial.available()</code> is a function used to know when a
+message has been received and stored.</p>
+<p>When you write a message in this text box and press enter, arduino
+receives it and stores it into its memory until Serial.read() is
+used.</p>
+<p><img src="./images/monitor.png"></p>
+<p>Serial.available() simply returns the number of bytes of that stored
+data.</p>
+<hr />
+<p>Using the example from the arduino documentation of
+<code>Serial.available()</code>,</p>
+<pre class="arduino"><code>void loop() {
+  // reply only when you receive data:
+  if (Serial.available() &gt; 0) {
+    // read the incoming byte:
+    int incomingByte = Serial.read();
+
+    // say what you got:
+    Serial.print(&quot;I received: &quot;);
+    Serial.println(incomingByte, DEC);
+  }
+}</code></pre>
+<p>Sending a message of “test” and pressing enter results in the
+incoming Byte data returning:</p>
+<p><img src="./images/test.png"></p>
+<p>This makes sense because the data is being printed using
+<code>Serial.println()</code> using a base10 format, which means it is
+returning the ascii code associated with each letter.</p>
+<p>Using a text to ASCII code converter shows the same result where:</p>
+<ul>
+<li>t: <code>116</code></li>
+<li>e: <code>101</code></li>
+<li>s: <code>115</code></li>
+<li>t: <code>116</code></li>
+<li>(new line): <code>10</code></li>
+</ul>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+In Arduino programming, <strong>DEC</strong> is a pre-defined constant
+used to specify that a value should be treated or displayed in the
+decimal (base 10) format.
+</p>
+<p>
+It is used in the second parameter of <code>Serial.println()</code>
+</p>
+<pre class="arduino"><code>Serial.println(val, format)</code></pre>
+<p>
+It is DEC by default.
+</p>
+</blockquote>
+<hr />
+<p>Now that we know about ASCII codes and how a minimal program that
+reads incoming serial data works, we can understand the last part of the
+<code>KeyboardSerial.ino</code> example.</p>
+</section>
+<section id="keyboard-write" class="level3">
+<h3>Keyboard write()</h3>
+<p>The <code>Keyboard.write()</code> function sends a keystroke to your
+computer as if a user has physically pressed a keyboard key.</p>
+<p>It expects either a letter (<strong>char</strong> data type):</p>
+<pre class="arduino"><code>Keyboard.write(&#39;A&#39;);</code></pre>
+<p>Or an ascii code (<strong>int</strong> data type):</p>
+<pre class="arduino"><code>Keyboard.write(65);</code></pre>
+<blockquote class="info">
+<span class="uk-label">Note</span>
+<p>
+65 is the ASCII code for <code>A</code>.
+</p>
+<p>
+Check out a table with each character with its corresponding ASCII code.
+</p>
+<p><a>Ascii-Code.com</a></p>
+</blockquote>
+<blockquote class="warning">
+<span class="uk-label uk-label-warning">Warning</span>
+<p>
+A value that has single quotes <code>''</code> is known as a char data
+type.
+</p>
+<p>
+Check out the Arduino Documentation:
+<a href="https://docs.arduino.cc/language-reference/en/variables/data-types/char/">Char</a>
+</p>
+</blockquote>
+<hr />
+<pre class="arduino"><code>    // read incoming serial data:
+    char inChar = Serial.read();
+    // Type the next ASCII value from what you received:
+    Keyboard.write(inChar + 1);</code></pre>
+<blockquote class="info">
+<p><span class="uk-label">Note</span></p>
+<p>
+It may be confusing, but 1 is being added to a char data type. Since a
+char has an ASCII representation, you can perform arithmetic.
+</p>
+<p>
+From the Char Arduino Documentation:
+</p>
+<blockquote>
+This means that it is possible to do arithmetic on characters, in which
+the ASCII value of the character is used (e.g. A + 1 has the value 66,
+since the ASCII value of the capital letter A is 65).
+</blockquote>
+</blockquote>
+<p>In theory, sending a serial message to Arduino in the form of a
+letter, will result in Arduino simulating the key press of the letter
+that is one value higher of the one received (in the ASCII table). For
+example: Typing <code>A</code> and pressing enter will result in Arduino
+simlulating the keypress of <code>B</code>.</p>
+<hr />
+<p>Try it! Type in the Serial Monitor and see it be replaced with a B
+when you press enter.</p>
+</section>
+</section>
+<section id="simulate-key-press-with-a-button" class="level2">
+<h2>Simulate Key Press with a Button</h2>
+<p>We can modify the code to simulate a key press when receiving a
+<code>HIGH</code> state of a digitalInput (button/switch).</p>
+<pre class="arduino"><code>#include &quot;Keyboard.h&quot;
+
+void setup() {
+  // open the serial port:
+  Serial.begin(9600);
+  // initialize control over the keyboard:
+  Keyboard.begin();
+}
+
+void loop() {
+  int buttonState = digitalRead(2);
+  if (buttonState == HIGH) {
+    Keyboard.write(&#39;A&#39;);
+  }
+  delay(10);
+}</code></pre>
+<blockquote class="warning">
+<span class="uk-label uk-label-warning">Warning</span>
+<p>
+Be careful with this library!
+</p>
+<p>
+If you have the Arduino looping very quickly (without delay it can be
+100s of thousands of times per second!), then it can potentially hijack
+your computer until you disconnect the USB.
+</p>
+<p>
+This can easily lead to unwanted things with a range in severity. :(
+</p>
+<p>
+The delay(10) is used for a little protection.
+</p>
+</blockquote>
+<hr />
+</section>
+<section id="using-special-keys-and-keyboard-modifiers-shift-ctrl-etc"
+class="level2">
+<h2>Using Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</h2>
+<p>Check out the Arduino documentation for this:
+<a href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/keyboardModifiers/">Keyboard
+Modifiers and Special Keys</a></p>
+<p>What if you wanted to control a game that uses special keys or
+modifiers?</p>
+<p>Here I will use the classic Google Dino Run as an example to be
+played with an Arduino: (<a href="https://trex-runner.com/">Link to
+Dinosaur T-Rex Game</a>)</p>
+<p><img src="./images/dino.gif"></p>
+<hr />
+<p>According to the description, the up arrow key is used to jump, and
+the down arrow key is used to crouch.</p>
+<p>In the Arduino Documentation, it tells us that we can use the const
+<code>KEY_UP_ARROW</code> and <code>KEY_DOWN_ARROW</code> for these
+keys.</p>
+<p>I modified to code to include one more button:</p>
+<pre class="arduino"><code>#include &quot;Keyboard.h&quot;
+
+void setup() {
+  // open the serial port:
+  Serial.begin(9600);
+  // initialize control over the keyboard:
+  Keyboard.begin();
+}
+
+void loop() {
+  int upbuttonState = digitalRead(2);
+  int downbuttonState = digitalRead(3);
+
+  if (upbuttonState == 1) {
+    Keyboard.write(KEY_UP_ARROW);
+  }
+  if (downbuttonState == 1) {
+    Keyboard.write(KEY_DOWN_ARROW);
+  }
+
+  delay(10);
+}</code></pre>
+</section>
+</section></div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: '#ArticleBody',
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fas fa-solid fa-clone',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fas fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

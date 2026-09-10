@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
+<html  dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="pandoc" />
 
-    <title>$if(heading)$$heading$$endif$</title>
+    <title></title>
 
     <!-- UIKit files -->
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
@@ -197,7 +197,7 @@
     <link rel="stylesheet" href="../../../css/split_screen.css" />
 
     <!-- Includes other header content if needed -->
-    $for(header-includes)$ $header-includes$ $endfor$
+    
   </head>
 
   <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
@@ -212,7 +212,8 @@
       <div class="nav-overlay uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html">$title$</a></li>
+          <li class="uk-active" style="pointer-events: none"><a href="index.html">Week
+3</a></li>
         </ul>
       </div>
     </nav>
@@ -220,7 +221,19 @@
         <!-- OFFCANVAS -->
     <div class="uk-align-center uk-margin-remove-top uk-width-1-1@l uk-width-2-3@m" id="contentArea" style="">
       <div id="split-container">
-        <div class="panel left" id="leftPanel">$body$</div>
+        <div class="panel left" id="leftPanel"><section
+id="simple-circuits" class="level1">
+<h1>Simple Circuits</h1>
+<section id="circuitjs-simulation" class="level2">
+<h2>CircuitJS Simulation</h2>
+<p>This is another electronic circuit simulator. Notice how it uses
+schematic symbols.</p>
+<p>It is useful because it visualizes the movement of current, and
+voltage is shown in green.</p>
+<iframe style="padding-top:25px;" id="circuitFrame" src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgA3cQkXG78MRRQRNKkiqToCNgCcBYISBQIei4VTDw2YQsJVqlB3pH7CAJgwBmAQwCuAGwAuTBw3PgRUyOwDuy1RN+XSCoNiA" width="800" height="550" uk-responsive>
+</iframe>
+</section>
+</section></div>
         <div class="resizer" style="user-select: none;" id="resizer"></div>
         <div id="rightPanel" class="panel right">
 
@@ -234,7 +247,14 @@
         </div>
         <div id="blog-toc" class="uk-offcanvas-bar" style="position: relative; left: 0;">
           <h3 style="color: white">Table of Contents</h3>
-          <div class="toc-panel">$toc$</div>
+          <div class="toc-panel"><ul>
+<li><a href="#simple-circuits" id="toc-simple-circuits">Simple
+Circuits</a>
+<ul>
+<li><a href="#circuitjs-simulation"
+id="toc-circuitjs-simulation">CircuitJS Simulation</a></li>
+</ul></li>
+</ul></div>
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
+<html  dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="pandoc" />
 
-    <title>$if(heading)$$heading$$endif$</title>
+    <title>Buzzer Speaker</title>
 
     <!-- UIKit files -->
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
@@ -34,15 +34,6 @@
 
     <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
 
-    <!-- Plyr -->
-    <script src="../../../js/plyr.js"></script>
-    <link rel="stylesheet" href="../../../css/plyr.css"></link>
-
-    <!-- Hyperaudio-lite -->
-    <link rel="stylesheet" href="../../../css/hyperaudio-lite-player.css">
-    <script src="../../../js/velocity.js"></script> 
-
-    <!-- <script src="https://cdn.plyr.io/3.8.4/plyr.js"></script> -->
     <!-- hljs -->
     <script>
       hljs.highlightAll();
@@ -194,15 +185,14 @@
     <!-- Blog Style CSS -->
     <link rel="stylesheet" href="../../../css/blog_style.css" />
     <link rel="stylesheet" href="../../../css/custom.css" />
-    <link rel="stylesheet" href="../../../css/split_screen.css" />
 
     <!-- Includes other header content if needed -->
-    $for(header-includes)$ $header-includes$ $endfor$
+    
   </head>
 
   <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
 
-  <body class="uk-background-fixed" style="">
+  <body class="uk-background-fixed">
     <!-- NAV AND HEADING -->
     <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
       <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
@@ -212,53 +202,145 @@
       <div class="nav-overlay uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html">$title$</a></li>
+          <li class="uk-active" style="pointer-events: none"><a href="index.html"></a></li>
         </ul>
       </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text"></a>-->
+      <!--</h2>-->
     </nav>
 
-        <!-- OFFCANVAS -->
-    <div class="uk-align-center uk-margin-remove-top uk-width-1-1@l uk-width-2-3@m" id="contentArea" style="">
-      <div id="split-container">
-        <div class="panel left" id="leftPanel">$body$</div>
-        <div class="resizer" style="user-select: none;" id="resizer"></div>
-        <div id="rightPanel" class="panel right">
-
-          <iframe id="hyperplayer" data-player-type="youtube" width="100%" height="480" frameborder="no" allow="autoplay"
-            src="https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1">
-          </iframe>
-
-          <div id="hypertranscript" class="hyperaudio-transcript" style="overflow-y:scroll; height:600px; position:relative; border-style:dashed; border-width: 1px; border-color:black; padding: 8px">
-          </div>
-
-        </div>
-        <div id="blog-toc" class="uk-offcanvas-bar" style="position: relative; left: 0;">
+    <!-- OFFCANVAS -->
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
-          <div class="toc-panel">$toc$</div>
+          <div><ul>
+<li><a href="#buzzer-speaker-workshop"
+id="toc-buzzer-speaker-workshop">Buzzer Speaker Workshop</a>
+<ul>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#buzzers" id="toc-buzzers">Buzzers</a></li>
+<li><a href="#some-things-to-keep-in-mind"
+id="toc-some-things-to-keep-in-mind">Some Things to Keep in
+Mind:</a></li>
+</ul></li>
+</ul></div>
         </div>
       </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
+id="buzzer-speaker-workshop" class="level1">
+<h1>Buzzer Speaker Workshop</h1>
+<section id="materials" class="level2">
+<h2>Materials</h2>
+<p>For this workshop, please collect the following:</p>
+<ul>
+<li>Arduino Nano 33 IoT</li>
+<li>Breadboard</li>
+<li>Buzzer</li>
+</ul>
+</section>
+<section id="buzzers" class="level2">
+<h2>Buzzers</h2>
+<p>It’s super easy to use piezo buzzers with Arduino’s tone() function.
+Just wire up the buzzer to pin 10 and then to GND with a resistor. The
+tone() function needs 2 arguments, but can take three:</p>
+<ul>
+<li>Pin#</li>
+<li>Frequency - this is in hertz (cycles per second) which determines
+the pitch of the noise made</li>
+<li>Duration (optional) - how long the tone plays. If you don’t use the
+duration argument, you should have a delay() function following the tone
+instead.</li>
+</ul>
+<p>Here’s a simple example:</p>
+<figure>
+<img
+src="https://nathanmelenbrink.github.io/lab/output/buzzer/buzzer_uno.png"
+alt="|400" />
+<figcaption aria-hidden="true">|400</figcaption>
+</figure>
+<pre class="arduino"><code>int buzzerPin = 10;
+
+void setup() {
+    pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+    tone(buzzerPin, 1000, 500);
+    delay(1000);
+}</code></pre>
+<p>Note: there have been some issues with the tone() function not
+working properly with some microcontrollers. In some cases, the tone()
+function causes the program to not compile. In other cases, it compiles
+fine but fails to produce sounds. If you experience problems, we
+recommend pasting the myTone() function below, and using it in the same
+way. So the above example would look like this:</p>
+<pre class="arduino"><code>int buzzerPin = 10;
+
+void setup() {
+    pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+    myTone(buzzerPin, 262, 500);
+    delay(1000);
+}
+
+void myTone(int pin, int frequency, int duration){ 
+    int startTime = millis();
+    int period = 1000000/frequency; 
+    while ((millis() - startTime) &lt; duration){ 
+        digitalWrite(pin, HIGH);
+        delayMicroseconds(period/2);
+        digitalWrite(pin, LOW);
+        delayMicroseconds(period/2);
+    }
+}</code></pre>
+</section>
+<section id="some-things-to-keep-in-mind" class="level2">
+<h2>Some Things to Keep in Mind:</h2>
+<ul>
+<li>The tone() function uses one of the built in timers on the Arduino’s
+microcontoller. tone() works independently of the delay() function. You
+can start a tone and do other stuff – while the tone is playing in the
+background. Therefore, if you use 500 milliseconds as the third argument
+in tone(), and follow that by a delay of 1000 milliseconds, you will
+only be creating a “rest” of 500 milliseconds.</li>
+<li>You cannot generate a tone lower than 31 HZ. You can pass values 31
+and less to the tone() function, but it doesn’t mean you will get a good
+representation of it.</li>
+<li>The tone() function cannot be used by two separate pins at the same
+time. Let’s say you have two separate piezo speakers, each on a
+different pin. You can’t have them both play at the same time. One has
+to be on, and then the other. Furthermore, before you can have the other
+pin use the tone() function, you must call the noTone() function and
+“turn off” the tone from the previous pin.</li>
+</ul>
+<hr />
+<p>Being able to combine multiple example sketches into one is a very
+useful skill. See if you can combine the buzzer with a sketch you made
+for an input device like a potentiometer.</p>
+<hr />
+<p>Getting a buzzer to make noise is simple, but composing music is not.
+There are plenty of reference tables for frequencies of musical notes,
+but timing notes is also tricky. Check out some examples of classic
+tunes arranged for Arduino:</p>
+<ul>
+<li><a
+href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Airduino
+Melody</a></li>
+<li><a href="https://www.princetronics.com/supermariothemesong/">Super
+Mario Theme Song</a></li>
+<li><a href="https://github.com/robsoncouto/arduino-songs">More
+Songs</a></li>
+</ul>
+</section>
+</section></div>
     </div>
-
-    <script src="../../../js/split_screen.js"></script>
-    <script src="../../../js/handleVideoPlayers.js"></script>
-
-    <!-- hyperaudio-lite -->
-    <script src="../../../js/hyperaudio-lite.js"></script>
-    <script src="../../../js/hyperaudio-lite-extension.js"></script>
-    <script>
-      // minimizedMode is still experimental - it aims to show the current words in the title, which can be seen on the browser tab.
-      let minimizedMode = false;
-      let autoScroll = true;
-      let doubleClick = false;
-      let webMonetization = false;
-      let playOnClick = false;
-
-      new HyperaudioLite("hypertranscript", "hyperplayer", minimizedMode, autoScroll, doubleClick, webMonetization, playOnClick);
-    </script>
-
-    <br />
-    <br />
-    <br />
 
     <!-- highlightjs badge -->
     <script src="../../../js/highlightjs-badge.js"></script>
@@ -273,7 +355,7 @@
       // add HighlightJS-badge (options are optional)
       var options = {
         // optional
-        contentSelector: '#leftPanel',
+        contentSelector: '#ArticleBody',
 
         // CSS class(es) used to render the copy icon.
         copyIconClass: 'fas fa-solid fa-clone',
@@ -283,8 +365,13 @@
       window.highlightJsBadge(options);
     </script>
 
-
     <script src="../../../js/styling.js"></script>
 
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
   </body>
 </html>
