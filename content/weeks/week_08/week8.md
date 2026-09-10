@@ -4,18 +4,16 @@ title: Week 8
 
 # Week 8
 
-<div id="body" style="margin: 30px;">
+::: {.days}
 
----
+::: {.day title="MONDAY" open="true"}
 
-### Monday Agenda:
+### AGENDA
 
-- Reviewing readanalogserial, digital output 
+- Reviewing readanalogserial, digital output
 - Button sketch (if statements)
 - The Interface
 - Digital Button Workshop
-
----
 
 Patatype with me!
 
@@ -78,8 +76,6 @@ void sendOSC() {
 
 ```
 
----
-
 ### Interfaces
 
 To get you to start thinking about what kind of interface you want to create, here are some examples of switches and variable resistors that you can use as a starting point.
@@ -131,126 +127,45 @@ Here is a list of variable resistors:
 
 [Instructables](https://www.instructables.com/Stickytape-Sensors/)
 
----
-
 ART 150 student examples from the section taught by Sabrina Raaf:
 
 [art150.nma](https://art150.nma-course.online/category/all-posts/creative-switch/)
-
----
 
 Custom Interfaces:
 
 - Crank Counter
 [Crank](https://learn.browndoggadgets.com/Guide/Crank+Counter/238)
 
-- Therapy Ball Controller 
+- Therapy Ball Controller
 [Therapy Ball](https://makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons)
 
 - Hoola Hoop Controller
 [Hula Hoop Controller](https://makeymakey.com/pages/hula-hoop-controller)
 
----
-
-
 ### Monday Topics:
 
-<div class="uk-margin" style="padding: 30px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+::: {.topics}
 
-<li>
-<div>
-<a href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<!-- <h3 class="cardtitle" style="background-color: #b48ead; padding: 5px;">Intro to the Serial Monitor</h3> -->
-<h3 class="cardtitle"">The Interface</h3>
-<div style="display: inline">
-<img src="https://liveinterfacesjournal.ulusofona.pt/wp-content/uploads/2026/01/MEM_fig1_ONCONTACT-1.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #b48ead">Topic</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+::: {.card type="external" title="The Interface" thumb="https://liveinterfacesjournal.ulusofona.pt/wp-content/uploads/2026/01/MEM_fig1_ONCONTACT-1.jpg" href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2" tag="Topic"}
+:::
 
+::: {.card type="lesson" title="Intro to the Serial Monitor" thumb="./content/Arduino/print_to_serial_monitor/images/cover.png" href="./content/Arduino/print_to_serial_monitor/print_to_serial_monitor.html" tag="Topic"}
+:::
 
-<li>
-<div>
-<a href="./content/Arduino/print_to_serial_monitor/print_to_serial_monitor.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<!-- <h3 class="cardtitle" style="background-color: #b48ead; padding: 5px;">Intro to the Serial Monitor</h3> -->
-<h3 class="cardtitle"">Intro to the Serial Monitor</h3>
-<div style="display: inline">
-<img src="./content/Arduino/print_to_serial_monitor/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #b48ead">Topic</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+::: {.card type="lesson" title="Button" thumb="./content/Arduino/button/images/button.png" href="./content/Arduino/button/button.html" tag="sketch"}
+:::
 
-<li>
-<div>
-<a href="./content/Arduino/button/button.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Button</h3>
-<div style="display: inline">
-<img src="./content/Arduino/button/images/button.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #1e87f0">sketch</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+::: {.card type="external" title="AnalogRead with Potentiometer" thumb="./content/Arduino/analogread/images/cover.png" href="https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/analog-in-with-an-arduino/" tag="Sketch"}
+:::
 
-<li>
-<div>
-<a href="https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/analog-in-with-an-arduino/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">AnalogRead with Potentiometer</h3>
-<div style="display: inline">
-<img src="./content/Arduino/analogread/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #1e87f0">Sketch</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+::: {.card type="lesson" title="map() function" thumb="./content/Arduino/map/images/cover.png" href="./content/Arduino/map/map.html" tag="Function"}
+:::
 
-<li>
-<div>
-<a href="./content/Arduino/map/map.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">map() function</h3>
-<div style="display: inline">
-<img src="./content/Arduino/map/images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #4c566a">Function</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
-
-</ul>
-</div>
-
----
-
+:::
 
 Take a look at this TED Talk by Holly Cohen:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-We84cxubCY?si=fiqwsISlsHhsAIe6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 
 <!-- ### Thursday Agenda: -->
 <!---->
@@ -300,7 +215,10 @@ Take a look at this TED Talk by Holly Cohen:
 <!-- </ul> -->
 <!-- </div> -->
 <!---->
----
+
+:::
+
+:::
 
 ### Supplementary Material
 
@@ -310,4 +228,9 @@ ITP NYU course explaining digital output with Arduino Uno. Serves as a good revi
 
 One button games: <a href="https://c1ic.mx/menu.html">link</a>
 
-</div>
+### Next Week
+
+::: {.nextweek}
+<!-- placeholder - edit with next week's actual plan -->
+We'll continue with analog output and PWM.
+:::

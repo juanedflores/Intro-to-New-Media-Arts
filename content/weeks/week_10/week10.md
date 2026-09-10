@@ -6,53 +6,41 @@ title: Week 10
 
 <div class="marquee"><p>Midterm Studio Crunch Time / Critique</p></div>
 
-<div id="body" style="margin: 30px;">
+::: {.days}
 
-<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>MONDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="MONDAY" open="true"}
 
 ### Announcements
 
-<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
-<span class="uk-label uk-label-warning">Reminder</span>
-<p>Monday is the last day to work on Midterms! Be ready to present for the critique this Wednesday.</p>
-</blockquote>
+::: {.announcement type="reminder"}
+Monday is the last day to work on Midterms! Be ready to present for the critique this Wednesday.
+:::
 
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<p>Take out everything you need to work on Midterm.</p>
-</blockquote>
+::: {.announcement type="materials"}
+- Take out everything you need to work on Midterm.
+:::
 
 ### Agenda:
 
 - Midterm Studio (Last class time day to work on midterm projects)
 
-</div>
-</li>
-</ul>
+:::
 
----
-
-<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="WEDNESDAY" open="true"}
 
 ### Announcements
 
-<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
-<span class="uk-label uk-label-warning">Reminder</span>
-<p>Remember to post your project documentation (photos, videos) and a description on Blackboard!</p>
-</blockquote>
+::: {.announcement type="reminder"}
+Remember to post your project documentation (photos, videos) and a description on Blackboard!
+:::
 
 ### Agenda:
 
 - Midterm Critique
 
-</div>
-</li>
-</ul>
+:::
 
+:::
 
 <!-- ### Thursday Agenda: -->
 <!---->
@@ -88,4 +76,9 @@ title: Week 10
 <!---->
 <!-- Ex: Beyond being a playful interactive object, the concept behind the design intended to make visible the technical process of lighting. “With so much technology in our lives it is easy to take for granted that even simple things such as turning on a light are made possible by the physical properties of materials”, explains Tim Simpson, co-founder of the design studio. -->
 
-</div>
+### Next Week
+
+::: {.nextweek}
+<!-- placeholder - edit with next week's actual plan -->
+We'll move past midterms and into new project work.
+:::

@@ -6,22 +6,17 @@ title: Week 12
 
 <div class="marquee"><p>Neopixels / Accelerometer & Gyroscope / Temperature / Sensor Overview</p></div>
 
-<div id="body" style="margin: 30px;">
+::: {.days}
 
-<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>MONDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="MONDAY" open="true"}
 
 ### Announcements
 
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<ul>
-<li>Electronics Kits</li>
-<li>Arduino w/Breadboard + Power Modules</li>
-<li>Neopixels</li>
-</ul>
-</blockquote>
+::: {.announcement type="materials"}
+- Electronics Kits
+- Arduino w/Breadboard + Power Modules
+- Neopixels
+:::
 
 ### Agenda:
 
@@ -33,78 +28,28 @@ title: Week 12
 
 ### Topics:
 
-<div class="uk-margin" style="padding: 15px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+::: {.topics}
 
-<li>
-<div class="uk-transition-toggle">
-<a target="_blank" href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>ACCELEROMETER / GYROSCOPE</h4>
-<div style="display: inline">
-<img src="https://www.datocms-assets.com/36760/1606313240-gsk-09-mvmtsnsr-understand.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
-<span class="uk-label" style="background-color: #d99e8f">Output / Actuator</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="external" title="ACCELEROMETER / GYROSCOPE" thumb="https://www.datocms-assets.com/36760/1606313240-gsk-09-mvmtsnsr-understand.png" href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer/" target="_blank" tags="Arduino Example,Output / Actuator"}
+:::
 
-<li>
-<div class="uk-transition-toggle">
-<a target="_blank" href="https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>NEOPIXELS</h4>
-<div style="display: inline">
-<img src="https://cdn-shop.adafruit.com/970x728/1461-00.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
-<span class="uk-label" style="background-color: #d99e8f">Output / Actuator</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="external" title="NEOPIXELS" thumb="https://cdn-shop.adafruit.com/970x728/1461-00.jpg" href="https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use" target="_blank" tags="Arduino Example,Output / Actuator"}
+:::
 
+::: {.card type="external" title="Sensors Overview" thumb="https://www.watelectronics.com/wp-content/uploads/Arduino-Sensor.jpg" href="https://www.circuito.io/blog/arduino-sensors-explained/" tag="Resource"}
+:::
 
-<li>
-<div>
-<a href="https://www.circuito.io/blog/arduino-sensors-explained/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Sensors Overview</h3>
-<div style="display: inline">
-<img width=100% src="https://www.watelectronics.com/wp-content/uploads/Arduino-Sensor.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #1e87f0">Resource</span>
-</div>
-</div>
-</a>
-</div>
-</li>
+:::
 
-</ul>
-</div>
+:::
 
-</div>
-</li>
-</ul>
-
----
-
-<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="WEDNESDAY" open="true"}
 
 ### Announcements
 
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<p>You will need your electronics kits.</p>
-</blockquote>
+::: {.announcement type="materials"}
+- You will need your electronics kits.
+:::
 
 ### Agenda:
 
@@ -114,29 +59,20 @@ title: Week 12
 
 ### Topics:
 
-<div class="uk-margin" style="padding: 15px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+::: {.topics}
 
-<li>
-<div class="uk-transition-toggle">
-<a href="https://gist.github.com/flakas/3294829">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>Ultrasonic Range Sensor</h4>
-<div style="display: inline">
-<img src="https://irp.cdn-website.com/65e30418/dms3rep/multi/HC-SR04+Dimensions.gif" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
-<span class="uk-label" style="background-color: #999ed1">Input / Sensor</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="external" title="Ultrasonic Range Sensor" thumb="https://irp.cdn-website.com/65e30418/dms3rep/multi/HC-SR04+Dimensions.gif" href="https://gist.github.com/flakas/3294829" tags="Arduino Example,Input / Sensor"}
+:::
 
-</ul>
-</div>
+:::
 
-</div>
-</li>
-</ul>
+:::
+
+:::
+
+### Next Week
+
+::: {.nextweek}
+<!-- placeholder - edit with next week's actual plan -->
+We'll continue exploring sensors as we move toward final projects.
+:::

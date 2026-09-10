@@ -8,80 +8,46 @@ title: Week 7
 <embed type="text/html" src="content/slides/week_7_day1/index.html" width="100%" height="500px" />
 </section>
 
-[Open Slides in New Tab](./slides/week_7_day1/index.html)
+[Open Slides in New Tab](./content/slides/week_7_day1/index.html)
 
----
+::: {.days}
 
-### Monday Agenda
+::: {.day title="MONDAY" open="true"}
+
+### AGENDA
 
 - Catch up with Are.na Portfolios and Research
 - Review of Variable Resistors: Use Photosensor!
 - Download Arduino IDE
 
+:::
 
-### Wednesday Agenda
+::: {.day title="WEDNESDAY" open="true"}
+
+### AGENDA
 
 - blink and analogreadserial sketch examples
 
-<div class="uk-margin" style="padding: 30px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+### Topics
 
-<li>
-<div>
-<a href="./content/Arduino/getting_setup/getting_setup.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Getting Setup with Arduino IDE</h3>
-<div style="display: inline">
-<img src="./content/Arduino/getting_setup/getting_setup.svg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #1e87f0">Topic</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+::: {.topics}
 
-<li>
-<div>
-<a href="./content/Arduino/blink/blink.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Examples: Blink</h3>
-<div style="display: inline">
-<img src="./content/Arduino/blink/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #1e87f0">Topic</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+::: {.card type="lesson" title="Getting Setup with Arduino IDE" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Topic"}
+:::
 
-<li>
-<div>
-<a href="https://makeabilitylab.github.io/physcomp/sensors/photoresistors.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: #7fcbcd">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h3 class="cardtitle">Variable Resistors: Photoresistors</h3>
-<div style="display: inline">
-<img src="https://content.instructables.com/FOH/F83V/IAMCFJPJ/FOHF83VIAMCFJPJ.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #1e87f0">Topic</span>
-</div>
-</div>
-</a>
-</div>
-</div>
-</li>
+::: {.card type="lesson" title="Examples: Blink" thumb="./content/Arduino/blink/images/cover.jpg" href="./content/Arduino/blink/blink.html" tag="Topic"}
+:::
 
+::: {.card type="external" title="Variable Resistors: Photoresistors" thumb="https://content.instructables.com/FOH/F83V/IAMCFJPJ/FOHF83VIAMCFJPJ.jpg" href="https://makeabilitylab.github.io/physcomp/sensors/photoresistors.html" tag="Topic"}
+:::
 
+:::
 
+:::
 
-</ul>
-</div>
+:::
 
----
-
+### Supplementary Material
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Mr9NlMFNWgw?si=cdDMIXsOmWE98kfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -89,5 +55,9 @@ title: Week 7
 
 <a href="https://class.textile-academy.org/2026/marissa-renteria/assignments/week05/">Marissa Renteria</a>
 
+### Next Week
 
-
+::: {.nextweek}
+<!-- placeholder - edit with next week's actual plan -->
+We'll continue with sensors and start looking at output components.
+:::

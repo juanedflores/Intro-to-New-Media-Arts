@@ -6,18 +6,15 @@ title: Week 11
 
 <div class="marquee"><p>Sound Art / Servo Motors / Piezoelectric Microphone</p></div>
 
-<div id="body" style="margin: 30px;">
+::: {.days}
 
-<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-closed'>
-<a id='code-file' class='uk-accordion-title' href='#'>MONDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="MONDAY"}
 
 ### Announcements
 
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<p>You will need a device that plays audio through a headphone jack.</p>
-</blockquote>
+::: {.announcement type="materials"}
+- You will need a device that plays audio through a headphone jack.
+:::
 
 ### Agenda:
 
@@ -29,74 +26,37 @@ title: Week 11
 
 ### Topics:
 
-<div class="uk-margin" style="padding: 15px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+::: {.topics}
 
-<li>
-<div class="uk-transition-toggle">
-<a href="./content/Blog/CustomSpeakerWorkshop/CustomSpeakerWorkshop.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #bcd6ba; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>DIY SPEAKER WORKSHOP</h4>
-<div style="display: inline">
-<img src="./content/Blog/CustomSpeakerWorkshop/images/cover.webp" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #bcd6ba">Workshop</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="lesson" title="DIY SPEAKER WORKSHOP" thumb="./content/Blog/CustomSpeakerWorkshop/images/cover.webp" href="./content/Blog/CustomSpeakerWorkshop/CustomSpeakerWorkshop.html" tag="Workshop"}
+:::
 
-<li>
-<div class="uk-transition-toggle">
-<a target="_blank" href="./content/slides/sound_art_slides/index.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #5d656e; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>SOUND ART</h4>
-<div style="display: inline">
-<img src="https://lift11.ee/data/files/Electrical%20Walk_kodukale.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #5d656e">Slides</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="lesson" title="SOUND ART" thumb="https://lift11.ee/data/files/Electrical%20Walk_kodukale.jpg" href="./content/slides/sound_art_slides/index.html" target="_blank" tag="Slides"}
+:::
 
-</ul>
-</div>
+:::
 
-</div>
-</li>
-</ul>
+:::
 
----
-
-<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="WEDNESDAY" open="true"}
 
 ### Announcements
 
-<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
-<span class="uk-label uk-label-warning">Reminder</span>
-<p>Remember to create your "Final Project" channel in Are.na! Proposals are due by the beginning of class next Wednesday. See the Blackboard Final Project assignment for more info. We are taking look a look at these together at the beginning of class.</p>
-</blockquote>
+::: {.announcement type="reminder"}
+Remember to create your "Final Project" channel in Are.na! Proposals are due by the beginning of class next Wednesday. See the Blackboard Final Project assignment for more info. We are taking look a look at these together at the beginning of class.
+:::
 
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<p>You will need your electronics kits. Specifically:</p>
-<ul>
-<li>Arduino</li>
-<li>Breadboard</li>
-<li>Power Module</li>
-<li>Servo Motor</li>
-<li>Jumper Cables</li>
-<li>Piezoelectric Sensor</li>
-<li>LED + Resistor</li>
-</ul>
-</blockquote>
+::: {.announcement type="materials"}
+You will need your electronics kits. Specifically:
+
+- Arduino
+- Breadboard
+- Power Module
+- Servo Motor
+- Jumper Cables
+- Piezoelectric Sensor
+- LED + Resistor
+:::
 
 ### Agenda:
 
@@ -106,63 +66,26 @@ title: Week 11
 
 ### Topics:
 
-<div class="uk-margin" style="padding: 15px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+::: {.topics}
 
-<li>
-<div class="uk-transition-toggle">
-<a href="./content/Arduino/fade/fade.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>Intro to Analag Output: Fade Example</h4>
-<div style="display: inline">
-<img src="./content/Arduino/fade/images/led.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
-<span class="uk-label" style="background-color: #d99e8f">Output / Actuator</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="lesson" title="Intro to Analag Output: Fade Example" thumb="./content/Arduino/fade/images/led.png" href="./content/Arduino/fade/fade.html" tags="Arduino Example,Output / Actuator"}
+:::
 
-<li>
-<div class="uk-transition-toggle">
-<a href="./content/Arduino/sweep/sweep.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>Servo Sweep Example</h4>
-<div style="display: inline">
-<img src="./content/Arduino/sweep/images/cover.webp" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
-<span class="uk-label" style="background-color: #d99e8f">Output / Actuator</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="lesson" title="Servo Sweep Example" thumb="./content/Arduino/sweep/images/cover.webp" href="./content/Arduino/sweep/sweep.html" tags="Arduino Example,Output / Actuator"}
+:::
 
-<li>
-<div class="uk-transition-toggle">
-<a target="_blank" href="https://docs.arduino.cc/built-in-examples/sensors/Knock/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up" style="background: #7fcbcd; opacity: 100">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>Knock Example</h4>
-<div style="display: inline">
-<img src="./content/Arduino/knock/images/cover.webp" alt="" style="padding-bottom: 10px; width: 300px;" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
-<span class="uk-label" style="background-color: #999ed1">Input / Sensor</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="external" title="Knock Example" thumb="./content/Arduino/knock/images/cover.webp" href="https://docs.arduino.cc/built-in-examples/sensors/Knock/" target="_blank" tags="Arduino Example,Input / Sensor"}
+:::
 
-</ul>
-</div>
+:::
 
-</div>
-</li>
-</ul>
+:::
+
+:::
+
+### Next Week
+
+::: {.nextweek}
+<!-- placeholder - edit with next week's actual plan -->
+We'll continue with sound art and begin work toward final projects.
+:::

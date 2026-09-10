@@ -6,25 +6,19 @@ title: Week 1
 
 <div class="marquee"><p> Introducing the Class and Each Other. A Brief History of New Media Art</p></div>
 
-<div id="body" style="margin: 30px;">
+::: {.days}
 
-<ul uk-accordion style='pading-bottom: 5vh'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>MONDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="MONDAY" open="true"}
 
 ### ANNOUNCEMENTS:
 
-<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
-<span class="uk-label uk-label-warning">Reminder</span>
-<p>This is what an announcement looks like! Look at this at the beginning of class for reminders.</p>
-</blockquote>
+::: {.announcement type="reminder"}
+This is what an announcement looks like! Look at this at the beginning of class for reminders.
+:::
 
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<ul>
-<li>( This is where I will list what materials you will need for the day. )</li>
-</ul>
-</blockquote>
+::: {.announcement type="materials"}
+- ( This is where I will list what materials you will need for the day. )
+:::
 
 ### AGENDA:
 
@@ -39,31 +33,21 @@ title: Week 1
 <embed type="text/html" src="content/slides/week_1_day1/index.html" width="100%" height="500px" />
 </section>
 
-[Open Slides in New Tab](./slides/week_1_day1/index.html)
+[Open Slides in New Tab](./content/slides/week_1_day1/index.html)
 
-</div>
-</ul>
+:::
 
-<div style="background:rgb(210, 230, 250); height: 50px; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;"></div>
-
-<ul uk-accordion style='pading-bottom: 5vh; margin-top: 35px;'> <li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>WEDNESDAY</a>
-<div class='uk-accordion-content' style='padding-bottom:20px; margin-bottom:20px'>
+::: {.day title="WEDNESDAY" open="true"}
 
 ### ANNOUNCEMENTS
 
-<blockquote class="warning" style="border: 1px orange solid; padding: 10px;">
-<span class="uk-label uk-label-warning">Reminder</span>
-<p>Please let me know if you do not have a laptop. You will need to have it in class starting on Week 3. A working computer is a requirement for the course. Email me: juaned@uic.edu</p>
-</blockquote>
+::: {.announcement type="reminder"}
+Please let me know if you do not have a laptop. You will need to have it in class starting on Week 3. A working computer is a requirement for the course. Email me: juaned@uic.edu
+:::
 
-
-<blockquote class="info" style="border: 1px blue solid; padding: 10px;">
-<span class="uk-label uk-label-info">Materials Needed</span>
-<ul>
-<li>None</li>
-</ul>
-</blockquote>
+::: {.announcement type="materials"}
+- None
+:::
 
 ### AGENDA
 
@@ -80,8 +64,15 @@ title: Week 1
 <embed type="text/html" src="content/slides/week_1_day2/index.html" width="100%" height="500px" />
 </section>
 
-[Open Slides in New Tab](./slides/week_1_day2/index.html)
+[Open Slides in New Tab](./content/slides/week_1_day2/index.html)
 
-</div>
-</ul>
-</div>
+:::
+
+:::
+
+### Next Week
+
+::: {.nextweek}
+<!-- placeholder - edit with next week's actual plan -->
+We'll continue getting comfortable with the Arduino Nano 33 IoT, covering its IMU (accelerometer and gyroscope) and real-time clock features.
+:::

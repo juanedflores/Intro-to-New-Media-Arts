@@ -1,12 +1,16 @@
 ---
-title:
+title: Week 5
 ---
 
 # Week 5
 
 Vibration Motor and Drawing Machine Studio Days
 
-### Monday Agenda
+::: {.days}
+
+::: {.day title="MONDAY" open="true"}
+
+### AGENDA
 
 This week we are finishing soldering our vibration motor with LED circuit on our perforated boards.
 
@@ -15,10 +19,18 @@ This week we are finishing soldering our vibration motor with LED circuit on our
 * Showcase some generative drawing examples.
 * Continue drawing machine workshop. Should be in **construction of body** phase.
 
-### Wednesday Agenda
+:::
+
+::: {.day title="WEDNESDAY" open="true"}
+
+### AGENDA
 
 * Continue drawing machine workshop for until 4:45pm. Write formal instructions for your drawing.
 * Document our machines, drawings, and process.
+
+:::
+
+:::
 
 ### The Assignment
 
@@ -28,7 +40,7 @@ For our drawing machines, our finished soldered circuit is like the skeleton.
 
 The next step is to start adding flesh, and then personality to our robots.
 
-Simple construction supplies will be given, and it us up to you to brainstorm and execute the realization of your designs. 
+Simple construction supplies will be given, and it us up to you to brainstorm and execute the realization of your designs.
 
 **Exploration Period**
 
@@ -51,7 +63,6 @@ Once you are reaching a final design. Get to know your machine as if it was a ne
 Continue to iterate through the possible movements and mark making types. Think of this as an exploration of a new paint brush. Experiment with different mark-making tools, colors, textures, etc.
 
 Think of how to limit range, time constraints, starting/ending positions, etc.
-
 
 ---
 
@@ -106,8 +117,8 @@ Link to MCA Exhibition: <a href="https://visit.mcachicago.org/exhibitions/yoko-o
 
 **Organized by AIGA at Harlem School for the Arts, animated by littleBits**
 
-> Generative art refers to art that in whole or in part has been created with the 
-use of an autonomous system. In discussing generative art and its principles, 
+> Generative art refers to art that in whole or in part has been created with the
+use of an autonomous system. In discussing generative art and its principles,
 participants are challenged to invent their own drawing bots.
 
 <br>
@@ -118,7 +129,7 @@ participants are challenged to invent their own drawing bots.
 
 <img width="300" src="https://cdn.prod.website-files.com/6411e594fbd274173bf8c35c/667408fe78d11cb70f143009_AD_4nXcM7R3KilufepRzHUaT5_M9QRiZsZKbvLjb1QDxhAuy86kU3tEYbPppdGIaygIzoDGdW4d5ugXRzYiBG00B35UBad-9cliRS19mrl8scZYkO2shZLaaDT7DEKwylBOGojr73BZ1mcAHWw4lI0cQHqigMsg.jpeg"></img>
 
-<a href="www.lerandom.art/editorial/demystifying-generative-systems">Link</a>
+<a href="https://www.lerandom.art/editorial/demystifying-generative-systems">Link</a>
 
 ---
 
@@ -136,3 +147,9 @@ participants are challenged to invent their own drawing bots.
 
 <a href="https://www.instructables.com/Arduino-controlled-Pocket-Etch-A-Sketch-Random-Wal/">Control a Etch a Sketch</a>
 
+### Next Week
+
+::: {.nextweek}
+<!-- placeholder - edit with next week's actual plan -->
+We'll wrap up drawing machines and move into new territory.
+:::
