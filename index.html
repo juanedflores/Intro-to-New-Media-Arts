@@ -24,21 +24,23 @@
     <div>
       <!-- THE TOP MENU -->
       <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
-        <button
+        <a
           id="menu_button"
           class="uk-button uk-button-default"
-          type="button"
           style="border: none; background: rgb(243, 201, 91)"
-          onclick="toggleMenu()"
+          href="index.html"
+          onclick="toggleMenu(event)"
         >
           <span
             class="menu-btn-icon fas fa-bars fa-2xl"
             style="color: #4444dd"
           ></span>
           <span class="menu-btn-label">ART<br />150</span>
-        </button>
+        </a>
         <div class="uk-navbar-left">
-          <a class="uk-navbar-item uk-logo" href="#">INTRO TO NEW MEDIA ART</a>
+          <a class="uk-navbar-item uk-logo" href="index.html"
+            >INTRO TO NEW MEDIA ART</a
+          >
           <ul class="uk-navbar-nav">
             <li class="uk-active">
               <a href="index.html">Home / Week Overview</a>

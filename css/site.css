@@ -243,6 +243,7 @@ nav {
 .uk-navbar-nav > li > a {
   font-family: "Inter-Black";
   color: white;
+  font-size: 1.2rem;
 }
 
 .uk-logo {
@@ -326,7 +327,7 @@ h1 {
 }
 
 .uk-logo {
-  font-size: 1.4em;
+  font-size: 1.7em;
 }
 
 @media screen and (max-width: 700px) {
@@ -394,7 +395,7 @@ h1 {
 }
 
 .uk-logo {
-  font-size: 1.4em;
+  font-size: 1.7em;
 }
 
 canvas {
@@ -451,7 +452,14 @@ ul {
 
 /* menu_button shows an icon on mobile (where it opens the offcanvas
    drawer) and an "ART 150" label on desktop (where it currently does
-   nothing - see load_pages.js toggleMenu). */
+   nothing - see load_pages.js toggleMenu). It's an <a>, not a <button>,
+   so it needs explicit centering that a real button would get for free. */
+#menu_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .menu-btn-icon {
   display: none !important;
 }
@@ -459,13 +467,27 @@ ul {
 .menu-btn-label {
   display: block;
   font-family: "AlegreyaSansSC-Black";
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.1;
   text-align: center;
   color: #4444dd;
 }
 
-@media screen and (max-width: 915px) {
+#menu_button:hover .menu-btn-label {
+  color: #333;
+}
+
+/* Hovering either the ART/150 button or the logo text darkens both,
+   so they read as one linked button even though they're separate elements. */
+nav:has(#menu_button:hover) .uk-logo {
+  color: #333;
+}
+
+nav:has(.uk-logo:hover) .menu-btn-label {
+  color: #333;
+}
+
+@media screen and (max-width: 1050px) {
   .uk-navbar-nav {
     display: none;
   }

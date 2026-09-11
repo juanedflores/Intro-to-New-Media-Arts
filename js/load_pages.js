@@ -1,9 +1,10 @@
-// The menu button only does something below the 915px breakpoint (the
+// The menu button only does something below the 1050px breakpoint (the
 // same one used elsewhere for the .desktop/.mobile layout switch): it
 // opens/closes the mobile offcanvas drawer. On desktop the sidebar is
 // already always visible, so the button intentionally does nothing.
-function toggleMenu() {
-  if (window.innerWidth <= 915) {
+function toggleMenu(event) {
+  if (window.innerWidth <= 1050) {
+    event.preventDefault();
     UIkit.offcanvas("#offcanvas-usage").toggle();
   }
 }

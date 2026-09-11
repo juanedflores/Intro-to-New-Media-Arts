@@ -17,7 +17,7 @@ Below is an embed of the TinkerCAD circuit project that I will edit in class. Fe
 
 ---
 
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/dlR74SGKKF7?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<iframe width="100%" height="453" src="https://www.tinkercad.com/embed/dlR74SGKKF7?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
 <blockquote class="info">
 <span class="uk-label">Note</span>

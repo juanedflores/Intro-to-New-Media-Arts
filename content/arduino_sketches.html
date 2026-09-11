@@ -52,19 +52,19 @@
   <body onresize="resize_function()">
     <div uk-filter="target: .js-filter">
       <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
-        <button
+        <a
           id="menu_button"
           class="uk-button uk-button-default"
-          type="button"
           style="border: none; background: rgb(243, 201, 91)"
-          onclick="toggleMenu()"
+          href="../index.html"
+          onclick="toggleMenu(event)"
         >
           <span
             class="menu-btn-icon fas fa-bars fa-2xl"
             style="color: #4444dd; background: rgb(243, 201, 91)"
           ></span>
           <span class="menu-btn-label">ART<br />150</span>
-        </button>
+        </a>
         <div class="nav-overlay uk-navbar-left">
           <a class="uk-navbar-item uk-logo" href="../index.html"
             >INTRO TO NEW MEDIA ART</a
