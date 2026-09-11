@@ -11,7 +11,7 @@
     <script src="../js/uikit-icons.min.js"></script>
 
     <!--Custom CSS-->
-    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="../css/site.css" />
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,10 +43,6 @@
     <script src="../js/load_pages.js"></script>
     <script src="../js/styling.js"></script>
     <style>
-      body,
-      html {
-        background: rgb(210, 230, 250);
-      }
       img {
         max-height: 312px;
       }
@@ -58,22 +54,10 @@
       <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
         <button
           id="menu_button"
-          class="uk-button uk-button-default desktop"
+          class="uk-button uk-button-default"
           type="button"
           style="border: none; background: rgb(243, 201, 91)"
-          uk-toggle="target: #small-menu"
-        >
-          <span
-            class="fas fa-bars fa-2xl"
-            style="color: #4444dd; background: rgb(243, 201, 91)"
-          ></span>
-        </button>
-        <button
-          id="menu_button"
-          class="uk-button uk-button-default mobile"
-          type="button"
-          style="border: none; background: rgb(243, 201, 91)"
-          uk-toggle="target: #offcanvas-usage"
+          onclick="toggleMenu('small-menu-sidebar')"
         >
           <span
             class="fas fa-bars fa-2xl"
@@ -197,7 +181,7 @@
       <aside id="left-col" class="uk-light">
         <div id="" class="bar-wrap" style="padding-top: 100px">
           <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-            <div id="small-menu">
+            <div id="small-menu-sidebar">
               <hr />
               <a
                 target="_blank"

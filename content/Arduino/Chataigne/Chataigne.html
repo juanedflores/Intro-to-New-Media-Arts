@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html  dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -11,28 +11,47 @@
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
     <script src="../../../js/uikit.min.js"></script>
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
-      < !--Ajax Style-- >
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
     <!-- Code Style -->
     <link rel="stylesheet" href="../../../css/pojoaque.css" />
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
     <script src="../../../js/highlight.min.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- hljs -->
     <script>
@@ -48,12 +67,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -184,7 +203,7 @@
 
     <!-- Blog Style CSS -->
     <link rel="stylesheet" href="../../../css/blog_style.css" />
-    <link rel="stylesheet" href="../../../css/custom.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
 
     <!-- Includes other header content if needed -->
     
@@ -194,16 +213,31 @@
 
   <body class="uk-background-fixed">
     <!-- NAV AND HEADING -->
-    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
-      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
-        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
       </button>
 
       <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html">Using
-Chataigne with Arduino</a></li>
+          <li class="uk-active" style="pointer-events: none">
+            <a href="index.html">Using Chataigne with Arduino</a>
+          </li>
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
@@ -212,9 +246,16 @@ Chataigne with Arduino</a></li>
     </nav>
 
     <!-- OFFCANVAS -->
-    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
       <!-- TABLE OF CONTENTS -->
-      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div><ul>
@@ -235,79 +276,79 @@ id="toc-minimal-arduino-sketch">Minimal Arduino Sketch</a></li>
       </div>
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
-id="chataigne" class="level1">
-<h1>Chataigne</h1>
-<section id="intro" class="level2">
-<h2>Intro</h2>
-<p>Philsophy statement from the website:</p>
-<blockquote>
-<p>Chataigne is a free, open-source software made with one goal in mind
-: create a common tool for artists, technicians and developers who wish
-to use technology and synchronize software for shows, interactive
-installations or prototyping. It aims to be as simple as possible for
-basic interactions, but can be easily extended to create complex
-interactions.</p>
-</blockquote>
-<div class="uk-margin" style="padding: 30px; width: 100%;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-<li style="width: 50%; margin: auto; padding-left: 0;">
-<div>
-<a href="https://benjamin.kuperberg.fr/chataigne/en">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
-style="background: #E6A749">
-<div
-class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>
-Chataigne Website
-</h4>
-<div style="display: inline">
-<p><img src="./images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label"
-style="background-color: #E6A749">Website</span></p>
-</div>
-</div>
-</div>
-<p></a></p>
-</div>
-</li>
-</ul>
-</div>
-<section id="getting-started-tutorial" class="level3">
-<h3>Getting Started Tutorial</h3>
-<p>After installing the software, and upon opening it for the first
-time, you should be greeted with a little tutorial. It will walk you
-through on how to play an audio file using a keyboard stroke. Go ahead
-and follow it.</p>
-<p>In the inspector window, you can specify a key that will trigger a
-<strong>consequence</strong>.</p>
-<p>The keypress is our input (That Chataigne is listening for), and our
-<strong>consequence</strong> is our programmed result of that
-interaction.</p>
-<p><img src="./images/keypress.png"></p>
-<p>Right below this, is the consequence section.</p>
-<p>As the tutorial shows, you can add a consequence by pressing on the
-“+” button.</p>
-<p><img src="./images/add.png"></p>
-<p>Select:</p>
-<p><strong>+</strong> &gt; <strong>Sound Card</strong> &gt; <strong>Play
-Audio File</strong></p>
-<p>Now select the audio file you want to play:</p>
-<p><img src="./images/consequence.png"></p>
-<hr />
-<p>If you can successfully play an audio file with your selected key,
-then we can move on to using an arduino digital input.</p>
-</section>
-<section id="serial-module" class="level3">
-<h3>Serial Module</h3>
-<p>Add another module called “Serial”:</p>
-<p><img src="./images/serial_module.png"></p>
-</section>
-<section id="minimal-arduino-sketch" class="level3">
-<h3>Minimal Arduino Sketch</h3>
-<p>Upload this sketch to your Arduino:</p>
-<pre class="arduino"><code>int digitalSensor;
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="chataigne" class="level1">
+        <h1>Chataigne</h1>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p>Philsophy statement from the website:</p>
+        <blockquote>
+        <p>Chataigne is a free, open-source software made with one goal
+        in mind : create a common tool for artists, technicians and
+        developers who wish to use technology and synchronize software
+        for shows, interactive installations or prototyping. It aims to
+        be as simple as possible for basic interactions, but can be
+        easily extended to create complex interactions.</p>
+        </blockquote>
+        <div class="uk-margin" style="padding: 30px; width: 100%;">
+        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+        <li style="width: 50%; margin: auto; padding-left: 0;">
+        <div>
+        <a href="https://benjamin.kuperberg.fr/chataigne/en">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
+        style="background: #E6A749">
+        <div
+        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+        <h4>
+        Chataigne Website
+        </h4>
+        <div style="display: inline">
+        <p><img src="./images/cover.png" alt="" style="padding-bottom: 10px" uk-image />
+        <span class="uk-label"
+        style="background-color: #E6A749">Website</span></p>
+        </div>
+        </div>
+        </div>
+        <p></a></p>
+        </div>
+        </li>
+        </ul>
+        </div>
+        <section id="getting-started-tutorial" class="level3">
+        <h3>Getting Started Tutorial</h3>
+        <p>After installing the software, and upon opening it for the
+        first time, you should be greeted with a little tutorial. It
+        will walk you through on how to play an audio file using a
+        keyboard stroke. Go ahead and follow it.</p>
+        <p>In the inspector window, you can specify a key that will
+        trigger a <strong>consequence</strong>.</p>
+        <p>The keypress is our input (That Chataigne is listening for),
+        and our <strong>consequence</strong> is our programmed result of
+        that interaction.</p>
+        <p><img src="./images/keypress.png"></p>
+        <p>Right below this, is the consequence section.</p>
+        <p>As the tutorial shows, you can add a consequence by pressing
+        on the “+” button.</p>
+        <p><img src="./images/add.png"></p>
+        <p>Select:</p>
+        <p><strong>+</strong> &gt; <strong>Sound Card</strong> &gt;
+        <strong>Play Audio File</strong></p>
+        <p>Now select the audio file you want to play:</p>
+        <p><img src="./images/consequence.png"></p>
+        <hr />
+        <p>If you can successfully play an audio file with your selected
+        key, then we can move on to using an arduino digital input.</p>
+        </section>
+        <section id="serial-module" class="level3">
+        <h3>Serial Module</h3>
+        <p>Add another module called “Serial”:</p>
+        <p><img src="./images/serial_module.png"></p>
+        </section>
+        <section id="minimal-arduino-sketch" class="level3">
+        <h3>Minimal Arduino Sketch</h3>
+        <p>Upload this sketch to your Arduino:</p>
+        <pre class="arduino"><code>int digitalSensor;
 
 void setup() {
   pinMode(2, INPUT);
@@ -320,58 +361,61 @@ void loop() {
   Serial.println(digitalSensor, DEC);
   delay(10);
 }</code></pre>
-<p>After it is finished, quit Arduino and go back to Chataigne.</p>
-<p>With the module selected, find the port drop down menu in the
-inspector window:</p>
-<p><img src="./images/port.png"></p>
-<p>And select the port that your Arduino is connected to.</p>
-<blockquote class="info">
-<span class="uk-label">Note</span>
-<p>
-Only one app can be connected to Arduino port at a time, which is why it
-is important to make sure Arduino is closed.
-</p>
-<p>
-If you don’t, you might see this error message:
-</p>
-<img src="./images/error.png">
-</blockquote>
-<p>Click the action state again:</p>
-<p><img src="./images/action.png"></p>
-<p>And navigate to the inspector window:</p>
-<p>Locate the “From Input Value” window inside “Conditions”. If you
-still have the Keyboard keystroke listening input, remove it with the
-“x” button on the top right.</p>
-<p><img src="./images/remove_keyboard.png"></p>
-<p><img src="./images/serial_input.png"></p>
-<p><img src="./images/input.png"></p>
-<p>If you check the “Learn” box, it will automatically attempt to listen
-to any input reading, and assume that this is the interaction you want
-(the sensor that you want to use).</p>
-<p><img src="./images/learn.png"></p>
-<p>It has found that there is a value <strong>A</strong> being received,
-followed by a number.</p>
-<p>Pressing your button will result in the input window highlighting in
-green when the condition is met.</p>
-<p>Here you can change the condition operation. In my case, it by
-default made the condition of:</p>
-<p><img src="./images/condition.png"></p>
-<p><code>if A is equal to 1.000, then trigger something</code></p>
-<p>This button makes it easy to create a toggle. When button is pressed,
-the state is toggled. In other words, like a light switch.</p>
-<p><img src="./images/toggle.png"></p>
-<hr />
-<p>Now for the consequence:</p>
-<p>The setup for playing an audio file is exactly the same as when we
-did it for the keyboard press!</p>
-<p>Notice that you can also do something if the condition is FALSE. For
-example, you can play one sound when condition is TRUE (buttonState is 1
-or HIGH), and another when condition is FALSE (buttonState is 0 or
-LOW).</p>
-<p><img src="./images/truefalse.png"></p>
-</section>
-</section>
-</section></div>
+        <p>After it is finished, quit Arduino and go back to
+        Chataigne.</p>
+        <p>With the module selected, find the port drop down menu in the
+        inspector window:</p>
+        <p><img src="./images/port.png"></p>
+        <p>And select the port that your Arduino is connected to.</p>
+        <blockquote class="info">
+        <span class="uk-label">Note</span>
+        <p>
+        Only one app can be connected to Arduino port at a time, which
+        is why it is important to make sure Arduino is closed.
+        </p>
+        <p>
+        If you don’t, you might see this error message:
+        </p>
+        <img src="./images/error.png">
+        </blockquote>
+        <p>Click the action state again:</p>
+        <p><img src="./images/action.png"></p>
+        <p>And navigate to the inspector window:</p>
+        <p>Locate the “From Input Value” window inside “Conditions”. If
+        you still have the Keyboard keystroke listening input, remove it
+        with the “x” button on the top right.</p>
+        <p><img src="./images/remove_keyboard.png"></p>
+        <p><img src="./images/serial_input.png"></p>
+        <p><img src="./images/input.png"></p>
+        <p>If you check the “Learn” box, it will automatically attempt
+        to listen to any input reading, and assume that this is the
+        interaction you want (the sensor that you want to use).</p>
+        <p><img src="./images/learn.png"></p>
+        <p>It has found that there is a value <strong>A</strong> being
+        received, followed by a number.</p>
+        <p>Pressing your button will result in the input window
+        highlighting in green when the condition is met.</p>
+        <p>Here you can change the condition operation. In my case, it
+        by default made the condition of:</p>
+        <p><img src="./images/condition.png"></p>
+        <p><code>if A is equal to 1.000, then trigger something</code></p>
+        <p>This button makes it easy to create a toggle. When button is
+        pressed, the state is toggled. In other words, like a light
+        switch.</p>
+        <p><img src="./images/toggle.png"></p>
+        <hr />
+        <p>Now for the consequence:</p>
+        <p>The setup for playing an audio file is exactly the same as
+        when we did it for the keyboard press!</p>
+        <p>Notice that you can also do something if the condition is
+        FALSE. For example, you can play one sound when condition is
+        TRUE (buttonState is 1 or HIGH), and another when condition is
+        FALSE (buttonState is 0 or LOW).</p>
+        <p><img src="./images/truefalse.png"></p>
+        </section>
+        </section>
+        </section>
+      </div>
     </div>
 
     <!-- highlightjs badge -->
@@ -379,7 +423,7 @@ LOW).</p>
 
     <script>
       // apply HighlightJS
-      var pres = document.querySelectorAll('pre>code');
+      var pres = document.querySelectorAll("pre>code");
       for (var i = 0; i < pres.length; i++) {
         hljs.highlightBlock(pres[i]);
       }
@@ -387,12 +431,12 @@ LOW).</p>
       // add HighlightJS-badge (options are optional)
       var options = {
         // optional
-        contentSelector: '#ArticleBody',
+        contentSelector: "#ArticleBody",
 
         // CSS class(es) used to render the copy icon.
-        copyIconClass: 'fas fa-solid fa-clone',
+        copyIconClass: "fas fa-solid fa-clone",
         // CSS class(es) used to render the done icon.
-        checkIconClass: 'fas fa-check text-success',
+        checkIconClass: "fas fa-check text-success",
       };
       window.highlightJsBadge(options);
     </script>

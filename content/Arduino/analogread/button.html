@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html  dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -11,28 +11,47 @@
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
     <script src="../../../js/uikit.min.js"></script>
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
-      < !--Ajax Style-- >
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
     <!-- Code Style -->
     <link rel="stylesheet" href="../../../css/pojoaque.css" />
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
     <script src="../../../js/highlight.min.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- hljs -->
     <script>
@@ -48,12 +67,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -184,7 +203,7 @@
 
     <!-- Blog Style CSS -->
     <link rel="stylesheet" href="../../../css/blog_style.css" />
-    <link rel="stylesheet" href="../../../css/custom.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
 
     <!-- Includes other header content if needed -->
     
@@ -194,15 +213,31 @@
 
   <body class="uk-background-fixed">
     <!-- NAV AND HEADING -->
-    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
-      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
-        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
       </button>
 
       <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html"></a></li>
+          <li class="uk-active" style="pointer-events: none">
+            <a href="index.html"></a>
+          </li>
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
@@ -211,9 +246,16 @@
     </nav>
 
     <!-- OFFCANVAS -->
-    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
       <!-- TABLE OF CONTENTS -->
-      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div><ul>
@@ -248,193 +290,208 @@ statements</a></li>
       </div>
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
-id="button" class="level1">
-<h1>Button</h1>
-<section id="the-button-sketch" class="level2">
-<h2>The Button Sketch</h2>
-<p>Go to:</p>
-<p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
-<strong>02.Digital</strong> &gt; <strong>Button</strong></p>
-<p>This is <code>Button.ino</code>.</p>
-<p>Of course we should always look at the link provided in the block
-comment:</p>
-<p>
-<a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">Arduino
-Button Sketch: Official Arduino Documentation</a>
-</p>
-<div>
-<p><img src="https://docs.arduino.cc/static/fb8449b4834dfbbf3c03223c8bc3e5b5/29114/schematic.png" width=100% style=""></img></p>
-</div>
-<p>It is using the UNO, but the wiring is pretty much the same.</p>
-<p>We are connecting one side of the switch to (+) (In our case,
-3.3V).</p>
-<div>
-<p><img src="./images/button_sketch1.png" width=400 style=""></img></p>
-</div>
-<p>And the other side to a 10k ohm Resistor.</p>
-<blockquote class="warning">
-<span class="uk-label uk-label-warning">Warning</span>
-<p>
-The following images show a resistor with color bands of a 220 ohm
-resistor, but it should be 10k.
-</p>
-</blockquote>
-<div>
-<p><img src="./images/10k.png" width=100% style=""></img></p>
-</div>
-<div>
-<p><img src="./images/button_sketch2.png" width=400 style=""></img></p>
-</div>
-<p>This other side of the button is ALSO connected to digital pin 2.</p>
-<div>
-<p><img src="./images/button_sketch3.png" width=400 style=""></img></p>
-</div>
-<p>Lastly, the other side of the resistor is connected to
-<strong>Ground</strong>.</p>
-<div>
-<p><img src="./images/button_sketch4.png" width=400 style=""></img></p>
-</div>
-<p>Pressing the button should turn on the built-in LED. You can confirm
-this by connecting an LED to pin 13 like how we did in the
-<em>Blink</em> example. The LED will only be on so long as the button is
-PRESSED.</p>
-<section id="pull-down-resistor" class="level3">
-<h3>Pull-Down Resistor</h3>
-<p>So why is there a 10k resistor in the wiring diagram? This is called
-a <strong>pull-down resistor</strong>. It won’t make complete sense now,
-but the resistor is “pulling down” the input to a steady state of LOW or
-0V. Without it, the input is unreliable.</p>
-<p>Again, <a
-href="https://makeabilitylab.github.io/physcomp/arduino/buttons.html">makeabilitylab</a>
-does a good explanation of this and <strong>pull-up</strong>
-resistors.</p>
-</section>
-<section id="in-tinkercad" class="level3">
-<h3>In TinkerCAD</h3>
-<p>In TinkerCAD, it comes with some premade circuits with the Arduino
-Code.</p>
-<p>You can find it in the dropbar menu on the right hand side:</p>
-<div>
-<p><img src="./images/tinkercad_categories.png" width=400 style=""></img></p>
-</div>
-<p>This is the Button example:</p>
-<div>
-<p><img src="./images/tinker_cad_button2.png" width=100% style=""></img></p>
-</div>
-<p>Redrawn to fit in a breadboard like we did with the Nano:</p>
-<div>
-<p><img src="./images/tinker_cad_button.png" width=100% style=""></img></p>
-</div>
-<p>To find the code editor:</p>
-<div>
-<p><img src="./images/tinkercad_code.png" width=400 style=""></img></p>
-</div>
-<p>The first thing you will see is a block code editor similar to the <a
-href="https://scratch.mit.edu/">Scratch Programming Language</a>.</p>
-<div>
-<p><img src="./images/scratch.png" width=500 style=""></img></p>
-</div>
-<p>To go to the text version of the code, like what we would see in the
-Arduino IDE. Select “Text” from this dropbar menu:</p>
-<div>
-<p><img src="./images/text.png" width=500 style=""></img></p>
-</div>
-<p>You can enter the <strong>Button</strong> example here:</p>
-<div>
-<p><img src="./images/text2.png" width=500 style=""></img></p>
-</div>
-<p>And click “Start Simulation” to see if it works by pushing the
-button.</p>
-</section>
-<section id="sketch-breakdown" class="level3">
-<h3>Sketch Breakdown</h3>
-<section id="constants" class="level4">
-<h4>Constants</h4>
-<p>In this sketch we have two statements that introduce a new keyword
-called <code>const</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> buttonPin <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>  <span class="co">// the number of the pushbutton pin</span></span>
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="button" class="level1">
+        <h1>Button</h1>
+        <section id="the-button-sketch" class="level2">
+        <h2>The Button Sketch</h2>
+        <p>Go to:</p>
+        <p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
+        <strong>02.Digital</strong> &gt; <strong>Button</strong></p>
+        <p>This is <code>Button.ino</code>.</p>
+        <p>Of course we should always look at the link provided in the
+        block comment:</p>
+        <p>
+        <a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">Arduino
+        Button Sketch: Official Arduino Documentation</a>
+        </p>
+        <div>
+        <p><img src="https://docs.arduino.cc/static/fb8449b4834dfbbf3c03223c8bc3e5b5/29114/schematic.png" width=100% style=""></img></p>
+        </div>
+        <p>It is using the UNO, but the wiring is pretty much the
+        same.</p>
+        <p>We are connecting one side of the switch to (+) (In our case,
+        3.3V).</p>
+        <div>
+        <p><img src="./images/button_sketch1.png" width=400 style=""></img></p>
+        </div>
+        <p>And the other side to a 10k ohm Resistor.</p>
+        <blockquote class="warning">
+        <span class="uk-label uk-label-warning">Warning</span>
+        <p>
+        The following images show a resistor with color bands of a 220
+        ohm resistor, but it should be 10k.
+        </p>
+        </blockquote>
+        <div>
+        <p><img src="./images/10k.png" width=100% style=""></img></p>
+        </div>
+        <div>
+        <p><img src="./images/button_sketch2.png" width=400 style=""></img></p>
+        </div>
+        <p>This other side of the button is ALSO connected to digital
+        pin 2.</p>
+        <div>
+        <p><img src="./images/button_sketch3.png" width=400 style=""></img></p>
+        </div>
+        <p>Lastly, the other side of the resistor is connected to
+        <strong>Ground</strong>.</p>
+        <div>
+        <p><img src="./images/button_sketch4.png" width=400 style=""></img></p>
+        </div>
+        <p>Pressing the button should turn on the built-in LED. You can
+        confirm this by connecting an LED to pin 13 like how we did in
+        the <em>Blink</em> example. The LED will only be on so long as
+        the button is PRESSED.</p>
+        <section id="pull-down-resistor" class="level3">
+        <h3>Pull-Down Resistor</h3>
+        <p>So why is there a 10k resistor in the wiring diagram? This is
+        called a <strong>pull-down resistor</strong>. It won’t make
+        complete sense now, but the resistor is “pulling down” the input
+        to a steady state of LOW or 0V. Without it, the input is
+        unreliable.</p>
+        <p>Again, <a
+        href="https://makeabilitylab.github.io/physcomp/arduino/buttons.html">makeabilitylab</a>
+        does a good explanation of this and <strong>pull-up</strong>
+        resistors.</p>
+        </section>
+        <section id="in-tinkercad" class="level3">
+        <h3>In TinkerCAD</h3>
+        <p>In TinkerCAD, it comes with some premade circuits with the
+        Arduino Code.</p>
+        <p>You can find it in the dropbar menu on the right hand
+        side:</p>
+        <div>
+        <p><img src="./images/tinkercad_categories.png" width=400 style=""></img></p>
+        </div>
+        <p>This is the Button example:</p>
+        <div>
+        <p><img src="./images/tinker_cad_button2.png" width=100% style=""></img></p>
+        </div>
+        <p>Redrawn to fit in a breadboard like we did with the Nano:</p>
+        <div>
+        <p><img src="./images/tinker_cad_button.png" width=100% style=""></img></p>
+        </div>
+        <p>To find the code editor:</p>
+        <div>
+        <p><img src="./images/tinkercad_code.png" width=400 style=""></img></p>
+        </div>
+        <p>The first thing you will see is a block code editor similar
+        to the <a href="https://scratch.mit.edu/">Scratch Programming
+        Language</a>.</p>
+        <div>
+        <p><img src="./images/scratch.png" width=500 style=""></img></p>
+        </div>
+        <p>To go to the text version of the code, like what we would see
+        in the Arduino IDE. Select “Text” from this dropbar menu:</p>
+        <div>
+        <p><img src="./images/text.png" width=500 style=""></img></p>
+        </div>
+        <p>You can enter the <strong>Button</strong> example here:</p>
+        <div>
+        <p><img src="./images/text2.png" width=500 style=""></img></p>
+        </div>
+        <p>And click “Start Simulation” to see if it works by pushing
+        the button.</p>
+        </section>
+        <section id="sketch-breakdown" class="level3">
+        <h3>Sketch Breakdown</h3>
+        <section id="constants" class="level4">
+        <h4>Constants</h4>
+        <p>In this sketch we have two statements that introduce a new
+        keyword called <code>const</code>.</p>
+        <div class="sourceCode" id="cb1"><pre
+        class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> buttonPin <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>  <span class="co">// the number of the pushbutton pin</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> ledPin <span class="op">=</span> <span class="dv">13</span><span class="op">;</span>    <span class="co">// the number of the LED pin</span></span></code></pre></div>
-<p><code>const int buttonPin</code> means that <code>buttonPin</code>
-will remain <strong>constant</strong> and it is of type
-<code>int</code>. It is not a variable because in no moment will it
-change in the duration of the program running. It is a
-<strong>constant</strong>, not a variable.</p>
-<p>The advantage of doing this is for readability and the way the board
-handles it is different. The IDE will also throw out an error if you try
-to change <code>buttonPin</code>, for example.</p>
-<p>Next, we have an actual variable called <code>buttonState</code> that
-will hold the value of the button state (Is it pressed or not?
-<code>HIGH</code> or <code>LOW</code>?).</p>
-</section>
-<section id="setup" class="level4">
-<h4>setup()</h4>
-<p>In the <code>setup()</code> function, everything should be
-straightforward. <code>ledPin</code> (<em>13</em>) is configured as an
-<code>OUTPUT</code>, and <code>buttonPin</code> (<em>2</em>) is
-configured as an <code>INPUT</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
+        <p><code>const int buttonPin</code> means that
+        <code>buttonPin</code> will remain <strong>constant</strong> and
+        it is of type <code>int</code>. It is not a variable because in
+        no moment will it change in the duration of the program running.
+        It is a <strong>constant</strong>, not a variable.</p>
+        <p>The advantage of doing this is for readability and the way
+        the board handles it is different. The IDE will also throw out
+        an error if you try to change <code>buttonPin</code>, for
+        example.</p>
+        <p>Next, we have an actual variable called
+        <code>buttonState</code> that will hold the value of the button
+        state (Is it pressed or not? <code>HIGH</code> or
+        <code>LOW</code>?).</p>
+        </section>
+        <section id="setup" class="level4">
+        <h4>setup()</h4>
+        <p>In the <code>setup()</code> function, everything should be
+        straightforward. <code>ledPin</code> (<em>13</em>) is configured
+        as an <code>OUTPUT</code>, and <code>buttonPin</code>
+        (<em>2</em>) is configured as an <code>INPUT</code>.</p>
+        <div class="sourceCode" id="cb2"><pre
+        class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the LED pin as an output:</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>ledPin<span class="op">,</span> OUTPUT<span class="op">);</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// initialize the pushbutton pin as an input:</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    pinMode<span class="op">(</span>buttonPin<span class="op">,</span> INPUT<span class="op">);</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</section>
-<section id="loop" class="level4">
-<h4>loop()</h4>
-<p>The first thing we do in the <code>loop()</code>, is to read the
-state of the push button by using the function
-<code>digitalRead()</code>.</p>
-<section id="digitalread" class="level5">
-<h5>digitalRead()</h5>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// read the state of the pushbutton value:</span></span>
+        </section>
+        <section id="loop" class="level4">
+        <h4>loop()</h4>
+        <p>The first thing we do in the <code>loop()</code>, is to read
+        the state of the push button by using the function
+        <code>digitalRead()</code>.</p>
+        <section id="digitalread" class="level5">
+        <h5>digitalRead()</h5>
+        <div class="sourceCode" id="cb3"><pre
+        class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// read the state of the pushbutton value:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>buttonState <span class="op">=</span> digitalRead<span class="op">(</span>buttonPin<span class="op">);</span></span></code></pre></div>
-<p><code>digitalRead()</code> only takes one parameter, the pin number
-that is being used as an input.</p>
-</section>
-</section>
-<section id="if-statements-conditional-statements" class="level4">
-<h4>if statements, conditional statements</h4>
-<p>The remaining part of the <code>loop()</code> introduces something
-called a <strong>conditional statement</strong>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>buttonState <span class="op">==</span> HIGH<span class="op">)</span> <span class="op">{</span></span>
+        <p><code>digitalRead()</code> only takes one parameter, the pin
+        number that is being used as an input.</p>
+        </section>
+        </section>
+        <section id="if-statements-conditional-statements"
+        class="level4">
+        <h4>if statements, conditional statements</h4>
+        <p>The remaining part of the <code>loop()</code> introduces
+        something called a <strong>conditional statement</strong>.</p>
+        <div class="sourceCode" id="cb4"><pre
+        class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>buttonState <span class="op">==</span> HIGH<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// turn LED on:</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> HIGH<span class="op">);</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// turn LED off:</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> LOW<span class="op">);</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>This block of code translated to english is this:</p>
-<p><strong>If</strong> <span style="color: blue;">button is
-pressed</span> (buttonState is <code>HIGH</code>), <em>then</em> <span
-style="color: blue">turn the led on</span> (<code>HIGH</code>),</p>
-<p><strong>else</strong> <span style="color: blue;">if it is NOT
-pressed</span> (buttonState is NOT <code>HIGH</code>), <em>then</em>
-<span style="color: blue;">turn the led off</span>
-(<code>LOW</code>)</p>
-<p><strong>If</strong> the condition in the parentheses is TRUE, then it
-does everything inside the following curly brackets.
-<strong>else</strong> is the exception case. If it is not TRUE, then it
-must be FALSE, and everything in the last curly brackets is done.</p>
-<p>This is the condition that is checked:</p>
-<pre><code>buttonState == HIGH</code></pre>
-<p>The double equals sign (<code>==</code>) means
-<code>equals to</code>. If buttonState <code>equals to</code> HIGH,
-then… do this -&gt; { }</p>
-<p>This is different from the single equal sign (<code>=</code>) that is
-used to assign a variable a value. A single <code>=</code> does not mean
-<code>equals to</code>, it means
-<code>is assigned the value of..</code>.</p>
-<p>We will explore <strong>if statements</strong> more in the next
-exercise: <a href="../dice_roller/dice_roller.html">Dice Roller
-Challenge</a></p>
-<ul uk-accordion style='pading-bottom: 5vh'>
-<li class='uk-open'>
-<a id='code-file' class='uk-accordion-title' href='#'>Button (Full
-Sketch)</a>
-<div class="uk-accordion-content"
-style="padding-bottom:20px; margin-bottom:20px">
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// constants won&#39;t change. They&#39;re used here to set pin numbers:</span></span>
+        <p>This block of code translated to english is this:</p>
+        <p><strong>If</strong> <span style="color: blue;">button is
+        pressed</span> (buttonState is <code>HIGH</code>), <em>then</em>
+        <span style="color: blue">turn the led on</span>
+        (<code>HIGH</code>),</p>
+        <p><strong>else</strong> <span style="color: blue;">if it is NOT
+        pressed</span> (buttonState is NOT <code>HIGH</code>),
+        <em>then</em> <span style="color: blue;">turn the led off</span>
+        (<code>LOW</code>)</p>
+        <p><strong>If</strong> the condition in the parentheses is TRUE,
+        then it does everything inside the following curly brackets.
+        <strong>else</strong> is the exception case. If it is not TRUE,
+        then it must be FALSE, and everything in the last curly brackets
+        is done.</p>
+        <p>This is the condition that is checked:</p>
+        <pre><code>buttonState == HIGH</code></pre>
+        <p>The double equals sign (<code>==</code>) means
+        <code>equals to</code>. If buttonState <code>equals to</code>
+        HIGH, then… do this -&gt; { }</p>
+        <p>This is different from the single equal sign (<code>=</code>)
+        that is used to assign a variable a value. A single
+        <code>=</code> does not mean <code>equals to</code>, it means
+        <code>is assigned the value of..</code>.</p>
+        <p>We will explore <strong>if statements</strong> more in the
+        next exercise: <a href="../dice_roller/dice_roller.html">Dice
+        Roller Challenge</a></p>
+        <ul uk-accordion style='pading-bottom: 5vh'>
+        <li class='uk-open'>
+        <a id='code-file' class='uk-accordion-title' href='#'>Button
+        (Full Sketch)</a>
+        <div class="uk-accordion-content"
+        style="padding-bottom:20px; margin-bottom:20px">
+        <div class="sourceCode" id="cb6"><pre
+        class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// constants won&#39;t change. They&#39;re used here to set pin numbers:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> buttonPin <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>  <span class="co">// the number of the pushbutton pin</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> <span class="dt">int</span> ledPin <span class="op">=</span> <span class="dv">13</span><span class="op">;</span>    <span class="co">// the number of the LED pin</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -461,51 +518,55 @@ style="padding-bottom:20px; margin-bottom:20px">
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        digitalWrite<span class="op">(</span>ledPin<span class="op">,</span> LOW<span class="op">);</span></span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</div>
-<hr />
-</section>
-</section>
-</section>
-<section id="misc.-switches" class="level2">
-<h2>Misc. Switches</h2>
-<p>There are other types of switches that are worth mentioning.</p>
-<section id="tilt-switch" class="level3">
-<h3>Tilt Switch</h3>
-<div>
-<p><img src="./images/mercury.webp" width=500 style=""></img></p>
-</div>
-<p>A tilt switch is a switch that completes the circuit depending on its
-orientation to the force of gravity.</p>
-<div>
-<p><img src="./images/tilt_switch.png" width=500 style="border: none"></img></p>
-</div>
-<p>The thing inside could be a metallic ball or a bit of mercury.</p>
-</section>
-<section id="reed-switch" class="level3">
-<h3>Reed Switch</h3>
-<div>
-<p><img src="./images/reed.jpg" width=500 style=""></img></p>
-</div>
-<p>A reed switch closes when a magnet is near it.</p>
-<div>
-<p><img src="./images/reed2.png" width=100% style="border: none"></img></p>
-</div>
-</section>
-</section>
-<section id="terminology" class="level2">
-<h2>Terminology</h2>
-<ul>
-<li>constants (<code>const</code>)</li>
-<li>digitalRead()</li>
-<li>pull-down and pull-up resistors</li>
-<li>momentary vs toggle switch</li>
-<li>conditional statements (<code>if</code>, <code>else</code>)</li>
-<li><code>==</code> vs <code>=</code>, <code>equals to</code>
-vs. <code>is assigned the value of</code></li>
-<li>internally connected legs</li>
-</ul>
-</section>
-</section></div>
+        </div>
+        <hr />
+        </section>
+        </section>
+        </section>
+        <section id="misc.-switches" class="level2">
+        <h2>Misc. Switches</h2>
+        <p>There are other types of switches that are worth
+        mentioning.</p>
+        <section id="tilt-switch" class="level3">
+        <h3>Tilt Switch</h3>
+        <div>
+        <p><img src="./images/mercury.webp" width=500 style=""></img></p>
+        </div>
+        <p>A tilt switch is a switch that completes the circuit
+        depending on its orientation to the force of gravity.</p>
+        <div>
+        <p><img src="./images/tilt_switch.png" width=500 style="border: none"></img></p>
+        </div>
+        <p>The thing inside could be a metallic ball or a bit of
+        mercury.</p>
+        </section>
+        <section id="reed-switch" class="level3">
+        <h3>Reed Switch</h3>
+        <div>
+        <p><img src="./images/reed.jpg" width=500 style=""></img></p>
+        </div>
+        <p>A reed switch closes when a magnet is near it.</p>
+        <div>
+        <p><img src="./images/reed2.png" width=100% style="border: none"></img></p>
+        </div>
+        </section>
+        </section>
+        <section id="terminology" class="level2">
+        <h2>Terminology</h2>
+        <ul>
+        <li>constants (<code>const</code>)</li>
+        <li>digitalRead()</li>
+        <li>pull-down and pull-up resistors</li>
+        <li>momentary vs toggle switch</li>
+        <li>conditional statements (<code>if</code>,
+        <code>else</code>)</li>
+        <li><code>==</code> vs <code>=</code>, <code>equals to</code>
+        vs. <code>is assigned the value of</code></li>
+        <li>internally connected legs</li>
+        </ul>
+        </section>
+        </section>
+      </div>
     </div>
 
     <!-- highlightjs badge -->
@@ -513,7 +574,7 @@ vs. <code>is assigned the value of</code></li>
 
     <script>
       // apply HighlightJS
-      var pres = document.querySelectorAll('pre>code');
+      var pres = document.querySelectorAll("pre>code");
       for (var i = 0; i < pres.length; i++) {
         hljs.highlightBlock(pres[i]);
       }
@@ -521,12 +582,12 @@ vs. <code>is assigned the value of</code></li>
       // add HighlightJS-badge (options are optional)
       var options = {
         // optional
-        contentSelector: '#ArticleBody',
+        contentSelector: "#ArticleBody",
 
         // CSS class(es) used to render the copy icon.
-        copyIconClass: 'fas fa-solid fa-clone',
+        copyIconClass: "fas fa-solid fa-clone",
         // CSS class(es) used to render the done icon.
-        checkIconClass: 'fas fa-check text-success',
+        checkIconClass: "fas fa-check text-success",
       };
       window.highlightJsBadge(options);
     </script>

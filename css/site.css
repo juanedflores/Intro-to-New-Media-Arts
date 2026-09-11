@@ -23,6 +23,11 @@
   src: url("../fonts/alegreya/AlegreyaSans-Black.ttf") format("truetype");
 }
 
+body,
+html {
+  background: rgb(210, 230, 250);
+}
+
 #ListBody > li {
   cursor: pointer !important;
 }
@@ -108,10 +113,6 @@ h2 {
 
 .uk-card-small {
   border-radius: 10px;
-}
-
-.mobile {
-  display: none;
 }
 
 h3,
@@ -229,7 +230,8 @@ nav {
   font-family: "Inter-Black";
 }
 
-#small-menu > li > a {
+#small-menu > li > a,
+#small-menu-sidebar > li > a {
   color: white;
   font-family: "Inter-Black";
   text-align: left;
@@ -291,7 +293,8 @@ h1 {
   z-index: 1;
 }
 
-#small-menu > li {
+#small-menu > li,
+#small-menu-sidebar > li {
   list-style-type: none;
 }
 
@@ -447,14 +450,6 @@ ul {
 @media screen and (max-width: 915px) {
   .uk-navbar-nav {
     display: none;
-  }
-
-  .desktop {
-    display: none;
-  }
-
-  .mobile {
-    display: block;
   }
 
   #left-col {

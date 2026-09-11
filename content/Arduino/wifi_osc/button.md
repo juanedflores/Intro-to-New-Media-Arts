@@ -16,7 +16,6 @@ Of course we should always look at the link provided in the block comment:
 
 <p><a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">Arduino Button Sketch: Official Arduino Documentation</a></p>
 
-
 <div>
 <img src="https://docs.arduino.cc/static/529466c29da40f5e0129591beec4f0ff/29114/circuit.png" width=100% style=""></img>
 </div>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/site.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -16,63 +16,37 @@
     />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <script src="js/jquery3.js"></script>
-    <script>
-      function table_hl() {
-        $("table").addClass("uk-table");
-        $("table").addClass("uk-table-striped");
-        $("table").addClass("uk-table-hover");
-        $("table").addClass("uk-table-middle");
-      }
-    </script>
     <script src="./js/load_pages.js"></script>
-    <script src="./js/styling.js"></script>
-    <style>
-      body,
-      html {
-        background: rgb(210, 230, 250);
-      }
-    </style>
+    <script src="./js/resize.js"></script>
   </head>
 
   <body onresize="resize_function()">
     <div>
+      <!-- THE TOP MENU -->
       <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
         <button
           id="menu_button"
-          class="uk-button uk-button-default desktop"
+          class="uk-button uk-button-default"
           type="button"
           style="border: none; background: rgb(243, 201, 91)"
-          uk-toggle="target: #small-menu"
+          onclick="toggleMenu('small-menu-sidebar')"
         >
-          <span
-            class="fas fa-bars fa-2xl"
-            style="color: #4444dd; background: rgb(243, 201, 91)"
-          ></span>
+          <span class="fas fa-bars fa-2xl" style="color: #4444dd"></span>
         </button>
-        <button
-          id="menu_button"
-          class="uk-button uk-button-default mobile"
-          type="button"
-          style="border: none; background: rgb(243, 201, 91)"
-          uk-toggle="target: #offcanvas-usage"
-        >
-          <span
-            class="fas fa-bars fa-2xl"
-            style="color: #4444dd; background: rgb(243, 201, 91)"
-          ></span>
-        </button>
-        <div class="nav-overlay uk-navbar-left">
+        <div class="uk-navbar-left">
           <a class="uk-navbar-item uk-logo" href="#">INTRO TO NEW MEDIA ART</a>
-          <ul class="uk-navbar-nav" style="">
-            <li class="uk-active" style="">
+          <ul class="uk-navbar-nav">
+            <li class="uk-active">
               <a href="index.html">Home / Week Overview</a>
             </li>
-            <li class=""><a href="content/arena.html">Are.na Profiles</a></li>
-            <li class="">
+            <li><a href="content/arena.html">Are.na Profiles</a></li>
+            <li>
               <a href="content/arduino_sketches.html">Arduino</a>
             </li>
           </ul>
         </div>
+
+        <!-- THE OFFCANVAS SIDEBAR FOR MOBILE -->
         <div
           style="background: #222222; width: 275px"
           id="offcanvas-usage"
@@ -90,7 +64,7 @@
                 >Home / Week Overview</a
               >
             </li>
-            <li class="" style="list-style-type: none">
+            <li style="list-style-type: none">
               <a
                 style="padding: 0"
                 class="uk-button"
@@ -112,14 +86,16 @@
             <hr />
             <ul
               class="week-nav-list uk-nav-default uk-nav-parent-icon uk-nav"
-              uk-switcher="connect: .week-content"
+              uk-switcher
             ></ul>
           </div>
         </div>
       </nav>
+
+      <!-- THE LEFT SIDEBAR ON DESKTOP -->
       <aside id="left-col" class="uk-light">
         <div class="bar-wrap" style="padding-top: 100px">
-          <div id="small-menu">
+          <div id="small-menu-sidebar">
             <hr />
             <li>
               <a
@@ -133,10 +109,11 @@
           <hr />
           <ul
             class="week-nav-list uk-nav-default uk-nav-parent-icon uk-nav"
-            uk-switcher="connect: .week-content"
+            uk-switcher
           ></ul>
         </div>
       </aside>
+
       <div id="right-col"></div>
     </div>
     <script>

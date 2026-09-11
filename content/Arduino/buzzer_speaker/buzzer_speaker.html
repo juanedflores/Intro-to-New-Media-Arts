@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html  dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -11,28 +11,47 @@
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
     <script src="../../../js/uikit.min.js"></script>
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
-      < !--Ajax Style-- >
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
     <!-- Code Style -->
     <link rel="stylesheet" href="../../../css/pojoaque.css" />
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
     <script src="../../../js/highlight.min.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- hljs -->
     <script>
@@ -48,12 +67,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -184,7 +203,7 @@
 
     <!-- Blog Style CSS -->
     <link rel="stylesheet" href="../../../css/blog_style.css" />
-    <link rel="stylesheet" href="../../../css/custom.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
 
     <!-- Includes other header content if needed -->
     
@@ -194,15 +213,31 @@
 
   <body class="uk-background-fixed">
     <!-- NAV AND HEADING -->
-    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
-      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
-        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
       </button>
 
       <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html"></a></li>
+          <li class="uk-active" style="pointer-events: none">
+            <a href="index.html"></a>
+          </li>
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
@@ -211,9 +246,16 @@
     </nav>
 
     <!-- OFFCANVAS -->
-    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
       <!-- TABLE OF CONTENTS -->
-      <div id="blog-toc" style="top: 80px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div><ul>
@@ -231,39 +273,40 @@ Mind:</a></li>
       </div>
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll"><section
-id="buzzer-speaker-workshop" class="level1">
-<h1>Buzzer Speaker Workshop</h1>
-<section id="materials" class="level2">
-<h2>Materials</h2>
-<p>For this workshop, please collect the following:</p>
-<ul>
-<li>Arduino Nano 33 IoT</li>
-<li>Breadboard</li>
-<li>Buzzer</li>
-</ul>
-</section>
-<section id="buzzers" class="level2">
-<h2>Buzzers</h2>
-<p>It’s super easy to use piezo buzzers with Arduino’s tone() function.
-Just wire up the buzzer to pin 10 and then to GND with a resistor. The
-tone() function needs 2 arguments, but can take three:</p>
-<ul>
-<li>Pin#</li>
-<li>Frequency - this is in hertz (cycles per second) which determines
-the pitch of the noise made</li>
-<li>Duration (optional) - how long the tone plays. If you don’t use the
-duration argument, you should have a delay() function following the tone
-instead.</li>
-</ul>
-<p>Here’s a simple example:</p>
-<figure>
-<img
-src="https://nathanmelenbrink.github.io/lab/output/buzzer/buzzer_uno.png"
-alt="|400" />
-<figcaption aria-hidden="true">|400</figcaption>
-</figure>
-<pre class="arduino"><code>int buzzerPin = 10;
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="buzzer-speaker-workshop" class="level1">
+        <h1>Buzzer Speaker Workshop</h1>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <p>For this workshop, please collect the following:</p>
+        <ul>
+        <li>Arduino Nano 33 IoT</li>
+        <li>Breadboard</li>
+        <li>Buzzer</li>
+        </ul>
+        </section>
+        <section id="buzzers" class="level2">
+        <h2>Buzzers</h2>
+        <p>It’s super easy to use piezo buzzers with Arduino’s tone()
+        function. Just wire up the buzzer to pin 10 and then to GND with
+        a resistor. The tone() function needs 2 arguments, but can take
+        three:</p>
+        <ul>
+        <li>Pin#</li>
+        <li>Frequency - this is in hertz (cycles per second) which
+        determines the pitch of the noise made</li>
+        <li>Duration (optional) - how long the tone plays. If you don’t
+        use the duration argument, you should have a delay() function
+        following the tone instead.</li>
+        </ul>
+        <p>Here’s a simple example:</p>
+        <figure>
+        <img
+        src="https://nathanmelenbrink.github.io/lab/output/buzzer/buzzer_uno.png"
+        alt="|400" />
+        <figcaption aria-hidden="true">|400</figcaption>
+        </figure>
+        <pre class="arduino"><code>int buzzerPin = 10;
 
 void setup() {
     pinMode(buzzerPin, OUTPUT);
@@ -273,13 +316,14 @@ void loop() {
     tone(buzzerPin, 1000, 500);
     delay(1000);
 }</code></pre>
-<p>Note: there have been some issues with the tone() function not
-working properly with some microcontrollers. In some cases, the tone()
-function causes the program to not compile. In other cases, it compiles
-fine but fails to produce sounds. If you experience problems, we
-recommend pasting the myTone() function below, and using it in the same
-way. So the above example would look like this:</p>
-<pre class="arduino"><code>int buzzerPin = 10;
+        <p>Note: there have been some issues with the tone() function
+        not working properly with some microcontrollers. In some cases,
+        the tone() function causes the program to not compile. In other
+        cases, it compiles fine but fails to produce sounds. If you
+        experience problems, we recommend pasting the myTone() function
+        below, and using it in the same way. So the above example would
+        look like this:</p>
+        <pre class="arduino"><code>int buzzerPin = 10;
 
 void setup() {
     pinMode(buzzerPin, OUTPUT);
@@ -300,46 +344,50 @@ void myTone(int pin, int frequency, int duration){
         delayMicroseconds(period/2);
     }
 }</code></pre>
-</section>
-<section id="some-things-to-keep-in-mind" class="level2">
-<h2>Some Things to Keep in Mind:</h2>
-<ul>
-<li>The tone() function uses one of the built in timers on the Arduino’s
-microcontoller. tone() works independently of the delay() function. You
-can start a tone and do other stuff – while the tone is playing in the
-background. Therefore, if you use 500 milliseconds as the third argument
-in tone(), and follow that by a delay of 1000 milliseconds, you will
-only be creating a “rest” of 500 milliseconds.</li>
-<li>You cannot generate a tone lower than 31 HZ. You can pass values 31
-and less to the tone() function, but it doesn’t mean you will get a good
-representation of it.</li>
-<li>The tone() function cannot be used by two separate pins at the same
-time. Let’s say you have two separate piezo speakers, each on a
-different pin. You can’t have them both play at the same time. One has
-to be on, and then the other. Furthermore, before you can have the other
-pin use the tone() function, you must call the noTone() function and
-“turn off” the tone from the previous pin.</li>
-</ul>
-<hr />
-<p>Being able to combine multiple example sketches into one is a very
-useful skill. See if you can combine the buzzer with a sketch you made
-for an input device like a potentiometer.</p>
-<hr />
-<p>Getting a buzzer to make noise is simple, but composing music is not.
-There are plenty of reference tables for frequencies of musical notes,
-but timing notes is also tricky. Check out some examples of classic
-tunes arranged for Arduino:</p>
-<ul>
-<li><a
-href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Airduino
-Melody</a></li>
-<li><a href="https://www.princetronics.com/supermariothemesong/">Super
-Mario Theme Song</a></li>
-<li><a href="https://github.com/robsoncouto/arduino-songs">More
-Songs</a></li>
-</ul>
-</section>
-</section></div>
+        </section>
+        <section id="some-things-to-keep-in-mind" class="level2">
+        <h2>Some Things to Keep in Mind:</h2>
+        <ul>
+        <li>The tone() function uses one of the built in timers on the
+        Arduino’s microcontoller. tone() works independently of the
+        delay() function. You can start a tone and do other stuff –
+        while the tone is playing in the background. Therefore, if you
+        use 500 milliseconds as the third argument in tone(), and follow
+        that by a delay of 1000 milliseconds, you will only be creating
+        a “rest” of 500 milliseconds.</li>
+        <li>You cannot generate a tone lower than 31 HZ. You can pass
+        values 31 and less to the tone() function, but it doesn’t mean
+        you will get a good representation of it.</li>
+        <li>The tone() function cannot be used by two separate pins at
+        the same time. Let’s say you have two separate piezo speakers,
+        each on a different pin. You can’t have them both play at the
+        same time. One has to be on, and then the other. Furthermore,
+        before you can have the other pin use the tone() function, you
+        must call the noTone() function and “turn off” the tone from the
+        previous pin.</li>
+        </ul>
+        <hr />
+        <p>Being able to combine multiple example sketches into one is a
+        very useful skill. See if you can combine the buzzer with a
+        sketch you made for an input device like a potentiometer.</p>
+        <hr />
+        <p>Getting a buzzer to make noise is simple, but composing music
+        is not. There are plenty of reference tables for frequencies of
+        musical notes, but timing notes is also tricky. Check out some
+        examples of classic tunes arranged for Arduino:</p>
+        <ul>
+        <li><a
+        href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Airduino
+        Melody</a></li>
+        <li><a
+        href="https://www.princetronics.com/supermariothemesong/">Super
+        Mario Theme Song</a></li>
+        <li><a href="https://github.com/robsoncouto/arduino-songs">More
+        Songs</a></li>
+        </ul>
+        </section>
+        </section>
+      </div>
     </div>
 
     <!-- highlightjs badge -->
@@ -347,7 +395,7 @@ Songs</a></li>
 
     <script>
       // apply HighlightJS
-      var pres = document.querySelectorAll('pre>code');
+      var pres = document.querySelectorAll("pre>code");
       for (var i = 0; i < pres.length; i++) {
         hljs.highlightBlock(pres[i]);
       }
@@ -355,12 +403,12 @@ Songs</a></li>
       // add HighlightJS-badge (options are optional)
       var options = {
         // optional
-        contentSelector: '#ArticleBody',
+        contentSelector: "#ArticleBody",
 
         // CSS class(es) used to render the copy icon.
-        copyIconClass: 'fas fa-solid fa-clone',
+        copyIconClass: "fas fa-solid fa-clone",
         // CSS class(es) used to render the done icon.
-        checkIconClass: 'fas fa-check text-success',
+        checkIconClass: "fas fa-check text-success",
       };
       window.highlightJsBadge(options);
     </script>
