@@ -455,8 +455,11 @@ ul {
    nothing - see load_pages.js toggleMenu). It's an <a>, not a <button>,
    so it needs explicit centering that a real button would get for free.
    The same id/width is reused on Blog and Arduino pages for the
-   always-on table-of-contents toggle button, so both line up. */
-#menu_button {
+   always-on table-of-contents toggle button, so both line up.
+   video_toggle_button (the plain/video-walkthrough switch on Blog posts
+   that have a video) matches the same box so the nav stays consistent. */
+#menu_button,
+#video_toggle_button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,9 +470,10 @@ ul {
   display: none !important;
 }
 
-/* Covers the icon on both the main site's #menu_button and the
-   always-on table-of-contents toggle on Blog/Arduino pages. */
-#menu_button .fa-bars {
+/* Covers the icon on the main site's #menu_button, the always-on
+   table-of-contents toggle, and the video/plain toggle on Blog pages. */
+#menu_button .fa-bars,
+#video_toggle_button .fas {
   font-size: 34px;
 }
 

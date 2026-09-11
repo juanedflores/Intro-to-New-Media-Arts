@@ -23,10 +23,14 @@ function onClassChange(node, callback) {
   return mutationObserver;
 }
 
-onClassChange(node, (observer) => {
-  console.log("triggered");
-  scrollToHeading();
-});
+// #trigger1 is a page-specific transcript marker (e.g. the Keyboard post's
+// "code breakdown" section) - pages without one just skip this feature.
+if (node) {
+  onClassChange(node, (observer) => {
+    console.log("triggered");
+    scrollToHeading();
+  });
+}
 
 function scrollToHeading() {
   const section = document.getElementById("keyboardserial-code-breakdown");

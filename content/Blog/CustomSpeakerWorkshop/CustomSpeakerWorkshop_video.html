@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html dir="ltr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="pandoc" name="generator"/>
+<title></title>
+<!-- UIKit files -->
+<link href="../../../css/uikit.min.css" rel="stylesheet"/>
+<script src="../../../js/uikit.min.js"></script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Favicon -->
+<link href="../../resources/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<!-- JQuery -->
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+<!-- Code Style -->
+<link href="../../../css/pojoaque.css" rel="stylesheet"/>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
+<script src="../../../js/highlight.min.js"></script>
+<!-- Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;display=swap" rel="stylesheet"/>
+<link href="../../../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<!-- Plyr -->
+<script src="../../../js/plyr.js"></script>
+<link href="../../../css/plyr.css" rel="stylesheet"/>
+<!-- Hyperaudio-lite -->
+<link href="../../../css/hyperaudio-lite-player.css" rel="stylesheet"/>
+<script src="../../../js/velocity.js"></script>
+<!-- <script src="https://cdn.plyr.io/3.8.4/plyr.js"></script> -->
+<!-- hljs -->
+<script>
+      hljs.highlightAll();
+    </script>
+<style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+<!-- Makes Inline Code Similar Style to hljs theme -->
+<script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+<style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+<style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+<!--background: #555 !important;-->
+<!-- Blog Style CSS -->
+<link href="../../../css/blog_style.css" rel="stylesheet">
+<link href="../../../css/site.css" rel="stylesheet"/>
+<link href="../../../css/split_screen.css" rel="stylesheet"/>
+<!-- Includes other header content if needed -->
+</link></head>
+<!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
+<body class="uk-background-fixed" style="">
+<!-- NAV AND HEADING -->
+<nav class="uk-flex uk-flex-left" style="background-color: rgb(197, 75, 59); height: 80" uk-sticky="">
+<button class="uk-button uk-button-default" id="menu_button" style="border: none; background: rgb(243, 201, 91)" type="button" uk-toggle="target: #blog-toc">
+<span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+</button>
+<a class="uk-button uk-button-default" href="CustomSpeakerWorkshop.html" id="video_toggle_button" style="border: none; background: rgb(243, 201, 91)" title="Read without video">
+<span class="fas fa-file-lines" style="color: #4444dd"></span>
+</a>
+<div class="nav-overlay uk-navbar-left">
+<a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+<ul class="uk-navbar-nav" style="">
+<li class="uk-active" style="pointer-events: none"><a href="index.html">Custom
+Speaker Workshop</a></li>
+</ul>
+</div>
+</nav>
+<!-- OFFCANVAS -->
+<div class="uk-align-center uk-margin-remove-top uk-width-1-1@l uk-width-2-3@m" id="contentArea" style="">
+<div id="split-container">
+<div class="panel left" id="leftPanel"><section class="level1" id="diy-speakers">
+<h1>DIY Speakers</h1>
+<section class="level2" id="intro">
+<h2>Intro</h2>
+<p>ddfasdff</p>
+<p>How do you listen to music? Whether you use headphones or a large
+sound system you are undoubtedly using some combination of speakers, but
+how do speakers create sound? In this activity you will construct your
+own speaker in order to learn how electromagnetism is used to fill the
+air with sound.</p>
+<p>The sound we hear is a result of our brains interpreting the changes
+in air pressure detected by our ear drums. These changes in air pressure
+are what we call sound waves. When air is mechanically compressed and
+stretched the air molecules bump into each other, causing the pattern to
+move through the air where it hits your eardrum and your brain
+interprets it as a sound. This mechanical stretching and compressing of
+the air is caused by physical objects vibrating at various frequencies
+in the world around you. The faster the vibrations are the higher the
+frequency of the sound waves created, which your brain interprets as a
+higher pitched sound.</p>
+<section class="level3" id="what-is-a-speaker">
+<h3>What is a Speaker?</h3>
+<p><img src="https://geekpackhack.com/wp-content/uploads/2020/01/Parts-of-a-speaker-image.jpg" width="70%"/></p>
+<p>A speaker is an electro‐mechanical device designed to transform
+electric signals into mechanical motions that generate sound. Sounds are
+typically stored on a computer as a compressed file that contains
+information about the frequency and intensity of the sound. When these
+files are “played” the computer decompresses the file and sends electric
+signals corresponding to the sound data through whatever output medium
+you are using. These electric signals turn on an electro‐magnet, called
+the voice coil, which reverses polarity depending on the signals it is
+receiving. A permanent magnet, located either inside the electro‐magnet,
+or surrounding it, forces the electro‐magnet to move up and down as the
+polarity changes. This up and down motion is amplified by a diaphragm
+affixed to the electro‐ magnet. As the diaphragm vibrates
+back‐and‐forth, it creates sound waves.</p>
+</section>
+<section class="level3" id="what-you-will-need">
+<h3>What you will need</h3>
+<blockquote class="info">
+<span class="uk-label">Materials Needed</span>
+<ul>
+<li>
+[x] A cup or alternative
+</li>
+<li>
+[x] Copper Wire
+</li>
+<li>
+[x] A permanent Magnet
+</li>
+<li>
+[x] audio cable
+</li>
+<li>
+[x] 2 alligator clips
+</li>
+<li>
+[x] Breadboard
+</li>
+<li>
+[x] Audio Amplifier Module
+</li>
+</ul>
+</blockquote>
+</section>
+<section class="level3" id="steps">
+<h3>Steps</h3>
+<ul>
+<li>Create an electromagnet (by making a coil with copper wire)</li>
+<li>Tape electromagnet to cup and connect the 2 wires to amplifier.</li>
+<li>Connect audio cable wires to amplifier.</li>
+<li>Power the amplifier with 5V.</li>
+<li>Connect audio jack to audio playing device.</li>
+</ul>
+<p>After this works, try with 8ohm speaker!</p>
+<p>Then try with Piezoelectric Disk.</p>
+</section>
+<section class="level3" id="construction">
+<h3>Construction</h3>
+<p>Video for those who missed class:</p>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="400" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/liSEwqdq7aA?si=IDP36FucyuIPw4-N&amp;controls=0" title="YouTube video player" width="100%">
+</iframe>
+</section>
+<section class="level3" id="further-material">
+<h3>Further Material</h3>
+<ul>
+<li><a href="https://konp.plusea.at/?p=24">A Kit-of-No-Parts
+Workshops</a></li>
+<li><a href="https://sites.temple.edu/tudsc/2023/09/20/building-a-paper-speaker-from-scratch/">Temple
+U Paper Speaker</a></li>
+<li><a href="https://www.instructables.com/Electromagnetic-Microphone/">Electromagnetic-Microphone</a></li>
+<li><a href="https://www.instructables.com/Simplified-Electronics-Microphone-DIY-How-It-Works/">Make
+a Microphone Instructables</a></li>
+</ul>
+</section>
+</section>
+</section></div>
+<div class="resizer" id="resizer" style="user-select: none;"></div>
+<div class="panel right" id="rightPanel">
+<iframe allow="autoplay" data-player-type="youtube" frameborder="no" height="480" id="hyperplayer" src="https://www.youtube.com/embed/CiSic6okKtY?enablejsapi=1" width="100%">
+</iframe>
+<div class="hyperaudio-transcript" id="hypertranscript" style="overflow-y:scroll; height:600px; position:relative; border-style:dashed; border-width: 1px; border-color:black; padding: 8px"><article>
+<section>
+<p>
+<span data-d="2" data-m="2949">con </span><span data-d="2" data-m="2952">módulos </span><span data-d="2" data-m="2954">de </span><span data-d="2" data-m="2956">arduino </span><span data-d="359" data-m="4395">nanos </span><span data-d="359" data-m="4754">que </span><span data-d="359" data-m="5114">reciben </span><span data-d="359" data-m="5473">señales </span><span data-d="359" data-m="5832">o </span><span data-d="359" data-m="6191">radio </span><span data-d="359" data-m="6550">de </span><span data-d="284" data-m="8906">frecuencia </span><span data-d="399" data-m="9599">modulada </span><span data-d="399" data-m="9997">y </span><span data-d="399" data-m="10396">es </span><span data-d="399" data-m="10794">como </span><span data-d="399" data-m="11193">una </span><span data-d="399" data-m="11591">comunicación </span><span data-d="252" data-m="13515">inalámbrica </span><span data-d="252" data-m="13768">que </span><span data-d="252" data-m="14020">juego </span><span data-d="252" data-m="14272">con </span><span data-d="252" data-m="14525">el </span><span data-d="252" data-m="14778">instrumento </span><span data-d="245" data-m="16512">durante </span><span data-d="245" data-m="16758">la </span><span data-d="245" data-m="17003">activación </span><span data-d="245" data-m="17248">juego </span><span data-d="245" data-m="17494">con </span><span data-d="245" data-m="17739">la </span><span data-d="245" data-m="17985">rueda </span><span data-d="138" data-m="19203">lo </span><span data-d="138" data-m="19341">estoy </span><span data-d="138" data-m="19479">estoy </span><span data-d="138" data-m="19616">interactuando </span><span data-d="138" data-m="19754">con </span><span data-d="138" data-m="19891">la </span><span data-d="294" data-m="21801">rueda </span><span data-d="294" data-m="22094">para </span><span data-d="294" data-m="22388">explorar </span><span data-d="294" data-m="22682">los </span><span data-d="294" data-m="22975">diferentes </span><span data-d="149" data-m="24025">sonidos </span><span data-d="149" data-m="24174">que </span><span data-d="149" data-m="24324">salen </span><span data-d="149" data-m="24473">de </span><span data-d="149" data-m="24622">los </span><span data-d="149" data-m="24772">bocinas </span><span data-d="149" data-m="24921">que </span><span data-d="226" data-m="26662">están </span><span data-d="226" data-m="26888">alrededor </span><span data-d="226" data-m="27114">de </span><span data-d="226" data-m="27340">de </span><span data-d="226" data-m="27566">la </span><span data-d="226" data-m="27792">rueda </span><span data-d="226" data-m="28018">y </span><span data-d="226" data-m="28244">los </span><span data-d="172" data-m="29860">sonidos </span><span data-d="172" data-m="30032">son </span><span data-d="172" data-m="30205">consisten </span><span data-d="172" data-m="30378">de </span><span data-d="291" data-m="31724">Ruido </span><span data-d="291" data-m="32015">Blanco </span><span data-d="291" data-m="32306">estaciones </span><span data-d="291" data-m="32597">de </span><span data-d="291" data-m="32888">radio </span><span data-d="291" data-m="33179">de </span><span data-d="306" data-m="35315">tonos </span><span data-d="306" data-m="35621">que </span><span data-d="306" data-m="35927">son </span><span data-d="306" data-m="36232">generados </span><span data-d="306" data-m="36538">desde </span><span data-d="306" data-m="36844">Max </span><span data-d="214" data-m="38441">msp </span><span data-d="214" data-m="38655">bueno </span><span data-d="214" data-m="38869">no </span><span data-d="214" data-m="39082">creo </span><span data-d="214" data-m="39296">que </span><span data-d="214" data-m="39509">hay </span><span data-d="214" data-m="39723">nada </span><span data-d="214" data-m="39936">malo </span><span data-d="266" data-m="42288">decir </span><span data-d="266" data-m="42554">que </span><span data-d="266" data-m="42820">es </span><span data-d="266" data-m="43086">como </span><span data-d="266" data-m="43352">curiosidad </span><span data-d="266" data-m="43618">me </span><span data-d="266" data-m="43884">interesó </span><span data-d="212" data-m="45641">hacer </span><span data-d="212" data-m="45852">como </span><span data-d="212" data-m="46064">una </span><span data-d="212" data-m="46275">especie </span><span data-d="212" data-m="46487">de </span><span data-d="212" data-m="46698">tocadiscos </span><span data-d="264" data-m="48503">pero </span><span data-d="264" data-m="48767">con </span><span data-d="264" data-m="49031">bocinas </span><span data-d="264" data-m="49295">pero </span><span data-d="264" data-m="49558">quería </span><span data-d="264" data-m="49822">saber </span><span data-d="264" data-m="50086">cómo </span><span data-d="295" data-m="52422">funcionaría </span><span data-d="295" data-m="52716">cómo </span><span data-d="295" data-m="53011">funcionaría </span><span data-d="295" data-m="53305">si </span><span data-d="295" data-m="53600">era </span><span data-d="295" data-m="53894">un </span><span data-d="473" data-m="57036">instrumento </span><span data-d="2" data-m="61069">y </span><span data-d="2" data-m="61071">el </span><span data-d="2" data-m="61073">título </span><span data-d="2" data-m="61075">viene </span><span data-d="2" data-m="61077">de </span><span data-d="603" data-m="64094">de </span><span data-d="603" data-m="64697">de </span><span data-d="603" data-m="65300">la </span><span data-d="603" data-m="65903">cultura </span><span data-d="603" data-m="66506">Hol </span><span data-d="1" data-m="71990">oica </span><span data-d="1" data-m="71991">y </span><span data-d="1" data-m="71993">para </span><span data-d="1" data-m="71994">decirlo </span><span data-d="1" data-m="71996">simplemente </span><span data-d="1" data-m="71997">es </span><span data-d="1" data-m="71999">una </span><span data-d="365" data-m="74557">conexión </span><span data-d="365" data-m="74922">con </span><span data-d="365" data-m="75288">los </span><span data-d="365" data-m="75653">puntos </span><span data-d="365" data-m="76018">cardinales </span><span data-d="365" data-m="76384">de </span><span data-d="245" data-m="78232">del </span><span data-d="245" data-m="78477">universo </span><span data-d="245" data-m="78723">en </span><span data-d="245" data-m="78968">la </span><span data-d="245" data-m="79214">cultura </span><span data-d="245" data-m="79459">que </span><span data-d="245" data-m="79705">es </span><span data-d="336" data-m="82315">oriente </span><span data-d="336" data-m="82651">poniente </span><span data-d="336" data-m="82988">sur </span><span data-d="336" data-m="83324">y </span><span data-d="336" data-m="83661">Norte </span><span data-d="336" data-m="83997">y </span><span data-d="336" data-m="84334">centro </span><span data-d="253" data-m="86448">y </span><span data-d="253" data-m="86701">el </span><span data-d="253" data-m="86953">creo </span><span data-d="253" data-m="87206">que </span><span data-d="253" data-m="87459">la </span><span data-d="253" data-m="87711">rueda </span><span data-d="253" data-m="87964">lo </span><span data-d="253" data-m="88216">representa </span><span data-d="134" data-m="89554">fácilmente </span><span data-d="134" data-m="89689">solo </span><span data-d="134" data-m="89823">porque </span><span data-d="134" data-m="89958">es </span><span data-d="134" data-m="90092">una </span><span data-d="134" data-m="90227">Rueda </span><span data-d="134" data-m="90361">y </span><span data-d="134" data-m="90496">la </span><span data-d="207" data-m="92295">vida </span><span data-d="207" data-m="92502">es </span><span data-d="207" data-m="92709">circular </span><span data-d="207" data-m="92916">y </span><span data-d="207" data-m="93122">creo </span><span data-d="207" data-m="93329">que </span><span data-d="207" data-m="93536">he </span><span data-d="207" data-m="93743">aprendido </span><span data-d="245" data-m="95917">mucho </span><span data-d="245" data-m="96162">con </span><span data-d="245" data-m="96407">los </span><span data-d="245" data-m="96651">otros </span><span data-d="245" data-m="96896">residentes </span><span data-d="245" data-m="97141">como </span><span data-d="245" data-m="97385">las </span><span data-d="342" data-m="100033">pláticas </span><span data-d="342" data-m="100374">y </span><span data-d="342" data-m="100716">y </span><span data-d="342" data-m="101058">y </span><span data-d="342" data-m="101400">ese </span><span data-d="342" data-m="101742">tipo </span><span data-d="342" data-m="102084">de </span><span data-d="342" data-m="102425">de </span><span data-d="342" data-m="102767">de </span><span data-d="181" data-m="104747">retroalimentación </span><span data-d="181" data-m="104928">y </span><span data-d="459" data-m="106037">discusión </span><span data-d="459" data-m="106496">entre </span><span data-d="459" data-m="106955">nosotros </span><span data-d="459" data-m="107414">y </span><span data-d="459" data-m="107873">la </span><span data-d="459" data-m="108332">a </span><span data-d="459" data-m="108791">ver </span><span data-d="459" data-m="109250">sus </span><span data-d="413" data-m="113026">procesos </span><span data-d="413" data-m="113440">también </span><span data-d="413" data-m="113853">me </span><span data-d="413" data-m="114266">ha </span><span data-d="413" data-m="114680">ayudado </span><span data-d="413" data-m="115093">pero </span><span data-d="413" data-m="115507">a </span></p>
+</section>
+</article>
+</div>
+</div>
+<div class="uk-offcanvas-bar" id="blog-toc" style="position: relative; left: 0;">
+<h3 style="color: white">Table of Contents</h3>
+<div class="toc-panel"><ul>
+<li><a href="#diy-speakers" id="toc-diy-speakers">DIY Speakers</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a>
+<ul>
+<li><a href="#what-is-a-speaker" id="toc-what-is-a-speaker">What is a
+Speaker?</a></li>
+<li><a href="#what-you-will-need" id="toc-what-you-will-need">What you
+will need</a></li>
+<li><a href="#steps" id="toc-steps">Steps</a></li>
+<li><a href="#construction" id="toc-construction">Construction</a></li>
+<li><a href="#further-material" id="toc-further-material">Further
+Material</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
+</div>
+</div>
+</div>
+<script src="../../../js/split_screen.js"></script>
+<script src="../../../js/handleVideoPlayers.js"></script>
+<!-- hyperaudio-lite -->
+<script src="../../../js/hyperaudio-lite.js"></script>
+<script src="../../../js/hyperaudio-lite-extension.js"></script>
+<script>
+      // minimizedMode is still experimental - it aims to show the current words in the title, which can be seen on the browser tab.
+      let minimizedMode = false;
+      let autoScroll = true;
+      let doubleClick = false;
+      let webMonetization = false;
+      let playOnClick = false;
+
+      new HyperaudioLite("hypertranscript", "hyperplayer", minimizedMode, autoScroll, doubleClick, webMonetization, playOnClick);
+    </script>
+<br/>
+<br/>
+<br/>
+<!-- highlightjs badge -->
+<script src="../../../js/highlightjs-badge.js"></script>
+<script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: '#leftPanel',
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fas fa-solid fa-clone',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fas fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+<script src="../../../js/styling.js"></script>
+</body>
+</html>

@@ -1,10 +1,13 @@
 ---
 title: Custom Speaker Workshop
+video: https://www.youtube.com/watch?v=CiSic6okKtY 
 ---
 
 # DIY Speakers
 
 ## Intro
+
+ddfasdff
 
 How do you listen to music? Whether you use headphones or a large sound system you are undoubtedly using some combination of speakers, but how do speakers create sound? In this activity you will construct your own speaker in order to learn how electromagnetism is used to fill the air with sound.
 
