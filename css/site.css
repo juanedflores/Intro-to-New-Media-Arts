@@ -449,6 +449,22 @@ ul {
   padding: 20px;
 }
 
+/* menu_button shows an icon on mobile (where it opens the offcanvas
+   drawer) and an "ART 150" label on desktop (where it currently does
+   nothing - see load_pages.js toggleMenu). */
+.menu-btn-icon {
+  display: none !important;
+}
+
+.menu-btn-label {
+  display: block;
+  font-family: "AlegreyaSansSC-Black";
+  font-size: 1.3rem;
+  line-height: 1.1;
+  text-align: center;
+  color: #4444dd;
+}
+
 @media screen and (max-width: 915px) {
   .uk-navbar-nav {
     display: none;
@@ -461,6 +477,14 @@ ul {
   #right-col {
     margin-left: 0px;
     border: none;
+  }
+
+  .menu-btn-icon {
+    display: inline-block !important;
+  }
+
+  .menu-btn-label {
+    display: none;
   }
 }
 

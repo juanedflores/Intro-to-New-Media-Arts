@@ -1,20 +1,9 @@
-// One menu button per page toggles a different target depending on
-// viewport width: the mobile offcanvas drawer below 915px (the same
-// breakpoint used elsewhere for the .desktop/.mobile layout switch),
-// or a small inline menu above it.
-//
-// The small-menu panel is toggled via the plain "hidden" attribute
-// rather than UIkit.toggle(...).toggle(): that component's internal
-// toggled-state tracking doesn't reliably match the element's actual
-// DOM state when created fresh via the JS API instead of a
-// declarative uk-toggle attribute, and gave inconsistent results
-// across pages in testing. The offcanvas drawer is a genuinely
-// animated component (slide-in, backdrop, escape handling), so it
-// still goes through UIkit's own API rather than being reimplemented.
-function toggleMenu(desktopTargetId) {
-  if (window.innerWidth > 915) {
-    document.getElementById(desktopTargetId).toggleAttribute("hidden");
-  } else {
+// The menu button only does something below the 915px breakpoint (the
+// same one used elsewhere for the .desktop/.mobile layout switch): it
+// opens/closes the mobile offcanvas drawer. On desktop the sidebar is
+// already always visible, so the button intentionally does nothing.
+function toggleMenu() {
+  if (window.innerWidth <= 915) {
     UIkit.offcanvas("#offcanvas-usage").toggle();
   }
 }
