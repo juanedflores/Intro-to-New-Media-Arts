@@ -22,14 +22,14 @@ Today we are looking at what 3 artists you all chose to link in your Are.na rese
 
 ### AGENDA:
 
-- Are.na checkin
+- Are.na check-in
 - Looking at your research and discussion
 - Intro to TinkerCAD
 - Multimeter Demo
 - Paper Circuits
 - TinkerCAD Ohms Law, Parellel and Series
 
-### Topics
+### TOPICS:
 
 ::: {.topics}
 
@@ -53,33 +53,26 @@ Today we are looking at what 3 artists you all chose to link in your Are.na rese
 
 :::
 
-### Supplementary Material
+### SUPPLEMENTARY MATERIAL:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qG1TvHkE8J4?si=SFJkVNFtuD6CPMDW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+::: {.topics}
 
-<br>
+::: {.card type="video" title="Electronics 1: Fundamentals" thumb="https://img.youtube.com/vi/SGvOmwZvhVk/0.jpg" href="https://www.youtube.com/watch?v=SGvOmwZvhVk"}
+:::
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SGvOmwZvhVk?si=o8FJIdctVGWd6Qct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+::: {.card type="video" title="Electronics 2: Fundamentals" thumb="https://img.youtube.com/vi/RWRbSn4uDow/0.jpg" href="https://www.youtube.com/watch?v=RWRbSn4uDow"}
+:::
 
-<br>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X_crwFuPht4?si=vqZozjdt20niplFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<br>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RWRbSn4uDow?si=vbTJce2_cvDjeya7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<br>
-
-#### Parallel Paper Circuit
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P-eOtQAcD1s?si=4WV8IUocr-cDYgXt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+::: {.card type="video" title="An Intuitive Approach" thumb="https://img.youtube.com/vi/X_crwFuPht4/0.jpg" href="https://www.youtube.com/watch?v=X_crwFuPht4"}
+:::
+ 
+:::
 
 :::
 
 :::
 
-### Next Week
+### NEXT WEEK:
 
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->

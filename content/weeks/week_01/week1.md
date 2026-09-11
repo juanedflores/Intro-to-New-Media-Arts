@@ -74,5 +74,5 @@ Please let me know if you do not have a laptop. You will need to have it in clas
 
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
-We'll continue getting comfortable with the Arduino Nano 33 IoT, covering its IMU (accelerometer and gyroscope) and real-time clock features.
+Next week we will look into more niche topics. Glitch, Hacking, Machinima, AI and more.
 :::

@@ -36,14 +36,16 @@ html {
   padding-left: 0;
 }
 
-#ArticleBodyMain > section > h1 {
+#right-col > section > h1 {
   background-color: rgb(243, 201, 91);
-  margin: 30px;
+  margin: 0;
   color: rgb(56, 79, 172);
   position: relative;
   width: auto;
   padding: 25px;
-  margin-bottom: 0;
+  padding-left: 15px;
+  text-align: center;
+  font-size: 3.6rem;
 }
 
 .marquee {
