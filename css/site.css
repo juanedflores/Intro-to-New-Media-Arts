@@ -477,6 +477,7 @@ ul {
   #right-col {
     margin-left: 0px;
     border: none;
+    padding: 8px;
   }
 
   .menu-btn-icon {

@@ -13,7 +13,7 @@ title: Week 3
 ::: {.announcement type="reminder"}
 Today we are looking at what 3 artists you all chose to link in your Are.na research channels. Please be ready to speak about what attracted you to these artists and why you chose them, how it's relevant to what we have seen in the past two weeks, and anything else that you would like to share.
 
-<a href="https://canvas.uic.edu/courses/51541/assignments/416824">https://canvas.uic.edu/courses/51541/assignments/416824</a>
+<a href="https://canvas.uic.edu/courses/51541/assignments/416824">[ Link to Canvas Assignment ]</a>
 :::
 
 ::: {.announcement type="materials"}

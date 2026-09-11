@@ -92,7 +92,7 @@ In class, we will document our work together. But your midterm and final project
 
 <img width=500 src="http://anomalytokyo.com/log/wp-content/uploads/2021/02/th480Wondering-Position.jpg"></img>
 
-<embed type="text/html" src="https://www.annshafer.com/annshaferblog/can-an-ant-be-an-artist"  width="800" height="500">
+<iframe src="https://www.annshafer.com/annshaferblog/can-an-ant-be-an-artist" width="800" height="500"></iframe>
 
 ---
 
@@ -135,7 +135,7 @@ participants are challenged to invent their own drawing bots.
 
 <a href="https://www.niklasroy.com/robotfactory/">niklasroy</a>
 
-<embed type="text/html" src="https://www.niklasroy.com/robotfactory/"  width="800" height="500">
+<iframe src="https://www.niklasroy.com/robotfactory/" width="800" height="500"></iframe>
 
 <br>
 

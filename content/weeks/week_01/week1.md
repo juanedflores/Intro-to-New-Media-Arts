@@ -30,7 +30,7 @@ This is what an announcement looks like! Look at this at the beginning of class 
 ### TOPICS:
 
 <section class="slides_section">
-<embed type="text/html" src="content/slides/week_1_day1/index.html" width="100%" height="500px" />
+<iframe src="content/slides/week_1_day1/index.html" width="100%" height="500px"></iframe>
 </section>
 
 [Open Slides in New Tab](./content/slides/week_1_day1/index.html)
@@ -61,7 +61,7 @@ Please let me know if you do not have a laptop. You will need to have it in clas
   - Telematic: The Postal Service, Video, Sound, Radio, Live Stream/Broadcasts.
 
 <section class="slides_section">
-<embed type="text/html" src="content/slides/week_1_day2/index.html" width="100%" height="500px" />
+<iframe src="content/slides/week_1_day2/index.html" width="100%" height="500px"></iframe>
 </section>
 
 [Open Slides in New Tab](./content/slides/week_1_day2/index.html)

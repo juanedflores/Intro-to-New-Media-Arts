@@ -28,7 +28,7 @@ Please bring your computers to class on Wednesday (Sep 2nd)
 ### SLIDES:
 
 <section class="slides_section">
-<embed type="text/html" src="content/slides/week_2_day1/index.html" width="100%" height="500px" />
+<iframe src="content/slides/week_2_day1/index.html" width="100%" height="500px"></iframe>
 </section>
 
 [Open Slides in New Tab](./content/slides/week_2_day1/index.html)
