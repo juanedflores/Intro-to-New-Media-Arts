@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html  dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -11,38 +11,48 @@
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
     <script src="../../../js/uikit.min.js"></script>
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
-      < !--Ajax Style-- >
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
     <!-- Code Style -->
     <link rel="stylesheet" href="../../../css/pojoaque.css" />
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
     <script src="../../../js/highlight.min.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
 
-    <!-- Plyr -->
-    <script src="../../../js/plyr.js"></script>
-    <link rel="stylesheet" href="../../../css/plyr.css"></link>
-
-    <!-- Hyperaudio-lite -->
-    <link rel="stylesheet" href="../../../css/hyperaudio-lite-player.css">
-    <script src="../../../js/velocity.js"></script> 
-
-    <!-- <script src="https://cdn.plyr.io/3.8.4/plyr.js"></script> -->
     <!-- hljs -->
     <script>
       hljs.highlightAll();
@@ -57,12 +67,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -193,8 +203,7 @@
 
     <!-- Blog Style CSS -->
     <link rel="stylesheet" href="../../../css/blog_style.css" />
-    <link rel="stylesheet" href="../../../css/custom.css" />
-    <link rel="stylesheet" href="../../../css/split_screen.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
 
     <!-- Includes other header content if needed -->
     
@@ -202,52 +211,54 @@
 
   <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
 
-  <body class="uk-background-fixed" style="">
+  <body class="uk-background-fixed">
     <!-- NAV AND HEADING -->
-    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
-      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
-        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
       </button>
 
       <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html">Week
-3</a></li>
+          <li class="uk-active" style="pointer-events: none">
+            <a href="index.html">Week 3</a>
+          </li>
         </ul>
       </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Week 3</a>-->
+      <!--</h2>-->
     </nav>
 
-        <!-- OFFCANVAS -->
-    <div class="uk-align-center uk-margin-remove-top uk-width-1-1@l uk-width-2-3@m" id="contentArea" style="">
-      <div id="split-container">
-        <div class="panel left" id="leftPanel"><section
-id="simple-circuits" class="level1">
-<h1>Simple Circuits</h1>
-<section id="circuitjs-simulation" class="level2">
-<h2>CircuitJS Simulation</h2>
-<p>This is another electronic circuit simulator. Notice how it uses
-schematic symbols.</p>
-<p>It is useful because it visualizes the movement of current, and
-voltage is shown in green.</p>
-<iframe style="padding-top:25px;" id="circuitFrame" src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgA3cQkXG78MRRQRNKkiqToCNgCcBYISBQIei4VTDw2YQsJVqlB3pH7CAJgwBmAQwCuAGwAuTBw3PgRUyOwDuy1RN+XSCoNiA" width="800" height="550" uk-responsive>
-</iframe>
-</section>
-</section></div>
-        <div class="resizer" style="user-select: none;" id="resizer"></div>
-        <div id="rightPanel" class="panel right">
-
-          <iframe id="hyperplayer" data-player-type="youtube" width="100%" height="480" frameborder="no" allow="autoplay"
-            src="https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1">
-          </iframe>
-
-          <div id="hypertranscript" class="hyperaudio-transcript" style="overflow-y:scroll; height:600px; position:relative; border-style:dashed; border-width: 1px; border-color:black; padding: 8px">
-          </div>
-
-        </div>
-        <div id="blog-toc" class="uk-offcanvas-bar" style="position: relative; left: 0;">
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
-          <div class="toc-panel"><ul>
+          <div><ul>
 <li><a href="#simple-circuits" id="toc-simple-circuits">Simple
 Circuits</a>
 <ul>
@@ -257,35 +268,30 @@ id="toc-circuitjs-simulation">CircuitJS Simulation</a></li>
 </ul></div>
         </div>
       </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="simple-circuits" class="level1">
+        <h1>Simple Circuits</h1>
+        <section id="circuitjs-simulation" class="level2">
+        <h2>CircuitJS Simulation</h2>
+        <p>This is another electronic circuit simulator. Notice how it
+        uses schematic symbols.</p>
+        <p>It is useful because it visualizes the movement of current,
+        and voltage is shown in green.</p>
+        <iframe style="padding-top:25px;" id="circuitFrame" src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgA3cQkXG78MRRQRNKkiqToCNgCcBYISBQIei4VTDw2YQsJVqlB3pH7CAJgwBmAQwCuAGwAuTBw3PgRUyOwDuy1RN+XSCoNiA" width="800" height="550" uk-responsive>
+        </iframe>
+        </section>
+        </section>
+      </div>
     </div>
-
-    <script src="../../../js/split_screen.js"></script>
-    <script src="../../../js/handleVideoPlayers.js"></script>
-
-    <!-- hyperaudio-lite -->
-    <script src="../../../js/hyperaudio-lite.js"></script>
-    <script src="../../../js/hyperaudio-lite-extension.js"></script>
-    <script>
-      // minimizedMode is still experimental - it aims to show the current words in the title, which can be seen on the browser tab.
-      let minimizedMode = false;
-      let autoScroll = true;
-      let doubleClick = false;
-      let webMonetization = false;
-      let playOnClick = false;
-
-      new HyperaudioLite("hypertranscript", "hyperplayer", minimizedMode, autoScroll, doubleClick, webMonetization, playOnClick);
-    </script>
-
-    <br />
-    <br />
-    <br />
 
     <!-- highlightjs badge -->
     <script src="../../../js/highlightjs-badge.js"></script>
 
     <script>
       // apply HighlightJS
-      var pres = document.querySelectorAll('pre>code');
+      var pres = document.querySelectorAll("pre>code");
       for (var i = 0; i < pres.length; i++) {
         hljs.highlightBlock(pres[i]);
       }
@@ -293,18 +299,23 @@ id="toc-circuitjs-simulation">CircuitJS Simulation</a></li>
       // add HighlightJS-badge (options are optional)
       var options = {
         // optional
-        contentSelector: '#leftPanel',
+        contentSelector: "#ArticleBody",
 
         // CSS class(es) used to render the copy icon.
-        copyIconClass: 'fas fa-solid fa-clone',
+        copyIconClass: "fas fa-solid fa-clone",
         // CSS class(es) used to render the done icon.
-        checkIconClass: 'fas fa-check text-success',
+        checkIconClass: "fas fa-check text-success",
       };
       window.highlightJsBadge(options);
     </script>
 
-
     <script src="../../../js/styling.js"></script>
 
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
   </body>
 </html>

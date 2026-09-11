@@ -1,5 +1,0 @@
----
-heading: random()
----
-
-### random()

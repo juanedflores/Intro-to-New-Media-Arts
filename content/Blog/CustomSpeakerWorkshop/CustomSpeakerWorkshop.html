@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html  dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -11,38 +11,48 @@
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
     <script src="../../../js/uikit.min.js"></script>
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" <!-- Fonts -->
-      < !--Ajax Style-- >
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin = "anonymous" >
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
     <!-- Code Style -->
     <link rel="stylesheet" href="../../../css/pojoaque.css" />
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>-->
     <script src="../../../js/highlight.min.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
 
-    <!-- Plyr -->
-    <script src="../../../js/plyr.js"></script>
-    <link rel="stylesheet" href="../../../css/plyr.css"></link>
-
-    <!-- Hyperaudio-lite -->
-    <link rel="stylesheet" href="../../../css/hyperaudio-lite-player.css">
-    <script src="../../../js/velocity.js"></script> 
-
-    <!-- <script src="https://cdn.plyr.io/3.8.4/plyr.js"></script> -->
     <!-- hljs -->
     <script>
       hljs.highlightAll();
@@ -57,12 +67,12 @@
 
     <!-- Makes Inline Code Similar Style to hljs theme -->
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
           hljs.highlightElement(el);
         });
-        document.querySelectorAll('p code').forEach((el) => {
-          el.classList.add('language-plaintext');
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
           hljs.highlightElement(el);
         });
       });
@@ -193,8 +203,7 @@
 
     <!-- Blog Style CSS -->
     <link rel="stylesheet" href="../../../css/blog_style.css" />
-    <link rel="stylesheet" href="../../../css/custom.css" />
-    <link rel="stylesheet" href="../../../css/split_screen.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
 
     <!-- Includes other header content if needed -->
     
@@ -202,137 +211,54 @@
 
   <!--<body class="uk-background-fixed" style="background-image: url('../images/background2.png'); background-size: cover">-->
 
-  <body class="uk-background-fixed" style="">
+  <body class="uk-background-fixed">
     <!-- NAV AND HEADING -->
-    <nav class="uk-flex uk-flex-left" uk-sticky style="background-color: rgb(197, 75, 59); height: 80">
-      <button class="uk-button uk-button-default" type="button" style="border: none; background: rgb(243, 201, 91)" uk-toggle="target: #blog-toc">
-        <span class="fas fa-bars fa-2xl" style="color: #4444dd; background: rgb(243, 201, 91)"></span>
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
       </button>
 
       <div class="nav-overlay uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="../../../index.html">INTRO TO NEW MEDIA ART</a>
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
         <ul class="uk-navbar-nav" style="">
-          <li class="uk-active" style="pointer-events: none"><a href="index.html">Custom
-Speaker Workshop</a></li>
+          <li class="uk-active" style="pointer-events: none">
+            <a href="index.html">Custom Speaker Workshop</a>
+          </li>
         </ul>
       </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Custom Speaker Workshop</a>-->
+      <!--</h2>-->
     </nav>
 
-        <!-- OFFCANVAS -->
-    <div class="uk-align-center uk-margin-remove-top uk-width-1-1@l uk-width-2-3@m" id="contentArea" style="">
-      <div id="split-container">
-        <div class="panel left" id="leftPanel"><section
-id="diy-speakers" class="level1">
-<h1>DIY Speakers</h1>
-<section id="intro" class="level2">
-<h2>Intro</h2>
-<p>How do you listen to music? Whether you use headphones or a large
-sound system you are undoubtedly using some combination of speakers, but
-how do speakers create sound? In this activity you will construct your
-own speaker in order to learn how electromagnetism is used to fill the
-air with sound.</p>
-<p>The sound we hear is a result of our brains interpreting the changes
-in air pressure detected by our ear drums. These changes in air pressure
-are what we call sound waves. When air is mechanically compressed and
-stretched the air molecules bump into each other, causing the pattern to
-move through the air where it hits your eardrum and your brain
-interprets it as a sound. This mechanical stretching and compressing of
-the air is caused by physical objects vibrating at various frequencies
-in the world around you. The faster the vibrations are the higher the
-frequency of the sound waves created, which your brain interprets as a
-higher pitched sound.</p>
-<section id="what-is-a-speaker" class="level3">
-<h3>What is a Speaker?</h3>
-<p><img width="70%" src="https://geekpackhack.com/wp-content/uploads/2020/01/Parts-of-a-speaker-image.jpg"></img></p>
-<p>A speaker is an electro‐mechanical device designed to transform
-electric signals into mechanical motions that generate sound. Sounds are
-typically stored on a computer as a compressed file that contains
-information about the frequency and intensity of the sound. When these
-files are “played” the computer decompresses the file and sends electric
-signals corresponding to the sound data through whatever output medium
-you are using. These electric signals turn on an electro‐magnet, called
-the voice coil, which reverses polarity depending on the signals it is
-receiving. A permanent magnet, located either inside the electro‐magnet,
-or surrounding it, forces the electro‐magnet to move up and down as the
-polarity changes. This up and down motion is amplified by a diaphragm
-affixed to the electro‐ magnet. As the diaphragm vibrates
-back‐and‐forth, it creates sound waves.</p>
-</section>
-<section id="what-you-will-need" class="level3">
-<h3>What you will need</h3>
-<blockquote class="info">
-<span class="uk-label">Materials Needed</span>
-<ul>
-<li>
-[x] A cup or alternative
-</li>
-<li>
-[x] Copper Wire
-</li>
-<li>
-[x] A permanent Magnet
-</li>
-<li>
-[x] audio cable
-</li>
-<li>
-[x] 2 alligator clips
-</li>
-<li>
-[x] Breadboard
-</li>
-<li>
-[x] Audio Amplifier Module
-</li>
-</ul>
-</blockquote>
-</section>
-<section id="steps" class="level3">
-<h3>Steps</h3>
-<ul>
-<li>Create an electromagnet (by making a coil with copper wire)</li>
-<li>Tape electromagnet to cup and connect the 2 wires to amplifier.</li>
-<li>Connect audio cable wires to amplifier.</li>
-<li>Power the amplifier with 5V.</li>
-<li>Connect audio jack to audio playing device.</li>
-</ul>
-<p>After this works, try with 8ohm speaker!</p>
-<p>Then try with Piezoelectric Disk.</p>
-</section>
-<section id="construction" class="level3">
-<h3>Construction</h3>
-<p>Video for those who missed class:</p>
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/liSEwqdq7aA?si=IDP36FucyuIPw4-N&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</section>
-<section id="further-material" class="level3">
-<h3>Further Material</h3>
-<ul>
-<li><a href="https://konp.plusea.at/?p=24">A Kit-of-No-Parts
-Workshops</a></li>
-<li><a href="https://sites.temple.edu/tudsc/2023/09/20/building-a-paper-speaker-from-scratch/">Temple
-U Paper Speaker</a></li>
-<li><a href="https://www.instructables.com/Electromagnetic-Microphone/">Electromagnetic-Microphone</a></li>
-<li><a href="https://www.instructables.com/Simplified-Electronics-Microphone-DIY-How-It-Works/">Make
-a Microphone Instructables</a></li>
-</ul>
-</section>
-</section>
-</section></div>
-        <div class="resizer" style="user-select: none;" id="resizer"></div>
-        <div id="rightPanel" class="panel right">
-
-          <iframe id="hyperplayer" data-player-type="youtube" width="100%" height="480" frameborder="no" allow="autoplay"
-            src="https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1">
-          </iframe>
-
-          <div id="hypertranscript" class="hyperaudio-transcript" style="overflow-y:scroll; height:600px; position:relative; border-style:dashed; border-width: 1px; border-color:black; padding: 8px">
-          </div>
-
-        </div>
-        <div id="blog-toc" class="uk-offcanvas-bar" style="position: relative; left: 0;">
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
-          <div class="toc-panel"><ul>
+          <div><ul>
 <li><a href="#diy-speakers" id="toc-diy-speakers">DIY Speakers</a>
 <ul>
 <li><a href="#intro" id="toc-intro">Intro</a>
@@ -350,35 +276,120 @@ Material</a></li>
 </ul></div>
         </div>
       </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="diy-speakers" class="level1">
+        <h1>DIY Speakers</h1>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p>How do you listen to music? Whether you use headphones or a
+        large sound system you are undoubtedly using some combination of
+        speakers, but how do speakers create sound? In this activity you
+        will construct your own speaker in order to learn how
+        electromagnetism is used to fill the air with sound.</p>
+        <p>The sound we hear is a result of our brains interpreting the
+        changes in air pressure detected by our ear drums. These changes
+        in air pressure are what we call sound waves. When air is
+        mechanically compressed and stretched the air molecules bump
+        into each other, causing the pattern to move through the air
+        where it hits your eardrum and your brain interprets it as a
+        sound. This mechanical stretching and compressing of the air is
+        caused by physical objects vibrating at various frequencies in
+        the world around you. The faster the vibrations are the higher
+        the frequency of the sound waves created, which your brain
+        interprets as a higher pitched sound.</p>
+        <section id="what-is-a-speaker" class="level3">
+        <h3>What is a Speaker?</h3>
+        <p><img width="70%" src="https://geekpackhack.com/wp-content/uploads/2020/01/Parts-of-a-speaker-image.jpg"></img></p>
+        <p>A speaker is an electro‐mechanical device designed to
+        transform electric signals into mechanical motions that generate
+        sound. Sounds are typically stored on a computer as a compressed
+        file that contains information about the frequency and intensity
+        of the sound. When these files are “played” the computer
+        decompresses the file and sends electric signals corresponding
+        to the sound data through whatever output medium you are using.
+        These electric signals turn on an electro‐magnet, called the
+        voice coil, which reverses polarity depending on the signals it
+        is receiving. A permanent magnet, located either inside the
+        electro‐magnet, or surrounding it, forces the electro‐magnet to
+        move up and down as the polarity changes. This up and down
+        motion is amplified by a diaphragm affixed to the electro‐
+        magnet. As the diaphragm vibrates back‐and‐forth, it creates
+        sound waves.</p>
+        </section>
+        <section id="what-you-will-need" class="level3">
+        <h3>What you will need</h3>
+        <blockquote class="info">
+        <span class="uk-label">Materials Needed</span>
+        <ul>
+        <li>
+        [x] A cup or alternative
+        </li>
+        <li>
+        [x] Copper Wire
+        </li>
+        <li>
+        [x] A permanent Magnet
+        </li>
+        <li>
+        [x] audio cable
+        </li>
+        <li>
+        [x] 2 alligator clips
+        </li>
+        <li>
+        [x] Breadboard
+        </li>
+        <li>
+        [x] Audio Amplifier Module
+        </li>
+        </ul>
+        </blockquote>
+        </section>
+        <section id="steps" class="level3">
+        <h3>Steps</h3>
+        <ul>
+        <li>Create an electromagnet (by making a coil with copper
+        wire)</li>
+        <li>Tape electromagnet to cup and connect the 2 wires to
+        amplifier.</li>
+        <li>Connect audio cable wires to amplifier.</li>
+        <li>Power the amplifier with 5V.</li>
+        <li>Connect audio jack to audio playing device.</li>
+        </ul>
+        <p>After this works, try with 8ohm speaker!</p>
+        <p>Then try with Piezoelectric Disk.</p>
+        </section>
+        <section id="construction" class="level3">
+        <h3>Construction</h3>
+        <p>Video for those who missed class:</p>
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/liSEwqdq7aA?si=IDP36FucyuIPw4-N&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        </section>
+        <section id="further-material" class="level3">
+        <h3>Further Material</h3>
+        <ul>
+        <li><a href="https://konp.plusea.at/?p=24">A Kit-of-No-Parts
+        Workshops</a></li>
+        <li><a href="https://sites.temple.edu/tudsc/2023/09/20/building-a-paper-speaker-from-scratch/">Temple
+        U Paper Speaker</a></li>
+        <li><a href="https://www.instructables.com/Electromagnetic-Microphone/">Electromagnetic-Microphone</a></li>
+        <li><a href="https://www.instructables.com/Simplified-Electronics-Microphone-DIY-How-It-Works/">Make
+        a Microphone Instructables</a></li>
+        </ul>
+        </section>
+        </section>
+        </section>
+      </div>
     </div>
-
-    <script src="../../../js/split_screen.js"></script>
-    <script src="../../../js/handleVideoPlayers.js"></script>
-
-    <!-- hyperaudio-lite -->
-    <script src="../../../js/hyperaudio-lite.js"></script>
-    <script src="../../../js/hyperaudio-lite-extension.js"></script>
-    <script>
-      // minimizedMode is still experimental - it aims to show the current words in the title, which can be seen on the browser tab.
-      let minimizedMode = false;
-      let autoScroll = true;
-      let doubleClick = false;
-      let webMonetization = false;
-      let playOnClick = false;
-
-      new HyperaudioLite("hypertranscript", "hyperplayer", minimizedMode, autoScroll, doubleClick, webMonetization, playOnClick);
-    </script>
-
-    <br />
-    <br />
-    <br />
 
     <!-- highlightjs badge -->
     <script src="../../../js/highlightjs-badge.js"></script>
 
     <script>
       // apply HighlightJS
-      var pres = document.querySelectorAll('pre>code');
+      var pres = document.querySelectorAll("pre>code");
       for (var i = 0; i < pres.length; i++) {
         hljs.highlightBlock(pres[i]);
       }
@@ -386,18 +397,23 @@ Material</a></li>
       // add HighlightJS-badge (options are optional)
       var options = {
         // optional
-        contentSelector: '#leftPanel',
+        contentSelector: "#ArticleBody",
 
         // CSS class(es) used to render the copy icon.
-        copyIconClass: 'fas fa-solid fa-clone',
+        copyIconClass: "fas fa-solid fa-clone",
         // CSS class(es) used to render the done icon.
-        checkIconClass: 'fas fa-check text-success',
+        checkIconClass: "fas fa-check text-success",
       };
       window.highlightJsBadge(options);
     </script>
 
-
     <script src="../../../js/styling.js"></script>
 
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
   </body>
 </html>

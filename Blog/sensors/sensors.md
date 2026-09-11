@@ -1,6 +1,0 @@
----
-heading: Sensors
----
-
-# Sensors
-
