@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="pandoc" />
 
-    <title></title>
+    <title>Soldering Workshop</title>
 
     <!-- UIKit files -->
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
@@ -236,12 +236,12 @@
         >
         <ul class="uk-navbar-nav" style="">
           <li class="uk-active" style="pointer-events: none">
-            <a href="index.html">Week 3</a>
+            <a href="index.html">Soldering Workshop</a>
           </li>
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text">Week 3</a>-->
+      <!--  <a class="uk-text">Soldering Workshop</a>-->
       <!--</h2>-->
     </nav>
 
@@ -259,12 +259,22 @@
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div><ul>
-<li><a href="#simple-circuits" id="toc-simple-circuits">Simple
-Circuits</a>
+<li><a href="#soldering-workshop" id="toc-soldering-workshop">Soldering
+Workshop</a>
 <ul>
-<li><a href="#circuitjs-simulation"
-id="toc-circuitjs-simulation">CircuitJS Simulation</a></li>
-<li><a href="#resources" id="toc-resources">Resources</a></li>
+<li><a href="#summary" id="toc-summary">Summary</a>
+<ul>
+<li><a href="#steps" id="toc-steps">Steps</a></li>
+</ul></li>
+<li><a href="#safety-first" id="toc-safety-first">Safety First</a></li>
+<li><a href="#tools-materials" id="toc-tools-materials">Tools &amp;
+Materials</a></li>
+<li><a href="#basic-technique" id="toc-basic-technique">Basic
+Technique</a></li>
+<li><a href="#video-walkthrough" id="toc-video-walkthrough">Video
+Walkthrough</a></li>
+<li><a href="#additional-resources"
+id="toc-additional-resources">Additional Resources</a></li>
 </ul></li>
 </ul></div>
         </div>
@@ -272,21 +282,93 @@ id="toc-circuitjs-simulation">CircuitJS Simulation</a></li>
 
       <!-- BODY -->
       <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
-        <section id="simple-circuits" class="level1">
-        <h1>Simple Circuits</h1>
-        <section id="circuitjs-simulation" class="level2">
-        <h2>CircuitJS Simulation</h2>
-        <p>This is another electronic circuit simulator. Notice how it
-        uses schematic symbols.</p>
-        <p>It is useful because it visualizes the movement of current,
-        and voltage is shown in green.</p>
-        <iframe style="padding-top:25px;" id="circuitFrame" src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgA3cQkXG78MRRQRNKkiqToCNgCcBYISBQIei4VTDw2YQsJVqlB3pH7CAJgwBmAQwCuAGwAuTBw3PgRUyOwDuy1RN+XSCoNiA" width="800" height="550" uk-responsive>
-        </iframe>
+        <section id="soldering-workshop" class="level1">
+        <h1>Soldering Workshop</h1>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>Today we’re soldering our vibration-motor onto a perf board —
+        the “skeleton” that will later become our Drawing Robot. This
+        page walks through soldering safety, the tools you’ll be using,
+        and the basic technique, so you can work through it at your own
+        pace and come back to it later.</p>
+        <section id="steps" class="level3">
+        <h3>Steps</h3>
+        <p>[We will go over the steps together as a class].</p>
         </section>
-        <section id="resources" class="level2">
-        <h2>Resources</h2>
+        </section>
+        <section id="safety-first" class="level2">
+        <h2>Safety First</h2>
+        <p>Soldering irons run at 600-700°F (315-370°C) - hot enough to
+        cause a serious burn instantly, and the fumes are worth
+        respecting too.</p>
         <ul>
-        <li>https://www.fluxbench.com/tools/led-topologies/</li>
+        <li>Always assume the iron is hot. Never touch the metal tip or
+        barrel.</li>
+        <li>Try to keep your head out of the fumes.</li>
+        <li>Keep the iron in its stand whenever you’re not actively
+        soldering. Never set it down on the table.</li>
+        <li>Tie back long hair and avoid loose sleeves near the
+        tip.</li>
+        <li>Wash your hands after handling solder and before eating or
+        touching your face.</li>
+        </ul>
+        </section>
+        <section id="tools-materials" class="level2">
+        <h2>Tools &amp; Materials</h2>
+        <p>You’ll be given your soldering kits. These will be
+        included:</p>
+        <ul>
+        <li><strong>Soldering iron</strong> (temperature-controlled,
+        ~600-650°F for this project)</li>
+        <li><strong>Solder wire</strong> (thin, rosin-core)</li>
+        <li><strong>Perf board</strong></li>
+        <li><strong>“Helping hands”</strong> to hold the board
+        steady</li>
+        </ul>
+        <p>Provided by the Lab:</p>
+        <ul>
+        <li><strong>Safety glasses</strong></li>
+        <li><strong>Tip Cleaners</strong></li>
+        <li><strong>Wire Cutters and Stripers</strong></li>
+        </ul>
+        </section>
+        <section id="basic-technique" class="level2">
+        <h2>Basic Technique</h2>
+        <ol type="1">
+        <li><strong>Tin the tip.</strong> Melt a small amount of solder
+        directly onto a freshly-cleaned tip - this helps heat transfer
+        and keeps the tip from oxidizing.</li>
+        <li><strong>Heat the joint, not the solder.</strong> Touch the
+        iron to both the component lead and the pad at the same time,
+        and hold it there for 1-2 seconds.</li>
+        <li><strong>Feed the solder into the joint</strong> (not onto
+        the iron tip) and let it melt and flow around the lead and
+        pad.</li>
+        <li><strong>Remove the solder, then the iron.</strong> Pull the
+        solder away first, then lift the iron. The whole joint should
+        take about 2-3 seconds total.</li>
+        <li><strong>Let it cool undisturbed</strong> for a few seconds -
+        moving the joint while it solidifies causes a “cold joint” that
+        looks dull/grainy and can fail electrically.</li>
+        </ol>
+        <p>A good joint is shiny, smooth, and shaped like a small
+        volcano/cone around the lead. A <strong>cold joint</strong>
+        looks dull, lumpy, or cracked - if you see one, just reheat it
+        and let it re-flow. The Adafruit guide linked below has good
+        reference photos of both.</p>
+        </section>
+        <section id="video-walkthrough" class="level2">
+        <h2>Video Walkthrough</h2>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/BxASFu19bLU" title="How to Solder Wire / Soldering Basics Tutorial (AnthonyJ350)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>How to Solder Wire / Soldering Basics
+        Tutorial</strong> — AnthonyJ350</p>
+        </section>
+        <section id="additional-resources" class="level2">
+        <h2>Additional Resources</h2>
+        <ul>
+        <li><a href="https://learn.adafruit.com/adafruit-guide-excellent-soldering" target="_blank">Adafruit
+        - Guide to Excellent Soldering</a></li>
         </ul>
         </section>
         </section>

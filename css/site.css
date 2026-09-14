@@ -36,9 +36,13 @@ html {
   padding-left: 0;
 }
 
+#right-col > section {
+  padding: 20px;
+}
+
 #right-col > section > h1 {
   background-color: rgb(243, 201, 91);
-  margin: 0;
+  margin: -20px -20px 0 -20px;
   color: rgb(56, 79, 172);
   position: relative;
   width: auto;
@@ -80,7 +84,11 @@ h2 {
   font-weight: bold;
   font-family: "Inter-Black";
   text-align: left;
-  margin: 0;
+  margin: 0 0 15px 0;
+  background-color: #2c3f89;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
 }
 
 #ArticleBodyMain > section > #body {
@@ -94,8 +102,8 @@ h2 {
 
 #right-col {
   background-color: white;
-  padding: 20px;
-  border: 20px solid rgb(210, 230, 250);
+  padding: 0;
+  border: 20px solid #2c3f89;
 }
 
 #right-col iframe,
@@ -117,7 +125,43 @@ h2 {
   border-radius: 10px;
 }
 
-h3,
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Inter-Black";
+  text-align: left;
+  margin: 0;
+  padding-top: 15px;
+}
+
+/* blog_style.css has a bare `input { width: 100% }` (for other pages'
+   parameter sliders) that also stretches task-list checkboxes to the full
+   content width - undo that here since it's more specific. */
+.task-list input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.task-list {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.task-list li {
+  list-style-type: none !important;
+  left: 0;
+  margin-left: 0;
+  margin-bottom: 8px;
+}
+
+.task-list label {
+  display: block;
+}
+
 h4,
 h5 {
   font-family: "Inter-Black";
@@ -129,6 +173,18 @@ a {
 
 .uk-nav-default > li.uk-active > a {
   color: white;
+}
+
+/* A section header in the week nav (e.g. "Drawing Robot") can optionally
+   link out to that assignment's page - keep it looking like the plain
+   headers around it instead of a default underlined blue link. */
+.uk-nav-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.uk-nav-header a:hover {
+  text-decoration: underline;
 }
 
 .menu_header > h3 {
@@ -149,6 +205,84 @@ a {
 hr {
   height: 4px !important;
   background-color: gray;
+}
+
+.balance-example img {
+  max-width: 350px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.balance-example figcaption {
+  text-align: center;
+}
+
+.triangle-comparison {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.triangle-good,
+.triangle-bad {
+  flex: 1 1 220px;
+  max-width: 260px;
+  text-align: center;
+}
+
+.triangle-good svg,
+.triangle-bad svg {
+  width: 100%;
+  height: 160px;
+}
+
+/* Vertical timeline for dated lists (e.g. an assignment's Timeline
+   section): a blue connector line with a yellow dot per entry, matching
+   the site's h1 yellow/blue accents. */
+.timeline {
+  margin-top: 15px;
+}
+
+.timeline ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 20px;
+  border-left: 3px solid #2c3f89;
+}
+
+.timeline li {
+  position: relative;
+  list-style-type: none;
+  margin-left: 0;
+  padding: 0 0 20px 25px;
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f3c95b;
+  border: 3px solid #2c3f89;
+}
+
+.timeline li strong {
+  color: #2c3f89;
+  display: block;
+  font-family: "Inter-Black";
+  margin-bottom: 2px;
+  text-decoration: none;
 }
 
 .uk-inactive > a {
@@ -243,7 +377,7 @@ nav {
 .uk-navbar-nav > li > a {
   font-family: "Inter-Black";
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .uk-logo {
@@ -511,8 +645,8 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 
   #right-col {
     margin-left: 0px;
-    border: none;
-    padding: 8px;
+    border: 12px solid #2c3f89;
+    padding: 0;
   }
 
   .menu-btn-icon {

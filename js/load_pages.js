@@ -37,9 +37,44 @@ function loadWeek(n) {
   );
 }
 
+// Which week starts each section, for the headers in the week nav. Weeks
+// before the first entry get no header.
+const WEEK_SECTIONS = [
+  { start: 1, title: "Overview and Special Topics" },
+  { start: 3, title: "Intro to Circuits" },
+  {
+    start: 4,
+    title: "Drawing Robot",
+    href: "content/Assignments/Drawing_Bot/drawing_bot.html",
+  },
+  { start: 6, title: "E-Textiles / Wearables" },
+  { start: 7, title: "Intro to Arduino" },
+  { start: 8, title: "Midterm: Creative Interfaces" },
+  { start: 11, title: "Final Assignment" },
+];
+
 function renderWeekNav(currentWeek, totalWeeks) {
   var items = "";
   for (var i = 1; i <= totalWeeks; i++) {
+    var section = WEEK_SECTIONS.find(function (s) {
+      return s.start === i;
+    });
+    if (section) {
+      // A real href alone isn't enough here: uk-switcher (below) intercepts
+      // clicks on any <a> inside this list and prevents the default
+      // navigation, same reason the week links use onclick+loadWeek()
+      // instead of a real href. Force the navigation ourselves.
+      var headerContent = section.href
+        ? '<a href="' +
+          section.href +
+          '" onclick="window.location.href=\'' +
+          section.href +
+          "'; return false;\">" +
+          section.title +
+          "</a>"
+        : section.title;
+      items += '<li class="uk-nav-header">' + headerContent + "</li>";
+    }
     var cls =
       i < currentWeek ? "" : i === currentWeek ? "uk-active" : "uk-inactive";
     items +=

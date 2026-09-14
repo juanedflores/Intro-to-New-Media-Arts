@@ -2,15 +2,17 @@
 -- Enables:
 --   ::: {.days} ... :::                                  accordion wrapper (one per week)
 --   ::: {.day title="MONDAY" open="true"} ... :::         one collapsible day
---   ::: {.announcement type="reminder|materials"} ... :::  styled callout
+--   ::: {.announcement type="reminder|materials|tip"} ... :::  styled callout
 --   ::: {.topics} ... :::                                 card grid wrapper
---   ::: {.card type="lesson|external|video" title="..." thumb="..." href="..." tag="..."} :::
+--   ::: {.card type="lesson|external|video|assignment|workshop" title="..." thumb="..." href="..." tag="..."} :::
 --   ::: {.nextweek} ... :::                               "looking ahead" callout
 
 local card_styles = {
   lesson = { bg = '#fba99e', label_bg = '#fba99e', tag = 'Lesson' },
   external = { bg = 'rgb(210, 230, 250)', label_bg = 'rgb(56, 79, 172)', tag = 'External' },
   video = { bg = '#ffd97d', label_bg = '#ffd97d', tag = 'Video' },
+  assignment = { bg = '#c9a7eb', label_bg = '#7a3fc4', tag = 'Assignment' },
+  workshop = { bg = '#8bc9a0', label_bg = '#2f7d4f', tag = 'Workshop' },
 }
 
 local section_divs_opts = pandoc.WriterOptions({ ['section_divs'] = true })
@@ -85,14 +87,15 @@ local function render_topics(el)
   )
 end
 
+local announcement_styles = {
+  reminder = { border = 'orange', block_class = 'warning', label_class = 'uk-label-warning', label_text = 'Reminder', bg = '#fff9db' },
+  materials = { border = 'blue', block_class = 'info', label_class = 'uk-label-info', label_text = 'Materials Needed', bg = 'rgb(238, 241, 247)' },
+  tip = { border = 'blue', block_class = 'info', label_class = 'uk-label-info', label_text = 'Tip', bg = 'rgb(238, 241, 247)' },
+}
+
 local function render_announcement(el)
   local a = el.attributes
-  local is_reminder = a.type ~= 'materials'
-  local border = is_reminder and 'orange' or 'blue'
-  local block_class = is_reminder and 'warning' or 'info'
-  local label_class = is_reminder and 'uk-label-warning' or 'uk-label-info'
-  local label_text = is_reminder and 'Reminder' or 'Materials Needed'
-  local bg = is_reminder and '#fff9db' or 'rgb(238, 241, 247)'
+  local style = announcement_styles[a.type] or announcement_styles.reminder
 
   return pandoc.RawBlock(
     'html',
@@ -103,11 +106,11 @@ local function render_announcement(el)
 %s
 </blockquote>
 ]],
-      block_class,
-      border,
-      bg,
-      label_class,
-      label_text,
+      style.block_class,
+      style.border,
+      style.bg,
+      style.label_class,
+      style.label_text,
       inner_html(el)
     )
   )

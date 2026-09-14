@@ -1,0 +1,657 @@
+<!doctype html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Drawing Robot Assignment</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../../resources/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav" style="">
+          <li class="uk-active" style="pointer-events: none">
+            <a href="index.html">Drawing Robot Assignment</a>
+          </li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Drawing Robot Assignment</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#drawing-robot-assignment"
+id="toc-drawing-robot-assignment">Drawing Robot Assignment</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a>
+<ul>
+<li><a href="#timeline" id="toc-timeline">Timeline</a></li>
+<li><a href="#requirements" id="toc-requirements">Requirements</a></li>
+</ul></li>
+<li><a href="#the-assignment" id="toc-the-assignment">The Assignment</a>
+<ul>
+<li><a href="#constructing-the-body-phase"
+id="toc-constructing-the-body-phase"><strong>Constructing the Body
+Phase</strong></a>
+<ul>
+<li><a href="#contact-point-and-balance"
+id="toc-contact-point-and-balance">Contact Point and Balance:</a></li>
+<li><a href="#the-found-objectmaterial"
+id="toc-the-found-objectmaterial">The Found Object/Material</a></li>
+</ul></li>
+<li><a href="#exploration-period"
+id="toc-exploration-period"><strong>Exploration Period</strong></a></li>
+<li><a href="#research-period" id="toc-research-period"><strong>Research
+Period</strong></a></li>
+<li><a href="#execution-period"
+id="toc-execution-period"><strong>Execution Period</strong></a>
+<ul>
+<li><a href="#writing-the-formal-generative-drawing-instructions"
+id="toc-writing-the-formal-generative-drawing-instructions">Writing the
+Formal Generative Drawing Instructions</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#documentation"
+id="toc-documentation">Documentation</a></li>
+<li><a href="#inspiration-examples"
+id="toc-inspiration-examples">Inspiration &amp; Examples</a>
+<ul>
+<li><a href="#performanceevent-scores"
+id="toc-performanceevent-scores">Performance/Event Scores</a></li>
+<li><a href="#juan-flores-walking-poems"
+id="toc-juan-flores-walking-poems">Juan Flores: Walking Poems</a></li>
+<li><a href="#stanley-brouwn" id="toc-stanley-brouwn">Stanley
+Brouwn</a></li>
+<li><a href="#yukinori-yanagi" id="toc-yukinori-yanagi">Yukinori
+Yanagi</a></li>
+<li><a href="#sol-lewitt-wall-drawings"
+id="toc-sol-lewitt-wall-drawings">Sol LeWitt: Wall Drawings</a></li>
+<li><a href="#yoko-ono" id="toc-yoko-ono">Yoko Ono:</a></li>
+<li><a href="#insect-writing" id="toc-insect-writing">Insect
+Writing</a></li>
+<li><a href="#generative-systems" id="toc-generative-systems">Generative
+Systems</a></li>
+<li><a href="#niklas-roy-robot-factory"
+id="toc-niklas-roy-robot-factory">Niklas Roy: Robot Factory</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="drawing-robot-assignment" class="level1">
+        <h1>Drawing Robot Assignment</h1>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/0n3dIO6u9yU?si=hZc9bBy1VWHiNDGo&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>You will design and build your own drawing machine: a small
+        robot, built around your soldered vibration-motor circuit (from
+        the <a
+        href="../../Workshops/Soldering_Workshop/soldering_workshop.html">Soldering
+        Workshop</a>), whose job is to <strong>make marks</strong>. The
+        circuit is the skeleton. Think of it as making a functional
+        sculpture. Your job is to add the body, and then the
+        personality, that turns it not only into a tool for generative
+        drawing, but also as a potential art object. Each student is
+        asked to incorporate a found object/material to add to its
+        meaning.</p>
+        <section id="timeline" class="level3">
+        <h3>Timeline</h3>
+        <div class="timeline">
+        <ul>
+        <li><strong>September 14</strong> — Soldering Workshop and Lab
+        Tour</li>
+        <li><strong>September 16</strong> — Finalize soldering circuit
+        with coin battery holders. Start building the body.</li>
+        <li><strong>September 21</strong> — Finalize construction and
+        plan drawing/instructions.</li>
+        <li><strong>September 23</strong> — Drawing Bot Showcase</li>
+        </ul>
+        </div>
+        </section>
+        <section id="requirements" class="level3">
+        <h3>Requirements</h3>
+        <ul class="task-list">
+        <li><label><input type="checkbox" checked="" />Completion of the
+        functional circuit</label></li>
+        <li><label><input type="checkbox" checked="" />Incorporation of
+        a <a href="#the-found-objectmaterial">found object/material</a>
+        to the body of the drawing bot.</label></li>
+        <li><label><input type="checkbox" checked="" />A <a
+        href="#writing-the-formal-generative-drawing-instructions">written
+        instruction</a> for the completion of a drawing with the drawing
+        bot.</label></li>
+        <li><label><input type="checkbox" checked="" />Participation in
+        the Drawing Bot Showcase. We will execute our instructions with
+        our bots live in front of the class. Each drawing is limited to
+        5 minutes.</label></li>
+        <li><label><input type="checkbox" checked="" />Are.na <a
+        href="#documentation">Documentation</a>: Take pictures of your
+        bot progression and final design in a new channel called
+        “Drawing Bot”. It should include pictures of your physical
+        machine, the designed instructions for a drawing, and a picture
+        of the final image.</label></li>
+        </ul>
+        </section>
+        </section>
+        <section id="the-assignment" class="level2">
+        <h2>The Assignment</h2>
+        <section id="constructing-the-body-phase" class="level3">
+        <h3><strong>Constructing the Body Phase</strong></h3>
+        <p>The first part is explained step by step in the <a
+        href="../../Workshops/Soldering_Workshop/soldering_workshop.html">Soldering
+        Workshop</a>.</p>
+        <p>You will solder the vibration motor, the coin cell battery
+        holder, and an optional LED to a perforated board that will come
+        in your soldering kit.</p>
+        <p>The perfboard will be a good foundation to build from. You
+        can attach more material with hot glue, tape, rubber bands, or
+        more soldered joints.</p>
+        <p>Simple construction supplies will be provided, and it’s up to
+        you to brainstorm and build out your design. With the goal of
+        the assignment in mind, the rest is up to you.</p>
+        <blockquote class="info" style="border: 1px blue solid; padding: 10px; background: rgb(238, 241, 247);">
+        <span class="uk-label uk-label-info">Tip</span>
+        <p>For the most satisfying results:</p>
+        <ul>
+        <li>The contact points between the bot and the paper should have as
+        little friction as possible. Should have at least 3 contact points and
+        take weight distribution into account. <strong>Look at section below for
+        reference</strong>.</li>
+        <li>The overall weight should be as light as possible to promote
+        movement.</li>
+        <li>The mark making utensil should be thick and dark for best visual
+        results. Also take into account its weight and tip friction.</li>
+        <li>Sometimes adding a little bit of weight on the tip of the utensil
+        can increase the legibility of the marks.</li>
+        </ul>
+        </blockquote>
+
+        <section id="contact-point-and-balance" class="level4">
+        <h4>Contact Point and Balance:</h4>
+        <p>Look at this example of a structure with good balance.</p>
+        <div class="balance-example">
+        <figure>
+        <img src="images/balanced.png"
+        alt="A balanced drawing-bot structure with three symmetric contact points and centered weight" />
+        <figcaption aria-hidden="true">A balanced drawing-bot structure
+        with three symmetric contact points and centered
+        weight</figcaption>
+        </figure>
+        </div>
+        <p>Now look at a bad example that will lead to weight leaning on
+        one side that might cause the bot to fall.</p>
+        <div class="balance-example">
+        <figure>
+        <img src="images/unbalanced.png"
+        alt="An unbalanced drawing-bot structure with legs bunched to one side and off-center weight" />
+        <figcaption aria-hidden="true">An unbalanced drawing-bot
+        structure with legs bunched to one side and off-center
+        weight</figcaption>
+        </figure>
+        </div>
+        <p>Another way to think about this: Trace a triangle between
+        your bot’s contact points. A triangle close to equilateral
+        spreads weight evenly across its base. A triangle with a long
+        hypotenuse and two points close together could lead to
+        instability.</p>
+        <div class="triangle-comparison">
+        <div class="triangle-good">
+        <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="100,20 20,160 180,160" fill="rgba(44,63,137,0.08)" stroke="#2c3f89" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="100" cy="20" r="7" fill="#f3c95b" stroke="#2c3f89" stroke-width="2"/>
+        <circle cx="20" cy="160" r="7" fill="#f3c95b" stroke="#2c3f89" stroke-width="2"/>
+        <circle cx="180" cy="160" r="7" fill="#f3c95b" stroke="#2c3f89" stroke-width="2"/>
+        </svg>
+        <p><strong>Good</strong></p>
+        <p>Roughly equilateral. Weight is centered and evenly shared
+        between contact points.</p>
+        </div>
+        <div class="triangle-bad">
+        <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="20,15 65,95 250,155" fill="rgba(197,75,59,0.08)" stroke="#c54b3b" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="20" cy="15" r="7" fill="#f3c95b" stroke="#c54b3b" stroke-width="2"/>
+        <circle cx="65" cy="95" r="7" fill="#f3c95b" stroke="#c54b3b" stroke-width="2"/>
+        <circle cx="250" cy="155" r="7" fill="#f3c95b" stroke="#c54b3b" stroke-width="2"/>
+        </svg>
+        <p><strong>Bad</strong></p>
+        <p>Large hypotenuse and two points are close together.</p>
+        </div>
+        </div>
+        </section>
+        <section id="the-found-objectmaterial" class="level4">
+        <h4>The Found Object/Material</h4>
+        <p>I ask that everyone bring a small found object/material. It
+        can be from your home, or from out on the street. It can be an
+        everyday item, or it can be trash, but I ask that thought be
+        placed on the selection. <strong>This selection will impact
+        greatly how we look and think about this object</strong>, and
+        makes the conversation much more interesting.</p>
+        </section>
+        </section>
+        <section id="exploration-period" class="level3">
+        <h3><strong>Exploration Period</strong></h3>
+        <p>A big part of this assignment is exploring the range of
+        motion that results from adding or removing parts from your
+        machine.</p>
+        <p>Iterate through the possible movements and mark-making types.
+        Think of this as exploring a new autonomous paintbrush:
+        experiment with different mark-making, colors, textures,
+        etc.</p>
+        <p>Play with the possibilities and choose a direction as you
+        approach a final design.</p>
+        </section>
+        <section id="research-period" class="level3">
+        <h3><strong>Research Period</strong></h3>
+        <p>It’s also important to know examples of past artists’ work —
+        see the Inspiration section below to get an idea, and do your
+        own research.</p>
+        </section>
+        <section id="execution-period" class="level3">
+        <h3><strong>Execution Period</strong></h3>
+        <section id="writing-the-formal-generative-drawing-instructions"
+        class="level4">
+        <h4>Writing the Formal Generative Drawing Instructions</h4>
+        <p>Once you’ve reached a final design and gotten to know your
+        machine, it’s time to start designing some limitations to carry
+        out a generative drawing.</p>
+        <p>Think about how to limit range, time constraints,
+        starting/ending positions, adding physical blocks for fencing,
+        whether it’s anchored to a fixed point like a leashed dog,
+        swapping colors, etc. Be creative.</p>
+        <p>Instructions can be as strict or as loose as you’d like. It
+        can be mundane steps like a cooking recipe, or a more poetic,
+        performative interpration. (Look at the <a
+        href="#performanceevent-scores">Performance Scores</a>
+        section.)</p>
+        <blockquote class="info" style="border: 1px blue solid; padding: 10px; background: rgb(238, 241, 247);">
+        <span class="uk-label uk-label-info">Tip</span>
+        <p>Everyone will be given a regular A7 sheet of paper for the Robot
+        Drawing Showcase on September 23rd for the final drawing. Paper will
+        also be provided for experimentation during the class before.</p>
+        </blockquote>
+
+        <p>Just keep in mind that you will be asked to execute these
+        instructions, with any defined limitations in class on September
+        23rd.</p>
+        <p><strong>You are limited to 5 minutes.</strong> Which means,
+        it shouldn’t last longer than 5 minutes.</p>
+        <hr />
+        </section>
+        </section>
+        </section>
+        <section id="documentation" class="level2">
+        <h2>Documentation</h2>
+        <p>This assignment is documented in three parts:</p>
+        <ul>
+        <li>Your constructed drawing machine (and any work-in-progress
+        images)</li>
+        <li>The instructions to carry out a drawing</li>
+        <li>The final drawing</li>
+        </ul>
+        <p>Make a new channel in your Are.na account called “Drawing
+        Machine Assignment”. This is where you will dump all this
+        documentation.</p>
+        </section>
+        <section id="inspiration-examples" class="level2">
+        <h2>Inspiration &amp; Examples</h2>
+        <section id="performanceevent-scores" class="level3">
+        <h3>Performance/Event Scores</h3>
+        <ul>
+        <li><a
+        href="https://intermsofperformance.site/keywords/score/pablo-helguera">Pablo
+        Helguera</a></li>
+        <li><a
+        href="https://www.moma.org/collection/works/135401">George
+        Brecht: Event Scores at MoMA</a></li>
+        <li><a
+        href="https://alliesullberg.substack.com/p/lets-make-an-event-score">Make
+        an Event Score: Inspired by Yoko Ono</a></li>
+        <li><a
+        href="https://jacket2.org/commentary/alison-knowles-17-event-scores-where-they-happened">17
+        Event Score Examples</a></li>
+        </ul>
+        </section>
+        <section id="juan-flores-walking-poems" class="level3">
+        <h3>Juan Flores: Walking Poems</h3>
+        <p><img src="images/walk.png" /></p>
+        </section>
+        <section id="stanley-brouwn" class="level3">
+        <h3>Stanley Brouwn</h3>
+        <p><a href="https://www.are.na/travess-smalley/stanley-brouwn-this-way-brouwn-1960-1964">Stanley
+        Brouwn: This Way Brouwn</a></p>
+        <p><img src="https://dza2a2ql7zktf.cloudfront.net/binaries-cdn/dqzqcuqf9/image/fetch/c_fill,q_auto,dpr_1.0,f_auto,w_auto/https://d2u3kfwd92fzu7.cloudfront.net/catalog/artwork/gallery/1544/_MG_3723-1.jpg"></img></p>
+        <hr />
+        </section>
+        <section id="yukinori-yanagi" class="level3">
+        <h3>Yukinori Yanagi</h3>
+        <p><a href="https://www.annshafer.com/annshaferblog/can-an-ant-be-an-artist">Yukinori
+        Yanagi: Wandering Position</a></p>
+        <p><img width=500 src="http://anomalytokyo.com/log/wp-content/uploads/2021/02/th480Wondering-Position.jpg"></img></p>
+        <hr />
+        </section>
+        <section id="sol-lewitt-wall-drawings" class="level3">
+        <h3>Sol LeWitt: Wall Drawings</h3>
+        <p><img src="https://static-assets.artlogic.net/w_2400,h_2400,c_limit,f_auto,fl_lossy,q_auto/artlogicstorage/mireillemoslerltd/images/view/5e520c76cf49e63393037dd5a9df9863j/mireillemosler-ltd.-sol-lewitt-1928-2007-wall-drawing-1024-2002.jpg"></img></p>
+        <blockquote>
+        <p>Within a 6’ square, 10,000 straight lines, drawn with pencil
+        at random. Within a 6’ circle, 10,000 not straight lines drawn
+        with pencil at random.</p>
+        </blockquote>
+        <hr />
+        </section>
+        <section id="yoko-ono" class="level3">
+        <h3>Yoko Ono:</h3>
+        <p><img width="100%" src="https://imgix-proxy.walkerart.org/wac_42408.tif"></img></p>
+        <p>Lighting Piece:
+        <a href="https://www.walkerart.org/collections/artwork/yoko-ono-lighting-piece-light-a-match-and-watch-till-it-goes-out-1955-1995/">link</a></p>
+        <hr />
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZrR_1x6lhMo?si=z8b9j_OC8qrpnAoa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Organized by AIGA at Harlem School for the Arts,
+        animated by littleBits</strong></p>
+        <blockquote>
+        <p>Generative art refers to art that in whole or in part has
+        been created with the use of an autonomous system. In discussing
+        generative art and its principles, participants are challenged
+        to invent their own drawing bots.</p>
+        </blockquote>
+        <hr />
+        </section>
+        <section id="insect-writing" class="level3">
+        <h3>Insect Writing</h3>
+        <p><img src="images/insect.jpg" /></p>
+        </section>
+        <section id="generative-systems" class="level3">
+        <h3>Generative Systems</h3>
+        <p><img width="300" src="https://cdn.prod.website-files.com/6411e594fbd274173bf8c35c/667408fe78d11cb70f143009_AD_4nXcM7R3KilufepRzHUaT5_M9QRiZsZKbvLjb1QDxhAuy86kU3tEYbPppdGIaygIzoDGdW4d5ugXRzYiBG00B35UBad-9cliRS19mrl8scZYkO2shZLaaDT7DEKwylBOGojr73BZ1mcAHWw4lI0cQHqigMsg.jpeg"></img></p>
+        <p><a href="https://www.lerandom.art/editorial/demystifying-generative-systems">Demystifying
+        Generative Systems</a></p>
+        <hr />
+        </section>
+        <section id="niklas-roy-robot-factory" class="level3">
+        <h3>Niklas Roy: Robot Factory</h3>
+        <p><a href="https://www.niklasroy.com/robotfactory/">niklasroy.com/robotfactory</a></p>
+        <iframe src="https://www.niklasroy.com/robotfactory/" width="100%" height="500">
+        </iframe>
+        </section>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

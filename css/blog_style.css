@@ -296,7 +296,6 @@ h3 {
   color: black;
   font-family: 'Inter-Black';
   border-bottom: 0.5px solid #ffffff;
-  padding-bottom: 0.5em;
   font-weight: bold;
 }
 
@@ -382,7 +381,6 @@ hr {
 }
 
 .level3 {
-  padding: 15px;
   margin-bottom: 10px;
   scroll-margin-top: 80px;
 }
