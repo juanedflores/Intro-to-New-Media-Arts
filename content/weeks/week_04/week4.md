@@ -41,6 +41,41 @@ We are going to start a soldering workshop and get acquainted with the new media
 
 :::
 
+::: {.day title="WEDNESDAY" open="true"}
+
+### ANNOUNCEMENTS:
+
+::: {.announcement type="reminder"}
+Next week please bring your found object if you haven't yet. We will finilize our drawing bots on Monday.
+
+<a href="https://canvas.uic.edu/courses/51541/assignments/416824"></a>
+:::
+
+::: {.announcement type="materials"}
+- Soldering Kits
+- Vibration Motor
+- Coin Cell Battery(s) w/Holder
+- Alligator Clips
+:::
+
+### AGENDA
+
+- Lesson on Switches. Testing our circuits with alligator cables.
+- Start Soldering the Vibration Motor Circuit
+
+### Topics
+
+::: {.topics}
+
+::: {.card type="workshop" title="Soldering Your First Circuit" thumb="./content/Workshops/VibrationBotCircuit/images/cover.gif" href="./content/Workshops/VibrationBotCircuit/VibrationBotCircuit.html" tag="Assignment"}
+:::
+
+::: {.card type="lesson" title="Switches / Buttons" thumb="./content/Blog/Switch/images/cover.jpg" href="./content/Blog/Switch/Switch.html"}
+::: 
+
+::: {.card type="external" title="Alligator Clips" thumb="https://oss.origin-ic.com/otherFile/429-869-Alligator%20Clips%20Type.jpg" href="https://www.origin-ic.com/blog/comprehensive-guide-on-alligator-clips-types-usages-and-tips/47477"}
+::: 
+
 :::
 
 ### Next Week
