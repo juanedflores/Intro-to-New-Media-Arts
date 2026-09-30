@@ -183,6 +183,16 @@ a {
   text-decoration: none;
 }
 
+/* UIkit's `.uk-nav li > a` makes nav links flex; inline lets a second
+   link (e.g. Gallery) sit on the same line as the header. */
+.uk-nav li.uk-nav-header > a {
+  display: inline;
+}
+
+.nav-header-sep {
+  opacity: 0.5;
+}
+
 .uk-nav-header a:hover {
   text-decoration: underline;
 }

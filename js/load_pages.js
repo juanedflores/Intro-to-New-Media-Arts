@@ -46,12 +46,28 @@ const WEEK_SECTIONS = [
     start: 4,
     title: "Drawing Robot",
     href: "content/Assignments/Drawing_Bot/drawing_bot.html",
+    extra: {
+      title: "Gallery",
+      href: "content/Assignments/Drawing_Bot/gallery/index.html",
+    },
   },
   { start: 6, title: "E-Textiles / Wearables" },
   { start: 7, title: "Intro to Arduino" },
   { start: 8, title: "Midterm: Creative Interfaces" },
   { start: 11, title: "Final Assignment" },
 ];
+
+function navLink(href, title) {
+  return (
+    '<a href="' +
+    href +
+    '" onclick="window.location.href=\'' +
+    href +
+    "'; return false;\">" +
+    title +
+    "</a>"
+  );
+}
 
 function renderWeekNav(currentWeek, totalWeeks) {
   var items = "";
@@ -65,14 +81,14 @@ function renderWeekNav(currentWeek, totalWeeks) {
       // navigation, same reason the week links use onclick+loadWeek()
       // instead of a real href. Force the navigation ourselves.
       var headerContent = section.href
-        ? '<a href="' +
-          section.href +
-          '" onclick="window.location.href=\'' +
-          section.href +
-          "'; return false;\">" +
-          section.title +
-          "</a>"
+        ? navLink(section.href, section.title)
         : section.title;
+      // Optional second link shown beside the header (e.g. a gallery).
+      if (section.extra) {
+        headerContent +=
+          ' <span class="nav-header-sep">/</span> ' +
+          navLink(section.extra.href, section.extra.title);
+      }
       items += '<li class="uk-nav-header">' + headerContent + "</li>";
     }
     var cls =

@@ -249,6 +249,25 @@ ol li {
   line-height: 100%;
 }
 
+/* Cover image: an image placed directly after a post's H1 in markdown.
+   The image runs edge to edge, flush under the heading; the caption
+   lines up with the 20px inset of the .level2 sections below. */
+.level1 > h1 + figure {
+  margin: 0 0 10px;
+}
+
+.level1 > h1 + figure > img {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+}
+
+.level1 > h1 + figure > figcaption {
+  padding: 10px 20px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
 #cover-img {
   background-color: black;
   max-height: 500px;

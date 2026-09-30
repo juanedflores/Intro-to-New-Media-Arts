@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing Machines Gallery</title>
+    <link rel="shortcut icon" href="../../../../images/favicon.ico" type="image/x-icon" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("../../../../fonts/Inter-VariableFont.ttf") format("truetype");
+        font-weight: 100 900;
+      }
+
+      :root {
+        --wall: #f4f1ea;
+        --ink: #1f1f24;
+        --muted: #6b6a66;
+        --rule: #d9d4c7;
+        --frame: #2a2622;
+        --mat: #fbfaf7;
+        --label: #ffffff;
+        --accent: rgb(243, 201, 91);
+        --blue: #2c3f89;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: var(--wall);
+        color: var(--ink);
+        font-family: "Inter", system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      a {
+        color: var(--blue);
+      }
+
+      /* ---------- header ---------- */
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        background: var(--accent);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      .topbar a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .topbar a:hover {
+        text-decoration: underline;
+      }
+      .topbar .sep {
+        opacity: 0.4;
+      }
+
+      header.intro {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 64px 24px 32px;
+      }
+      header.intro .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      header.intro h1 {
+        font-size: clamp(40px, 7vw, 84px);
+        line-height: 0.95;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        margin: 12px 0 20px;
+      }
+      header.intro p {
+        max-width: 640px;
+        margin: 0;
+        color: #3b3a37;
+        font-size: 17px;
+      }
+
+      /* ---------- index strip ---------- */
+
+      nav.index {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8px 24px 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+        gap: 10px;
+      }
+      nav.index a {
+        position: relative;
+        display: block;
+        aspect-ratio: 4 / 3;
+        background: var(--mat);
+        border: 3px solid var(--frame);
+        overflow: hidden;
+      }
+      nav.index img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.25s;
+      }
+      nav.index a:hover img {
+        transform: scale(1.06);
+      }
+      nav.index span {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        background: var(--frame);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 1px 5px;
+      }
+
+      /* ---------- exhibits ---------- */
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+      }
+
+      .exhibit {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+        gap: 48px;
+        align-items: center;
+        padding: 72px 0;
+        border-top: 1px solid var(--rule);
+        scroll-margin-top: 16px;
+      }
+      .exhibit:nth-child(even) .artwork {
+        order: 2;
+      }
+      /* keep the drawing in view while reading long instructions */
+      .artwork {
+        position: sticky;
+        top: 24px;
+      }
+
+      /* the framed drawing */
+      .frame {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: none;
+        cursor: zoom-in;
+        background: var(--frame);
+        padding: 14px;
+        box-shadow: var(--shadow);
+        border-radius: 2px;
+      }
+      .frame .mat {
+        background: var(--mat);
+        padding: 7%;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+          inset 0 3px 8px rgba(0, 0, 0, 0.12);
+      }
+      .frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+      }
+
+      /* side panel */
+      .side {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .label {
+        background: var(--label);
+        padding: 24px 26px 22px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        border-left: 6px solid var(--accent);
+      }
+      .label .no {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .label h2 {
+        margin: 4px 0 2px;
+        font-size: 26px;
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      .label .artist {
+        margin: 0 0 4px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .label h3 {
+        margin: 18px 0 6px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      .label ol,
+      .label ul {
+        margin: 0;
+        padding-left: 22px;
+        font-size: 15px;
+      }
+      .label li {
+        margin: 3px 0;
+      }
+      .label li::marker {
+        font-weight: 700;
+        color: var(--muted);
+      }
+      .label .note {
+        margin: 12px 0 0;
+        font-size: 14px;
+        font-style: italic;
+        color: #4a4944;
+      }
+
+      .objects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .object {
+        margin: 0;
+      }
+      .object button {
+        display: block;
+        width: 100%;
+        padding: 6px;
+        border: none;
+        background: var(--frame);
+        cursor: zoom-in;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+      }
+      .object img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+      .object figcaption {
+        margin-top: 8px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      footer {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 24px 64px;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ---------- lightbox ---------- */
+
+      dialog {
+        border: none;
+        padding: 0;
+        background: transparent;
+        max-width: 100vw;
+        max-height: 100vh;
+        width: 100vw;
+        height: 100vh;
+      }
+      dialog::backdrop {
+        background: rgba(20, 18, 16, 0.92);
+      }
+      .lb {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 56px 16px 24px;
+      }
+      .lb img {
+        max-width: 100%;
+        max-height: calc(100vh - 120px);
+        object-fit: contain;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+      .lb p {
+        color: #e8e4da;
+        margin: 14px 0 0;
+        font-size: 14px;
+        text-align: center;
+      }
+      .lb button {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: none;
+        font: inherit;
+        font-size: 22px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .lb button:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .lb .close {
+        top: 12px;
+        right: 12px;
+      }
+      .lb .prev {
+        left: 12px;
+        top: 50%;
+      }
+      .lb .next {
+        right: 12px;
+        top: 50%;
+      }
+
+      /* ---------- small screens ---------- */
+
+      @media (max-width: 820px) {
+        header.intro {
+          padding: 40px 16px 24px;
+        }
+        nav.index {
+          padding: 8px 16px 32px;
+          grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+        }
+        main {
+          padding: 0 16px 56px;
+        }
+        .exhibit {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          padding: 48px 0;
+        }
+        .exhibit:nth-child(even) .artwork {
+          order: 0;
+        }
+        .artwork {
+          position: static;
+        }
+        .frame {
+          padding: 9px;
+        }
+        .label {
+          padding: 20px;
+        }
+        footer {
+          padding: 24px 16px 48px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topbar">
+      <a href="../../../../index.html">ART 150</a>
+      <span class="sep">/</span>
+      <a href="../drawing_bot.html">Drawing Robot Assignment</a>
+      <span class="sep">/</span>
+      <span>Gallery</span>
+    </div>
+
+    <header class="intro">
+      <div class="kicker">Intro to New Media Art &middot; Fall 2026</div>
+      <h1>Drawing<br />Machines</h1>
+      <p>
+        Eighteen vibration-motor robots, each built around a found object and
+        given a set of written instructions. Each drawing was made live in class
+        by following those instructions, in five minutes or less.
+        Click any image to see it larger.
+      </p>
+    </header>
+
+    <nav class="index" id="index" aria-label="Jump to a drawing"></nav>
+
+    <main id="gallery"></main>
+
+    <footer>
+      Stills taken from the class recording of the Drawing Bot Showcase,
+      September 28, 2026. Instructions are transcribed from each student's
+      handwritten card.
+    </footer>
+
+    <dialog id="lightbox" aria-label="Image viewer">
+      <div class="lb">
+        <button class="close" aria-label="Close">&times;</button>
+        <button class="prev" aria-label="Previous image">&larr;</button>
+        <img alt="" />
+        <p></p>
+        <button class="next" aria-label="Next image">&rarr;</button>
+      </div>
+    </dialog>
+
+    <script>
+      // One entry per machine, in the order they were run in class.
+      // Fill in `artist` to credit students; leave "" to hide the line.
+      const EXHIBITS = [
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Let robot run for 20 s.",
+            "Move the antenna however you see fit.",
+            "Let the robot run for 40 s.",
+            "Move the antenna again.",
+            "Let the robot run until it stops moving or goes off the page.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Place car/robot on paper.",
+            "Turn switch on.",
+            "Let run for 2 minutes, then turn off.",
+            "Move location.",
+            "Turn crayon for sharper point.",
+            "Let run for 1 minute, then turn off.",
+            "Move location.",
+            "Turn for sharper point.",
+            "Let run for 2 minutes.",
+          ],
+          limitations: [
+            "Crayon losing sharpness",
+            "Not controllable",
+            "Slow",
+            "Light pressure on drawing",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Turn the switch on.",
+            "Keep it running for 1 min.",
+            "After a min, switch its position to another point and keep it running for 1 min.",
+            "Switch its position again to another point and keep it running for about 2 min.",
+            "Yet again, switch its position one last time to a different point and keep it running for about 1 min.",
+          ],
+          limitations: [
+            "It's very slow",
+            "Very sensitive",
+            "And it doesn't make shapes, just scribbles.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Add paint to brush (1).",
+            "Turn on drawing robot.",
+            "Place in start 1.",
+            "Let run until paint runs out.",
+            "Add paint to brush (2).",
+            "Place in start 2.",
+            "Let run until paint runs out.",
+            "Add paint to brush (3).",
+            "Place in start 3.",
+            "Let run till paint runs out.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Tilt box at an acute angle.",
+            "Set timer for 45 seconds. Spend 15 seconds inserting first color, and let run (from top to bottom).",
+            "For minute #2, replace color and let run for 45 more seconds.",
+            "Repeat the above steps for colors #3, #4 and #5.",
+            "Runtime complete.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Turn on switch, let run 30 sec.",
+            "Turn off after 30 sec, then relocate.",
+            "Repeat step 1. Let the repeat happen for 3 times.",
+          ],
+          limitations: [
+            "Vibration can cause shift in tape and paper.",
+            "Wheels move slightly slow.",
+            "Shift continues to occur.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Place machine on the paper.",
+            "Let it run for 20 seconds.",
+            "Move it to one corner of paper.",
+            "Let it run for 30 seconds.",
+            "Keep moving the machine.",
+            "Observe the drawing.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Take the lid off the marker and place it in the center of a sheet of paper.",
+            "Turn it on & set the timer for 20 seconds to change directions (or until it stops moving). (optional)",
+            "Let it navigate its way/pattern through the paper; only move it if necessary.",
+            "If it falls apart then that's its final point. If it keeps going, we can create a pattern for 5 minutes.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Take cap off.",
+            "Turn on and let run for 30 sec.",
+            "Grab and move robot to the top left and let run for 30 sec.",
+            "Move to bottom right and let run for 30 sec.",
+            "Keep running for 30 sec.",
+            "Turn off robot.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: ["Place the bot on paper.", "Start the motor and let it draw."],
+          note: "→ maybe a push sometimes",
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Robot constructed at 120° angle.",
+            "Take off pen cap.",
+            "Robot moves in circle or not.",
+            "Stops at circle or half circle.",
+            "Then resets circle.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Ensure legs are upright & turn on.",
+            "Watch it spin. If it stops, whisper words of encouragement and try to adjust legs.",
+            "If that doesn't work (no movement for ~60 s), turn off. (He'll go again tomorrow.)",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Clock in and work for minimum wage.<br><em>They can't afford any more.</em>",
+            "Stay under full time.<br><em>They can't afford any more.</em>",
+            "Paid every two weeks.<br><em>They can't afford any more.</em>",
+            "Wait till you're burnt out.<br><em>You can't afford any more.</em>",
+          ],
+          note: "Drawn on a sheet pre-marked “Shift 1–4” and “Now Hiring $7.25/hr.”",
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Let it run for 30 s.",
+            "Move it to a little lower point from the start point.",
+            "Let it run for 20 s.",
+            "Keep repeating the same action with a lower point from the previous one.",
+          ],
+        },
+        {
+          title: "Koinobori",
+          artist: "",
+          stepsLabel: "Notes on the machine",
+          steps: [
+            "To prevent an awkward out-of-battery situation, I have a convenient battery-change mechanic.",
+            "Place any type of pen here. Both pen and marker fit, as it's elastic.",
+            "The length between engine and marker can change for different movement: closer will be a circle, further will be a straight line, middle length will be a curve. But to stabilize the pen, I glued it already.",
+            "This piece will prevent it from falling.",
+            "In use, it can move quite freely based on this length.",
+          ],
+        },
+        {
+          title: "Be a Snail",
+          artist: "",
+          steps: [
+            "Locate start button.",
+            "Insert pen.",
+            "Put snail on paper.",
+            "Start snail.",
+            "The snail should run and have a mind of its own! (for 30 seconds)",
+          ],
+          note: "Sometimes the snail will not start. Mess around with wires… (Shell: a black & white film can, T-Max 400.)",
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Put at “bottom left,” 10 seconds.",
+            "Put at “top right,” 10 seconds.",
+            "Put at “bottom right,” 10 seconds.",
+            "Put at “top left,” 10 seconds.",
+            "Put anywhere.",
+          ],
+        },
+        {
+          title: "Untitled",
+          artist: "",
+          steps: [
+            "Turn on while in the middle of the paper.",
+            "Once the person believes the line is long enough, place back into the middle facing a different direction.",
+            "Repeat steps until time is over.",
+          ],
+        },
+      ];
+
+      const pad = (n) => String(n).padStart(2, "0");
+      const gallery = document.getElementById("gallery");
+      const index = document.getElementById("index");
+      const images = []; // every zoomable image, in page order, for the lightbox
+
+      EXHIBITS.forEach((ex, i) => {
+        const n = pad(i + 1);
+        const list = (items) => items.map((s) => `<li>${s}</li>`).join("");
+
+        const zoom = (src, caption) => {
+          images.push({ src, caption });
+          return images.length - 1;
+        };
+        const iDrawing = zoom(`images/drawing_${n}.jpg`, `No. ${n}: the drawing`);
+        const iMachine = zoom(`images/machine_${n}.jpg`, `No. ${n}: the machine`);
+        const iCard = zoom(`images/card_${n}.jpg`, `No. ${n}: the original instruction card`);
+
+        const section = document.createElement("section");
+        section.className = "exhibit";
+        section.id = `no-${n}`;
+        section.innerHTML = `
+          <div class="artwork">
+            <button class="frame" data-zoom="${iDrawing}" aria-label="Enlarge drawing ${n}">
+              <div class="mat"><img src="images/drawing_${n}.jpg" alt="Drawing ${n}, made by the drawing machine" loading="lazy"></div>
+            </button>
+          </div>
+          <div class="side">
+            <div class="label">
+              <div class="no">No. ${n}</div>
+              <h2>${ex.title}</h2>
+              ${ex.artist ? `<p class="artist">${ex.artist}</p>` : ""}
+              <h3>${ex.stepsLabel || "Instructions"}</h3>
+              <ol>${list(ex.steps)}</ol>
+              ${ex.limitations ? `<h3>Limitations</h3><ul>${list(ex.limitations)}</ul>` : ""}
+              ${ex.note ? `<p class="note">${ex.note}</p>` : ""}
+            </div>
+            <div class="objects">
+              <figure class="object">
+                <button data-zoom="${iMachine}" aria-label="Enlarge machine ${n}">
+                  <img src="images/machine_${n}.jpg" alt="Drawing machine ${n}" loading="lazy">
+                </button>
+                <figcaption>The machine</figcaption>
+              </figure>
+              <figure class="object">
+                <button data-zoom="${iCard}" aria-label="Enlarge instruction card ${n}">
+                  <img src="images/card_${n}.jpg" alt="Handwritten instruction card ${n}" loading="lazy">
+                </button>
+                <figcaption>Original card</figcaption>
+              </figure>
+            </div>
+          </div>`;
+        gallery.appendChild(section);
+
+        const a = document.createElement("a");
+        a.href = `#no-${n}`;
+        a.innerHTML = `<img src="images/drawing_${n}.jpg" alt="" loading="lazy"><span>${n}</span>`;
+        index.appendChild(a);
+      });
+
+      // ---- lightbox ----
+      const dlg = document.getElementById("lightbox");
+      const lbImg = dlg.querySelector("img");
+      const lbCap = dlg.querySelector("p");
+      let current = 0;
+
+      function show(i) {
+        current = (i + images.length) % images.length;
+        lbImg.src = images[current].src;
+        lbImg.alt = images[current].caption;
+        lbCap.textContent = images[current].caption;
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-zoom]");
+        if (!btn) return;
+        show(Number(btn.dataset.zoom));
+        dlg.showModal();
+      });
+      dlg.querySelector(".close").onclick = () => dlg.close();
+      dlg.querySelector(".prev").onclick = () => show(current - 1);
+      dlg.querySelector(".next").onclick = () => show(current + 1);
+      dlg.addEventListener("click", (e) => {
+        if (e.target === dlg || e.target.classList.contains("lb")) dlg.close();
+      });
+      dlg.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") show(current - 1);
+        if (e.key === "ArrowRight") show(current + 1);
+      });
+    </script>
+  </body>
+</html>

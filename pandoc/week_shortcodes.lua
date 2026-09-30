@@ -2,7 +2,7 @@
 -- Enables:
 --   ::: {.days} ... :::                                  accordion wrapper (one per week)
 --   ::: {.day title="MONDAY" open="true"} ... :::         one collapsible day
---   ::: {.announcement type="reminder|materials|tip"} ... :::  styled callout
+--   ::: {.announcement type="reminder|materials|tip|gallery"} ... :::  styled callout
 --   ::: {.topics} ... :::                                 card grid wrapper
 --   ::: {.card type="lesson|external|video|assignment|workshop" title="..." thumb="..." href="..." tag="..."} :::
 --   ::: {.nextweek} ... :::                               "looking ahead" callout
@@ -91,6 +91,7 @@ local announcement_styles = {
   reminder = { border = 'orange', block_class = 'warning', label_class = 'uk-label-warning', label_text = 'Reminder', bg = '#fff9db' },
   materials = { border = 'blue', block_class = 'info', label_class = 'uk-label-info', label_text = 'Materials Needed', bg = 'rgb(238, 241, 247)' },
   tip = { border = 'blue', block_class = 'info', label_class = 'uk-label-info', label_text = 'Tip', bg = 'rgb(238, 241, 247)' },
+  gallery = { border = 'green', block_class = 'success', label_class = 'uk-label-success', label_text = 'Gallery', bg = 'rgb(237, 247, 238)' },
 }
 
 local function render_announcement(el)
