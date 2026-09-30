@@ -454,22 +454,24 @@ id="toc-additional-resources">Additional Resources</a></li>
         turns it into a steadier <strong>5V</strong> or
         <strong>3.3V</strong> for the breadboard.</p>
         <ol type="1">
-        <li><strong>Check the voltage jumpers.</strong> The module has a
-        small jumper cap on each side that selects the voltage for that
-        side’s rail. Set <strong>both</strong> to
-        <strong>5V</strong>.</li>
-        <li><strong>Plug the module into one end of the
+        <li><p><strong>Check the voltage jumpers.</strong> The module
+        has a small jumper cap on each side that selects the voltage for
+        that side’s rail. Set <strong>both</strong> to
+        <strong>5V</strong>. Look at the red circles in the image below.
+        <img src="images/power_module.jpg" /></p></li>
+        <li><p><strong>Plug the module into one end of the
         breadboard</strong> so its pins go into the power rails. Line up
         the module’s <strong>+</strong> and <strong>–</strong> markings
         with the red <strong>+</strong> and blue <strong>–</strong>
-        rails. Getting this backwards can damage components.</li>
-        <li><strong>Plug the 9V adapter</strong> into the module’s
+        rails. Getting this backwards can damage components.</p></li>
+        <li><p><strong>Plug the 9V adapter</strong> into the module’s
         barrel jack, then into the wall. Only use one power source at a
-        time: the adapter <strong>or</strong> USB, not both.</li>
-        <li><strong>Press the module’s power button.</strong> Its small
-        LED should light up.</li>
-        <li><strong>Turn the power off</strong> (press the button again)
-        whenever you’re changing wires.</li>
+        time: the adapter <strong>or</strong> USB, not both. <img
+        src="images/barreljack.jpg" /></p></li>
+        <li><p><strong>Press the module’s power button.</strong> Its
+        small LED should light up.</p></li>
+        <li><p><strong>Turn the power off</strong> (press the button
+        again) whenever you’re changing wires.</p></li>
         </ol>
         </section>
         <section id="part-3-potentiometer-dimmer" class="level2">
@@ -480,6 +482,9 @@ id="toc-additional-resources">Additional Resources</a></li>
         (the wiper) slides along it as you turn the knob. Using the
         middle leg and one outer leg gives you a resistance that changes
         as you turn.</p>
+        <video src="https://makeabilitylab.github.io/physcomp/electronics/assets/videos/Potentiometer_Overview_ByJonFroehlich.mp4" width="100%" controls>
+        </video>
+        <hr />
         <p><strong>5V (+)</strong> → <strong>potentiometer</strong> →
         <strong>220Ω resistor</strong> → <strong>LED</strong> →
         <strong>GND (–)</strong></p>
@@ -505,6 +510,9 @@ id="toc-additional-resources">Additional Resources</a></li>
         <text x="405" y="95" text-anchor="middle" fill="#666">(long leg
         on the left)</text>
         </svg>
+        <p><img src="images/pot_circuit2.png" /></p>
+        <p>Another way of wiring it (There are many right answers):</p>
+        <p><img src="images/pot_circuit.png" /></p>
         <p>With the <strong>power off</strong>:</p>
         <ol type="1">
         <li><strong>Place the LED</strong> across two rows. The
@@ -562,6 +570,7 @@ id="toc-additional-resources">Additional Resources</a></li>
         <text x="405" y="95" text-anchor="middle" fill="#666">(long leg
         on the left)</text>
         </svg>
+        <p><img src="images/photores_circuit.png" /></p>
         <p>This is the same circuit as Part 3, with the photoresistor in
         place of the potentiometer:</p>
         <ol type="1">
@@ -770,22 +779,10 @@ id="toc-additional-resources">Additional Resources</a></li>
         <section id="going-further" class="level2">
         <h2>Going Further</h2>
         <ul>
-        <li><strong>Swap the LED for the buzzer.</strong> Put the
-        Velostat in place of the potentiometer from Part 5 and you have
-        a pressure-activated alarm.</li>
-        <li><strong>Compare all three.</strong> Which feels most
-        expressive to control: turning a knob, changing the light, or
-        squeezing?</li>
-        <li><strong>Change the shape.</strong> Make a long strip, a big
-        pad, or a sensor sewn into fabric using conductive thread or
-        fabric instead of copper tape.</li>
         <li><strong>Hide it in something.</strong> A glove, a pillow, a
         shoe insole, a book cover: where would pressure mean
         something?</li>
         </ul>
-        <p>Next week we’ll start reading sensors like this one with an
-        <strong>Arduino</strong>, so the pressure can control sound,
-        motors or code instead of just an LED.</p>
         </section>
         <section id="video-walkthrough" class="level2">
         <h2>Video Walkthrough</h2>

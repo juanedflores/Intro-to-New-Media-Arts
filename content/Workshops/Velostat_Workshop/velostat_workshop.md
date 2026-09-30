@@ -79,15 +79,24 @@ The Makeability Lab has a good visual guide: [Breadboards](https://makeabilityla
 
 The power supply module takes the 9V from the adapter and turns it into a steadier **5V** or **3.3V** for the breadboard.
 
-1. **Check the voltage jumpers.** The module has a small jumper cap on each side that selects the voltage for that side's rail. Set **both** to **5V**.
-2. **Plug the module into one end of the breadboard** so its pins go into the power rails. Line up the module's **+** and **–** markings with the red **+** and blue **–** rails. Getting this backwards can damage components.
-3. **Plug the 9V adapter** into the module's barrel jack, then into the wall. Only use one power source at a time: the adapter **or** USB, not both.
-4. **Press the module's power button.** Its small LED should light up.
-5. **Turn the power off** (press the button again) whenever you're changing wires.
+1. **Check the voltage jumpers.** The module has a small jumper cap on each side that selects the voltage for that side's rail. Set **both** to **5V**. Look at the red circles in the image below.
+![](images/power_module.jpg)
+
+
+1. **Plug the module into one end of the breadboard** so its pins go into the power rails. Line up the module's **+** and **–** markings with the red **+** and blue **–** rails. Getting this backwards can damage components.
+2. **Plug the 9V adapter** into the module's barrel jack, then into the wall. Only use one power source at a time: the adapter **or** USB, not both.
+![](images/barreljack.jpg)
+
+3. **Press the module's power button.** Its small LED should light up.
+4. **Turn the power off** (press the button again) whenever you're changing wires.
 
 ## Part 3: Potentiometer Dimmer
 
 A **potentiometer** ("pot") is a resistor you can adjust with a knob. It has three legs: the two outer legs are the ends of a resistor, and the **middle leg** (the wiper) slides along it as you turn the knob. Using the middle leg and one outer leg gives you a resistance that changes as you turn.
+
+<video src="https://makeabilitylab.github.io/physcomp/electronics/assets/videos/Potentiometer_Overview_ByJonFroehlich.mp4" width="100%" controls></video>
+
+---
 
 **5V (+)** → **potentiometer** → **220Ω resistor** → **LED** → **GND (–)**
 
@@ -113,6 +122,13 @@ A **potentiometer** ("pot") is a resistor you can adjust with a knob. It has thr
   <text x="405" y="80" text-anchor="middle">LED</text>
   <text x="405" y="95" text-anchor="middle" fill="#666">(long leg on the left)</text>
 </svg>
+
+![](images/pot_circuit2.png)
+
+Another way of wiring it (There are many right answers):
+
+![](images/pot_circuit.png)
+
 
 With the **power off**:
 
@@ -155,6 +171,8 @@ A **photoresistor** (also called a light-dependent resistor, or LDR) changes its
   <text x="405" y="80" text-anchor="middle">LED</text>
   <text x="405" y="95" text-anchor="middle" fill="#666">(long leg on the left)</text>
 </svg>
+
+![](images/photores_circuit.png)
 
 This is the same circuit as Part 3, with the photoresistor in place of the potentiometer:
 
@@ -291,12 +309,7 @@ With the **power off**:
 
 ## Going Further
 
-- **Swap the LED for the buzzer.** Put the Velostat in place of the potentiometer from Part 5 and you have a pressure-activated alarm.
-- **Compare all three.** Which feels most expressive to control: turning a knob, changing the light, or squeezing?
-- **Change the shape.** Make a long strip, a big pad, or a sensor sewn into fabric using conductive thread or fabric instead of copper tape.
 - **Hide it in something.** A glove, a pillow, a shoe insole, a book cover: where would pressure mean something?
-
-Next week we'll start reading sensors like this one with an **Arduino**, so the pressure can control sound, motors or code instead of just an LED.
 
 ## Video Walkthrough
 
