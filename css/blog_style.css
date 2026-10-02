@@ -227,9 +227,11 @@ ol li {
 }
 
 /* Cover image: an image placed directly after a post's H1 in markdown.
-   The image runs edge to edge, flush under the heading; the caption
-   lines up with the 20px inset of the .level2 sections below. */
+   The image runs edge to edge, flush under the heading. Its caption sits
+   on the photo's bottom-right corner as a small dark label, readable on
+   light and dark photos alike. */
 .level1 > h1 + figure {
+  position: relative;
   margin: 0 0 10px;
 }
 
@@ -240,9 +242,32 @@ ol li {
 }
 
 .level1 > h1 + figure > figcaption {
-  padding: 10px 20px 0;
-  font-size: 0.95em;
-  color: var(--muted);
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  max-width: min(78%, 440px);
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(20, 22, 30, 0.72);
+  color: #fff;
+  font-size: 0.9em;
+  line-height: 1.35;
+  text-align: left;
+  backdrop-filter: blur(2px);
+}
+.level1 > h1 + figure > figcaption a {
+  color: #fff !important;
+  font-size: inherit !important; /* the phone rule below sizes all links */
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 580px) {
+  .level1 > h1 + figure > figcaption {
+    right: 8px;
+    bottom: 8px;
+    max-width: calc(100% - 16px);
+    font-size: 0.78em;
+  }
 }
 
 #cover-img {
