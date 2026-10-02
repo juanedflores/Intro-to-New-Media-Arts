@@ -1209,9 +1209,6 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
 .sy-btn:hover {
   background: var(--blue-dark);
 }
-.sy-alt {
-  font-size: 0.95rem;
-}
 
 /* jump links: stay visible under the top bar while scrolling */
 .sy-jump {

@@ -21,7 +21,6 @@ title: Syllabus
 </dl>
 <div class="sy-download">
 <a class="sy-btn" href="content/syllabus/ART150_Fall2026.pdf" download="ART150_Fall2026_Syllabus.pdf">Download PDF</a>
-<a class="sy-alt" href="https://drive.google.com/file/d/1jGIHRsBMFxKVJi8767oNcbbqxm6r9Vwp/view" target="_blank" rel="noopener">Open in Google Drive ↗</a>
 </div>
 </div>
 
