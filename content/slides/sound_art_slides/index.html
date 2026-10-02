@@ -41,12 +41,8 @@
   <script src="../_shared/reveal/plugin/markdown/markdown.js"></script>
   <script src="../_shared/reveal/plugin/notes/notes.js"></script>
   <script src="../_shared/reveal/plugin/highlight/highlight.js"></script>
-  <script src="../_shared/reveal/plugin/chalkboard/plugin.js"></script>
-  <script src="../_shared/reveal/plugin/customcontrols/plugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <link rel="stylesheet" href="../_shared/reveal/plugin/highlight/zenburn.css">
-  <link rel="stylesheet" href="../_shared/reveal/plugin/chalkboard/style.css">
-  <link rel="stylesheet" href="../_shared/reveal/plugin/customcontrols/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script>
     // More info about initialization & config:
@@ -61,21 +57,7 @@
       hideCursorTime: 100,
       highlight: {
       },
-      customcontrols: {
-        controls: [
-          {
-            icon: '<i class="fa fa-pen-square"></i>',
-            title: 'Toggle chalkboard (B)',
-            action: 'RevealChalkboard.toggleChalkboard();'
-          },
-          {
-            icon: '<i class="fa fa-pen"></i>',
-            title: 'Toggle notes canvas (C)',
-            action: 'RevealChalkboard.toggleNotesCanvas();'
-          }
-        ]
-      },
-      plugins: [RevealMarkdown, RevealNotes, RevealHighlight, RevealChalkboard, RevealCustomControls],
+      plugins: [RevealMarkdown, RevealNotes, RevealHighlight],
     });
     Reveal.on('make-it-pop', () => {
       console.log('✨');
