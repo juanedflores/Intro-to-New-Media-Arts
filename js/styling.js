@@ -13,9 +13,9 @@ function sections() {
   var all = $(".level2");
   for (var i = 0; i < all.length; i++) {
     if (i % 2 == 0) {
-      $(all[i]).css("background-color", "white");
+      $(all[i]).css("background-color", "var(--paper)");
     } else {
-      $(all[i]).css("background-color", "rgb(238, 221, 195)");
+      $(all[i]).css("background-color", "var(--section-alt)");
     }
   }
 }

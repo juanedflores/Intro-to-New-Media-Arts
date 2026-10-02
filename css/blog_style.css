@@ -9,7 +9,7 @@ bold {
    file): syllabus red / yellow / blue / cream, Alegreya + Alegreya Sans. */
 
 mark {
-  color: var(--blue-dark);
+  color: var(--brand-blue-dark);
   background: var(--yellow);
 }
 .uk-table td {
@@ -66,7 +66,7 @@ html {
 }
 
 #contentArea {
-  background: white;
+  background: var(--paper);
   padding-bottom: 1em;
   /*border: black solid 1px;*/
 }
@@ -116,7 +116,7 @@ h1 {
   font-size: 2.6em;
   line-height: 1.1;
   background-color: var(--yellow);
-  color: var(--blue);
+  color: var(--brand-blue);
   margin-bottom: 0;
 }
 
@@ -171,7 +171,7 @@ p img {
 
 
 .uk-offcanvas-bar > div > ul > li > ul > li > ul li a {
-  color: var(--cream);
+  color: var(--brand-cream);
 }
 
 div > ul {
@@ -222,7 +222,7 @@ ol li {
   font-family: var(--font-display);
   font-weight: 800;
   padding-bottom: 1em;
-  background: white;
+  background: var(--paper);
   line-height: 100%;
 }
 

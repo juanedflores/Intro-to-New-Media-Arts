@@ -37,6 +37,51 @@
   --shadow-sm: 0 1px 2px rgba(29, 36, 51, 0.08), 0 4px 14px rgba(29, 36, 51, 0.1);
   --shadow-lg: 0 2px 4px rgba(29, 36, 51, 0.1), 0 12px 28px rgba(29, 36, 51, 0.16);
   --measure: 72ch; /* comfortable reading width */
+
+  /* fixed palette colors for solid blocks (the yellow banners, blue buttons,
+     cream labels). These stay the same in dark mode; the tokens above are
+     the ones that change. */
+  --brand-blue: #2f64b7;
+  --brand-blue-dark: #234c8f;
+  --brand-cream: #f2dcbf;
+  --brand-ink: #1d2433;
+  /* translucent paper, for the sticky search/jump bars */
+  --paper-glass: rgba(255, 255, 255, 0.96);
+  /* day-header hover */
+  --red-hover: #f7ddd7;
+  /* every other section of a blog post (js/styling.js) */
+  --section-alt: #eeddc3;
+
+  color-scheme: light;
+}
+
+/* ---------- dark mode ----------
+   js/theme.js sets data-theme="dark" on <html> (from the visitor's choice or
+   their device setting). The palette keeps its character: the red logo and
+   yellow banners stay bright; text, panels and tints go dark, and blue and
+   red text get lighter so they read on the dark panels. */
+:root[data-theme="dark"] {
+  --red-dark: #f08a7e;
+  --red-tint: #3a2321;
+  --yellow-tint: #3a3220;
+  --blue: #86acf0;
+  --blue-dark: #a9c4f6;
+  --blue-tint: #1d2840;
+  --cream: #22262e;
+  --cream-light: #14161b;
+
+  --ink: #e8e4dc;
+  --muted: #a5abb7;
+  --rule: #343a46;
+  --paper: #1c2028;
+  --paper-glass: rgba(28, 32, 40, 0.96);
+  --red-hover: #4a2a27;
+  --section-alt: #252a34;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.35), 0 12px 28px rgba(0, 0, 0, 0.5);
+
+  color-scheme: dark;
 }
 
 /* ---------- fonts ---------- */
@@ -163,7 +208,7 @@ body {
 }
 
 ::selection {
-  color: var(--blue-dark);
+  color: var(--brand-blue-dark);
   background: var(--yellow);
 }
 
@@ -316,7 +361,7 @@ nav {
 #menu_button .fa-bars,
 #video_toggle_button .fas {
   font-size: 34px;
-  color: var(--blue) !important;
+  color: var(--brand-blue) !important;
 }
 
 .menu-btn-label {
@@ -326,11 +371,11 @@ nav {
   font-size: 1.5rem;
   line-height: 1.1;
   text-align: center;
-  color: var(--blue);
+  color: var(--brand-blue);
 }
 
 #menu_button:hover .menu-btn-label {
-  color: var(--ink);
+  color: var(--brand-ink);
 }
 
 /* Hovering either the ART/150 button or the logo text darkens both,
@@ -340,7 +385,7 @@ nav:has(#menu_button:hover) .uk-logo {
 }
 
 nav:has(.uk-logo:hover) .menu-btn-label {
-  color: var(--ink);
+  color: var(--brand-ink);
 }
 
 /* ---------- left sidebar (week nav) ----------
@@ -490,7 +535,7 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 }
 /* this week: a highlighter stroke, like marking up the syllabus */
 .uk-nav-default > li.uk-active > a {
-  color: var(--blue-dark) !important;
+  color: var(--brand-blue-dark) !important;
   background: var(--yellow);
   margin-left: -8px;
   padding-left: 8px;
@@ -514,8 +559,8 @@ nav:has(.uk-logo:hover) .menu-btn-label {
   font-family: var(--font-label);
 }
 .menu_header > h3 {
-  background: var(--blue-dark);
-  color: var(--cream);
+  background: var(--brand-blue-dark);
+  color: var(--brand-cream);
   padding: 10px;
   font-family: var(--font-label);
   font-weight: 900;
@@ -589,7 +634,7 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 #right-col > section > h1 {
   background-color: var(--yellow);
   margin: -20px -20px 0 -20px;
-  color: var(--blue);
+  color: var(--brand-blue);
   position: relative;
   width: auto;
   padding: 25px;
@@ -649,7 +694,7 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 }
 .uk-accordion-title:hover {
   color: var(--red-dark);
-  background: #f7ddd7;
+  background: var(--red-hover);
   box-shadow: 0 1px 4px rgba(176, 50, 42, 0.18);
 }
 .uk-accordion-title:focus-visible {
@@ -775,7 +820,7 @@ ul.uk-accordion > li {
 .callout-reminder {
   --edge: var(--yellow);
   --tint: var(--yellow-tint);
-  --label-fg: var(--ink);
+  --label-fg: var(--brand-ink);
 }
 .callout-materials,
 .callout-tip,
@@ -1163,7 +1208,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   gap: 10px 16px;
   margin: 16px -20px 0;
   padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--paper-glass);
   border-bottom: 1px solid var(--rule);
 }
 .tp-search {
@@ -1203,7 +1248,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
 }
 .tp-filters button[aria-pressed="true"] {
   border-color: var(--blue);
-  background: var(--blue);
+  background: var(--brand-blue);
   color: #fff;
 }
 .tp-count,
@@ -1265,6 +1310,78 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   .tp-filters button {
     flex: none;
   }
+}
+
+/* ---------- resources (content/resources/resources.md) ----------
+   Each section's list becomes a grid of small link cards; the search box
+   and section buttons reuse the topics-index bar above. */
+
+.rs-intro {
+  max-width: var(--measure);
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+.rs-section {
+  scroll-margin-top: 150px;
+}
+.rs-section[hidden],
+.rs-section h3[hidden],
+.rs-section li[hidden] {
+  display: none;
+}
+.rs-section h2 {
+  margin: 30px 0 4px;
+  font-size: 1.5em;
+}
+.rs-section h3 {
+  margin: 18px 0 2px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.rs-section ul,
+.rs-section .level3 > ul {
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.rs-section li,
+.rs-section .level3 > ul > li {
+  left: 0;
+  font-weight: 400;
+  margin: 0 !important;
+  padding: 11px 14px 12px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--blue);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.45;
+  list-style: none;
+}
+.rs-section li > a:first-child {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--blue-dark);
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+.rs-section li > a:first-child::after {
+  content: " \2197"; /* north-east arrow: opens another site */
+  font-weight: 400;
+  font-size: 0.85em;
+}
+.rs-section li:hover {
+  border-left-color: var(--red);
+  background: var(--cream-light);
 }
 
 /* ---------- syllabus (content/syllabus/syllabus.md) ----------
@@ -1330,7 +1447,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   display: inline-block;
   padding: 10px 18px;
   border-radius: 999px;
-  background: var(--blue);
+  background: var(--brand-blue);
   color: #fff !important;
   font-weight: 800;
   text-decoration: none !important;
@@ -1340,7 +1457,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   content: "\2193  "; /* down arrow */
 }
 .sy-btn:hover {
-  background: var(--blue-dark);
+  background: var(--brand-blue-dark);
 }
 
 /* jump links: stay visible under the top bar while scrolling */
@@ -1353,7 +1470,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   gap: 6px;
   margin: 16px -20px 0;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--paper-glass);
   border-bottom: 1px solid var(--rule);
 }
 .sy-jump button {
@@ -1468,7 +1585,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   padding: 1px 8px;
   border-radius: 4px;
   background: var(--yellow);
-  color: var(--ink);
+  color: var(--brand-ink);
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 800;
@@ -1499,16 +1616,16 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   background: var(--red);
 }
 .sy-weights > div:nth-child(2) dt {
-  background: var(--blue);
+  background: var(--brand-blue);
 }
 .sy-weights > div:nth-child(3) dt {
   background: var(--yellow);
 }
 .sy-weights > div:nth-child(4) dt {
-  background: var(--cream);
+  background: var(--brand-cream);
 }
 .sy-weights > div:nth-child(5) dt {
-  background: var(--ink);
+  background: var(--brand-ink);
 }
 .sy-weights {
   display: grid;
@@ -1533,7 +1650,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
 }
 .sy-weights > div:nth-child(3) dt,
 .sy-weights > div:nth-child(4) dt {
-  color: var(--ink);
+  color: var(--brand-ink);
 }
 .sy-weights dd {
   margin: 0;
@@ -1744,4 +1861,105 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   .uk-navbar-nav > li > a {
     font-size: 10px;
   }
+}
+
+/* ---------- light / dark toggle (added to the top bar by js/theme.js) ---------- */
+
+#theme_toggle {
+  flex: none;
+  align-self: center;
+  margin: 0 16px 0 auto;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--blue-dark);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+#theme_toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+#theme_toggle:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+/* the same switch inside the slide-out menu, for phones */
+#theme_toggle_menu {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--brand-cream);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+#theme_toggle_menu:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+@media screen and (max-width: 640px) {
+  #theme_toggle {
+    display: none;
+  }
+  #theme_toggle_menu {
+    display: inline-flex;
+  }
+}
+
+/* ---------- dark mode: pieces that don't come from the tokens ---------- */
+
+/* light diagrams and transparent PNGs keep a light backing so their black
+   lines stay readable */
+[data-theme="dark"] #right-col img[src$=".svg"],
+[data-theme="dark"] #right-col img[src$=".png"],
+[data-theme="dark"] .level1 img[src$=".svg"],
+[data-theme="dark"] .level1 img[src$=".png"],
+[data-theme="dark"] svg[role="img"] {
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* the small callout labels sit on the (now lighter) edge color: dark text */
+[data-theme="dark"] .callout-label,
+[data-theme="dark"] blockquote.info .uk-label,
+[data-theme="dark"] blockquote.warning .uk-label,
+[data-theme="dark"] blockquote.success .uk-label,
+[data-theme="dark"] blockquote.error .uk-label {
+  color: var(--brand-ink) !important;
+}
+/* the ink-colored grade badge would vanish into the dark panel */
+[data-theme="dark"] .sy-weights > div:nth-child(5) dt {
+  background: #4a5263;
+}
+
+/* UIkit's own grays (#333 headings, #666 text) are written for light pages.
+   Headings are left alone: the site colors its own. */
+[data-theme="dark"] body {
+  color: var(--muted);
+}
+[data-theme="dark"] .uk-card-default .uk-card-title,
+[data-theme="dark"] .uk-card-default {
+  color: var(--ink);
+}
+[data-theme="dark"] .uk-card-default {
+  background: var(--paper);
+}
+/* Arduino sketch cards set black text inline */
+[data-theme="dark"] #ListBody p[style*="color: black"] {
+  color: var(--ink) !important;
+}
+/* a hairline under the charcoal top bar so it separates from the page */
+[data-theme="dark"] nav.uk-navbar-container,
+[data-theme="dark"] body > nav {
+  box-shadow: inset 0 -1px 0 var(--rule);
 }

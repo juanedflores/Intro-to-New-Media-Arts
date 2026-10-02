@@ -16,6 +16,13 @@ body {
   background: var(--table);
 }
 
+/* dark mode: a dim table with a softer pool of light */
+[data-theme="dark"] .arena {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.07), transparent 70%),
+    var(--table);
+}
+
 /* the site's navbar keeps its uk-margin bottom gap; close it up here */
 body > div > nav.uk-navbar-container {
   margin-bottom: 0 !important;
@@ -102,7 +109,7 @@ body > div > nav.uk-navbar-container {
 .filters button[aria-pressed="true"] {
   border-color: var(--tape);
   background: var(--tape);
-  color: var(--ink);
+  color: var(--brand-ink);
 }
 .group-link {
   color: var(--blue) !important;
@@ -188,7 +195,7 @@ body > div > nav.uk-navbar-container {
 }
 .print.note {
   align-items: flex-start;
-  color: var(--ink);
+  color: var(--brand-ink);
   font-size: clamp(9px, 7cqmin, 14px);
   line-height: 1.35;
 }
@@ -205,7 +212,7 @@ body > div > nav.uk-navbar-container {
   flex-direction: column;
   gap: 4px;
   background: var(--tape);
-  color: var(--ink);
+  color: var(--brand-ink);
   font-weight: 800;
   text-align: center;
 }
@@ -222,7 +229,7 @@ body > div > nav.uk-navbar-container {
   padding: 3px 10px 4px;
   transform: rotate(-1.5deg);
   background: var(--tape);
-  color: var(--ink);
+  color: var(--brand-ink);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   text-align: center;
   white-space: nowrap;
@@ -335,7 +342,7 @@ body > div > nav.uk-navbar-container {
   max-width: min(1100px, 100%);
   max-height: 100%;
   padding: 18px;
-  background: var(--print);
+  background: var(--paper);
   color: var(--ink);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }

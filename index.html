@@ -8,6 +8,7 @@
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
     <link rel="stylesheet" href="css/site.css" />
+    <script src="js/theme.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -67,16 +68,30 @@
           ></button>
           <div class="bar-wrap" style="padding-top: 50px">
             <li class="uk-active" style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="index.html">Home / Week Overview</a>
+              <a style="padding: 0" class="uk-button" href="index.html"
+                >Home / Week Overview</a
+              >
             </li>
             <li style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="content/arena.html">Are.na Studios</a>
+              <a style="padding: 0" class="uk-button" href="content/arena.html"
+                >Are.na Studios</a
+              >
             </li>
             <li style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="content/arduino_sketches.html">Arduino</a>
+              <a
+                style="padding: 0"
+                class="uk-button"
+                href="content/arduino_sketches.html"
+                >Arduino</a
+              >
             </li>
             <li style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="content/gallery.html">Gallery</a>
+              <a
+                style="padding: 0"
+                class="uk-button"
+                href="content/gallery.html"
+                >Gallery</a
+              >
             </li>
             <div id="small-menu" style="padding-top: 20px">
               <hr />
@@ -94,6 +109,14 @@
                   onclick="load_topics(); return false;"
                   href="#topics"
                   >Topics</a
+                >
+              </li>
+              <li>
+                <a
+                  class="uk-button uk-button-default"
+                  onclick="load_resources(); return false;"
+                  href="#resources"
+                  >Resources</a
                 >
               </li>
             </div>
@@ -127,6 +150,14 @@
                 >Topics</a
               >
             </li>
+            <li>
+              <a
+                class="uk-button uk-button-default"
+                onclick="load_resources(); return false;"
+                href="#resources"
+                >Resources</a
+              >
+            </li>
           </div>
           <hr />
           <ul
@@ -150,7 +181,12 @@
       var linkedWeek = weekFromHash();
       if (location.hash === "#syllabus") load_syllabus(true);
       else if (location.hash === "#topics") load_topics(true);
-      else loadWeek(linkedWeek && linkedWeek <= CURRENT_WEEK ? linkedWeek : CURRENT_WEEK, true);
+      else if (location.hash === "#resources") load_resources(true);
+      else
+        loadWeek(
+          linkedWeek && linkedWeek <= CURRENT_WEEK ? linkedWeek : CURRENT_WEEK,
+          true,
+        );
     </script>
   </body>
 </html>

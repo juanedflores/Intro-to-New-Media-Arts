@@ -52,6 +52,83 @@ function markSyllabusWeeks() {
   });
 }
 
+// ---------- Resources (index.html#resources) ----------
+// content/resources/resources.html (built from resources.md), with a search
+// box and a button for each section added on top.
+function load_resources(fromHistory) {
+  if (!fromHistory && location.hash !== "#resources") {
+    history.pushState(null, "", "#resources");
+  }
+  $(".week-nav-list > li.uk-active").removeClass("uk-active");
+  $.get(
+    "content/resources/resources.html",
+    function (data) {
+      var doc = new DOMParser().parseFromString(data, "text/html");
+      var article = doc.getElementById("ArticleBodyMain");
+      $("#right-col").html(article ? article.innerHTML : "");
+      window.scrollTo(0, 0);
+      $(".week-nav-list > li.uk-active").removeClass("uk-active");
+      buildResourceBar();
+    },
+    "text",
+  );
+}
+
+function buildResourceBar() {
+  var sections = $(".rs-section");
+  var jumps = sections
+    .map(function () {
+      return (
+        '<button type="button" data-jump="' +
+        this.id +
+        '">' +
+        (this.dataset.short || $(this).find("h2").first().text()) +
+        "</button>"
+      );
+    })
+    .get()
+    .join("");
+  var bar = $(
+    '<div class="tp-bar rs-bar">' +
+      '<input class="tp-search" type="search" placeholder="Search resources…" aria-label="Search resources">' +
+      '<div class="tp-filters rs-jump">' +
+      jumps +
+      "</div></div>" +
+      '<p class="tp-empty" hidden>Nothing matches that search.</p>',
+  );
+  $(".rs-intro").after(bar);
+
+  bar.find("button").on("click", function () {
+    var target = document.getElementById(this.dataset.jump);
+    if (target) target.scrollIntoView({ behavior: "smooth" });
+  });
+
+  bar.filter(".tp-bar").find(".tp-search").on("input", function () {
+    var q = this.value.trim().toLowerCase();
+    var shown = 0;
+    sections.each(function () {
+      var any = false;
+      $(this)
+        .find("li")
+        .each(function () {
+          var hit = !q || this.textContent.toLowerCase().indexOf(q) !== -1;
+          this.hidden = !hit;
+          if (hit) any = true;
+        });
+      // hide a "where to buy" subheading whose list has no matches
+      $(this)
+        .find("h3")
+        .each(function () {
+          var list = $(this).nextAll("ul").first();
+          this.hidden = list.find("li:not([hidden])").length === 0;
+        });
+      this.hidden = !any;
+      if (any) shown++;
+    });
+    $(".rs-bar + .tp-empty").prop("hidden", shown > 0);
+  });
+}
+
 // ---------- Topics index (index.html#topics) ----------
 // Every topic card from the weeks that have opened, gathered on one page,
 // grouped by unit, with a search box and type filters. Built from the week
@@ -126,6 +203,8 @@ function load_topics(fromHistory) {
     });
     // after the first load, keep the visitor where they were on this page
     if (location.hash !== "#topics") return;
+    // UIkit's switcher can mark Week 1 active after a fresh page load
+    $(".week-nav-list > li.uk-active").removeClass("uk-active");
     renderTopics(order.map(function (h) {
       return byHref[h];
     }));
@@ -331,6 +410,7 @@ window.addEventListener("popstate", function () {
   if (typeof CURRENT_WEEK === "undefined") return; // not the week page
   if (location.hash === "#syllabus") return load_syllabus(true);
   if (location.hash === "#topics") return load_topics(true);
+  if (location.hash === "#resources") return load_resources(true);
   var n = weekFromHash();
   // no #week-N (back to the plain address) means this week
   loadWeek(n && n <= CURRENT_WEEK ? n : CURRENT_WEEK, true);
