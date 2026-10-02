@@ -9,17 +9,47 @@ function toggleMenu(event) {
   }
 }
 
-function load_syllabus() {
-  var html = `
-    <iframe src="https://drive.google.com/file/d/1jGIHRsBMFxKVJi8767oNcbbqxm6r9Vwp/preview" width="100%" height="1200px" allow="autoplay"></iframe>
-  `;
+// The syllabus page (content/syllabus/syllabus.html, built from
+// syllabus.md) shown in the main column, at index.html#syllabus.
+function load_syllabus(fromHistory) {
+  if (!fromHistory && location.hash !== "#syllabus") {
+    history.pushState(null, "", "#syllabus");
+  }
+  // no week is selected while the syllabus is open
+  $(".week-nav-list > li.uk-active").removeClass("uk-active");
+  $.get(
+    "content/syllabus/syllabus.html",
+    function (data) {
+      var doc = new DOMParser().parseFromString(data, "text/html");
+      var article = doc.getElementById("ArticleBodyMain");
+      $("#right-col").html(article ? article.innerHTML : "");
+      window.scrollTo(0, 0);
+      // again here: on a fresh page load UIkit's switcher starts after the
+      // line above and marks the first week active
+      $(".week-nav-list > li.uk-active").removeClass("uk-active");
+      markSyllabusWeeks();
+      $(".sy-jump button").on("click", function () {
+        var target = document.getElementById(this.dataset.jump);
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      });
+    },
+    "text",
+  );
+}
 
-  $("#right-col").html(html);
-  setTimeout(() => {
-    console.log("Delayed for 1 second.");
-    $(".pdf").width("99%");
-    $("#right-col").css({ overflow: "auto" });
-  }, "1000");
+// In the semester plan: highlight this week, link past weeks to their pages,
+// and leave upcoming weeks as plain text (their pages aren't open yet).
+function markSyllabusWeeks() {
+  if (typeof CURRENT_WEEK === "undefined") return;
+  $(".sy-week").each(function () {
+    var n = Number(this.dataset.week);
+    if (n === CURRENT_WEEK) $(this).addClass("is-current");
+    else if (n < CURRENT_WEEK) $(this).addClass("is-past");
+    else {
+      var link = $(this).find("h3 > a");
+      link.replaceWith('<span class="sy-wk">' + link.text() + "</span>");
+    }
+  });
 }
 
 // Each week has its own address (index.html#week-6), so a week can be
@@ -42,6 +72,7 @@ function loadWeek(n, fromHistory) {
     else $(this).removeClass("uk-active");
   });
   var dir = "week_" + String(n).padStart(2, "0");
+  window.scrollTo(0, 0);
   $.get(
     "content/weeks/" + dir + "/week" + n + ".html",
     function (data) {
@@ -127,9 +158,10 @@ function renderWeekNav(currentWeek, totalWeeks) {
   $(".week-nav-list").html(items);
 }
 
-// back/forward between weeks
+// back/forward between weeks (and the syllabus)
 window.addEventListener("popstate", function () {
   if (typeof CURRENT_WEEK === "undefined") return; // not the week page
+  if (location.hash === "#syllabus") return load_syllabus(true);
   var n = weekFromHash();
   // no #week-N (back to the plain address) means this week
   loadWeek(n && n <= CURRENT_WEEK ? n : CURRENT_WEEK, true);

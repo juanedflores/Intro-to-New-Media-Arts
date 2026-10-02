@@ -1134,6 +1134,411 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   letter-spacing: 0.06em;
 }
 
+/* ---------- syllabus (content/syllabus/syllabus.md) ----------
+   The web version of the syllabus PDF, shown in the main column. */
+
+.sy-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px 32px;
+  align-items: start;
+  margin: 24px 0 8px;
+  padding: 24px 28px;
+  background: var(--cream-light);
+  border-left: 6px solid var(--red);
+  border-radius: var(--radius);
+}
+.sy-title {
+  grid-column: 1 / -1;
+}
+.sy-kicker {
+  margin: 0;
+  color: var(--red-dark);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-variant-numeric: lining-nums;
+}
+.sy-course {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.1rem;
+  line-height: 1.1;
+  color: var(--blue);
+}
+.sy-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  gap: 10px 36px;
+  margin: 0;
+}
+.sy-facts dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sy-facts dd {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-variant-numeric: lining-nums;
+}
+.sy-download {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.sy-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff !important;
+  font-weight: 800;
+  text-decoration: none !important;
+  box-shadow: var(--shadow-sm);
+}
+.sy-btn::before {
+  content: "\2193  "; /* down arrow */
+}
+.sy-btn:hover {
+  background: var(--blue-dark);
+}
+.sy-alt {
+  font-size: 0.95rem;
+}
+
+/* jump links: stay visible under the top bar while scrolling */
+.sy-jump {
+  position: sticky;
+  top: 80px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px -20px 0;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--rule);
+}
+.sy-jump button {
+  padding: 5px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--blue-dark);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.sy-jump button:hover {
+  border-color: var(--blue);
+}
+
+.sy-section {
+  scroll-margin-top: 140px;
+  padding-top: 12px;
+}
+.sy-section h2 {
+  margin-top: 28px;
+}
+.sy-section p,
+.sy-section li,
+.sy-section dd {
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+.sy-section > section > p,
+.sy-section > section > ul,
+.sy-section details,
+.sy-fine {
+  max-width: var(--measure);
+}
+.sy-section > section > ul {
+  padding-left: 22px;
+  list-style: square;
+}
+.sy-section > section > ul > li::marker {
+  color: var(--red);
+}
+.sy-fine {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* semester plan */
+.sy-plan {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.sy-week {
+  padding: 12px 16px 12px 18px;
+  border-left: 4px solid var(--rule);
+  border-radius: 6px;
+}
+.sy-week h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 0 0 6px;
+  padding: 0;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.sy-week h3 > a,
+.sy-week h3 > .sy-wk {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-variant-numeric: lining-nums;
+  color: var(--red-dark);
+}
+.sy-week h3 > .sy-wk {
+  color: var(--muted);
+}
+.sy-week ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sy-week li {
+  display: flex;
+  gap: 12px;
+  margin: 3px 0;
+}
+.sy-week time {
+  flex: none;
+  width: 4.2em;
+  color: var(--blue-dark);
+  font-weight: 800;
+  font-variant-numeric: lining-nums;
+}
+.sy-week.is-past {
+  opacity: 0.75;
+}
+.sy-week.is-current {
+  background: var(--yellow-tint);
+  border-left-color: var(--yellow);
+  opacity: 1;
+}
+.sy-week.is-current h3::after {
+  content: "This week";
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sy-note {
+  margin: 8px 0 0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--cream-light);
+  font-size: 1rem !important;
+}
+.sy-note b {
+  margin-right: 6px;
+  color: var(--red-dark);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sy-due {
+  color: var(--red-dark);
+}
+
+/* grading */
+/* percentage chips, one color per weight */
+.sy-weights > div:nth-child(1) dt {
+  background: var(--red);
+}
+.sy-weights > div:nth-child(2) dt {
+  background: var(--blue);
+}
+.sy-weights > div:nth-child(3) dt {
+  background: var(--yellow);
+}
+.sy-weights > div:nth-child(4) dt {
+  background: var(--cream);
+}
+.sy-weights > div:nth-child(5) dt {
+  background: var(--ink);
+}
+.sy-weights {
+  display: grid;
+  gap: 8px;
+  max-width: var(--measure);
+  margin: 14px 0 0;
+}
+.sy-weights > div {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+.sy-weights dt {
+  flex: none;
+  width: 3.6em;
+  padding: 2px 0;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  font-variant-numeric: lining-nums;
+}
+.sy-weights > div:nth-child(3) dt,
+.sy-weights > div:nth-child(4) dt {
+  color: var(--ink);
+}
+.sy-weights dd {
+  margin: 0;
+}
+.sy-scale {
+  display: grid;
+  gap: 12px;
+  max-width: var(--measure);
+  margin: 14px 0 0;
+}
+.sy-scale > div {
+  display: flex;
+  gap: 16px;
+}
+.sy-scale dt {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  background: var(--blue-tint);
+  color: var(--blue-dark);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+.sy-scale dd {
+  margin: 0;
+}
+
+/* attendance key points */
+.sy-keypoints {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: var(--measure);
+  margin: 14px 0;
+}
+.sy-keypoints p {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--red-tint);
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+}
+.sy-keypoints b {
+  display: block;
+  color: var(--red-dark);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+
+/* university policies: collapsible */
+.sy-details {
+  margin: 8px 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+.sy-details summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--blue-dark);
+}
+.sy-details summary::-webkit-details-marker {
+  display: none;
+}
+.sy-details summary::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin-right: 4px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.2s;
+}
+.sy-details[open] summary::after {
+  transform: rotate(45deg);
+}
+.sy-details[open] summary {
+  border-bottom: 1px solid var(--rule);
+}
+.sy-details > :not(summary) {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.sy-details > :last-child {
+  margin-bottom: 16px;
+}
+.sy-contact {
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: var(--cream-light);
+  font-size: 1rem !important;
+}
+
+@media screen and (max-width: 700px) {
+  .sy-head {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .sy-facts {
+    grid-template-columns: 1fr;
+  }
+  .sy-course {
+    font-size: 1.7rem;
+  }
+  .sy-keypoints {
+    grid-template-columns: 1fr;
+  }
+  .sy-jump {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .sy-jump button {
+    flex: none;
+  }
+  .sy-week li {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
 /* ---------- misc ---------- */
 
 .anonymous-pro-regular {
