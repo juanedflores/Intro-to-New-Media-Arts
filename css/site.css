@@ -562,10 +562,27 @@ nav:has(.uk-logo:hover) .menu-btn-label {
   font-weight: 800;
 }
 
+/* embedded slide decks: a quiet card (like the topic cards), spaced off
+   the week banner, sized to the decks' 960x700 shape */
 .slides_section {
-  padding: 10px;
-  background-color: #282a35;
-  margin-bottom: 30px;
+  margin: 20px 0 10px;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.slides_section iframe {
+  display: block;
+  width: 100%;
+  height: auto !important; /* the iframes carry height="500px" */
+  aspect-ratio: 960 / 700;
+  max-height: min(60vh, 560px); /* leave the week's content in view */
+  border: 0;
+}
+/* the "Open Slides in New Tab" link right after a deck */
+.slides_section + p {
+  margin: 10px 0 24px;
 }
 
 /* the "Week 6" banner: blue on yellow, like the syllabus's headings */
