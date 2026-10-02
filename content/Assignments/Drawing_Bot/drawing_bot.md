@@ -21,7 +21,8 @@ You will design and build your own drawing machine: a small robot, built around 
 - **September 14** — Soldering Workshop and Lab Tour
 - **September 16** — Finalize soldering circuit with coin battery holders. Start building the body.
 - **September 21** — Finalize construction and plan drawing/instructions.
-- **September 23** — Drawing Bot Showcase
+- **September 23** — Class cancelled.
+- **September 28** — Drawing Bot Showcase (moved from September 23)
 :::
 
 ### Requirements
@@ -127,10 +128,10 @@ Think about how to limit range, time constraints, starting/ending positions, add
 Instructions can be as strict or as loose as you'd like. It can be mundane steps like a cooking recipe, or a more poetic, performative interpration. (Look at the [Performance Scores](#performanceevent-scores) section.)
 
 ::: {.announcement type="tip"}
-Everyone will be given a regular A7 sheet of paper for the Robot Drawing Showcase on September 23rd for the final drawing. Paper will also be provided for experimentation during the class before.
+Everyone will be given a regular A7 sheet of paper for the Robot Drawing Showcase on September 28th for the final drawing. Paper will also be provided for experimentation during the class before.
 :::
 
-Just keep in mind that you will be asked to execute these instructions, with any defined limitations in class on September 23rd.
+Just keep in mind that you will be asked to execute these instructions, with any defined limitations in class on September 28th.
 
 **You are limited to 5 minutes.** Which means, it shouldn't last longer than 5 minutes.
 

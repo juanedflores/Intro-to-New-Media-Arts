@@ -24,6 +24,8 @@ We are continuing our drawing bots. Please come in with your soldering kits and 
 
 :::
 
+:::
+
 ### Next Week
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->

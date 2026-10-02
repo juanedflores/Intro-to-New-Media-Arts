@@ -68,7 +68,11 @@ Next week please bring your found object if you haven't yet. We will finilize ou
 ::: 
 
 ::: {.card type="external" title="Alligator Clips" thumb="https://oss.origin-ic.com/otherFile/429-869-Alligator%20Clips%20Type.jpg" href="https://www.origin-ic.com/blog/comprehensive-guide-on-alligator-clips-types-usages-and-tips/47477"}
-::: 
+:::
+
+:::
+
+:::
 
 :::
 

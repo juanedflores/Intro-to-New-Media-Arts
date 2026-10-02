@@ -18,7 +18,12 @@ all: $(HTML)
 %.html: %.md
 	@echo $@ | cut -d'/' -f1
 	pandoc $< -o $@ $(PANDOCFLAGSHTML)
-	python3 ../../pandoc/insertHTML.py $@ "./$(shell echo $@ | cut -d'/' -f1)/transcript.html" $@
+	@# insert a video transcript only when the page has one and a place for it
+	@# (an element with id="hypertranscript"; blog_template.html has none)
+	@t="$(dir $@)transcript.html"; \
+	if [ -f "$$t" ] && grep -q 'id="hypertranscript"' $@; then \
+		python3 ../../pandoc/insertHTML.py $@ "$$t" $@; \
+	fi
 # python3 ../pandoc/insertHTML.py ./Keyboard/transcript.html $@ 
 
 clean:
