@@ -1,0 +1,11 @@
+// Cloudflare deploy settings: the repo root is a plain static site.
+// Files listed in .assetsignore are left out.
+{
+  "name": "intro-to-new-media-arts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "."
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}
