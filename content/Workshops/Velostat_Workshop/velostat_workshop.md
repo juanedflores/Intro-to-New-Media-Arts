@@ -24,6 +24,7 @@ This is also our first time building on a **breadboard**, so we can put circuits
 5. Make sound with a **buzzer**, and use the potentiometer as a volume knob.
 6. Build the Velostat sensor.
 7. Wire the Velostat sensor, a resistor and an LED together, then press!
+8. Turn the sensor into a **voltage divider** and measure it with a multimeter.
 
 ## How Velostat Works
 
@@ -49,6 +50,7 @@ From your **electronics kit**:
 - **9V 1A power adapter** (plugs into the wall and into the power module)
 - **LED** (any color)
 - **220Ω resistor** (bands: red, red, brown)
+- **10kΩ resistor** (bands: brown, black, orange)
 - **Potentiometer** (the small blue knob)
 - **Photoresistor** (the small disc with a squiggly line on top)
 - **Active buzzer** (the small black cylinder with a sticker on top)
@@ -61,7 +63,7 @@ Provided by the lab:
 - **Copper tape** or aluminum foil
 - **Cardstock or thin cardboard**
 - **Masking tape**
-- **Multimeter** (optional, for testing your sensor)
+- **Multimeter** (for testing your sensor, and for Part 8)
 
 ## Part 1: The Breadboard
 
@@ -294,6 +296,56 @@ With the **power off**:
 
 **Why the resistor?** When you squeeze the Velostat hard, its resistance can get very low. The 220Ω resistor makes sure there's always enough resistance in the loop to keep the LED from burning out.
 
+## Part 8: The Velostat as a Voltage Divider
+
+So far the Velostat has changed how much **current** flows, which is why the LED got brighter. Next week an Arduino will read the sensor, but an Arduino can't measure resistance or current directly. It can only measure **voltage**. A **voltage divider** turns a changing resistance into a changing voltage.
+
+A voltage divider is just **two resistors in a row** between + and –. The 5V gets shared between them, and the point in the middle (**V<sub>out</sub>**) sits somewhere between 0V and 5V, depending on how big each resistor is compared to the other:
+
+- **Velostat resting** (high resistance): it takes most of the 5V, so V<sub>out</sub> is **low**.
+- **Velostat pressed** (low resistance): the 10kΩ resistor takes most of it, so V<sub>out</sub> **rises toward 5V**.
+
+You already used one: a **potentiometer's three legs** are a voltage divider, with the middle leg as V<sub>out</sub>. Turning the knob changes how the 5V is shared.
+
+**5V (+)** → **Velostat** → **V<sub>out</sub>** → **10kΩ resistor** → **GND (–)**
+
+<svg viewBox="0 0 360 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Voltage divider: 5 volts, Velostat sensor, the output point, a 10 kilohm resistor, ground. A multimeter measures between the output point and ground." style="max-width:360px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+  <g fill="none" stroke="#2c3f89" stroke-width="3" stroke-linejoin="round">
+    <path d="M110 30 V60" />
+    <rect x="90" y="60" width="40" height="80" rx="4" fill="#222" stroke="#222" />
+    <path d="M110 140 V170 M110 170 V200" />
+    <path d="M110 200 l-12 6 l24 10 l-24 10 l24 10 l-24 10 l24 10 l-24 10 l12 6" />
+    <path d="M110 272 V300" />
+    <path d="M110 170 H230" />
+    <path d="M230 170 V190 M230 260 V300 H110" stroke-dasharray="6 5" />
+    <rect x="200" y="190" width="60" height="70" rx="8" stroke="#2c3f89" fill="#fff" />
+  </g>
+  <circle cx="110" cy="30" r="5" fill="#c0392b" />
+  <circle cx="110" cy="300" r="5" fill="#2c3f89" />
+  <circle cx="110" cy="170" r="6" fill="#f3c95b" stroke="#2c3f89" stroke-width="2" />
+  <text x="125" y="34" fill="#c0392b" font-weight="700">5V (+)</text>
+  <text x="125" y="318" fill="#2c3f89" font-weight="700">GND (–)</text>
+  <text x="110" y="104" fill="#fff" text-anchor="middle" font-weight="700" transform="rotate(-90 110 104)">VELOSTAT</text>
+  <text x="80" y="240" text-anchor="end">10kΩ</text>
+  <text x="80" y="175" text-anchor="end" font-weight="700">V<tspan font-size="10" dy="3">out</tspan></text>
+  <text x="230" y="222" text-anchor="middle" font-weight="700">V</text>
+  <text x="230" y="240" text-anchor="middle" font-size="11">meter</text>
+  <text x="240" y="160" font-size="12" fill="#666">(later: Arduino A0)</text>
+</svg>
+
+With the **power off**:
+
+1. **Place the 10kΩ resistor** so one leg is in the – rail and the other is in an empty row. That row is **V<sub>out</sub>**.
+2. **Clip one sensor lead** to a jumper wire in the + rail.
+3. **Clip the other sensor lead** to a jumper wire in the V<sub>out</sub> row.
+4. **Set the multimeter to DC volts** (V with a straight line, the 20V range if it has ranges).
+5. **Turn the power on.** Touch the **red probe** to the V<sub>out</sub> row and the **black probe** to the – rail.
+6. **Press the sensor** and watch the number climb. Write down the reading with no pressure, a light press and a hard press.
+
+**Try it:** swap the 10kΩ resistor for the 220Ω one. Does the range of readings get bigger or smaller? The fixed resistor should be roughly as big as the Velostat's resistance, so the voltage swings as much as possible.
+
+Next week, instead of the multimeter's red probe, a wire will go from V<sub>out</sub> to the Arduino's **A0** pin, and `analogRead()` will turn the voltage into a number from 0 to 1023.
+
 ## Troubleshooting
 
 - **Nothing lights up, even when pressing hard.**
@@ -305,6 +357,7 @@ With the **power off**:
 - **The LED barely changes.** Try two layers of Velostat, a bigger sensor, or pressing with your whole palm. You can also try the **3.3V** setting on the module to make small changes easier to see.
 - **The LED flickers.** Check that the alligator clips are firmly on the copper tails and not slipping.
 - **Turning the potentiometer does nothing.** You're probably using the two outer legs. One of your connections needs to be the **middle leg**.
+- **The multimeter reads 0 or doesn't change.** Check it's on DC volts, the black probe is on the – rail, and the red probe is in the same row as both the sensor lead and the 10kΩ resistor.
 - **The buzzer only clicks, or makes no sound.** Check that it's the **active** buzzer (sticker on top, sealed bottom) and that its + leg is toward power.
 
 ## Going Further

@@ -18,12 +18,9 @@
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
 
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      href="../../resources/favicon.ico"
-      type="image/x-icon"
-    />
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
 
     <!-- JQuery -->
     <script
@@ -291,6 +288,9 @@ Sensor</a></li>
 <li><a href="#part-7-the-velostat-circuit"
 id="toc-part-7-the-velostat-circuit">Part 7: The Velostat
 Circuit</a></li>
+<li><a href="#part-8-the-velostat-as-a-voltage-divider"
+id="toc-part-8-the-velostat-as-a-voltage-divider">Part 8: The Velostat
+as a Voltage Divider</a></li>
 <li><a href="#troubleshooting"
 id="toc-troubleshooting">Troubleshooting</a></li>
 <li><a href="#going-further" id="toc-going-further">Going
@@ -346,6 +346,8 @@ id="toc-additional-resources">Additional Resources</a></li>
         <li>Build the Velostat sensor.</li>
         <li>Wire the Velostat sensor, a resistor and an LED together,
         then press!</li>
+        <li>Turn the sensor into a <strong>voltage divider</strong> and
+        measure it with a multimeter.</li>
         </ol>
         </section>
         </section>
@@ -407,6 +409,8 @@ id="toc-additional-resources">Additional Resources</a></li>
         and into the power module)</li>
         <li><strong>LED</strong> (any color)</li>
         <li><strong>220Ω resistor</strong> (bands: red, red, brown)</li>
+        <li><strong>10kΩ resistor</strong> (bands: brown, black,
+        orange)</li>
         <li><strong>Potentiometer</strong> (the small blue knob)</li>
         <li><strong>Photoresistor</strong> (the small disc with a
         squiggly line on top)</li>
@@ -421,8 +425,8 @@ id="toc-additional-resources">Additional Resources</a></li>
         <li><strong>Copper tape</strong> or aluminum foil</li>
         <li><strong>Cardstock or thin cardboard</strong></li>
         <li><strong>Masking tape</strong></li>
-        <li><strong>Multimeter</strong> (optional, for testing your
-        sensor)</li>
+        <li><strong>Multimeter</strong> (for testing your sensor, and
+        for Part 8)</li>
         </ul>
         </section>
         <section id="part-1-the-breadboard" class="level2">
@@ -748,6 +752,87 @@ id="toc-additional-resources">Additional Resources</a></li>
         resistor makes sure there’s always enough resistance in the loop
         to keep the LED from burning out.</p>
         </section>
+        <section id="part-8-the-velostat-as-a-voltage-divider"
+        class="level2">
+        <h2>Part 8: The Velostat as a Voltage Divider</h2>
+        <p>So far the Velostat has changed how much
+        <strong>current</strong> flows, which is why the LED got
+        brighter. Next week an Arduino will read the sensor, but an
+        Arduino can’t measure resistance or current directly. It can
+        only measure <strong>voltage</strong>. A <strong>voltage
+        divider</strong> turns a changing resistance into a changing
+        voltage.</p>
+        <p>A voltage divider is just <strong>two resistors in a
+        row</strong> between + and –. The 5V gets shared between them,
+        and the point in the middle (<strong>V<sub>out</sub></strong>)
+        sits somewhere between 0V and 5V, depending on how big each
+        resistor is compared to the other:</p>
+        <ul>
+        <li><strong>Velostat resting</strong> (high resistance): it
+        takes most of the 5V, so V<sub>out</sub> is
+        <strong>low</strong>.</li>
+        <li><strong>Velostat pressed</strong> (low resistance): the 10kΩ
+        resistor takes most of it, so V<sub>out</sub> <strong>rises
+        toward 5V</strong>.</li>
+        </ul>
+        <p>You already used one: a <strong>potentiometer’s three
+        legs</strong> are a voltage divider, with the middle leg as
+        V<sub>out</sub>. Turning the knob changes how the 5V is
+        shared.</p>
+        <p><strong>5V (+)</strong> → <strong>Velostat</strong> →
+        <strong>V<sub>out</sub></strong> → <strong>10kΩ
+        resistor</strong> → <strong>GND (–)</strong></p>
+        <svg viewBox="0 0 360 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Voltage divider: 5 volts, Velostat sensor, the output point, a 10 kilohm resistor, ground. A multimeter measures between the output point and ground." style="max-width:360px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+        <g fill="none" stroke="#2c3f89" stroke-width="3" stroke-linejoin="round">
+        <path d="M110 30 V60" />
+        <rect x="90" y="60" width="40" height="80" rx="4" fill="#222" stroke="#222" />
+        <path d="M110 140 V170 M110 170 V200" />
+        <path d="M110 200 l-12 6 l24 10 l-24 10 l24 10 l-24 10 l24 10 l-24 10 l12 6" />
+        <path d="M110 272 V300" /> <path d="M110 170 H230" />
+        <path d="M230 170 V190 M230 260 V300 H110" stroke-dasharray="6 5" />
+        <rect x="200" y="190" width="60" height="70" rx="8" stroke="#2c3f89" fill="#fff" />
+        </g> <circle cx="110" cy="30" r="5" fill="#c0392b" />
+        <circle cx="110" cy="300" r="5" fill="#2c3f89" />
+        <circle cx="110" cy="170" r="6" fill="#f3c95b" stroke="#2c3f89" stroke-width="2" />
+        <text x="125" y="34" fill="#c0392b" font-weight="700">5V
+        (+)</text>
+        <text x="125" y="318" fill="#2c3f89" font-weight="700">GND
+        (–)</text>
+        <text x="110" y="104" fill="#fff" text-anchor="middle" font-weight="700" transform="rotate(-90 110 104)">VELOSTAT</text>
+        <text x="80" y="240" text-anchor="end">10kΩ</text>
+        <text x="80" y="175" text-anchor="end" font-weight="700">V<tspan font-size="10" dy="3">out</tspan></text>
+        <text x="230" y="222" text-anchor="middle" font-weight="700">V</text>
+        <text x="230" y="240" text-anchor="middle" font-size="11">meter</text>
+        <text x="240" y="160" font-size="12" fill="#666">(later: Arduino
+        A0)</text>
+        </svg>
+        <p>With the <strong>power off</strong>:</p>
+        <ol type="1">
+        <li><strong>Place the 10kΩ resistor</strong> so one leg is in
+        the – rail and the other is in an empty row. That row is
+        <strong>V<sub>out</sub></strong>.</li>
+        <li><strong>Clip one sensor lead</strong> to a jumper wire in
+        the + rail.</li>
+        <li><strong>Clip the other sensor lead</strong> to a jumper wire
+        in the V<sub>out</sub> row.</li>
+        <li><strong>Set the multimeter to DC volts</strong> (V with a
+        straight line, the 20V range if it has ranges).</li>
+        <li><strong>Turn the power on.</strong> Touch the <strong>red
+        probe</strong> to the V<sub>out</sub> row and the <strong>black
+        probe</strong> to the – rail.</li>
+        <li><strong>Press the sensor</strong> and watch the number
+        climb. Write down the reading with no pressure, a light press
+        and a hard press.</li>
+        </ol>
+        <p><strong>Try it:</strong> swap the 10kΩ resistor for the 220Ω
+        one. Does the range of readings get bigger or smaller? The fixed
+        resistor should be roughly as big as the Velostat’s resistance,
+        so the voltage swings as much as possible.</p>
+        <p>Next week, instead of the multimeter’s red probe, a wire will
+        go from V<sub>out</sub> to the Arduino’s <strong>A0</strong>
+        pin, and <code>analogRead()</code> will turn the voltage into a
+        number from 0 to 1023.</p>
+        </section>
         <section id="troubleshooting" class="level2">
         <h2>Troubleshooting</h2>
         <ul>
@@ -773,6 +858,10 @@ id="toc-additional-resources">Additional Resources</a></li>
         <li><strong>Turning the potentiometer does nothing.</strong>
         You’re probably using the two outer legs. One of your
         connections needs to be the <strong>middle leg</strong>.</li>
+        <li><strong>The multimeter reads 0 or doesn’t change.</strong>
+        Check it’s on DC volts, the black probe is on the – rail, and
+        the red probe is in the same row as both the sensor lead and the
+        10kΩ resistor.</li>
         <li><strong>The buzzer only clicks, or makes no sound.</strong>
         Check that it’s the <strong>active</strong> buzzer (sticker on
         top, sealed bottom) and that its + leg is toward power.</li>

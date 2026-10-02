@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" font-size="18">
+  <rect width="400" height="300" fill="#faf1e6"/>
+  <g transform="translate(80,-6)">
+  <g fill="none" stroke="#2f64b7" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 30 V62 l-16 8 l32 13 l-32 13 l32 13 l-32 13 l32 13 l-16 8 V150"/>
+    <path d="M150 150 V170 l-16 8 l32 13 l-32 13 l32 13 l-32 13 l32 13 l-16 8 V270"/>
+    <path d="M150 150 H260"/>
+  </g>
+  <circle cx="150" cy="30" r="8" fill="#d53f32"/>
+  <circle cx="150" cy="270" r="8" fill="#1d2433"/>
+  <circle cx="150" cy="150" r="9" fill="#fbc740" stroke="#2f64b7" stroke-width="3"/>
+  <text x="168" y="36" fill="#d53f32" font-weight="700">5V</text>
+  <text x="168" y="277" fill="#1d2433" font-weight="700">GND</text>
+  <text x="200" y="100" fill="#1d2433">R1</text>
+  <text x="200" y="222" fill="#1d2433">R2</text>
+  <text x="268" y="157" fill="#1d2433" font-weight="700">V out</text>
+  </g>
+</svg>

@@ -33,33 +33,31 @@ Drawing Bot Showcase day! Remember to document your bot, its instructions, and i
 
 ### Announcements
 ::: {.announcement type="reminder"}
-We are starting our E-Textiles / Wearables unit with a pressure sensor workshop. We'll also be using a breadboard for the first time.
+We started our E-Textiles / Wearables unit by getting to know the electronics kit and building our first circuits on a breadboard. The Velostat pressure sensor workshop moves to Monday.
 :::
 
 ::: {.announcement type="materials"}
-- Electronics Kit (breadboard, power supply module, 9V adapter, LEDs, resistors, jumper wires, alligator clips)
-- Velostat, copper tape, and cardstock (provided)
+- Electronics Kit (breadboard, power supply module, 9V adapter, LEDs, resistors, potentiometer, photoresistor, buzzer, jumper wires, alligator clips)
 :::
 
 ### Agenda
 - Electronics Kit Breakdown
 - Intro to Breadboards
 - Powering a breadboard with the 9V adapter + power supply module
-- Velostat Pressure Sensor Workshop
+- Potentiometers: dimming an LED
+- Photoresistors: controlling an LED with light
+- Buzzer speakers
 
 ### Topics
 ::: {.topics}
 
-::: {.card type="workshop" title="Velostat Pressure Sensor Workshop" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html" tag="Workshop"}
+::: {.card type="workshop" title="Breadboard Circuits (Workshop Parts 1–5)" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html#part-1-the-breadboard" tag="Workshop"}
 :::
 
 ::: {.card type="external" title="Breadboards" thumb="./content/weeks/week_06/images/breadboard.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/breadboards.html" tag="Electronics"}
 :::
 
 ::: {.card type="external" title="Variable Resistors" thumb="https://cdn-shop.adafruit.com/970x728/4133-03.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html" tag="Electronics"}
-:::
-
-::: {.card type="video" title="Velostat Pressure Sensor Video" thumb="https://class.textile-academy.org/2024/grecia-segovia/images/week12/MATRIZ1.jpg" href="https://www.youtube.com/watch?v=SLRYX879Py0" tag="Youtube Video"}
 :::
 
 :::
@@ -70,5 +68,5 @@ We are starting our E-Textiles / Wearables unit with a pressure sensor workshop.
 
 ### Next Week
 ::: {.nextweek}
-We'll start working with Arduino and use it to read sensors like the one we built today. Please download the Arduino IDE before Monday.
+On Monday we'll learn about voltage dividers and build the Velostat pressure sensor. Bring your electronics kit. Please also download the Arduino IDE before Wednesday.
 :::
