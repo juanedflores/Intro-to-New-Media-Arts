@@ -10,22 +10,61 @@
       type="image/x-icon"
     />
     <style>
+      /* type and colors match the course syllabus (see css/site.css) */
       @font-face {
-        font-family: "Inter";
-        src: url("../../../../fonts/Inter-VariableFont.ttf") format("truetype");
-        font-weight: 100 900;
+        font-family: "Alegreya";
+        src: url("../../../../fonts/alegreya/Alegreya-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya";
+        src: url("../../../../fonts/alegreya/Alegreya-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Italic.ttf") format("truetype");
+        font-weight: 400; font-style: italic;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: swap;
       }
 
       :root {
-        --wall: #f4f1ea;
+        --wall: #faf1e6; /* syllabus cream, lightened */
         --ink: #1f1f24;
         --muted: #6b6a66;
         --rule: #d9d4c7;
         --frame: #2a2622;
         --mat: #fbfaf7;
         --label: #ffffff;
-        --accent: rgb(243, 201, 91);
-        --blue: #2c3f89;
+        --accent: #fbc740; /* syllabus yellow */
+        --blue: #2f64b7; /* syllabus blue */
+        --red: #d53f32; /* syllabus red */
         --shadow:
           0 1px 2px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.18);
       }
@@ -39,7 +78,8 @@
         margin: 0;
         background: var(--wall);
         color: var(--ink);
-        font-family: "Inter", system-ui, sans-serif;
+        font-family: "Alegreya Sans", system-ui, sans-serif;
+        font-variant-numeric: lining-nums;
         font-size: 16px;
         line-height: 1.5;
       }
@@ -85,10 +125,12 @@
         color: var(--muted);
       }
       header.intro h1 {
-        font-size: clamp(40px, 7vw, 84px);
+        font-family: "Alegreya", Georgia, serif;
+        font-size: clamp(44px, 7.5vw, 92px);
+        color: var(--red);
         line-height: 0.95;
-        font-weight: 900;
-        letter-spacing: -0.03em;
+        font-weight: 800;
+        letter-spacing: -0.01em;
         margin: 12px 0 20px;
       }
       header.intro p {
@@ -212,10 +254,10 @@
       }
       .label h2 {
         margin: 4px 0 2px;
-        font-size: 26px;
+        font-family: "Alegreya", Georgia, serif;
+        font-size: 28px;
         line-height: 1.15;
         font-weight: 800;
-        letter-spacing: -0.01em;
       }
       .label .artist {
         margin: 0 0 4px;

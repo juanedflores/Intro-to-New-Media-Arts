@@ -2,14 +2,11 @@
    Drawing Machines gallery (dark frames, white mats, wall-colored page). */
 
 :root {
-  --wall: #f4f1ea;
-  --ink: #1f1f24;
-  --muted: #6b6a66;
-  --rule: #d9d4c7;
+  /* syllabus palette, from site.css */
+  --wall: var(--cream-light);
   --frame: #2a2622;
   --mat: #fbfaf7;
-  --accent: rgb(243, 201, 91);
-  --blue: #2c3f89;
+  --accent: var(--yellow);
 }
 
 body,
@@ -26,7 +23,7 @@ body > div > nav.uk-navbar-container {
   margin: 0 auto;
   padding: 56px 24px 80px;
   color: var(--ink);
-  font-family: "Inter-VariableFont", system-ui, sans-serif;
+  font-family: var(--font-body);
 }
 
 .galleries-intro {
@@ -52,7 +49,8 @@ body > div > nav.uk-navbar-container {
 }
 .galleries-intro h1 {
   margin: 10px 0 16px;
-  font-family: "Inter-Black", sans-serif;
+  color: var(--red);
+  font-family: var(--font-display);
   font-size: clamp(44px, 7vw, 84px);
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -72,7 +70,7 @@ body > div > nav.uk-navbar-container {
 
 .exhibit {
   display: block;
-  /* the site styles link text in Inter-Black */
+  /* the site styles link text bold */
   font-family: inherit;
   font-weight: 400;
   color: inherit !important;
@@ -165,7 +163,7 @@ a.exhibit:focus-visible {
 }
 .placard h2 {
   margin: 4px 0 6px;
-  font-family: "Inter-Black", sans-serif;
+  font-family: var(--font-display);
   font-size: 24px;
   line-height: 1.15;
 }

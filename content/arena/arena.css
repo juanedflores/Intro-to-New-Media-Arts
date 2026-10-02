@@ -3,13 +3,11 @@
    it scrolls; layouts are sized to fit (see fitGrid in arena.js). */
 
 :root {
-  --table: #2c3f89;
-  --table-deep: #22336f;
+  /* syllabus palette, from site.css */
+  --table: var(--blue);
+  --table-deep: var(--blue-dark);
   --print: #fbfaf6;
-  --ink: #1f1f24;
-  --muted: #6b6a66;
-  --tape: rgb(243, 201, 91);
-  --red: #c84b3c;
+  --tape: var(--yellow);
   --bar-h: 52px;
 }
 
@@ -32,7 +30,8 @@ body > div > nav.uk-navbar-container {
     radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.07), transparent 70%),
     var(--table);
   color: #fff;
-  font-family: "Inter-VariableFont", system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums;
 }
 
 /* ---------- top bar: breadcrumb, filters, group link ---------- */
@@ -51,7 +50,8 @@ body > div > nav.uk-navbar-container {
   align-items: center;
   gap: 8px;
   min-width: 0;
-  font-family: "Inter-Black", sans-serif;
+  font-family: var(--font-body);
+  font-weight: 800;
   font-size: 15px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -230,7 +230,7 @@ body > div > nav.uk-navbar-container {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: "Inter-Black", sans-serif;
+  font-family: var(--font-body);
   font-size: clamp(11px, 7cqmin, 18px);
   font-weight: 900;
   line-height: 1.15;
@@ -374,7 +374,7 @@ body > div > nav.uk-navbar-container {
   background: none;
   color: var(--ink);
   text-transform: none;
-  font-family: "Inter-Black", sans-serif;
+  font-family: var(--font-display);
   font-size: 20px;
   line-height: 1.2;
   overflow-wrap: anywhere;

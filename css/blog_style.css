@@ -5,34 +5,21 @@ pre {
 bold {
 }
 
-mark {
-  color: rgb(56, 79, 172);
-  background: rgb(243, 201, 91);
-}
+/* Colors and fonts come from the tokens in site.css (loaded after this
+   file): syllabus red / yellow / blue / cream, Alegreya + Alegreya Sans. */
 
-p  {
-  font-weight: bold !important;
+mark {
+  color: var(--blue-dark);
+  background: var(--yellow);
 }
 .uk-table td {
 }
 
-blockquote p strong {
-  font-size: 1.1em;
-  font-family: 'Inter-ExtraLight', sans-serif;
-  font-weight: bold;
-  letter-spacing: 0;
-}
-
+blockquote p strong,
 p strong {
-  font-size: 1.1em;
-  font-family: 'Inter-ExtraLight', sans-serif;
-  font-weight: bold;
+  font-family: var(--font-body);
+  font-weight: 800;
   letter-spacing: 0 !important;
-}
-
-::selection {
-  color: rgb(56, 79, 172);
-  background: rgb(243, 201, 91);
 }
 
 /* For Future Juan: 
@@ -44,19 +31,10 @@ p strong {
   margin: -50px 0 0;
 }
 
-@font-face {
-  font-family: 'Inter-ExtraLight';
-  src: url('../fonts/Inter-ExtraLight.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Inter-Black';
-  src: url('../fonts/Inter-Black.ttf') format('truetype');
-}
-
+/* bold text is just bold - an underline reads as a link */
 strong {
-  text-decoration: underline;
-  font-family: 'Inter-Black';
-  font-weight: bolder;
+  font-family: var(--font-body);
+  font-weight: 800;
 }
 
 h1,
@@ -75,8 +53,7 @@ h6 {
 /*}*/
 
 html {
-  background: #2c3f89;
-  /*scroll-behavior: smooth;*/
+  background: var(--cream-light);
 }
 
 .uk-open {
@@ -84,7 +61,7 @@ html {
 }
 
 #blogEntryArea {
-  background: #f2f2f2;
+  background: var(--cream-light);
   padding-bottom: 1em;
 }
 
@@ -100,11 +77,8 @@ div uk-container {
 }
 
 a {
-  font-family: 'Inter-Black', sans-serif;
-}
-
-ul > li > a {
-  font-family: 'Inter-ExtraLight', sans-serif;
+  font-family: var(--font-body);
+  font-weight: 700;
 }
 
 ul > li {
@@ -120,25 +94,29 @@ ul > li {
   padding-left: 0 !important;
 }
 
+/* body text: regular weight, a little larger (Alegreya Sans runs small) */
 p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+section li {
   font-size: 1.1em;
-  color: black;
-  font-family: 'Inter-ExtraLight', sans-serif;
-  font-weight: bold;
+  line-height: 1.55;
 }
 
+/* page title: blue on yellow, like the syllabus */
 h1 {
   text-align: center;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  /*border-bottom: rgb(56, 79, 172) solid 2px;*/
-  text-transform: uppercase;
-  color: black;
-  font-family: 'Inter-Black';
-  font-weight: bolder;
-  font-size: 40px;
-  background-color: rgb(243, 201, 91);
-  color: rgb(56, 79, 172);
+  padding: 16px 20px 14px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.6em;
+  line-height: 1.1;
+  background-color: var(--yellow);
+  color: var(--blue);
   margin-bottom: 0;
 }
 
@@ -147,8 +125,7 @@ h3,
 h4,
 h5,
 h6 {
-  text-align: left !important ;
-  text-transform: uppercase;
+  text-align: left !important;
 }
 
 img {
@@ -162,12 +139,13 @@ p img {
   margin: auto;
   /*padding: 1em;*/
   /* width: 100%; */
-  border: #4444dd solid 1px;
-  filter: drop-shadow(0px 10px 4px #4444dd);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
 }
 
 .uk-offcanvas-bar > div > ul li {
-  font-family: 'Inter-ExtraLight', sans-serif;
+  font-family: var(--font-body);
   list-style-type: none;
   padding-left: 0 !important;
   margin-left: 0 !important;
@@ -181,34 +159,33 @@ p img {
   padding-left: 20px !important;
   font-size: 14px;
   /*font-size: */
-  /* color: rgb(210, 230, 250); */
-  color: red;
+  color: var(--red);
   list-style-type: square;
   list-style-position: inside;
 }
 
 .uk-offcanvas-bar > div > ul > li > ul > li > ul > li {
-  color: #4444dd;
+  color: var(--yellow);
 }
 
 
 
 .uk-offcanvas-bar > div > ul > li > ul > li > ul li a {
-  color: rgb(210, 230, 250);
+  color: var(--cream);
 }
 
 div > ul {
-  font-family: 'Inter-Black';
+  font-family: var(--font-body);
   /*padding-left: 0px !important;*/
   /*border-bottom: white solid 1px !important;*/
   /*padding-bottom: 10px;*/
 }
 
 .uk-offcanvas-bar > div > ul > li > a {
-  font-family: 'Inter-Black';
+  font-family: var(--font-body);
+  font-weight: 800;
   padding-left: 0px !important;
-  /*border-bottom: white solid 1px !important;*/
-  color: rgb(243, 201, 91);
+  color: var(--yellow);
   padding-bottom: 10px;
 }
 
@@ -223,7 +200,7 @@ div > ul > li > ul {
 }
 
 div > ul > li {
-  font-family: 'Inter-Black';
+  font-family: var(--font-body);
 }
 
 .uk-offcanvas-bar {
@@ -231,19 +208,19 @@ div > ul > li {
 }
 
 ul {
-  /*padding-left: 15px !important;*/
-  color: black;
+  color: var(--ink);
 }
 
 ol li {
-  font-family: 'Inter-ExtraLight', sans-serif;
+  font-family: var(--font-body);
   padding-left: 0 !important;
 }
 
 .title {
-  color: black;
+  color: var(--ink);
   font-size: 2.4em;
-  font-family: 'Inter-Black';
+  font-family: var(--font-display);
+  font-weight: 800;
   padding-bottom: 1em;
   background: white;
   line-height: 100%;
@@ -264,8 +241,8 @@ ol li {
 
 .level1 > h1 + figure > figcaption {
   padding: 10px 20px 0;
-  font-size: 0.9em;
-  color: #666;
+  font-size: 0.95em;
+  color: var(--muted);
 }
 
 #cover-img {
@@ -277,9 +254,8 @@ ol li {
 }
 
 .date-created {
-  /* color: #b9b9b9; */
-  color: red !important;
-  font-family: 'Inter-ExtraLight', sans-serif;
+  color: var(--red) !important;
+  font-family: var(--font-body);
   padding-top: 14px;
   line-height: 2.5;
 }
@@ -297,34 +273,17 @@ img.uk-cover:hover {
 }
 
 #footnotes {
-  font-family: 'Times New Roman';
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--muted);
 }
 
-h2 {
-  font-size: 1.5em;
-  font-weight: bold;
-  font-family: 'Inter-Black';
-  /*padding-bottom: 0.5em;*/
-  text-align: center;
-  margin: 0;
-}
-
-h3 {
-  font-size: 1.2em;
-  color: black;
-  font-family: 'Inter-Black';
-  border-bottom: 0.5px solid #ffffff;
-  font-weight: bold;
-}
+/* h2 / h3 come from site.css (red and blue Alegreya, like the syllabus) */
 
 h4 {
-  font-size: 1em;
-  color: #2b2b2b;
-  font-family: 'Inter-Black';
-  border-bottom: 0.5px solid #ffffff;
+  font-size: 1.1em;
+  color: var(--ink);
   padding-bottom: 0.5em;
-  font-weight: bold;
 }
 
 h5 {
@@ -332,10 +291,11 @@ h5 {
 }
 
 blockquote {
-  background: #cfcfcf;
-  padding: 10px;
+  background: var(--cream-light);
+  border-left: 5px solid var(--rule);
+  border-radius: 6px;
+  padding: 12px 16px;
   font-size: 18px;
-  /*border-left: blue solid 5px;*/
 }
 
 .info,
@@ -355,28 +315,28 @@ blockquote {
 .warning > p,
 .error > p,
 .success > p {
-  font-family: 'Inter-ExtraLight';
-  color: #54544d;
+  font-family: var(--font-body);
+  color: var(--ink);
 }
 
 .info {
-  background: #b3c9ff;
-  border-left: blue solid 5px;
+  background: var(--blue-tint);
+  border-left: var(--blue) solid 5px;
 }
 
 .warning {
-  background: #f9e7b8;
-  border-left: rgb(243, 201, 91) solid 5px;
+  background: var(--red-tint);
+  border-left: var(--red) solid 5px;
 }
 
 .error {
-  background: #fba99e;
-  border-left: rgb(197, 75, 59) solid 5px;
+  background: var(--red-tint);
+  border-left: var(--red-dark) solid 5px;
 }
 
 .success {
-  background: #d4ffef;
-  border-left: #32d296 solid 5px;
+  background: var(--yellow-tint);
+  border-left: var(--yellow) solid 5px;
 }
 
 .test {
@@ -384,13 +344,11 @@ blockquote {
 }
 
 .uk-card {
-  border: 1px solid #000000;
+  border: 1px solid var(--rule);
 }
 
 hr {
-  border: 2px solid rgb(129, 161, 193);
   margin-bottom: 30px;
-  background-color: rgb(129, 161, 193) !important;
 }
 
 .level2 {
@@ -411,7 +369,7 @@ hr {
 }
 
 .tooltip {
-  color: red;
+  color: var(--red);
   font-weight: bold !important;
 }
 
@@ -441,31 +399,19 @@ canvas {
   z-index: -1;
 }
 
-.uk-accordion-title {
-  background: rgb(243, 201, 91);
-  padding: 10px;
-}
-
-.uk-accordion-title {
-  font-family: 'Inter-Black';
-  border-radius: 25px;
-  border: rgb(197, 75, 59) solid 2px;
-  color: #2c3f89;
-  padding-left: 20px;
-}
-
+/* accordion titles are red bars (site.css); the open panel is a light
+   cream box so code and notes inside stay readable */
 .uk-accordion-content {
-  border-radius: 15px / 50px;
-  background: rgb(197, 75, 59);
+  background: var(--cream-light);
+  border: 1px solid var(--rule);
   padding: 20px;
 }
 
 .uk-card-title {
-  font-family: 'Inter-Black';
-  /* font-weight: bold; */
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: 1.7em;
   line-height: 120%;
-  padding-bottom: 100p;
 }
 
 .entry {
@@ -476,7 +422,7 @@ canvas {
 
 #heading > a {
   font-size: 1.7em;
-  color: black !important;
+  color: var(--ink) !important;
 }
 
 #rnbo-root {
@@ -519,7 +465,7 @@ input {
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 1.9em;
   }
 
   h3.uk-card-title {

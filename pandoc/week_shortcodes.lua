@@ -8,14 +8,15 @@
 --       optional fit="contain" shows the whole thumbnail (for diagrams) instead of cropping it
 --   ::: {.nextweek} ... :::                               "looking ahead" callout
 
--- accent: the card's top strip; label_bg: the tag on the image (dark
--- enough for white text to read)
+-- accent: the card's top strip; label_bg / label_fg: the tag on the image.
+-- Syllabus palette (see css/site.css): red for things you make or hand in,
+-- blue for reading and references, yellow for videos.
 local card_styles = {
-  lesson = { accent = '#f28b7d', label_bg = '#c2412f', tag = 'Lesson' },
-  external = { accent = '#7fa7e6', label_bg = '#2c3f89', tag = 'External' },
-  video = { accent = '#f3c95b', label_bg = '#9a6a00', tag = 'Video' },
-  assignment = { accent = '#b58ae6', label_bg = '#6a35b0', tag = 'Assignment' },
-  workshop = { accent = '#79c294', label_bg = '#2f7d4f', tag = 'Workshop' },
+  lesson = { accent = '#2f64b7', label_bg = '#2f64b7', label_fg = '#ffffff', tag = 'Lesson' },
+  external = { accent = '#2f64b7', label_bg = '#2f64b7', label_fg = '#ffffff', tag = 'External' },
+  video = { accent = '#fbc740', label_bg = '#fbc740', label_fg = '#1d2433', tag = 'Video' },
+  assignment = { accent = '#d53f32', label_bg = '#d53f32', label_fg = '#ffffff', tag = 'Assignment' },
+  workshop = { accent = '#d53f32', label_bg = '#d53f32', label_fg = '#ffffff', tag = 'Workshop' },
 }
 
 local section_divs_opts = pandoc.WriterOptions({ ['section_divs'] = true })
@@ -43,7 +44,7 @@ local function render_card(el)
     'html',
     string.format(
       [[
-<a class="topic-card" href="%s"%s style="--accent: %s; --tag-bg: %s">
+<a class="topic-card" href="%s"%s style="--accent: %s; --tag-bg: %s; --tag-fg: %s">
 <div class="topic-thumb%s"><img src="%s" alt="" loading="lazy" /><div class="topic-tags">%s</div></div>
 <h3 class="cardtitle">%s</h3>
 </a>
@@ -52,6 +53,7 @@ local function render_card(el)
       target_attr,
       style.accent,
       style.label_bg,
+      style.label_fg,
       fit,
       a.thumb or '',
       table.concat(labels, ''),

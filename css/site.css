@@ -1,63 +1,592 @@
-@font-face {
-  font-family: "Inter-ExtraLight";
-  src: url("../fonts/Inter-ExtraLight.ttf") format("truetype");
+/* ART 150 site styles.
+   Colors and type come from the course syllabus (ART150_Fall2026.pdf):
+   red / yellow / blue / cream, Alegreya for headings and Alegreya Sans for
+   text. Use the tokens below instead of raw values so every section
+   (week pages, blog posts, Are.na Studios, Gallery) stays in step. */
+
+/* ---------- tokens ---------- */
+
+:root {
+  /* syllabus palette */
+  --red: #d53f32;
+  --yellow: #fbc740;
+  --blue: #2f64b7;
+  --cream: #f2dcbf;
+
+  /* tints and shades of the palette, for backgrounds and states */
+  --red-dark: #b0322a;
+  --red-tint: #fbebe7;
+  --yellow-tint: #fff4d6;
+  --blue-dark: #234c8f;
+  --blue-tint: #edf2fa;
+  --cream-light: #faf1e6;
+
+  /* neutrals */
+  --ink: #1d2433; /* body text */
+  --muted: #5f6675;
+  --rule: #e7dccd;
+  --paper: #ffffff;
+
+  /* type */
+  --font-display: "Alegreya", Georgia, serif; /* headings */
+  --font-body: "Alegreya Sans", "Helvetica Neue", Arial, sans-serif; /* text, UI */
+  --font-label: "Alegreya Sans SC", "Alegreya Sans", sans-serif; /* logo, small caps labels */
+
+  /* shape */
+  --radius: 10px;
+  --shadow-sm: 0 1px 2px rgba(29, 36, 51, 0.08), 0 4px 14px rgba(29, 36, 51, 0.1);
+  --shadow-lg: 0 2px 4px rgba(29, 36, 51, 0.1), 0 12px 28px rgba(29, 36, 51, 0.16);
+  --measure: 72ch; /* comfortable reading width */
 }
 
-@font-face {
-  font-family: "Inter-Black";
-  src: url("../fonts/Inter-Black.ttf") format("truetype");
-}
+/* ---------- fonts ---------- */
 
 @font-face {
-  font-family: "Inter-VariableFont";
-  src: url("../fonts/Inter-VariableFont.ttf") format("truetype");
+  font-family: "Alegreya";
+  src: url("../fonts/alegreya/Alegreya-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("../fonts/alegreya/Alegreya-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("../fonts/alegreya/Alegreya-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("../fonts/alegreya/Alegreya-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/alegreya/AlegreyaSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/alegreya/AlegreyaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/alegreya/AlegreyaSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/alegreya/AlegreyaSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/alegreya/AlegreyaSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/alegreya/AlegreyaSans-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans SC";
+  src: url("../fonts/alegreya/AlegreyaSansSC-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans SC";
+  src: url("../fonts/alegreya/AlegreyaSansSC-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
 }
 
+/* Older names, still referenced by a few inline styles and by
+   blog_style.css. They now resolve to the Alegreya family. */
 @font-face {
   font-family: "AlegreyaSansSC-Black";
   src: url("../fonts/alegreya/AlegreyaSansSC-Black.ttf") format("truetype");
 }
-
 @font-face {
   font-family: "AlegreyaSans-Black";
   src: url("../fonts/alegreya/AlegreyaSans-Black.ttf") format("truetype");
 }
-
-body,
-html {
-  background: rgb(210, 230, 250);
+@font-face {
+  font-family: "Inter-Black";
+  src: url("../fonts/alegreya/AlegreyaSans-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-VariableFont";
+  src: url("../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-ExtraLight";
+  src: url("../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
 }
 
-#ListBody > li {
-  cursor: pointer !important;
+/* ---------- base ---------- */
+
+html,
+body {
+  background: var(--cream-light);
+  font-family: var(--font-body);
+  color: var(--ink);
 }
 
-.uk-first-column {
+.pdf,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  color: var(--blue-dark);
+  background: var(--yellow);
+}
+
+a {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--blue);
+}
+a:hover {
+  color: var(--blue-dark);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* UIkit colors <em> pink, which reads as a link */
+em {
+  color: inherit;
+}
+
+hr {
+  height: 2px !important;
+  border: none;
+  background-color: var(--rule);
+}
+
+canvas {
+  display: none;
+}
+
+/* Alegreya Sans defaults to old-style figures, which suit running text
+   (the syllabus uses them) but look uneven in navigation and labels. */
+nav,
+#left-col,
+#offcanvas-usage,
+.topic-tag,
+.callout-label,
+.uk-label,
+.uk-accordion-title,
+#right-col > section > h1 {
+  font-variant-numeric: lining-nums;
+}
+
+/* ---------- headings ---------- */
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.85em;
+  line-height: 1.15;
+  text-align: left;
+  color: var(--red);
+  margin: 0 0 12px 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.55em;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--blue);
+  margin: 0;
+  padding-top: 15px;
+}
+
+h4,
+h5 {
+  font-family: var(--font-body);
+  font-weight: 800;
+}
+
+/* ---------- top navigation bar ---------- */
+
+nav {
+  background: var(--cream) !important;
+}
+
+.uk-navbar-container {
+  z-index: 2;
+}
+
+.uk-logo {
+  background: var(--red) !important;
+  font-family: var(--font-label);
+  font-weight: 900;
+  color: white;
+  font-size: 1.7em;
+}
+
+.uk-navbar-nav > li > a {
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--blue-dark) !important;
+  font-size: 1.05rem;
+  box-shadow: inset 0 -4px 0 transparent;
+  transition: box-shadow 0.15s;
+}
+.uk-navbar-nav > li > a:hover {
+  box-shadow: inset 0 -4px 0 rgba(213, 63, 50, 0.4);
+}
+/* the page you're on: a solid red bar along the bottom */
+.uk-navbar-nav > li.uk-active > a {
+  box-shadow: inset 0 -4px 0 var(--red);
+}
+
+/* menu_button shows an icon on mobile (where it opens the offcanvas
+   drawer) and an "ART 150" label on desktop (where it currently does
+   nothing - see load_pages.js toggleMenu). It's an <a>, not a <button>,
+   so it needs explicit centering that a real button would get for free.
+   The same id/width is reused on Blog and Arduino pages for the
+   always-on table-of-contents toggle button, so both line up.
+   video_toggle_button (the plain/video-walkthrough switch on Blog posts
+   that have a video) matches the same box so the nav stays consistent. */
+/* pages set the old yellow inline on these buttons; use the syllabus one */
+#menu_button,
+#video_toggle_button {
+  background: var(--yellow) !important;
+}
+#menu_button .menu-btn-icon,
+#video_toggle_button .fas {
+  background: transparent !important;
+}
+
+#menu_button,
+#video_toggle_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 102px;
+}
+
+.menu-btn-icon {
+  display: none !important;
+}
+
+/* Covers the icon on the main site's #menu_button, the always-on
+   table-of-contents toggle, and the video/plain toggle on Blog pages. */
+#menu_button .fa-bars,
+#video_toggle_button .fas {
+  font-size: 34px;
+  color: var(--blue) !important;
+}
+
+.menu-btn-label {
+  display: block;
+  font-family: var(--font-label);
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--blue);
+}
+
+#menu_button:hover .menu-btn-label {
+  color: var(--ink);
+}
+
+/* Hovering either the ART/150 button or the logo text darkens both,
+   so they read as one linked button even though they're separate elements. */
+nav:has(#menu_button:hover) .uk-logo {
+  color: var(--yellow);
+}
+
+nav:has(.uk-logo:hover) .menu-btn-label {
+  color: var(--ink);
+}
+
+/* ---------- left sidebar (week nav) ----------
+   A calm cream panel: the header and week banner carry the loud color;
+   here red marks sections and a yellow highlight marks this week. */
+
+#left-col {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--cream-light);
+  border-right: 1px solid var(--rule);
+  width: 260px;
+  z-index: 1;
+}
+
+#offcanvas-usage,
+#offcanvas-usage .uk-offcanvas-bar {
+  overflow-y: auto;
+  background: var(--cream-light) !important;
+}
+#offcanvas-usage .uk-offcanvas-close {
+  color: var(--ink);
+}
+
+.bar-wrap {
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+#left-col hr,
+#offcanvas-usage hr {
+  height: 2px !important;
+  background-color: var(--rule);
+}
+
+#small-menu > li,
+#small-menu-sidebar > li {
+  list-style-type: none;
+}
+
+#small-menu > li > a,
+#small-menu-sidebar > li > a {
+  color: var(--blue-dark);
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-align: left;
   padding-left: 0;
+}
+
+.uk-button {
+  border: none;
+  color: var(--blue-dark) !important;
+}
+
+.uk-button:hover {
+  color: var(--blue) !important;
+}
+/* the page you're on, in the phone menu */
+.bar-wrap > li.uk-active > .uk-button {
+  color: var(--red) !important;
+}
+
+.uk-nav-default > li {
+  position: relative;
+}
+
+/* other sidebar links (Arduino page filters, the pinout link) */
+#left-col .uk-nav > li > a,
+#left-col .uk-nav-sub a {
+  color: var(--ink);
+}
+#left-col .uk-nav > li > a:hover,
+#left-col .uk-nav-sub a:hover {
+  color: var(--blue);
+}
+#left-col a[target="_blank"] {
+  color: var(--blue);
+}
+/* the expand arrow beside a filter group, dark on the cream panel */
+#left-col .uk-nav-parent-icon {
+  color: var(--muted);
+}
+/* small group labels in the sidebar ("Filter", "By Category") */
+#left-col h5,
+#offcanvas-usage h5,
+#left-col h6,
+#offcanvas-usage h6 {
+  color: var(--red);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+/* section headers ("Intro to Circuits") */
+#left-col .uk-nav-header,
+#offcanvas-usage .uk-nav-header {
+  color: var(--red);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+/* A section header in the week nav (e.g. "Drawing Robot") can optionally
+   link out to that assignment's page - keep it looking like the plain
+   headers around it instead of a default underlined link. */
+.uk-nav-header a {
+  color: inherit !important;
+  font: inherit;
+  letter-spacing: inherit;
+  text-decoration: none;
+}
+
+/* UIkit's `.uk-nav li > a` makes nav links flex; inline lets a second
+   link (e.g. Gallery) sit on the same line as the header. */
+.uk-nav li.uk-nav-header > a {
+  display: inline;
+}
+
+.nav-header-sep {
+  opacity: 0.6;
+}
+
+.uk-nav-header a:hover {
+  text-decoration: underline;
+}
+
+/* week links, three levels: this week highlighted in yellow, past weeks
+   (clickable) in ink, upcoming weeks muted and lighter weight */
+.week-nav-list > li:not(.uk-nav-header) > a {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.week-nav-list > li:not(.uk-nav-header):not(.uk-active):not(.uk-inactive) > a {
+  color: var(--ink);
+}
+.week-nav-list > li:not(.uk-nav-header):not(.uk-active):not(.uk-inactive) > a:hover {
+  color: var(--blue);
+}
+/* this week: a highlighter stroke, like marking up the syllabus */
+.uk-nav-default > li.uk-active > a {
+  color: var(--blue-dark) !important;
+  background: var(--yellow);
+  margin-left: -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+}
+.uk-nav-default > .uk-active > a::after {
+  content: "\2190"; /* left arrow: "you are here" */
+  margin-left: auto;
+  font-weight: 800;
+}
+.uk-inactive > a {
+  color: #8c8a86 !important;
+  font-weight: 500 !important;
+  pointer-events: none;
+  width: 100%;
+}
+
+.menu_header {
+  font-family: var(--font-label);
+}
+.menu_header > h3 {
+  background: var(--blue-dark);
+  color: var(--cream);
+  padding: 10px;
+  font-family: var(--font-label);
+  font-weight: 900;
+}
+
+/* ---------- main column ---------- */
+
+#right-col {
+  background-color: var(--paper);
+  padding: 0;
+  margin-left: 260px;
+  /* keeps child margins inside the white panel */
+  display: flow-root;
+  min-height: calc(100vh - 80px);
 }
 
 #right-col > section {
   padding: 20px;
 }
 
+#right-col iframe,
+#right-col embed,
+#right-col img,
+#right-col video {
+  max-width: 100%;
+}
+
+#ArticleBodyMain > section > #body {
+  padding: 25px;
+  background-color: var(--paper);
+}
+
+#topbar {
+  background-color: black;
+}
+
+#canvas-button {
+  display: none;
+}
+
+.section_header {
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 800;
+}
+
+.slides_section {
+  padding: 10px;
+  background-color: #282a35;
+  margin-bottom: 30px;
+}
+
+/* the "Week 6" banner: blue on yellow, like the syllabus's headings */
 #right-col > section > h1 {
-  background-color: rgb(243, 201, 91);
+  background-color: var(--yellow);
   margin: -20px -20px 0 -20px;
-  color: rgb(56, 79, 172);
+  color: var(--blue);
   position: relative;
   width: auto;
   padding: 25px;
   padding-left: 15px;
   text-align: center;
+  font-family: var(--font-display);
+  font-weight: 800;
   font-size: 3.6rem;
+  line-height: 1.1;
 }
 
 .marquee {
   width: 80%;
-  font-family: "Inter-Black";
-  background-color: rgba(243, 201, 91, 0);
-  color: rgb(56, 79, 172);
-  font-weight: bold;
+  font-family: var(--font-body);
+  font-weight: 800;
+  background-color: transparent;
+  color: var(--blue);
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
@@ -79,139 +608,77 @@ html {
   }
 }
 
-h2 {
-  font-size: 1.5em;
-  font-weight: bold;
-  font-family: "Inter-Black";
-  text-align: left;
-  margin: 0 0 15px 0;
-  background-color: #2c3f89;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
+/* ---------- days (accordion) ----------
+   Red headings with a red rule, echoing the syllabus's week bars without
+   filling the page with solid red. */
+
+.uk-accordion-title {
+  background: none;
+  color: var(--red);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  border-radius: 0;
+  border-bottom: 3px solid var(--red);
+  padding: 8px 2px 6px;
+}
+.uk-accordion-title:hover {
+  color: var(--red-dark);
+  background: none;
 }
 
-#ArticleBodyMain > section > #body {
-  padding: 25px;
-  background-color: white;
+.uk-accordion-content {
+  margin-top: 8px;
+  border-radius: var(--radius);
+  padding: 20px;
 }
-
-#topbar {
-  background-color: black;
-}
-
-#right-col {
-  background-color: white;
-  padding: 0;
-  border: 0px solid #2c3f89;
-}
-
-#right-col iframe,
-#right-col embed,
-#right-col img,
-#right-col video {
-  max-width: 100%;
-}
-
-.uk-card-media-right {
-  height: auto;
-}
-
-.uk-card-body {
-  background-color: rgb(238, 241, 247);
-}
-
-.uk-card-small {
-  border-radius: 10px;
-}
-
-h3 {
-  font-size: 1.5em;
-  font-weight: bold;
-  font-family: "Inter-Black";
-  text-align: left;
-  margin: 0;
-  padding-top: 15px;
-}
-
-/* blog_style.css has a bare `input { width: 100% }` (for other pages'
-   parameter sliders) that also stretches task-list checkboxes to the full
-   content width - undo that here since it's more specific. */
-.task-list input[type="checkbox"] {
-  width: auto;
-  height: auto;
-  margin-right: 8px;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-}
-
-.task-list {
+/* an accordion is a list; blog_style.css bullets every list item */
+ul.uk-accordion > li {
   list-style: none;
-  padding-left: 10px;
-}
-
-.task-list li {
-  list-style-type: none !important;
-  left: 0;
   margin-left: 0;
-  margin-bottom: 8px;
 }
 
-.task-list label {
-  display: block;
+/* week sections (Announcements, Agenda, Topics...) keep text to a
+   comfortable reading width; card grids stay full width */
+.level3 > p,
+.level3 > ul,
+.level3 > ol,
+.level3 > .callout,
+.uk-accordion-content > .callout,
+.uk-accordion-content > p {
+  max-width: var(--measure);
 }
 
-h4,
-h5 {
-  font-family: "Inter-Black";
+.level3 > ul > li {
+  position: relative;
+  font-size: 1em;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 700;
+  list-style-type: square;
+  left: 20px;
 }
 
-a {
-  font-family: "Inter-Black";
+/* [id^="agenda"] also matches agenda-1, agenda-2, etc., which pandoc
+   generates for the 2nd+ "Agenda" heading on a page (e.g. a Monday day
+   and a Wednesday day each have their own Agenda section). */
+[id^="agenda"] > ul > li {
+  margin-left: 20px;
+  font-family: var(--font-body);
+  color: var(--ink); /* plain text: these aren't links */
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.45;
 }
-
-.uk-nav-default > li.uk-active > a {
-  color: white;
-}
-
-/* A section header in the week nav (e.g. "Drawing Robot") can optionally
-   link out to that assignment's page - keep it looking like the plain
-   headers around it instead of a default underlined blue link. */
-.uk-nav-header a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* UIkit's `.uk-nav li > a` makes nav links flex; inline lets a second
-   link (e.g. Gallery) sit on the same line as the header. */
-.uk-nav li.uk-nav-header > a {
-  display: inline;
-}
-
-.nav-header-sep {
-  opacity: 0.5;
-}
-
-.uk-nav-header a:hover {
-  text-decoration: underline;
-}
-
-.menu_header > h3 {
-  background: #222222;
-  color: rgb(238, 221, 195);
-  padding: 10px;
-  font-family: "AlegreyaSansSC-Black";
-}
-
-.uk-card-title {
-  font-family: "AlegreyaSans-Black";
+[id^="agenda"] > ul > li::marker {
+  color: var(--red);
 }
 
 /* ---------- callouts (week pages, assignments) ----------
    Built by pandoc/week_shortcodes.lua. Same family as the topic cards:
-   white, rounded, soft shadow, with the callout's color as an edge and
-   on its label. */
+   rounded, soft shadow, with the callout's color as an edge and on its
+   label. */
 
 .callout {
   position: relative;
@@ -219,13 +686,13 @@ a {
   padding: 16px 20px 16px 22px;
   background: var(--tint);
   border-left: 5px solid var(--edge);
-  border-radius: 10px;
-  box-shadow: 0 1px 2px rgba(20, 30, 70, 0.06);
-  font-family: "Inter-VariableFont", sans-serif;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(29, 36, 51, 0.06);
+  font-family: var(--font-body);
   font-style: normal;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
-  color: #2a2a2a;
+  color: var(--ink);
 }
 .callout-label {
   display: inline-block;
@@ -233,8 +700,8 @@ a {
   padding: 2px 8px;
   border-radius: 4px;
   background: var(--edge);
-  color: #fff;
-  font-size: 11px;
+  color: var(--label-fg, #fff);
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -254,18 +721,72 @@ a {
   color: var(--edge);
 }
 .callout-reminder {
-  --edge: #c8820a;
-  --tint: #fff8e8;
+  --edge: var(--red);
+  --tint: var(--red-tint);
 }
 .callout-materials,
 .callout-tip,
 .callout-nextweek {
-  --edge: #2c3f89;
-  --tint: #f0f3fa;
+  --edge: var(--blue);
+  --tint: var(--blue-tint);
 }
 .callout-gallery {
-  --edge: #2f7d4f;
-  --tint: #eef7f1;
+  --edge: var(--yellow);
+  --tint: var(--yellow-tint);
+  --label-fg: var(--ink);
+}
+
+/* Hand-written boxes in older blog/Arduino posts
+   (<blockquote class="info|warning|success|error">) get the same look. */
+blockquote.info,
+blockquote.warning,
+blockquote.success,
+blockquote.error {
+  margin: 16px 0 20px;
+  padding: 16px 20px 16px 22px;
+  background: var(--tint) !important;
+  border: none !important;
+  border-left: 5px solid var(--edge) !important;
+  border-radius: var(--radius);
+  font-style: normal;
+  color: var(--ink);
+}
+blockquote.info {
+  --edge: var(--blue);
+  --tint: var(--blue-tint);
+}
+blockquote.warning {
+  --edge: var(--red);
+  --tint: var(--red-tint);
+}
+blockquote.success {
+  --edge: var(--yellow);
+  --tint: var(--yellow-tint);
+}
+blockquote.error {
+  --edge: var(--red-dark);
+  --tint: var(--red-tint);
+}
+blockquote.info .uk-label,
+blockquote.warning .uk-label,
+blockquote.success .uk-label,
+blockquote.error .uk-label {
+  background: var(--edge) !important;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+blockquote.success .uk-label {
+  color: var(--ink);
+}
+blockquote.info > p,
+blockquote.warning > p,
+blockquote.success > p,
+blockquote.error > p {
+  color: var(--ink) !important;
+  font-style: normal;
 }
 
 /* ---------- topic cards (week pages) ----------
@@ -284,13 +805,11 @@ a {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #fff;
+  background: var(--paper);
   border-radius: 12px;
   border-top: 5px solid var(--accent);
-  box-shadow:
-    0 1px 2px rgba(20, 30, 70, 0.08),
-    0 4px 14px rgba(20, 30, 70, 0.1);
-  color: #222 !important;
+  box-shadow: var(--shadow-sm);
+  color: var(--ink) !important;
   text-decoration: none !important;
   transition:
     transform 0.2s,
@@ -299,12 +818,10 @@ a {
 .topic-card:hover,
 .topic-card:focus-visible {
   transform: translateY(-3px);
-  box-shadow:
-    0 2px 4px rgba(20, 30, 70, 0.1),
-    0 12px 28px rgba(20, 30, 70, 0.16);
+  box-shadow: var(--shadow-lg);
 }
 .topic-card:focus-visible {
-  outline: 3px solid #2c3f89;
+  outline: 3px solid var(--blue);
   outline-offset: 3px;
 }
 
@@ -313,7 +830,7 @@ a {
   flex: none;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #eef1f7;
+  background: var(--cream-light);
 }
 /* pinned to the box so a tall image can't stretch it past 4:3 */
 .topic-thumb img {
@@ -329,7 +846,7 @@ a {
 .topic-thumb-contain img {
   object-fit: contain;
   padding: 10px;
-  background: #fff;
+  background: var(--paper);
 }
 
 .topic-tags {
@@ -344,19 +861,24 @@ a {
   padding: 2px 8px;
   border-radius: 4px;
   background: var(--tag-bg);
-  color: #fff;
-  font-family: "Inter-VariableFont", sans-serif;
-  font-size: 11px;
+  color: var(--tag-fg, #fff);
+  font-family: var(--font-body);
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.5;
 }
 
+.cardtitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+}
 .topic-card .cardtitle {
   margin: 0;
   padding: 12px 14px 14px;
-  font-size: 1.15em;
+  font-size: 1.2em;
   line-height: 1.2;
   /* keep cards even: at most two lines of title */
   display: -webkit-box;
@@ -365,13 +887,59 @@ a {
   overflow: hidden;
 }
 
-.cardtitle {
-  font-family: "AlegreyaSans-Black";
+/* older UIkit cards (blog listings) */
+.uk-card-media-right {
+  height: auto;
+}
+.uk-card-body {
+  background-color: var(--blue-tint);
+}
+.uk-card-small {
+  border-radius: var(--radius);
+}
+div.uk-card-small {
+  background-color: var(--paper);
+}
+.uk-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+div.uk-card-body > span {
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+div.uk-card-body > p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
-hr {
-  height: 4px !important;
-  background-color: gray;
+/* ---------- assignment page pieces ---------- */
+
+.task-list {
+  list-style: none;
+  padding-left: 10px;
+}
+.task-list li {
+  list-style-type: none !important;
+  left: 0;
+  margin-left: 0;
+  margin-bottom: 8px;
+}
+.task-list label {
+  display: block;
+}
+/* blog_style.css has a bare `input { width: 100% }` (for other pages'
+   parameter sliders) that also stretches task-list checkboxes to the full
+   content width - undo that here since it's more specific. */
+.task-list input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  accent-color: var(--blue);
 }
 
 .balance-example img {
@@ -381,7 +949,6 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
-
 .balance-example figcaption {
   text-align: center;
 }
@@ -393,14 +960,12 @@ hr {
   justify-content: center;
   margin: 20px 0;
 }
-
 .triangle-good,
 .triangle-bad {
   flex: 1 1 220px;
   max-width: 260px;
   text-align: center;
 }
-
 .triangle-good svg,
 .triangle-bad svg {
   width: 100%;
@@ -408,30 +973,25 @@ hr {
 }
 
 /* Vertical timeline for dated lists (e.g. an assignment's Timeline
-   section): a blue connector line with a yellow dot per entry, matching
-   the site's h1 yellow/blue accents. */
+   section): a blue connector line with a yellow dot per entry. */
 .timeline {
   margin-top: 15px;
 }
-
 .timeline ul {
   list-style: none;
   margin: 0;
   padding: 0 0 0 20px;
-  border-left: 3px solid #2c3f89;
+  border-left: 3px solid var(--blue);
 }
-
 .timeline li {
   position: relative;
   list-style-type: none;
   margin-left: 0;
   padding: 0 0 20px 25px;
 }
-
 .timeline li:last-child {
   padding-bottom: 0;
 }
-
 .timeline li::before {
   content: "";
   position: absolute;
@@ -440,334 +1000,56 @@ hr {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #f3c95b;
-  border: 3px solid #2c3f89;
+  background: var(--yellow);
+  border: 3px solid var(--blue);
 }
-
 .timeline li strong {
-  color: #2c3f89;
+  color: var(--blue);
   display: block;
-  font-family: "Inter-Black";
+  font-family: var(--font-body);
+  font-weight: 800;
   margin-bottom: 2px;
   text-decoration: none;
 }
 
-/* week nav, three levels: this week white, past weeks (clickable) light
-   grey, upcoming weeks dim and lighter weight */
-.week-nav-list > li:not(.uk-nav-header):not(.uk-active):not(.uk-inactive) > a {
-  color: rgba(255, 255, 255, 0.78);
-}
-.week-nav-list > li:not(.uk-nav-header):not(.uk-active):not(.uk-inactive) > a:hover {
-  color: #fff;
-}
-.uk-inactive > a {
-  color: #77726d !important; /* still readable on #222 */
-  font-family: "Inter-VariableFont", sans-serif;
-  font-weight: 500;
-  pointer-events: none;
-  width: 100%;
-}
-
-.uk-nav-default > li {
-  position: relative;
-}
-
-.level3 > ul > li {
-  position: relative;
-  font-size: 1em;
-  color: black;
-  font-family: "Inter-VariableFont", sans-serif;
-  font-weight: bold;
-  list-style-type: square;
-  left: 20px;
-}
-
-div.uk-card-small {
-  background-color: white;
-}
-
-div.uk-card-body > span {
-  font-family: "Inter-VariableFont", sans-serif;
-  font-weight: bold;
-}
-
-div.uk-card-body > p {
-  font-family: "Inter-ExtraLight", sans-serif;
-  font-weight: normal;
-  font-size: 1.2em;
-}
-
-.uk-nav-default > .uk-active > a::after {
-  content: ">";
-  font-family: "Inter-ExtraLight", sans-serif;
-  text-align: right;
-  float: right;
-}
+/* ---------- tables ---------- */
 
 .uk-table > table {
   width: 100% !important;
 }
-
 .uk-table th {
-  background: rgb(220, 220, 220);
-  color: #363131;
+  background: var(--cream);
+  color: var(--ink);
 }
-
 .uk-table td {
   padding: 0 !important;
   width: 100%;
 }
 
-.pdf,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+/* ---------- Arduino page (content/arduino_sketches.html) ----------
+   Close the gap under the navbar and give the sketch cards the same look
+   as the week-page topic cards. */
 
-.section_header {
-  color: white;
+#ListBody > li {
+  cursor: pointer !important;
 }
-
-.slides_section {
-  padding: 10px;
-  background-color: #282a35;
-  margin-bottom: 30px;
-}
-
-nav {
-  background: #fba99e !important;
-}
-
-.section_header {
-  font-family: "Inter-Black";
-}
-
-#small-menu > li > a,
-#small-menu-sidebar > li > a {
-  color: white;
-  font-family: "Inter-Black";
-  text-align: left;
+.uk-first-column {
   padding-left: 0;
 }
-
-.uk-navbar-nav > li > a {
-  font-family: "Inter-Black";
-  color: #3b1d18 !important; /* dark on the salmon bar */
-  font-size: 1rem;
-  box-shadow: inset 0 -4px 0 transparent;
-  transition: box-shadow 0.15s;
-}
-.uk-navbar-nav > li > a:hover {
-  box-shadow: inset 0 -4px 0 rgba(59, 29, 24, 0.35);
-}
-/* the page you're on: a solid bar along the bottom */
-.uk-navbar-nav > li.uk-active > a {
-  box-shadow: inset 0 -4px 0 #3b1d18;
-}
-
-.uk-logo {
-  background: rgb(197, 75, 59) !important;
-  font-family: "AlegreyaSansSC-Black";
-  color: white;
-}
-
-h1 {
-  font-family: "AlegreyaSansSC-Black";
-}
-
-.menu_header {
-  font-family: "AlegreyaSansSC-Black";
-}
-
-.anonymous-pro-regular {
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.anonymous-pro-bold {
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.anonymous-pro-regular-italic {
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.anonymous-pro-bold-italic {
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 700;
-  font-style: italic;
-}
-
-#left-col {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: #222;
-  width: 260px;
-  z-index: 1;
-}
-
-#small-menu > li,
-#small-menu-sidebar > li {
-  list-style-type: none;
-}
-
-.uk-button {
-  border: none;
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.uk-button:hover {
-  color: white !important;
-}
-
-.bar-wrap {
-  padding: 2rem;
-}
-
-#right-col {
-  margin-left: 260px;
-}
-
-.uk-navbar-container {
-  z-index: 2;
-}
-
-#canvas-button {
-  display: none;
-}
-
-.uk-logo {
-  font-size: 1.7em;
-}
-
-@media screen and (max-width: 700px) {
-  #right-col {
-    margin-left: 0px;
-  }
-
-  #left-col {
-    visibility: hidden;
-  }
-
-  #canvas-button {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 494px) {
-  .uk-logo {
-    font-size: 1em;
-  }
-
-  .uk-navbar-nav > li > a {
-    font-size: 10px;
-  }
-}
-
-#left-col {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: #222;
-  width: 260px;
-  z-index: 1;
-}
-
-.bar-wrap {
-  padding: 2rem;
-}
-
-#right-col {
-  margin-left: 260px;
-}
-
-#offcanvas-usage {
-  overflow: scroll;
-}
-
-.bar-wrap {
-  overflow: scroll;
-}
-
-#left-col {
-  overflow: scroll;
-}
-
-.uk-navbar-container {
-  z-index: 2;
-}
-
-#canvas-button {
-  display: none;
-}
-
-.uk-logo {
-  font-size: 1.7em;
-}
-
-canvas {
-  display: none;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-/* [id^="agenda"] also matches agenda-1, agenda-2, etc., which pandoc
-   generates for the 2nd+ "Agenda" heading on a page (e.g. a Monday day
-   and a Wednesday day each have their own Agenda section). */
-[id^="agenda"] > ul > li {
-  margin-left: 20px;
-  font-family: "Inter-VariableFont";
-  color: #222; /* plain text: these aren't links */
-  font-weight: 500;
-  font-size: 18px;
-}
-[id^="agenda"] > ul > li::marker {
-  color: rgb(56, 79, 172);
-}
-
 #ListBody > li > div > div {
   display: flex;
-  background: rgb(238, 241, 247);
+  background: var(--paper);
 }
-
 #ListBody > li > div > #img_div {
   display: flex;
   background: black;
 }
-
 #ListBody > li > div > div > img {
   height: 100%;
   margin: auto;
 }
-
-/* ---------- Arduino page (content/arduino_sketches.html) ----------
-   Without #right-col's old blue border, close the gap under the navbar,
-   let the white panel fill the window, and give the sketch cards the same
-   look as the week-page topic cards. */
 body:has(#ListBody) > div > nav.uk-navbar-container {
   margin-bottom: 0 !important;
-}
-#right-col:has(#ListBody) {
-  min-height: calc(100vh - 80px);
-  /* without the border, the list's top margin escaped the panel and
-     showed the page background above it; flow-root keeps it inside */
-  display: flow-root;
 }
 #right-col:has(#ListBody) #ArticleBody {
   padding: 0 20px 40px;
@@ -775,26 +1057,22 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
 #ListBody .entry {
   margin-left: 0;
   overflow: hidden;
-  background: #fff;
+  background: var(--paper);
   border-radius: 12px;
-  border-top: 5px solid #7fcbcd;
-  box-shadow:
-    0 1px 2px rgba(20, 30, 70, 0.08),
-    0 4px 14px rgba(20, 30, 70, 0.1);
+  border-top: 5px solid var(--blue);
+  box-shadow: var(--shadow-sm);
   transition:
     transform 0.2s,
     box-shadow 0.2s;
 }
 #ListBody .entry:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 2px 4px rgba(20, 30, 70, 0.1),
-    0 12px 28px rgba(20, 30, 70, 0.16);
+  box-shadow: var(--shadow-lg);
 }
 /* the old teal frame is an inline style on the text column */
 #ListBody .entry > div[style] {
   border: none !important;
-  background: #fff;
+  background: var(--paper);
 }
 #ListBody .entry .uk-card-body {
   display: flex;
@@ -802,115 +1080,82 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   justify-content: center;
   gap: 6px;
   padding: 28px 32px;
-  background: #fff;
+  background: var(--paper);
 }
 #ListBody .entry .uk-card-title {
   margin: 0;
 }
 #ListBody .entry .uk-card-body > p {
   margin: 6px 0 10px;
-  font-family: "Inter-VariableFont", sans-serif;
-  font-size: 1.05em;
+  font-family: var(--font-body);
+  font-size: 1.1em;
 }
 #ListBody .entry .uk-label {
   align-self: flex-start;
   border-radius: 4px;
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 12px;
   letter-spacing: 0.06em;
 }
 
-.uk-accordion-title {
-  background: #2c3f89;
-  padding: 10px;
+/* ---------- misc ---------- */
+
+.anonymous-pro-regular {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.anonymous-pro-bold {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+.anonymous-pro-regular-italic {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+.anonymous-pro-bold-italic {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 700;
+  font-style: italic;
 }
 
-.uk-accordion-title {
-  font-family: "Inter-Black";
-  border-radius: 25px;
-  color: white;
-  padding-left: 20px;
-}
-
-.uk-accordion-content {
-  border-radius: 15px / 50px;
-  padding: 20px;
-}
-
-/* menu_button shows an icon on mobile (where it opens the offcanvas
-   drawer) and an "ART 150" label on desktop (where it currently does
-   nothing - see load_pages.js toggleMenu). It's an <a>, not a <button>,
-   so it needs explicit centering that a real button would get for free.
-   The same id/width is reused on Blog and Arduino pages for the
-   always-on table-of-contents toggle button, so both line up.
-   video_toggle_button (the plain/video-walkthrough switch on Blog posts
-   that have a video) matches the same box so the nav stays consistent. */
-#menu_button,
-#video_toggle_button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 102px;
-}
-
-.menu-btn-icon {
-  display: none !important;
-}
-
-/* Covers the icon on the main site's #menu_button, the always-on
-   table-of-contents toggle, and the video/plain toggle on Blog pages. */
-#menu_button .fa-bars,
-#video_toggle_button .fas {
-  font-size: 34px;
-}
-
-.menu-btn-label {
-  display: block;
-  font-family: "AlegreyaSansSC-Black";
-  font-size: 1.5rem;
-  line-height: 1.1;
-  text-align: center;
-  color: #4444dd;
-}
-
-#menu_button:hover .menu-btn-label {
-  color: #333;
-}
-
-/* Hovering either the ART/150 button or the logo text darkens both,
-   so they read as one linked button even though they're separate elements. */
-nav:has(#menu_button:hover) .uk-logo {
-  color: #333;
-}
-
-nav:has(.uk-logo:hover) .menu-btn-label {
-  color: #333;
-}
+/* ---------- responsive ---------- */
 
 @media screen and (max-width: 1050px) {
   .uk-navbar-nav {
     display: none;
   }
-
   #left-col {
     visibility: hidden;
   }
-
   #right-col {
     margin-left: 0px;
-    border: 0px solid #2c3f89;
     padding: 0;
   }
-
   .menu-btn-icon {
     display: inline-block !important;
   }
-
   .menu-btn-label {
     display: none;
   }
 }
 
 @media screen and (max-width: 700px) {
+  #right-col {
+    margin-left: 0px;
+  }
+  #left-col {
+    visibility: hidden;
+  }
+  #canvas-button {
+    display: block;
+  }
+  #right-col > section > h1 {
+    font-size: 2.6rem;
+  }
 }
 
 @media screen and (max-width: 494px) {
@@ -926,7 +1171,6 @@ nav:has(.uk-logo:hover) .menu-btn-label {
   .uk-navbar-container .uk-logo {
     flex: 1;
   }
-
   .uk-navbar-nav > li > a {
     font-size: 10px;
   }
