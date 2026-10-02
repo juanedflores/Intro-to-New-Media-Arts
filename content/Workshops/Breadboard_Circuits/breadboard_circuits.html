@@ -1,0 +1,663 @@
+<!doctype html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Breadboard Circuits Workshop</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Breadboard Circuits Workshop</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#breadboard-circuits-workshop"
+id="toc-breadboard-circuits-workshop">Breadboard Circuits Workshop</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a>
+<ul>
+<li><a href="#steps" id="toc-steps">Steps</a></li>
+</ul></li>
+<li><a href="#tools-materials" id="toc-tools-materials">Tools &amp;
+Materials</a></li>
+<li><a href="#part-1-the-breadboard" id="toc-part-1-the-breadboard">Part
+1: The Breadboard</a></li>
+<li><a href="#part-2-powering-the-breadboard"
+id="toc-part-2-powering-the-breadboard">Part 2: Powering the
+Breadboard</a></li>
+<li><a href="#part-3-potentiometer-dimmer"
+id="toc-part-3-potentiometer-dimmer">Part 3: Potentiometer
+Dimmer</a></li>
+<li><a href="#part-4-light-sensor" id="toc-part-4-light-sensor">Part 4:
+Light Sensor</a></li>
+<li><a href="#part-5-buzzer" id="toc-part-5-buzzer">Part 5:
+Buzzer</a></li>
+<li><a href="#troubleshooting"
+id="toc-troubleshooting">Troubleshooting</a></li>
+<li><a href="#next" id="toc-next">Next</a></li>
+<li><a href="#additional-resources"
+id="toc-additional-resources">Additional Resources</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="breadboard-circuits-workshop" class="level1">
+        <h1>Breadboard Circuits Workshop</h1>
+        <figure>
+        <img src="images/cover.jpg"
+        alt="The breadboard power supply module plugged into a breadboard, with the 9V adapter in its barrel jack." />
+        <figcaption aria-hidden="true">The breadboard power supply
+        module plugged into a breadboard, with the 9V adapter in its
+        barrel jack.</figcaption>
+        </figure>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>This is our first time building on a
+        <strong>breadboard</strong>, so we can put circuits together
+        without soldering. We’ll get to know the parts in our new
+        electronics kit, power the breadboard, and build three quick
+        circuits: an LED dimmed by a <strong>potentiometer</strong>, an
+        LED controlled by a <strong>light sensor</strong>, and a
+        <strong>buzzer</strong> with a volume knob.</p>
+        <p>The potentiometer and the light sensor are both
+        <strong>variable resistors</strong>: parts whose resistance
+        changes, which changes how much current flows. In the next
+        workshop, the <a
+        href="../Velostat_Workshop/velostat_workshop.html">DIY Pressure
+        Sensor</a>, we’ll make our own variable resistor out of Velostat
+        and drop it into the same circuit.</p>
+        <section id="steps" class="level3">
+        <h3>Steps</h3>
+        <p>[We will go over the steps together as a class].</p>
+        <ol type="1">
+        <li>Get to know the breadboard.</li>
+        <li>Power the breadboard with the 9V adapter and the power
+        supply module.</li>
+        <li>Dim an LED with a <strong>potentiometer</strong>.</li>
+        <li>Control an LED with light using a
+        <strong>photoresistor</strong> (light sensor).</li>
+        <li>Make sound with a <strong>buzzer</strong>, and use the
+        potentiometer as a volume knob.</li>
+        </ol>
+        </section>
+        </section>
+        <section id="tools-materials" class="level2">
+        <h2>Tools &amp; Materials</h2>
+        <p>From your <strong>electronics kit</strong>:</p>
+        <ul>
+        <li><strong>830-point breadboard</strong></li>
+        <li><strong>Breadboard power supply module</strong> (the small
+        board with the barrel jack, USB port and on/off button)</li>
+        <li><strong>9V 1A power adapter</strong> (plugs into the wall
+        and into the power module)</li>
+        <li><strong>LED</strong> (any color)</li>
+        <li><strong>220Ω resistor</strong> (bands: red, red, brown)</li>
+        <li><strong>Potentiometer</strong> (the small blue knob)</li>
+        <li><strong>Photoresistor</strong> (the small disc with a
+        squiggly line on top)</li>
+        <li><strong>Active buzzer</strong> (the small black cylinder
+        with a sticker on top)</li>
+        <li><strong>Jumper wires</strong></li>
+        </ul>
+        </section>
+        <section id="part-1-the-breadboard" class="level2">
+        <h2>Part 1: The Breadboard</h2>
+        <p>A breadboard lets you connect components by pushing their
+        legs into holes. Underneath the holes are metal strips that
+        connect certain holes together.</p>
+        <ul>
+        <li><strong>Terminal strips (the middle):</strong> each short
+        row of 5 holes is connected. The rows on either side of the
+        center gap are <strong>not</strong> connected to each
+        other.</li>
+        <li><strong>Power rails (the long edges):</strong> each long
+        line marked <strong>+</strong> (red) or <strong>–</strong>
+        (blue) is connected along the whole side of the board. We’ll put
+        power on <strong>+</strong> and ground on
+        <strong>–</strong>.</li>
+        <li>On some 830-point boards the power rails are split in the
+        middle. If the lines on the edge have a gap halfway down, the
+        two halves are <strong>not</strong> connected. Bridge the gap
+        with a jumper wire if you need both halves.</li>
+        </ul>
+        <p>Two components are connected when their legs are in the
+        <strong>same row</strong> (or the same rail).</p>
+        <p>The Makeability Lab has a good visual guide: <a
+        href="https://makeabilitylab.github.io/physcomp/electronics/breadboards.html">Breadboards</a>.</p>
+        </section>
+        <section id="part-2-powering-the-breadboard" class="level2">
+        <h2>Part 2: Powering the Breadboard</h2>
+        <p>The power supply module takes the 9V from the adapter and
+        turns it into a steadier <strong>5V</strong> or
+        <strong>3.3V</strong> for the breadboard.</p>
+        <ol type="1">
+        <li><p><strong>Check the voltage jumpers.</strong> The module
+        has a small jumper cap on each side that selects the voltage for
+        that side’s rail. Set <strong>both</strong> to
+        <strong>5V</strong>. Look at the red circles in the image below.
+        <img src="images/power_module.jpg" /></p></li>
+        <li><p><strong>Plug the module into one end of the
+        breadboard</strong> so its pins go into the power rails. Line up
+        the module’s <strong>+</strong> and <strong>–</strong> markings
+        with the red <strong>+</strong> and blue <strong>–</strong>
+        rails. Getting this backwards can damage components.</p></li>
+        <li><p><strong>Plug the 9V adapter</strong> into the module’s
+        barrel jack (like in the photo at the top of this page), then
+        into the wall. Only use one power source at a time: the adapter
+        <strong>or</strong> USB, not both.</p></li>
+        <li><p><strong>Press the module’s power button.</strong> Its
+        small LED should light up.</p></li>
+        <li><p><strong>Turn the power off</strong> (press the button
+        again) whenever you’re changing wires.</p></li>
+        </ol>
+        </section>
+        <section id="part-3-potentiometer-dimmer" class="level2">
+        <h2>Part 3: Potentiometer Dimmer</h2>
+        <p>A <strong>potentiometer</strong> (“pot”) is a resistor you
+        can adjust with a knob. It has three legs: the two outer legs
+        are the ends of a resistor, and the <strong>middle leg</strong>
+        (the wiper) slides along it as you turn the knob. Using the
+        middle leg and one outer leg gives you a resistance that changes
+        as you turn.</p>
+        <video src="https://makeabilitylab.github.io/physcomp/electronics/assets/videos/Potentiometer_Overview_ByJonFroehlich.mp4" width="100%" controls>
+        </video>
+        <hr />
+        <p><strong>5V (+)</strong> → <strong>potentiometer</strong> →
+        <strong>220Ω resistor</strong> → <strong>LED</strong> →
+        <strong>GND (–)</strong></p>
+        <svg viewBox="0 -10 510 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Series circuit: 5 volts, potentiometer, 220 ohm resistor, LED, ground" style="max-width:510px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+        <g fill="none" stroke="#2c3f89" stroke-width="3" stroke-linejoin="round">
+        <path d="M40 40 H100" /> <path d="M190 40 H230" />
+        <path d="M320 40 H360" /> <path d="M450 40 H490 V150 H40 V40" />
+        <path d="M100 40 h7 l8 -12 l12 24 l12 -24 l12 24 l12 -24 l12 24 l8 -12 h7" />
+        <path d="M120 62 L172 16 m-12 1 l12 -1 l-1 12" stroke-width="2" />
+        <path d="M230 40 h7 l8 -12 l12 24 l12 -24 l12 24 l12 -24 l12 24 l8 -12 h7" />
+        <path d="M360 40 h27 M387 22 V58 L423 40 Z" fill="#f3c95b" />
+        <path d="M423 22 V58 M423 40 h27" />
+        <path d="M402 14 l10 -10 M412 18 l10 -10" stroke-width="2" />
+        </g> <circle cx="40" cy="40" r="5" fill="#c0392b" />
+        <circle cx="40" cy="150" r="5" fill="#2c3f89" />
+        <text x="30" y="20" fill="#c0392b" font-weight="700">5V
+        (+)</text>
+        <text x="30" y="175" fill="#2c3f89" font-weight="700">GND
+        (–)</text>
+        <text x="145" y="80" text-anchor="middle">potentiometer</text>
+        <text x="275" y="80" text-anchor="middle">220Ω resistor</text>
+        <text x="405" y="80" text-anchor="middle">LED</text>
+        <text x="405" y="95" text-anchor="middle" fill="#666">(long leg
+        on the left)</text>
+        </svg>
+        <p><img src="images/pot_circuit2.png" /></p>
+        <p>Another way of wiring it (There are many right answers):</p>
+        <p><img src="images/pot_circuit.png" /></p>
+        <p>With the <strong>power off</strong>:</p>
+        <ol type="1">
+        <li><strong>Place the LED</strong> across two rows. The
+        <strong>long leg (+)</strong> points toward power, the
+        <strong>short leg (–)</strong> toward ground.</li>
+        <li><strong>Connect the LED’s short leg to the – rail</strong>
+        with a jumper wire.</li>
+        <li><strong>Put the 220Ω resistor</strong> so one leg shares a
+        row with the LED’s long leg and the other leg is in a new
+        row.</li>
+        <li><strong>Place the potentiometer</strong> so each of its
+        three legs is in its own row.</li>
+        <li><strong>Connect the pot’s middle leg</strong> to the
+        resistor’s free row with a jumper wire.</li>
+        <li><strong>Connect one of the pot’s outer legs</strong> to the
+        + rail. Leave the other outer leg unconnected.</li>
+        <li><strong>Turn the power on and turn the knob.</strong> The
+        LED should fade from bright to dim.</li>
+        </ol>
+        <p><strong>Why the resistor?</strong> At one end of the knob,
+        the pot’s resistance is close to 0Ω. The 220Ω resistor makes
+        sure there’s always enough resistance in the loop to protect the
+        LED. Keep it in every LED circuit.</p>
+        </section>
+        <section id="part-4-light-sensor" class="level2">
+        <h2>Part 4: Light Sensor</h2>
+        <p>A <strong>photoresistor</strong> (also called a
+        light-dependent resistor, or LDR) changes its resistance with
+        light. <strong>More light = less resistance</strong>, so more
+        current flows and the LED gets brighter. It has no polarity, so
+        either leg can go either way.</p>
+        <p><strong>5V (+)</strong> → <strong>photoresistor</strong> →
+        <strong>220Ω resistor</strong> → <strong>LED</strong> →
+        <strong>GND (–)</strong></p>
+        <svg viewBox="0 -10 510 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Series circuit: 5 volts, photoresistor, 220 ohm resistor, LED, ground" style="max-width:510px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+        <g fill="none" stroke="#2c3f89" stroke-width="3" stroke-linejoin="round">
+        <path d="M40 40 H100" /> <path d="M190 40 H230" />
+        <path d="M320 40 H360" /> <path d="M450 40 H490 V150 H40 V40" />
+        <circle cx="145" cy="40" r="30" stroke-width="2" />
+        <path d="M100 40 h7 l8 -12 l12 24 l12 -24 l12 24 l12 -24 l12 24 l8 -12 h7" />
+        <path d="M118 -2 l12 14 m-9 0 l9 0 l0 -9 M134 -6 l12 14 m-9 0 l9 0 l0 -9" stroke-width="2" />
+        <path d="M230 40 h7 l8 -12 l12 24 l12 -24 l12 24 l12 -24 l12 24 l8 -12 h7" />
+        <path d="M360 40 h27 M387 22 V58 L423 40 Z" fill="#f3c95b" />
+        <path d="M423 22 V58 M423 40 h27" />
+        <path d="M402 14 l10 -10 M412 18 l10 -10" stroke-width="2" />
+        </g> <circle cx="40" cy="40" r="5" fill="#c0392b" />
+        <circle cx="40" cy="150" r="5" fill="#2c3f89" />
+        <text x="30" y="20" fill="#c0392b" font-weight="700">5V
+        (+)</text>
+        <text x="30" y="175" fill="#2c3f89" font-weight="700">GND
+        (–)</text>
+        <text x="145" y="88" text-anchor="middle">photoresistor</text>
+        <text x="275" y="80" text-anchor="middle">220Ω resistor</text>
+        <text x="405" y="80" text-anchor="middle">LED</text>
+        <text x="405" y="95" text-anchor="middle" fill="#666">(long leg
+        on the left)</text>
+        </svg>
+        <p><img src="images/photores_circuit.png" /></p>
+        <p>This is the same circuit as Part 3, with the photoresistor in
+        place of the potentiometer:</p>
+        <ol type="1">
+        <li><strong>Turn the power off.</strong></li>
+        <li><strong>Remove the potentiometer.</strong></li>
+        <li><strong>Place the photoresistor</strong> so its two legs are
+        in two different rows.</li>
+        <li><strong>Connect one leg to the + rail</strong> and the
+        <strong>other leg to the resistor’s free row</strong>.</li>
+        <li><strong>Turn the power on.</strong> Cover the photoresistor
+        with your hand, then shine your phone’s flashlight on it. The
+        LED should go from dim or off to bright.</li>
+        </ol>
+        <p>In normal room light the LED may only glow faintly. That’s
+        expected: the photoresistor still has a fairly high resistance
+        until you shine a bright light on it.</p>
+        </section>
+        <section id="part-5-buzzer" class="level2">
+        <h2>Part 5: Buzzer</h2>
+        <p>The <strong>active buzzer</strong> in your kit makes a beep
+        on its own whenever it gets power. No extra parts are needed to
+        make a sound. It <strong>does</strong> have polarity: the
+        <strong>longer leg</strong> (or the leg marked
+        <strong>+</strong> on top) goes toward power.</p>
+        <p><strong>Make sure you have the active buzzer.</strong> It has
+        a sticker on top and a sealed black bottom. If your kit also has
+        a buzzer with a green circuit board visible underneath, that’s a
+        <em>passive</em> buzzer. It needs a changing signal to make a
+        tone, so on its own it will only click. We’ll use it with
+        Arduino later.</p>
+        <p>First, just make it beep:</p>
+        <ol type="1">
+        <li><strong>Turn the power off</strong> and clear your LED
+        circuit.</li>
+        <li><strong>Place the buzzer</strong> so its two legs are in two
+        different rows.</li>
+        <li><strong>Connect the buzzer’s + (long) leg to the +
+        rail</strong> and its <strong>other leg to the –
+        rail</strong>.</li>
+        <li><strong>Turn the power on.</strong> It should beep
+        continuously. (It’s loud! Turn it off when you’re done.)</li>
+        </ol>
+        <p>Now add the potentiometer as a <strong>volume
+        knob</strong>:</p>
+        <p><strong>5V (+)</strong> → <strong>potentiometer</strong> →
+        <strong>buzzer</strong> → <strong>GND (–)</strong></p>
+        <svg viewBox="0 -10 380 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Series circuit: 5 volts, potentiometer, active buzzer, ground" style="max-width:380px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+        <g fill="none" stroke="#2c3f89" stroke-width="3" stroke-linejoin="round">
+        <path d="M40 40 H100" /> <path d="M190 40 H230" />
+        <path d="M320 40 H360 V150 H40 V40" />
+        <path d="M100 40 h7 l8 -12 l12 24 l12 -24 l12 24 l12 -24 l12 24 l8 -12 h7" />
+        <path d="M120 62 L172 16 m-12 1 l12 -1 l-1 12" stroke-width="2" />
+        <rect x="245" y="18" width="60" height="44" rx="22" fill="#222" stroke="#222" />
+        <path d="M230 40 h15 M305 40 h15" /> </g>
+        <circle cx="40" cy="40" r="5" fill="#c0392b" />
+        <circle cx="40" cy="150" r="5" fill="#2c3f89" />
+        <text x="30" y="20" fill="#c0392b" font-weight="700">5V
+        (+)</text>
+        <text x="30" y="175" fill="#2c3f89" font-weight="700">GND
+        (–)</text>
+        <text x="145" y="80" text-anchor="middle">potentiometer</text>
+        <text x="275" y="45" fill="#fff" text-anchor="middle" font-weight="700">BUZZER</text>
+        <text x="252" y="14" fill="#c0392b" font-weight="700">+</text>
+        <text x="275" y="80" text-anchor="middle">active buzzer</text>
+        <text x="275" y="95" text-anchor="middle" fill="#666">(+ leg on
+        the left)</text>
+        </svg>
+        <ol type="1">
+        <li><strong>Turn the power off.</strong></li>
+        <li><strong>Remove the jumper from the + rail to the buzzer’s +
+        leg.</strong></li>
+        <li><strong>Place the potentiometer</strong> with each leg in
+        its own row.</li>
+        <li><strong>Connect the pot’s middle leg</strong> to the
+        buzzer’s + leg row.</li>
+        <li><strong>Connect one of the pot’s outer legs</strong> to the
+        + rail.</li>
+        <li><strong>Turn the power on and turn the knob.</strong> The
+        buzzer should get quieter, and eventually stop, as the
+        resistance goes up.</li>
+        </ol>
+        <p>The buzzer is rated for 5V, so it doesn’t need the 220Ω
+        resistor.</p>
+        <p><strong>Try it:</strong> swap the potentiometer for the
+        photoresistor. Can you make a buzzer that only sounds when a
+        light shines on it?</p>
+        </section>
+        <section id="troubleshooting" class="level2">
+        <h2>Troubleshooting</h2>
+        <ul>
+        <li><strong>Nothing lights up.</strong>
+        <ul>
+        <li>Is the power module on, with its LED lit?</li>
+        <li>Is the LED backwards? Flip it around.</li>
+        <li>Are the LED, resistor and wires actually in the same rows?
+        Follow the loop from + to – with your finger.</li>
+        <li>Are the power rails split in the middle of the board? Bridge
+        them with a jumper.</li>
+        </ul></li>
+        <li><strong>Turning the potentiometer does nothing.</strong>
+        You’re probably using the two outer legs. One of your
+        connections needs to be the <strong>middle leg</strong>.</li>
+        <li><strong>The LED barely changes with the light
+        sensor.</strong> Shine a phone flashlight right onto it, and
+        cover it fully with your hand to compare.</li>
+        <li><strong>The buzzer only clicks, or makes no sound.</strong>
+        Check that it’s the <strong>active</strong> buzzer (sticker on
+        top, sealed bottom) and that its + leg is toward power.</li>
+        </ul>
+        </section>
+        <section id="next" class="level2">
+        <h2>Next</h2>
+        <p>Continue with the <a
+        href="../Velostat_Workshop/velostat_workshop.html">DIY Pressure
+        Sensor Workshop</a>, where you’ll build a pressure sensor out of
+        Velostat and use it in these same circuits.</p>
+        </section>
+        <section id="additional-resources" class="level2">
+        <h2>Additional Resources</h2>
+        <ul>
+        <li><a href="https://makeabilitylab.github.io/physcomp/electronics/breadboards.html" target="_blank">Makeability
+        Lab - Breadboards</a></li>
+        <li><a href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html" target="_blank">Makeability
+        Lab - Variable Resistors</a></li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

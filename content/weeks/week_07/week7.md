@@ -16,7 +16,7 @@ title: Week 7
 
 ### Announcements
 ::: {.announcement type="reminder"}
-We're picking up the Velostat pressure sensor workshop that we didn't get to last Wednesday. Bring your electronics kit, and your breadboard if you still have last week's circuits on it.
+We're picking up the DIY pressure sensor workshop that we didn't get to last Wednesday. Bring your electronics kit, and your breadboard if you still have last week's circuits on it.
 :::
 
 ::: {.announcement type="materials"}
@@ -27,12 +27,12 @@ We're picking up the Velostat pressure sensor workshop that we didn't get to las
 ### Agenda
 - Quick review: potentiometers, photoresistors and buzzers from Wednesday
 - Voltage dividers: turning a changing resistance into a changing voltage
-- Velostat Pressure Sensor Workshop (Parts 6–8): build the sensor, light an LED with it, then measure it as a voltage divider
+- DIY Pressure Sensor Workshop: build a Velostat sensor, light an LED with it, then measure it as a voltage divider
 
 ### Topics
 ::: {.topics}
 
-::: {.card type="workshop" title="Velostat Pressure Sensor Workshop" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html#part-6-build-the-velostat-sensor" tag="Workshop"}
+::: {.card type="workshop" title="DIY Pressure Sensor Workshop" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html" tag="Workshop"}
 :::
 
 ::: {.card type="external" title="Voltage Dividers" thumb="./content/weeks/week_07/images/voltage-divider.svg" href="https://learn.sparkfun.com/tutorials/voltage-dividers/all" tag="Electronics"}

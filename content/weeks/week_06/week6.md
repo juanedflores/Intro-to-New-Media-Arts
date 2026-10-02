@@ -33,7 +33,7 @@ Drawing Bot Showcase day! Remember to document your bot, its instructions, and i
 
 ### Announcements
 ::: {.announcement type="reminder"}
-We started our E-Textiles / Wearables unit by getting to know the electronics kit and building our first circuits on a breadboard. The Velostat pressure sensor workshop moves to Monday.
+We started our E-Textiles / Wearables unit by getting to know the electronics kit and building our first circuits on a breadboard. The DIY pressure sensor workshop moves to Monday.
 :::
 
 ::: {.announcement type="materials"}
@@ -51,7 +51,7 @@ We started our E-Textiles / Wearables unit by getting to know the electronics ki
 ### Topics
 ::: {.topics}
 
-::: {.card type="workshop" title="Breadboard Circuits (Workshop Parts 1–5)" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html#part-1-the-breadboard" tag="Workshop"}
+::: {.card type="workshop" title="Breadboard Circuits Workshop" thumb="./content/Workshops/Breadboard_Circuits/images/cover.jpg" href="./content/Workshops/Breadboard_Circuits/breadboard_circuits.html" tag="Workshop"}
 :::
 
 ::: {.card type="external" title="Breadboards" thumb="./content/weeks/week_06/images/breadboard.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/breadboards.html" tag="Electronics"}
@@ -68,5 +68,5 @@ We started our E-Textiles / Wearables unit by getting to know the electronics ki
 
 ### Next Week
 ::: {.nextweek}
-On Monday we'll learn about voltage dividers and build the Velostat pressure sensor. Bring your electronics kit. Please also download the Arduino IDE before Wednesday.
+On Monday we'll learn about voltage dividers and build a DIY pressure sensor out of Velostat. Bring your electronics kit. Please also download the Arduino IDE before Wednesday.
 :::
