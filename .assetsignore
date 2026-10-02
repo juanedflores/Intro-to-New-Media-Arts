@@ -1,0 +1,9 @@
+# Files Cloudflare should not publish (the repo root is the site).
+# Same syntax as .gitignore.
+.git
+.gitignore
+.assetsignore
+.playwright-mcp
+.claude
+.DS_Store
+pandoc
