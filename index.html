@@ -88,6 +88,14 @@
                   >Syllabus</a
                 >
               </li>
+              <li>
+                <a
+                  class="uk-button uk-button-default"
+                  onclick="load_topics(); return false;"
+                  href="#topics"
+                  >Topics</a
+                >
+              </li>
             </div>
             <hr />
             <ul
@@ -109,6 +117,14 @@
                 onclick="load_syllabus(); return false;"
                 href="#syllabus"
                 >Syllabus</a
+              >
+            </li>
+            <li>
+              <a
+                class="uk-button uk-button-default"
+                onclick="load_topics(); return false;"
+                href="#topics"
+                >Topics</a
               >
             </li>
           </div>
@@ -133,6 +149,7 @@
       // weeks that haven't started yet stay locked
       var linkedWeek = weekFromHash();
       if (location.hash === "#syllabus") load_syllabus(true);
+      else if (location.hash === "#topics") load_topics(true);
       else loadWeek(linkedWeek && linkedWeek <= CURRENT_WEEK ? linkedWeek : CURRENT_WEEK, true);
     </script>
   </body>

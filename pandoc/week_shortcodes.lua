@@ -44,11 +44,12 @@ local function render_card(el)
     'html',
     string.format(
       [[
-<a class="topic-card" href="%s"%s style="--accent: %s; --tag-bg: %s; --tag-fg: %s">
+<a class="topic-card" data-type="%s" href="%s"%s style="--accent: %s; --tag-bg: %s; --tag-fg: %s">
 <div class="topic-thumb%s"><img src="%s" alt="" loading="lazy" /><div class="topic-tags">%s</div></div>
 <h3 class="cardtitle">%s</h3>
 </a>
 ]],
+      (card_styles[a.type] and a.type) or 'lesson',
       a.href or '#',
       target_attr,
       style.accent,

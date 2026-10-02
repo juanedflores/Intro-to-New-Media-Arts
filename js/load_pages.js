@@ -52,6 +52,174 @@ function markSyllabusWeeks() {
   });
 }
 
+// ---------- Topics index (index.html#topics) ----------
+// Every topic card from the weeks that have opened, gathered on one page,
+// grouped by unit, with a search box and type filters. Built from the week
+// pages themselves, so there's nothing extra to maintain.
+var TOPIC_TYPES = [
+  { key: "workshop", label: "Workshops" },
+  { key: "lesson", label: "Lessons" },
+  { key: "external", label: "Readings & Links" },
+  { key: "video", label: "Videos" },
+  { key: "assignment", label: "Assignments" },
+];
+
+function unitForWeek(n) {
+  var unit = null;
+  WEEK_SECTIONS.forEach(function (s) {
+    if (s.start <= n) unit = s.title;
+  });
+  return unit || "Overview";
+}
+
+function load_topics(fromHistory) {
+  if (!fromHistory && location.hash !== "#topics") {
+    history.pushState(null, "", "#topics");
+  }
+  $(".week-nav-list > li.uk-active").removeClass("uk-active");
+  $("#right-col").html(
+    '<section id="topics" class="level1"><h1>Topics</h1><p class="tp-loading">Gathering topics…</p></section>',
+  );
+  window.scrollTo(0, 0);
+
+  var weeks = [];
+  for (var i = 1; i <= CURRENT_WEEK; i++) weeks.push(i);
+  var requests = weeks.map(function (n) {
+    var dir = "week_" + String(n).padStart(2, "0");
+    return fetch("content/weeks/" + dir + "/week" + n + ".html")
+      .then(function (r) {
+        return r.ok ? r.text() : "";
+      })
+      .then(function (html) {
+        return { week: n, html: html };
+      })
+      .catch(function () {
+        return { week: n, html: "" };
+      });
+  });
+
+  Promise.all(requests).then(function (pages) {
+    // one entry per link; a topic repeated in several weeks lists them all
+    var byHref = {};
+    var order = [];
+    pages.forEach(function (page) {
+      if (!page.html) return;
+      var doc = new DOMParser().parseFromString(page.html, "text/html");
+      doc.querySelectorAll("a.topic-card").forEach(function (card) {
+        var href = card.getAttribute("href");
+        if (!byHref[href]) {
+          byHref[href] = {
+            card: card,
+            type: card.dataset.type || "lesson",
+            title: (card.querySelector(".cardtitle") || card).textContent.trim(),
+            tags: card.querySelector(".topic-tags")
+              ? card.querySelector(".topic-tags").textContent.trim()
+              : "",
+            unit: unitForWeek(page.week),
+            weeks: [],
+          };
+          order.push(href);
+        }
+        if (byHref[href].weeks.indexOf(page.week) === -1)
+          byHref[href].weeks.push(page.week);
+      });
+    });
+    // after the first load, keep the visitor where they were on this page
+    if (location.hash !== "#topics") return;
+    renderTopics(order.map(function (h) {
+      return byHref[h];
+    }));
+  });
+}
+
+function renderTopics(topics) {
+  var units = [];
+  topics.forEach(function (t) {
+    if (units.indexOf(t.unit) === -1) units.push(t.unit);
+  });
+  var present = TOPIC_TYPES.filter(function (ty) {
+    return topics.some(function (t) {
+      return t.type === ty.key;
+    });
+  });
+
+  var html =
+    '<section id="topics" class="level1"><h1>Topics</h1>' +
+    '<div class="tp-bar">' +
+    '<input type="search" class="tp-search" placeholder="Search topics, e.g. breadboard, Arduino, Velostat" aria-label="Search topics">' +
+    '<div class="tp-filters" role="group" aria-label="Filter by type">' +
+    '<button data-type="all" aria-pressed="true">All</button>' +
+    present
+      .map(function (ty) {
+        return '<button data-type="' + ty.key + '" aria-pressed="false">' + ty.label + "</button>";
+      })
+      .join("") +
+    "</div></div>" +
+    '<p class="tp-count" aria-live="polite"></p>';
+
+  units.forEach(function (unit) {
+    html += '<section class="tp-unit"><h2>' + unit + '</h2><div class="topics-grid">';
+    topics
+      .filter(function (t) {
+        return t.unit === unit;
+      })
+      .forEach(function (t) {
+        var weeks = t.weeks
+          .map(function (n) {
+            return '<a href="#week-' + n + '" data-week-link="' + n + '">Week ' + n + "</a>";
+          })
+          .join(" ");
+        // the link's address often names the topic too (velostat_workshop.html)
+        var path = (t.card.getAttribute("href") || "").replace(/[\/_.\-#]+/g, " ");
+        var search = (t.title + " " + t.tags + " " + path).toLowerCase();
+        html +=
+          '<div class="tp-item" data-type="' + t.type + '" data-search="' +
+          search.replace(/"/g, "&quot;") + '">' +
+          t.card.outerHTML +
+          '<p class="tp-weeks">' + weeks + "</p></div>";
+      });
+    html += "</div></section>";
+  });
+  html += '<p class="tp-empty" hidden>No topics match. Try another word, or clear the filters.</p></section>';
+  $("#right-col").html(html);
+
+  var root = document.getElementById("topics");
+  var search = root.querySelector(".tp-search");
+  var type = "all";
+  function apply() {
+    var q = search.value.trim().toLowerCase();
+    var shown = 0;
+    root.querySelectorAll(".tp-item").forEach(function (item) {
+      var ok = (type === "all" || item.dataset.type === type) && (!q || item.dataset.search.indexOf(q) !== -1);
+      item.hidden = !ok;
+      if (ok) shown++;
+    });
+    root.querySelectorAll(".tp-unit").forEach(function (unit) {
+      unit.hidden = !unit.querySelector(".tp-item:not([hidden])");
+    });
+    root.querySelector(".tp-empty").hidden = shown > 0;
+    root.querySelector(".tp-count").textContent =
+      shown + (shown === 1 ? " topic" : " topics") + " from Weeks 1–" + CURRENT_WEEK;
+  }
+  search.addEventListener("input", apply);
+  root.querySelectorAll(".tp-filters button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      type = b.dataset.type;
+      root.querySelectorAll(".tp-filters button").forEach(function (x) {
+        x.setAttribute("aria-pressed", x === b);
+      });
+      apply();
+    });
+  });
+  root.querySelectorAll("[data-week-link]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      loadWeek(Number(a.dataset.weekLink));
+    });
+  });
+  apply();
+}
+
 // Each week has its own address (index.html#week-6), so a week can be
 // linked to and the browser's back/forward buttons move between weeks.
 // `fromHistory` is true when the address already changed (back/forward or a
@@ -162,6 +330,7 @@ function renderWeekNav(currentWeek, totalWeeks) {
 window.addEventListener("popstate", function () {
   if (typeof CURRENT_WEEK === "undefined") return; // not the week page
   if (location.hash === "#syllabus") return load_syllabus(true);
+  if (location.hash === "#topics") return load_topics(true);
   var n = weekFromHash();
   // no #week-N (back to the plain address) means this week
   loadWeek(n && n <= CURRENT_WEEK ? n : CURRENT_WEEK, true);

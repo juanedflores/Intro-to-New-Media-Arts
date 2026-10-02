@@ -1151,6 +1151,122 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   letter-spacing: 0.06em;
 }
 
+/* ---------- topics index (index.html#topics, built in load_pages.js) ---------- */
+
+.tp-bar {
+  position: sticky;
+  top: 80px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin: 16px -20px 0;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--rule);
+}
+.tp-search {
+  flex: 1 1 260px;
+  max-width: 420px;
+  padding: 9px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--cream-light);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+}
+.tp-search:focus {
+  outline: 3px solid var(--blue);
+  outline-offset: 1px;
+  background: var(--paper);
+}
+.tp-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tp-filters button {
+  padding: 5px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--blue-dark);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.tp-filters button:hover {
+  border-color: var(--blue);
+}
+.tp-filters button[aria-pressed="true"] {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+.tp-count,
+.tp-loading,
+.tp-empty {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  font-variant-numeric: lining-nums;
+}
+.tp-unit h2 {
+  margin: 26px 0 4px;
+  font-size: 1.5em;
+}
+.tp-unit .topics-grid {
+  padding-left: 0;
+  padding-right: 0;
+}
+.tp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tp-item[hidden],
+.tp-unit[hidden] {
+  display: none;
+}
+.tp-item .topic-card {
+  flex: 1;
+}
+/* which week(s) a topic came from */
+.tp-weeks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+.tp-weeks a {
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: var(--cream-light);
+  color: var(--blue-dark);
+  font-size: 0.85rem;
+  font-weight: 800;
+  font-variant-numeric: lining-nums;
+  text-decoration: none;
+}
+.tp-weeks a:hover {
+  background: var(--yellow-tint);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+  .tp-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tp-filters button {
+    flex: none;
+  }
+}
+
 /* ---------- syllabus (content/syllabus/syllabus.md) ----------
    The web version of the syllabus PDF, shown in the main column. */
 
