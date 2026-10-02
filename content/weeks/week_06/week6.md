@@ -8,18 +8,15 @@ title: Week 6
 
 ::: {.day title="MONDAY" open="true"}
 
-### ANNOUNCEMENTS:
-
+### Announcements
 ::: {.announcement type="reminder"}
 Drawing Bot Showcase day! Remember to document your bot, its instructions, and its final drawing in your "Drawing Bot" Are.na channel.
 :::
 
-### AGENDA
-
+### Agenda
 - Drawing Bot Showcase: each bot runs its instructions live, 5 minutes max.
 
 ### Topics
-
 ::: {.topics}
 
 ::: {.card type="assignment" title="Drawing Machines Gallery" thumb="./content/Assignments/Drawing_Bot/gallery/images/drawing_08.jpg" href="./content/Assignments/Drawing_Bot/gallery/index.html" tag="Gallery"}
@@ -34,8 +31,7 @@ Drawing Bot Showcase day! Remember to document your bot, its instructions, and i
 
 ::: {.day title="WEDNESDAY" open="true"}
 
-### ANNOUNCEMENTS:
-
+### Announcements
 ::: {.announcement type="reminder"}
 We are starting our E-Textiles / Wearables unit with a pressure sensor workshop. We'll also be using a breadboard for the first time.
 :::
@@ -45,21 +41,19 @@ We are starting our E-Textiles / Wearables unit with a pressure sensor workshop.
 - Velostat, copper tape, and cardstock (provided)
 :::
 
-### AGENDA
-
+### Agenda
 - Electronics Kit Breakdown
 - Intro to Breadboards
 - Powering a breadboard with the 9V adapter + power supply module
 - Velostat Pressure Sensor Workshop
 
 ### Topics
-
 ::: {.topics}
 
 ::: {.card type="workshop" title="Velostat Pressure Sensor Workshop" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html" tag="Workshop"}
 :::
 
-::: {.card type="external" title="Breadboards" thumb="https://makeabilitylab.github.io/physcomp/electronics/assets/images/BreadboardOverviewWithConnectionsMarked.png" href="https://makeabilitylab.github.io/physcomp/electronics/breadboards.html" tag="Electronics"}
+::: {.card type="external" title="Breadboards" thumb="./content/weeks/week_06/images/breadboard.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/breadboards.html" tag="Electronics"}
 :::
 
 ::: {.card type="external" title="Variable Resistors" thumb="https://cdn-shop.adafruit.com/970x728/4133-03.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html" tag="Electronics"}
@@ -75,7 +69,6 @@ We are starting our E-Textiles / Wearables unit with a pressure sensor workshop.
 :::
 
 ### Next Week
-
 ::: {.nextweek}
 We'll start working with Arduino and use it to read sensors like the one we built today. Please download the Arduino IDE before Monday.
 :::

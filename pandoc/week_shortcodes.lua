@@ -5,14 +5,17 @@
 --   ::: {.announcement type="reminder|materials|tip|gallery"} ... :::  styled callout
 --   ::: {.topics} ... :::                                 card grid wrapper
 --   ::: {.card type="lesson|external|video|assignment|workshop" title="..." thumb="..." href="..." tag="..."} :::
+--       optional fit="contain" shows the whole thumbnail (for diagrams) instead of cropping it
 --   ::: {.nextweek} ... :::                               "looking ahead" callout
 
+-- accent: the card's top strip; label_bg: the tag on the image (dark
+-- enough for white text to read)
 local card_styles = {
-  lesson = { bg = '#fba99e', label_bg = '#fba99e', tag = 'Lesson' },
-  external = { bg = 'rgb(210, 230, 250)', label_bg = 'rgb(56, 79, 172)', tag = 'External' },
-  video = { bg = '#ffd97d', label_bg = '#ffd97d', tag = 'Video' },
-  assignment = { bg = '#c9a7eb', label_bg = '#7a3fc4', tag = 'Assignment' },
-  workshop = { bg = '#8bc9a0', label_bg = '#2f7d4f', tag = 'Workshop' },
+  lesson = { accent = '#f28b7d', label_bg = '#c2412f', tag = 'Lesson' },
+  external = { accent = '#7fa7e6', label_bg = '#2c3f89', tag = 'External' },
+  video = { accent = '#f3c95b', label_bg = '#9a6a00', tag = 'Video' },
+  assignment = { accent = '#b58ae6', label_bg = '#6a35b0', tag = 'Assignment' },
+  workshop = { accent = '#79c294', label_bg = '#2f7d4f', tag = 'Workshop' },
 }
 
 local section_divs_opts = pandoc.WriterOptions({ ['section_divs'] = true })
@@ -30,106 +33,65 @@ local function render_card(el)
   local tag_list = a.tags or a.tag or style.tag
   local labels = {}
   for t in tag_list:gmatch('[^,]+') do
-    table.insert(
-      labels,
-      string.format(
-        '<span class="uk-label" style="background-color: %s">%s</span>',
-        style.label_bg,
-        t:match('^%s*(.-)%s*$')
-      )
-    )
+    table.insert(labels, '<span class="topic-tag">' .. t:match('^%s*(.-)%s*$') .. '</span>')
   end
 
   local target_attr = (a.target and (' target="' .. a.target .. '"')) or ''
+  local fit = (a.fit == 'contain') and ' topic-thumb-contain' or ''
 
   return pandoc.RawBlock(
     'html',
     string.format(
       [[
-<li>
-<div>
-<a href="%s"%s>
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge" style="background: %s">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
+<a class="topic-card" href="%s"%s style="--accent: %s; --tag-bg: %s">
+<div class="topic-thumb%s"><img src="%s" alt="" loading="lazy" /><div class="topic-tags">%s</div></div>
 <h3 class="cardtitle">%s</h3>
-<div style="display: inline">
-<img src="%s" alt="" style="padding-bottom: 10px" uk-image />
-%s
-</div>
-</div>
 </a>
-</div>
-</li>
 ]],
       a.href or '#',
       target_attr,
-      style.bg,
-      a.title or '',
+      style.accent,
+      style.label_bg,
+      fit,
       a.thumb or '',
-      table.concat(labels, '\n')
+      table.concat(labels, ''),
+      a.title or ''
     )
   )
 end
 
 local function render_topics(el)
+  return pandoc.RawBlock('html', '<div class="topics-grid">\n' .. inner_html(el) .. '\n</div>')
+end
+
+-- label text per callout type; colors live in css/site.css (.callout-*)
+local announcement_labels = {
+  reminder = 'Reminder',
+  materials = 'Materials Needed',
+  tip = 'Tip',
+  gallery = 'Gallery',
+}
+
+local function callout(kind, label, body)
   return pandoc.RawBlock(
     'html',
     string.format(
-      [[
-<div class="uk-margin" style="padding: 30px;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-%s
-</ul>
-</div>
-]],
-      inner_html(el)
+      '<div class="callout callout-%s">\n<span class="callout-label">%s</span>\n%s\n</div>',
+      kind,
+      label,
+      body
     )
   )
 end
 
-local announcement_styles = {
-  reminder = { border = 'orange', block_class = 'warning', label_class = 'uk-label-warning', label_text = 'Reminder', bg = '#fff9db' },
-  materials = { border = 'blue', block_class = 'info', label_class = 'uk-label-info', label_text = 'Materials Needed', bg = 'rgb(238, 241, 247)' },
-  tip = { border = 'blue', block_class = 'info', label_class = 'uk-label-info', label_text = 'Tip', bg = 'rgb(238, 241, 247)' },
-  gallery = { border = 'green', block_class = 'success', label_class = 'uk-label-success', label_text = 'Gallery', bg = 'rgb(237, 247, 238)' },
-}
-
 local function render_announcement(el)
-  local a = el.attributes
-  local style = announcement_styles[a.type] or announcement_styles.reminder
-
-  return pandoc.RawBlock(
-    'html',
-    string.format(
-      [[
-<blockquote class="%s" style="border: 1px %s solid; padding: 10px; background: %s;">
-<span class="uk-label %s">%s</span>
-%s
-</blockquote>
-]],
-      style.block_class,
-      style.border,
-      style.bg,
-      style.label_class,
-      style.label_text,
-      inner_html(el)
-    )
-  )
+  local kind = el.attributes.type
+  if not announcement_labels[kind] then kind = 'reminder' end
+  return callout(kind, announcement_labels[kind], inner_html(el))
 end
 
 local function render_nextweek(el)
-  return pandoc.RawBlock(
-    'html',
-    string.format(
-      [[
-<blockquote class="info" style="border: 1px blue solid; padding: 10px; background: rgb(238, 241, 247);">
-<span class="uk-label uk-label-info">Looking Ahead</span>
-%s
-</blockquote>
-]],
-      inner_html(el)
-    )
-  )
+  return callout('nextweek', 'Looking Ahead', inner_html(el))
 end
 
 local function render_day(el)

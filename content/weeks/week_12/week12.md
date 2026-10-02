@@ -11,23 +11,20 @@ title: Week 12
 ::: {.day title="MONDAY" open="true"}
 
 ### Announcements
-
 ::: {.announcement type="materials"}
 - Electronics Kits
 - Arduino w/Breadboard + Power Modules
 - Neopixels
 :::
 
-### Agenda:
-
+### Agenda
 - Check In (Reminders + Announcements)
 - Last Midterm Presentations
 - Gyroscope + Accelerometer
 - Neopixels
 - Last Sensor Overview
 
-### Topics:
-
+### Topics
 ::: {.topics}
 
 ::: {.card type="external" title="ACCELEROMETER / GYROSCOPE" thumb="https://www.datocms-assets.com/36760/1606313240-gsk-09-mvmtsnsr-understand.png" href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer/" target="_blank" tags="Arduino Example,Output / Actuator"}
@@ -46,19 +43,16 @@ title: Week 12
 ::: {.day title="WEDNESDAY" open="true"}
 
 ### Announcements
-
 ::: {.announcement type="materials"}
 - You will need your electronics kits.
 :::
 
-### Agenda:
-
+### Agenda
 - Midterm Proposals
 - Ultrasonic Range Sensor
 - Try Out Sensors in our Supply / Experiment / Talk about Finals 1 on 1
 
-### Topics:
-
+### Topics
 ::: {.topics}
 
 ::: {.card type="external" title="Ultrasonic Range Sensor" thumb="https://irp.cdn-website.com/65e30418/dms3rep/multi/HC-SR04+Dimensions.gif" href="https://gist.github.com/flakas/3294829" tags="Arduino Example,Input / Sensor"}
@@ -71,7 +65,6 @@ title: Week 12
 :::
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll continue exploring sensors as we move toward final projects.

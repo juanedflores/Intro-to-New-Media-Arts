@@ -14,8 +14,7 @@ title: Week 7
 
 ::: {.day title="MONDAY" open="true"}
 
-### AGENDA
-
+### Agenda
 - Catch up with Are.na Portfolios and Research
 - Review of Variable Resistors: Use Photosensor!
 - Download Arduino IDE
@@ -24,12 +23,10 @@ title: Week 7
 
 ::: {.day title="WEDNESDAY" open="true"}
 
-### AGENDA
-
+### Agenda
 - blink and analogreadserial sketch examples
 
 ### Topics
-
 ::: {.topics}
 
 ::: {.card type="lesson" title="Getting Setup with Arduino IDE" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Topic"}
@@ -48,7 +45,6 @@ title: Week 7
 :::
 
 ### Supplementary Material
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Mr9NlMFNWgw?si=cdDMIXsOmWE98kfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <a href="https://www.kobakant.at/DIY/">HOW TO GET WHAT YOU WANT: DIY</a>
@@ -56,7 +52,6 @@ title: Week 7
 <a href="https://class.textile-academy.org/2026/marissa-renteria/assignments/week05/">Marissa Renteria</a>
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll continue with sensors and start looking at output components.

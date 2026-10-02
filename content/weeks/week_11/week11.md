@@ -11,21 +11,18 @@ title: Week 11
 ::: {.day title="MONDAY"}
 
 ### Announcements
-
 ::: {.announcement type="materials"}
 - You will need a device that plays audio through a headphone jack.
 :::
 
-### Agenda:
-
+### Agenda
 - Reorienting Ourselves (Syllabus)
 - Introducing the Final Project
 - Sound Art Overview
 - Knock Example and Demos
 - Build a Speaker Workshop.
 
-### Topics:
-
+### Topics
 ::: {.topics}
 
 ::: {.card type="lesson" title="DIY SPEAKER WORKSHOP" thumb="./content/Blog/CustomSpeakerWorkshop/images/cover.webp" href="./content/Blog/CustomSpeakerWorkshop/CustomSpeakerWorkshop.html" tag="Workshop"}
@@ -41,7 +38,6 @@ title: Week 11
 ::: {.day title="WEDNESDAY" open="true"}
 
 ### Announcements
-
 ::: {.announcement type="reminder"}
 Remember to create your "Final Project" channel in Are.na! Proposals are due by the beginning of class next Wednesday. See the Blackboard Final Project assignment for more info. We are taking look a look at these together at the beginning of class.
 :::
@@ -58,14 +54,12 @@ You will need your electronics kits. Specifically:
 - LED + Resistor
 :::
 
-### Agenda:
-
+### Agenda
 - Remaining Midterm Presentations
 - Using the Piezoelectric Sensor as a sound/vibration sensor.
 - Servo Motor & PWM
 
-### Topics:
-
+### Topics
 ::: {.topics}
 
 ::: {.card type="lesson" title="Intro to Analag Output: Fade Example" thumb="./content/Arduino/fade/images/led.png" href="./content/Arduino/fade/fade.html" tags="Arduino Example,Output / Actuator"}
@@ -84,7 +78,6 @@ You will need your electronics kits. Specifically:
 :::
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll continue with sound art and begin work toward final projects.

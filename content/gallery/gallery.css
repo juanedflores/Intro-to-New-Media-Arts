@@ -1,0 +1,202 @@
+/* Gallery index: one framed exhibit per project, in the style of the
+   Drawing Machines gallery (dark frames, white mats, wall-colored page). */
+
+:root {
+  --wall: #f4f1ea;
+  --ink: #1f1f24;
+  --muted: #6b6a66;
+  --rule: #d9d4c7;
+  --frame: #2a2622;
+  --mat: #fbfaf7;
+  --accent: rgb(243, 201, 91);
+  --blue: #2c3f89;
+}
+
+body,
+html {
+  background: var(--wall);
+}
+
+body > div > nav.uk-navbar-container {
+  margin-bottom: 0 !important;
+}
+
+.galleries {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  color: var(--ink);
+  font-family: "Inter-VariableFont", system-ui, sans-serif;
+}
+
+.galleries-intro {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+.galleries-intro .kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* undo the site's blue heading bars */
+.galleries h1,
+.galleries h2 {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--ink);
+  text-transform: none;
+}
+.galleries-intro h1 {
+  margin: 10px 0 16px;
+  font-family: "Inter-Black", sans-serif;
+  font-size: clamp(44px, 7vw, 84px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.galleries-intro p {
+  margin: 0;
+  color: #3b3a37;
+  font-size: 17px;
+}
+
+.wall {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.exhibit {
+  display: block;
+  /* the site styles link text in Inter-Black */
+  font-family: inherit;
+  font-weight: 400;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.frame {
+  padding: 12px;
+  background: var(--frame);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+a.exhibit:hover .frame,
+a.exhibit:focus-visible .frame {
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.14),
+    0 20px 40px rgba(0, 0, 0, 0.22);
+}
+a.exhibit:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 6px;
+}
+
+.mat {
+  box-sizing: border-box;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+  background: var(--mat);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+    inset 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+.mat.mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 6px;
+}
+.mat.mosaic img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  margin: 0 !important;
+}
+
+.soon .frame {
+  background: #8f8a82;
+  box-shadow: none;
+}
+.soon .mat span {
+  box-sizing: border-box; /* keep the dashed border inside the mat */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--rule);
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.placard {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: #fff;
+  border-left: 6px solid var(--accent);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.soon .placard {
+  border-left-color: var(--rule);
+}
+.placard .no {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.placard h2 {
+  margin: 4px 0 6px;
+  font-family: "Inter-Black", sans-serif;
+  font-size: 24px;
+  line-height: 1.15;
+}
+.placard p {
+  margin: 0;
+  font-size: 15px;
+  color: #3b3a37;
+}
+.placard .enter {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 800;
+}
+.soon .placard .enter {
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .wall {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 520px;
+  }
+}
+@media (max-width: 600px) {
+  .galleries {
+    padding: 36px 16px 56px;
+  }
+  .frame {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,2163 @@
+{
+ "group": "https://www.are.na/art-150-fall-2026",
+ "updated": "2026-10-01",
+ "students": [
+  {
+   "name": "Abdullah Abid",
+   "slug": "abdullah-abid",
+   "initials": "AA",
+   "url": "https://www.are.na/abdullah-abid",
+   "channels": [
+    {
+     "title": "MyPortfolio",
+     "slug": "myportfolio-gtz9sse3s04",
+     "kind": "portfolio",
+     "url": "https://www.are.na/abdullah-abid/myportfolio-gtz9sse3s04",
+     "count": 3,
+     "updated": "2026-09-02T21:58:10Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Leonardo Di Vinci",
+       "url": "https://www.are.na/block/50067701",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcwMS9vcmlnaW5hbF82YjEwNWRmNDlmYzhlYjkzZjcxNTJjOWQxNWQ4ZjA4Mi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcwMS9vcmlnaW5hbF82YjEwNWRmNDlmYzhlYjkzZjcxNTJjOWQxNWQ4ZjA4Mi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7789
+      },
+      {
+       "type": "Image",
+       "title": "Vincent Van Gogh",
+       "url": "https://www.are.na/block/50067695",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY5NS9vcmlnaW5hbF8xYzBhZDc4M2Q1OWE5NTVjNTM2YjFmZWFmOGVjMzMzZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY5NS9vcmlnaW5hbF8xYzBhZDc4M2Q1OWE5NTVjNTM2YjFmZWFmOGVjMzMzZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.7911
+      },
+      {
+       "type": "Image",
+       "title": "Al-Khwarizmi",
+       "url": "https://www.are.na/block/50067655",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY1NS9vcmlnaW5hbF8yYTkzMzhlNDJhOWZjMjg4NGNkNjc4NmI5YzU5YmZlMy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY1NS9vcmlnaW5hbF8yYTkzMzhlNDJhOWZjMjg4NGNkNjc4NmI5YzU5YmZlMy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.7457
+      }
+     ]
+    },
+    {
+     "title": "MyResearch",
+     "slug": "myresearch-bxj5qv8mijk",
+     "kind": "research",
+     "url": "https://www.are.na/abdullah-abid/myresearch-bxj5qv8mijk",
+     "count": 0,
+     "updated": "2026-09-02T21:12:11Z",
+     "blocks": []
+    }
+   ]
+  },
+  {
+   "name": "Akxell mendoza",
+   "slug": "akxell-mendoza",
+   "initials": "Am",
+   "url": "https://www.are.na/akxell-mendoza",
+   "channels": [
+    {
+     "title": "research for new media art",
+     "slug": "research-for-new-media-art",
+     "kind": "research",
+     "url": "https://www.are.na/akxell-mendoza/research-for-new-media-art",
+     "count": 3,
+     "updated": "2026-09-02T21:22:11Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "claude monet",
+       "url": "https://www.are.na/block/50067474",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ3NC9vcmlnaW5hbF9jMTg1MThjNWE2ZWM2YzRjMDA1MTc0OTRhZTE3OTE2NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ3NC9vcmlnaW5hbF9jMTg1MThjNWE2ZWM2YzRjMDA1MTc0OTRhZTE3OTE2NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.871
+      },
+      {
+       "type": "Image",
+       "title": "Helen Levitt",
+       "url": "https://www.are.na/block/50067453",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ1My9vcmlnaW5hbF8xMDQ2MTQzMmU0NjU4YmYyNjMwODExMmNjM2YwODA3OC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ1My9vcmlnaW5hbF8xMDQ2MTQzMmU0NjU4YmYyNjMwODExMmNjM2YwODA3OC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.4585
+      },
+      {
+       "type": "Image",
+       "title": "Vivian Maier",
+       "url": "https://www.are.na/block/50067404",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQwNC9vcmlnaW5hbF8yYmZjNTlmYjMwODI5NDZiNTJhNjFmYWNjYTc1NGM3NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQwNC9vcmlnaW5hbF8yYmZjNTlmYjMwODI5NDZiNTJhNjFmYWNjYTc1NGM3NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.4278
+      }
+     ]
+    },
+    {
+     "title": "mid term",
+     "slug": "mid-term-9nyyhlp3tf4",
+     "kind": "other",
+     "url": "https://www.are.na/akxell-mendoza/mid-term-9nyyhlp3tf4",
+     "count": 0,
+     "updated": "2026-09-02T21:13:17Z",
+     "blocks": []
+    },
+    {
+     "title": "Robot project",
+     "slug": "robot-project-h2gey_r5av4",
+     "kind": "drawing",
+     "url": "https://www.are.na/akxell-mendoza/robot-project-h2gey_r5av4",
+     "count": 1,
+     "updated": "2026-09-28T21:27:06Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "uploads/e1de9111-872e-4669-9f74-2a689a15f3de/IMG_7375.jpeg",
+       "url": "https://www.are.na/block/50858032",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODAzMi9vcmlnaW5hbF9jMmMyYTBmYTljODFjOWU2ZTMxMTkzYjAyNzViNTMyYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODAzMi9vcmlnaW5hbF9jMmMyYTBmYTljODFjOWU2ZTMxMTkzYjAyNzViNTMyYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Amy Lora",
+   "slug": "amy-lora",
+   "initials": "AL",
+   "url": "https://www.are.na/amy-lora",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-2ozrwhixocy",
+     "kind": "research",
+     "url": "https://www.are.na/amy-lora/research-2ozrwhixocy",
+     "count": 3,
+     "updated": "2026-09-02T21:32:51Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "6e3163c3de9ca212ea7ec99b7414fa55.jpg",
+       "url": "https://www.are.na/block/5851902",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1ODUxOTAyL29yaWdpbmFsXzE3MjliZjc0NDgwZmQzZmMzMzRkZTg3NTFkMzM2OTU3LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1ODUxOTAyL29yaWdpbmFsXzE3MjliZjc0NDgwZmQzZmMzMzRkZTg3NTFkMzM2OTU3LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "ratio": 0.6675
+      },
+      {
+       "type": "Image",
+       "title": "45e06e9f-e9da-42b9-aa97-88e9cf80d3a9.jpg",
+       "url": "https://www.are.na/block/33876635",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzMzg3NjYzNS9vcmlnaW5hbF9iNDJiYjgwYmU3ZmNkYTRlNTcxOTVlMGEwNzVhNGViZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzMzg3NjYzNS9vcmlnaW5hbF9iNDJiYjgwYmU3ZmNkYTRlNTcxOTVlMGEwNzVhNGViZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.5834
+      },
+      {
+       "type": "Image",
+       "title": "kaye donachie",
+       "url": "https://www.are.na/block/35895778",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzNTg5NTc3OC9vcmlnaW5hbF8zY2E5ODRjNTgxMjg3ZGFmNjAwMzAxYjUyMTJlNzY4Ny5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzNTg5NTc3OC9vcmlnaW5hbF8zY2E5ODRjNTgxMjg3ZGFmNjAwMzAxYjUyMTJlNzY4Ny5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.8256
+      }
+     ]
+    },
+    {
+     "title": "Portfolio",
+     "slug": "portfolio-dekjsfsa3xq",
+     "kind": "portfolio",
+     "url": "https://www.are.na/amy-lora/portfolio-dekjsfsa3xq",
+     "count": 0,
+     "updated": "2026-09-02T21:17:50Z",
+     "blocks": []
+    }
+   ]
+  },
+  {
+   "name": "Arisbeth Aceves",
+   "slug": "arisbeth-aceves",
+   "initials": "AA",
+   "url": "https://www.are.na/arisbeth-aceves",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-jtnheqzftp0",
+     "kind": "research",
+     "url": "https://www.are.na/arisbeth-aceves/research-jtnheqzftp0",
+     "count": 7,
+     "updated": "2026-09-28T22:49:27Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Robot Drawing",
+       "url": "https://www.are.na/block/50860006",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MDAwNi9vcmlnaW5hbF9mMDczNjg3MDkzMzU0N2I3Y2YzN2ZhNTMwZDhiZDBlMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MDAwNi9vcmlnaW5hbF9mMDczNjg3MDkzMzU0N2I3Y2YzN2ZhNTMwZDhiZDBlMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "pictures of bot",
+       "url": "https://www.are.na/block/50685996",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY4NTk5Ni9vcmlnaW5hbF9lNGU5MjM0OTMyYjgyMzdjMzg2ODBiMTM4NmIyY2EzMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY4NTk5Ni9vcmlnaW5hbF9lNGU5MjM0OTMyYjgyMzdjMzg2ODBiMTM4NmIyY2EzMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.4621
+      },
+      {
+       "type": "Image",
+       "title": "Drawing bot",
+       "url": "https://www.are.na/block/50685993",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY4NTk5My9vcmlnaW5hbF8zMjA5NDY0NDE3M2E1ZTE2ZjU1NDRjZTBiZWQyYzBlNi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY4NTk5My9vcmlnaW5hbF8zMjA5NDY0NDE3M2E1ZTE2ZjU1NDRjZTBiZWQyYzBlNi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "Instructions",
+       "url": "https://www.are.na/block/50685991",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY4NTk5MS9vcmlnaW5hbF8yMzljOTU1MjU3OTMxYTE0MTlkOTNmYzMyZDE2N2M1OS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY4NTk5MS9vcmlnaW5hbF8yMzljOTU1MjU3OTMxYTE0MTlkOTNmYzMyZDE2N2M1OS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "Nam June Paik",
+       "url": "https://www.are.na/block/50287939",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4NzkzOS9vcmlnaW5hbF8zYTVkOGJmMjIwMzcxNzdjNmI2ZjRiNzQzNzY1MzNhNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4NzkzOS9vcmlnaW5hbF8zYTVkOGJmMjIwMzcxNzdjNmI2ZjRiNzQzNzY1MzNhNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.8775
+      },
+      {
+       "type": "Image",
+       "title": "Gregory Crewdson",
+       "url": "https://www.are.na/block/50287908",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4NzkwOC9vcmlnaW5hbF9jZDFiZmYzYmIzZjc5NjNmMDg0NTVlMjYyNDc5ZmJjZi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4NzkwOC9vcmlnaW5hbF9jZDFiZmYzYmIzZjc5NjNmMDg0NTVlMjYyNDc5ZmJjZi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0
+      },
+      {
+       "type": "Image",
+       "title": "Fiker Solomon",
+       "url": "https://www.are.na/block/50287871",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg3MS9vcmlnaW5hbF8zNzRmMWQ1NWUyMDY1NmQwYjZlMzRiNDlkMzhjNzY3Zi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg3MS9vcmlnaW5hbF8zNzRmMWQ1NWUyMDY1NmQwYjZlMzRiNDlkMzhjNzY3Zi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7636
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ben Broz",
+   "slug": "ben-broz",
+   "initials": "BB",
+   "url": "https://www.are.na/ben-broz",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-f3n2dlh6dwa",
+     "kind": "research",
+     "url": "https://www.are.na/ben-broz/research-f3n2dlh6dwa",
+     "count": 22,
+     "updated": "2026-09-09T21:32:44Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "myhouse.wad - veddge",
+       "url": "https://www.are.na/block/43635076",
+       "thumb": "https://d2w9rnfcy7mm78.cloudfront.net/43635076/original_a47ba9a0b33cae9023ceb1f69744f60a.gif?1771192421",
+       "large": "https://d2w9rnfcy7mm78.cloudfront.net/43635076/original_a47ba9a0b33cae9023ceb1f69744f60a.gif?1771192421",
+       "ratio": 1.7747,
+       "description": "\"Last August I lost a good childhood friend of mine and took it pretty hard. When I was visiting my hometown for his funeral, I connected with his parents who shared with me some of his old belongings. Among them was a copy of an old map of his backed up on a 3.5” floppy from high school...Making maps of your house was all the rage back-in-the-day, but I feel like this is a pretty adorable and det"
+      },
+      {
+       "type": "Image",
+       "title": "MyHouse.wad",
+       "url": "https://www.are.na/block/43593252",
+       "thumb": "https://d2w9rnfcy7mm78.cloudfront.net/43593252/original_07720080f178f1acaa4a7ec26753b1db.gif?1771008266",
+       "large": "https://d2w9rnfcy7mm78.cloudfront.net/43593252/original_07720080f178f1acaa4a7ec26753b1db.gif?1771008266",
+       "ratio": 1.5725,
+       "description": "https://www.doomworld.com/forum/topic/134292-myhousewad/\nhttps://en.wikipedia.org/wiki/MyHouse.wad"
+      },
+      {
+       "type": "Image",
+       "title": "MyHouse.wad (6 of 6)",
+       "url": "https://www.are.na/block/50281036",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MTAzNi9vcmlnaW5hbF8yMDJmNmY1ZmRhOGI2NWExYzRlMTg2YzI0YTMwNGI0NS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MTAzNi9vcmlnaW5hbF8yMDJmNmY1ZmRhOGI2NWExYzRlMTg2YzI0YTMwNGI0NS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 2.7399,
+       "description": "Steve Nelson"
+      },
+      {
+       "type": "Image",
+       "title": "MyHouse.wad (5 of 6)",
+       "url": "https://www.are.na/block/50280748",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDc0OC9vcmlnaW5hbF82NDY2ZjczN2FhZWZmYmExYTU0Yjc5MmFhMWU1YTY2Yi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDc0OC9vcmlnaW5hbF82NDY2ZjczN2FhZWZmYmExYTU0Yjc5MmFhMWU1YTY2Yi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778,
+       "description": "Steve Nelson"
+      },
+      {
+       "type": "Image",
+       "title": "MyHouse.wad (4 of 6)",
+       "url": "https://www.are.na/block/50280763",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDc2My9vcmlnaW5hbF85MzJjMjkwMDVmZGNlYzFiMDBhZWU1MDQ4YzRjZjNhMS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDc2My9vcmlnaW5hbF85MzJjMjkwMDVmZGNlYzFiMDBhZWU1MDQ4YzRjZjNhMS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778,
+       "description": "Steve Nelson"
+      },
+      {
+       "type": "Image",
+       "title": "MyHouse.wad (3 of 6)",
+       "url": "https://www.are.na/block/50280721",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDcyMS9vcmlnaW5hbF83N2IzZDkxZDEwOWFlMjBhOWY3MzhjZTZkYzJjYjNjYS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDcyMS9vcmlnaW5hbF83N2IzZDkxZDEwOWFlMjBhOWY3MzhjZTZkYzJjYjNjYS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778,
+       "description": "Steve Nelson"
+      },
+      {
+       "type": "Image",
+       "title": "MyHouse.wad (2 of 6)",
+       "url": "https://www.are.na/block/50280647",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDY0Ny9vcmlnaW5hbF8zZDZmYzg1YzJiNmUyODhmMTA1YTA0ZmQ0NmUyM2M4NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDY0Ny9vcmlnaW5hbF8zZDZmYzg1YzJiNmUyODhmMTA1YTA0ZmQ0NmUyM2M4NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778,
+       "description": "Steve Nelson"
+      },
+      {
+       "type": "Image",
+       "title": "MyHouse.wad (1 of 6)",
+       "url": "https://www.are.na/block/50280671",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDY3MS9vcmlnaW5hbF8zMWM3Yjc4NmIxYjBlYzY3MDNkOTZkNjNjZmRkZWExMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDY3MS9vcmlnaW5hbF8zMWM3Yjc4NmIxYjBlYzY3MDNkOTZkNjNjZmRkZWExMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333,
+       "description": "Steve Nelson"
+      },
+      {
+       "type": "Link",
+       "title": "Electric Fan Harp",
+       "url": "https://www.are.na/block/49913209",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0OTkxMzIwOS9vcmlnaW5hbF8yNGFhZWQ4MDQ5Njk4ZWYzNDE3OTAxMzU0MDA4ZDgyMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0OTkxMzIwOS9vcmlnaW5hbF8yNGFhZWQ4MDQ5Njk4ZWYzNDE3OTAxMzU0MDA4ZDgyMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.electronicosfantasticos.com/en/works/electric-fan-harp/",
+       "description": "Electric Fan Harp | ELECTRONICOS FANTASTICOS!"
+      },
+      {
+       "type": "Embed",
+       "title": "Electronicos Fantasticos",
+       "url": "https://www.are.na/block/18064846",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODA2NDg0Ni9vcmlnaW5hbF8wMjNiNjIzZTllYjA4YTBlMzE1NDkxYTEzMjU4MDYxZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODA2NDg0Ni9vcmlnaW5hbF8wMjNiNjIzZTllYjA4YTBlMzE1NDkxYTEzMjU4MDYxZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333,
+       "description": "I always thought these guys are quite Plokta in a general sense (repurposing junk electronics as instruments), but perhaps there can also be more of a thematic / conceptual link to limits, bending and breaking in terms of distortion, etc. Might be easier if we knew how these worked!"
+      },
+      {
+       "type": "Embed",
+       "title": "Factory Fan Bass │ 工場扇風機ベース",
+       "url": "https://www.are.na/block/50288360",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODM2MC9vcmlnaW5hbF8xMTQwYTYyYzEzYTZjMWQ5NzY2Njk2MTc3YmQyODdjZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODM2MC9vcmlnaW5hbF8xMTQwYTYyYzEzYTZjMWQ5NzY2Njk2MTc3YmQyODdjZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.3333,
+       "description": "Factory Fan Bass: By attaching a disk with holes to the fan, it converts blinks of lights to electric signals and generates sound from a bass amplifier. Different numbers of holes can generate a musical scale, and turning on/off of the power makes it roar."
+      },
+      {
+       "type": "Image",
+       "title": "Electronicos Fantasticos (2 of 2)",
+       "url": "https://www.are.na/block/50280407",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDQwNy9vcmlnaW5hbF84ZjYxZmRjOGQ1MGU4NTk2NTk5OGM3YzE3Nzg0MWQyYy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDQwNy9vcmlnaW5hbF84ZjYxZmRjOGQ1MGU4NTk2NTk5OGM3YzE3Nzg0MWQyYy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.5
+      },
+      {
+       "type": "Image",
+       "title": "Electronicos Fantasticos (1 of 2)",
+       "url": "https://www.are.na/block/50280329",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDMyOS9vcmlnaW5hbF80ZWIzYTAyOTU0YzBkN2I1MzljMmZmZTgzNjhkMmZhMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4MDMyOS9vcmlnaW5hbF80ZWIzYTAyOTU0YzBkN2I1MzljMmZmZTgzNjhkMmZhMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.4993
+      },
+      {
+       "type": "Image",
+       "title": "Kristoffer Zetterstrand — Pointer. 41x41cm. oil on canvas (2008)",
+       "url": "https://www.are.na/block/11658608",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxMTY1ODYwOC9vcmlnaW5hbF9lZjkyNDgyNTg0NjkyYzliYjAwYzNiYmIxM2VmYjk5OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxMTY1ODYwOC9vcmlnaW5hbF9lZjkyNDgyNTg0NjkyYzliYjAwYzNiYmIxM2VmYjk5OC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0116
+      },
+      {
+       "type": "Image",
+       "title": "Kristoffer Zetterstrand 2003- oil on canvas",
+       "url": "https://www.are.na/block/32148954",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzMjE0ODk1NC9vcmlnaW5hbF9mNDNkOWNiY2U4M2I3ZmU4OWYwMjBkMTc1MDc0NTMwOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzMjE0ODk1NC9vcmlnaW5hbF9mNDNkOWNiY2U4M2I3ZmU4OWYwMjBkMTc1MDc0NTMwOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3468
+      },
+      {
+       "type": "Image",
+       "title": "blue_distant by Kristoffer Zetterstrand",
+       "url": "https://www.are.na/block/50279900",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTkwMC9vcmlnaW5hbF8wYzQzZThhNjhhOWJmMWQzMzEzM2NjYzllMGU4NmI5ZS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTkwMC9vcmlnaW5hbF8wYzQzZThhNjhhOWJmMWQzMzEzM2NjYzllMGU4NmI5ZS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.3203,
+       "description": "2003\nWorks | Kristoffer Zetterstrand (https://zetterstrand.com/works/)"
+      },
+      {
+       "type": "Image",
+       "title": "The Golden Apple by Kristoffer Zetterstrand",
+       "url": "https://www.are.na/block/50279996",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTk5Ni9vcmlnaW5hbF8xMzE4MDJlNDlhZjc2NzUxYjM3ODViODEyNmRmMzU1OC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTk5Ni9vcmlnaW5hbF8xMzE4MDJlNDlhZjc2NzUxYjM3ODViODEyNmRmMzU1OC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.2012,
+       "description": "2006\nhttps://zetterstrand.com/works/"
+      },
+      {
+       "type": "Image",
+       "title": "Portrait of Jack Black as Steve by Kristoffer Zetterstrand",
+       "url": "https://www.are.na/block/50279889",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTg4OS9vcmlnaW5hbF9iNzFhOTU5NmQxMDUxZTNkZGI5NjY4ZWU4MGRlMjYxYS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTg4OS9vcmlnaW5hbF9iNzFhOTU5NmQxMDUxZTNkZGI5NjY4ZWU4MGRlMjYxYS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.1429,
+       "description": "2026\nhttps://zetterstrand.com/works/"
+      },
+      {
+       "type": "Image",
+       "title": "de_aztec by Kristoffer Zetterstrand",
+       "url": "https://www.are.na/block/50279871",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTg3MS9vcmlnaW5hbF9mZDZkNjdmZjI5MzMyOTcxY2UzMzQ1OTI0NmUzOWY2NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTg3MS9vcmlnaW5hbF9mZDZkNjdmZjI5MzMyOTcxY2UzMzQ1OTI0NmUzOWY2NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.2081,
+       "description": "2002\nhttps://zetterstrand.com/works/"
+      },
+      {
+       "type": "Image",
+       "title": "Machine Girl (3 of 3)",
+       "url": "https://www.are.na/block/50279682",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTY4Mi9vcmlnaW5hbF80YjI5NjUzY2I4NTg1YTBkNWMzZTc3MWMyMTQ2YTg1Zi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTY4Mi9vcmlnaW5hbF80YjI5NjUzY2I4NTg1YTBkNWMzZTc3MWMyMTQ2YTg1Zi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0,
+       "description": "2024 Album cover of Neon White Soundtrack Part 2 \"The Burn That Cures\""
+      },
+      {
+       "type": "Image",
+       "title": "Machine Girl (2 of 3)",
+       "url": "https://www.are.na/block/50279626",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTYyNi9vcmlnaW5hbF8yOTcyMWRkOTNmOWFkZDNiNmZhMmVjOWFkZTQ2N2IyZi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTYyNi9vcmlnaW5hbF8yOTcyMWRkOTNmOWFkZDNiNmZhMmVjOWFkZTQ2N2IyZi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0,
+       "description": "2014 Album cover of Wlfgrl"
+      },
+      {
+       "type": "Image",
+       "title": "Machine Girl (1 of 3)",
+       "url": "https://www.are.na/block/50279542",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTU0Mi9vcmlnaW5hbF82NGVhNWYxYmJmNGJlZTg4NGY1MWY4NDViZTMxYjJiMS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTU0Mi9vcmlnaW5hbF82NGVhNWYxYmJmNGJlZTg4NGY1MWY4NDViZTMxYjJiMS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0,
+       "description": "2014 Album cover of ...BECAUSE IM YOUNG ARROGANT AND HATE EVERYTHING YOU STAND FOR"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dang Nguyen",
+   "slug": "dang-nguyen-vqo2zbznbq0",
+   "initials": "DN",
+   "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0",
+   "channels": [
+    {
+     "title": "Digital Art",
+     "slug": "digital-art-c4wje250gxo",
+     "kind": "other",
+     "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/digital-art-c4wje250gxo",
+     "count": 0,
+     "updated": "2026-09-02T21:50:39Z",
+     "blocks": []
+    },
+    {
+     "title": "Art Projects for UIC",
+     "slug": "art-projects-for-uic",
+     "kind": "other",
+     "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/art-projects-for-uic",
+     "count": 0,
+     "updated": "2026-09-02T21:19:06Z",
+     "blocks": []
+    },
+    {
+     "title": "My Art",
+     "slug": "my-art-vejacn623wo",
+     "kind": "other",
+     "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/my-art-vejacn623wo",
+     "count": 19,
+     "updated": "2026-09-02T21:55:49Z",
+     "blocks": [
+      {
+       "type": "Attachment",
+       "title": "rococo2 hohoho",
+       "url": "https://www.are.na/block/50069005",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2OTAwNS9vcmlnaW5hbF9kMjFmYTk0NjE0YWFiNDNhMjAyNjA5MDItMi1sMzR4MmIucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2OTAwNS9vcmlnaW5hbF9kMjFmYTk0NjE0YWFiNDNhMjAyNjA5MDItMi1sMzR4MmIucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.4004
+      },
+      {
+       "type": "Attachment",
+       "title": "rococo3vid",
+       "url": "https://www.are.na/block/50068995",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk5NS9vcmlnaW5hbF82N2U5NzFhMGJkNjU0NTcwMjAyNjA5MDItMi1sZ3hwbzYucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk5NS9vcmlnaW5hbF82N2U5NzFhMGJkNjU0NTcwMjAyNjA5MDItMi1sZ3hwbzYucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.8891
+      },
+      {
+       "type": "Image",
+       "title": "siblingscom",
+       "url": "https://www.are.na/block/50068970",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk3MC9vcmlnaW5hbF84ZTA1NjIxZGNjYjY4NzBlYTMxYTExMzUyNTY5MzdmOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk3MC9vcmlnaW5hbF84ZTA1NjIxZGNjYjY4NzBlYTMxYTExMzUyNTY5MzdmOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0
+      },
+      {
+       "type": "Image",
+       "title": "oach vcl",
+       "url": "https://www.are.na/block/50068969",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk2OS9vcmlnaW5hbF9hYTkyZTcyZThiYzQzYzRmOWUzZDg5NzRmNWNjNTViNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk2OS9vcmlnaW5hbF9hYTkyZTcyZThiYzQzYzRmOWUzZDg5NzRmNWNjNTViNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.7574
+      },
+      {
+       "type": "Image",
+       "title": "oach vcl",
+       "url": "https://www.are.na/block/50068951",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk1MS9vcmlnaW5hbF9mN2RjYzc0NTA2MjJmMmJlMjNiNzI1MzE5YzI2MzE0Yy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk1MS9vcmlnaW5hbF9mN2RjYzc0NTA2MjJmMmJlMjNiNzI1MzE5YzI2MzE0Yy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7574
+      },
+      {
+       "type": "Image",
+       "title": "rococo2hailonvcl",
+       "url": "https://www.are.na/block/50068936",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkzNi9vcmlnaW5hbF9lMDEyNDJlNjljMjEwMjhmYmNhNjI0MTQ5YWZmNTk4MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkzNi9vcmlnaW5hbF9lMDEyNDJlNjljMjEwMjhmYmNhNjI0MTQ5YWZmNTk4MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.4
+      },
+      {
+       "type": "Image",
+       "title": "ventiblowsmall",
+       "url": "https://www.are.na/block/50068924",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkyNC9vcmlnaW5hbF81MTQ1NzI1ZDQ1ODA2ODRjZWM5MzRhMGE4Mzk0YzI1NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkyNC9vcmlnaW5hbF81MTQ1NzI1ZDQ1ODA2ODRjZWM5MzRhMGE4Mzk0YzI1NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.6091
+      },
+      {
+       "type": "Image",
+       "title": "ventiblow",
+       "url": "https://www.are.na/block/50068921",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkyMS9vcmlnaW5hbF8yN2RhNTlkNDcyZjVjMzEwY2E5ZWY4NWU5MzU2YmM1NC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkyMS9vcmlnaW5hbF8yN2RhNTlkNDcyZjVjMzEwY2E5ZWY4NWU5MzU2YmM1NC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5833
+      },
+      {
+       "type": "Image",
+       "title": "rococo3",
+       "url": "https://www.are.na/block/50068917",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkxNy9vcmlnaW5hbF8zZGQwZmFkYjI0Yjg3NGMwMGRiZGYwN2M3ZGJkMThkZi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkxNy9vcmlnaW5hbF8zZGQwZmFkYjI0Yjg3NGMwMGRiZGYwN2M3ZGJkMThkZi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.8889
+      },
+      {
+       "type": "Image",
+       "title": "saki",
+       "url": "https://www.are.na/block/50068914",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkxNC9vcmlnaW5hbF8wN2ZmMDQ4YzM3MjJjZDY0YTNhY2FjODk3YmFjNWUzNC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkxNC9vcmlnaW5hbF8wN2ZmMDQ4YzM3MjJjZDY0YTNhY2FjODk3YmFjNWUzNC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.9302
+      },
+      {
+       "type": "Image",
+       "title": "mondocom3",
+       "url": "https://www.are.na/block/50068910",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkxMC9vcmlnaW5hbF9hYzdmODhiZDI0MTJiNjRlOTE3YWQ1Y2QyYWU1YTQ2NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkxMC9vcmlnaW5hbF9hYzdmODhiZDI0MTJiNjRlOTE3YWQ1Y2QyYWU1YTQ2NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.4006
+      },
+      {
+       "type": "Image",
+       "title": "long line",
+       "url": "https://www.are.na/block/50068906",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkwNi9vcmlnaW5hbF80ZGI2ZDZlYTc4NzVhZjJhZmIwM2E1YmFlYzFiNzQxMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkwNi9vcmlnaW5hbF80ZGI2ZDZlYTc4NzVhZjJhZmIwM2E1YmFlYzFiNzQxMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5625
+      },
+      {
+       "type": "Image",
+       "title": "phung line",
+       "url": "https://www.are.na/block/50068900",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkwMC9vcmlnaW5hbF8yMTczYzBkYWU5YzIzMGVkNDM1MDVmNTFiZjhiYWYxMy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODkwMC9vcmlnaW5hbF8yMTczYzBkYWU5YzIzMGVkNDM1MDVmNTFiZjhiYWYxMy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5625
+      },
+      {
+       "type": "Image",
+       "title": "janesleep",
+       "url": "https://www.are.na/block/50068890",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg5MC9vcmlnaW5hbF80YTgxOTU0MjY3YjJkZmRhMDQ3MTViZWY5Njg3YmI4YS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg5MC9vcmlnaW5hbF80YTgxOTU0MjY3YjJkZmRhMDQ3MTViZWY5Njg3YmI4YS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.6256
+      },
+      {
+       "type": "Image",
+       "title": "785775060_28064362379862653_9014182718174559540_n",
+       "url": "https://www.are.na/block/50068887",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg4Ny9vcmlnaW5hbF85YmY5OGYwNTI2MTdjM2VjYTI5NDdhMjA1YmY0M2MwMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg4Ny9vcmlnaW5hbF85YmY5OGYwNTI2MTdjM2VjYTI5NDdhMjA1YmY0M2MwMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.6362
+      },
+      {
+       "type": "Image",
+       "title": "Barbara",
+       "url": "https://www.are.na/block/50068885",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg4NS9vcmlnaW5hbF8yOTkzNjY5MjhjYmY5ZWZlMjVlNzdhODU5MWU5N2FhNS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg4NS9vcmlnaW5hbF8yOTkzNjY5MjhjYmY5ZWZlMjVlNzdhODU5MWU5N2FhNS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7698
+      },
+      {
+       "type": "Image",
+       "title": "skirk bg",
+       "url": "https://www.are.na/block/50068871",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg3MS9vcmlnaW5hbF84ZGUzNWI3MTgyNzUzM2QzYzJjNzY5YTU4MzI2ZGVlNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg3MS9vcmlnaW5hbF84ZGUzNWI3MTgyNzUzM2QzYzJjNzY5YTU4MzI2ZGVlNy5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0
+      },
+      {
+       "type": "Image",
+       "title": "skirk no bg",
+       "url": "https://www.are.na/block/50068865",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg2NS9vcmlnaW5hbF83MWZjYmU4YThjODI5NDgxNjMzNDBkZGRjZTk3ZjRiZS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg2NS9vcmlnaW5hbF83MWZjYmU4YThjODI5NDgxNjMzNDBkZGRjZTk3ZjRiZS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0613
+      },
+      {
+       "type": "Image",
+       "title": "skirkavt",
+       "url": "https://www.are.na/block/50068861",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg2MS9vcmlnaW5hbF9mMWFmZTllODI0MWUyMDA1ZDI1YjhhZDUwOTUwMWM3NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODg2MS9vcmlnaW5hbF9mMWFmZTllODI0MWUyMDA1ZDI1YjhhZDUwOTUwMWM3NS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0
+      }
+     ]
+    },
+    {
+     "title": "Research",
+     "slug": "research-bklwbfr8weu",
+     "kind": "research",
+     "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/research-bklwbfr8weu",
+     "count": 2,
+     "updated": "2026-09-09T21:36:22Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "__ellen_joe_zenless_zone_zero_drawn_by_torino_aqua__sample-4d10dbd44794bab1462e2447c10a8cf5",
+       "url": "https://www.are.na/block/50287898",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg5OC9vcmlnaW5hbF80MWJiMjkxZGRlNDM2OWM4MzdhNDM1MjMyYmQxMjliZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg5OC9vcmlnaW5hbF80MWJiMjkxZGRlNDM2OWM4MzdhNDM1MjMyYmQxMjliZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7296
+      },
+      {
+       "type": "Image",
+       "title": "Kirara- Phantom in boots Illustration",
+       "url": "https://www.are.na/block/50287876",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg3Ni9vcmlnaW5hbF80NWE4NDA5MThjOTk3NDc3M2YyODBlOGQyOWQwZThmOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg3Ni9vcmlnaW5hbF80NWE4NDA5MThjOTk3NDc3M2YyODBlOGQyOWQwZThmOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Denise Burciaga",
+   "slug": "denise-burciaga",
+   "initials": "DB",
+   "url": "https://www.are.na/denise-burciaga",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-jyk2knfw56y",
+     "kind": "research",
+     "url": "https://www.are.na/denise-burciaga/research-jyk2knfw56y",
+     "count": 4,
+     "updated": "2026-09-09T21:33:55Z",
+     "blocks": [
+      {
+       "type": "Link",
+       "title": "Refik Anadol",
+       "url": "https://www.are.na/block/50130764",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMDc2NC9vcmlnaW5hbF9iYWRhMjRkM2MwZjczMmFmMDc3MTY0MWY2NjEwNDIyYy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMDc2NC9vcmlnaW5hbF9iYWRhMjRkM2MwZjczMmFmMDc3MTY0MWY2NjEwNDIyYy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://refikanadol.com/works/visions-of-america-ameriques/",
+       "description": "Visions of America: Amériques"
+      },
+      {
+       "type": "Link",
+       "title": "Blend — Gabe BC",
+       "url": "https://www.are.na/block/50131136",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTEzNi9vcmlnaW5hbF9kMmRhODc3MmY2NjRhZDYyNjJlZDNiMjg5NDU5MmFhOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTEzNi9vcmlnaW5hbF9kMmRhODc3MmY2NjRhZDYyNjJlZDNiMjg5NDU5MmFhOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.gabebc.com/blend",
+       "description": "Video Sculpture work by Gabe BC"
+      },
+      {
+       "type": "Link",
+       "title": "Jitterbox — Gabe BC",
+       "url": "https://www.are.na/block/50131625",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTYyNS9vcmlnaW5hbF9hYWU3ZGQ3ZWUyNjA4ZTRlZWRhNzhmNjdhZmY1M2UwNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTYyNS9vcmlnaW5hbF9hYWU3ZGQ3ZWUyNjA4ZTRlZWRhNzhmNjdhZmY1M2UwNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.gabebc.com/jitterbox",
+       "description": "Video Sculpture work by Gabe BC"
+      },
+      {
+       "type": "Link",
+       "title": "A Point Just Passed — Gabe BC",
+       "url": "https://www.are.na/block/50131223",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTIyMy9vcmlnaW5hbF9hMjZiNDI5YTc5ZDgyNWE4MzA4OTNmMDE4MmNjZThmZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTIyMy9vcmlnaW5hbF9hMjZiNDI5YTc5ZDgyNWE4MzA4OTNmMDE4MmNjZThmZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.gabebc.com/a-point-just-passed",
+       "description": "Video Sculpture work by Gabe BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Hillary Samaniego",
+   "slug": "hillary-samaniego",
+   "initials": "HS",
+   "url": "https://www.are.na/hillary-samaniego",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-e1ngpdrwjdi",
+     "kind": "research",
+     "url": "https://www.are.na/hillary-samaniego/research-e1ngpdrwjdi",
+     "count": 3,
+     "updated": "2026-09-09T21:17:28Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Vera Frenkel",
+       "url": "https://www.are.na/block/50279973",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTk3My9vcmlnaW5hbF9jN2RhMGU0YmZlMmQwYjI4MDAwYTU3NTcxM2U3ZjU1OS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTk3My9vcmlnaW5hbF9jN2RhMGU0YmZlMmQwYjI4MDAwYTU3NTcxM2U3ZjU1OS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.7512,
+       "description": "https://art-history.concordia.ca/eea/artists/_frenkel.html (https://art-history.concordia.ca/eea/artists/_frenkel.html)\nI found interesting how her art projects explore issues of culture, language & the perception of reality. There's meaning to her art. I also liked the way she transitioned her print-making & poet skills, to artistic skills.   "
+      },
+      {
+       "type": "Image",
+       "title": "Alexander Calder",
+       "url": "https://www.are.na/block/50067730",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzczMC9vcmlnaW5hbF80MWRiMTJlODljNzcwNmNlZWRiN2Q3ZDA4NDgzYmNjMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzczMC9vcmlnaW5hbF80MWRiMTJlODljNzcwNmNlZWRiN2Q3ZDA4NDgzYmNjMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.5737,
+       "description": "https://calder.org/introduction/ (https://calder.org/introduction/)\nHe discovered a new type of art with his kinetic sculptures. He invented the mobile & created large abstract modern sculptures. "
+      },
+      {
+       "type": "Image",
+       "title": "Frida Kahlo",
+       "url": "https://www.are.na/block/50067482",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ4Mi9vcmlnaW5hbF8zYzhhZjM2OTVkODI1ODkyMjJkNzYzMDFhNWRmNjNjOS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ4Mi9vcmlnaW5hbF8zYzhhZjM2OTVkODI1ODkyMjJkNzYzMDFhNWRmNjNjOS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.7672,
+       "description": "https://www.theccma.org/who-is-frida (https://www.theccma.org/who-is-frida)\nHer painting style reflects her cultural roots. Her self-portrait have a deep significance of her persona, depicting her pain & suffering. She wasn't into surrealism, she was more into reality. "
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Itzel Garcia",
+   "slug": "itzel-garcia-s-8gtpf_grs",
+   "initials": "IG",
+   "url": "https://www.are.na/itzel-garcia-s-8gtpf_grs",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-s2c7c8k5yis",
+     "kind": "research",
+     "url": "https://www.are.na/itzel-garcia-s-8gtpf_grs/research-s2c7c8k5yis",
+     "count": 5,
+     "updated": "2026-09-28T16:59:25Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "uploads/7f44bb8c-8342-4211-b389-efc5eceb485d/20260928_115303.jpg",
+       "url": "https://www.are.na/block/50850744",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1MDc0NC9vcmlnaW5hbF9kMmM2ODkzMjE4NzVhMzkwY2M5NjAwODk4OTIwNzdiNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1MDc0NC9vcmlnaW5hbF9kMmM2ODkzMjE4NzVhMzkwY2M5NjAwODk4OTIwNzdiNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.8821
+      },
+      {
+       "type": "Image",
+       "title": "20260928_115303",
+       "url": "https://www.are.na/block/50850635",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1MDYzNS9vcmlnaW5hbF8wMDk4NGE4ZmRhYmRiNGUyOWI4ODhkYTQxNjJlNTRlMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1MDYzNS9vcmlnaW5hbF8wMDk4NGE4ZmRhYmRiNGUyOWI4ODhkYTQxNjJlNTRlMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.8821
+      },
+      {
+       "type": "Image",
+       "title": "66ad4177-37ec-45ba-a197-2ccee0fa290c_w1023_r1_s.jpg",
+       "url": "https://www.are.na/block/50288972",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODk3Mi9vcmlnaW5hbF8xZWJmNGM1MDdmZjdjNGIzNGM5M2M0M2UyMzViOGJlZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODk3Mi9vcmlnaW5hbF8xZWJmNGM1MDdmZjdjNGIzNGM5M2M0M2UyMzViOGJlZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7791
+      },
+      {
+       "type": "Image",
+       "title": "Lionfish+Lair",
+       "url": "https://www.are.na/block/50288694",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODY5NC9vcmlnaW5hbF9hNDY5NmFjODliNzM0YjU1ZTk5NDAzYTZjMWY3NTVhZS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODY5NC9vcmlnaW5hbF9hNDY5NmFjODliNzM0YjU1ZTk5NDAzYTZjMWY3NTVhZS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7072
+      },
+      {
+       "type": "Image",
+       "title": "The-swan-1.jpg.1400x1400_q85",
+       "url": "https://www.are.na/block/50288138",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODEzOC9vcmlnaW5hbF8zMTM1ZWYzY2IzOWRhYzE5MmM5YWQ3NDUyY2RhMTBhZi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4ODEzOC9vcmlnaW5hbF8zMTM1ZWYzY2IzOWRhYzE5MmM5YWQ3NDUyY2RhMTBhZi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.9971
+      }
+     ]
+    },
+    {
+     "title": "Art 150",
+     "slug": "art-150-_nq0vrhbj_s",
+     "kind": "other",
+     "url": "https://www.are.na/itzel-garcia-s-8gtpf_grs/art-150-_nq0vrhbj_s",
+     "count": 0,
+     "updated": "2026-09-28T16:58:43Z",
+     "blocks": []
+    },
+    {
+     "title": "Drawing Robots",
+     "slug": "drawing-robots-w4hxiructzu",
+     "kind": "drawing",
+     "url": "https://www.are.na/itzel-garcia-s-8gtpf_grs/drawing-robots-w4hxiructzu",
+     "count": 3,
+     "updated": "2026-09-30T18:13:28Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "uploads/76e987da-484b-4e9f-a635-58d6ae29a930/20260928_115303.jpg",
+       "url": "https://www.are.na/block/50926717",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkyNjcxNy9vcmlnaW5hbF8yODQ2ZDZlODIyOWI1MGM0Zjk3NTQxNzcwMmVkYTdkYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkyNjcxNy9vcmlnaW5hbF8yODQ2ZDZlODIyOWI1MGM0Zjk3NTQxNzcwMmVkYTdkYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.8821
+      },
+      {
+       "type": "Image",
+       "title": "uploads/76e987da-484b-4e9f-a635-58d6ae29a930/20260928_172025.jpg",
+       "url": "https://www.are.na/block/50926715",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkyNjcxNS9vcmlnaW5hbF80MmJkYmZlYzJlYmRlZjk5ZmFhOTUzNjk0OGJlYjM2Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkyNjcxNS9vcmlnaW5hbF80MmJkYmZlYzJlYmRlZjk5ZmFhOTUzNjk0OGJlYjM2Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "20260928_172020",
+       "url": "https://www.are.na/block/50926712",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkyNjcxMi9vcmlnaW5hbF83OTc2MjdkMzdlNjZiMTBiZTJhZDZkNjZjYzgyMzRjYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkyNjcxMi9vcmlnaW5hbF83OTc2MjdkMzdlNjZiMTBiZTJhZDZkNjZjYzgyMzRjYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Jing Chen",
+   "slug": "jing-chen-_twncguy20i",
+   "initials": "JC",
+   "url": "https://www.are.na/jing-chen-_twncguy20i",
+   "channels": [
+    {
+     "title": "ART150",
+     "slug": "art150",
+     "kind": "other",
+     "url": "https://www.are.na/jing-chen-_twncguy20i/art150",
+     "count": 2,
+     "updated": "2026-09-30T05:46:49Z",
+     "blocks": [
+      {
+       "type": "Channel",
+       "title": "Painting machine",
+       "slug": "painting-machine",
+       "owner": "jing-chen-_twncguy20i",
+       "url": "https://www.are.na/jing-chen-_twncguy20i/painting-machine",
+       "count": 3
+      },
+      {
+       "type": "Text",
+       "title": "3 artist",
+       "url": "https://www.are.na/block/50067529",
+       "text": "billi thanner\nBilli Thanner is an Austrian artist who likes to place large-scale artworks on buildings, connecting her art with the surrounding environment. I first learned about Billi Thanner through his light installation Infinity of Light, which was held last year at the Votivkirche in Vienna. I found the combination of modern light art and historic architecture very interesting.\nhttps://www.billithanner.at/About (https://www.billithanner.at/About)\nAlexei Shulgin\nAlexei Shulgin is a Russian artist who has created many works of net art, using web pages to create interactive artworks. I chose"
+      }
+     ]
+    },
+    {
+     "title": "ART150 portfolio",
+     "slug": "art150-portfolio",
+     "kind": "portfolio",
+     "url": "https://www.are.na/jing-chen-_twncguy20i/art150-portfolio",
+     "count": 1,
+     "updated": "2026-09-02T21:14:12Z",
+     "blocks": [
+      {
+       "type": "Channel",
+       "title": "ART150",
+       "slug": "art150",
+       "owner": "jing-chen-_twncguy20i",
+       "url": "https://www.are.na/jing-chen-_twncguy20i/art150",
+       "count": 2
+      }
+     ]
+    },
+    {
+     "title": "Painting machine",
+     "slug": "painting-machine",
+     "kind": "drawing",
+     "url": "https://www.are.na/jing-chen-_twncguy20i/painting-machine",
+     "count": 3,
+     "updated": "2026-09-30T05:48:07Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "uploads/056b3020-9b24-449c-8916-4909821c51a3/IMG_1766.jpeg",
+       "url": "https://www.are.na/block/50906220",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkwNjIyMC9vcmlnaW5hbF8xYjA1ODQyYjlmYzhjNjcyNTNiNGUwNGZjNzExZTEwOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkwNjIyMC9vcmlnaW5hbF8xYjA1ODQyYjlmYzhjNjcyNTNiNGUwNGZjNzExZTEwOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "uploads/056b3020-9b24-449c-8916-4909821c51a3/IMG_1765.jpeg",
+       "url": "https://www.are.na/block/50906210",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkwNjIxMC9vcmlnaW5hbF8wNmM2NzE2OThiMDEyZTc2MDIxODRmOWI0ZjBiODFlYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkwNjIxMC9vcmlnaW5hbF8wNmM2NzE2OThiMDEyZTc2MDIxODRmOWI0ZjBiODFlYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "uploads/056b3020-9b24-449c-8916-4909821c51a3/IMG_1771.jpeg",
+       "url": "https://www.are.na/block/50906209",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkwNjIwOS9vcmlnaW5hbF9lNDc1MmU1MWIzNWIwYzk1YmJmM2RiMTA5NDdmMzk3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDkwNjIwOS9vcmlnaW5hbF9lNDc1MmU1MWIzNWIwYzk1YmJmM2RiMTA5NDdmMzk3Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Julia Szafranski",
+   "slug": "julia-szafranski",
+   "initials": "JS",
+   "url": "https://www.are.na/julia-szafranski",
+   "channels": [
+    {
+     "title": "Portfolio",
+     "slug": "portfolio-w6cuyghipja",
+     "kind": "portfolio",
+     "url": "https://www.are.na/julia-szafranski/portfolio-w6cuyghipja",
+     "count": 4,
+     "updated": "2026-09-11T23:10:35Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "uploads/3b37a792-7d81-458c-86e4-266055737f0f/20260911_180842.jpg",
+       "url": "https://www.are.na/block/50350969",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2OS9vcmlnaW5hbF84MGZlNTNjNWIxMzQ0NDgwZjcxMzdmYzVkNDE4Yjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2OS9vcmlnaW5hbF84MGZlNTNjNWIxMzQ0NDgwZjcxMzdmYzVkNDE4Yjc2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/3b37a792-7d81-458c-86e4-266055737f0f/20260911_180830.jpg",
+       "url": "https://www.are.na/block/50350968",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2OC9vcmlnaW5hbF9iZTI2MjFmZWI0NDNhZDI3NjdkMzk3NmNhOTAxOGY1OC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2OC9vcmlnaW5hbF9iZTI2MjFmZWI0NDNhZDI3NjdkMzk3NmNhOTAxOGY1OC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/3b37a792-7d81-458c-86e4-266055737f0f/20260911_180847.jpg",
+       "url": "https://www.are.na/block/50350967",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2Ny9vcmlnaW5hbF81ZTMxMWQxMjU3YThlYjRjNzU4MmU2YzJlYmFiYjEwOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2Ny9vcmlnaW5hbF81ZTMxMWQxMjU3YThlYjRjNzU4MmU2YzJlYmFiYjEwOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/3b37a792-7d81-458c-86e4-266055737f0f/20260911_180836.jpg",
+       "url": "https://www.are.na/block/50350966",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2Ni9vcmlnaW5hbF9kODY3NTZmZmZhOTY4ZTQwOWM2OTFjNWRkZmM0MDVkYS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDM1MDk2Ni9vcmlnaW5hbF9kODY3NTZmZmZhOTY4ZTQwOWM2OTFjNWRkZmM0MDVkYS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      }
+     ]
+    },
+    {
+     "title": "Research",
+     "slug": "research-chkqchrrymg",
+     "kind": "research",
+     "url": "https://www.are.na/julia-szafranski/research-chkqchrrymg",
+     "count": 11,
+     "updated": "2026-09-09T21:09:24Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "art-sun-yuan-peng-yu-cant-help-myself-2016-1024x576",
+       "url": "https://www.are.na/block/50067429",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQyOS9vcmlnaW5hbF9mYTNjNTJkOGEyZTVkNzNhZTVmMjA5NzY0MmNhMjk1MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQyOS9vcmlnaW5hbF9mYTNjNTJkOGEyZTVkNzNhZTVmMjA5NzY0MmNhMjk1MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.7778
+      },
+      {
+       "type": "Image",
+       "title": "leo12",
+       "url": "https://www.are.na/block/50067704",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcwNC9vcmlnaW5hbF84ZDYzNWQ2NTUzNWVjZTNhNWFhMTgzYWJlZTM3ZDRmYS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcwNC9vcmlnaW5hbF84ZDYzNWQ2NTUzNWVjZTNhNWFhMTgzYWJlZTM3ZDRmYS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.4873
+      },
+      {
+       "type": "Image",
+       "title": "Da-Vinci-trebuchet",
+       "url": "https://www.are.na/block/50067666",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY2Ni9vcmlnaW5hbF80MGE1MzI3NDFkNTA3OTFiNDlkMDNlNGIyYTRlOTliMS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY2Ni9vcmlnaW5hbF80MGE1MzI3NDFkNTA3OTFiNDlkMDNlNGIyYTRlOTliMS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5587
+      },
+      {
+       "type": "Image",
+       "title": "images",
+       "url": "https://www.are.na/block/50067534",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzUzNC9vcmlnaW5hbF80MDEwNmNkOGUwYzU1YzI1YzM3ZDA2OGJiM2ZhYWEyMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzUzNC9vcmlnaW5hbF80MDEwNmNkOGUwYzU1YzI1YzM3ZDA2OGJiM2ZhYWEyMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 2.3333
+      },
+      {
+       "type": "Image",
+       "title": "230705091855-05-msg-sphere-las-vegas",
+       "url": "https://www.are.na/block/50067748",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2Nzc0OC9vcmlnaW5hbF83MDQ5ZmIzODMwZTM4NGQ5MjNjMDVlNzdkOGVkYzU2Ni5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2Nzc0OC9vcmlnaW5hbF83MDQ5ZmIzODMwZTM4NGQ5MjNjMDVlNzdkOGVkYzU2Ni5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.4997
+      },
+      {
+       "type": "Image",
+       "title": "02b742cced77b4b4bf7d26cc543675ac",
+       "url": "https://www.are.na/block/50067516",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzUxNi9vcmlnaW5hbF9kYTZjNTM2MTk5YzA4NmQxZmYxNjgyMjdlYzI1Yjc3Ny5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzUxNi9vcmlnaW5hbF9kYTZjNTM2MTk5YzA4NmQxZmYxNjgyMjdlYzI1Yjc3Ny5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7956
+      },
+      {
+       "type": "Image",
+       "title": "Le-Voyage-dans-la-lune-Georges-Melies",
+       "url": "https://www.are.na/block/50067634",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzYzNC9vcmlnaW5hbF81YzU5NGY0MGU1M2U2NTc2NWYzYzBlOWIwZDU5YjAyMS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzYzNC9vcmlnaW5hbF81YzU5NGY0MGU1M2U2NTc2NWYzYzBlOWIwZDU5YjAyMS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.2539
+      },
+      {
+       "type": "Link",
+       "title": "Mały słownik sztuki technologicznej",
+       "url": "https://www.are.na/block/50068996",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk5Ni9vcmlnaW5hbF9jODhmNjZiNTZjNGVjYjc5ZWU4ODIyMjVjNjg3MjcwOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk5Ni9vcmlnaW5hbF9jODhmNjZiNTZjNGVjYjc5ZWU4ODIyMjVjNjg3MjcwOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://culture.pl/pl/artykul/maly-slownik-sztuki-technologicznej#second-menu-7",
+       "description": "Od Art&science po Wetware - oto alfabetyczny słownik najważniejszych pojęć związanych ze sztuką technologiczną."
+      },
+      {
+       "type": "Link",
+       "title": "Wojciech Bruszewski - Wybrane prace [galeria]",
+       "url": "https://www.are.na/block/50068947",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk0Ny9vcmlnaW5hbF8zMDA2ZTRhYzRmNmFjNmEyOTkyZGQ4ZjRjMDVhOWM0Yi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODk0Ny9vcmlnaW5hbF8zMDA2ZTRhYzRmNmFjNmEyOTkyZGQ4ZjRjMDVhOWM0Yi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://culture.pl/pl/galeria/wojciech-bruszewski-wybrane-prace-galeria",
+       "description": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz.U. 2018 poz. 1000), w celu wysyłania newslettera oraz za jego pomocą informowania o organizowanych przez Instytut Adama Mickiewicza wydarzeniach oraz realizowanych projektach."
+      },
+      {
+       "type": "Link",
+       "title": "Georges Melies | Biography, Films, & Facts | Britannica",
+       "url": "https://www.are.na/block/50067644",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY0NC9vcmlnaW5hbF8zOWZiNWJhMDQ0OWUwMTU2ZTI0OGJhM2VjZDM3M2MxNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY0NC9vcmlnaW5hbF8zOWZiNWJhMDQ0OWUwMTU2ZTI0OGJhM2VjZDM3M2MxNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.britannica.com/biography/Georges-Melies",
+       "description": "Georges Melies, early French experimenter with motion pictures, the first to film fictional narratives. Among his landmark films are Le Voyage dans la lune (1902; A Trip to the Moon) and Le Voyage a travers l’impossible (1904; The Voyage Across the Impossible)."
+      },
+      {
+       "type": "Link",
+       "title": "Can’t Help Myself by Sun Yuan & Peng Yu | The Guggenheim Museums and Foundation",
+       "url": "https://www.are.na/block/50067420",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQyMC9vcmlnaW5hbF82Y2NjZmEzOGZiM2Y5NjhjNzExYWFkZmI1OTZlNWMwYi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQyMC9vcmlnaW5hbF82Y2NjZmEzOGZiM2Y5NjhjNzExYWFkZmI1OTZlNWMwYi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.guggenheim.org/audio/track/cant-help-myself-by-sun-yuan-peng-yu",
+       "description": "This clip from the Guggenheim app features insights from Tales of Our Time cocurator Xiaoyu Weng on Sun Yuan and Peng Yu’s Can’t Help Myself."
+      }
+     ]
+    },
+    {
+     "title": "Drawing robot documentation",
+     "slug": "drawing-robot-documentation",
+     "kind": "drawing",
+     "url": "https://www.are.na/julia-szafranski/drawing-robot-documentation",
+     "count": 10,
+     "updated": "2026-09-28T22:11:51Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "uploads/5d0503a0-7f05-4537-95bc-3b806e434f43/20260928_171057.jpg",
+       "url": "https://www.are.na/block/50859180",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1OTE4MC9vcmlnaW5hbF8wNTE3N2NiYjJmOTYxMTMyYmUwODQ5ZTg4NGQ1ZjEwNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1OTE4MC9vcmlnaW5hbF8wNTE3N2NiYjJmOTYxMTMyYmUwODQ5ZTg4NGQ1ZjEwNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3196
+      },
+      {
+       "type": "Image",
+       "title": "uploads/0986e929-6596-447b-9a03-5f11991bd6dc/20260923_153824.jpg",
+       "url": "https://www.are.na/block/50857788",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc4OC9vcmlnaW5hbF9mMDhmNWVkNDIyZmQ1MWQyOTI4MjNlNmY4YWIwODc3Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc4OC9vcmlnaW5hbF9mMDhmNWVkNDIyZmQ1MWQyOTI4MjNlNmY4YWIwODc3Mi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/0986e929-6596-447b-9a03-5f11991bd6dc/20260921_172049.jpg",
+       "url": "https://www.are.na/block/50857771",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc3MS9vcmlnaW5hbF9hYzRiZWE5NWQ3MDY2ODFjMDI4YjJjNzkzZTA3N2I0Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc3MS9vcmlnaW5hbF9hYzRiZWE5NWQ3MDY2ODFjMDI4YjJjNzkzZTA3N2I0Ni5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/0986e929-6596-447b-9a03-5f11991bd6dc/20260921_180048.jpg",
+       "url": "https://www.are.na/block/50857770",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc3MC9vcmlnaW5hbF8zZDA1YWUxZDdlNWNmMDc2M2Y1N2Y5YTZhMWI0MDdiMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc3MC9vcmlnaW5hbF8zZDA1YWUxZDdlNWNmMDc2M2Y1N2Y5YTZhMWI0MDdiMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/0986e929-6596-447b-9a03-5f11991bd6dc/20260921_165953.jpg",
+       "url": "https://www.are.na/block/50857769",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc2OS9vcmlnaW5hbF9mYThhOGZkM2FlNDUxZmVhYjRkZGQwOWJmNzI2MTkxNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc2OS9vcmlnaW5hbF9mYThhOGZkM2FlNDUxZmVhYjRkZGQwOWJmNzI2MTkxNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/0986e929-6596-447b-9a03-5f11991bd6dc/20260921_180045.jpg",
+       "url": "https://www.are.na/block/50857768",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc2OC9vcmlnaW5hbF83N2Y1OWVmYWY3OWRiNTZlNmMyYjM1NzA4NDcyZjZhMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzc2OC9vcmlnaW5hbF83N2Y1OWVmYWY3OWRiNTZlNmMyYjM1NzA4NDcyZjZhMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/082cfbd2-1e32-4d0e-9d3c-7d58cabedb27/20260928_160907.jpg",
+       "url": "https://www.are.na/block/50857722",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcyMi9vcmlnaW5hbF9lYjA2Yjk5Y2M4MzUzN2VkMGIwMzEwNWY3M2UyMTMwMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcyMi9vcmlnaW5hbF9lYjA2Yjk5Y2M4MzUzN2VkMGIwMzEwNWY3M2UyMTMwMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/082cfbd2-1e32-4d0e-9d3c-7d58cabedb27/20260928_161420.jpg",
+       "url": "https://www.are.na/block/50857715",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcxNS9vcmlnaW5hbF8xNTYzYjJmMzI4MDQ1MjBhZWY3OTMyNWYxMTIwNTgzMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcxNS9vcmlnaW5hbF8xNTYzYjJmMzI4MDQ1MjBhZWY3OTMyNWYxMTIwNTgzMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/082cfbd2-1e32-4d0e-9d3c-7d58cabedb27/20260928_161410.jpg",
+       "url": "https://www.are.na/block/50857714",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcxNC9vcmlnaW5hbF85OTJjN2I0YzNjOTEzMGEwZmJmMzhmYWM0NDJlNjhiYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcxNC9vcmlnaW5hbF85OTJjN2I0YzNjOTEzMGEwZmJmMzhmYWM0NDJlNjhiYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "uploads/082cfbd2-1e32-4d0e-9d3c-7d58cabedb27/20260928_161415.jpg",
+       "url": "https://www.are.na/block/50857713",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcxMy9vcmlnaW5hbF82ZDRkOWMxZGQ4YTliZGFhMjM1YWU2YTQ2ZDY5MWY4ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzcxMy9vcmlnaW5hbF82ZDRkOWMxZGQ4YTliZGFhMjM1YWU2YTQ2ZDY5MWY4ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Kirtan Patel",
+   "slug": "kirtan-patel-ylp_92zih8w",
+   "initials": "KP",
+   "url": "https://www.are.na/kirtan-patel-ylp_92zih8w",
+   "channels": [
+    {
+     "title": "Kirtan Patel",
+     "slug": "kirtan-patel-mne-b8qgsse",
+     "kind": "other",
+     "url": "https://www.are.na/kirtan-patel-ylp_92zih8w/kirtan-patel-mne-b8qgsse",
+     "count": 0,
+     "updated": "2026-09-02T21:18:03Z",
+     "blocks": []
+    },
+    {
+     "title": "Research",
+     "slug": "research-dewlxge-q_0",
+     "kind": "research",
+     "url": "https://www.are.na/kirtan-patel-ylp_92zih8w/research-dewlxge-q_0",
+     "count": 5,
+     "updated": "2026-09-02T21:52:40Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "TV Cello - Nam June Paik, Charlotte Moorman",
+       "url": "https://www.are.na/block/7191659",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI3MTkxNjU5L29yaWdpbmFsXzNiMjM1MGIwNDVhZWI0N2I5NTU4MTUzYTkyZjRhODQ4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI3MTkxNjU5L29yaWdpbmFsXzNiMjM1MGIwNDVhZWI0N2I5NTU4MTUzYTkyZjRhODQ4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "ratio": 0.7042
+      },
+      {
+       "type": "Link",
+       "title": "JODI's My%Desktop (jodi.org)",
+       "url": "https://www.are.na/block/34567076",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzNDU2NzA3Ni9vcmlnaW5hbF82OWI5NWJkZTk4YTIzMGU3ZWMzYmY2NThjOTQxMjY2My5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzNDU2NzA3Ni9vcmlnaW5hbF82OWI5NWJkZTk4YTIzMGU3ZWMzYmY2NThjOTQxMjY2My5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://wwwwwwwww.jodi.org/",
+       "description": "wwwwwwwww.jodi.org is an example of Net Art that was made by Joan Heemskerk and Dirk Paesmans in 1995. The website was designed based around the concept of how humans interacted with early computers. The creators of this project, collectively known as JODI, recorded different versions of user interactions on a Macintosh OS 9 (with a camcorder) and noticed that in these recorded \"desktop performanc"
+      },
+      {
+       "type": "Image",
+       "title": "album-art.jpg",
+       "url": "https://www.are.na/block/7081341",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI3MDgxMzQxL29yaWdpbmFsXzcyNDliZmY0Y2I3ZTU3YjgzNThjNTMyODlhMWMyZDVmLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI3MDgxMzQxL29yaWdpbmFsXzcyNDliZmY0Y2I3ZTU3YjgzNThjNTMyODlhMWMyZDVmLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "ratio": 1.0
+      },
+      {
+       "type": "Image",
+       "title": "Super Mario Clouds",
+       "url": "https://www.are.na/block/37604068",
+       "thumb": "https://d2w9rnfcy7mm78.cloudfront.net/37604068/original_f85139d260b0086654c509023bff9fbe.gif?1750609486",
+       "large": "https://d2w9rnfcy7mm78.cloudfront.net/37604068/original_f85139d260b0086654c509023bff9fbe.gif?1750609486",
+       "ratio": 1.0667,
+       "description": "Super Mario Clouds is a 2002 multi-channel video installation artwork by Cory Arcangel that displays a modified version of the video game Super Mario Bros. in which all game assets besides the sky and clouds are removed. Its first major exhibition was the 2004 Whitney Biennial. Super Mario Clouds is among the artist's best known works."
+      },
+      {
+       "type": "Image",
+       "title": "Selected AI works by Mario Klingemann",
+       "url": "https://www.are.na/block/44363256",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NDM2MzI1Ni9vcmlnaW5hbF84MWJmMTU5ZDBhZWFhMjg4MTAwZDFmMGM1M2Q3ZGFmMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NDM2MzI1Ni9vcmlnaW5hbF84MWJmMTU5ZDBhZWFhMjg4MTAwZDFmMGM1M2Q3ZGFmMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "description": "Mario Klingemann is an artist who uses al­go­rithms and artificial in­tel­li­gence to cre­ate and in­ves­ti­gate systems.\nMunich\nhttps://thisispaper.com/mag/selected-ai-works-mario-klingemann"
+      }
+     ]
+    },
+    {
+     "title": "Drawing Machine",
+     "slug": "drawing-machine-1zrpngekp6m",
+     "kind": "drawing",
+     "url": "https://www.are.na/kirtan-patel-ylp_92zih8w/drawing-machine-1zrpngekp6m",
+     "count": 0,
+     "updated": "2026-09-28T21:17:02Z",
+     "blocks": []
+    }
+   ]
+  },
+  {
+   "name": "Lucas Lee",
+   "slug": "lucas-lee-cd24req3nfo",
+   "initials": "LL",
+   "url": "https://www.are.na/lucas-lee-cd24req3nfo",
+   "channels": [
+    {
+     "title": "research",
+     "slug": "research-4g6qe9dy3xy",
+     "kind": "research",
+     "url": "https://www.are.na/lucas-lee-cd24req3nfo/research-4g6qe9dy3xy",
+     "count": 4,
+     "updated": "2026-09-09T21:17:16Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "uploads/a1c8ba5e-d93f-4e35-a137-cfd0fbf58822/Screenshot_20260902_163228_Discord.jpg",
+       "url": "https://www.are.na/block/50067716",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcxNi9vcmlnaW5hbF8yNmVhZDc4MDhiOGYxMWYyZjYxN2NmMGFkNmJiNWQ5OS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcxNi9vcmlnaW5hbF8yNmVhZDc4MDhiOGYxMWYyZjYxN2NmMGFkNmJiNWQ5OS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7464
+      },
+      {
+       "type": "Image",
+       "title": "uploads/a1c8ba5e-d93f-4e35-a137-cfd0fbf58822/Screenshot_20260902_163249_Discord.jpg",
+       "url": "https://www.are.na/block/50067715",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcxNS9vcmlnaW5hbF83YWQ3YWVjYWVjMjQ2MDVhZjcxNGRkZDAwZjhhYjBkNC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzcxNS9vcmlnaW5hbF83YWQ3YWVjYWVjMjQ2MDVhZjcxNGRkZDAwZjhhYjBkNC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7918
+      },
+      {
+       "type": "Image",
+       "title": "uploads/341f3203-ae93-4fca-a320-cb0b3c2bcd07/Screenshot_20260902_162747_Instagram.jpg",
+       "url": "https://www.are.na/block/50067665",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY2NS9vcmlnaW5hbF9hNDhhZmJkMzkwZTlkMjlhM2UyY2Q0ZDQ3ZDNlMDg3OS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY2NS9vcmlnaW5hbF9hNDhhZmJkMzkwZTlkMjlhM2UyY2Q0ZDQ3ZDNlMDg3OS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.7735
+      },
+      {
+       "type": "Image",
+       "title": "uploads/341f3203-ae93-4fca-a320-cb0b3c2bcd07/Screenshot_20260902_162827_Instagram.jpg",
+       "url": "https://www.are.na/block/50067664",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY2NC9vcmlnaW5hbF82N2FhMjA4MzY4MTMwN2U1ODM2M2Q0MTkxZjFkNzU0Ny5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzY2NC9vcmlnaW5hbF82N2FhMjA4MzY4MTMwN2U1ODM2M2Q0MTkxZjFkNzU0Ny5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.9862
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Maurizio Brown",
+   "slug": "maurizio-brown",
+   "initials": "MB",
+   "url": "https://www.are.na/maurizio-brown",
+   "channels": [
+    {
+     "title": "Portfolio",
+     "slug": "portfolio-immevkseofa",
+     "kind": "portfolio",
+     "url": "https://www.are.na/maurizio-brown/portfolio-immevkseofa",
+     "count": 1,
+     "updated": "2026-09-28T21:24:25Z",
+     "blocks": [
+      {
+       "type": "Channel",
+       "title": "Drawing Machine Project",
+       "slug": "drawing-machine-project-cdb99rpf4mk",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/drawing-machine-project-cdb99rpf4mk",
+       "count": 6
+      }
+     ]
+    },
+    {
+     "title": "(MAIN) Artist Research",
+     "slug": "main-artist-research",
+     "kind": "research",
+     "url": "https://www.are.na/maurizio-brown/main-artist-research",
+     "count": 3,
+     "updated": "2026-09-09T02:27:56Z",
+     "blocks": [
+      {
+       "type": "Channel",
+       "title": "(research) Lachlan Turczan",
+       "slug": "research-lachlan-turczan",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/research-lachlan-turczan",
+       "count": 4
+      },
+      {
+       "type": "Channel",
+       "title": "(research) panterra.tokyo",
+       "slug": "research-panterra-tokyo",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/research-panterra-tokyo",
+       "count": 4
+      },
+      {
+       "type": "Channel",
+       "title": "(research) thevape5030",
+       "slug": "research-thevape5030",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/research-thevape5030",
+       "count": 4
+      }
+     ]
+    },
+    {
+     "title": "(research) thevape5030",
+     "slug": "research-thevape5030",
+     "kind": "research",
+     "url": "https://www.are.na/maurizio-brown/research-thevape5030",
+     "count": 4,
+     "updated": "2026-09-09T21:12:20Z",
+     "blocks": [
+      {
+       "type": "Embed",
+       "title": "MUSIC 6 1 2024",
+       "url": "https://www.are.na/block/50255507",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTUwNy9vcmlnaW5hbF9mMmRlZjU5YWYzZmY5OTllYzczOGY2MjVhNDFiOTRiMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTUwNy9vcmlnaW5hbF9mMmRlZjU5YWYzZmY5OTllYzczOGY2MjVhNDFiOTRiMC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.3333,
+       "description": "Uploaded by the VAPE on 2024-01-06."
+      },
+      {
+       "type": "Embed",
+       "title": "MUSIC 4 5 2022",
+       "url": "https://www.are.na/block/50255509",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTUwOS9vcmlnaW5hbF8yZTkzODBmOWZmNDFiOWVjYWJjM2I1YjU3MzMwNzljOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTUwOS9vcmlnaW5hbF8yZTkzODBmOWZmNDFiOWVjYWJjM2I1YjU3MzMwNzljOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.3333,
+       "description": "Uploaded by the VAPE on 2022-05-04."
+      },
+      {
+       "type": "Embed",
+       "title": "VRRRZZOPHONE",
+       "url": "https://www.are.na/block/50255523",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTUyMy9vcmlnaW5hbF80MWNmYWNhN2Y1MTRhYjdjYTUwODhkOWY3NmViNGVlZS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTUyMy9vcmlnaW5hbF80MWNmYWNhN2Y1MTRhYjdjYTUwODhkOWY3NmViNGVlZS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.3333,
+       "description": "Uploaded by the VAPE on 2021-02-25."
+      },
+      {
+       "type": "Embed",
+       "title": "ETUDE 75110674",
+       "url": "https://www.are.na/block/50255493",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTQ5My9vcmlnaW5hbF8xN2YzYjE3MDQwNTE0NmI2NGZkOTBlNmE2MmQ3ZmRjOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTQ5My9vcmlnaW5hbF8xN2YzYjE3MDQwNTE0NmI2NGZkOTBlNmE2MmQ3ZmRjOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.3333,
+       "description": "Uploaded by the VAPE on 2020-02-08."
+      }
+     ]
+    },
+    {
+     "title": "(research) panterra.tokyo",
+     "slug": "research-panterra-tokyo",
+     "kind": "research",
+     "url": "https://www.are.na/maurizio-brown/research-panterra-tokyo",
+     "count": 4,
+     "updated": "2026-09-09T02:30:50Z",
+     "blocks": [
+      {
+       "type": "Link",
+       "title": "About 5 — PANTERRA",
+       "url": "https://www.are.na/block/50255950",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTk1MC9vcmlnaW5hbF9mMjE4YTU5NzU0ZThhM2Q5ZTg1OGVhNWQ1YTczZmZkZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTk1MC9vcmlnaW5hbF9mMjE4YTU5NzU0ZThhM2Q5ZTg1OGVhNWQ1YTczZmZkZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.panterra.tokyo/about-us"
+      },
+      {
+       "type": "Link",
+       "title": "POSTHUMAN ARTEFACT 003 — PANTERRA",
+       "url": "https://www.are.na/block/50255793",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTc5My9vcmlnaW5hbF9mOTRmZjZlY2Y2Yjk4N2M4MzBkMGMxNGFiYWRlNjEyNi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTc5My9vcmlnaW5hbF9mOTRmZjZlY2Y2Yjk4N2M4MzBkMGMxNGFiYWRlNjEyNi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.panterra.tokyo/posthumanartefact003",
+       "description": "(2026) murmansk"
+      },
+      {
+       "type": "Link",
+       "title": "FLORPASS — PANTERRA",
+       "url": "https://www.are.na/block/50255820",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTgyMC9vcmlnaW5hbF9jMTliMjM5NzU0OGQ4M2M1NzE2ZGEwYzg5MDJlYzZmMy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTgyMC9vcmlnaW5hbF9jMTliMjM5NzU0OGQ4M2M1NzE2ZGEwYzg5MDJlYzZmMy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.panterra.tokyo/florpass",
+       "description": "(2024, 2025) moscow, perm"
+      },
+      {
+       "type": "Link",
+       "title": "TERMINAL — PANTERRA",
+       "url": "https://www.are.na/block/50255943",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTk0My9vcmlnaW5hbF82MjUxNWE4YWY1MzBhMmYxZmI4YTk5MTNjNjUxMDM5Yy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NTk0My9vcmlnaW5hbF82MjUxNWE4YWY1MzBhMmYxZmI4YTk5MTNjNjUxMDM5Yy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.panterra.tokyo/terminal",
+       "description": "TERMINAL 001-003(2023-2024) kazan, PERM, nizhny novgorod this INSTALLATION FEATURES A MASSIVE CRANE SUPPORTING A COMPLEX STRUCTURE OF TRUSSES, LIGHTING FIXTURES, AND CABLES, FORMING A MONUMENTAL GATE TO ANOTHER DIMENSION. “TERMINAL” REPRESENTS A CONVERGENCE POINT WHERE TECHNOLOGY, ENGINEERING, AND ART CREATE A PORTAL BETWEEN WORLDS. THE INDUSTRIAL CRANE, SYMBOLIZING MECHANICAL STRENGTH, HOLDS THIS"
+      }
+     ]
+    },
+    {
+     "title": "(research) Lachlan Turczan",
+     "slug": "research-lachlan-turczan",
+     "kind": "research",
+     "url": "https://www.are.na/maurizio-brown/research-lachlan-turczan",
+     "count": 4,
+     "updated": "2026-09-09T02:29:10Z",
+     "blocks": [
+      {
+       "type": "Link",
+       "title": "About — LACHLAN TURCZAN",
+       "url": "https://www.are.na/block/50256812",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NjgxMi9vcmlnaW5hbF9hMjc4YTBhZjEzNTdiNTFhNzJiNzU3NjE0NjUzNDA4NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NjgxMi9vcmlnaW5hbF9hMjc4YTBhZjEzNTdiNTFhNzJiNzU3NjE0NjUzNDA4NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.lachlanturczan.com/about"
+      },
+      {
+       "type": "Link",
+       "title": "Veil IV — LACHLAN TURCZAN",
+       "url": "https://www.are.na/block/50256753",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1Njc1My9vcmlnaW5hbF81NDlmZGY5NGUwMTkyMjFlZWY3NDcwZmFhOGZmMTU2YS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1Njc1My9vcmlnaW5hbF81NDlmZGY5NGUwMTkyMjFlZWY3NDcwZmFhOGZmMTU2YS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.lachlanturczan.com/works/wavespace-bff8k",
+       "description": "Veil IV, 202415W x 15L x 3D ft.water, light, silt"
+      },
+      {
+       "type": "Image",
+       "title": "Instagram",
+       "url": "https://www.are.na/block/50256735",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NjczNS9vcmlnaW5hbF9mYmZmZTVkZGUyYjZhOGYyMzc4ZDY3Y2ExMGI0M2Y3Yi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NjczNS9vcmlnaW5hbF9mYmZmZTVkZGUyYjZhOGYyMzc4ZDY3Y2ExMGI0M2Y3Yi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.8
+      },
+      {
+       "type": "Link",
+       "title": "🎆 Untitled・@lachlanturczan Lachlan Turczan’s latest work presents a light installation that communicates with the shoreline. Beams projected into the water form a geometric light sculpture, where converging lines become pillars of light rising skyward. ©️ @lachlanturczan",
+       "url": "https://www.are.na/block/50256715",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NjcxNS9vcmlnaW5hbF8yMDNlOWYxNDllZWE2MjU5MjFhM2YwZmY0MDJmNWJlZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI1NjcxNS9vcmlnaW5hbF8yMDNlOWYxNDllZWE2MjU5MjFhM2YwZmY0MDJmNWJlZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.pinterest.com/pin/684054630941892266/",
+       "description": "🎆 Untitled・@lachlanturczan Lachlan Turczan’s latest work presents a light installation that communicates with the shoreline. Beams projected into the water form a geometric light sculpture, where converging lines become pillars of light rising skyward. ©️ @lachlanturczan | Interactif, Le porte"
+      }
+     ]
+    },
+    {
+     "title": "Electronics",
+     "slug": "electronics-pmodweqg8vc",
+     "kind": "other",
+     "url": "https://www.are.na/maurizio-brown/electronics-pmodweqg8vc",
+     "count": 1,
+     "updated": "2026-09-10T01:54:30Z",
+     "blocks": [
+      {
+       "type": "Attachment",
+       "title": "20260909_182358",
+       "url": "https://www.are.na/block/50293929",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI5MzkyOS9vcmlnaW5hbF9lMDI3M2U1MzAyM2I3NzRlMjAyNjA5MTAtMi13eXl0MmwucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI5MzkyOS9vcmlnaW5hbF9lMDI3M2U1MzAyM2I3NzRlMjAyNjA5MTAtMi13eXl0MmwucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5625,
+       "description": "Weird circuit I made that uses loose connections to flicker LEDs when moved."
+      }
+     ]
+    },
+    {
+     "title": "Art Projects",
+     "slug": "art-projects-ui_vwypvmyi",
+     "kind": "other",
+     "url": "https://www.are.na/maurizio-brown/art-projects-ui_vwypvmyi",
+     "count": 1,
+     "updated": "2026-09-28T21:17:31Z",
+     "blocks": [
+      {
+       "type": "Channel",
+       "title": "Drawing Machine Project",
+       "slug": "drawing-machine-project-cdb99rpf4mk",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/drawing-machine-project-cdb99rpf4mk",
+       "count": 6
+      }
+     ]
+    },
+    {
+     "title": "Drawing Machine Project",
+     "slug": "drawing-machine-project-cdb99rpf4mk",
+     "kind": "drawing",
+     "url": "https://www.are.na/maurizio-brown/drawing-machine-project-cdb99rpf4mk",
+     "count": 6,
+     "updated": "2026-09-28T21:29:39Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "DrawingMachineInstructions",
+       "url": "https://www.are.na/block/50857805",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzgwNS9vcmlnaW5hbF8yOWZjMDYyYThhNDRjNmY5ZmU5Zjk3OGIxYzI5YjI3Zi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzgwNS9vcmlnaW5hbF8yOWZjMDYyYThhNDRjNmY5ZmU5Zjk3OGIxYzI5YjI3Zi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "Drawing Machine Sketchpage",
+       "url": "https://www.are.na/block/50641226",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MTIyNi9vcmlnaW5hbF80YmJjZjhlNjE4N2U1OGIyZTg0OWJhNGJlOTFjYzJiOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MTIyNi9vcmlnaW5hbF80YmJjZjhlNjE4N2U1OGIyZTg0OWJhNGJlOTFjYzJiOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      },
+      {
+       "type": "Attachment",
+       "title": "Progress_04 DM",
+       "url": "https://www.are.na/block/50643309",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwOS9vcmlnaW5hbF8wZGRjODhhMzVlMDdmN2FhMjAyNjA5MjItMi0ydXQzZHkucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwOS9vcmlnaW5hbF8wZGRjODhhMzVlMDdmN2FhMjAyNjA5MjItMi0ydXQzZHkucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5621
+      },
+      {
+       "type": "Attachment",
+       "title": "Progress_03 DM",
+       "url": "https://www.are.na/block/50643307",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwNy9vcmlnaW5hbF9hMWZjZjI5ZmNlNzQ0MjdmMjAyNjA5MjItMi1kaXVpb3kucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwNy9vcmlnaW5hbF9hMWZjZjI5ZmNlNzQ0MjdmMjAyNjA5MjItMi1kaXVpb3kucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5621
+      },
+      {
+       "type": "Attachment",
+       "title": "Progress_02 DM",
+       "url": "https://www.are.na/block/50643310",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMxMC9vcmlnaW5hbF9iOGM3YWYzMDNmNzc0MWMyMjAyNjA5MjItMi01ajZ3dGQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMxMC9vcmlnaW5hbF9iOGM3YWYzMDNmNzc0MWMyMjAyNjA5MjItMi01ajZ3dGQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5621
+      },
+      {
+       "type": "Attachment",
+       "title": "Progress_01 DM",
+       "url": "https://www.are.na/block/50643308",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwOC9vcmlnaW5hbF9mZDg3MjI0NmE1Y2YxNDhiMjAyNjA5MjItMi1yYnF4YjEucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwOC9vcmlnaW5hbF9mZDg3MjI0NmE1Y2YxNDhiMjAyNjA5MjItMi1yYnF4YjEucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5621
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Mia Espinoza",
+   "slug": "mia-espinoza",
+   "initials": "ME",
+   "url": "https://www.are.na/mia-espinoza",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-a0wq0u6bfxg",
+     "kind": "research",
+     "url": "https://www.are.na/mia-espinoza/research-a0wq0u6bfxg",
+     "count": 6,
+     "updated": "2026-09-02T21:45:12Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Tomihiro Kono",
+       "url": "https://www.are.na/block/50068637",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODYzNy9vcmlnaW5hbF81M2U3ZTkxOGI5OGJhNjU5MWQ2NDJhOGM5MGVjZGE2Ni5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODYzNy9vcmlnaW5hbF81M2U3ZTkxOGI5OGJhNjU5MWQ2NDJhOGM5MGVjZGE2Ni5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.8,
+       "description": "『Space Creatures』Tomihiro Kono / Sayaka Maruyama Book \nTomihiro Kono Wig"
+      },
+      {
+       "type": "Link",
+       "title": "ISSEY MIYAKE LOOK 25",
+       "url": "https://www.are.na/block/50068454",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODQ1NC9vcmlnaW5hbF8yMGRiMDhkY2Q0NWEzMWQ0YjA0MDBmMjVjYmNhNGQ2ZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODQ1NC9vcmlnaW5hbF8yMGRiMDhkY2Q0NWEzMWQ0YjA0MDBmMjVjYmNhNGQ2ZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.isseymiyake.com/blogs/isseymiyake-looks/im25-26aw",
+       "description": "Issey Miyake Look 25 | Hands Of Lover Velour | AW 26"
+      },
+      {
+       "type": "Link",
+       "title": "V?",
+       "url": "https://www.are.na/block/50067569",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzU2OS9vcmlnaW5hbF9jY2Y4ODgyNzY3MmI1MDhlZTM3MzgwYThmYjkxZDg1NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzU2OS9vcmlnaW5hbF9jY2Y4ODgyNzY3MmI1MDhlZTM3MzgwYThmYjkxZDg1NC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.vqpalette.com/products/crybaby-original",
+       "description": "16 x 20 inches, mixed media on stretched gallery canvas. From the girlhood_v? collection’s Digi Girl alter ego"
+      },
+      {
+       "type": "Image",
+       "title": "Sandy Liang",
+       "url": "https://www.are.na/block/50067511",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzUxMS9vcmlnaW5hbF9mNGZmODExMjFkZGYyNTQ0NGYxN2U4YmExMDY2YjA0Zi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzUxMS9vcmlnaW5hbF9mNGZmODExMjFkZGYyNTQ0NGYxN2U4YmExMDY2YjA0Zi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75,
+       "description": "Sandy Liang, USB hair clip for your precious memories! "
+      },
+      {
+       "type": "Image",
+       "title": "Harlot Hands",
+       "url": "https://www.are.na/block/50067483",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ4My9vcmlnaW5hbF80NWIxZTZhZjMzNmFmNjk5NWYwMDg0NjQyOWIwMTU4ZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ4My9vcmlnaW5hbF80NWIxZTZhZjMzNmFmNjk5NWYwMDg0NjQyOWIwMTU4ZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.9953,
+       "description": "Harlot Hands | NYC Jeweler "
+      },
+      {
+       "type": "Image",
+       "title": "Petra Collins",
+       "url": "https://www.are.na/block/50067410",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQxMC9vcmlnaW5hbF83ZWIxNTE2ZmVkYjBkZmIxYTBjNWI0MWVlYTUzYzJiZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQxMC9vcmlnaW5hbF83ZWIxNTE2ZmVkYjBkZmIxYTBjNWI0MWVlYTUzYzJiZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.4787,
+       "description": "Petra Collins | OMG, I'm Being Killed #2\nhttps://petra-collins.com/omg-im-being-killed-2-2/ "
+      }
+     ]
+    },
+    {
+     "title": "Snail Project",
+     "slug": "snail-project",
+     "kind": "drawing",
+     "url": "https://www.are.na/mia-espinoza/snail-project",
+     "count": 3,
+     "updated": "2026-09-28T21:29:58Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Snail Mail (2)",
+       "url": "https://www.are.na/block/50858100",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODEwMC9vcmlnaW5hbF9mMWZjMTcxZGZiM2QxN2Y1NjZhMGY4YWU4NDFlYjkyNS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODEwMC9vcmlnaW5hbF9mMWZjMTcxZGZiM2QxN2Y1NjZhMGY4YWU4NDFlYjkyNS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
+      },
+      {
+       "type": "Image",
+       "title": "Snail Mail (1)",
+       "url": "https://www.are.na/block/50858098",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODA5OC9vcmlnaW5hbF9iNDFjZTlkZTZiOWJiZjBkYmEzOTQ1YWZmZTlkMDBjOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODA5OC9vcmlnaW5hbF9iNDFjZTlkZTZiOWJiZjBkYmEzOTQ1YWZmZTlkMDBjOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
+      },
+      {
+       "type": "Image",
+       "title": "Snail Mail",
+       "url": "https://www.are.na/block/50858093",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODA5My9vcmlnaW5hbF82MDg4YTUwN2E0ZjA1M2MxODU1ZDg3MzRjMzVhYTJkYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODA5My9vcmlnaW5hbF82MDg4YTUwN2E0ZjA1M2MxODU1ZDg3MzRjMzVhYTJkYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Nataly Rios",
+   "slug": "nataly-rios",
+   "initials": "NR",
+   "url": "https://www.are.na/nataly-rios",
+   "channels": [
+    {
+     "title": "portfolio art 150",
+     "slug": "portfolio-art-150",
+     "kind": "portfolio",
+     "url": "https://www.are.na/nataly-rios/portfolio-art-150",
+     "count": 1,
+     "updated": "2026-09-28T23:20:15Z",
+     "blocks": [
+      {
+       "type": "Channel",
+       "title": "art project 1",
+       "slug": "art-project-1-oyc0h-aoqg",
+       "owner": "nataly-rios",
+       "url": "https://www.are.na/nataly-rios/art-project-1-oyc0h-aoqg",
+       "count": 6
+      }
+     ]
+    },
+    {
+     "title": "research art 150",
+     "slug": "research-art-150",
+     "kind": "research",
+     "url": "https://www.are.na/nataly-rios/research-art-150",
+     "count": 3,
+     "updated": "2026-09-28T23:19:20Z",
+     "blocks": [
+      {
+       "type": "Link",
+       "title": "Murals",
+       "url": "https://www.are.na/block/50068746",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODc0Ni9vcmlnaW5hbF85ZTNlOTJkODFjY2RlZjg3YzQ1YWM4ZjNlNGZmN2FiNC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2ODc0Ni9vcmlnaW5hbF85ZTNlOTJkODFjY2RlZjg3YzQ1YWM4ZjNlNGZmN2FiNC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.jessehernandez.net/murals.html",
+       "description": "Jesse Hernandez | #UrbanAztec"
+      },
+      {
+       "type": "Link",
+       "title": "Paintings – Carmen Lomas Garza",
+       "url": "https://www.are.na/block/50067999",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2Nzk5OS9vcmlnaW5hbF8yODE4ZTVhZGUwNTk0YjFlOGI4ODA1ZWU4NTkzM2ViMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2Nzk5OS9vcmlnaW5hbF8yODE4ZTVhZGUwNTk0YjFlOGI4ODA1ZWU4NTkzM2ViMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://carmenlomasgarza.com/paintings/",
+       "description": "Copyright Carmen Lomas Garza - 2026"
+      },
+      {
+       "type": "Link",
+       "title": "Eagle Serpiente Nopalli — Jiménez-Flores",
+       "url": "https://www.are.na/block/50067552",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzU1Mi9vcmlnaW5hbF9mNDkxNmUzOWJiNzNiZjU5MTYzZWE5MDk4YmU2Mzc3YS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzU1Mi9vcmlnaW5hbF9mNDkxNmUzOWJiNzNiZjU5MTYzZWE5MDk4YmU2Mzc3YS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.salvadorjimenezflores.com/eagle-serpiente-nopalli",
+       "description": "<p style=“margin-left:0px; margin-right:0px”>I am a nomadic artist who journeys through the Americas, creating rascuache art and high art, speaking Español, English and Spanglish. Occasionally, I feel I have a static sense of identity and sometimes I have an inventory of multiple identities. I fit in here and there but No soy ni de aquí ni de allá. I am one, in two worlds.</p><p>The move from a ru"
+      }
+     ]
+    },
+    {
+     "title": "art project 1",
+     "slug": "art-project-1-oyc0h-aoqg",
+     "kind": "drawing",
+     "url": "https://www.are.na/nataly-rios/art-project-1-oyc0h-aoqg",
+     "count": 6,
+     "updated": "2026-09-28T23:20:14Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "73FFC97B-A643-4BBF-A2B1-9CA3B20A4DF3_4_5005_c",
+       "url": "https://www.are.na/block/50860599",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MDU5OS9vcmlnaW5hbF9kYTlmZTczMzQ2NTdiMTUwMDU2MTQ0MmM3NzBhM2I3ZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MDU5OS9vcmlnaW5hbF9kYTlmZTczMzQ2NTdiMTUwMDU2MTQ0MmM3NzBhM2I3ZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "A87E35D4-44C2-4329-9CAB-AE7605BB8451_1_105_c",
+       "url": "https://www.are.na/block/50860544",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MDU0NC9vcmlnaW5hbF85ZGQ5NjFlM2M0NjQzZTIwZDAwNmIwMDIxMmIxY2IwZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MDU0NC9vcmlnaW5hbF85ZGQ5NjFlM2M0NjQzZTIwZDAwNmIwMDIxMmIxY2IwZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.5626
+      },
+      {
+       "type": "Image",
+       "title": "15508E45-2253-4D56-BDA6-E7F4D862C23F_1_105_c",
+       "url": "https://www.are.na/block/50670290",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDI5MC9vcmlnaW5hbF8yNmUzMjM4ZjAwOTYxMzc0NjQxMWVlY2NjM2E2YWE2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDI5MC9vcmlnaW5hbF8yNmUzMjM4ZjAwOTYxMzc0NjQxMWVlY2NjM2E2YWE2MS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "FEFCC80F-084C-4E97-B653-8B7B9BF23309_1_102_o",
+       "url": "https://www.are.na/block/50670326",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDMyNi9vcmlnaW5hbF84NzI3OTQ4YzhkYTMwNzU0MzI3OWMxNTQ4YjJkMGMxOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDMyNi9vcmlnaW5hbF84NzI3OTQ4YzhkYTMwNzU0MzI3OWMxNTQ4YjJkMGMxOS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5624
+      },
+      {
+       "type": "Image",
+       "title": "C71E5FDB-D7A5-484B-AA17-9B3D32781AC4_1_105_c",
+       "url": "https://www.are.na/block/50670302",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDMwMi9vcmlnaW5hbF82NDAzNWRmNzI0MzVmODgxNjMyNTI2Yjk1NTUxZDk2YS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDMwMi9vcmlnaW5hbF82NDAzNWRmNzI0MzVmODgxNjMyNTI2Yjk1NTUxZDk2YS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "FBF6B762-85C0-4F5B-B661-6C63A40D7605_1_105_c",
+       "url": "https://www.are.na/block/50670295",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDI5NS9vcmlnaW5hbF8wZGY4M2IzMTE0OTU0Y2Y2NzM3OTYyYWJlM2M1ODVhNC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY3MDI5NS9vcmlnaW5hbF8wZGY4M2IzMTE0OTU0Y2Y2NzM3OTYyYWJlM2M1ODVhNC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.75
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Panthi Patel",
+   "slug": "panthi-patel",
+   "initials": "PP",
+   "url": "https://www.are.na/panthi-patel",
+   "channels": [
+    {
+     "title": "Portfolio",
+     "slug": "portfolio-sbkn9xyfpbc",
+     "kind": "portfolio",
+     "url": "https://www.are.na/panthi-patel/portfolio-sbkn9xyfpbc",
+     "count": 0,
+     "updated": "2026-09-02T21:11:47Z",
+     "blocks": []
+    },
+    {
+     "title": "Research",
+     "slug": "research-xfmd2k_xdae",
+     "kind": "research",
+     "url": "https://www.are.na/panthi-patel/research-xfmd2k_xdae",
+     "count": 3,
+     "updated": "2026-09-02T22:08:55Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Nick Briz",
+       "url": "https://www.are.na/block/50069479",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2OTQ3OS9vcmlnaW5hbF9iNjFmMTExZjU4MjhmOGM0ZTViOWRlMzJkYWE2NTkyZS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2OTQ3OS9vcmlnaW5hbF9iNjFmMTExZjU4MjhmOGM0ZTViOWRlMzJkYWE2NTkyZS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.0036
+      },
+      {
+       "type": "Link",
+       "title": "‘Nam June Paik: Becoming Robot’ at Asia Society Museum",
+       "url": "https://www.are.na/block/50069064",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2OTA2NC9vcmlnaW5hbF84M2ZiOGUyZjk5YTZkMDYzZDUwMTU0NmNjZGRjZjM1Ni5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2OTA2NC9vcmlnaW5hbF84M2ZiOGUyZjk5YTZkMDYzZDUwMTU0NmNjZGRjZjM1Ni5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://asiasociety.org/new-york/exhibitions/nam-june-paik-becoming-robot-1",
+       "description": "An exhibition focusing on Nam June Paik (1932–2006), a visionary artist, thinker, innovator, and the “father of video art.”"
+      },
+      {
+       "type": "Link",
+       "title": "In Focus: Mario Klingemann",
+       "url": "https://www.are.na/block/9789827",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5Nzg5ODI3L29yaWdpbmFsXzY4OGM5MTBhMWFjZDFhNThhYzFiMTU1Zjg2ODFkNTE4LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5Nzg5ODI3L29yaWdpbmFsXzY4OGM5MTBhMWFjZDFhNThhYzFiMTU1Zjg2ODFkNTE4LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "ratio": 1.0,
+       "source": "https://medium.com/digital-art-weekly/in-focus-mario-klingemann-783533ec91fe",
+       "description": "Discover the work of code, AI, and data artist Mario Klingemann, winner of the 2018 Lumen Prize’s Gold Award."
+      }
+     ]
+    },
+    {
+     "title": "Drawing Robots",
+     "slug": "drawing-robots",
+     "kind": "drawing",
+     "url": "https://www.are.na/panthi-patel/drawing-robots",
+     "count": 3,
+     "updated": "2026-09-29T00:25:39Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "IMG_1481.jpg",
+       "url": "https://www.are.na/block/50861908",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MTkwOC9vcmlnaW5hbF9lZmMwNTcwNzhhYjBkYTJmNjJiOWExNzE1ZGI3NjhmOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2MTkwOC9vcmlnaW5hbF9lZmMwNTcwNzhhYjBkYTJmNjJiOWExNzE1ZGI3NjhmOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "IMG_1388.jpg",
+       "url": "https://www.are.na/block/50857988",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzk4OC9vcmlnaW5hbF81OGZjMDkzYzgyNjZjMDMxOWUyNTViZjE4ZjFmNTE1Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1Nzk4OC9vcmlnaW5hbF81OGZjMDkzYzgyNjZjMDMxOWUyNTViZjE4ZjFmNTE1Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "IMG_1480.jpg",
+       "url": "https://www.are.na/block/50857939",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzkzOS9vcmlnaW5hbF80OWZhNThhMDA1ODZlMGY2MzZhMTAzYTg3ODQwNzJhMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzkzOS9vcmlnaW5hbF80OWZhNThhMDA1ODZlMGY2MzZhMTAzYTg3ODQwNzJhMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Quang Duc Lam Nguyen",
+   "slug": "quang-duc-lam-nguyen",
+   "initials": "QDLN",
+   "url": "https://www.are.na/quang-duc-lam-nguyen",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-pe5zbwtih8",
+     "kind": "research",
+     "url": "https://www.are.na/quang-duc-lam-nguyen/research-pe5zbwtih8",
+     "count": 7,
+     "updated": "2026-09-14T20:20:02Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "Description of the 3 artists",
+       "url": "https://www.are.na/block/50209375",
+       "text": "1: Nukeme: Nukeme (Nukui, 1986) is a Japanese fashion designer and artist who merges streetwear and digital glitch aesthetics. He moved to Tokyo and became a pioneer in wearable tech-art, earning recognition at the Japan Media Arts Festival for his ground-breaking Glitch Embroidery project. He opens computerized sewing machine files (.pes or embroidery binary files) in a text or hex editor and manually overwrites portions of the raw code. This corrupts the machine's instructions. When fed into the sewing machine, the mechanical needle jumps erratically, misaligns thread layers, skips stitches,"
+      },
+      {
+       "type": "Link",
+       "title": "Nukeme: Fashion designer and glitch artist",
+       "url": "https://www.are.na/block/50427608",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzYwOC9vcmlnaW5hbF9jOWZhMmFiMzMxNzk3MTAxZTc0Y2I4OGY4MTlkNjVkYS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzYwOC9vcmlnaW5hbF9jOWZhMmFiMzMxNzk3MTAxZTc0Y2I4OGY4MTlkNjVkYS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://nukeme.nu/",
+       "description": "Nukeme is Fashion Designer, Artist. Born in 1986. Based in Tokyo. | Member of Okay, Semitransparent…"
+      },
+      {
+       "type": "Link",
+       "title": "Coat by Nukeme and Ucnv",
+       "url": "https://www.are.na/block/50427630",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzYzMC9vcmlnaW5hbF8wZDFlNDQwZTIwNWMwZWJhZTQ0MDJiMTgzOWFhOGU0Yi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzYzMC9vcmlnaW5hbF8wZDFlNDQwZTIwNWMwZWJhZTQ0MDJiMTgzOWFhOGU0Yi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://nukeme.nu/tagged/Coat%20by%20Nukeme%20and%20Ucnv",
+       "description": "Posts on nukemenukeme tagged as Coat by Nukeme and Ucnv"
+      },
+      {
+       "type": "Link",
+       "title": "Sabato Visconti : New media artist",
+       "url": "https://www.are.na/block/50208572",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDIwODU3Mi9vcmlnaW5hbF81MTQzMjIzYjRhYmZmYTc1Y2JmOTY0YzEzZjQ0MTQwNS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDIwODU3Mi9vcmlnaW5hbF81MTQzMjIzYjRhYmZmYTc1Y2JmOTY0YzEzZjQ0MTQwNS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.sabatobox.com/glitch-photography",
+       "description": "Glitch Photography as a Practice in the Age of Post-photographyv. 1.1"
+      },
+      {
+       "type": "Link",
+       "title": "City of Vapors - Volume II - Sabato Visconti | Official Artist Website |",
+       "url": "https://www.are.na/block/50427737",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzczNy9vcmlnaW5hbF85OTE1YWU4ZTJjMTE4YzM1MmZjZWY5MDFmZGRjMWZkNS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzczNy9vcmlnaW5hbF85OTE1YWU4ZTJjMTE4YzM1MmZjZWY5MDFmZGRjMWZkNS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.sabatobox.com/city-of-vapors-volume-2",
+       "description": "City of Vapors, Volume IIContinuation of the 2015 City of Vapors series, a postphotographic portrait of Miami and it’s suburbs and island exurbs, created by turning photographs captured in the 305 during 2017-2019 into databent displacement mapped 3D objects and rendering them in Blender 2.8"
+      },
+      {
+       "type": "Link",
+       "title": "Jeffrey Shaw: New media artist",
+       "url": "https://www.are.na/block/50289034",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4OTAzNC9vcmlnaW5hbF8wODVjOTRkNzY1NTU3ODg1ODQ4YTU1OTY2M2JmMmQ4NS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4OTAzNC9vcmlnaW5hbF8wODVjOTRkNzY1NTU3ODg1ODQ4YTU1OTY2M2JmMmQ4NS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.jeffreyshawcompendium.com/",
+       "description": "Jeffrey Shaw Archive facilitated by Chronus Art Center, Shanghai Produced and coded by Raphael Tsz-Kin Chau."
+      },
+      {
+       "type": "Link",
+       "title": "Pig",
+       "url": "https://www.are.na/block/50427785",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzc4NS9vcmlnaW5hbF8yOWI5M2M0ZjA3ZGQwYThmNGFjMWMyMmI0M2YyMDU5MS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDQyNzc4NS9vcmlnaW5hbF8yOWI5M2M0ZjA3ZGQwYThmNGFjMWMyMmI0M2YyMDU5MS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "source": "https://www.jeffreyshawcompendium.com/portfolio/pig/",
+       "description": "pig Pig 1976 London, EnglandCoauthors: Jeffrey Shaw, Theo Botschuijver, Sean Wellesley-MillerDesigned by Theo Botschuijver Production: Eventstructure Research Group, Amsterdam A helium-inflated pig was designed specially so that it could be photographed flying over London’s iconic Battersea Power Station for the cover of Pink Floyd’s Animals album. It was manufactured in Germany in the same factor"
+      }
+     ]
+    },
+    {
+     "title": "Butterfly Drawing Bot",
+     "slug": "butterfly-drawing-bot",
+     "kind": "drawing",
+     "url": "https://www.are.na/quang-duc-lam-nguyen/butterfly-drawing-bot",
+     "count": 0,
+     "updated": "2026-09-29T21:16:11Z",
+     "blocks": []
+    }
+   ]
+  },
+  {
+   "name": "Selah Morales",
+   "slug": "selah-morales",
+   "initials": "SM",
+   "url": "https://www.are.na/selah-morales",
+   "channels": [
+    {
+     "title": "Research",
+     "slug": "research-bfdhz8zx83u",
+     "kind": "research",
+     "url": "https://www.are.na/selah-morales/research-bfdhz8zx83u",
+     "count": 3,
+     "updated": "2026-09-02T21:31:04Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Laura Boswell (Printmaking)",
+       "url": "https://www.are.na/block/50067635",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzYzNS9vcmlnaW5hbF9iZDJkOWVjNGU5YTViMTk1MWIzMWVlZTA0NjJmMWQyOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzYzNS9vcmlnaW5hbF9iZDJkOWVjNGU5YTViMTk1MWIzMWVlZTA0NjJmMWQyOC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.6837
+      },
+      {
+       "type": "Image",
+       "title": "Kara Walker (Collage Artist)",
+       "url": "https://www.are.na/block/50067587",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzU4Ny9vcmlnaW5hbF9mMGM1ZTlhYjVlZjFiZjVmMzExMWY3ODYzNWVmYmRjMi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzU4Ny9vcmlnaW5hbF9mMGM1ZTlhYjVlZjFiZjVmMzExMWY3ODYzNWVmYmRjMi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 1.5125
+      },
+      {
+       "type": "Image",
+       "title": "Johanna Goodman (Mixed Media)",
+       "url": "https://www.are.na/block/50067497",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ5Ny9vcmlnaW5hbF9mZDVkYmEwY2NlZDAxOTVmODU5ZjM2NDQwZWQ1YWY5ZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDA2NzQ5Ny9vcmlnaW5hbF9mZDVkYmEwY2NlZDAxOTVmODU5ZjM2NDQwZWQ1YWY5ZC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.6573
+      }
+     ]
+    },
+    {
+     "title": "Drawing Machine",
+     "slug": "drawing-machine-v4_ef06bzqg",
+     "kind": "drawing",
+     "url": "https://www.are.na/selah-morales/drawing-machine-v4_ef06bzqg",
+     "count": 0,
+     "updated": "2026-09-28T21:16:48Z",
+     "blocks": []
+    }
+   ]
+  },
+  {
+   "name": "Vi Bao Truong",
+   "slug": "vi-bao-truong",
+   "initials": "VBT",
+   "url": "https://www.are.na/vi-bao-truong",
+   "channels": [
+    {
+     "title": "Portfolio",
+     "slug": "portfolio-g-3phju01fa",
+     "kind": "portfolio",
+     "url": "https://www.are.na/vi-bao-truong/portfolio-g-3phju01fa",
+     "count": 1,
+     "updated": "2026-09-02T21:32:46Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/50067694",
+       "text": "Midterm Art 150",
+       "description": "Midterm Art 150"
+      }
+     ]
+    },
+    {
+     "title": "Research",
+     "slug": "research-mlmg6-zxwsq",
+     "kind": "research",
+     "url": "https://www.are.na/vi-bao-truong/research-mlmg6-zxwsq",
+     "count": 3,
+     "updated": "2026-09-09T21:54:17Z",
+     "blocks": [
+      {
+       "type": "Channel",
+       "title": "Thumbnail Sketching",
+       "slug": "thumbnail-sketching",
+       "owner": "alex-gonzalez-ptwup08-m1o",
+       "url": "https://www.are.na/alex-gonzalez-ptwup08-m1o/thumbnail-sketching",
+       "count": 19
+      },
+      {
+       "type": "Channel",
+       "title": "Asian Inspirations",
+       "slug": "asian-inspirations",
+       "owner": "anne-marie-mulumba",
+       "url": "https://www.are.na/anne-marie-mulumba/asian-inspirations",
+       "count": 189
+      },
+      {
+       "type": "Image",
+       "title": "seohyo - Google Search, 2025 | Çizim",
+       "url": "https://www.are.na/block/41971491",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0MTk3MTQ5MS9vcmlnaW5hbF84NDJiMzU0ZTljMzI0NjlmMjlkNzM1YzhkOWUxYWVhNi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0MTk3MTQ5MS9vcmlnaW5hbF84NDJiMzU0ZTljMzI0NjlmMjlkNzM1YzhkOWUxYWVhNi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.5627
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

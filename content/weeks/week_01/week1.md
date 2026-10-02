@@ -10,8 +10,7 @@ title: Week 1
 
 ::: {.day title="MONDAY" open="true"}
 
-### ANNOUNCEMENTS:
-
+### Announcements
 ::: {.announcement type="reminder"}
 This is what an announcement looks like! Look at this at the beginning of class for reminders.
 :::
@@ -20,15 +19,13 @@ This is what an announcement looks like! Look at this at the beginning of class 
 - ( This is where I will list what materials you will need for the day. )
 :::
 
-### AGENDA:
-
+### Agenda
 - Introductions ( Who are you? Who am I? Why are we here? )
 - Overview of the Course ( What the class is, and what it is not )
 - Looking at the Semester Plan
 - Artist Showcase
 
-### TOPICS:
-
+### Topics
 <section class="slides_section">
 <iframe src="content/slides/week_1_day1/index.html" width="100%" height="500px"></iframe>
 </section>
@@ -39,8 +36,7 @@ This is what an announcement looks like! Look at this at the beginning of class 
 
 ::: {.day title="WEDNESDAY" open="true"}
 
-### ANNOUNCEMENTS
-
+### Announcements
 ::: {.announcement type="reminder"}
 Please let me know if you do not have a laptop. You will need to have it in class starting on Week 3. A working computer is a requirement for the course. Email me: juaned@uic.edu
 :::
@@ -49,8 +45,7 @@ Please let me know if you do not have a laptop. You will need to have it in clas
 - None
 :::
 
-### AGENDA
-
+### Agenda
 - Check in. Update to the Website. Reading. Laptops -> ([Chrome Book](https://support.arduino.cc/hc/en-us/articles/360014779899-Boards-compatible-with-the-Cloud-Editor?_gl=1%2A1g30rtm%2A_up%2AMQ..%2A_ga%2AMTU0NzY5MTM1My4xNzg3NzY4NTQ5%2A_ga_NEXN8H46L5%2AczE3ODc3Njg1NDgkbzEkZzAkdDE3ODc3Njg1NDgkajYwJGwwJGgxMjkzOTMzMDQ2#chromebook))
 - What is New Media Art? The Terminology Issue.
 - A Brief History:
@@ -71,7 +66,6 @@ Please let me know if you do not have a laptop. You will need to have it in clas
 :::
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 Next week we will look into more niche topics. Glitch, Hacking, Machinima, AI and more.

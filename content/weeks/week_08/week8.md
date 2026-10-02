@@ -8,8 +8,7 @@ title: Week 8
 
 ::: {.day title="MONDAY" open="true"}
 
-### AGENDA
-
+### Agenda
 - Reviewing readanalogserial, digital output
 - Button sketch (if statements)
 - The Interface
@@ -142,8 +141,7 @@ Custom Interfaces:
 - Hoola Hoop Controller
 [Hula Hoop Controller](https://makeymakey.com/pages/hula-hoop-controller)
 
-### Monday Topics:
-
+### Monday Topics
 ::: {.topics}
 
 ::: {.card type="external" title="The Interface" thumb="https://liveinterfacesjournal.ulusofona.pt/wp-content/uploads/2026/01/MEM_fig1_ONCONTACT-1.jpg" href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2" tag="Topic"}
@@ -221,7 +219,6 @@ Take a look at this TED Talk by Holly Cohen:
 :::
 
 ### Supplementary Material
-
 ITP NYU course explaining digital output with Arduino Uno. Serves as a good review of what we have learned so far.
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/374067285?h=c6390e412a" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
@@ -229,7 +226,6 @@ ITP NYU course explaining digital output with Arduino Uno. Serves as a good revi
 One button games: <a href="https://c1ic.mx/menu.html">link</a>
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll continue with analog output and PWM.

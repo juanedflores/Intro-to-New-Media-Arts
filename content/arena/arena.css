@@ -1,0 +1,463 @@
+/* Are.na Studios: every student's channels as stacks of prints on a
+   table. The table fills the viewport under the site navbar - nothing on
+   it scrolls; layouts are sized to fit (see fitGrid in arena.js). */
+
+:root {
+  --table: #2c3f89;
+  --table-deep: #22336f;
+  --print: #fbfaf6;
+  --ink: #1f1f24;
+  --muted: #6b6a66;
+  --tape: rgb(243, 201, 91);
+  --red: #c84b3c;
+  --bar-h: 52px;
+}
+
+body {
+  background: var(--table);
+}
+
+/* the site's navbar keeps its uk-margin bottom gap; close it up here */
+body > div > nav.uk-navbar-container {
+  margin-bottom: 0 !important;
+}
+
+.arena {
+  position: relative;
+  height: calc(100dvh - var(--nav-h, 80px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.07), transparent 70%),
+    var(--table);
+  color: #fff;
+  font-family: "Inter-VariableFont", system-ui, sans-serif;
+}
+
+/* ---------- top bar: breadcrumb, filters, group link ---------- */
+
+.arena-bar {
+  flex: 0 0 var(--bar-h);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  background: var(--table-deep);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-family: "Inter-Black", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.crumbs button {
+  padding: 0;
+  border: none;
+  background: none !important;
+  color: rgba(255, 255, 255, 0.65);
+  font: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.crumbs button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.crumbs .sep {
+  color: rgba(255, 255, 255, 0.35);
+}
+.crumbs .here {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--tape);
+}
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.filters button {
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.filters button:hover {
+  border-color: #fff;
+}
+.filters button[aria-pressed="true"] {
+  border-color: var(--tape);
+  background: var(--tape);
+  color: var(--ink);
+}
+.group-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- the table: a grid sized by JS to fit every stack ---------- */
+
+.table {
+  position: relative;
+  flex: 1;
+  display: grid;
+  /* minmax(0, …) so tall images can't stretch a row past its share */
+  grid-template-columns: repeat(var(--cols, 5), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows, 4), minmax(0, 1fr));
+  gap: var(--gap, 12px);
+  padding: var(--gap, 12px) 20px 20px;
+  min-height: 0;
+}
+
+/* a pile of prints with a tape label - used for students and channels */
+.stack {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  container-type: size;
+}
+.stack:focus-visible {
+  outline: 3px solid var(--tape);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* a square pile that fits the cell, with room for the label below */
+.pile {
+  position: relative;
+  flex: none;
+  width: min(80cqw, calc(88cqh - 44px), 440px);
+  aspect-ratio: 1;
+}
+.pile .print {
+  position: absolute;
+  inset: 0;
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg));
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.stack:hover .pile .print,
+.stack:focus-visible .pile .print {
+  transform: translate(calc(var(--x, 0) * 2.6), calc(var(--y, 0) * 1.6 - 4px))
+    rotate(calc(var(--r, 0deg) * 2.2));
+}
+
+/* a single print: white border, photo inside */
+.print {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  background: var(--print);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 8px 18px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.print img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #e9e6dd;
+}
+.print.note {
+  align-items: flex-start;
+  color: var(--ink);
+  font-size: clamp(9px, 7cqmin, 14px);
+  line-height: 1.35;
+}
+.print.empty {
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  background: transparent;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(10px, 8cqmin, 15px);
+  font-weight: 600;
+  text-align: center;
+}
+.print.folder {
+  flex-direction: column;
+  gap: 4px;
+  background: var(--tape);
+  color: var(--ink);
+  font-weight: 800;
+  text-align: center;
+}
+.print.folder small {
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* the tape label under each stack */
+.label {
+  position: relative;
+  z-index: 1;
+  max-width: 96%;
+  padding: 3px 10px 4px;
+  transform: rotate(-1.5deg);
+  background: var(--tape);
+  color: var(--ink);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  white-space: nowrap;
+}
+.label strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Inter-Black", sans-serif;
+  font-size: clamp(11px, 7cqmin, 18px);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.label small {
+  display: block;
+  /* hide the counts when stacks get small (phones) */
+  font-size: clamp(9px, 5cqmin, 12px);
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+@container (max-height: 170px) {
+  .pile {
+    width: min(84cqw, calc(100cqh - 26px));
+  }
+  .label small {
+    display: none;
+  }
+}
+
+/* ---------- a channel's blocks, dealt out flat ---------- */
+
+.table.dealt .print {
+  position: relative;
+  width: 94%;
+  height: 94%;
+  place-self: center;
+  min-height: 0;
+  padding: 4%;
+  border: none;
+  cursor: zoom-in;
+  container-type: size;
+  transform: rotate(var(--r, 0deg));
+  transition: transform 0.25s;
+}
+.table.dealt .print:hover,
+.table.dealt .print:focus-visible {
+  z-index: 2;
+  transform: rotate(0deg) scale(1.06);
+}
+.table.dealt .print:focus-visible {
+  outline: 3px solid var(--tape);
+}
+.print .kind {
+  position: absolute;
+  left: 6%;
+  bottom: 6%;
+  padding: 1px 6px;
+  background: rgba(20, 18, 16, 0.75);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* deal-in animation */
+@media (prefers-reduced-motion: no-preference) {
+  .table > * {
+    animation: deal 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: calc(var(--i, 0) * 25ms);
+  }
+}
+@keyframes deal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotate(var(--from-r, 6deg)) scale(0.92);
+  }
+}
+
+.table .message {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  place-self: center;
+  max-width: 420px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+/* ---------- viewer for one block ---------- */
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 20, 45, 0.88);
+}
+.viewer[hidden] {
+  display: none;
+}
+.viewer-card {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  max-width: min(1100px, 100%);
+  max-height: 100%;
+  padding: 18px;
+  background: var(--print);
+  color: var(--ink);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.viewer-media {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.viewer-media img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 84px);
+  object-fit: contain;
+}
+.viewer-media .note-full {
+  max-width: 60ch;
+  max-height: calc(100dvh - 84px);
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+.viewer-text {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+  padding-top: 28px;
+}
+.viewer-text h2 {
+  /* undo the site's blue h2 bar */
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--ink);
+  text-transform: none;
+  font-family: "Inter-Black", sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.viewer-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.viewer-desc {
+  margin: 0;
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.viewer-desc:empty {
+  display: none;
+}
+.viewer-link {
+  margin-top: auto;
+  color: var(--table) !important;
+  font-weight: 700;
+}
+.viewer-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 720px) {
+  :root {
+    --bar-h: auto;
+  }
+  .arena-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 16px;
+  }
+  .filters {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto;
+  }
+  .filters button {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+  .group-link {
+    margin-left: auto;
+  }
+  .table {
+    padding: var(--gap, 8px) 16px 16px;
+  }
+  .label {
+    padding: 2px 6px 3px;
+  }
+  .viewer {
+    padding: 12px;
+  }
+  .viewer-card {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+  .viewer-media img {
+    max-height: 55dvh;
+  }
+  .viewer-text {
+    flex: 0 1 auto;
+    padding-top: 0;
+  }
+}

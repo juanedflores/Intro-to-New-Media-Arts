@@ -103,7 +103,7 @@ h2 {
 #right-col {
   background-color: white;
   padding: 0;
-  border: 20px solid #2c3f89;
+  border: 0px solid #2c3f89;
 }
 
 #right-col iframe,
@@ -208,6 +208,163 @@ a {
   font-family: "AlegreyaSans-Black";
 }
 
+/* ---------- callouts (week pages, assignments) ----------
+   Built by pandoc/week_shortcodes.lua. Same family as the topic cards:
+   white, rounded, soft shadow, with the callout's color as an edge and
+   on its label. */
+
+.callout {
+  position: relative;
+  margin: 16px 0 20px;
+  padding: 16px 20px 16px 22px;
+  background: var(--tint);
+  border-left: 5px solid var(--edge);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(20, 30, 70, 0.06);
+  font-family: "Inter-VariableFont", sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #2a2a2a;
+}
+.callout-label {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--edge);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.callout > :last-child {
+  margin-bottom: 0;
+}
+.callout p {
+  margin: 0 0 8px;
+}
+.callout ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: square;
+}
+.callout li::marker {
+  color: var(--edge);
+}
+.callout-reminder {
+  --edge: #c8820a;
+  --tint: #fff8e8;
+}
+.callout-materials,
+.callout-tip,
+.callout-nextweek {
+  --edge: #2c3f89;
+  --tint: #f0f3fa;
+}
+.callout-gallery {
+  --edge: #2f7d4f;
+  --tint: #eef7f1;
+}
+
+/* ---------- topic cards (week pages) ----------
+   Built by pandoc/week_shortcodes.lua. One white card per topic: a 4:3
+   thumbnail with the type tag on it, then the title. The type's color
+   shows as a strip along the top (--accent) and on the tag (--tag-bg). */
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 20px;
+  padding: 10px 20px 10px;
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+  border-top: 5px solid var(--accent);
+  box-shadow:
+    0 1px 2px rgba(20, 30, 70, 0.08),
+    0 4px 14px rgba(20, 30, 70, 0.1);
+  color: #222 !important;
+  text-decoration: none !important;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.topic-card:hover,
+.topic-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow:
+    0 2px 4px rgba(20, 30, 70, 0.1),
+    0 12px 28px rgba(20, 30, 70, 0.16);
+}
+.topic-card:focus-visible {
+  outline: 3px solid #2c3f89;
+  outline-offset: 3px;
+}
+
+.topic-thumb {
+  position: relative;
+  flex: none;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #eef1f7;
+}
+/* pinned to the box so a tall image can't stretch it past 4:3 */
+.topic-thumb img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 !important;
+}
+/* diagrams and wide images: show the whole thing */
+.topic-thumb-contain img {
+  object-fit: contain;
+  padding: 10px;
+  background: #fff;
+}
+
+.topic-tags {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.topic-tag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag-bg);
+  color: #fff;
+  font-family: "Inter-VariableFont", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.topic-card .cardtitle {
+  margin: 0;
+  padding: 12px 14px 14px;
+  font-size: 1.15em;
+  line-height: 1.2;
+  /* keep cards even: at most two lines of title */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .cardtitle {
   font-family: "AlegreyaSans-Black";
 }
@@ -295,8 +452,18 @@ hr {
   text-decoration: none;
 }
 
+/* week nav, three levels: this week white, past weeks (clickable) light
+   grey, upcoming weeks dim and lighter weight */
+.week-nav-list > li:not(.uk-nav-header):not(.uk-active):not(.uk-inactive) > a {
+  color: rgba(255, 255, 255, 0.78);
+}
+.week-nav-list > li:not(.uk-nav-header):not(.uk-active):not(.uk-inactive) > a:hover {
+  color: #fff;
+}
 .uk-inactive > a {
-  color: #363131 !important;
+  color: #77726d !important; /* still readable on #222 */
+  font-family: "Inter-VariableFont", sans-serif;
+  font-weight: 500;
   pointer-events: none;
   width: 100%;
 }
@@ -386,8 +553,17 @@ nav {
 
 .uk-navbar-nav > li > a {
   font-family: "Inter-Black";
-  color: white;
+  color: #3b1d18 !important; /* dark on the salmon bar */
   font-size: 1rem;
+  box-shadow: inset 0 -4px 0 transparent;
+  transition: box-shadow 0.15s;
+}
+.uk-navbar-nav > li > a:hover {
+  box-shadow: inset 0 -4px 0 rgba(59, 29, 24, 0.35);
+}
+/* the page you're on: a solid bar along the bottom */
+.uk-navbar-nav > li.uk-active > a {
+  box-shadow: inset 0 -4px 0 #3b1d18;
 }
 
 .uk-logo {
@@ -557,9 +733,12 @@ ul {
 [id^="agenda"] > ul > li {
   margin-left: 20px;
   font-family: "Inter-VariableFont";
-  color: rgb(56, 79, 172); /* bullet color */
-  font-weight: bold;
+  color: #222; /* plain text: these aren't links */
+  font-weight: 500;
   font-size: 18px;
+}
+[id^="agenda"] > ul > li::marker {
+  color: rgb(56, 79, 172);
 }
 
 #ListBody > li > div > div {
@@ -575,6 +754,69 @@ ul {
 #ListBody > li > div > div > img {
   height: 100%;
   margin: auto;
+}
+
+/* ---------- Arduino page (content/arduino_sketches.html) ----------
+   Without #right-col's old blue border, close the gap under the navbar,
+   let the white panel fill the window, and give the sketch cards the same
+   look as the week-page topic cards. */
+body:has(#ListBody) > div > nav.uk-navbar-container {
+  margin-bottom: 0 !important;
+}
+#right-col:has(#ListBody) {
+  min-height: calc(100vh - 80px);
+  /* without the border, the list's top margin escaped the panel and
+     showed the page background above it; flow-root keeps it inside */
+  display: flow-root;
+}
+#right-col:has(#ListBody) #ArticleBody {
+  padding: 0 20px 40px;
+}
+#ListBody .entry {
+  margin-left: 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+  border-top: 5px solid #7fcbcd;
+  box-shadow:
+    0 1px 2px rgba(20, 30, 70, 0.08),
+    0 4px 14px rgba(20, 30, 70, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+#ListBody .entry:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 2px 4px rgba(20, 30, 70, 0.1),
+    0 12px 28px rgba(20, 30, 70, 0.16);
+}
+/* the old teal frame is an inline style on the text column */
+#ListBody .entry > div[style] {
+  border: none !important;
+  background: #fff;
+}
+#ListBody .entry .uk-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 28px 32px;
+  background: #fff;
+}
+#ListBody .entry .uk-card-title {
+  margin: 0;
+}
+#ListBody .entry .uk-card-body > p {
+  margin: 6px 0 10px;
+  font-family: "Inter-VariableFont", sans-serif;
+  font-size: 1.05em;
+}
+#ListBody .entry .uk-label {
+  align-self: flex-start;
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
 }
 
 .uk-accordion-title {
@@ -655,7 +897,7 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 
   #right-col {
     margin-left: 0px;
-    border: 12px solid #2c3f89;
+    border: 0px solid #2c3f89;
     padding: 0;
   }
 
@@ -672,8 +914,17 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 }
 
 @media screen and (max-width: 494px) {
+  /* grow with the screen to fill the bar beside the menu button: the text
+     is ~11.4x its font size wide, and the button + padding take ~142px */
   .uk-logo {
-    font-size: 1em;
+    font-size: clamp(15px, calc((100vw - 142px) / 11.4), 1.7em);
+  }
+  /* and let the red block run to the right edge */
+  .uk-navbar-container > .uk-navbar-left {
+    flex: 1;
+  }
+  .uk-navbar-container .uk-logo {
+    flex: 1;
   }
 
   .uk-navbar-nav > li > a {

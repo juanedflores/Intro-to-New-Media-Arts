@@ -8,16 +8,14 @@ title: Week 13
 
 ::: {.day title="MONDAY" open="true"}
 
-### AGENDA
-
+### Agenda
 <!-- TODO: fill in agenda for Final Assignment work -->
 
 :::
 
 ::: {.day title="WEDNESDAY" open="true"}
 
-### AGENDA
-
+### Agenda
 <!-- TODO: fill in agenda for Final Assignment work -->
 
 :::
@@ -25,7 +23,6 @@ title: Week 13
 :::
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll continue working on the Final Assignment.

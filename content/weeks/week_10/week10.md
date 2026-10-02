@@ -11,7 +11,6 @@ title: Week 10
 ::: {.day title="MONDAY" open="true"}
 
 ### Announcements
-
 ::: {.announcement type="reminder"}
 Monday is the last day to work on Midterms! Be ready to present for the critique this Wednesday.
 :::
@@ -20,8 +19,7 @@ Monday is the last day to work on Midterms! Be ready to present for the critique
 - Take out everything you need to work on Midterm.
 :::
 
-### Agenda:
-
+### Agenda
 - Midterm Studio (Last class time day to work on midterm projects)
 
 :::
@@ -29,13 +27,11 @@ Monday is the last day to work on Midterms! Be ready to present for the critique
 ::: {.day title="WEDNESDAY" open="true"}
 
 ### Announcements
-
 ::: {.announcement type="reminder"}
 Remember to post your project documentation (photos, videos) and a description on Blackboard!
 :::
 
-### Agenda:
-
+### Agenda
 - Midterm Critique
 
 :::
@@ -77,7 +73,6 @@ Remember to post your project documentation (photos, videos) and a description o
 <!-- Ex: Beyond being a playful interactive object, the concept behind the design intended to make visible the technical process of lighting. “With so much technology in our lives it is easy to take for granted that even simple things such as turning on a light are made possible by the physical properties of materials”, explains Tim Simpson, co-founder of the design studio. -->
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll move past midterms and into new project work.

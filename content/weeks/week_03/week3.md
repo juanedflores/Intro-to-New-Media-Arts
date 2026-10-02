@@ -8,8 +8,7 @@ title: Week 3
 
 ::: {.day title="WEDNESDAY" open="true"}
 
-### ANNOUNCEMENTS:
-
+### Announcements
 ::: {.announcement type="reminder"}
 Today we are looking at what 3 artists you all chose to link in your Are.na research channels. Please be ready to speak about what attracted you to these artists and why you chose them, how it's relevant to what we have seen in the past two weeks, and anything else that you would like to share.
 
@@ -20,8 +19,7 @@ Today we are looking at what 3 artists you all chose to link in your Are.na rese
 - Computers
 :::
 
-### AGENDA:
-
+### Agenda
 - Are.na check-in
 - Looking at your research and discussion
 - Intro to TinkerCAD
@@ -29,8 +27,7 @@ Today we are looking at what 3 artists you all chose to link in your Are.na rese
 - Paper Circuits
 - TinkerCAD Ohms Law, Parellel and Series
 
-### TOPICS:
-
+### Topics
 ::: {.topics}
 
 ::: {.card type="lesson" title="TinkerCAD and Intro to Electronics" thumb="./content/Blog/intro_to_electronics/images/cover.png" href="./content/Blog/intro_to_electronics/intro_to_electronics.html"}
@@ -53,8 +50,7 @@ Today we are looking at what 3 artists you all chose to link in your Are.na rese
 
 :::
 
-### SUPPLEMENTARY MATERIAL:
-
+### Supplementary Material
 ::: {.topics}
 
 ::: {.card type="video" title="Electronics 1: Fundamentals" thumb="https://img.youtube.com/vi/SGvOmwZvhVk/0.jpg" href="https://www.youtube.com/watch?v=SGvOmwZvhVk"}
@@ -72,8 +68,7 @@ Today we are looking at what 3 artists you all chose to link in your Are.na rese
 
 :::
 
-### NEXT WEEK:
-
+### Next Week
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll continue with circuits and move into soldering. Your soldering kits should arrive next week.

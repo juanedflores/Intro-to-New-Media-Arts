@@ -8,8 +8,7 @@ title: Week 2
 
 ::: {.day title="MONDAY" open="true"}
 
-### ANNOUNCEMENTS:
-
+### Announcements
 ::: {.announcement type="reminder"}
 Please bring your computers to class on Wednesday (Sep 2nd)
 :::
@@ -18,23 +17,20 @@ Please bring your computers to class on Wednesday (Sep 2nd)
 - ( None )
 :::
 
-### AGENDA:
-
+### Agenda
 - Demo: Fan activated by light
 - Circuit Bending
 - Data Bending + (Demo: How to databend a BMP image with an audio editor and text editor)
 - Machinima
 
-### SLIDES:
-
+### Slides
 <section class="slides_section">
 <iframe src="content/slides/week_2_day1/index.html" width="100%" height="500px"></iframe>
 </section>
 
 [Open Slides in New Tab](./content/slides/week_2_day1/index.html)
 
-### TOPICS:
-
+### Topics
 ::: {.topics}
 
 ::: {.card type="external" title="Machinima" thumb="./content/slides/week_2_day1/images/machinima.jpg" href="https://www.bfi.org.uk/sight-and-sound/features/art-within-machine-how-machinima-turns-camera-videogames" tag="Article"}
@@ -55,8 +51,7 @@ Please bring your computers to class on Wednesday (Sep 2nd)
 
 ::: {.day title="WEDNESDAY" open="true"}
 
-### ANNOUNCEMENTS
-
+### Announcements
 ::: {.announcement type="reminder"}
 Research Assignment is due on Are.na September 9th. You have one week to do it! We will be looking at what you have found together as a class.
 :::
@@ -65,15 +60,13 @@ Research Assignment is due on Are.na September 9th. You have one week to do it! 
 - Computers
 :::
 
-### AGENDA
-
+### Agenda
 - Creation of Are.na Accounts
 - Go Over The Research Assignment. (Due September 9th)
 - AI Talk
 - Look at TinkerCAD. (Make Accounts)
 
-### TOPICS
-
+### Topics
 ::: {.topics}
 
 ::: {.card type="video" title="Portrait of Edmond de Belamy, Obvious" thumb="./content/slides/week_2_day1/images/edmond.webp" href="https://www.youtube.com/watch?v=5iGEb9da-ZE"}
@@ -95,7 +88,6 @@ Research Assignment is due on Are.na September 9th. You have one week to do it! 
 :::
 
 ### Next Week
-
 ::: {.nextweek}
 <!-- placeholder - edit with next week's actual plan -->
 We'll cover electric circuit basics and get an intro to TinkerCAD.

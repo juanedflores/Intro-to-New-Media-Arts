@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drawing Machines Gallery</title>
-    <link rel="shortcut icon" href="../../../../images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../../../../images/favicon.ico"
+      type="image/x-icon"
+    />
     <style>
       @font-face {
         font-family: "Inter";
@@ -22,7 +26,8 @@
         --label: #ffffff;
         --accent: rgb(243, 201, 91);
         --blue: #2c3f89;
-        --shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.18);
+        --shadow:
+          0 1px 2px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.18);
       }
 
       * {
@@ -162,25 +167,27 @@
       .frame {
         display: block;
         width: 100%;
-        padding: 0;
-        border: none;
-        cursor: zoom-in;
         background: var(--frame);
         padding: 14px;
         box-shadow: var(--shadow);
         border-radius: 2px;
       }
       .frame .mat {
+        position: relative;
+        container-type: inline-size; /* lets the labels size to the margin */
         background: var(--mat);
         padding: 7%;
-        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+        box-shadow:
+          inset 0 0 0 1px rgba(0, 0, 0, 0.08),
           inset 0 3px 8px rgba(0, 0, 0, 0.12);
       }
       .frame img {
         display: block;
         width: 100%;
         height: auto;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+        /* drawn inside the image so it can't peek in from the next slide */
+        outline: 1px solid rgba(0, 0, 0, 0.1);
+        outline-offset: -1px;
       }
 
       /* side panel */
@@ -251,13 +258,9 @@
       .object {
         margin: 0;
       }
-      .object button {
-        display: block;
-        width: 100%;
+      .object .slides {
         padding: 6px;
-        border: none;
         background: var(--frame);
-        cursor: zoom-in;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
       }
       .object img {
@@ -266,6 +269,21 @@
         aspect-ratio: 1;
         object-fit: cover;
       }
+      /* cards are text: show the whole card rather than cropping to fill */
+      .object.card img {
+        object-fit: contain;
+        background: var(--mat);
+      }
+      /* under the small frames, the source is a quieter second line */
+      .object .source-sep {
+        display: none;
+      }
+      .object figcaption .source {
+        display: block;
+        margin-top: 2px;
+        font-weight: 600;
+        opacity: 0.8;
+      }
       .object figcaption {
         margin-top: 8px;
         font-size: 11px;
@@ -273,6 +291,140 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--muted);
+      }
+
+      /* ---------- image sliders ----------
+         A slot (drawing, machine or card) can hold more than one image:
+         the student's own photo first, then the still from the class
+         video. Native scroll-snap gives swipe on touch and trackpads; the
+         arrow buttons and dots cover mouse and keyboard. */
+
+      .slides {
+        position: relative;
+      }
+      .track {
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+      }
+      .track::-webkit-scrollbar {
+        display: none;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .track {
+          scroll-behavior: smooth;
+        }
+      }
+      .slide {
+        position: relative;
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: zoom-in;
+      }
+      /* process clip sits exactly over the still and fades in while playing */
+      .slide video.process {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.25s;
+        pointer-events: none;
+      }
+      .slide.playing video.process {
+        opacity: 1;
+      }
+      /* labels in the mat's bottom margin, centered in it, inset to line
+         up with the photo's edges */
+      .mat-labels {
+        position: absolute;
+        left: 7%;
+        right: 7%;
+        bottom: 0;
+        height: 7cqw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        pointer-events: none;
+      }
+      .mat-labels span,
+      .object .source {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .watch {
+        margin-left: auto;
+        transition: opacity 0.2s;
+      }
+      .watch[hidden] {
+        display: none;
+      }
+      .artwork.playing .watch,
+      .no-hover .watch {
+        opacity: 0;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .slide video.process,
+        .watch {
+          display: none;
+        }
+      }
+      .step {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 34px;
+        height: 34px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--ink);
+        font: inherit;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        transition: opacity 0.2s;
+      }
+      .step.prev {
+        left: 8px;
+      }
+      .step.next {
+        right: 8px;
+      }
+      .step:disabled {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: var(--rule);
+        cursor: pointer;
+      }
+      .dot[aria-current="true"] {
+        background: var(--ink);
       }
 
       footer {
@@ -389,9 +541,9 @@
     <div class="topbar">
       <a href="../../../../index.html">ART 150</a>
       <span class="sep">/</span>
-      <a href="../drawing_bot.html">Drawing Robot Assignment</a>
+      <a href="../../../gallery.html">Gallery</a>
       <span class="sep">/</span>
-      <span>Gallery</span>
+      <span>Drawing Machines</span>
     </div>
 
     <header class="intro">
@@ -401,7 +553,6 @@
         Eighteen vibration-motor robots, each built around a found object and
         given a set of written instructions. Each drawing was made live in class
         by following those instructions, in five minutes or less.
-        Click any image to see it larger.
       </p>
     </header>
 
@@ -410,9 +561,11 @@
     <main id="gallery"></main>
 
     <footer>
-      Stills taken from the class recording of the Drawing Bot Showcase,
-      September 28, 2026. Instructions are transcribed from each student's
-      handwritten card.
+      Photos marked &ldquo;Student photo&rdquo; come from each student's own
+      documentation on Are.na. All other images are stills taken from the class
+      recording of the Drawing Bot Showcase, September 28, 2026. Instructions
+      are transcribed from each student's handwritten card. This class is
+      instructed by Juan Flores.
     </footer>
 
     <dialog id="lightbox" aria-label="Image viewer">
@@ -428,10 +581,15 @@
     <script>
       // One entry per machine, in the order they were run in class.
       // Fill in `artist` to credit students; leave "" to hide the line.
+      // `studentPhotos` lists the slots ("drawing", "machine", "card") that
+      // have a photo from the student's own Are.na documentation in
+      // images/student/. They add a second slide alongside the class-video
+      // still (see sources() for which comes first).
       const EXHIBITS = [
         {
           title: "Untitled",
           artist: "",
+          studentPhotos: ["card"],
           steps: [
             "Let robot run for 20 s.",
             "Move the antenna however you see fit.",
@@ -443,6 +601,7 @@
         {
           title: "Untitled",
           artist: "",
+          studentPhotos: ["machine"],
           steps: [
             "Place car/robot on paper.",
             "Turn switch on.",
@@ -464,6 +623,7 @@
         {
           title: "Untitled",
           artist: "",
+          studentPhotos: ["drawing", "card", "machine"],
           steps: [
             "Turn the switch on.",
             "Keep it running for 1 min.",
@@ -496,6 +656,7 @@
         {
           title: "Untitled",
           artist: "",
+          studentPhotos: ["drawing", "card", "machine"],
           steps: [
             "Tilt box at an acute angle.",
             "Set timer for 45 seconds. Spend 15 seconds inserting first color, and let run (from top to bottom).",
@@ -507,6 +668,7 @@
         {
           title: "Untitled",
           artist: "",
+          studentPhotos: ["drawing", "card", "machine"],
           steps: [
             "Turn on switch, let run 30 sec.",
             "Turn off after 30 sec, then relocate.",
@@ -521,6 +683,7 @@
         {
           title: "Untitled",
           artist: "",
+          studentPhotos: ["drawing", "card", "machine"],
           steps: [
             "Place machine on the paper.",
             "Let it run for 20 seconds.",
@@ -543,6 +706,7 @@
         {
           title: "Untitled",
           artist: "",
+          studentPhotos: ["machine"],
           steps: [
             "Take cap off.",
             "Turn on and let run for 30 sec.",
@@ -555,7 +719,10 @@
         {
           title: "Untitled",
           artist: "",
-          steps: ["Place the bot on paper.", "Start the motor and let it draw."],
+          steps: [
+            "Place the bot on paper.",
+            "Start the motor and let it draw.",
+          ],
           note: "→ maybe a push sometimes",
         },
         {
@@ -650,26 +817,88 @@
       const index = document.getElementById("index");
       const images = []; // every zoomable image, in page order, for the lightbox
 
+      const SOURCE_LABEL = { student: "Student photo", video: "Class video" };
+
+      // Image sources for one slot. Drawings lead with the edited class-video
+      // still (straightened and white-balanced, so the frames look
+      // consistent); machines and cards lead with the student's photo.
+      function sources(ex, kind, n) {
+        const video = { src: `images/${kind}_${n}.jpg`, from: "video" };
+        if (kind === "drawing") video.process = `process/process_${n}.mp4`;
+        if (!(ex.studentPhotos || []).includes(kind)) return [video];
+        const student = {
+          src: `images/student/${kind}_${n}.jpg`,
+          from: "student",
+        };
+        return kind === "drawing" ? [video, student] : [student, video];
+      }
+
+      // One slot's markup. `wrap` puts the slides inside extra markup
+      // (the drawing's mat); dots go after the frame so they sit below it.
+      function slot(srcs, { alt, caption, wrap = (x) => x }) {
+        const many = srcs.length > 1;
+        const slides = srcs
+          .map((s) => {
+            images.push({
+              src: s.src,
+              caption: `${caption} · ${SOURCE_LABEL[s.from].toLowerCase()}`,
+            });
+            return `<button class="slide" data-zoom="${images.length - 1}" data-from="${SOURCE_LABEL[s.from]}" aria-label="Enlarge ${alt.toLowerCase()} (${SOURCE_LABEL[s.from].toLowerCase()})">
+                <img src="${s.src}" alt="${alt}, ${SOURCE_LABEL[s.from].toLowerCase()}" loading="lazy">
+                ${s.process ? `<video class="process" src="${s.process}" muted loop playsinline preload="none" aria-hidden="true"></video>` : ""}
+              </button>`;
+          })
+          .join("");
+        const controls = many
+          ? `<button class="step prev" aria-label="Previous image" disabled>&larr;</button>
+             <button class="step next" aria-label="Next image">&rarr;</button>`
+          : "";
+        const body = `<div class="slides"><div class="track">${slides}</div>${controls}</div>`;
+        const dots = many
+          ? `<div class="dots">${srcs
+              .map(
+                (s, k) =>
+                  `<button class="dot" aria-label="Show ${SOURCE_LABEL[s.from].toLowerCase()}" aria-current="${k === 0}"></button>`,
+              )
+              .join("")}</div>`
+          : "";
+        // Labels sit off the photo: the source of the slide showing
+        // ("Class video" / "Student photo"), and the hover hint for clips.
+        const source = many ? SOURCE_LABEL[srcs[0].from] : "";
+        const watch = srcs[0].process
+          ? `<span class="watch">&#9654; Hover to watch it draw</span>`
+          : "";
+        return { body: wrap(body, source, watch), dots, source };
+      }
+
       EXHIBITS.forEach((ex, i) => {
         const n = pad(i + 1);
         const list = (items) => items.map((s) => `<li>${s}</li>`).join("");
 
-        const zoom = (src, caption) => {
-          images.push({ src, caption });
-          return images.length - 1;
-        };
-        const iDrawing = zoom(`images/drawing_${n}.jpg`, `No. ${n}: the drawing`);
-        const iMachine = zoom(`images/machine_${n}.jpg`, `No. ${n}: the machine`);
-        const iCard = zoom(`images/card_${n}.jpg`, `No. ${n}: the original instruction card`);
+        const drawingSrcs = sources(ex, "drawing", n);
+        const drawing = slot(drawingSrcs, {
+          alt: `Drawing ${n}`,
+          caption: `No. ${n}: the drawing`,
+          // on the drawing, labels sit in the mat's bottom margin
+          wrap: (x, source, watch) =>
+            `<div class="frame"><div class="mat">${x}<div class="mat-labels"><span class="source">${source}</span>${watch}</div></div></div>`,
+        });
+        const machine = slot(sources(ex, "machine", n), {
+          alt: `Drawing machine ${n}`,
+          caption: `No. ${n}: the machine`,
+        });
+        const card = slot(sources(ex, "card", n), {
+          alt: `Instruction card ${n}`,
+          caption: `No. ${n}: the original instruction card`,
+        });
 
         const section = document.createElement("section");
         section.className = "exhibit";
         section.id = `no-${n}`;
         section.innerHTML = `
           <div class="artwork">
-            <button class="frame" data-zoom="${iDrawing}" aria-label="Enlarge drawing ${n}">
-              <div class="mat"><img src="images/drawing_${n}.jpg" alt="Drawing ${n}, made by the drawing machine" loading="lazy"></div>
-            </button>
+            ${drawing.body}
+            ${drawing.dots}
           </div>
           <div class="side">
             <div class="label">
@@ -683,16 +912,14 @@
             </div>
             <div class="objects">
               <figure class="object">
-                <button data-zoom="${iMachine}" aria-label="Enlarge machine ${n}">
-                  <img src="images/machine_${n}.jpg" alt="Drawing machine ${n}" loading="lazy">
-                </button>
-                <figcaption>The machine</figcaption>
+                ${machine.body}
+                ${machine.dots}
+                <figcaption>The machine${machine.source ? ` <span class="source-sep">·</span> <span class="source">${machine.source}</span>` : ""}</figcaption>
               </figure>
-              <figure class="object">
-                <button data-zoom="${iCard}" aria-label="Enlarge instruction card ${n}">
-                  <img src="images/card_${n}.jpg" alt="Handwritten instruction card ${n}" loading="lazy">
-                </button>
-                <figcaption>Original card</figcaption>
+              <figure class="object card">
+                ${card.body}
+                ${card.dots}
+                <figcaption>Original card${card.source ? ` <span class="source-sep">·</span> <span class="source">${card.source}</span>` : ""}</figcaption>
               </figure>
             </div>
           </div>`;
@@ -700,9 +927,78 @@
 
         const a = document.createElement("a");
         a.href = `#no-${n}`;
-        a.innerHTML = `<img src="images/drawing_${n}.jpg" alt="" loading="lazy"><span>${n}</span>`;
+        a.innerHTML = `<img src="${drawingSrcs[0].src}" alt="" loading="lazy"><span>${n}</span>`;
         index.appendChild(a);
       });
+
+      // ---- sliders: keep arrows and dots in sync with the scroll position ----
+      document.querySelectorAll(".slides").forEach((slides) => {
+        const track = slides.querySelector(".track");
+        const prev = slides.querySelector(".step.prev");
+        const next = slides.querySelector(".step.next");
+        if (!prev) return; // single image, nothing to wire up
+        // dots live below the frame, so look them up from the whole slot
+        const dots = [
+          ...slides.closest(".artwork, .object").querySelectorAll(".dot"),
+        ];
+        const slot = slides.closest(".artwork, .object");
+        const source = slot.querySelector(".source");
+        const watch = slot.querySelector(".watch");
+        const count = track.children.length;
+        const at = () => Math.round(track.scrollLeft / track.clientWidth);
+        const go = (k) => track.scrollTo({ left: k * track.clientWidth });
+
+        function update() {
+          const k = at();
+          prev.disabled = k <= 0;
+          next.disabled = k >= count - 1;
+          dots.forEach((d, j) => d.setAttribute("aria-current", j === k));
+          const slide = track.children[k];
+          if (source) source.textContent = slide.dataset.from;
+          // the hover hint only applies to the slide that has a clip
+          if (watch) watch.hidden = !slide.querySelector("video.process");
+        }
+        prev.addEventListener("click", () => go(at() - 1));
+        next.addEventListener("click", () => go(at() + 1));
+        dots.forEach((d, j) => d.addEventListener("click", () => go(j)));
+        track.addEventListener("scroll", () => requestAnimationFrame(update), {
+          passive: true,
+        });
+      });
+
+      // ---- process clips: the robot drawing, on hover ----
+      // Each drawing's class-video still has a short clip of the run layered
+      // on top. Mouse: plays while hovering. Touch screens (no hover): plays
+      // while the drawing is mostly on screen.
+      const clips = [...document.querySelectorAll("video.process")];
+      const playClip = (v) => {
+        v.closest(".slide").classList.add("playing");
+        v.closest(".artwork").classList.add("playing");
+        v.play().catch(() => {});
+      };
+      const stopClip = (v) => {
+        v.closest(".slide").classList.remove("playing");
+        v.closest(".artwork").classList.remove("playing");
+        v.pause();
+        v.currentTime = 0;
+      };
+      if (matchMedia("(hover: hover)").matches) {
+        clips.forEach((v) => {
+          const slide = v.closest(".slide");
+          slide.addEventListener("mouseenter", () => playClip(v));
+          slide.addEventListener("mouseleave", () => stopClip(v));
+        });
+      } else if ("IntersectionObserver" in window) {
+        document.body.classList.add("no-hover");
+        const io = new IntersectionObserver(
+          (entries) =>
+            entries.forEach((e) =>
+              e.isIntersecting ? playClip(e.target) : stopClip(e.target),
+            ),
+          { threshold: 0.6 },
+        );
+        clips.forEach((v) => io.observe(v));
+      }
 
       // ---- lightbox ----
       const dlg = document.getElementById("lightbox");

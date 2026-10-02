@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Gallery - ART 150</title>
+    <link rel="stylesheet" href="../css/uikit.min.css" />
+    <script src="../js/uikit.min.js"></script>
+    <script src="../js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="gallery/gallery.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <script src="../js/jquery3.js"></script>
+    <script>
+      function table_hl() {
+        $("table").addClass("uk-table");
+        $("table").addClass("uk-table-striped");
+        $("table").addClass("uk-table-hover");
+        $("table").addClass("uk-table-middle");
+      }
+    </script>
+    <script src="../js/load_pages.js"></script>
+    <script src="../js/styling.js"></script>
+  </head>
+
+  <body onresize="resize_function()">
+    <div>
+      <nav class="uk-navbar-container uk-margin" uk-navbar uk-sticky>
+        <a
+          id="menu_button"
+          class="uk-button uk-button-default"
+          style="border: none; background: rgb(243, 201, 91)"
+          href="../index.html"
+          onclick="toggleMenu(event)"
+        >
+          <span
+            class="menu-btn-icon fas fa-bars fa-2xl"
+            style="color: #4444dd; background: rgb(243, 201, 91)"
+          ></span>
+          <span class="menu-btn-label">ART<br />150</span>
+        </a>
+        <div class="nav-overlay uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="../index.html"
+            >INTRO TO NEW MEDIA ART</a
+          >
+          <ul class="uk-navbar-nav" style="">
+            <li class="" style="">
+              <a href="../index.html">Home / Week Overview</a>
+            </li>
+            <li class=""><a href="arena.html">Are.na Studios</a></li>
+            <!--<li class=""><a href="electronic_component_database.html">Electronics</a></li>-->
+            <li class=""><a href="arduino_sketches.html">Arduino</a></li>
+            <li class="uk-active"><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div
+          style="background: #222222; width: 275px"
+          id="offcanvas-usage"
+          uk-offcanvas="mode: push"
+        >
+          <button
+            style="padding: 20px"
+            class="uk-offcanvas-close"
+            type="button"
+            uk-close
+          ></button>
+          <div class="bar-wrap" style="padding-top: 50px">
+            <li class="uk-active" style="list-style-type: none">
+              <a style="padding: 0" class="uk-button" href="../index.html"
+                >Home / Week Overview</a
+              >
+            </li>
+            <li style="list-style-type: none">
+              <a style="padding: 0" class="uk-button" href="gallery.html"
+                >Gallery</a
+              >
+            </li>
+            <!--<li class="" style="list-style-type: none"><a style="padding: 0" class="uk-button" href="electronic_component_database.html">Electronics</a></li>-->
+            <!-- <li class="" style="list-style-type: none"> -->
+            <!--   <a -->
+            <!--     style="padding: 0" -->
+            <!--     class="uk-button" -->
+            <!--     href="arduino_sketches.html" -->
+            <!--     >Arduino</a -->
+            <!--   > -->
+            <!-- </li> -->
+            <div id="small-menu" style="padding-top: 20px">
+              <hr />
+              <li>
+                <a
+                  class="uk-button uk-button-default"
+                  onclick="load_syllabus()"
+                  href="#"
+                  >Syllabus</a
+                >
+              </li>
+              <!-- <li></li> -->
+              <!-- <a -->
+              <!--   class="uk-button uk-button-default" -->
+              <!--   onclick="load_resources()" -->
+              <!--   href="#" -->
+              <!--   >Useful Resources</a -->
+              <!-- > -->
+            </div>
+            <hr />
+          </div>
+        </div>
+      </nav>
+    </div>
+    <main class="galleries">
+      <header class="galleries-intro">
+        <p class="kicker">Intro to New Media Art · Fall 2026</p>
+        <h1>Gallery</h1>
+        <p>
+          Finished work from each of the semester's projects, shown alongside
+          the instructions, sketches and process behind it.
+        </p>
+      </header>
+
+      <div class="wall">
+        <a class="exhibit" href="Assignments/Drawing_Bot/gallery/index.html">
+          <div class="frame">
+            <div class="mat mosaic">
+              <img src="Assignments/Drawing_Bot/gallery/images/drawing_07.jpg" alt="" loading="lazy" />
+              <img src="Assignments/Drawing_Bot/gallery/images/drawing_08.jpg" alt="" loading="lazy" />
+              <img src="Assignments/Drawing_Bot/gallery/images/drawing_12.jpg" alt="" loading="lazy" />
+              <img src="Assignments/Drawing_Bot/gallery/images/drawing_18.jpg" alt="" loading="lazy" />
+            </div>
+          </div>
+          <div class="placard">
+            <p class="no">Project 1</p>
+            <h2>Drawing Machines</h2>
+            <p>18 vibration-motor robots and the drawings they made from written instructions.</p>
+            <span class="enter">Enter gallery →</span>
+          </div>
+        </a>
+
+        <div class="exhibit soon" aria-disabled="true">
+          <div class="frame">
+            <div class="mat"><span>Coming after the midterm</span></div>
+          </div>
+          <div class="placard">
+            <p class="no">Midterm</p>
+            <h2>Creative Interfaces</h2>
+            <p>Interfaces that stretch how we talk to computers: for different bodies, for animals and plants, or just for play.</p>
+            <span class="enter">Not open yet</span>
+          </div>
+        </div>
+
+        <div class="exhibit soon" aria-disabled="true">
+          <div class="frame">
+            <div class="mat"><span>Coming at the end of the semester</span></div>
+          </div>
+          <div class="placard">
+            <p class="no">Final</p>
+            <h2>Final Project</h2>
+            <p>Each student's final project for the course.</p>
+            <span class="enter">Not open yet</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
