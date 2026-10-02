@@ -7,5 +7,7 @@
     "directory": "."
   },
   "workers_dev": true,
-  "preview_urls": true
+  "preview_urls": true,
+  // required by `wrangler preview`, which builds non-main branches
+  "previews": {}
 }
