@@ -4,8 +4,9 @@
 
 :root {
   /* syllabus palette, from site.css */
-  --table: var(--blue);
-  --table-deep: var(--blue-dark);
+  /* a studio wall: prints pinned on cream, like the syllabus's cream pages */
+  --table: var(--cream);
+  --table-deep: var(--cream-light);
   --print: #fbfaf6;
   --tape: var(--yellow);
   --bar-h: 52px;
@@ -27,9 +28,9 @@ body > div > nav.uk-navbar-container {
   flex-direction: column;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.07), transparent 70%),
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.35), transparent 70%),
     var(--table);
-  color: #fff;
+  color: var(--ink);
   font-family: var(--font-body);
   font-variant-numeric: lining-nums;
 }
@@ -43,7 +44,7 @@ body > div > nav.uk-navbar-container {
   gap: 16px;
   padding: 0 20px;
   background: var(--table-deep);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 var(--rule);
 }
 .crumbs {
   display: flex;
@@ -61,22 +62,22 @@ body > div > nav.uk-navbar-container {
   padding: 0;
   border: none;
   background: none !important;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--blue);
   font: inherit;
   text-transform: inherit;
   cursor: pointer;
 }
 .crumbs button:hover {
-  color: #fff;
+  color: var(--blue-dark);
   text-decoration: underline;
 }
 .crumbs .sep {
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--muted);
 }
 .crumbs .here {
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--tape);
+  color: var(--red-dark);
 }
 .filters {
   display: flex;
@@ -85,10 +86,10 @@ body > div > nav.uk-navbar-container {
 }
 .filters button {
   padding: 5px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--rule);
   border-radius: 999px;
-  background: transparent;
-  color: #fff;
+  background: var(--paper);
+  color: var(--blue-dark);
   font: inherit;
   font-size: 13px;
   font-weight: 600;
@@ -96,7 +97,7 @@ body > div > nav.uk-navbar-container {
   white-space: nowrap;
 }
 .filters button:hover {
-  border-color: #fff;
+  border-color: var(--blue);
 }
 .filters button[aria-pressed="true"] {
   border-color: var(--tape);
@@ -104,7 +105,7 @@ body > div > nav.uk-navbar-container {
   color: var(--ink);
 }
 .group-link {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--blue) !important;
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
@@ -143,7 +144,7 @@ body > div > nav.uk-navbar-container {
   container-type: size;
 }
 .stack:focus-visible {
-  outline: 3px solid var(--tape);
+  outline: 3px solid var(--blue);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -192,10 +193,10 @@ body > div > nav.uk-navbar-container {
   line-height: 1.35;
 }
 .print.empty {
-  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border: 2px dashed rgba(29, 36, 51, 0.25);
   background: transparent;
   box-shadow: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
   font-size: clamp(10px, 8cqmin, 15px);
   font-weight: 600;
   text-align: center;
@@ -274,7 +275,7 @@ body > div > nav.uk-navbar-container {
   transform: rotate(0deg) scale(1.06);
 }
 .table.dealt .print:focus-visible {
-  outline: 3px solid var(--tape);
+  outline: 3px solid var(--blue);
 }
 .print .kind {
   position: absolute;
@@ -308,7 +309,7 @@ body > div > nav.uk-navbar-container {
   grid-row: 1 / -1;
   place-self: center;
   max-width: 420px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
   text-align: center;
 }
 

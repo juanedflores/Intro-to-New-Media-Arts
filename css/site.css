@@ -404,7 +404,7 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 }
 /* the page you're on, in the phone menu */
 .bar-wrap > li.uk-active > .uk-button {
-  color: var(--red) !important;
+  color: var(--red-dark) !important;
 }
 
 .uk-nav-default > li {
@@ -432,17 +432,18 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 #offcanvas-usage h5,
 #left-col h6,
 #offcanvas-usage h6 {
-  color: var(--red);
+  color: var(--red-dark);
   font-family: var(--font-body);
   font-weight: 800;
   font-size: 0.85rem;
   letter-spacing: 0.06em;
 }
 
-/* section headers ("Intro to Circuits") */
+/* section headers ("Intro to Circuits"). Small text, so the darker red:
+   5.6:1 on the cream panel (the bright red is only 4.1:1). */
 #left-col .uk-nav-header,
 #offcanvas-usage .uk-nav-header {
-  color: var(--red);
+  color: var(--red-dark);
   font-family: var(--font-body);
   font-weight: 800;
   font-size: 0.85rem;
@@ -474,7 +475,8 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 }
 
 /* week links, three levels: this week highlighted in yellow, past weeks
-   (clickable) in ink, upcoming weeks muted and lighter weight */
+   (clickable) in ink, upcoming weeks grey and italic - set apart by style
+   rather than faintness, so they stay readable (5.2:1) */
 .week-nav-list > li:not(.uk-nav-header) > a {
   font-family: var(--font-body);
   font-weight: 700;
@@ -501,7 +503,8 @@ nav:has(.uk-logo:hover) .menu-btn-label {
   font-weight: 800;
 }
 .uk-inactive > a {
-  color: #8c8a86 !important;
+  color: var(--muted) !important;
+  font-style: italic;
   font-weight: 500 !important;
   pointer-events: none;
   width: 100%;
@@ -609,23 +612,53 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 }
 
 /* ---------- days (accordion) ----------
-   Red headings with a red rule, echoing the syllabus's week bars without
-   filling the page with solid red. */
+   A pale red bar with a strong red edge and a turning arrow: echoes the
+   syllabus's red week bars and reads as something you can open and close,
+   without filling the page with solid red. */
 
 .uk-accordion-title {
-  background: none;
-  color: var(--red);
+  background: var(--red-tint);
+  color: var(--red-dark); /* 5.4:1 on the tint */
   font-family: var(--font-body);
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: 0.08em;
-  border-radius: 0;
-  border-bottom: 3px solid var(--red);
-  padding: 8px 2px 6px;
+  border-left: 5px solid var(--red);
+  border-radius: 6px;
+  padding: 10px 16px 10px 16px;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
 }
 .uk-accordion-title:hover {
   color: var(--red-dark);
-  background: none;
+  background: #f7ddd7;
+  box-shadow: 0 1px 4px rgba(176, 50, 42, 0.18);
+}
+.uk-accordion-title:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+/* replace UIkit's small +/- with a chevron: down when open, right when closed */
+.uk-accordion-title::before {
+  background-image: none !important;
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin: 5px 6px 0 0;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.uk-accordion > :not(.uk-open) > .uk-accordion-title::before {
+  transform: rotate(-45deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .uk-accordion-title,
+  .uk-accordion-title::before {
+    transition: none;
+  }
 }
 
 .uk-accordion-content {
@@ -720,9 +753,12 @@ ul.uk-accordion > li {
 .callout li::marker {
   color: var(--edge);
 }
+/* reminders are the one yellow callout, so they stand apart from the
+   reds (days, sections, assignments) and blues (info) */
 .callout-reminder {
-  --edge: var(--red);
-  --tint: var(--red-tint);
+  --edge: var(--yellow);
+  --tint: var(--yellow-tint);
+  --label-fg: var(--ink);
 }
 .callout-materials,
 .callout-tip,
@@ -731,9 +767,8 @@ ul.uk-accordion > li {
   --tint: var(--blue-tint);
 }
 .callout-gallery {
-  --edge: var(--yellow);
-  --tint: var(--yellow-tint);
-  --label-fg: var(--ink);
+  --edge: var(--blue);
+  --tint: var(--blue-tint);
 }
 
 /* Hand-written boxes in older blog/Arduino posts
@@ -756,12 +791,12 @@ blockquote.info {
   --tint: var(--blue-tint);
 }
 blockquote.warning {
-  --edge: var(--red);
-  --tint: var(--red-tint);
-}
-blockquote.success {
   --edge: var(--yellow);
   --tint: var(--yellow-tint);
+}
+blockquote.success {
+  --edge: var(--blue);
+  --tint: var(--blue-tint);
 }
 blockquote.error {
   --edge: var(--red-dark);
@@ -778,7 +813,7 @@ blockquote.error .uk-label {
   font-weight: 800;
   letter-spacing: 0.08em;
 }
-blockquote.success .uk-label {
+blockquote.warning .uk-label {
   color: var(--ink);
 }
 blockquote.info > p,

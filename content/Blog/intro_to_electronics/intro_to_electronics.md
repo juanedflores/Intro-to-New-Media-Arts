@@ -31,7 +31,7 @@ Below is an embed of the TinkerCAD circuit project that I will edit in class. Fe
 The simplest circuit is made of three parts:
 
 - A power supply (The Source)
-[[-]] Something that is being powered (The Load)
+- Something that is being powered (The Load)
 - A path for electrons to travel (The Electrical Conductor)
 
 ### The Source

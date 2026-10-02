@@ -129,7 +129,10 @@
       const TOTAL_WEEKS = 15;
       // ============================================================
       renderWeekNav(CURRENT_WEEK, TOTAL_WEEKS);
-      loadWeek(CURRENT_WEEK);
+      // open the week in the address (index.html#week-4), else this week;
+      // weeks that haven't started yet stay locked
+      var linkedWeek = weekFromHash();
+      loadWeek(linkedWeek && linkedWeek <= CURRENT_WEEK ? linkedWeek : CURRENT_WEEK, true);
     </script>
   </body>
 </html>

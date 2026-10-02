@@ -136,7 +136,7 @@
     if (!chans.length) {
       fitGrid(1, 1);
       table.innerHTML = `<p class="message">${esc(s.name)} has no ${esc(KIND_LABEL[kind] || "")} channel yet.
-        <br><a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--tape)">See their Are.na profile ↗</a></p>`;
+        <br><a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--blue)">See their Are.na profile ↗</a></p>`;
     } else {
       fitGrid(chans.length, 0.95);
       table.innerHTML = chans
@@ -162,7 +162,7 @@
     if (!dealt.length) {
       fitGrid(1, 1);
       table.innerHTML = `<p class="message">This channel is empty for now.
-        <br><a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--tape)">Open it on Are.na ↗</a></p>`;
+        <br><a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--blue)">Open it on Are.na ↗</a></p>`;
     } else {
       fitGrid(dealt.length, 1.15);
       table.innerHTML = dealt

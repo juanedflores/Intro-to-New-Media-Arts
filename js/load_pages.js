@@ -22,7 +22,25 @@ function load_syllabus() {
   }, "1000");
 }
 
-function loadWeek(n) {
+// Each week has its own address (index.html#week-6), so a week can be
+// linked to and the browser's back/forward buttons move between weeks.
+// `fromHistory` is true when the address already changed (back/forward or a
+// pasted link), so we don't push another history entry.
+function weekFromHash() {
+  var m = location.hash.match(/^#week-(\d+)$/);
+  return m ? Number(m[1]) : null;
+}
+
+function loadWeek(n, fromHistory) {
+  if (!fromHistory && weekFromHash() !== n) {
+    history.pushState(null, "", "#week-" + n);
+  }
+  // highlight the week in both copies of the nav (sidebar and phone menu)
+  $(".week-nav-list > li:not(.uk-nav-header)").each(function () {
+    var a = $(this).children("a");
+    if (a.data("week") === n) $(this).addClass("uk-active");
+    else $(this).removeClass("uk-active");
+  });
   var dir = "week_" + String(n).padStart(2, "0");
   $.get(
     "content/weeks/" + dir + "/week" + n + ".html",
@@ -98,9 +116,21 @@ function renderWeekNav(currentWeek, totalWeeks) {
       cls +
       '"><a onclick="loadWeek(' +
       i +
-      ')" href="#">Week ' +
+      ')" data-week="' +
+      i +
+      '" href="#week-' +
+      i +
+      '">Week ' +
       i +
       "</a></li>";
   }
   $(".week-nav-list").html(items);
 }
+
+// back/forward between weeks
+window.addEventListener("popstate", function () {
+  if (typeof CURRENT_WEEK === "undefined") return; // not the week page
+  var n = weekFromHash();
+  // no #week-N (back to the plain address) means this week
+  loadWeek(n && n <= CURRENT_WEEK ? n : CURRENT_WEEK, true);
+});
