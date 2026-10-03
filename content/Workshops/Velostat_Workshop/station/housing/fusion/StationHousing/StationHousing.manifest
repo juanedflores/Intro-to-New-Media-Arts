@@ -1,0 +1,10 @@
+{
+  "autodeskProduct": "Fusion",
+  "type": "script",
+  "author": "ART 150",
+  "description": {
+    "": "Builds the Sensor Grid station housing (power-strip hood for an Arduino Nano 33 IoT on a Nano IO Shield) as a parametric design."
+  },
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}

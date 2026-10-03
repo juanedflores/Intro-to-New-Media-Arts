@@ -47,6 +47,10 @@
   --brand-ink: #1d2433;
   /* translucent paper, for the sticky search/jump bars */
   --paper-glass: rgba(255, 255, 255, 0.96);
+  /* faint warm gray behind pages made of white cards (weeks, Topics,
+     Resources), so the cards stand out from the page */
+  --canvas: #f5f3ef;
+  --canvas-glass: rgba(245, 243, 239, 0.96);
   /* day-header hover */
   --red-hover: #f7ddd7;
   /* every other section of a blog post (js/styling.js) */
@@ -72,9 +76,11 @@
 
   --ink: #e8e4dc;
   --muted: #a5abb7;
-  --rule: #343a46;
+  --rule: #3d4452;
   --paper: #1c2028;
   --paper-glass: rgba(28, 32, 40, 0.96);
+  --canvas: #0f1115; /* well below the cards (#1c2028) so they stand out */
+  --canvas-glass: rgba(15, 17, 21, 0.96);
   --red-hover: #4a2a27;
   --section-alt: #252a34;
 
@@ -580,6 +586,17 @@ nav:has(.uk-logo:hover) .menu-btn-label {
 #right-col > section {
   padding: 20px;
 }
+/* the top bar's uk-margin (copied onto UIkit's sticky placeholder) left a
+   20px strip between the bar and the page; close it */
+body > div > nav.uk-navbar-container,
+body > div > .uk-sticky-placeholder {
+  margin-bottom: 0 !important;
+}
+
+/* pages built from cards sit on the warm gray; the syllabus stays white */
+#right-col:has(> section:is([id^="week-"], #topics, #resources)) {
+  background-color: var(--canvas);
+}
 
 #right-col iframe,
 #right-col embed,
@@ -728,6 +745,30 @@ nav:has(.uk-logo:hover) .menu-btn-label {
   border-radius: var(--radius);
   padding: 20px;
 }
+/* On the week pages each day is one card: the header bar (with its red
+   edge) is its top and a thin border holds the day's content. The content
+   stays white so callouts and topic cards look the same as before.
+   (Accordions on Arduino/blog pages keep the plain style above.) */
+#right-col > section > ul.uk-accordion > li {
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--paper);
+}
+#right-col > section > ul.uk-accordion > li > .uk-accordion-title {
+  border-radius: 0;
+}
+#right-col > section > ul.uk-accordion > li > .uk-accordion-content {
+  margin: 0 !important; /* the lua filter sets an inline bottom margin */
+  border-radius: 0;
+  padding: 8px 24px 24px !important;
+}
+@media screen and (max-width: 640px) {
+  #right-col > section > ul.uk-accordion > li > .uk-accordion-content {
+    padding: 4px 14px 18px !important;
+  }
+}
+
 /* an accordion is a list; blog_style.css bullets every list item */
 ul.uk-accordion > li {
   list-style: none;
@@ -973,8 +1014,10 @@ blockquote.error > p {
   color: var(--ink);
 }
 .topic-card .cardtitle {
-  margin: 0;
-  padding: 12px 14px 14px;
+  /* space below is margin, not padding: the line clamp clips at the padding
+     edge, so bottom padding would show a sliver of the cut-off line */
+  margin: 0 0 14px;
+  padding: 12px 14px 0;
   font-size: 1.2em;
   line-height: 1.2;
   /* keep cards even: at most two lines of title */
@@ -1208,7 +1251,7 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   gap: 10px 16px;
   margin: 16px -20px 0;
   padding: 12px 20px;
-  background: var(--paper-glass);
+  background: var(--canvas-glass);
   border-bottom: 1px solid var(--rule);
 }
 .tp-search {
@@ -1863,6 +1906,165 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   }
 }
 
+/* phones: a compact layout that runs closer to the screen edges. The page,
+   day cards and topic grids each add their own side gutter, so on a narrow
+   screen those are trimmed to keep the content wide. */
+@media screen and (max-width: 640px) {
+  /* a shorter top bar (UIkit's items are 80px tall) */
+  .uk-navbar-nav > li > a,
+  .uk-navbar-item,
+  .uk-navbar-toggle {
+    min-height: 60px;
+  }
+  #menu_button,
+  #video_toggle_button {
+    width: 64px;
+  }
+  #menu_button .fa-bars,
+  #video_toggle_button .fas {
+    font-size: 26px;
+  }
+  .tp-bar,
+  .sy-jump {
+    top: 60px;
+  }
+  #right-col {
+    min-height: calc(100vh - 60px);
+  }
+
+  #right-col > section {
+    padding: 10px;
+  }
+  #right-col > section > h1 {
+    margin: -10px -10px 0;
+    padding: 14px 10px;
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.35em;
+    padding-top: 10px;
+  }
+
+  /* days */
+  #right-col > section > ul.uk-accordion {
+    margin-top: 12px;
+  }
+  #right-col > section > ul.uk-accordion > li + li {
+    margin-top: 12px;
+  }
+  .uk-accordion-title {
+    font-size: 1.05rem;
+    padding: 8px 12px;
+  }
+  #right-col > section > ul.uk-accordion > li > .uk-accordion-content {
+    padding: 2px 10px 14px !important;
+  }
+
+  .callout {
+    margin: 10px 0 14px;
+    padding: 12px 14px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  /* lists: indent with padding (not the desktop's left: 20px nudge) so the
+     bullets sit inside the card and wrapped lines line up with the text */
+  .level3 > ul {
+    padding-left: 18px;
+  }
+  .level3 > ul > li {
+    left: 0;
+  }
+  [id^="agenda"] > ul > li {
+    margin-left: 0;
+    font-size: 17px;
+  }
+
+  /* topic cards: two to a row, full width of the day */
+  .topics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 8px 0;
+  }
+  .topic-card {
+    border-radius: 8px;
+    border-top-width: 4px;
+  }
+  .topic-card .cardtitle {
+    margin-bottom: 10px;
+    padding: 8px 10px 0;
+    font-size: 1rem;
+  }
+  .topic-tags {
+    left: 6px;
+    bottom: 6px;
+  }
+  .topic-tag {
+    padding: 1px 6px;
+    font-size: 10px;
+  }
+
+  /* topics index and resources */
+  .tp-bar,
+  .sy-jump {
+    margin: 10px -10px 0;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .tp-search {
+    padding: 7px 12px;
+    font-size: 1rem;
+  }
+  .tp-unit h2 {
+    margin-top: 18px;
+  }
+
+  /* syllabus */
+  .sy-head {
+    margin-top: 12px;
+    padding: 16px;
+  }
+
+  .slides_section {
+    margin: 12px 0 8px;
+  }
+}
+
+/* desktop: a little more compact than before (not as tight as phones).
+   Less space around the week sections' headings, lists and callouts, and
+   narrower topic cards so a row holds more of them. Text size and the
+   reading width stay the same. */
+@media screen and (min-width: 641px) {
+  #right-col .uk-accordion-content h3 {
+    padding-top: 4px;
+    margin-bottom: 2px;
+  }
+  #right-col .uk-accordion-content .level3 > ul {
+    margin-bottom: 10px;
+  }
+  #right-col > section > ul.uk-accordion > li > .uk-accordion-content {
+    padding: 4px 22px 18px !important;
+  }
+  #right-col .callout {
+    margin: 10px 0 12px;
+    padding: 12px 18px 12px 20px;
+  }
+  #right-col .topics-grid {
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 16px;
+    padding: 6px 0 4px;
+  }
+  /* narrower cards: a touch smaller title, up to three lines */
+  #right-col .topic-card .cardtitle {
+    margin-bottom: 12px;
+    padding: 10px 12px 0;
+    font-size: 1.08em;
+    -webkit-line-clamp: 3;
+  }
+}
+
 /* ---------- light / dark toggle (added to the top bar by js/theme.js) ---------- */
 
 #theme_toggle {
@@ -1894,18 +2096,20 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   gap: 10px;
   margin: 0 0 18px;
   padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* theme colors, so it reads on the cream menu (light) and the dark one */
+  border: 1px solid var(--rule);
   border-radius: 999px;
-  background: transparent;
-  color: var(--brand-cream);
+  background: var(--paper);
+  color: var(--blue-dark);
+  box-shadow: var(--shadow-sm);
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 800;
   cursor: pointer;
 }
 #theme_toggle_menu:hover {
-  border-color: var(--yellow);
-  color: var(--yellow);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 @media screen and (max-width: 640px) {
   #theme_toggle {
@@ -1940,6 +2144,12 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
 /* the ink-colored grade badge would vanish into the dark panel */
 [data-theme="dark"] .sy-weights > div:nth-child(5) dt {
   background: #4a5263;
+}
+
+/* inline code: UIkit's light chip would glare on dark pages */
+[data-theme="dark"] :not(pre) > code {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff9db0;
 }
 
 /* UIkit's own grays (#333 headings, #666 text) are written for light pages.

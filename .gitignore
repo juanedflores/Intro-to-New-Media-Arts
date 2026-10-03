@@ -1,3 +1,11 @@
 .DS_Store
 *.err
 *.txt_old
+
+# browser-test snapshots from Playwright
+.playwright-mcp/
+
+# Wi-Fi password for the pressure stations (template: arduino_secrets.example.h)
+content/Workshops/Velostat_Workshop/station/pressure_station/arduino_secrets.h
+# Fusion script run log
+content/Workshops/Velostat_Workshop/station/housing/fusion/StationHousing/last_run.txt

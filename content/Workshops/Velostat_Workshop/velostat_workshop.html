@@ -279,6 +279,9 @@ Circuit</a></li>
 <li><a href="#part-3-the-velostat-as-a-voltage-divider"
 id="toc-part-3-the-velostat-as-a-voltage-divider">Part 3: The Velostat
 as a Voltage Divider</a></li>
+<li><a href="#part-4-plug-into-the-class-sensor-grid"
+id="toc-part-4-plug-into-the-class-sensor-grid">Part 4: Plug Into the
+Class Sensor Grid</a></li>
 <li><a href="#troubleshooting"
 id="toc-troubleshooting">Troubleshooting</a></li>
 <li><a href="#going-further" id="toc-going-further">Going
@@ -326,6 +329,8 @@ id="toc-additional-resources">Additional Resources</a></li>
         then press!</li>
         <li>Turn the sensor into a <strong>voltage divider</strong> and
         measure it with a multimeter.</li>
+        <li>Finished? Plug your sensor into a <strong>class
+        station</strong> and see it on the projector.</li>
         </ol>
         </section>
         </section>
@@ -573,6 +578,38 @@ id="toc-additional-resources">Additional Resources</a></li>
         will go from V<sub>out</sub> to the Arduino’s
         <strong>A0</strong> pin, and <code>analogRead()</code> will turn
         the voltage into a number from 0 to 1023.</p>
+        </section>
+        <section id="part-4-plug-into-the-class-sensor-grid"
+        class="level2">
+        <h2>Part 4: Plug Into the Class Sensor Grid</h2>
+        <p>Finished early? Bring your sensor to one of the four
+        <strong>class stations</strong>. Each station is an Arduino with
+        five open inputs, and all four show up on the projector, where
+        every sensor gets its own tile. This is the voltage divider from
+        Part 3, except the Arduino reads V<sub>out</sub> instead of the
+        multimeter.</p>
+        <ol type="1">
+        <li><strong>Unclip your sensor</strong> from your own
+        breadboard.</li>
+        <li><strong>Clip one lead to the station’s + rail</strong>
+        (3.3V, red).</li>
+        <li><strong>Clip the other lead to an open labeled row</strong>
+        (A0–A4). That row already has a 10kΩ resistor to – on it, so
+        your sensor completes the voltage divider.</li>
+        <li><strong>Find your tile</strong> on the projector, click its
+        label and type your name.</li>
+        <li><strong>Squeeze!</strong> Your tile fills as you press. When
+        everyone squeezes at once, watch the <strong>Squeeze
+        together</strong> meter.</li>
+        </ol>
+        <p><strong>Don’t</strong> connect anything from the station to
+        your breadboard’s power module. The station Arduinos only take
+        <strong>3.3V</strong>.</p>
+        <p>The stations send their readings over <strong>Wi-Fi</strong>
+        to the teacher’s laptop, so there are no cables to trip over.
+        The projector page is the <a href="station/index.html">Sensor
+        Grid</a> (press <strong>T</strong> on it to try it with the
+        keyboard).</p>
         </section>
         <section id="troubleshooting" class="level2">
         <h2>Troubleshooting</h2>

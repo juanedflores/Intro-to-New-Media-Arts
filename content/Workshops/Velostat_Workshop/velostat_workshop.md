@@ -20,6 +20,7 @@ This workshop builds on the [Breadboard Circuits Workshop](../Breadboard_Circuit
 1. Build the Velostat sensor.
 2. Wire the Velostat sensor, a resistor and an LED together, then press!
 3. Turn the sensor into a **voltage divider** and measure it with a multimeter.
+4. Finished? Plug your sensor into a **class station** and see it on the projector.
 
 ## How Velostat Works
 
@@ -165,6 +166,20 @@ With the **power off**:
 **Try it:** swap the 10kΩ resistor for the 220Ω one. Does the range of readings get bigger or smaller? The fixed resistor should be roughly as big as the Velostat's resistance, so the voltage swings as much as possible.
 
 On Wednesday, instead of the multimeter's red probe, a wire will go from V<sub>out</sub> to the Arduino's **A0** pin, and `analogRead()` will turn the voltage into a number from 0 to 1023.
+
+## Part 4: Plug Into the Class Sensor Grid
+
+Finished early? Bring your sensor to one of the four **class stations**. Each station is an Arduino with five open inputs, and all four show up on the projector, where every sensor gets its own tile. This is the voltage divider from Part 3, except the Arduino reads V<sub>out</sub> instead of the multimeter.
+
+1. **Unclip your sensor** from your own breadboard.
+2. **Clip one lead to the station's + rail** (3.3V, red).
+3. **Clip the other lead to an open labeled row** (A0–A4). That row already has a 10kΩ resistor to – on it, so your sensor completes the voltage divider.
+4. **Find your tile** on the projector, click its label and type your name.
+5. **Squeeze!** Your tile fills as you press. When everyone squeezes at once, watch the **Squeeze together** meter.
+
+**Don't** connect anything from the station to your breadboard's power module. The station Arduinos only take **3.3V**.
+
+The stations send their readings over **Wi-Fi** to the teacher's laptop, so there are no cables to trip over. The projector page is the [Sensor Grid](station/index.html) (press **T** on it to try it with the keyboard).
 
 ## Troubleshooting
 

@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sensor Grid - ART 150</title>
+    <link rel="icon" href="../../../../images/favicon.ico" />
+    <!--
+      Class sensor grid for the DIY Pressure Sensor Workshop.
+      Four Arduino Nano 33 IoT "stations" (station/pressure_station) each read
+      five Velostat sensors and send lines like "S1,412,0,873,15,600" over
+      Wi-Fi and USB. Over Wi-Fi, relay.py on the laptop receives them and
+      serves this page; it connects to the relay's /events stream by itself.
+      Over USB, "Connect station (USB)" reads boards with Web Serial (Chrome
+      or Edge). Test mode (T) fakes the sensors with the keyboard.
+    -->
+    <style>
+      @font-face {
+        font-family: "Alegreya";
+        src: url("../../../../fonts/alegreya/Alegreya-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Bold.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+      }
+
+      :root {
+        --bg: #111318;
+        --tile: #1c2028;
+        --rule: #343a46;
+        --ink: #ece8e0;
+        --muted: #9aa1ae;
+        --yellow: #fbc740;
+        --s1: #e8574a; /* station colors: syllabus red, yellow, blue + violet */
+        --s2: #fbc740;
+        --s3: #4d84de;
+        --s4: #a07ad6;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Alegreya Sans", "Helvetica Neue", Arial, sans-serif;
+        font-variant-numeric: lining-nums tabular-nums;
+        overflow: hidden;
+        transition: background 0.4s;
+      }
+
+      /* ---------- top bar ---------- */
+      header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 14px 22px;
+        border-bottom: 1px solid var(--rule);
+      }
+      h1 {
+        margin: 0;
+        font-family: "Alegreya", Georgia, serif;
+        font-weight: 800;
+        font-size: 30px;
+        color: var(--yellow);
+        white-space: nowrap;
+      }
+      .together {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 160px;
+      }
+      .together span {
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .meter {
+        flex: 1;
+        height: 14px;
+        border-radius: 999px;
+        background: var(--tile);
+        overflow: hidden;
+      }
+      .meter i {
+        display: block;
+        height: 100%;
+        width: 0;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--s1), var(--s2), var(--s3), var(--s4));
+      }
+      button {
+        padding: 8px 14px;
+        border: 1px solid var(--rule);
+        border-radius: 999px;
+        background: var(--tile);
+        color: var(--ink);
+        font: inherit;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      button:hover {
+        border-color: var(--yellow);
+      }
+      button.primary {
+        border-color: var(--yellow);
+        background: var(--yellow);
+        color: #1d2433;
+      }
+      button[aria-pressed="true"] {
+        border-color: var(--yellow);
+        color: var(--yellow);
+      }
+      .hint {
+        padding: 10px 22px;
+        background: #1a1d24;
+        color: var(--muted);
+        font-size: 16px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .hint[hidden] {
+        display: none;
+      }
+      .hint b {
+        color: var(--ink);
+      }
+
+      /* ---------- the grid: one row per station, five tiles each ---------- */
+      main {
+        flex: 1;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 12px;
+        padding: 14px 22px 20px;
+        min-height: 0;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 92px repeat(5, 1fr);
+        gap: 12px;
+        min-height: 0;
+      }
+      .station {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        font-weight: 800;
+      }
+      .station b {
+        font-family: "Alegreya", Georgia, serif;
+        font-size: 22px;
+        color: var(--c);
+      }
+      .station small {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .station.live small {
+        color: #7ed69a;
+      }
+      .tile {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 0;
+        border: 2px solid var(--rule);
+        border-radius: 14px;
+        background: var(--tile);
+        overflow: hidden;
+        user-select: none;
+        touch-action: none;
+        transition:
+          border-color 0.2s,
+          opacity 0.3s;
+      }
+      .tile .fill {
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 0;
+        background: var(--c);
+        opacity: 0.85;
+      }
+      .tile .name {
+        position: relative;
+        max-width: 90%;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-family: "Alegreya", Georgia, serif;
+        font-weight: 800;
+        font-size: clamp(16px, 2.4vw, 34px);
+        line-height: 1.05;
+        text-align: center;
+        overflow-wrap: anywhere;
+        outline: none;
+        cursor: text;
+      }
+      .tile .name:focus {
+        background: rgba(0, 0, 0, 0.45);
+        box-shadow: 0 0 0 2px var(--yellow);
+      }
+      .tile .pin {
+        position: absolute;
+        left: 10px;
+        bottom: 7px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--muted);
+        mix-blend-mode: difference;
+      }
+      .tile.empty {
+        opacity: 0.45;
+        border-style: dashed;
+      }
+      .tile.empty .name {
+        font-family: "Alegreya Sans", sans-serif;
+        font-size: clamp(13px, 1.3vw, 18px);
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      /* everyone squeezing at once */
+      body.party {
+        background: #241d0c;
+      }
+      body.party .tile:not(.empty) {
+        border-color: var(--yellow);
+      }
+
+      /* ---------- setup help ---------- */
+      dialog {
+        max-width: min(820px, 94vw);
+        max-height: 90vh;
+        padding: 26px 30px;
+        border: 1px solid var(--rule);
+        border-radius: 14px;
+        background: #1a1d24;
+        color: var(--ink);
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+      }
+      dialog h2 {
+        margin: 0 0 6px;
+        font-family: "Alegreya", Georgia, serif;
+        color: var(--yellow);
+      }
+      dialog h3 {
+        margin: 18px 0 4px;
+        font-size: 15px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      dialog ol {
+        margin: 6px 0;
+        padding-left: 22px;
+      }
+      dialog .warn {
+        margin: 10px 0;
+        padding: 10px 14px;
+        border-left: 4px solid var(--s1);
+        border-radius: 6px;
+        background: #2b1d1c;
+      }
+      dialog svg {
+        display: block;
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 8px;
+        background: #fff;
+      }
+      dialog kbd {
+        padding: 1px 6px;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sensor Grid</h1>
+      <div class="together" title="Average pressure across every plugged-in sensor">
+        <span>Squeeze together</span>
+        <div class="meter"><i id="together"></i></div>
+      </div>
+      <button id="connect" class="primary" type="button" title="Backup: read a station plugged into this laptop by USB (Chrome or Edge)">Connect station (USB)</button>
+      <button id="test" type="button" aria-pressed="false" title="Fake the sensors with the keyboard (T)">Test mode</button>
+      <button id="recal" type="button" title="Re-learn every sensor's resting and pressed values (R)">Recalibrate</button>
+      <button id="full" type="button" title="Full screen (F)">Full screen</button>
+      <button id="help" type="button" title="Setup instructions (?)">Setup</button>
+    </header>
+    <p class="hint" id="hint"></p>
+    <main id="grid"></main>
+
+    <dialog id="setup">
+      <h2 tabindex="-1" autofocus style="outline: none">Setting up the stations</h2>
+      <p>Four Arduino Nano 33 IoT boards, five sensors each: 20 sensors in all. Every sensor becomes the top half of a voltage divider, and the board reads the voltage in the middle. The boards send their readings over Wi-Fi through the classroom router to this laptop, so there are no cables to the computer.</p>
+
+      <div class="warn"><b>3.3V only.</b> The Nano 33 IoT's pins can't take more than 3.3V. Power the sensors from the board's <b>3.3V</b> pin, never from 5V or the breadboard power module. Take the power module off the station breadboards.</div>
+
+      <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Station wiring: the Nano's 3.3V pin feeds the plus rail and GND feeds the minus rail. Each of five sensors runs from the plus rail to a row wired to A0 through A4, and a 10 kilohm resistor runs from each row to the minus rail." font-family="Helvetica, Arial, sans-serif" font-size="13">
+        <rect x="16" y="26" width="118" height="258" rx="8" fill="#0f7a8c" />
+        <text x="75" y="160" fill="#fff" font-weight="700" text-anchor="middle" transform="rotate(-90 75 160)">Nano 33 IoT</text>
+        <g font-weight="700" fill="#fff" font-size="12" text-anchor="end">
+          <text x="128" y="54">3.3V</text>
+          <text x="128" y="94">A0</text>
+          <text x="128" y="129">A1</text>
+          <text x="128" y="164">A2</text>
+          <text x="128" y="199">A3</text>
+          <text x="128" y="234">A4</text>
+          <text x="128" y="269">GND</text>
+        </g>
+        <g fill="none" stroke-width="3" stroke-linejoin="round">
+          <path d="M134 50 H200 V250" stroke="#c0392b" />
+          <path d="M134 265 H500 V84" stroke="#2c3f89" />
+          <g stroke="#2c3f89">
+            <path d="M134 104 H330 V90" /><path d="M134 139 H330 V125" /><path d="M134 174 H330 V160" /><path d="M134 209 H330 V195" /><path d="M134 244 H330 V230" />
+          </g>
+          <g stroke="#2c3f89">
+            <path d="M200 90 H222 M298 90 H372 l5 -8 l10 16 l10 -16 l10 16 l10 -16 l10 16 l5 -8 H500" />
+            <path d="M200 125 H222 M298 125 H372 l5 -8 l10 16 l10 -16 l10 16 l10 -16 l10 16 l5 -8 H500" />
+            <path d="M200 160 H222 M298 160 H372 l5 -8 l10 16 l10 -16 l10 16 l10 -16 l10 16 l5 -8 H500" />
+            <path d="M200 195 H222 M298 195 H372 l5 -8 l10 16 l10 -16 l10 16 l10 -16 l10 16 l5 -8 H500" />
+            <path d="M200 230 H222 M298 230 H372 l5 -8 l10 16 l10 -16 l10 16 l10 -16 l10 16 l5 -8 H500" />
+          </g>
+        </g>
+        <g fill="#222">
+          <rect x="222" y="80" width="76" height="20" rx="3" /><rect x="222" y="115" width="76" height="20" rx="3" /><rect x="222" y="150" width="76" height="20" rx="3" /><rect x="222" y="185" width="76" height="20" rx="3" /><rect x="222" y="220" width="76" height="20" rx="3" />
+        </g>
+        <g fill="#fff" font-size="11" font-weight="700" text-anchor="middle">
+          <text x="260" y="94">sensor</text><text x="260" y="129">sensor</text><text x="260" y="164">sensor</text><text x="260" y="199">sensor</text><text x="260" y="234">sensor</text>
+        </g>
+        <g fill="#f3c95b" stroke="#2c3f89" stroke-width="2">
+          <circle cx="330" cy="90" r="5" /><circle cx="330" cy="125" r="5" /><circle cx="330" cy="160" r="5" /><circle cx="330" cy="195" r="5" /><circle cx="330" cy="230" r="5" />
+        </g>
+        <text x="200" y="40" fill="#c0392b" font-weight="700" text-anchor="middle">+ rail (3.3V)</text>
+        <text x="500" y="70" fill="#2c3f89" font-weight="700" text-anchor="middle">– rail</text>
+        <text x="412" y="70" fill="#333" text-anchor="middle">10kΩ each</text>
+        <text x="260" y="66" fill="#333" text-anchor="middle">students clip in here</text>
+      </svg>
+
+      <h3>The router (once)</h3>
+      <ol>
+        <li>Plug in the router. It doesn't need the internet. Make sure its <b>2.4 GHz</b> network is on (the Nano can't use 5 GHz) and has a name and a WPA2 password.</li>
+      </ol>
+
+      <h3>Each station (once)</h3>
+      <ol>
+        <li>In the <code>pressure_station</code> folder, put the router's 2.4 GHz name and password in <code>arduino_secrets.h</code>.</li>
+        <li>Open <code>pressure_station.ino</code>, set <code>STATION</code> to <b>1, 2, 3 or 4</b>, upload, and label the board with that number.</li>
+        <li>On the station breadboard: wire the Nano's <b>3.3V</b> pin to the <b>+</b> rail and <b>GND</b> to the <b>–</b> rail.</li>
+        <li>Put five <b>10kΩ</b> resistors on the board, each from its own row to the <b>–</b> rail. Run a jumper from <b>A0, A1, A2, A3, A4</b> to those five rows, and label each row with masking tape.</li>
+        <li>Power the board from a <b>USB power bank or phone charger</b>. Its built-in LED blinks while joining the Wi-Fi and stays on once connected.</li>
+      </ol>
+
+      <h3>In class</h3>
+      <ol>
+        <li>Join the laptop to the router's network.</li>
+        <li>Double-click <code>start_sensor_grid.command</code> in the <code>station</code> folder. A Terminal window opens and this page opens in your browser. The Terminal lists each station as it connects. (The first time, macOS may ask whether Python can accept incoming connections: click <b>Allow</b>.)</li>
+        <li>Each station's label on the left should say <b>Wi-Fi</b>.</li>
+      </ol>
+
+      <h3>Backup: USB</h3>
+      <p>The same boards also send over USB. If the Wi-Fi gives trouble, plug a station into the laptop, open this page in <b>Chrome or Edge</b> and click <b>Connect station (USB)</b>. No re-upload needed.</p>
+
+      <h3>Students</h3>
+      <ol>
+        <li>Clip one sensor lead to the station's <b>+</b> rail and the other to an open labeled row.</li>
+        <li>Find your tile, click its label and type your name. Then squeeze!</li>
+      </ol>
+
+      <h3>Keys</h3>
+      <p><kbd>T</kbd> test mode (hold <kbd>1</kbd>–<kbd>5</kbd>, <kbd>Q</kbd>–<kbd>T</kbd>, <kbd>A</kbd>–<kbd>G</kbd>, <kbd>Z</kbd>–<kbd>B</kbd>, one row per station, or hold a tile with the mouse) · <kbd>R</kbd> recalibrate · <kbd>F</kbd> full screen · <kbd>?</kbd> this help</p>
+      <p style="color: var(--muted)">Each tile learns its own sensor: the lowest reading is "resting" and the highest is "pressed," so a soft sensor and a stiff one both fill their tile. A tile with nothing plugged in reads 0 (the 10kΩ resistor pulls it to ground) and shows as empty.</p>
+      <form method="dialog"><button class="primary">Got it</button></form>
+    </dialog>
+
+    <script>
+      const STATIONS = 4;
+      const SENSORS = 5;
+      const KEYS = ["12345", "qwert", "asdfg", "zxcvb"];
+      const EMPTY_BELOW = 20; // raw reading under this = nothing plugged in
+      const MIN_SPAN = 150; // never stretch less than this, so noise stays small
+      const NAME_KEY = "art150-sensor-names";
+
+      // ---------- per-sensor state and self-calibration ----------
+      function makeSensor() {
+        return { raw: 0, rest: 0, max: 0, active: false, emptyFrames: 99, norm: 0, shown: 0, simPressed: false, simRaw: 220 };
+      }
+      const sensors = [];
+      for (let s = 0; s < STATIONS; s++) {
+        sensors.push([]);
+        for (let i = 0; i < SENSORS; i++) sensors[s].push(makeSensor());
+      }
+
+      function update(sn, raw) {
+        sn.raw = raw;
+        if (raw < EMPTY_BELOW) {
+          if (++sn.emptyFrames > 10) {
+            sn.active = false;
+            sn.norm = 0;
+          }
+          return;
+        }
+        sn.emptyFrames = 0;
+        if (!sn.active) {
+          // a sensor was just plugged in: start learning it from scratch
+          sn.active = true;
+          sn.rest = raw;
+          sn.max = raw;
+        }
+        if (raw < sn.rest) sn.rest = raw;
+        else if (raw - sn.rest < 12) sn.rest += (raw - sn.rest) * 0.05; // follow slow drift at rest
+        if (raw > sn.max) sn.max = raw;
+        const span = Math.max(sn.max - sn.rest, MIN_SPAN);
+        sn.norm = Math.min(1, Math.max(0, (raw - sn.rest - 8) / span));
+      }
+
+      function recalibrate() {
+        sensors.flat().forEach((sn) => {
+          sn.active = false;
+          sn.emptyFrames = 99;
+        });
+      }
+
+      // ---------- names (remembered in this browser) ----------
+      let names = {};
+      try {
+        names = JSON.parse(localStorage.getItem(NAME_KEY) || "{}");
+      } catch (e) {}
+      function saveNames() {
+        try {
+          localStorage.setItem(NAME_KEY, JSON.stringify(names));
+        } catch (e) {}
+      }
+
+      // ---------- build the grid ----------
+      const grid = document.getElementById("grid");
+      const tiles = [];
+      const stationEls = [];
+      for (let s = 0; s < STATIONS; s++) {
+        const row = document.createElement("div");
+        row.className = "row";
+        row.style.setProperty("--c", `var(--s${s + 1})`);
+        const st = document.createElement("div");
+        st.className = "station";
+        st.innerHTML = `<b>Station ${s + 1}</b><small>not connected</small>`;
+        row.appendChild(st);
+        stationEls.push(st);
+        tiles.push([]);
+        for (let i = 0; i < SENSORS; i++) {
+          const key = `${s + 1}-${i}`;
+          const t = document.createElement("div");
+          t.className = "tile empty";
+          t.innerHTML = `<div class="fill"></div><div class="name" contenteditable="true" spellcheck="false"></div><div class="pin">A${i}</div>`;
+          const nameEl = t.querySelector(".name");
+          nameEl.dataset.key = key;
+          nameEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === "Escape") {
+              e.preventDefault();
+              nameEl.blur();
+            }
+          });
+          nameEl.addEventListener("focus", () => {
+            if (!names[key]) nameEl.textContent = "";
+          });
+          nameEl.addEventListener("blur", () => {
+            const v = nameEl.textContent.trim().slice(0, 24);
+            if (v) names[key] = v;
+            else delete names[key];
+            saveNames();
+          });
+          // in test mode, hold a tile to "press" it
+          t.addEventListener("pointerdown", (e) => {
+            if (testMode && e.target !== nameEl) sensors[s][i].simPressed = true;
+          });
+          row.appendChild(t);
+          tiles[s].push({ el: t, fill: t.querySelector(".fill"), name: nameEl, pin: t.querySelector(".pin"), key });
+        }
+        grid.appendChild(row);
+      }
+      window.addEventListener("pointerup", () => sensors.flat().forEach((sn) => (sn.simPressed = false)));
+
+      // ---------- Web Serial: read every connected station ----------
+      const lastSeen = new Array(STATIONS).fill(-Infinity); // never heard from yet
+      const hint = document.getElementById("hint");
+      const hasSerial = "serial" in navigator;
+
+      const lastSource = new Array(STATIONS).fill("");
+      function handleLine(line, source) {
+        const m = /^S([1-4]),(.*)$/.exec(line.trim());
+        if (!m || testMode) return;
+        const s = Number(m[1]) - 1;
+        m[2]
+          .split(",")
+          .slice(0, SENSORS)
+          .forEach((v, i) => {
+            const n = Number(v);
+            if (Number.isFinite(n)) update(sensors[s][i], n);
+          });
+        lastSeen[s] = performance.now();
+        lastSource[s] = source;
+      }
+
+      async function openPort(port) {
+        if (port.readable) return; // already open
+        try {
+          await port.open({ baudRate: 115200 });
+        } catch (e) {
+          console.warn("Could not open port", e);
+          return;
+        }
+        const decoder = new TextDecoderStream();
+        port.readable.pipeTo(decoder.writable).catch(() => {});
+        const reader = decoder.readable.getReader();
+        let buffer = "";
+        try {
+          for (;;) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            buffer += value;
+            const lines = buffer.split("\n");
+            buffer = lines.pop();
+            lines.forEach((l) => handleLine(l, "USB"));
+          }
+        } catch (e) {
+          // unplugged: the station goes "not connected" once its lines stop
+        }
+      }
+
+      async function connectStation() {
+        if (!hasSerial) return;
+        try {
+          const port = await navigator.serial.requestPort();
+          openPort(port);
+        } catch (e) {
+          // the visitor closed the port picker
+        }
+      }
+
+      if (hasSerial) {
+        navigator.serial.getPorts().then((ports) => ports.forEach(openPort));
+        navigator.serial.addEventListener("connect", (e) => openPort(e.target));
+      }
+
+      // ---------- Wi-Fi: lines from relay.py, when it is serving this page ----------
+      let relay = false;
+      let relayLost = false;
+      fetch("/relay-info", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((info) => {
+          if (!info || !info.relay) return;
+          relay = true;
+          document.getElementById("connect").classList.remove("primary");
+          const events = new EventSource("/events");
+          events.onmessage = (e) => handleLine(e.data, "Wi-Fi");
+          events.onopen = () => (relayLost = false);
+          events.onerror = () => (relayLost = true); // EventSource retries by itself
+        })
+        .catch(() => {});
+
+      // ---------- test mode: fake sensors with the keyboard or mouse ----------
+      let testMode = false;
+      const testBtn = document.getElementById("test");
+      function setTestMode(on) {
+        testMode = on;
+        testBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        recalibrate();
+      }
+      const keyIndex = {};
+      KEYS.forEach((row, s) => [...row].forEach((k, i) => (keyIndex[k] = [s, i])));
+      function editing() {
+        return document.activeElement && document.activeElement.isContentEditable;
+      }
+      window.addEventListener("keydown", (e) => {
+        if (editing() || e.metaKey || e.ctrlKey) return;
+        const k = e.key.toLowerCase();
+        if (testMode && keyIndex[k]) {
+          const [s, i] = keyIndex[k];
+          sensors[s][i].simPressed = true;
+          return;
+        }
+        if (k === "t") setTestMode(!testMode);
+        else if (k === "r") recalibrate();
+        else if (k === "f") toggleFull();
+        else if (k === "?" || k === "/") setup.showModal();
+      });
+      window.addEventListener("keyup", (e) => {
+        const k = e.key.toLowerCase();
+        if (keyIndex[k]) sensors[keyIndex[k][0]][keyIndex[k][1]].simPressed = false;
+      });
+      function simulate() {
+        sensors.forEach((row, s) =>
+          row.forEach((sn) => {
+            const target = sn.simPressed ? 920 : 220;
+            sn.simRaw += (target - sn.simRaw) * 0.18 + (Math.random() - 0.5) * 6;
+            update(sn, Math.round(sn.simRaw));
+          }),
+        );
+        lastSeen.fill(performance.now());
+      }
+
+      // ---------- draw ----------
+      const together = document.getElementById("together");
+      function frame() {
+        if (testMode) simulate();
+        const now = performance.now();
+        let sum = 0;
+        let count = 0;
+        for (let s = 0; s < STATIONS; s++) {
+          const live = now - lastSeen[s] < 1500;
+          stationEls[s].classList.toggle("live", live);
+          stationEls[s].querySelector("small").textContent = testMode ? "test mode" : live ? lastSource[s] : "not connected";
+          for (let i = 0; i < SENSORS; i++) {
+            const sn = sensors[s][i];
+            const t = tiles[s][i];
+            const on = live && sn.active;
+            sn.shown += ((on ? sn.norm : 0) - sn.shown) * 0.35;
+            t.el.classList.toggle("empty", !on);
+            t.fill.style.height = (sn.shown * 100).toFixed(1) + "%";
+            t.el.style.boxShadow = sn.shown > 0.05 ? `0 0 ${Math.round(sn.shown * 40)}px var(--c)` : "none";
+            t.pin.textContent = `A${i}` + (on ? ` · ${sn.raw}` : "");
+            // dark text once the colored fill is behind the name
+            t.name.style.color = sn.shown > 0.55 ? "#1d2433" : "";
+            if (document.activeElement !== t.name) {
+              const label = names[t.key] || (on ? `${s + 1}·A${i}` : "plug in a sensor");
+              if (t.name.textContent !== label) t.name.textContent = label;
+            }
+            if (on) {
+              sum += sn.shown;
+              count++;
+            }
+          }
+        }
+        const avg = count ? sum / count : 0;
+        together.style.width = (avg * 100).toFixed(1) + "%";
+        document.body.classList.toggle("party", count >= 3 && avg > 0.7);
+
+        // the hint line under the top bar
+        const anyLive = lastSeen.some((t) => now - t < 1500);
+        if (testMode) hint.hidden = true;
+        else if (relay && relayLost) {
+          hint.innerHTML = "Lost the connection to the relay. Is the Terminal window with <b>relay.py</b> still open?";
+          hint.hidden = false;
+        } else if (relay && !anyLive) {
+          hint.innerHTML = "Wi-Fi relay running. Waiting for stations: each station's LED should stay on (joined the Wi-Fi), and this laptop must be on the same network.";
+          hint.hidden = false;
+        } else if (!relay && !anyLive) {
+          hint.innerHTML =
+            "No stations yet. For Wi-Fi, double-click <b>start_sensor_grid.command</b> on the laptop; it opens the grid connected to the stations. " +
+            (hasSerial ? "For USB, click <b>Connect station (USB)</b>. " : "(USB needs Chrome or Edge.) ") +
+            "Press <b>T</b> for test mode.";
+          hint.hidden = false;
+        } else hint.hidden = true;
+
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+
+      // ---------- buttons ----------
+      const setup = document.getElementById("setup");
+      function toggleFull() {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else document.documentElement.requestFullscreen().catch(() => {});
+      }
+      document.getElementById("connect").addEventListener("click", connectStation);
+      testBtn.addEventListener("click", () => setTestMode(!testMode));
+      document.getElementById("recal").addEventListener("click", recalibrate);
+      document.getElementById("full").addEventListener("click", toggleFull);
+      document.getElementById("help").addEventListener("click", () => setup.showModal());
+      if (!hasSerial) document.getElementById("connect").disabled = true;
+    </script>
+  </body>
+</html>
