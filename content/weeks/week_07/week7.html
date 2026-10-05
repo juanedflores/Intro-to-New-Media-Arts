@@ -1,6 +1,13 @@
 <div id="ArticleBodyMain"><section id="week-7" class="level1">
 <h1>Week 7</h1>
-<section class="slides_section">
+<!-- locked until Wednesday: remove "is-locked" (and the slides-locked div) to unlock -->
+<section class="slides_section is-locked">
+<div class="slides-locked">
+<span data-uk-icon="icon: lock; ratio: 2"></span>
+<p>
+The E-Textiles slides unlock on Wednesday.
+</p>
+</div>
 <iframe src="content/slides/week_7_day1/index.html" width="100%" height="500px">
 </iframe>
 </section>
@@ -26,6 +33,11 @@ you still have last week’s circuits on it.</p>
 <li>Velostat, copper tape, cardstock and multimeters (provided)</li>
 </ul>
 </div>
+<div class="callout callout-tip">
+<span class="callout-label">Tip</span>
+<p>The Arduinos are here! Everyone gets their own Arduino Nano 33 IoT
+today.</p>
+</div>
 </section>
 <section id="agenda" class="level3">
 <h3>Agenda</h3>
@@ -36,6 +48,9 @@ Wednesday</li>
 voltage</li>
 <li>DIY Pressure Sensor Workshop: build a Velostat sensor, light an LED
 with it, then measure it as a voltage divider</li>
+<li>Passing out the Arduino Nano 33 IoTs</li>
+<li>What is an Arduino? A walkthrough of the board and its pins, and how
+to place it on your breadboard</li>
 </ul>
 </section>
 <section id="topics" class="level3">
@@ -56,6 +71,11 @@ with it, then measure it as a voltage divider</li>
 <h3 class="cardtitle">Potentiometers as Voltage Dividers</h3>
 </a>
 
+<a class="topic-card" data-type="lesson" href="./content/Arduino/getting_setup/getting_setup.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/getting_setup/getting_setup.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">The Arduino Nano 33 IoT</h3>
+</a>
+
 <a class="topic-card" data-type="video" href="https://www.youtube.com/watch?v=SLRYX879Py0" style="--accent: #fbc740; --tag-bg: #fbc740; --tag-fg: #1d2433">
 <div class="topic-thumb"><img src="https://class.textile-academy.org/2024/grecia-segovia/images/week12/MATRIZ1.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Youtube Video</span></div></div>
 <h3 class="cardtitle">Velostat Pressure Sensor Video</h3>
@@ -66,64 +86,45 @@ with it, then measure it as a voltage divider</li>
 </div>
 </li>
 
-<li class="uk-open">
-<a class="uk-accordion-title" href="#">WEDNESDAY</a>
-<div class="uk-accordion-content" style="padding-bottom:20px; margin-bottom:20px">
-<section id="announcements-1" class="level3">
-<h3>Announcements</h3>
-<div class="callout callout-reminder">
-<span class="callout-label">Reminder</span>
-<p>Please download and install the Arduino IDE before class.</p>
-</div>
-</section>
-<section id="agenda-1" class="level3">
-<h3>Agenda</h3>
-<ul>
-<li>Getting set up with the Arduino IDE</li>
-<li>Blink and AnalogReadSerial sketch examples</li>
-<li>Reading Monday’s Velostat voltage divider with
-<code>analogRead()</code></li>
-</ul>
-</section>
-<section id="topics-1" class="level3">
-<h3>Topics</h3>
-<div class="topics-grid">
-<a class="topic-card" data-type="lesson" href="./content/Arduino/getting_setup/getting_setup.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/getting_setup/getting_setup.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Topic</span></div></div>
-<h3 class="cardtitle">Getting Setup with Arduino IDE</h3>
-</a>
-
-<a class="topic-card" data-type="lesson" href="./content/Arduino/blink/blink.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/blink/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Topic</span></div></div>
-<h3 class="cardtitle">Examples: Blink</h3>
-</a>
-
-<a class="topic-card" data-type="external" href="https://makeabilitylab.github.io/physcomp/sensors/photoresistors.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="https://content.instructables.com/FOH/F83V/IAMCFJPJ/FOHF83VIAMCFJPJ.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Topic</span></div></div>
-<h3 class="cardtitle">Variable Resistors: Photoresistors</h3>
-</a>
-
-</div>
-</section>
-</div>
-</li>
-
+<!-- ::: {.day title="WEDNESDAY" open="true"} -->
+<!---->
+<!-- ### Announcements -->
+<!-- ::: {.announcement type="reminder"} -->
+<!-- Please download and install the Arduino IDE before class. -->
+<!-- ::: -->
+<!---->
+<!-- ### Agenda -->
+<!-- - Getting set up with the Arduino IDE -->
+<!-- - Blink and AnalogReadSerial sketch examples -->
+<!-- - Reading Monday's Velostat voltage divider with `analogRead()` -->
+<!---->
+<!-- ### Topics -->
+<!-- ::: {.topics} -->
+<!---->
+<!-- ::: {.card type="lesson" title="Getting Setup with Arduino IDE" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Topic"} -->
+<!-- ::: -->
+<!---->
+<!-- ::: {.card type="lesson" title="Examples: Blink" thumb="./content/Arduino/blink/images/cover.jpg" href="./content/Arduino/blink/blink.html" tag="Topic"} -->
+<!-- ::: -->
+<!---->
+<!-- ::: {.card type="external" title="Variable Resistors: Photoresistors" thumb="https://content.instructables.com/FOH/F83V/IAMCFJPJ/FOHF83VIAMCFJPJ.jpg" href="https://makeabilitylab.github.io/physcomp/sensors/photoresistors.html" tag="Topic"} -->
+<!-- ::: -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ### Supplementary Material -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Mr9NlMFNWgw?si=cdDMIXsOmWE98kfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+<!---->
+<!-- <a href="https://class.textile-academy.org/2026/marissa-renteria/assignments/week05/">Marissa Renteria: E-Textiles (Fabricademy)</a> -->
+<!---->
+<!-- ### Next Week -->
+<!-- ::: {.nextweek} -->
+<!-- We'll keep going with Arduino: fading LEDs, variables, for loops and pulse width modulation. On Wednesday we'll introduce the midterm assignment, Creative Interfaces. -->
+<!-- ::: -->
 </ul>
 
-<section id="supplementary-material" class="level3">
-<h3>Supplementary Material</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Mr9NlMFNWgw?si=cdDMIXsOmWE98kfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-<p><a href="https://class.textile-academy.org/2026/marissa-renteria/assignments/week05/">Marissa
-Renteria: E-Textiles (Fabricademy)</a></p>
-</section>
-<section id="next-week" class="level3">
-<h3>Next Week</h3>
-<div class="callout callout-nextweek">
-<span class="callout-label">Looking Ahead</span>
-<p>We’ll keep going with Arduino: fading LEDs, variables, for loops and
-pulse width modulation. On Wednesday we’ll introduce the midterm
-assignment, Creative Interfaces.</p>
-</div>
-</section>
 </section></div>

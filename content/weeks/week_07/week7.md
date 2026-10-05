@@ -4,7 +4,9 @@ title: Week 7
 
 # Week 7
 
-<section class="slides_section">
+<!-- locked until Wednesday: remove "is-locked" (and the slides-locked div) to unlock -->
+<section class="slides_section is-locked">
+<div class="slides-locked"><span uk-icon="icon: lock; ratio: 2"></span><p>The E-Textiles slides unlock on Wednesday.</p></div>
 <iframe src="content/slides/week_7_day1/index.html" width="100%" height="500px"></iframe>
 </section>
 
@@ -24,10 +26,16 @@ We're picking up the DIY pressure sensor workshop that we didn't get to last Wed
 - Velostat, copper tape, cardstock and multimeters (provided)
 :::
 
+::: {.announcement type="tip"}
+The Arduinos are here! Everyone gets their own Arduino Nano 33 IoT today.
+:::
+
 ### Agenda
 - Quick review: potentiometers, photoresistors and buzzers from Wednesday
 - Voltage dividers: turning a changing resistance into a changing voltage
 - DIY Pressure Sensor Workshop: build a Velostat sensor, light an LED with it, then measure it as a voltage divider
+- Passing out the Arduino Nano 33 IoTs
+- What is an Arduino? A walkthrough of the board and its pins, and how to place it on your breadboard
 
 ### Topics
 ::: {.topics}
@@ -41,6 +49,9 @@ We're picking up the DIY pressure sensor workshop that we didn't get to last Wed
 ::: {.card type="external" title="Potentiometers as Voltage Dividers" thumb="https://cdn-shop.adafruit.com/970x728/4133-03.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html#potentiometers-as-voltage-dividers" tag="Electronics"}
 :::
 
+::: {.card type="lesson" title="The Arduino Nano 33 IoT" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Arduino"}
+:::
+
 ::: {.card type="video" title="Velostat Pressure Sensor Video" thumb="https://class.textile-academy.org/2024/grecia-segovia/images/week12/MATRIZ1.jpg" href="https://www.youtube.com/watch?v=SLRYX879Py0" tag="Youtube Video"}
 :::
 
@@ -48,42 +59,42 @@ We're picking up the DIY pressure sensor workshop that we didn't get to last Wed
 
 :::
 
-::: {.day title="WEDNESDAY" open="true"}
-
-### Announcements
-::: {.announcement type="reminder"}
-Please download and install the Arduino IDE before class.
-:::
-
-### Agenda
-- Getting set up with the Arduino IDE
-- Blink and AnalogReadSerial sketch examples
-- Reading Monday's Velostat voltage divider with `analogRead()`
-
-### Topics
-::: {.topics}
-
-::: {.card type="lesson" title="Getting Setup with Arduino IDE" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Topic"}
-:::
-
-::: {.card type="lesson" title="Examples: Blink" thumb="./content/Arduino/blink/images/cover.jpg" href="./content/Arduino/blink/blink.html" tag="Topic"}
-:::
-
-::: {.card type="external" title="Variable Resistors: Photoresistors" thumb="https://content.instructables.com/FOH/F83V/IAMCFJPJ/FOHF83VIAMCFJPJ.jpg" href="https://makeabilitylab.github.io/physcomp/sensors/photoresistors.html" tag="Topic"}
-:::
-
-:::
-
-:::
-
-:::
-
-### Supplementary Material
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Mr9NlMFNWgw?si=cdDMIXsOmWE98kfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<a href="https://class.textile-academy.org/2026/marissa-renteria/assignments/week05/">Marissa Renteria: E-Textiles (Fabricademy)</a>
-
-### Next Week
-::: {.nextweek}
-We'll keep going with Arduino: fading LEDs, variables, for loops and pulse width modulation. On Wednesday we'll introduce the midterm assignment, Creative Interfaces.
-:::
+<!-- ::: {.day title="WEDNESDAY" open="true"} -->
+<!---->
+<!-- ### Announcements -->
+<!-- ::: {.announcement type="reminder"} -->
+<!-- Please download and install the Arduino IDE before class. -->
+<!-- ::: -->
+<!---->
+<!-- ### Agenda -->
+<!-- - Getting set up with the Arduino IDE -->
+<!-- - Blink and AnalogReadSerial sketch examples -->
+<!-- - Reading Monday's Velostat voltage divider with `analogRead()` -->
+<!---->
+<!-- ### Topics -->
+<!-- ::: {.topics} -->
+<!---->
+<!-- ::: {.card type="lesson" title="Getting Setup with Arduino IDE" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Topic"} -->
+<!-- ::: -->
+<!---->
+<!-- ::: {.card type="lesson" title="Examples: Blink" thumb="./content/Arduino/blink/images/cover.jpg" href="./content/Arduino/blink/blink.html" tag="Topic"} -->
+<!-- ::: -->
+<!---->
+<!-- ::: {.card type="external" title="Variable Resistors: Photoresistors" thumb="https://content.instructables.com/FOH/F83V/IAMCFJPJ/FOHF83VIAMCFJPJ.jpg" href="https://makeabilitylab.github.io/physcomp/sensors/photoresistors.html" tag="Topic"} -->
+<!-- ::: -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ### Supplementary Material -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Mr9NlMFNWgw?si=cdDMIXsOmWE98kfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+<!---->
+<!-- <a href="https://class.textile-academy.org/2026/marissa-renteria/assignments/week05/">Marissa Renteria: E-Textiles (Fabricademy)</a> -->
+<!---->
+<!-- ### Next Week -->
+<!-- ::: {.nextweek} -->
+<!-- We'll keep going with Arduino: fading LEDs, variables, for loops and pulse width modulation. On Wednesday we'll introduce the midterm assignment, Creative Interfaces. -->
+<!-- ::: -->

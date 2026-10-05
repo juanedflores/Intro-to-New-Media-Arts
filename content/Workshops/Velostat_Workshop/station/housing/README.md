@@ -12,8 +12,11 @@ Parameters. It also adds a "Reference parts (not printed)" component that
 shows every part in place, and checks that none of them run into the housing
 (the result is saved to `last_run.txt` next to the script).
 
-- **Body:** the hood over the charger and strip. Print it upside down (Place
-  on Face > the top rim) without supports, or upright with supports.
+- **Body:** the hood over the charger and strip. Inside, a cap plate rests on
+  the charger's back (its top) and holds it down, with an opening for the USB
+  plug. Print it upside down (Place on Face > the top rim) without supports:
+  the cap prints as a ~45 mm bridge, which the MK3S+ handles (a little sag
+  underneath doesn't matter). Or print it upright with supports.
 - **Lid:** plain on top (write the station number on it). The IO board
   press-fits upside down into the pocket underneath: crush ribs grip it and
   corner pads keep its solder joints off the plastic. Print it face down.
@@ -74,7 +77,8 @@ the two posts inside the front wall):
    terminals facing up, with the **Nano's analog side (A0–A7, VIN) toward the
    front** of the lid. Plug in the Nano.
 3. Plug the charger into the strip and the power cable into the charger, and
-   lower the hood over it until it sits on the strip.
+   lower the hood over it until it sits on the strip (the cable and its plug
+   pass up through the opening in the charger cap).
 4. With the lid still upside down beside the hood, screw the perfboard's
    A0–A4 and GND wires and the power cable's two wires into the IO board's
    terminals (power: +5V to VIN, GND to GND). Leave a few cm of slack.

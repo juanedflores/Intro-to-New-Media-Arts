@@ -646,6 +646,28 @@ body > div > .uk-sticky-placeholder {
 .slides_section + p {
   margin: 10px 0 24px;
 }
+/* a deck that isn't open yet: a placeholder instead of the slides, no link */
+.slides-locked {
+  display: none;
+}
+.slides_section.is-locked .slides-locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  aspect-ratio: 960 / 700;
+  max-height: min(60vh, 560px);
+  color: var(--muted);
+  text-align: center;
+}
+.slides_section.is-locked .slides-locked p {
+  margin: 0;
+}
+.slides_section.is-locked iframe,
+.slides_section.is-locked + p {
+  display: none;
+}
 
 /* the "Week 6" banner: blue on yellow, like the syllabus's headings */
 #right-col > section > h1 {

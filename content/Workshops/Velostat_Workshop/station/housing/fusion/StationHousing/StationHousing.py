@@ -8,7 +8,8 @@ Same design as ../../station_housing.scad:
   - a hood over a USB charger plugged into a Tripp Lite PS3612 power strip
     (outlets up); the long walls continue down the strip's sides as a skirt,
     the short walls rest on its top
-  - corner guides that center it over the charger
+  - corner guides that center it over the charger, and a cap plate that
+    rests on the charger's back (its top), with an opening for the USB plug
   - the HiLetgo Nano IO Shield press-fits UPSIDE DOWN into a pocket under the
     lid (crush ribs grip it; corner pads keep its solder joints off the lid),
     with the Nano and screw terminals hanging down into the housing. Lid and
@@ -36,8 +37,11 @@ import adsk.fusion
 PARAMS = [
     ("strip_w", "44.5 mm", "Power strip: width of its top (outlet) face"),
     ("skirt_d", "12 mm", "How far the skirt reaches down the strip's sides"),
-    ("charger", "30.5 mm", "Charger: its square face"),
-    ("charger_h", "35 mm", "Charger: body height above the outlet, without prongs"),
+    ("charger", "29.2 mm", "Charger: its square face"),
+    ("charger_h", "33.5 mm", "Charger: body height above the outlet, without prongs"),
+    ("cap_t", "2 mm", "Thickness of the cap plate on the charger's back"),
+    ("usb_w", "18 mm", "Cap opening for the USB-A plug, along the strip (X); the plug's grip must pass through"),
+    ("usb_d", "11 mm", "Cap opening for the USB-A plug, across the strip (Y)"),
     ("board_l", "55 mm", "IO board length"),
     ("board_w", "37 mm", "IO board width"),
     ("board_t", "1.6 mm", "IO board thickness"),
@@ -381,6 +385,17 @@ def build():
     g2 = mirror([g1], YZ, "Charger guides (mirror X)")
     mirror([g1, g2], XZ, "Charger guides (mirror Y)")
 
+    # -------- cap on the charger's back, with an opening for the USB plug.
+    # It reaches into the walls on all four sides (joined to them). Lowering
+    # the hood, the plug (already in the charger) passes up through the opening.
+    step = "charger cap"
+    cap_pl = plane(XY, "charger_h + fit / 2", "Charger cap plane")
+    cz = mm("charger_h") + mm("fit") / 2
+    sk = sketch(cap_pl, "Charger cap")
+    centered_rect(sk, "x", "int_l + 1 mm", "y", "int_w + 1 mm", cz)
+    centered_rect(sk, "x", "usb_w", "y", "usb_d", cz)
+    extrude(ring_profiles(sk), JOIN, "cap_t", POSITIVE, bodies=B, name="Charger cap")
+
     # -------- front panel: holes (one column, patterned to five)
     step = "front holes"
     sk = sketch(XZ, "Lead holes")
@@ -694,7 +709,7 @@ def write_log(result, details):
                             (bb.maxPoint.z - bb.minPoint.z) * 10]
                     f.write(f"  {body.name}: {size[0]:.1f} x {size[1]:.1f} x {size[2]:.1f} mm, "
                             f"volume {body.volume:.1f} cm3, z {bb.minPoint.z * 10:.1f} to {bb.maxPoint.z * 10:.1f}\n")
-                f.write("  (expected: Station body about 52 cm3, Lid about 8.5 cm3 with the default parameters)\n")
+                f.write("  (expected: Station body about 57 cm3, Lid about 8.5 cm3 with the default parameters)\n")
                 f.write("\ntimeline:\n")
                 for item in design.timeline:
                     try:
