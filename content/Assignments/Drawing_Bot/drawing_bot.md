@@ -6,7 +6,7 @@ heading: Drawing Robot Assignment
 # Drawing Robot Assignment
 
 ::: {.announcement type="gallery"}
-**[See the Fall 2026 Drawing Machines Gallery →](gallery/index.html)** All 18 drawings from the showcase, each shown with its instructions and the machine that made it.
+**[See the Fall 2026 Drawing Machines Gallery →](gallery/index.html)** All 19 drawings from the showcase, each shown with its instructions and the machine that made it.
 :::
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/0n3dIO6u9yU?si=hZc9bBy1VWHiNDGo&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
