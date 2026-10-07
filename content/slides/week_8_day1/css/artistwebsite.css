@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'EdelSansLight';
+  src: url('fonts/EdelSansLight.ttf');
+}
+
+@font-face {
+  font-family: 'EdelSansRegular';
+  src: url('fonts/edelsans_regular.otf');
+}
+
+@font-face {
+  font-family: 'EdelSansUltraLight';
+  src: url('fonts/edelsans_ultralight.otf');
+}
+
+@font-face {
+  font-family: 'MenloRegular';
+  src: url('fonts/Menlo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Altone';
+  src: url('fonts/Altone-Regular.ttf');
+}
+
+html,
+body {
+  color: black;
+  font-weight: 600;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.par {
+  font-size: 30px;
+}
+
+.cardtitle {
+  font-family: 'MenloRegular', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: black;
+}
+
+.uk-card-small {
+  border: 1px solid #e5e5e5;
+}
+
+.work > li {
+  max-width: 300px;
+}
+
+.topbar {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.title {
+  font-family: 'Frank Ruhl Libre', serif;
+  padding: 10px;
+}
+
+.uk-button {
+  border: 1px solid rgba(90, 90, 90, 0.6);
+  background: rgb(250, 250, 250);
+  padding: 2px;
+}
+
+.uk-button:hover {
+  background: white;
+}
+
+.uk-hr,
+hr {
+  border-top: 1px solid rgba(140, 140, 140, 0.8);
+}
+
+/*** For Projects Pages ***/
+/* h2 { */
+/*   font-family: 'EdelSansUltraLight' !important; */
+/* } */
+
+/* . { */
+/*   font-family: 'EdelSansUltraLight' !important; */
+/* } */
+
+p {
+  font-family: 'MenloRegular';
+  /*   text-align: center; */
+}

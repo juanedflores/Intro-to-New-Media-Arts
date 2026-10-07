@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -50,15 +50,7 @@
           <a class="uk-navbar-item uk-logo" href="../index.html"
             >INTRO TO NEW MEDIA ART</a
           >
-          <ul class="uk-navbar-nav" style="">
-            <li class="" style="">
-              <a href="../index.html">Home / Week Overview</a>
-            </li>
-            <li class=""><a href="arena.html">Are.na Studios</a></li>
-            <!--<li class=""><a href="electronic_component_database.html">Electronics</a></li>-->
-            <li class=""><a href="arduino_sketches.html">Arduino</a></li>
-            <li class="uk-active"><a href="gallery.html">Gallery</a></li>
-          </ul>
+          <ul class="uk-navbar-nav" data-site-pages></ul>
         </div>
         <div
           style="background: #222222; width: 275px"
@@ -72,42 +64,14 @@
             uk-close
           ></button>
           <div class="bar-wrap" style="padding-top: 50px">
-            <li style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="../index.html">Home / Week Overview</a>
-            </li>
-            <li style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="arena.html">Are.na Studios</a>
-            </li>
-            <li style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="arduino_sketches.html">Arduino</a>
-            </li>
-            <li class="uk-active" style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="gallery.html">Gallery</a>
-            </li>
-            <div id="small-menu" style="padding-top: 20px">
-              <hr />
-              <li>
-                <a class="uk-button uk-button-default" href="../index.html#syllabus"
-                  >Syllabus</a
-                >
-              </li>
-              <li>
-                <a class="uk-button uk-button-default" href="../index.html#topics"
-                  >Topics</a
-                >
-              </li>
-              <!-- <li></li> -->
-              <!-- <a -->
-              <!--   class="uk-button uk-button-default" -->
-              <!--   onclick="load_resources()" -->
-              <!--   href="#" -->
-              <!--   >Useful Resources</a -->
-              <!-- > -->
-            </div>
+            <div data-site-menu></div>
             <hr />
           </div>
         </div>
       </nav>
+      <script>
+        renderSiteNav("../", "gallery");
+      </script>
     </div>
     <main class="galleries">
       <header class="galleries-intro">

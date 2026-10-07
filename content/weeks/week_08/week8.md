@@ -4,6 +4,12 @@ title: Week 8
 
 # Week 8
 
+<section class="slides_section">
+<iframe src="content/slides/week_8_day1/index.html" width="100%" height="500px"></iframe>
+</section>
+
+[Open Slides in New Tab](./content/slides/week_8_day1/index.html)
+
 ::: {.days}
 
 ::: {.day title="MONDAY" open="true"}
@@ -144,7 +150,7 @@ Custom Interfaces:
 ### Monday Topics
 ::: {.topics}
 
-::: {.card type="external" title="The Interface" thumb="https://liveinterfacesjournal.ulusofona.pt/wp-content/uploads/2026/01/MEM_fig1_ONCONTACT-1.jpg" href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2" tag="Topic"}
+::: {.card type="external" title="The Interface" thumb="./content/weeks/week_08/images/oncontact_cover.jpg" href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2" tag="Topic"}
 :::
 
 ::: {.card type="lesson" title="Intro to the Serial Monitor" thumb="./content/Arduino/print_to_serial_monitor/images/cover.png" href="./content/Arduino/print_to_serial_monitor/print_to_serial_monitor.html" tag="Topic"}

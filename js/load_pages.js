@@ -9,6 +9,60 @@ function toggleMenu(event) {
   }
 }
 
+// ---------- Site menu ----------
+// The site's pages and the index.html sections, listed once here. Every page
+// marks where they go and calls renderSiteNav() right after its <nav>:
+//   <ul class="uk-navbar-nav" data-site-pages></ul>   the links in the top bar
+//   <div data-site-menu></div>                         the phone menu's links
+//   <div id="small-menu-sidebar" data-site-sections>   Syllabus/Topics/Resources
+var SITE_PAGES = [
+  { key: "home", href: "index.html", title: "Home / Week Overview" },
+  { key: "arena", href: "content/arena.html", title: "Are.na Studios" },
+  { key: "arduino", href: "content/arduino_sketches.html", title: "Arduino" },
+  { key: "gallery", href: "content/gallery.html", title: "Gallery" },
+];
+var SITE_SECTIONS = [
+  { hash: "syllabus", title: "Syllabus", load: "load_syllabus" },
+  { hash: "topics", title: "Topics", load: "load_topics" },
+  { hash: "resources", title: "Resources", load: "load_resources" },
+];
+
+// root: the way back to the site root from this page ("" or "../");
+// active: the key of this page in SITE_PAGES
+function renderSiteNav(root, active) {
+  function li(page, attrs, linkAttrs) {
+    var cls = page.key === active ? ' class="uk-active"' : "";
+    return (
+      "<li" + cls + attrs + '><a' + linkAttrs + ' href="' + root + page.href + '">' +
+      page.title + "</a></li>"
+    );
+  }
+  // on index.html the sections open in place; elsewhere they link back to it
+  var sections = SITE_SECTIONS.map(function (s) {
+    var link =
+      active === "home"
+        ? 'href="#' + s.hash + '" onclick="' + s.load + '(); return false;"'
+        : 'href="' + root + "index.html#" + s.hash + '"';
+    return '<li><a class="uk-button uk-button-default" ' + link + ">" + s.title + "</a></li>";
+  }).join("");
+
+  document.querySelectorAll("[data-site-pages]").forEach(function (ul) {
+    ul.innerHTML = SITE_PAGES.map(function (p) {
+      return li(p, "", "");
+    }).join("");
+  });
+  document.querySelectorAll("[data-site-sections]").forEach(function (el) {
+    el.innerHTML = "<hr />" + sections;
+  });
+  document.querySelectorAll("[data-site-menu]").forEach(function (el) {
+    el.outerHTML =
+      SITE_PAGES.map(function (p) {
+        return li(p, ' style="list-style-type: none"', ' style="padding: 0" class="uk-button"');
+      }).join("") +
+      '<div id="small-menu" style="padding-top: 20px"><hr />' + sections + "</div>";
+  });
+}
+
 // The syllabus page (content/syllabus/syllabus.html, built from
 // syllabus.md) shown in the main column, at index.html#syllabus.
 function load_syllabus(fromHistory) {

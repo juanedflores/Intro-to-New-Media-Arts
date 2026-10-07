@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text"></a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#sensor-station-housing"
+id="toc-sensor-station-housing">Sensor station housing</a>
+<ul>
+<li><a href="#power" id="toc-power">Power</a></li>
+<li><a href="#wiring-inside-per-station"
+id="toc-wiring-inside-per-station">Wiring inside (per station)</a></li>
+<li><a href="#assembly" id="toc-assembly">Assembly</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="sensor-station-housing" class="level1">
+        <h1>Sensor station housing</h1>
+        <p>A 3D-printed hood that sits on a table’s power strip (Tripp
+        Lite PS3612, outlets up) over a plugged-in USB charger, and
+        holds the station’s Arduino Nano 33 IoT on its HiLetgo Nano IO
+        Shield about 9 cm above the strip’s aluminum, so the Wi-Fi
+        works.</p>
+        <p>The design is a parametric Fusion model, built by a script:
+        <code>fusion/StationHousing/StationHousing.py</code>. Run it in
+        Fusion (Utilities &gt; Scripts and Add-Ins &gt; StationHousing
+        &gt; Run); change sizes in Modify &gt; Change Parameters. It
+        also adds a “Reference parts (not printed)” component that shows
+        every part in place, and checks that none of them run into the
+        housing (the result is saved to <code>last_run.txt</code> next
+        to the script).</p>
+        <ul>
+        <li><strong>Body:</strong> the hood over the charger and strip.
+        Inside, a cap plate rests on the charger’s back (its top) and
+        holds it down, with an opening for the USB plug. Print it upside
+        down (Place on Face &gt; the top rim) without supports: the cap
+        prints as a ~45 mm bridge, which the MK3S+ handles (a little sag
+        underneath doesn’t matter). Or print it upright with
+        supports.</li>
+        <li><strong>Lid:</strong> plain on top (write the station number
+        on it). The IO board press-fits upside down into the pocket
+        underneath: crush ribs grip it and corner pads keep its solder
+        joints off the plastic. Print it face down.</li>
+        </ul>
+        <p>To print: right-click a body &gt; Save As Mesh (STL/3MF),
+        slice in PrusaSlicer (PLA, 0.2 mm, Original Prusa MK3S+). If the
+        press fit is too tight or loose, adjust <code>rib</code> (and
+        <code>press</code>); if the hood doesn’t fit the strip or
+        charger, adjust <code>strip_w</code>, <code>charger</code>,
+        <code>charger_h</code> or <code>fit</code>.</p>
+        <section id="power" class="level2">
+        <h2>Power</h2>
+        <p>The Nano is powered through its <strong>VIN</strong> pin, not
+        its USB port: a straight micro-USB plug won’t fit between the
+        end of the board and the wall.</p>
+        <ul>
+        <li>Use a <strong>USB-A to bare-wire cable</strong> (“USB
+        pigtail”), or cut a cheap USB cable. <strong>Check with a
+        multimeter which wire is +5V</strong> (usually red) and which is
+        GND (usually black) before connecting; tape off any other
+        wires.</li>
+        <li>Screw <strong>+5V into the IO board’s VIN terminal</strong>
+        and <strong>GND into the GND terminal next to it</strong>. On a
+        Nano these are side by side at the end of the analog-pin row
+        (A0–A7), opposite the USB port. VIN takes 5V fine.</li>
+        <li>Strip the cable’s jacket back far enough that only the two
+        thin wires pass the board: wires go up the <strong>3.5 mm gap
+        between the board’s long side and the front wall</strong>.</li>
+        <li>To re-upload a sketch: take the lid off, lift the board off
+        its ledges and plug your laptop into the Nano’s USB port as
+        usual.</li>
+        </ul>
+        </section>
+        <section id="wiring-inside-per-station" class="level2">
+        <h2>Wiring inside (per station)</h2>
+        <p>Students build the whole voltage divider on their own
+        breadboard (Part 3 of the DIY Pressure Sensor workshop) and
+        connect two jumper wires to the station’s alligator clips: their
+        <strong>V<sub>out</sub></strong> to a column’s top clip (A0–A4)
+        and their breadboard’s <strong>GND</strong> to the clip below
+        it.</p>
+        <p>Students’ power modules may still be on <strong>5V</strong>,
+        and the Nano 33 IoT’s pins only take 3.3V, so every input goes
+        through a small protection perfboard (mounted on the two posts
+        inside the front wall):</p>
+        <pre><code> clip lead (A0 hole) ──[ 10kΩ ]──┬──────────► IO board A0 terminal
+                                 │
+                              [ 100kΩ ]        (repeat for A1–A4)
+                                 │
+ clip lead (GND hole) ───────────┴── GND bus ─► IO board GND terminal</code></pre>
+        <ul>
+        <li><strong>10kΩ in series</strong> limits the current if a
+        student’s V<sub>out</sub> is 5V, so the pin can’t be
+        damaged.</li>
+        <li><strong>100kΩ to GND</strong> makes an empty input read 0
+        (“plug in a sensor” on the grid) instead of noise, with almost
+        no effect on the students’ circuits.</li>
+        <li>The five GND leads join one bus on the perfboard, and a
+        single wire goes to the IO board’s GND terminal.</li>
+        </ul>
+        </section>
+        <section id="assembly" class="level2">
+        <h2>Assembly</h2>
+        <ol type="1">
+        <li>Wire the perfboard and screw it to the posts; feed the ten
+        clip leads out through the front holes (A0–A4 on top, GND below)
+        and add the clips.</li>
+        <li>Turn the lid upside down and press the IO board into its
+        pocket, terminals facing up, with the <strong>Nano’s analog side
+        (A0–A7, VIN) toward the front</strong> of the lid. Plug in the
+        Nano.</li>
+        <li>Plug the charger into the strip and the power cable into the
+        charger, and lower the hood over it until it sits on the strip
+        (the cable and its plug pass up through the opening in the
+        charger cap).</li>
+        <li>With the lid still upside down beside the hood, screw the
+        perfboard’s A0–A4 and GND wires and the power cable’s two wires
+        into the IO board’s terminals (power: +5V to VIN, GND to GND).
+        Leave a few cm of slack.</li>
+        <li>Flip the lid over onto the hood. To re-upload a sketch
+        later, lift the lid off, flip it, and plug a laptop into the
+        Nano.</li>
+        </ol>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

@@ -22,7 +22,7 @@ Drawing Bot Showcase day! Remember to document your bot, its instructions, and i
 ::: {.card type="assignment" title="Drawing Machines Gallery" thumb="./content/Assignments/Drawing_Bot/gallery/images/drawing_08.jpg" href="./content/Assignments/Drawing_Bot/gallery/index.html" tag="Gallery"}
 :::
 
-::: {.card type="assignment" title="Drawing Robot Assignment" thumb="https://static-assets.artlogic.net/w_2400,h_2400,c_limit,f_auto,fl_lossy,q_auto/artlogicstorage/mireillemoslerltd/images/view/5e520c76cf49e63393037dd5a9df9863j/mireillemosler-ltd.-sol-lewitt-1928-2007-wall-drawing-1024-2002.jpg" href="./content/Assignments/Drawing_Bot/drawing_bot.html" tag="Assignment"}
+::: {.card type="assignment" title="Drawing Robot Assignment" thumb="./content/weeks/week_04/images/sol-lewitt-wall-drawing_cover.jpg" href="./content/Assignments/Drawing_Bot/drawing_bot.html" tag="Assignment"}
 :::
 
 :::
@@ -57,7 +57,7 @@ We started our E-Textiles / Wearables unit by getting to know the electronics ki
 ::: {.card type="external" title="Breadboards" thumb="./content/weeks/week_06/images/breadboard.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/breadboards.html" tag="Electronics"}
 :::
 
-::: {.card type="external" title="Variable Resistors" thumb="https://cdn-shop.adafruit.com/970x728/4133-03.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html" tag="Electronics"}
+::: {.card type="external" title="Variable Resistors" thumb="./content/weeks/week_06/images/potentiometer_cover.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html" tag="Electronics"}
 :::
 
 :::

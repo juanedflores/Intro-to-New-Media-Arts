@@ -20,7 +20,7 @@ This workshop builds on the [Breadboard Circuits Workshop](../Breadboard_Circuit
 1. Build the Velostat sensor.
 2. Wire the Velostat sensor, a resistor and an LED together, then press!
 3. Turn the sensor into a **voltage divider** and measure it with a multimeter.
-4. Finished? Plug your sensor into a **class station** and see it on the projector.
+4. Wire the sensor to your own Arduino and see it on the projector with everyone else's.
 
 ## How Velostat Works
 
@@ -60,13 +60,7 @@ Provided by the lab:
 
 The sensor is a sandwich: a piece of Velostat between two conductive layers, each with a wire coming off it.
 
-```
-   cardstock
-   copper tape  ──── lead A
-   VELOSTAT
-   copper tape  ──── lead B
-   cardstock
-```
+<img src="images/velostat_sandwich.svg" alt="The Velostat sandwich, from top to bottom: cardstock, copper tape whose tail goes to 3.3V, Velostat, copper tape whose tail goes to A0, cardstock. The copper tails stick out past the cardstock for the alligator clips. Velostat has no polarity, so either tail can go to either pin." style="max-width:700px;width:100%;height:auto" />
 
 1. **Cut two squares of cardstock**, about 2" × 2" (5cm × 5cm).
 2. **Stick a strip of copper tape onto each square.** Leave an extra 1" tail hanging off the edge. That tail is where you'll clip your wire.
@@ -105,6 +99,10 @@ This is the same circuit as the potentiometer and light sensor circuits from the
   <text x="405" y="80" text-anchor="middle">LED</text>
   <text x="405" y="95" text-anchor="middle" fill="#666">(long leg on the left)</text>
 </svg>
+
+<a href="images/led_breadboard.svg" target="_blank" title="Open the drawing full size"><img src="images/led_breadboard.svg" alt="Breadboard drawing of the Velostat LED circuit. The power module at the left end powers the + and – rails with 5V. A red wire from the + rail and a blue wire from the resistor's free row clip onto the Velostat sensor's two copper tails. The 220Ω resistor connects that free row to the row with the LED's long leg, and a black wire connects the row with the LED's short leg to the – rail." style="max-width:720px;width:100%;height:auto" /></a>
+
+*Click the drawing to open it full size.*
 
 With the **power off**:
 
@@ -167,19 +165,247 @@ With the **power off**:
 
 On Wednesday, instead of the multimeter's red probe, a wire will go from V<sub>out</sub> to the Arduino's **A0** pin, and `analogRead()` will turn the voltage into a number from 0 to 1023.
 
-## Part 4: Plug Into the Class Sensor Grid
+## Part 4: Your Own Arduino on the Class Grid
 
-Finished early? Bring your sensor to one of the four **class stations**. Each station is an Arduino with five open inputs, and all four show up on the projector, where every sensor gets its own tile. This is the voltage divider from Part 3, except the Arduino reads V<sub>out</sub> instead of the multimeter.
+Now your own Arduino Nano 33 IoT reads your sensor and sends it over **Wi-Fi** to the projector, where it gets its own tile. Everyone uploads the same sketch, so all you change is the Wi-Fi name and password.
 
-1. **Unclip your sensor** from your own breadboard.
-2. **Clip one lead to the station's + rail** (3.3V, red).
-3. **Clip the other lead to an open labeled row** (A0–A4). That row already has a 10kΩ resistor to – on it, so your sensor completes the voltage divider.
-4. **Find your tile** on the projector, click its label and type your name.
-5. **Squeeze!** Your tile fills as you press. When everyone squeezes at once, watch the **Squeeze together** meter.
+### 1. Wire it
 
-**Don't** connect anything from the station to your breadboard's power module. The station Arduinos only take **3.3V**.
+This is the voltage divider from Part 3, with the Arduino reading V<sub>out</sub>:
 
-The stations send their readings over **Wi-Fi** to the teacher's laptop, so there are no cables to trip over. The projector page is the [Sensor Grid](station/index.html) (press **T** on it to try it with the keyboard).
+**3.3V** → **Velostat** → **A0** → **10kΩ resistor** → **GND**
+
+<a href="images/nano_breadboard.svg" target="_blank" title="Open the drawing full size"><img src="images/nano_breadboard.svg" alt="Breadboard drawing: the Arduino Nano 33 IoT sits across the middle of the breadboard with its USB end to the left. To its right are three separate rows. Row 26, the 3.3V row: a red wire from the Nano's 3.3V pin and a wire to one copper tail of the Velostat sensor. Row 23, the A0 row: a yellow wire from A0, a wire to the sensor's other copper tail, and one leg of a 10kΩ resistor. Row 20, the GND row: the resistor's other leg and a black wire from the Nano's GND pin." style="max-width:860px;width:100%;height:auto" /></a>
+
+*Click the drawing to open it full size.*
+
+The circuit gets **three rows of its own**, one for each point in the voltage divider: a **3.3V row**, an **A0 row** (V<sub>out</sub>) and a **GND row**. Everything in the same row is connected, so each wire only has to reach the right row. (The row numbers in the drawing are just an example: any three empty rows to the right of the Nano work.)
+
+With the **USB cable unplugged**:
+
+1. **Take the power module off** your breadboard. The Arduino powers this circuit, so the + and – rails aren't used.
+2. **Place the Nano across the middle gap** of the breadboard, USB end facing out so the cable reaches. Push it in evenly until the pins are all the way down.
+3. **Pick three empty rows** to the right of the Nano, with a space between each: these are your **GND row**, **A0 row** and **3.3V row**.
+4. **10kΩ resistor: GND row ↔ A0 row.** Put one leg in each.
+5. **Black wire: GND pin → GND row.** The **GND** pin is on the same side as 3.3V and A0, second from the far end (next to VIN). Plug the wire into a free hole in the GND pin's row and run it to the GND row.
+6. **Yellow wire: A0 pin → A0 row.** **A0** is the fourth pin from the USB end.
+7. **Red wire: 3.3V pin → 3.3V row.** **3.3V** is the second pin from the USB end.
+8. **Sensor: A0 row and 3.3V row.** Put a wire in each row and clip one to each copper tail of your sensor. It doesn't matter which tail goes where.
+
+The pin names are printed on the Nano next to each pin, so check them as you go. **Don't** use the 5V or VUSB pin: the Nano 33 IoT's pins only take **3.3V**.
+
+### 2. Install the Wi-Fi library (once)
+
+In the Arduino IDE, open the **Library Manager** (the books icon on the left, or **Tools** > **Manage Libraries...**), search for **WiFiNINA** and click **Install**.
+
+### 3. Upload the sketch
+
+1. Make a new sketch (**File** > **New Sketch**), delete everything in it, and paste in the whole sketch below.
+2. Change `ROUTER_NAME` and `ROUTER_PASSWORD` to the Wi-Fi name and password on the board. Keep the quotes.
+3. Choose **Tools** > **Board** > **Arduino SAMD Boards** > **Arduino Nano 33 IoT**, and your board's **Port**.
+4. Click **Upload**.
+
+The board's built-in LED blinks while it joins the Wi-Fi and stays on once it's connected.
+
+<a href="station/class_sensor/class_sensor.ino" download>Download class_sensor.ino</a>
+
+```arduino
+/*
+  Class Sensor (ART 150, DIY Pressure Sensor Workshop)
+
+  Every student uploads this same sketch to their own Arduino Nano 33 IoT.
+  It reads one Velostat sensor wired as the top half of a voltage divider:
+
+      3.3V -> Velostat sensor -> A0 -> 10k resistor -> GND
+
+  and sends the reading over Wi-Fi to the teacher's laptop, where it shows
+  up as your own tile on the Class Sensor Grid. Pressing the sensor raises
+  the number (0-1023).
+
+  The only lines to change are the Wi-Fi name and password just below.
+
+  You can watch your readings in the Serial Monitor or Serial Plotter
+  (115200 baud) too, even if the Wi-Fi doesn't connect. Lines starting
+  with "#" tell you what the Wi-Fi is doing, including your board's ID.
+
+  The built-in LED blinks while joining the Wi-Fi and stays on once
+  connected.
+
+  How it works: every board has a unique hardware address (its MAC
+  address), so the last six characters of it become this board's ID and
+  nobody has to pick a number. Readings go out as lines like "B3F9A21,412"
+  over UDP. The laptop's relay.py announces itself on the network once a
+  second; the board sends straight to it once it hears that, and to the
+  whole network until then.
+*/
+
+#include <SPI.h>
+#include <WiFiNINA.h>
+#include <WiFiUdp.h>
+
+// ---- change these two lines to the classroom router's 2.4 GHz network ----
+const char WIFI_NAME[] = "ROUTER_NAME";
+const char WIFI_PASSWORD[] = "ROUTER_PASSWORD";
+
+const int SENSOR_PIN = A0;
+const unsigned int UDP_PORT = 9000;     // relay.py listens here
+const unsigned int BEACON_PORT = 9001;  // relay.py announces itself here
+const unsigned long SEND_EVERY = 66;    // ms: about 15 readings a second
+
+// light smoothing so readings don't jitter (0 = none, closer to 1 = smoother)
+const float SMOOTHING = 0.6;
+float smoothed;
+
+char boardId[7];  // e.g. "3F9A21"
+WiFiUDP udp;
+IPAddress broadcastIP;
+IPAddress relayIP;             // learned from the relay's announcements
+unsigned long lastBeacon = 0;  // when we last heard one
+bool relayKnown = false;
+unsigned long lastWifiTry = 0;
+bool wifiReady = false;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  analogReadResolution(10);  // 0-1023, like an Uno
+  smoothed = analogRead(SENSOR_PIN);
+
+  if (WiFi.status() == WL_NO_MODULE) {
+    Serial.println("# wifi: no Wi-Fi module found");
+    strcpy(boardId, "000000");
+    return;
+  }
+  // the MAC address comes back last byte first: mac[0] is the end of it
+  byte mac[6];
+  WiFi.macAddress(mac);
+  snprintf(boardId, sizeof(boardId), "%02X%02X%02X", mac[2], mac[1], mac[0]);
+  printId();
+
+  // an out-of-date Wi-Fi chip makes joining slow or flaky; say so at startup
+  String fw = WiFi.firmwareVersion();
+  if (fw < WIFI_FIRMWARE_LATEST_VERSION) {
+    Serial.print("# wifi: chip firmware ");
+    Serial.print(fw);
+    Serial.print(" is out of date (Arduino IDE > Tools > Firmware Updater)");
+    Serial.println();
+  }
+  connectWifi();
+}
+
+void printId() {
+  Serial.print("# board ID: ");
+  Serial.println(boardId);
+}
+
+// Join the network. Even when WiFi.begin() reports a failure, the Wi-Fi chip
+// keeps trying on its own, and on a weak signal that can take 20+ seconds.
+// Calling begin() again restarts that attempt from scratch, so we leave it
+// 30 seconds between tries (and keep printing readings meanwhile).
+void connectWifi() {
+  lastWifiTry = millis();
+  if (WiFi.status() == WL_NO_MODULE) return;
+  Serial.print("# wifi: joining \"");
+  Serial.print(WIFI_NAME);
+  Serial.println("\"...");
+  digitalWrite(LED_BUILTIN, HIGH);
+  int status = WiFi.begin(WIFI_NAME, WIFI_PASSWORD);
+  digitalWrite(LED_BUILTIN, LOW);
+  if (status == WL_CONNECTED) startSending();
+  else {
+    Serial.print("# wifi: could not join \"");
+    Serial.print(WIFI_NAME);
+    Serial.println("\" yet. Check the name and password; trying again in 30 s");
+  }
+}
+
+// Once on the network (whether our WiFi.begin() did it or the Wi-Fi chip
+// reconnected by itself), work out where to send and open the socket.
+void startSending() {
+  // send to the whole network (e.g. 192.168.1.255) until the relay is found
+  IPAddress ip = WiFi.localIP();
+  IPAddress mask = WiFi.subnetMask();
+  for (int i = 0; i < 4; i++) {
+    broadcastIP[i] = ip[i] | (~mask[i] & 0xFF);
+  }
+  WiFi.noLowPowerMode();  // keep the radio awake: steadier, faster sends
+  udp.begin(BEACON_PORT);  // listen for the relay; we send to UDP_PORT
+  wifiReady = true;
+  Serial.print("# wifi: joined, address ");
+  Serial.println(ip);
+  printId();
+}
+
+// The relay sends "RELAY" to BEACON_PORT once a second.
+void listenForRelay() {
+  while (udp.parsePacket() > 0) {
+    char buf[8] = { 0 };
+    udp.read(buf, sizeof(buf) - 1);
+    if (strncmp(buf, "RELAY", 5) == 0) {
+      if (!relayKnown || udp.remoteIP() != relayIP) {
+        Serial.print("# wifi: found the class grid at ");
+        Serial.println(udp.remoteIP());
+      }
+      relayIP = udp.remoteIP();
+      relayKnown = true;
+      lastBeacon = millis();
+    }
+  }
+}
+
+void send(const char *msg, int len) {
+  // straight to the laptop if we've heard it lately, otherwise everyone
+  bool direct = relayKnown && millis() - lastBeacon < 5000;
+  udp.beginPacket(direct ? relayIP : broadcastIP, UDP_PORT);
+  udp.write((const uint8_t *)msg, len);
+  udp.endPacket();
+}
+
+void loop() {
+  unsigned long started = millis();
+
+  // keep the Wi-Fi up, and show its state on the built-in LED
+  if (WiFi.status() == WL_CONNECTED) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    if (!wifiReady) startSending();
+    // every 5 s, report the signal strength (closer to 0 is stronger;
+    // below about -75 dBm, readings start getting lost) as "R3F9A21,-62"
+    static unsigned long lastSignal = 0;
+    if (wifiReady && millis() - lastSignal > 5000) {
+      lastSignal = millis();
+      char msg[20];
+      int n = snprintf(msg, sizeof(msg), "R%s,%ld", boardId, WiFi.RSSI());
+      send(msg, n);
+    }
+  } else if (WiFi.status() != WL_NO_MODULE) {
+    if (wifiReady) {
+      udp.stop();  // reopened by startSending() after reconnecting
+      wifiReady = false;
+      relayKnown = false;
+      Serial.println("# wifi: lost the connection, reconnecting");
+    }
+    digitalWrite(LED_BUILTIN, (millis() / 250) % 2);  // blink
+    if (millis() - lastWifiTry > 30000) connectWifi();
+  }
+
+  // read the sensor
+  int raw = analogRead(SENSOR_PIN);
+  smoothed = SMOOTHING * smoothed + (1.0 - SMOOTHING) * raw;
+  int value = (int)smoothed;
+
+  Serial.println(value);  // just the number, so the Serial Plotter can graph it
+  if (wifiReady) {
+    listenForRelay();
+    char line[20];
+    int len = snprintf(line, sizeof(line), "B%s,%d", boardId, value);
+    send(line, len);
+  }
+
+  // wait out whatever is left of this reading's time slot
+  unsigned long spent = millis() - started;
+  if (spent < SEND_EVERY) delay(SEND_EVERY - spent);
+}
+```
 
 ## Troubleshooting
 
@@ -191,6 +417,10 @@ The stations send their readings over **Wi-Fi** to the teacher's laptop, so ther
 - **The LED barely changes.** Try two layers of Velostat, a bigger sensor, or pressing with your whole palm. You can also try the **3.3V** setting on the module to make small changes easier to see.
 - **The LED flickers.** Check that the alligator clips are firmly on the copper tails and not slipping.
 - **The multimeter reads 0 or doesn't change.** Check it's on DC volts, the black probe is on the – rail, and the red probe is in the same row as both the sensor lead and the 10kΩ resistor.
+- **(Part 4) The Serial Monitor says "could not join".** Check the Wi-Fi name and password, including capital letters, and keep the quotes around them.
+- **(Part 4) The LED stays on but there's no tile.** Make sure the Serial Monitor says `found the class grid`. If not, the teacher's laptop isn't on the same network or the grid isn't running.
+- **(Part 4) The readings stay at 0.** The sensor isn't reaching A0: check that the sensor and the 10kΩ resistor are both in the row wired to A0, and that the other sensor lead is on 3.3V.
+- **(Part 4) Upload fails or the port is missing.** Try another USB cable (some only charge), or double-tap the Nano's reset button and pick the port again.
 
 ## Going Further
 

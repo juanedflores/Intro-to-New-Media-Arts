@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Sensor Grid - ART 150</title>
+    <link rel="icon" href="../../../../images/favicon.ico" />
+    <!--
+      Class Sensor Grid: every student's own Arduino Nano 33 IoT, running
+      the same class_sensor sketch, sends one Velostat reading over Wi-Fi as
+      lines like "B3F9A21,412" (the board's ID, then A0 from 0-1023).
+      relay.py --class (start_class_grid.command) receives them and serves
+      this page, which gets one tile per board, added as boards connect.
+      Test mode (T) adds fake boards you press with the mouse or keys 1-9.
+    -->
+    <style>
+      @font-face {
+        font-family: "Alegreya";
+        src: url("../../../../fonts/alegreya/Alegreya-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Bold.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+      }
+
+      :root {
+        --bg: #111318;
+        --tile: #1c2028;
+        --rule: #343a46;
+        --ink: #ece8e0;
+        --muted: #9aa1ae;
+        --yellow: #fbc740;
+        --s1: #e8574a; /* tile colors: syllabus red, yellow, blue + violet */
+        --s2: #fbc740;
+        --s3: #4d84de;
+        --s4: #a07ad6;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Alegreya Sans", "Helvetica Neue", Arial, sans-serif;
+        font-variant-numeric: lining-nums tabular-nums;
+        overflow: hidden;
+        transition: background 0.4s;
+      }
+
+      /* ---------- top bar ---------- */
+      header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 14px 22px;
+        border-bottom: 1px solid var(--rule);
+      }
+      h1 {
+        margin: 0;
+        font-family: "Alegreya", Georgia, serif;
+        font-weight: 800;
+        font-size: 30px;
+        color: var(--yellow);
+        white-space: nowrap;
+      }
+      .count {
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .together {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 160px;
+      }
+      .together span {
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .meter {
+        flex: 1;
+        height: 14px;
+        border-radius: 999px;
+        background: var(--tile);
+        overflow: hidden;
+      }
+      .meter i {
+        display: block;
+        height: 100%;
+        width: 0;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--s1), var(--s2), var(--s3), var(--s4));
+      }
+      button {
+        padding: 8px 14px;
+        border: 1px solid var(--rule);
+        border-radius: 999px;
+        background: var(--tile);
+        color: var(--ink);
+        font: inherit;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      button:hover {
+        border-color: var(--yellow);
+      }
+      button[aria-pressed="true"] {
+        border-color: var(--yellow);
+        color: var(--yellow);
+      }
+      .hint {
+        margin: 0;
+        padding: 10px 22px;
+        background: #1a1d24;
+        color: var(--muted);
+        font-size: 16px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .hint[hidden] {
+        display: none;
+      }
+      .hint b {
+        color: var(--ink);
+      }
+
+      /* ---------- the grid: one tile per board, sized to fill the screen ---------- */
+      main {
+        flex: 1;
+        display: grid;
+        gap: 12px;
+        padding: 14px 22px 20px;
+        min-height: 0;
+      }
+      .tile {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 0;
+        border: 2px solid var(--rule);
+        border-radius: 14px;
+        background: var(--tile);
+        overflow: hidden;
+        user-select: none;
+        touch-action: none;
+        transition:
+          border-color 0.2s,
+          opacity 0.3s;
+      }
+      .tile .fill {
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 0;
+        background: var(--c);
+        opacity: 0.85;
+      }
+      .tile .name {
+        position: relative;
+        max-width: 90%;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-family: "Alegreya", Georgia, serif;
+        font-weight: 800;
+        font-size: var(--name-size, 28px);
+        line-height: 1.05;
+        text-align: center;
+        overflow-wrap: anywhere;
+        outline: none;
+        cursor: text;
+      }
+      .tile .name:focus {
+        background: rgba(0, 0, 0, 0.45);
+        box-shadow: 0 0 0 2px var(--yellow);
+      }
+      .tile .pin {
+        position: absolute;
+        left: 10px;
+        bottom: 7px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--muted);
+        mix-blend-mode: difference;
+      }
+      /* plugged in but no sensor reading, or the board went quiet */
+      .tile.idle {
+        opacity: 0.45;
+        border-style: dashed;
+      }
+      .tile.idle .name {
+        color: var(--muted);
+      }
+
+      /* everyone squeezing at once */
+      body.party {
+        background: #241d0c;
+      }
+      body.party .tile:not(.idle) {
+        border-color: var(--yellow);
+      }
+
+      /* ---------- setup help ---------- */
+      dialog {
+        max-width: min(820px, 94vw);
+        max-height: 90vh;
+        padding: 26px 30px;
+        border: 1px solid var(--rule);
+        border-radius: 14px;
+        background: #1a1d24;
+        color: var(--ink);
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+      }
+      dialog h2 {
+        margin: 0 0 6px;
+        font-family: "Alegreya", Georgia, serif;
+        color: var(--yellow);
+      }
+      dialog h3 {
+        margin: 18px 0 4px;
+        font-size: 15px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      dialog ol {
+        margin: 6px 0;
+        padding-left: 22px;
+      }
+      dialog kbd {
+        padding: 1px 6px;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      dialog .primary {
+        border-color: var(--yellow);
+        background: var(--yellow);
+        color: #1d2433;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Class Sensor Grid</h1>
+      <span class="count" id="count">0 boards</span>
+      <div class="together" title="Average pressure across every live sensor">
+        <span>Squeeze together</span>
+        <div class="meter"><i id="together"></i></div>
+      </div>
+      <button id="test" type="button" aria-pressed="false" title="Fake boards you press with the mouse or keys 1-9 (T)">Test mode</button>
+      <button id="recal" type="button" title="Re-learn every sensor's resting and pressed values (R)">Recalibrate</button>
+      <button id="clear" type="button" title="Remove tiles for boards that stopped sending">Clear quiet</button>
+      <button id="full" type="button" title="Full screen (F)">Full screen</button>
+      <button id="help" type="button" title="Setup instructions (?)">Setup</button>
+    </header>
+    <p class="hint" id="hint"></p>
+    <main id="grid"></main>
+
+    <dialog id="setup">
+      <h2 tabindex="-1" autofocus style="outline: none">Setting up the Class Sensor Grid</h2>
+      <p>Every student uploads the same <code>class_sensor</code> sketch to their own Nano 33 IoT. Each board sends its Velostat reading over Wi-Fi through the classroom router to this laptop and gets its own tile here, named by the board's ID until the student types their name on it.</p>
+
+      <h3>Before class</h3>
+      <ol>
+        <li>Plug in the router. It doesn't need the internet. Its <b>2.4 GHz</b> network must be on (the Nano can't use 5 GHz).</li>
+        <li>Write the router's network name and password on the board: students type them into the two lines at the top of the sketch.</li>
+      </ol>
+
+      <h3>In class</h3>
+      <ol>
+        <li>Join this laptop to the router's network.</li>
+        <li>Double-click <code>start_class_grid.command</code> in the <code>station</code> folder. A Terminal window opens and this page opens in your browser. The Terminal lists each board as it connects. (The first time, macOS may ask whether Python can accept incoming connections: click <b>Allow</b>.)</li>
+      </ol>
+
+      <h3>Students</h3>
+      <ol>
+        <li>Wire the sensor: <b>3.3V</b> → sensor → <b>A0</b>, and a <b>10kΩ</b> resistor from <b>A0</b> to <b>GND</b>. Not the power module.</li>
+        <li>Paste the sketch, type the Wi-Fi name and password, upload.</li>
+        <li>The Serial Monitor prints the board ID. Find the tile with that ID, click it and type your name. Then squeeze!</li>
+      </ol>
+
+      <h3>Keys</h3>
+      <p><kbd>T</kbd> test mode (hold <kbd>1</kbd>–<kbd>9</kbd>, or hold a tile with the mouse) · <kbd>R</kbd> recalibrate · <kbd>F</kbd> full screen · <kbd>?</kbd> this help</p>
+      <p style="color: var(--muted)">Names are remembered in this browser by board ID, so a student's tile keeps their name next class. Each tile learns its own sensor: the lowest reading is "resting" and the highest is "pressed," so a soft sensor and a stiff one both fill their tile. A board with no sensor reads 0 (the 10kΩ resistor pulls it to ground) and its tile is dimmed.</p>
+      <form method="dialog"><button class="primary">Got it</button></form>
+    </dialog>
+
+    <script>
+      const EMPTY_BELOW = 20; // raw reading under this = no sensor plugged in
+      const MIN_SPAN = 150; // never stretch less than this, so noise stays small
+      const QUIET_AFTER = 1500; // ms without a reading = board went quiet
+      const NAME_KEY = "art150-class-sensor-names";
+      const TEST_BOARDS = 9;
+
+      // ---------- per-board state and self-calibration ----------
+      function makeSensor() {
+        return { raw: 0, rest: 0, max: 0, active: false, emptyFrames: 99, norm: 0, shown: 0, simPressed: false, simRaw: 220 };
+      }
+
+      function update(sn, raw) {
+        sn.raw = raw;
+        if (raw < EMPTY_BELOW) {
+          if (++sn.emptyFrames > 10) {
+            sn.active = false;
+            sn.norm = 0;
+          }
+          return;
+        }
+        sn.emptyFrames = 0;
+        if (!sn.active) {
+          // a sensor was just plugged in: start learning it from scratch
+          sn.active = true;
+          sn.rest = raw;
+          sn.max = raw;
+        }
+        if (raw < sn.rest) sn.rest = raw;
+        else if (raw - sn.rest < 12) sn.rest += (raw - sn.rest) * 0.05; // follow slow drift at rest
+        if (raw > sn.max) sn.max = raw;
+        const span = Math.max(sn.max - sn.rest, MIN_SPAN);
+        sn.norm = Math.min(1, Math.max(0, (raw - sn.rest - 8) / span));
+      }
+
+      // ---------- names (remembered in this browser, by board ID) ----------
+      let names = {};
+      try {
+        names = JSON.parse(localStorage.getItem(NAME_KEY) || "{}");
+      } catch (e) {}
+      function saveNames() {
+        try {
+          localStorage.setItem(NAME_KEY, JSON.stringify(names));
+        } catch (e) {}
+      }
+
+      // ---------- tiles: one per board, in the order they connect ----------
+      const grid = document.getElementById("grid");
+      const boards = new Map(); // id -> { sensor, lastSeen, el, fill, name, pin }
+
+      function addBoard(id) {
+        const t = document.createElement("div");
+        t.className = "tile idle";
+        t.style.setProperty("--c", `var(--s${(boards.size % 4) + 1})`);
+        t.innerHTML = `<div class="fill"></div><div class="name" contenteditable="true" spellcheck="false"></div><div class="pin"></div>`;
+        const nameEl = t.querySelector(".name");
+        nameEl.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === "Escape") {
+            e.preventDefault();
+            nameEl.blur();
+          }
+        });
+        nameEl.addEventListener("focus", () => {
+          if (!names[id]) nameEl.textContent = "";
+        });
+        nameEl.addEventListener("blur", () => {
+          const v = nameEl.textContent.trim().slice(0, 24);
+          if (v) names[id] = v;
+          else delete names[id];
+          saveNames();
+        });
+        const b = { id, sensor: makeSensor(), lastSeen: -Infinity, el: t, fill: t.querySelector(".fill"), name: nameEl, pin: t.querySelector(".pin") };
+        // in test mode, hold a tile to "press" it
+        t.addEventListener("pointerdown", (e) => {
+          if (testMode && e.target !== nameEl) b.sensor.simPressed = true;
+        });
+        boards.set(id, b);
+        grid.appendChild(t);
+        layout();
+        return b;
+      }
+      window.addEventListener("pointerup", () => boards.forEach((b) => (b.sensor.simPressed = false)));
+
+      function removeBoard(id) {
+        const b = boards.get(id);
+        if (!b) return;
+        b.el.remove();
+        boards.delete(id);
+        layout();
+      }
+
+      // pick the column count that makes the tiles biggest (tiles ~4:3)
+      function layout() {
+        const n = Math.max(boards.size, 1);
+        const box = grid.getBoundingClientRect();
+        const w = box.width - 44;
+        const h = box.height - 34;
+        let best = 1;
+        let bestSize = 0;
+        for (let cols = 1; cols <= n; cols++) {
+          const rows = Math.ceil(n / cols);
+          const tw = (w - 12 * (cols - 1)) / cols;
+          const th = (h - 12 * (rows - 1)) / rows;
+          const size = Math.min(tw, th * 4 / 3);
+          if (size > bestSize) {
+            bestSize = size;
+            best = cols;
+          }
+        }
+        const rows = Math.ceil(n / best);
+        grid.style.gridTemplateColumns = `repeat(${best}, 1fr)`;
+        grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        grid.style.setProperty("--name-size", Math.round(Math.max(14, Math.min(40, bestSize / 7))) + "px");
+      }
+      window.addEventListener("resize", layout);
+
+      function handleLine(line) {
+        const m = /^B([0-9A-F]{6}),(\d{1,4})$/.exec(line.trim());
+        if (!m || testMode) return;
+        const b = boards.get(m[1]) || addBoard(m[1]);
+        update(b.sensor, Number(m[2]));
+        b.lastSeen = performance.now();
+      }
+
+      function recalibrate() {
+        boards.forEach((b) => {
+          b.sensor.active = false;
+          b.sensor.emptyFrames = 99;
+        });
+      }
+
+      // ---------- Wi-Fi: lines from relay.py --class ----------
+      let relay = false;
+      let relayLost = false;
+      fetch("/relay-info", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((info) => {
+          if (!info || !info.relay) return;
+          relay = true;
+          const events = new EventSource("/events");
+          events.onmessage = (e) => handleLine(e.data);
+          events.onopen = () => (relayLost = false);
+          events.onerror = () => (relayLost = true); // EventSource retries by itself
+        })
+        .catch(() => {});
+
+      // ---------- test mode: fake boards, pressed with the keyboard or mouse ----------
+      let testMode = false;
+      const testBtn = document.getElementById("test");
+      const testIds = [];
+      for (let i = 0; i < TEST_BOARDS; i++) testIds.push("TEST0" + (i + 1));
+      function setTestMode(on) {
+        testMode = on;
+        testBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        if (on) testIds.forEach((id) => boards.get(id) || addBoard(id));
+        else testIds.forEach(removeBoard);
+        recalibrate();
+      }
+      function editing() {
+        return document.activeElement && document.activeElement.isContentEditable;
+      }
+      window.addEventListener("keydown", (e) => {
+        if (editing() || e.metaKey || e.ctrlKey) return;
+        const k = e.key.toLowerCase();
+        if (testMode && k >= "1" && k <= "9") {
+          const b = boards.get(testIds[Number(k) - 1]);
+          if (b) b.sensor.simPressed = true;
+          return;
+        }
+        if (k === "t") setTestMode(!testMode);
+        else if (k === "r") recalibrate();
+        else if (k === "f") toggleFull();
+        else if (k === "?" || k === "/") setup.showModal();
+      });
+      window.addEventListener("keyup", (e) => {
+        const k = e.key;
+        if (k >= "1" && k <= "9") {
+          const b = boards.get(testIds[Number(k) - 1]);
+          if (b) b.sensor.simPressed = false;
+        }
+      });
+      function simulate() {
+        testIds.forEach((id) => {
+          const b = boards.get(id);
+          if (!b) return;
+          const sn = b.sensor;
+          const target = sn.simPressed ? 920 : 220;
+          sn.simRaw += (target - sn.simRaw) * 0.18 + (Math.random() - 0.5) * 6;
+          update(sn, Math.round(sn.simRaw));
+          b.lastSeen = performance.now();
+        });
+      }
+
+      // ---------- draw ----------
+      const together = document.getElementById("together");
+      const countEl = document.getElementById("count");
+      const hint = document.getElementById("hint");
+      function frame() {
+        if (testMode) simulate();
+        const now = performance.now();
+        let sum = 0;
+        let count = 0;
+        let live = 0;
+        boards.forEach((b) => {
+          const sn = b.sensor;
+          const connected = now - b.lastSeen < QUIET_AFTER;
+          if (connected) live++;
+          const on = connected && sn.active;
+          sn.shown += ((on ? sn.norm : 0) - sn.shown) * 0.35;
+          b.el.classList.toggle("idle", !on);
+          b.fill.style.height = (sn.shown * 100).toFixed(1) + "%";
+          b.el.style.boxShadow = sn.shown > 0.05 ? `0 0 ${Math.round(sn.shown * 40)}px var(--c)` : "none";
+          const status = !connected ? "not sending" : sn.active ? String(sn.raw) : "no sensor on A0";
+          b.pin.textContent = (names[b.id] ? b.id + " · " : "") + status;
+          // dark text once the colored fill is behind the name
+          b.name.style.color = sn.shown > 0.55 ? "#1d2433" : "";
+          if (document.activeElement !== b.name) {
+            const label = names[b.id] || b.id;
+            if (b.name.textContent !== label) b.name.textContent = label;
+          }
+          if (on) {
+            sum += sn.shown;
+            count++;
+          }
+        });
+        const avg = count ? sum / count : 0;
+        together.style.width = (avg * 100).toFixed(1) + "%";
+        document.body.classList.toggle("party", count >= 3 && avg > 0.7);
+        const countText = `${live} board${live === 1 ? "" : "s"}`;
+        if (countEl.textContent !== countText) countEl.textContent = countText;
+
+        // the hint line under the top bar
+        let msg = "";
+        if (testMode) msg = "";
+        else if (relay && relayLost) msg = "Lost the connection to the relay. Is the Terminal window with <b>relay.py</b> still open?";
+        else if (relay && boards.size === 0) msg = "Waiting for boards. A board's built-in LED stays on once it joins the Wi-Fi, and this laptop must be on the same network.";
+        else if (!relay) msg = "Not connected to the boards. On the laptop, double-click <b>start_class_grid.command</b>; it opens this page connected to the Wi-Fi. Press <b>T</b> for test mode.";
+        else if (boards.size > 0) msg = "Find the tile with the <b>board ID</b> from your Serial Monitor, click it and type your name.";
+        if (hint.innerHTML !== msg) hint.innerHTML = msg;
+        const hide = !msg;
+        if (hint.hidden !== hide) {
+          hint.hidden = hide;
+          layout();
+        }
+
+        requestAnimationFrame(frame);
+      }
+      layout();
+      requestAnimationFrame(frame);
+
+      // ---------- buttons ----------
+      const setup = document.getElementById("setup");
+      function toggleFull() {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else document.documentElement.requestFullscreen().catch(() => {});
+      }
+      testBtn.addEventListener("click", () => setTestMode(!testMode));
+      document.getElementById("recal").addEventListener("click", recalibrate);
+      document.getElementById("clear").addEventListener("click", () => {
+        const now = performance.now();
+        [...boards.values()].filter((b) => now - b.lastSeen >= QUIET_AFTER).forEach((b) => removeBoard(b.id));
+      });
+      document.getElementById("full").addEventListener("click", toggleFull);
+      document.getElementById("help").addEventListener("click", () => setup.showModal());
+    </script>
+  </body>
+</html>

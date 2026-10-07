@@ -1,9 +1,13 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ART 150 - Intro to New Media</title>
+    <meta
+      name="description"
+      content="ART 150, Introduction to New Media Arts at UIC, Fall 2026: weekly plans, slides, workshops and resources for circuits, e-textiles, Arduino and creative interfaces."
+    />
     <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
@@ -42,16 +46,7 @@
           <a class="uk-navbar-item uk-logo" href="index.html"
             >INTRO TO NEW MEDIA ART</a
           >
-          <ul class="uk-navbar-nav">
-            <li class="uk-active">
-              <a href="index.html">Home / Week Overview</a>
-            </li>
-            <li><a href="content/arena.html">Are.na Studios</a></li>
-            <li>
-              <a href="content/arduino_sketches.html">Arduino</a>
-            </li>
-            <li><a href="content/gallery.html">Gallery</a></li>
-          </ul>
+          <ul class="uk-navbar-nav" data-site-pages></ul>
         </div>
 
         <!-- THE OFFCANVAS SIDEBAR FOR MOBILE -->
@@ -67,59 +62,7 @@
             uk-close
           ></button>
           <div class="bar-wrap" style="padding-top: 50px">
-            <li class="uk-active" style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="index.html"
-                >Home / Week Overview</a
-              >
-            </li>
-            <li style="list-style-type: none">
-              <a style="padding: 0" class="uk-button" href="content/arena.html"
-                >Are.na Studios</a
-              >
-            </li>
-            <li style="list-style-type: none">
-              <a
-                style="padding: 0"
-                class="uk-button"
-                href="content/arduino_sketches.html"
-                >Arduino</a
-              >
-            </li>
-            <li style="list-style-type: none">
-              <a
-                style="padding: 0"
-                class="uk-button"
-                href="content/gallery.html"
-                >Gallery</a
-              >
-            </li>
-            <div id="small-menu" style="padding-top: 20px">
-              <hr />
-              <li>
-                <a
-                  class="uk-button uk-button-default"
-                  onclick="load_syllabus(); return false;"
-                  href="#syllabus"
-                  >Syllabus</a
-                >
-              </li>
-              <li>
-                <a
-                  class="uk-button uk-button-default"
-                  onclick="load_topics(); return false;"
-                  href="#topics"
-                  >Topics</a
-                >
-              </li>
-              <li>
-                <a
-                  class="uk-button uk-button-default"
-                  onclick="load_resources(); return false;"
-                  href="#resources"
-                  >Resources</a
-                >
-              </li>
-            </div>
+            <div data-site-menu></div>
             <hr />
             <ul
               class="week-nav-list uk-nav-default uk-nav-parent-icon uk-nav"
@@ -132,33 +75,7 @@
       <!-- THE LEFT SIDEBAR ON DESKTOP -->
       <aside id="left-col">
         <div class="bar-wrap" style="padding-top: 100px">
-          <div id="small-menu-sidebar">
-            <hr />
-            <li>
-              <a
-                class="uk-button uk-button-default"
-                onclick="load_syllabus(); return false;"
-                href="#syllabus"
-                >Syllabus</a
-              >
-            </li>
-            <li>
-              <a
-                class="uk-button uk-button-default"
-                onclick="load_topics(); return false;"
-                href="#topics"
-                >Topics</a
-              >
-            </li>
-            <li>
-              <a
-                class="uk-button uk-button-default"
-                onclick="load_resources(); return false;"
-                href="#resources"
-                >Resources</a
-              >
-            </li>
-          </div>
+          <div id="small-menu-sidebar" data-site-sections></div>
           <hr />
           <ul
             class="week-nav-list uk-nav-default uk-nav-parent-icon uk-nav"
@@ -175,6 +92,7 @@
       const CURRENT_WEEK = 7;
       const TOTAL_WEEKS = 15;
       // ============================================================
+      renderSiteNav("", "home");
       renderWeekNav(CURRENT_WEEK, TOTAL_WEEKS);
       // open the week in the address (index.html#week-4), else this week;
       // weeks that haven't started yet stay locked

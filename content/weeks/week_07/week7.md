@@ -4,9 +4,7 @@ title: Week 7
 
 # Week 7
 
-<!-- locked until Wednesday: remove "is-locked" (and the slides-locked div) to unlock -->
-<section class="slides_section is-locked">
-<div class="slides-locked"><span uk-icon="icon: lock; ratio: 2"></span><p>The E-Textiles slides unlock on Wednesday.</p></div>
+<section class="slides_section">
 <iframe src="content/slides/week_7_day1/index.html" width="100%" height="500px"></iframe>
 </section>
 
@@ -46,55 +44,70 @@ The Arduinos are here! Everyone gets their own Arduino Nano 33 IoT today.
 ::: {.card type="external" title="Voltage Dividers" thumb="./content/weeks/week_07/images/voltage-divider.svg" href="https://learn.sparkfun.com/tutorials/voltage-dividers/all" tag="Electronics"}
 :::
 
-::: {.card type="external" title="Potentiometers as Voltage Dividers" thumb="https://cdn-shop.adafruit.com/970x728/4133-03.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html#potentiometers-as-voltage-dividers" tag="Electronics"}
+::: {.card type="external" title="Potentiometers as Voltage Dividers" thumb="./content/weeks/week_06/images/potentiometer_cover.jpg" href="https://makeabilitylab.github.io/physcomp/electronics/variable-resistors.html#potentiometers-as-voltage-dividers" tag="Electronics"}
 :::
 
 ::: {.card type="lesson" title="The Arduino Nano 33 IoT" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Arduino"}
 :::
 
-::: {.card type="video" title="Velostat Pressure Sensor Video" thumb="https://class.textile-academy.org/2024/grecia-segovia/images/week12/MATRIZ1.jpg" href="https://www.youtube.com/watch?v=SLRYX879Py0" tag="Youtube Video"}
+::: {.card type="video" title="Velostat Pressure Sensor Video" thumb="./content/weeks/week_07/images/velostat-matrix_cover.jpg" href="https://www.youtube.com/watch?v=SLRYX879Py0" tag="Youtube Video"}
 :::
 
 :::
 
 :::
 
-<!-- ::: {.day title="WEDNESDAY" open="true"} -->
-<!---->
-<!-- ### Announcements -->
-<!-- ::: {.announcement type="reminder"} -->
-<!-- Please download and install the Arduino IDE before class. -->
-<!-- ::: -->
-<!---->
-<!-- ### Agenda -->
-<!-- - Getting set up with the Arduino IDE -->
-<!-- - Blink and AnalogReadSerial sketch examples -->
-<!-- - Reading Monday's Velostat voltage divider with `analogRead()` -->
-<!---->
-<!-- ### Topics -->
-<!-- ::: {.topics} -->
-<!---->
-<!-- ::: {.card type="lesson" title="Getting Setup with Arduino IDE" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Topic"} -->
-<!-- ::: -->
-<!---->
-<!-- ::: {.card type="lesson" title="Examples: Blink" thumb="./content/Arduino/blink/images/cover.jpg" href="./content/Arduino/blink/blink.html" tag="Topic"} -->
-<!-- ::: -->
-<!---->
-<!-- ::: {.card type="external" title="Variable Resistors: Photoresistors" thumb="https://content.instructables.com/FOH/F83V/IAMCFJPJ/FOHF83VIAMCFJPJ.jpg" href="https://makeabilitylab.github.io/physcomp/sensors/photoresistors.html" tag="Topic"} -->
-<!-- ::: -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: -->
-<!---->
+::: {.day title="WEDNESDAY" open="true"}
+
+### Announcements
+::: {.announcement type="reminder"}
+Bring your Arduino Nano 33 IoT, a USB cable that fits it, and your Velostat sensor from Monday. If you haven't yet, install the Arduino IDE before class.
+:::
+
+::: {.announcement type="materials"}
+- Laptop with the Arduino IDE installed
+- Arduino Nano 33 IoT and USB cable
+- Electronics Kit (breadboard, LEDs, 220Ω and 10kΩ resistors, jumper wires, push button)
+- Your Velostat sensor from Monday
+:::
+
+### Agenda
+- Getting set up: the Arduino IDE, picking the board and port, uploading your first sketch
+- Blink: the built-in LED, then an LED on the breadboard
+- Reading sensors: `analogRead()` and printing values to the Serial Monitor and Serial Plotter
+- If there's time: the Button sketch with `digitalRead()`
+- Class Sensor Grid: everyone uploads the same sketch, joins the classroom router over Wi-Fi, and sends their Velostat sensor's readings to one shared screen
+
+### Topics
+::: {.topics}
+
+::: {.card type="lesson" title="Getting Set Up with the Arduino IDE" thumb="./content/Arduino/getting_setup/getting_setup.svg" href="./content/Arduino/getting_setup/getting_setup.html" tag="Arduino"}
+:::
+
+::: {.card type="lesson" title="Blink" thumb="./content/Arduino/blink/images/cover.jpg" href="./content/Arduino/blink/blink.html" tag="Arduino"}
+:::
+
+::: {.card type="lesson" title="Print to Serial Monitor" thumb="./content/Arduino/print_to_serial_monitor/images/cover.png" href="./content/Arduino/print_to_serial_monitor/print_to_serial_monitor.html" tag="Arduino"}
+:::
+
+::: {.card type="lesson" title="Button" thumb="./content/Arduino/button/images/button.png" href="./content/Arduino/button/button.html" tag="Arduino"}
+:::
+
+::: {.card type="workshop" title="Your Arduino on the Class Sensor Grid" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html#part-4-your-own-arduino-on-the-class-grid" tag="Workshop"}
+:::
+
+:::
+
+:::
+
+:::
+
 <!-- ### Supplementary Material -->
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Mr9NlMFNWgw?si=cdDMIXsOmWE98kfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 <!---->
 <!-- <a href="https://class.textile-academy.org/2026/marissa-renteria/assignments/week05/">Marissa Renteria: E-Textiles (Fabricademy)</a> -->
 <!---->
-<!-- ### Next Week -->
-<!-- ::: {.nextweek} -->
-<!-- We'll keep going with Arduino: fading LEDs, variables, for loops and pulse width modulation. On Wednesday we'll introduce the midterm assignment, Creative Interfaces. -->
-<!-- ::: -->
+### Next Week
+::: {.nextweek}
+We'll look at E-Textiles (conductive thread, copper tape, snaps and soft circuits), keep going with Arduino (buttons, `if` statements and digital input), and introduce the midterm assignment, Creative Interfaces.
+:::

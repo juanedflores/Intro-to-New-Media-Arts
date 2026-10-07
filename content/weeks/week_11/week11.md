@@ -28,7 +28,7 @@ title: Week 11
 ::: {.card type="lesson" title="DIY SPEAKER WORKSHOP" thumb="./content/Blog/CustomSpeakerWorkshop/images/cover.webp" href="./content/Blog/CustomSpeakerWorkshop/CustomSpeakerWorkshop.html" tag="Workshop"}
 :::
 
-::: {.card type="lesson" title="SOUND ART" thumb="https://lift11.ee/data/files/Electrical%20Walk_kodukale.jpg" href="./content/slides/sound_art_slides/index.html" target="_blank" tag="Slides"}
+::: {.card type="lesson" title="SOUND ART" thumb="./content/weeks/week_11/images/electrical-walk_cover.jpg" href="./content/slides/sound_art_slides/index.html" target="_blank" tag="Slides"}
 :::
 
 :::

@@ -27,13 +27,13 @@ title: Week 12
 ### Topics
 ::: {.topics}
 
-::: {.card type="external" title="ACCELEROMETER / GYROSCOPE" thumb="https://www.datocms-assets.com/36760/1606313240-gsk-09-mvmtsnsr-understand.png" href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer/" target="_blank" tags="Arduino Example,Output / Actuator"}
+::: {.card type="external" title="ACCELEROMETER / GYROSCOPE" thumb="./content/weeks/week_12/images/motion-sensor_cover.png" href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer/" target="_blank" tags="Arduino Example,Output / Actuator"}
 :::
 
-::: {.card type="external" title="NEOPIXELS" thumb="https://cdn-shop.adafruit.com/970x728/1461-00.jpg" href="https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use" target="_blank" tags="Arduino Example,Output / Actuator"}
+::: {.card type="external" title="NEOPIXELS" thumb="./content/weeks/week_12/images/adafruit-1461_cover.jpg" href="https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use" target="_blank" tags="Arduino Example,Output / Actuator"}
 :::
 
-::: {.card type="external" title="Sensors Overview" thumb="https://www.watelectronics.com/wp-content/uploads/Arduino-Sensor.jpg" href="https://www.circuito.io/blog/arduino-sensors-explained/" tag="Resource"}
+::: {.card type="external" title="Sensors Overview" thumb="./content/weeks/week_12/images/arduino-sensor_cover.jpg" href="https://www.circuito.io/blog/arduino-sensors-explained/" tag="Resource"}
 :::
 
 :::
@@ -55,7 +55,7 @@ title: Week 12
 ### Topics
 ::: {.topics}
 
-::: {.card type="external" title="Ultrasonic Range Sensor" thumb="https://irp.cdn-website.com/65e30418/dms3rep/multi/HC-SR04+Dimensions.gif" href="https://gist.github.com/flakas/3294829" tags="Arduino Example,Input / Sensor"}
+::: {.card type="external" title="Ultrasonic Range Sensor" thumb="./content/weeks/week_12/images/hc-sr04_cover.gif" href="https://gist.github.com/flakas/3294829" tags="Arduino Example,Input / Sensor"}
 :::
 
 :::

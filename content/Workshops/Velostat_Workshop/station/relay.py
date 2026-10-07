@@ -4,13 +4,16 @@
 Run this on the teacher's laptop while it is on the stations' Wi-Fi network:
 
     python3 relay.py        (or double-click start_sensor_grid.command)
+    python3 relay.py --class    (the Class Sensor Grid: one tile per
+                                 student board; start_class_grid.command)
     python3 relay.py --no-browser    (don't open the page automatically)
 
 It does three things, using only Python's standard library:
-  1. listens for the stations' Wi-Fi broadcasts (UDP port 9000), lines like
-     "S1,412,0,873,15,600";
-  2. serves the Sensor Grid page at http://localhost:8000 (no internet
-     needed) and opens it in the browser;
+  1. listens for Wi-Fi messages on UDP port 9000: the four stations' lines
+     like "S1,412,0,873,15,600" (pressure_station) and students' boards'
+     lines like "B3F9A21,412" (class_sensor, one sensor each);
+  2. serves the grid page at http://localhost:8000 (no internet needed)
+     and opens it in the browser;
   3. streams every line to the page as it arrives (/events).
 
 Stop it with Ctrl+C.
@@ -32,20 +35,28 @@ UDP_PORT = 9000
 BEACON_PORT = 9001  # stations listen here to learn this laptop's address
 HTTP_PORTS = range(8000, 8011)  # first free one wins
 LINE = re.compile(r"^S([1-4]),[0-9,]+$")
-SIGNAL = re.compile(r"^R([1-4]),(-?[0-9]+)$")  # station's Wi-Fi strength, dBm
+BOARD = re.compile(r"^B([0-9A-F]{6}),[0-9]{1,4}$")  # a student's board
+# a station's or board's Wi-Fi strength, dBm
+SIGNAL = re.compile(r"^R([1-4]|[0-9A-F]{6}),(-?[0-9]+)$")
 WEAK = -75  # below this, readings start getting lost
 
 HERE = Path(__file__).resolve().parent
 # Serve the whole course site when this file sits inside it, so the page's
 # fonts load; otherwise just this folder.
 SITE = HERE.parents[3] if (HERE.parents[3] / "fonts").exists() else HERE
-PAGE = "/" + str((HERE / "index.html").relative_to(SITE)).replace("\\", "/")
+PAGE_FILE = "class.html" if "--class" in sys.argv else "index.html"
+PAGE = "/" + str((HERE / PAGE_FILE).relative_to(SITE)).replace("\\", "/")
 
 clients = set()
 clients_lock = threading.Lock()
-stations = {}  # station number -> {"ip": ..., "last": time}
-quiet = set()  # stations that stopped sending
-signals = {}  # station number -> last reported dBm
+# senders are keyed by "1".."4" (stations) or a board ID like "3F9A21"
+stations = {}  # sender -> {"ip": ..., "last": time}
+quiet = set()  # senders that stopped sending
+signals = {}  # sender -> last reported dBm
+
+
+def label(key):
+    return f"Station {key}" if len(key) == 1 else f"Board {key}"
 
 
 def local_ip():
@@ -71,17 +82,21 @@ def listen_udp():
         line = data.decode("ascii", "ignore").strip()
         sig = SIGNAL.match(line)
         if sig:
-            report_signal(int(sig.group(1)), int(sig.group(2)))
+            report_signal(sig.group(1), int(sig.group(2)))
             continue
-        m = LINE.match(line)
+        m = LINE.match(line) or BOARD.match(line)
         if not m:
             continue
-        n = int(m.group(1))
+        n = m.group(1)
         known = stations.get(n)
         if known is None or known["ip"] != ip:
-            print(f"  Station {n} connected ({ip})", flush=True)
+            note = ""
+            if len(n) > 1:  # students' boards: keep a running count
+                count = sum(len(k) > 1 for k in stations) + (known is None)
+                note = f", {count} so far"
+            print(f"  {label(n)} connected ({ip}){note}", flush=True)
         elif n in quiet:
-            print(f"  Station {n} is back", flush=True)
+            print(f"  {label(n)} is back", flush=True)
         quiet.discard(n)
         stations[n] = {"ip": ip, "last": time.time()}
         with clients_lock:
@@ -96,16 +111,18 @@ def listen_udp():
 
 def report_signal(n, dbm):
     """Print a station's signal the first time, and whenever it turns weak
-    or recovers, so a badly placed station is easy to spot."""
+    or recovers, so a badly placed station is easy to spot. Students'
+    boards only get a line when their signal is weak (there are many)."""
     before = signals.get(n)
     signals[n] = dbm
     if before is None:
         note = "  (weak: move it closer to the router)" if dbm < WEAK else ""
-        print(f"  Station {n} signal: {dbm} dBm{note}", flush=True)
+        if len(n) == 1 or note:
+            print(f"  {label(n)} signal: {dbm} dBm{note}", flush=True)
     elif dbm < WEAK <= before:
-        print(f"  Station {n} signal is weak ({dbm} dBm): move it closer to the router", flush=True)
+        print(f"  {label(n)} signal is weak ({dbm} dBm): move it closer to the router", flush=True)
     elif before < WEAK <= dbm:
-        print(f"  Station {n} signal is fine again ({dbm} dBm)", flush=True)
+        print(f"  {label(n)} signal is fine again ({dbm} dBm)", flush=True)
 
 
 def announce():
@@ -127,12 +144,12 @@ def announce():
 
 
 def watch_stations():
-    """Mention stations that go quiet (unplugged, battery out, Wi-Fi lost)."""
+    """Mention senders that go quiet (unplugged, battery out, Wi-Fi lost)."""
     while True:
         now = time.time()
         for n, s in list(stations.items()):
             if now - s["last"] > 3 and n not in quiet:
-                print(f"  Station {n} went quiet", flush=True)
+                print(f"  {label(n)} went quiet", flush=True)
                 quiet.add(n)  # listen_udp() clears it when lines resume
         time.sleep(1)
 
@@ -215,10 +232,10 @@ def main():
 
     url = f"http://localhost:{server.server_address[1]}{PAGE}"
     print()
-    print("  Sensor Grid relay is running")
+    print("  Class Sensor Grid relay is running" if "--class" in sys.argv else "  Sensor Grid relay is running")
     print(f"  Page:        {url}")
-    print(f"  This laptop: {local_ip()} (stations broadcast to UDP port {UDP_PORT})")
-    print("  Waiting for stations... (Ctrl+C to stop)")
+    print(f"  This laptop: {local_ip()} (boards send to UDP port {UDP_PORT})")
+    print("  Waiting for boards... (Ctrl+C to stop)" if "--class" in sys.argv else "  Waiting for stations... (Ctrl+C to stop)")
     print()
     if "--no-browser" not in sys.argv:
         threading.Timer(1.0, webbrowser.open, args=(url,)).start()

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" role="img" aria-label="The Velostat sandwich, from top to bottom: cardstock, a copper tape conductive layer whose tail goes to 3.3V, the Velostat, a second copper tape conductive layer whose tail goes to the analog pin A0, and cardstock. Velostat has no polarity, so either tail can go to either pin." font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#111" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#fff" />
+
+  <text x="150" y="52" font-size="34" fill="#111">The Velostat Sandwich:</text>
+
+  <!-- cardstock -->
+  <rect x="260" y="92" width="480" height="30" fill="#efe3c6" stroke="#8a7a55" stroke-width="1.5" />
+  <!-- top copper, with its tail sticking out to the left -->
+  <rect x="180" y="132" width="540" height="26" fill="#c87533" stroke="#5a3415" stroke-width="1.5" />
+  <!-- Velostat: slightly bigger than the copper so the copper can't touch -->
+  <rect x="250" y="168" width="490" height="28" fill="#111" />
+  <!-- bottom copper -->
+  <rect x="180" y="206" width="540" height="26" fill="#c87533" stroke="#5a3415" stroke-width="1.5" />
+  <!-- cardstock -->
+  <rect x="260" y="242" width="480" height="30" fill="#efe3c6" stroke="#8a7a55" stroke-width="1.5" />
+
+  <!-- left: where each copper tail goes -->
+  <text x="20" y="153" font-size="26" fill="#c0392b">3.3V</text>
+  <line x1="88" y1="145" x2="172" y2="145" stroke="#111" stroke-width="3" marker-end="url(#arrow)" />
+  <text x="20" y="227" font-size="26" fill="#8a6a00">A0</text>
+  <line x1="62" y1="219" x2="172" y2="219" stroke="#111" stroke-width="3" marker-end="url(#arrow)" />
+
+  <!-- right: what each layer is -->
+  <g font-size="24" fill="#111">
+    <text x="770" y="115">Cardstock</text>
+    <text x="770" y="153">Copper tape</text>
+    <text x="770" y="190">Velostat</text>
+    <text x="770" y="227">Copper tape</text>
+    <text x="770" y="265">Cardstock</text>
+  </g>
+
+  <text x="180" y="320" font-size="20" fill="#555" font-style="italic">The copper tails stick out past the cardstock: that's where the alligator clips go.</text>
+  <text x="180" y="350" font-size="20" fill="#555" font-style="italic">Velostat has no polarity, so either tail can go to 3.3V or A0.</text>
+</svg>
