@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing Machines in p5.js</title>
+    <link rel="shortcut icon" href="../../../../../images/favicon.ico" type="image/x-icon" />
+    <!-- code colors: the same highlighter and theme as the course blog -->
+    <link rel="stylesheet" href="../../../../../css/pojoaque.css" />
+    <style>
+      :root {
+        --wall: #faf1e6;
+        --ink: #1f1f24;
+        --muted: #6b6a66;
+        --rule: #d9d4c7;
+        --frame: #2a2622;
+        --accent: #fbc740;
+        --blue: #2f64b7;
+        --red: #d53f32;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--wall);
+        color: var(--ink);
+        font-family: "Alegreya Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+      a {
+        color: var(--blue);
+      }
+      .topbar {
+        display: flex;
+        gap: 12px;
+        padding: 10px 16px;
+        background: var(--accent);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      .topbar a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .topbar .sep {
+        opacity: 0.4;
+      }
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+      h1 {
+        font-family: "Alegreya", Georgia, serif;
+        color: var(--red);
+        font-size: clamp(32px, 5vw, 52px);
+        line-height: 1;
+        margin: 0 0 8px;
+      }
+      .lede {
+        max-width: 680px;
+        margin: 0 0 28px;
+      }
+      .canvas-frame {
+        background: var(--frame);
+        padding: 10px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+      }
+      canvas {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .bar {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin: 14px 0 28px;
+        flex-wrap: wrap;
+      }
+      button {
+        font: inherit;
+        font-weight: 700;
+        padding: 8px 16px;
+        border: 2px solid var(--frame);
+        background: #fff;
+        cursor: pointer;
+      }
+      pre {
+        background: #181914;
+        color: #dccf8f;
+        border-radius: 6px;
+        padding: 16px 18px;
+        overflow-x: auto;
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+      pre code.hljs {
+        padding: 0;
+        background: none;
+      }
+      .note {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      /* all sketches: the drawing next to its code version */
+      .pairs {
+        display: grid;
+        gap: 36px;
+      }
+      .pair h2 {
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin: 0 0 8px;
+      }
+      .pair .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .pair img {
+        display: block;
+        width: 100%;
+        background: var(--frame);
+        padding: 6px;
+      }
+      .pair .two > div {
+        background: var(--frame);
+        padding: 6px;
+      }
+      @media (max-width: 640px) {
+        .pair .two {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <a href="../../../../../index.html">ART 150</a><span class="sep">/</span>
+      <a href="../index.html">Drawing Machines</a><span class="sep">/</span>
+      <span>In p5.js</span>
+    </div>
+    <main id="main"></main>
+
+    <script src="../../../../../js/highlight.min.js"></script>
+    <script src="p5.min.js"></script>
+    <script src="bot.js"></script>
+    <script src="runner.js"></script>
+    <script>
+      const pad = (n) => String(n).padStart(2, "0");
+      const NOS = Array.from({ length: 19 }, (_, i) => pad(i + 1));
+      const main = document.getElementById("main");
+      const no = new URLSearchParams(location.search).get("no");
+
+      // the sketch files, then the drawing photos (for each page's shape)
+      function load(src) {
+        return new Promise((ok, fail) => {
+          const s = document.createElement("script");
+          s.src = src;
+          s.onload = ok;
+          s.onerror = fail;
+          document.head.appendChild(s);
+        });
+      }
+      function aspectOf(n) {
+        return new Promise((ok) => {
+          const img = new Image();
+          img.onload = () => ok(img.naturalHeight / img.naturalWidth);
+          img.onerror = () => ok(0.72);
+          img.src = `../images/drawing_${n}.jpg`;
+        });
+      }
+
+      if (no && NOS.includes(no)) showOne(no);
+      else showAll();
+
+      async function showOne(n) {
+        document.title = `No. ${n} in p5.js`;
+        main.innerHTML = `
+          <h1>No. ${n} in p5.js</h1>
+          <p class="lede">The instruction card for drawing No. ${n}, written as code. A simulated
+          vibration robot follows it step by step (sped up: a minute of robot time takes
+          two seconds). <a href="../index.html#no-${n}">See the real drawing</a>.</p>
+          <div class="canvas-frame" id="host"></div>
+          <div class="bar">
+            <button id="again">&#8635; Run again</button>
+            <span class="note">Each run after the first is a little different, like the real robot.</span>
+          </div>
+          <h2>The code</h2>
+          <pre><code id="code">Loading…</code></pre>
+          <p class="note">The robot itself (how it moves, wobbles and leaves marks) is in
+          <a href="bot.js">bot.js</a>; <a href="runner.js">runner.js</a> plays the sketch.
+          To try it in the <a href="https://editor.p5js.org/">p5.js web editor</a>, add
+          bot.js, runner.js and this file to a sketch.</p>`;
+        await load(`no-${n}.js`);
+        const sketch = mountSketch(n, document.getElementById("host"), { aspect: await aspectOf(n) });
+        document.getElementById("again").onclick = () => sketch.replay();
+        const code = await (await fetch(`no-${n}.js`)).text();
+        const el = document.getElementById("code");
+        el.textContent = code;
+        el.className = "language-javascript";
+        hljs.highlightElement(el);
+      }
+
+      async function showAll() {
+        main.innerHTML = `
+          <h1>Drawing Machines in p5.js</h1>
+          <p class="lede">Each drawing next to its instruction card run as code by a simulated
+          vibration robot. Click a number to watch it draw and read the code.</p>
+          <div class="pairs" id="pairs"></div>`;
+        const pairs = document.getElementById("pairs");
+        for (const n of NOS) {
+          await load(`no-${n}.js`);
+          const div = document.createElement("section");
+          div.className = "pair";
+          div.innerHTML = `<h2><a href="?no=${n}">No. ${n}</a></h2>
+            <div class="two"><img src="../images/drawing_${n}.jpg" alt="Drawing ${n}" loading="lazy"><div></div></div>`;
+          pairs.appendChild(div);
+          mountSketch(n, div.querySelector(".two > div"), { aspect: await aspectOf(n), instant: true });
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -76,7 +76,7 @@ Bring your Arduino Nano 33 IoT, a USB cable that fits it, and your Velostat sens
 - Blink: the built-in LED, then an LED on the breadboard
 - Reading sensors: `analogRead()` and printing values to the Serial Monitor and Serial Plotter
 - If there's time: the Button sketch with `digitalRead()`
-- Class Sensor Grid: everyone uploads the same sketch, joins the classroom router over Wi-Fi, and sends their Velostat sensor's readings to one shared screen
+- Class Sensor Grid: everyone uploads the same sketch, joins the classroom router over Wi-Fi, and sends their Velostat sensor's readings to one shared screen. We need to make sure everyone is up and running.
 
 ### Topics
 ::: {.topics}

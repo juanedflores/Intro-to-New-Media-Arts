@@ -406,6 +406,12 @@
         color: var(--muted);
         white-space: nowrap;
       }
+      /* on narrow screens the labels shrink with "…" instead of spilling out */
+      .mat-labels span {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       .watch {
         margin-left: auto;
         transition: opacity 0.2s;
@@ -413,15 +419,107 @@
       .watch[hidden] {
         display: none;
       }
-      .artwork.playing .watch,
-      .no-hover .watch {
+      .artwork.playing .watch {
         opacity: 0;
+      }
+      /* touch screens (no hover): a play button on the drawing. It sits in
+         the middle until tapped, then moves to the corner as a pause button
+         so the drawing shows. Tapping anywhere else still enlarges it. */
+      .play {
+        display: none;
+      }
+      .no-hover .play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        padding: 0 0 0 4px; /* the triangle looks centered nudged right */
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.94);
+        color: var(--ink);
+        font: inherit;
+        font-size: 24px;
+        line-height: 1;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition:
+          opacity 0.2s,
+          transform 0.2s,
+          left 0.2s,
+          top 0.2s;
+      }
+      .no-hover .playing .play {
+        left: auto;
+        top: auto;
+        right: 8px;
+        bottom: 8px;
+        transform: none;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        font-size: 14px;
+        opacity: 0.85;
+      }
+      .play[hidden] {
+        display: none !important;
       }
       @media (prefers-reduced-motion: reduce) {
         .slide video.process,
-        .watch {
-          display: none;
+        .watch,
+        .play {
+          display: none !important;
         }
+      }
+      /* the p5.js version: a canvas drawn by the sketch, plus two buttons */
+      .sketch-slide {
+        cursor: default;
+        background: #fbfaf6;
+      }
+      .sketch-host canvas {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .sketch-tools {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        display: flex;
+        gap: 6px;
+      }
+      .sketch-tools > * {
+        font: inherit;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.94);
+        border: none;
+        border-radius: 999px;
+        padding: 5px 11px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      /* while a sketch runs, the instruction it's on is highlighted */
+      .label li {
+        border-radius: 3px;
+        transition: background-color 0.2s;
+      }
+      .label li.now {
+        background: rgba(251, 199, 64, 0.45);
+      }
+      header.intro p.intro-sketches {
+        margin-top: 12px;
+        font-size: 15px;
+        color: var(--muted);
       }
       .step {
         position: absolute;
@@ -544,6 +642,14 @@
 
       /* ---------- small screens ---------- */
 
+      /* short screens (a phone held sideways): pinning the drawing would
+         cover part of the page, so let it scroll with everything else */
+      @media (max-height: 600px) {
+        .artwork {
+          position: static;
+        }
+      }
+
       @media (max-width: 820px) {
         header.intro {
           padding: 40px 16px 24px;
@@ -595,6 +701,10 @@
         Eighteen vibration-motor robots, each built around a found object and
         given a set of written instructions. Each drawing was made live in class
         by following those instructions, in five minutes or less.
+      </p>
+      <p class="intro-sketches">
+        Swipe or use the arrows on each drawing to see its instruction card run
+        as a <a href="sketches/view.html">p5.js sketch</a>.
       </p>
     </header>
 
@@ -874,7 +984,9 @@
       const index = document.getElementById("index");
       const images = []; // every zoomable image, in page order, for the lightbox
 
-      const SOURCE_LABEL = { student: "Student photo", video: "Class video" };
+      const SOURCE_LABEL = { student: "Student photo", video: "Class video", sketch: "p5.js sketch" };
+      // mouse (hover plays the clips) or touch (a play button does)
+      const HOVER = matchMedia("(hover: hover)").matches;
 
       // Image sources for one slot. Drawings lead with the edited class-video
       // still (straightened and white-balanced, so the frames look
@@ -882,12 +994,14 @@
       function sources(ex, kind, n) {
         const video = { src: `images/${kind}_${n}.jpg`, from: "video" };
         if (kind === "drawing") video.process = `process/process_${n}.mp4`;
-        if (!(ex.studentPhotos || []).includes(kind)) return [video];
+        // every drawing ends with its instruction card run as a p5.js sketch
+        const sketch = kind === "drawing" ? [{ sketch: n, from: "sketch" }] : [];
+        if (!(ex.studentPhotos || []).includes(kind)) return [video, ...sketch];
         const student = {
           src: `images/student/${kind}_${n}.jpg`,
           from: "student",
         };
-        return kind === "drawing" ? [video, student] : [student, video];
+        return kind === "drawing" ? [video, student, ...sketch] : [student, video];
       }
 
       // One slot's markup. `wrap` puts the slides inside extra markup
@@ -896,6 +1010,14 @@
         const many = srcs.length > 1;
         const slides = srcs
           .map((s) => {
+            if (s.sketch)
+              return `<div class="slide sketch-slide" data-from="${SOURCE_LABEL.sketch}" data-sketch="${s.sketch}">
+                <div class="sketch-host" aria-label="The instruction card run as a p5.js sketch"></div>
+                <div class="sketch-tools">
+                  <button class="sketch-again" aria-label="Run the sketch again">&#8635; Again</button>
+                  <a class="sketch-code" href="sketches/view.html?no=${s.sketch}">Code</a>
+                </div>
+              </div>`;
             images.push({
               src: s.src,
               caption: `${caption} · ${SOURCE_LABEL[s.from].toLowerCase()}`,
@@ -910,7 +1032,10 @@
           ? `<button class="step prev" aria-label="Previous image" disabled>&larr;</button>
              <button class="step next" aria-label="Next image">&rarr;</button>`
           : "";
-        const body = `<div class="slides"><div class="track">${slides}</div>${controls}</div>`;
+        const play = srcs[0].process
+          ? `<button class="play" aria-label="Play: watch it draw">&#9654;</button>`
+          : "";
+        const body = `<div class="slides"><div class="track">${slides}</div>${play}${controls}</div>`;
         const dots = many
           ? `<div class="dots">${srcs
               .map(
@@ -923,7 +1048,7 @@
         // ("Class video" / "Student photo"), and the hover hint for clips.
         const source = many ? SOURCE_LABEL[srcs[0].from] : "";
         const watch = srcs[0].process
-          ? `<span class="watch">&#9654; Hover to watch it draw</span>`
+          ? `<span class="watch">${HOVER ? "&#9654; Hover to watch it draw" : "Tap &#9654; to watch it draw"}</span>`
           : "";
         return { body: wrap(body, source, watch), dots, source };
       }
@@ -1013,7 +1138,12 @@
           const slide = track.children[k];
           if (source) source.textContent = slide.dataset.from;
           // the hover hint only applies to the slide that has a clip
-          if (watch) watch.hidden = !slide.querySelector("video.process");
+          const clip = !!slide.querySelector("video.process");
+          if (watch) watch.hidden = !clip;
+          const play = slides.querySelector(".play");
+          if (play) play.hidden = !clip;
+          // swiping away from a playing clip stops it
+          if (!clip) slides.querySelectorAll("video.process").forEach((v) => stopClip(v));
         }
         prev.addEventListener("click", () => go(at() - 1));
         next.addEventListener("click", () => go(at() + 1));
@@ -1023,38 +1153,109 @@
         });
       });
 
-      // ---- process clips: the robot drawing, on hover ----
+      // ---- process clips: the robot drawing ----
       // Each drawing's class-video still has a short clip of the run layered
-      // on top. Mouse: plays while hovering. Touch screens (no hover): plays
-      // while the drawing is mostly on screen.
+      // on top. Mouse: plays while hovering. Touch screens: the play button
+      // starts and stops it (one at a time; it also stops when scrolled away).
       const clips = [...document.querySelectorAll("video.process")];
-      const playClip = (v) => {
+      function playClip(v) {
         v.closest(".slide").classList.add("playing");
         v.closest(".artwork").classList.add("playing");
+        setPlayButton(v, true);
         v.play().catch(() => {});
-      };
-      const stopClip = (v) => {
+      }
+      function stopClip(v) {
         v.closest(".slide").classList.remove("playing");
         v.closest(".artwork").classList.remove("playing");
+        setPlayButton(v, false);
         v.pause();
         v.currentTime = 0;
-      };
-      if (matchMedia("(hover: hover)").matches) {
+      }
+      function setPlayButton(v, playing) {
+        const b = v.closest(".slides").querySelector(".play");
+        if (!b) return;
+        b.innerHTML = playing ? "&#10073;&#10073;" : "&#9654;";
+        b.setAttribute("aria-label", playing ? "Stop" : "Play: watch it draw");
+      }
+      if (HOVER) {
         clips.forEach((v) => {
           const slide = v.closest(".slide");
           slide.addEventListener("mouseenter", () => playClip(v));
           slide.addEventListener("mouseleave", () => stopClip(v));
         });
-      } else if ("IntersectionObserver" in window) {
+      } else {
         document.body.classList.add("no-hover");
-        const io = new IntersectionObserver(
+        clips.forEach((v) => {
+          const b = v.closest(".slides").querySelector(".play");
+          b.addEventListener("click", () => {
+            const on = v.closest(".slide").classList.contains("playing");
+            clips.forEach((c) => c !== v && stopClip(c));
+            on ? stopClip(v) : playClip(v);
+          });
+        });
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => entries.forEach((e) => !e.isIntersecting && stopClip(e.target)),
+            { threshold: 0 },
+          );
+          clips.forEach((v) => io.observe(v));
+        }
+      }
+
+      // ---- p5.js sketches ----
+      // Each drawing's last slide runs its instruction card as code (see
+      // sketches/). p5.js and the sketches load the first time one is shown;
+      // a sketch plays while its slide is on screen, highlighting the
+      // instruction it's on, and pauses when it isn't.
+      let sketchLib;
+      function loadSketchLib() {
+        const load = (src) =>
+          new Promise((ok, fail) => {
+            const el = document.createElement("script");
+            el.src = src;
+            el.onload = ok;
+            el.onerror = fail;
+            document.head.appendChild(el);
+          });
+        sketchLib ||= (async () => {
+          for (const f of ["p5.min.js", "bot.js", "runner.js"]) await load(`sketches/${f}`);
+          await Promise.all(EXHIBITS.map((_, i) => load(`sketches/no-${pad(i + 1)}.js`)));
+        })();
+        return sketchLib;
+      }
+      const mounted = new Map(); // slide -> sketch controls
+      async function showSketch(slide, visible) {
+        const steps = [...slide.closest(".exhibit").querySelectorAll(".label ol > li")];
+        const highlight = (n) => steps.forEach((li, j) => li.classList.toggle("now", j === n - 1));
+        if (!visible) {
+          mounted.get(slide)?.pause();
+          highlight(0);
+          return;
+        }
+        if (mounted.has(slide)) return mounted.get(slide)?.resume();
+        mounted.set(slide, null);
+        await loadSketchLib();
+        // the canvas takes the shape of the drawing's photo
+        const photo = slide.closest(".track").querySelector("img");
+        const aspect = photo.naturalWidth ? photo.naturalHeight / photo.naturalWidth : 0.72;
+        const sketch = mountSketch(slide.dataset.sketch, slide.querySelector(".sketch-host"), {
+          aspect,
+          onStep: (n) => slide.classList.contains("in-view") && highlight(n),
+        });
+        mounted.set(slide, sketch);
+        slide.querySelector(".sketch-again").addEventListener("click", () => sketch.replay());
+        if (!slide.classList.contains("in-view")) sketch.pause();
+      }
+      if ("IntersectionObserver" in window) {
+        const sio = new IntersectionObserver(
           (entries) =>
-            entries.forEach((e) =>
-              e.isIntersecting ? playClip(e.target) : stopClip(e.target),
-            ),
+            entries.forEach((e) => {
+              e.target.classList.toggle("in-view", e.isIntersecting);
+              showSketch(e.target, e.isIntersecting);
+            }),
           { threshold: 0.6 },
         );
-        clips.forEach((v) => io.observe(v));
+        document.querySelectorAll(".sketch-slide").forEach((el) => sio.observe(el));
       }
 
       // ---- lightbox ----
