@@ -241,7 +241,7 @@
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text">analogWrite, Introduction to PWM</a>-->
+      <!--  <a class="uk-text">Fade and Intro to PWM</a>-->
       <!--</h2>-->
     </nav>
 
@@ -265,9 +265,16 @@ and Intro to PWM</a>
 <li><a href="#intro" id="toc-intro">Intro</a>
 <ul>
 <li><a href="#the-idea" id="toc-the-idea">The Idea</a></li>
+<li><a href="#the-circuit" id="toc-the-circuit">The Circuit</a></li>
 </ul></li>
 <li><a href="#pulse-width-modulation"
-id="toc-pulse-width-modulation">Pulse Width Modulation</a></li>
+id="toc-pulse-width-modulation">Pulse Width Modulation</a>
+<ul>
+<li><a href="#how-does-it-average-out"
+id="toc-how-does-it-average-out">How does it “average out”?</a></li>
+<li><a href="#analog-vs.-digital" id="toc-analog-vs.-digital">Analog
+vs. Digital</a></li>
+</ul></li>
 <li><a href="#code-breakdown" id="toc-code-breakdown">Code Breakdown</a>
 <ul>
 <li><a href="#declaring-our-variables"
@@ -276,6 +283,12 @@ id="toc-declaring-our-variables">Declaring our Variables</a></li>
 Function</a></li>
 <li><a href="#the-loop-function" id="toc-the-loop-function">The Loop
 Function</a></li>
+</ul></li>
+<li><a href="#on-the-oscilloscope" id="toc-on-the-oscilloscope">On the
+Oscilloscope</a>
+<ul>
+<li><a href="#why-pwm-and-not-the-dac"
+id="toc-why-pwm-and-not-the-dac">Why PWM and Not the DAC?</a></li>
 </ul></li>
 <li><a href="#further-material" id="toc-further-material">Further
 Material</a>
@@ -294,135 +307,152 @@ Tutorials</a></li>
         <h1>Fade and Intro to PWM</h1>
         <section id="intro" class="level2">
         <h2>Intro</h2>
-        <p>Locate the official Arduino Documentation for a more complete
+        <p>The official Arduino documentation is a more complete
         reference:</p>
-        <div class="uk-margin uk-grid-small uk-child-width-expand@s"
-        style="padding: 30px; width: 100%;">
-        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid>
-        <li style="width: 45%; margin: auto; padding-left: 0;">
-        <div class="uk-transition-toggle">
-        <a target="_blank" href="https://docs.arduino.cc/built-in-examples/basics/Fade/">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
-        style="background: #7fcbcd; opacity: 100;">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-        <h4>
-        Fade
-        </h4>
-        <div style="display: inline">
-        <p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-        <span class="uk-label"
-        style="background-color: #7fcbcd">Docs</span></p>
+        <div class="topics-grid">
+        <a class="topic-card" data-type="external" href="https://docs.arduino.cc/built-in-examples/basics/Fade/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../../images/arduino_docs.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Docs</span></div></div>
+        <h3 class="cardtitle">Fade</h3>
+        </a>
+
+        <a class="topic-card" data-type="external" href="https://docs.arduino.cc/learn/microcontrollers/analog-output/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../../images/arduino_docs.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Docs</span></div></div>
+        <h3 class="cardtitle">Basics of PWM</h3>
+        </a>
+
         </div>
-        </div>
-        </div>
-        <p></a></p>
-        </div>
-        </li>
-        </ul>
-        </div>
-        <p>Locate the example.</p>
-        <p>Go to:</p>
+        <p>To open the example, go to:</p>
         <p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
         <strong>01.Basics</strong> &gt; <strong>Fade</strong></p>
         <section id="the-idea" class="level3">
         <h3>The Idea</h3>
-        <p>The Fade example is one of the most basic examples intended
-        to teach you how to use <code>analogWrite()</code>. Before we
-        used digital output (<code>digitalWrite()</code>), to power an
-        LED with either 3V or 0V. With analog output, we can power
-        things with anything in between 0V and 3V. So instead of just
-        turning an LED fully on or fully off (2 possible states), we
-        will be able to change the brightness with 256 possible values
-        (8-bit resolution). This uses something called <strong>Pulse
-        Width Modulation</strong> (PWM).</p>
+        <p>The Fade example is one of the most basic examples for
+        learning <code>analogWrite()</code>. Before, we used digital
+        output (<code>digitalWrite()</code>) to power an LED with either
+        3.3V or 0V. With analog output, we can power things with
+        anything in between 0V and 3.3V. So instead of just turning an
+        LED fully on or fully off (2 possible states), we can change its
+        brightness with 256 possible values, from 0 to 255 (8-bit
+        resolution). This uses something called <strong>Pulse Width
+        Modulation</strong> (PWM).</p>
         <p>The sketch description says:</p>
         <blockquote>
         <p>This example shows how to fade an LED on pin 9 using the
         analogWrite() function.</p>
-        <p>
-        </p>
-        The analogWrite() function uses PWM, so if you want to change
+        <p>The analogWrite() function uses PWM, so if you want to change
         the pin you’re using, be sure to use another PWM capable pin. On
         most Arduino, the PWM pins are identified with a “~” sign, like
-        ~3, ~5, ~6, ~9, ~10 and ~11.
+        ~3, ~5, ~6, ~9, ~10 and ~11.</p>
         </blockquote>
+        <p>The Nano 33 IoT doesn’t print the “~” on the board, so check
+        the <a
+        href="https://docs.arduino.cc/resources/pinouts/ABX00027-full-pinout.pdf">pinout
+        sheet</a> for the PWM pins. Pin 9 is one of them.</p>
+        </section>
+        <section id="the-circuit" class="level3">
+        <h3>The Circuit</h3>
+        <p>The same LED circuit as in <a
+        href="../blink/blink.html">Blink</a>: pin 9 → 220Ω resistor →
+        LED (long leg) → LED (short leg) → GND.</p>
+        <p><img src="images/fade_circuit.png" alt="Breadboard drawing made in Fritzing: the Arduino Nano 33 IoT sits across the middle of the breadboard, USB end to the left. A blue wire runs from pin D9 to a 220Ω resistor, the resistor connects to the LED's long (bent) leg, and a black wire runs from the LED's short leg back to the Nano's GND pin." style="max-width:830px;width:100%;height:auto" /></p>
         </section>
         </section>
         <section id="pulse-width-modulation" class="level2">
         <h2>Pulse Width Modulation</h2>
-        <div class="uk-margin uk-grid-small uk-child-width-expand@s"
-        style="padding: 30px; width: 100%;">
-        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid>
-        <li style="width: 45%; margin: auto; padding-left: 0;">
-        <div class="uk-transition-toggle">
-        <a target="_blank" href="https://docs.arduino.cc/learn/microcontrollers/analog-output/">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
-        style="background: #7fcbcd; opacity: 100;">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-        <h4>
-        Basics of PWM
-        </h4>
-        <div style="display: inline">
-        <p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-        <span class="uk-label"
-        style="background-color: #7fcbcd">Docs</span></p>
-        </div>
-        </div>
-        </div>
-        <p></a></p>
-        </div>
-        </li>
-        </ul>
-        </div>
         <p>According to the documentation:</p>
         <blockquote>
-        Pulse Width Modulation, or PWM, is a technique for getting
+        <p>Pulse Width Modulation, or PWM, is a technique for getting
         analog results with digital means. Digital control is used to
-        create a square wave, a signal switched between on and off.
+        create a square wave, a signal switched between on and off.</p>
         </blockquote>
-        <p><img width="60%" src="./images/pwm.gif" style="background-color: white"></p>
-        <p>A PWM signal is actually square wave that is happening very
-        fast. With this quick speed, if one full cycle (<code>T</code>)
-        of the square wave is on half the time (and off half the time),
-        we get a result of half of the operating voltage (3.3V). The “on
-        time” of the square wave is called the <strong>pulse
-        width</strong>. By changing the pulse width (the amount of time
-        the square wave is on vs off), we can change the output
-        voltage.</p>
-        <p>An averaging of voltage is happening.</p>
-        <div class="uk-text-center">
-        <p><strong>With a 50% duty cycle:</strong></p>
-        <p><code>analogWrite(127)</code></p>
-        <p>3.3V * 0.5 = 1.65V</p>
-        <p><strong>With a 25% duty cycle:</strong></p>
-        <p><code>analogWrite(64)</code></p>
-        <p>3.3V * 0.25 = 0.825V</p>
-        <p><strong>With a 75% duty cycle:</strong></p>
-        <p><code>analogWrite(191)</code></p>
-        <p>3.3V * 0.75 = 2.475V</p>
-        </div>
-        <hr />
+        <p><img src="images/pwm.gif"
+        style="background-color: white;width:60.0%" /></p>
+        <p>A PWM pin can still only do two things: 3.3V (on) or 0V
+        (off). What PWM does is switch between them very fast, hundreds
+        of times or more every second, in a repeating pattern called a
+        <strong>square wave</strong>. One full on-and-off cycle is
+        called the <strong>period</strong> (<em>T</em>), and the “on
+        time” within each period is called the <strong>pulse
+        width</strong>.</p>
+        <section id="how-does-it-average-out" class="level4">
+        <h4>How does it “average out”?</h4>
+        <p>The pin is never actually at 1.65V. It’s always at 3.3V or
+        0V. The averaging happens in whatever is connected to it,
+        because that thing can’t react as fast as the pin is
+        switching.</p>
+        <p>Imagine flicking a light switch on and off so fast that you
+        can’t see the flicker. If the light is on for half the time and
+        off for the other half, the room looks half as bright. If it’s
+        on for only a quarter of the time, it looks a quarter as bright.
+        That’s PWM.</p>
+        <p>As numbers: say one period lasts 2 milliseconds, and the pin
+        is on for 1 of them.</p>
+        <ul>
+        <li>For 1 ms the pin is at 3.3V, and for 1 ms it’s at 0V.</li>
+        <li>Averaged over the whole 2 ms: (3.3V × 1 ms + 0V × 1 ms) ÷ 2
+        ms = <strong>1.65V</strong>.</li>
+        </ul>
+        <p>If it’s on for 0.5 ms out of every 2 ms instead, the average
+        is 3.3V × 0.5 ÷ 2 = <strong>0.825V</strong>. So by changing the
+        pulse width, we change the average voltage, without the pin ever
+        outputting anything other than 3.3V or 0V.</p>
+        <p>Different things do the averaging in different ways:</p>
+        <ul>
+        <li><strong>Your eyes:</strong> an LED blinking hundreds of
+        times a second just looks dimmer. Our eyes blend the flashes
+        together.</li>
+        <li><strong>A motor:</strong> it’s too heavy to start and stop
+        that fast, so it spins at an in-between speed.</li>
+        <li><strong>A multimeter:</strong> in DC voltage mode it
+        measures slowly, so on a PWM pin it shows the average (about
+        1.65V at 50%).</li>
+        <li><strong>An oscilloscope</strong> is fast enough to draw
+        every on and off, so it shows the square wave and not the
+        average. That’s what we look at in the <a
+        href="#on-the-oscilloscope">oscilloscope section</a>.</li>
+        </ul>
+        <p>The percentage of time the signal is on is called the
+        <strong>duty cycle</strong>. The average voltage is 3.3V × the
+        duty cycle:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Duty cycle</th>
+        <th>Code</th>
+        <th>Average voltage</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>25%</td>
+        <td><code>analogWrite(led, 64)</code></td>
+        <td>0.825V</td>
+        </tr>
+        <tr>
+        <td>50%</td>
+        <td><code>analogWrite(led, 127)</code></td>
+        <td>1.65V</td>
+        </tr>
+        <tr>
+        <td>75%</td>
+        <td><code>analogWrite(led, 191)</code></td>
+        <td>2.475V</td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section id="analog-vs.-digital" class="level3">
+        <h3>Analog vs. Digital</h3>
         <p>Remember the difference between analog and digital
         signals:</p>
-        <div class="uk-text-center">
-        <strong>Analog</strong>
-        <p>
-        A continuous signal.
-        </p>
-        <p><img width="60%" src="./images/analog.png"></p>
-        </div>
-        <div class="uk-text-center">
-        <strong>Digital</strong>
-        <p>
-        Represents an analog signal with a sequence of discrete values,
-        typically using binary code (0s and 1s)
-        </p>
-        <p><img width="60%" src="./images/digital.png"></p>
-        </div>
+        <p><strong>Analog:</strong> a continuous signal.</p>
+        <p><img src="images/analog.png"
+        style="background-color: white;width:60.0%" /></p>
+        <p><strong>Digital:</strong> represents a signal with a sequence
+        of discrete values, typically using binary code (0s and 1s).</p>
+        <p><img src="images/digital.png"
+        style="background-color: white;width:60.0%" /></p>
+        </section>
         </section>
         <section id="code-breakdown" class="level2">
         <h2>Code Breakdown</h2>
@@ -455,19 +485,265 @@ int fadeAmount = 5;  // how many points to fade the LED by</code></pre>
   // wait for 30 milliseconds to see the dimming effect
   delay(30);
 }</code></pre>
+        <p>Each time through the loop, <code>brightness</code> goes up
+        by 5. When it reaches 255 (fully on), <code>fadeAmount</code>
+        flips to -5 and the LED starts dimming. When it gets back to 0,
+        it flips again.</p>
+        </section>
+        </section>
+        <section id="on-the-oscilloscope" class="level2">
+        <h2>On the Oscilloscope</h2>
+        <p>An oscilloscope draws voltage over time, so we can see the
+        difference between the two ways of dimming an LED:</p>
+        <p><strong>Analog fade</strong> (with a pressure sensor as a
+        voltage divider): the line moves up and down smoothly. The
+        voltage itself is changing.</p>
+        <p><strong>PWM fade</strong> (with <code>analogWrite()</code>):
+        the line is always either at 3.3V or at 0V. Only the width of
+        the “on” pulses changes. The LED blinks too fast for our eyes to
+        see, so it looks dimmer.</p>
+        <details class="sy-details">
+        <summary>
+        Demo Sketch: PWM vs. DAC (fade both at once)
+        </summary>
+        <p>Most Arduino pins can only fake an analog voltage with PWM.
+        But pin <strong>A0</strong> on the Nano 33 IoT has a
+        <strong>DAC</strong> (digital-to-analog converter) that outputs
+        a real voltage between 0V and 3.3V. This sketch fades both at
+        the same time, so you can compare them side by side:</p>
+        <ul>
+        <li><strong>Pin 9 (PWM):</strong> LED → 220Ω resistor → GND.
+        Oscilloscope channel 1 on pin 9.</li>
+        <li><strong>Pin A0 (DAC):</strong> oscilloscope channel 2 on A0,
+        with no LED. An LED here would be dim, and it flattens the top
+        of the wave at the LED’s forward voltage.</li>
+        </ul>
+        <p>Set <code>USE_SENSOR</code> to <code>true</code> to control
+        both outputs with the pressure sensor (as a voltage divider on
+        A1) instead of the automatic fade.</p>
+        <pre class="arduino"><code>// PWM vs. DAC: fade pin 9 with PWM and pin A0 with the DAC, at the same time.
+// Probe pin 9 and pin A0 with the oscilloscope to compare them.
+
+const int pwmPin = 9;      // PWM: switches between 0V and 3.3V very fast
+const int dacPin = A0;     // DAC: a real voltage between 0V and 3.3V
+const int sensorPin = A1;  // pressure sensor (voltage divider)
+
+const bool USE_SENSOR = false;  // true = the sensor controls both outputs
+
+int value = 0;       // 0-1023
+int fadeAmount = 4;  // how much to change the value each step
+
+void setup() {
+  pinMode(pwmPin, OUTPUT);
+  // use 10 bits (0-1023) for both outputs, the DAC&#39;s full resolution
+  analogWriteResolution(10);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (USE_SENSOR) {
+    value = analogRead(sensorPin);  // 0-1023
+  } else {
+    value = value + fadeAmount;
+    if (value &lt;= 0 || value &gt;= 1023) {
+      fadeAmount = -fadeAmount;
+    }
+    value = constrain(value, 0, 1023);
+  }
+
+  analogWrite(pwmPin, value);  // PWM
+  analogWrite(dacPin, value);  // DAC
+
+  Serial.println(value);  // also try the Serial Plotter
+  delay(3);
+}</code></pre>
+        <p>On the scope, pin 9 is a square wave whose pulses get wider
+        and narrower. Pin A0 rises and falls in straight lines: a slow
+        triangle wave.</p>
+        </details>
+        <details class="sy-details">
+        <summary>
+        Demo Sketch: DAC Waveforms (square, sine, triangle, saw)
+        </summary>
+        <p>Because the DAC can output any voltage, it can draw any wave
+        shape, fast enough to hear. This sketch plays a
+        <strong>square</strong>, <strong>sine</strong>,
+        <strong>triangle</strong> or <strong>saw</strong> wave on pin
+        A0.</p>
+        <ul>
+        <li><strong>Switch waves:</strong> press the button on pin 2
+        (wired like the <a href="../button/button.html">Button
+        sketch</a>), or type <code>1</code>, <code>2</code>,
+        <code>3</code> or <code>4</code> in the Serial Monitor.</li>
+        <li><strong>Change the pitch:</strong> type <code>+</code> or
+        <code>-</code> in the Serial Monitor (one semitone each). It
+        starts at 220 Hz.</li>
+        <li><strong>Oscilloscope:</strong> probe A0.</li>
+        <li><strong>Speakers:</strong> see the wiring below.</li>
+        </ul>
+        <pre class="arduino"><code>// DAC waveforms: square, sine, triangle and saw on pin A0.
+// Press the button on pin 2, or type 1-4 in the Serial Monitor, to switch waves.
+// Type + or - to change the pitch by a semitone.
+
+const int dacPin = A0;
+const int buttonPin = 2;
+
+const char* waveNames[] = {&quot;square&quot;, &quot;sine&quot;, &quot;triangle&quot;, &quot;saw&quot;};
+int wave = 0;             // 0 = square, 1 = sine, 2 = triangle, 3 = saw
+float frequency = 220.0;  // Hz
+
+int sineTable[256];       // one cycle of a sine wave, precomputed (sin() is slow)
+uint32_t phase = 0;       // position in the cycle: 0 to 2^32 is one full cycle
+uint32_t phaseStep;       // how far the phase moves each microsecond
+uint32_t lastMicros;
+int lastButtonState = LOW;
+
+void setup() {
+  analogWriteResolution(10);  // DAC values 0-1023 (0-3.3V)
+  pinMode(buttonPin, INPUT);
+  Serial.begin(9600);
+
+  for (int i = 0; i &lt; 256; i++) {
+    sineTable[i] = 511.5 + 511.5 * sin(2 * PI * i / 256.0);
+  }
+  setFrequency(frequency);
+  setWave(0);
+  lastMicros = micros();
+}
+
+void loop() {
+  // move forward in the cycle by however much time has passed
+  uint32_t now = micros();
+  phase += (now - lastMicros) * phaseStep;
+  lastMicros = now;
+
+  int p = phase &gt;&gt; 22;  // position in the cycle as 0-1023
+  int value;
+  if (wave == 0) {
+    value = (p &lt; 512) ? 1023 : 0;                 // square: on half, off half
+  } else if (wave == 1) {
+    value = sineTable[phase &gt;&gt; 24];               // sine: look it up in the table
+  } else if (wave == 2) {
+    value = (p &lt; 512) ? p * 2 : (1023 - p) * 2;   // triangle: up, then down
+  } else {
+    value = p;                                    // saw: up, then drop
+  }
+  analogWrite(dacPin, value);
+
+  // the button switches to the next wave each time it&#39;s pressed
+  int buttonState = digitalRead(buttonPin);
+  if (buttonState == HIGH &amp;&amp; lastButtonState == LOW) {
+    setWave((wave + 1) % 4);
+    delay(20);  // debounce
+  }
+  lastButtonState = buttonState;
+
+  // keys typed in the Serial Monitor
+  if (Serial.available()) {
+    char c = Serial.read();
+    if (c &gt;= &#39;1&#39; &amp;&amp; c &lt;= &#39;4&#39;) setWave(c - &#39;1&#39;);
+    if (c == &#39;+&#39;) setFrequency(frequency * 1.059463);  // up a semitone
+    if (c == &#39;-&#39;) setFrequency(frequency / 1.059463);  // down a semitone
+  }
+}
+
+void setWave(int w) {
+  wave = w;
+  Serial.print(&quot;wave: &quot;);
+  Serial.println(waveNames[wave]);
+}
+
+void setFrequency(float f) {
+  frequency = f;
+  phaseStep = frequency * 4294967296.0 / 1000000.0;
+  Serial.print(&quot;frequency: &quot;);
+  Serial.print(frequency);
+  Serial.println(&quot; Hz&quot;);
+}</code></pre>
+        <h5>
+        Wiring for Speakers
+        </h5>
+        <p>A0 → 10µF capacitor (+ leg toward A0) → 1kΩ resistor → the
+        <strong>tip and ring</strong> of an aux plug, and GND → the
+        <strong>sleeve</strong>. The tip is the left channel and the
+        ring is the right, so connecting both plays the sound in both
+        speakers. Plug the other end into an amplified speaker (one with
+        its own power and volume knob), and start with the volume
+        low.</p>
+        <p><a href="images/dac_audio_wiring.svg" target="_blank" title="Open the drawing full size"><img src="images/dac_audio_wiring.svg" alt="Wiring diagram: the Nano 33 IoT's A0 pin goes to the plus leg of a 10µF capacitor, then through a 1kΩ resistor to the tip and ring of a 3.5 mm aux plug. GND goes to the plug's sleeve, and the aux cable goes to an amplified speaker. Below, two graphs: at A0 the wave swings between 0V and 3.3V, centered on 1.65V; after the capacitor it is the same wave centered on 0V." style="max-width:760px;width:100%;height:auto" /></a></p>
+        <p><strong>Why the capacitor?</strong> The DAC can only output
+        voltages between 0V and 3.3V, so every wave it makes is centered
+        on 1.65V instead of on 0V. That constant 1.65V is called a
+        <strong>DC offset</strong>. Audio inputs expect a signal that
+        swings above and below 0V, and the steady DC part can make the
+        amplifier pop when you plug in, push the wave off-center so it
+        distorts, or waste power. A capacitor blocks steady (DC) voltage
+        but lets changing (AC) voltage through, so the wave comes out
+        the same shape, centered on 0V. Many amplified speakers already
+        have a capacitor on their input, so it often works without one,
+        but it’s the safe way to connect.</p>
+        <p><strong>Why the resistor?</strong> It limits the current if
+        something is shorted, and it turns the volume down a little: the
+        DAC’s 3.3V swing is louder than the line-level signal an aux
+        input expects.</p>
+        <p><strong>Never connect a speaker directly to the pin.</strong>
+        A bare speaker has very low resistance (around 8Ω) and would try
+        to pull far more current than the pin can give. It needs an
+        amplifier.</p>
+        </details>
+        <section id="why-pwm-and-not-the-dac" class="level3">
+        <h3>Why PWM and Not the DAC?</h3>
+        <p>If the DAC makes a real voltage, why do we use PWM to dim
+        LEDs?</p>
+        <p><strong>There’s only one DAC.</strong> On the Nano 33 IoT,
+        only pin A0 has a DAC, and many Arduinos (like the Uno) have no
+        DAC at all. PWM works on many pins, so you can dim several LEDs
+        or control several motors at once.</p>
+        <p><strong>The DAC is weak.</strong> It’s made to output a
+        signal, not to power things. It can only supply a small amount
+        of current, so an LED on A0 stays dim, and a motor wouldn’t move
+        at all. A PWM pin is either fully on or fully off, so it gives
+        the full current the pin can supply, just for part of the
+        time.</p>
+        <p><strong>LEDs don’t dim smoothly with voltage.</strong> An LED
+        stays completely off until the voltage reaches its forward
+        voltage (around 1.8V–2V for a red LED), then gets bright
+        quickly. Turning down the voltage gives you a small, uneven
+        range of brightness. With PWM, the LED always gets the same
+        voltage, and the brightness follows how long it’s on, so the
+        whole 0–255 range is usable.</p>
+        <p><strong>For LEDs and motors, the average is all that
+        matters.</strong> As explained in <a
+        href="#how-does-it-average-out">How does it “average out”?</a>,
+        our eyes and a motor’s weight smooth out the switching, so PWM
+        works just as well as a real voltage.</p>
+        <p><strong>When the DAC is the better choice:</strong> when the
+        shape of the voltage itself matters, like sound (the waveforms
+        demo above), smooth control signals, or sending an analog
+        voltage into another device. A PWM signal played through a
+        speaker sounds buzzy, because you hear the fast on-off switching
+        too.</p>
         </section>
         </section>
         <section id="further-material" class="level2">
         <h2>Further Material</h2>
         <section id="video-tutorials" class="level3">
         <h3>Video Tutorials</h3>
-        <p>Intro to PWM using an Arduino Uno:</p>
-        <p style="text-align: center; padding-top: 30px;">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/TWGdfFVlroo?si=qYzmKRsL8Q8F3LWd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/TWGdfFVlroo" title="How To Create A PWM Signal Using The Arduino Uno" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
-        </p>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/X8dHbdhnGKY?si=8kZkaZoMtDCemE2X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        <p><strong>How To Create A PWM Signal Using The Arduino
+        Uno</strong><br />
+        Hamed Adefuwa. An intro to PWM on the Arduino Uno; the same
+        ideas apply to the Nano 33 IoT.</p>
+        </div>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/X8dHbdhnGKY" title="Fading LED With Arduino in Tinkercad" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
+        <p><strong>Fading LED With Arduino in Tinkercad</strong><br />
+        Autodesk Tinkercad. The Fade sketch built and simulated in
+        Tinkercad.</p>
+        </div>
         </section>
         </section>
         </section>

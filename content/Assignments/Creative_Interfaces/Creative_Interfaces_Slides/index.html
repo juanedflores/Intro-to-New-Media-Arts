@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>Week 1 - Contemporary Kinetic Art Showcase</title>
+    <title>Midterm: Creative Interfaces</title>
 
     <link rel="stylesheet" href="dist/reveal.css" />
     <link rel="stylesheet" href="dist/theme/white.css" />
@@ -23,6 +23,42 @@
       .make-it-pop {
         filter: drop-shadow(0 0 10px purple);
       }
+      /* Creative Interfaces deck */
+      .reveal p.lead {
+        font-size: 30px;
+        line-height: 1.4;
+      }
+      .reveal p.caption {
+        font-size: 20px;
+        color: #666;
+        margin-top: 8px;
+      }
+      .reveal blockquote {
+        font-size: 34px;
+        width: 80%;
+      }
+      .reveal img {
+        max-height: 440px;
+      }
+      .reveal ul {
+        font-size: 28px;
+      }
+      .reveal pre {
+        font-size: 18px;
+      }
+      /* two columns: <div class="cols"><div>…</div><div>…</div></div> */
+      .reveal .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+      .reveal .cols img {
+        max-height: 340px;
+      }
+      .reveal .cols pre {
+        width: 100%;
+      }
     </style>
   </head>
 
@@ -33,7 +69,7 @@
           class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge"
           data-markdown="creative_interfaces_slides.md"
           data-separator-notes="^Note:"
-          data-charset="iso-8859-15"
+          data-charset="utf-8"
         ></section>
       </div>
     </div>

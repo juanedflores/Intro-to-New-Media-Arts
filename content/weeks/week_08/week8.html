@@ -1,198 +1,88 @@
 <div id="ArticleBodyMain"><section id="week-8" class="level1">
 <h1>Week 8</h1>
 <section class="slides_section">
-<iframe src="content/slides/week_8_day1/index.html" width="100%" height="500px">
+<iframe src="content/Assignments/Creative_Interfaces/Creative_Interfaces_Slides/index.html" width="100%" height="500px">
 </iframe>
 </section>
-<p><a href="./content/slides/week_8_day1/index.html">Open Slides in New
-Tab</a></p>
+<p><a
+href="./content/Assignments/Creative_Interfaces/Creative_Interfaces_Slides/index.html">Open
+Slides in New Tab</a></p>
 <ul uk-accordion style="padding-bottom: 5vh">
 <li class="uk-open">
 <a class="uk-accordion-title" href="#">MONDAY</a>
 <div class="uk-accordion-content" style="padding-bottom:20px; margin-bottom:20px">
+<section id="announcements" class="level3">
+<h3>Announcements</h3>
+<div class="callout callout-reminder">
+<span class="callout-label">Reminder</span>
+<p>Today we introduce the midterm assignment, <strong>Creative
+Interfaces</strong>. The critique is on <strong>Wednesday, October
+28</strong>.</p>
+</div>
+<div class="callout callout-materials">
+<span class="callout-label">Materials Needed</span>
+<ul>
+<li>Laptop with the Arduino IDE installed</li>
+<li>Arduino Nano 33 IoT and USB cable</li>
+<li>Electronics Kit (breadboard, LEDs, RGB LED, 220Ω and 10kΩ resistors,
+jumper wires, push button)</li>
+</ul>
+</div>
+</section>
 <section id="agenda" class="level3">
 <h3>Agenda</h3>
 <ul>
-<li>Reviewing readanalogserial, digital output</li>
-<li>Button sketch (if statements)</li>
-<li>The Interface</li>
-<li>Digital Button Workshop</li>
-</ul>
-<p>Patatype with me!</p>
-<pre class="arduino"><code>#include &lt;SPI.h&gt;
-#include &lt;WiFiNINA.h&gt;
-#include &lt;WiFiUdp.h&gt;  // Required for UDP communication
-#include &lt;OSCMessage.h&gt;
-
-// Include the secrets file with your network credentials
-#include &quot;arduino_secrets.h&quot;
-
-char ssid[] = &quot;ssid&quot;;  // your network SSID (name)
-char pass[] = &quot;pass&quot;;   // your network password
-
-unsigned int localPort = 2390;  // local port to listen on
-char incomingPacket[255];       // buffer for incoming packets
-
-// 172.20.10.14
-IPAddress remoteIP(172, 20, 10, 14);  // The IP address of the destination device
-unsigned int remotePort = 8888;       // The destination port
-
-WiFiUDP Udp;
-
-void setup() {
-  Serial.begin(9600);
-  while (!Serial)
-    ;
-
-  // attempt to connect to WiFi network:
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(&quot;Attempting to connect to SSID: &quot;);
-    Serial.println(ssid);
-    WiFi.begin(ssid, pass);
-    delay(10000);  // wait 10 seconds for connection
-  }
-  Serial.println(&quot;Connected to WiFi!&quot;);
-  Serial.print(&quot;IP Address: &quot;);
-  Serial.println(WiFi.localIP());  // Prints the fassigned IP address
-
-  // Initialize Udp on the local port
-  Udp.begin(localPort);
-}
-
-void loop() {
-  if (digitalRead(2) == HIGH) {
-    sendOSC();
-  }
-  delay(1);
-}
-
-void sendOSC() {
-  OSCMessage msg(&quot;/juan/1&quot;);
-
-  Udp.beginPacket(remoteIP, remotePort);
-  msg.send(Udp);    // send the bytes to the SLIP stream
-  Udp.endPacket();  // mark the end of the OSC Packet
-  msg.empty();      // free space occupied by message
-}
-</code></pre>
-</section>
-<section id="interfaces" class="level3">
-<h3>Interfaces</h3>
-<p>To get you to start thinking about what kind of interface you want to
-create, here are some examples of switches and variable resistors that
-you can use as a starting point.</p>
-<p><a href="https://www.instructables.com/Switches/">Instructables:
-Switches</a></p>
-<p>Here is a list of switches that exist, along with any tutorials on
-how to make one from scratch:</p>
-<ul>
-<li>Push Button Switch:</li>
-</ul>
-<p><a
-href="https://www.instructables.com/How-to-Make-a-Push-Button-Switch/">Instructables</a><br />
-<a
-href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Push+Button/356">Push
-Button</a><br />
-<a
-href="https://makeymakey.com/pages/stomp-switch-start-and-stop-timer">Stomp/Foot
-Switch</a><br />
-<a
-href="https://www.diyability.org/guide/make-a-simple-capability-switch/">DIYAbility</a></p>
-<p>Hint: Springs!</p>
-<ul>
-<li>Toggle Switch:</li>
-</ul>
-<p><a
-href="https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/">Instructables</a><br />
-<a
-href="https://learn.browndoggadgets.com/Guide/Paper+Circuits+Cubes+-+Lever+Switch/522">Lever
-Switch</a></p>
-<p style="text-decoration: underline">
-Guides by Pete Prodoehl
-</p>
-<p><a
-href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Slide+Switch/253">Slide
-Switch</a><br />
-<a
-href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Knife+Switch/203">Cardboard
-Knife Switch</a></p>
-<ul>
-<li>Tilt Switch:</li>
-</ul>
-<p><a
-href="https://www.instructables.com/Build-your-own-tilt-switch/">Instructables</a><br />
-<a href="https://www.youtube.com/watch?v=jEqb6r3WV30">Youtube
-Video</a><br />
-<a href="https://makeymakey.com/pages/diy-tilt-joystick">Tilt
-Joystick</a></p>
-<p>Here is a list of variable resistors:</p>
-<ul>
-<li>Potentiometer:</li>
-</ul>
-<p><a
-href="https://www.instructables.com/Make-a-Pencils-Lead-Potentiometer-Experimentatio/">Instructables</a></p>
-<ul>
-<li>Photoresistor (LDR):</li>
-</ul>
-<p><a
-href="https://www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/">Instructables</a></p>
-<ul>
-<li>Force Sensitive Resistor (FSR):</li>
-</ul>
-<p><a
-href="https://www.instructables.com/Velostat-Homemade-Pressure-Sensor-Mat/">Instructables</a></p>
-<ul>
-<li>Flex Sensor:</li>
-</ul>
-<p><a
-href="https://www.instructables.com/Stickytape-Sensors/">Instructables</a></p>
-<p>ART 150 student examples from the section taught by Sabrina Raaf:</p>
-<p><a
-href="https://art150.nma-course.online/category/all-posts/creative-switch/">art150.nma</a></p>
-<p>Custom Interfaces:</p>
-<ul>
-<li><p>Crank Counter <a
-href="https://learn.browndoggadgets.com/Guide/Crank+Counter/238">Crank</a></p></li>
-<li><p>Therapy Ball Controller <a
-href="https://makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons">Therapy
-Ball</a></p></li>
-<li><p>Hoola Hoop Controller <a
-href="https://makeymakey.com/pages/hula-hoop-controller">Hula Hoop
-Controller</a></p></li>
+<li>Oscilloscope demo: two ways to dim an LED. First an analog fade with
+the Velostat pressure sensor, where the voltage itself rises and falls.
+Then a PWM fade with <code>analogWrite()</code>, where the voltage is
+always either fully on or fully off, switching very fast.</li>
+<li>Quick review: Blink, <code>analogRead()</code> and the Serial
+Monitor</li>
+<li>The Button sketch: wiring a push button to pin 2,
+<code>digitalRead()</code>, and the pull-down resistor</li>
+<li><code>if</code> / <code>else</code> statements: making a decision
+based on the button’s state</li>
+<li>The RGB LED: three LEDs (red, green, blue) in one, wired to three
+pins, and mixing colors with <code>analogWrite()</code></li>
+<li>Introducing the midterm: Creative Interfaces</li>
+<li>What can be a switch? Looking at DIY switches and variable resistors
+as a starting point for your interface</li>
 </ul>
 </section>
-<section id="monday-topics" class="level3">
-<h3>Monday Topics</h3>
+<section id="topics" class="level3">
+<h3>Topics</h3>
 <div class="topics-grid">
-<a class="topic-card" data-type="external" href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/weeks/week_08/images/oncontact_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Topic</span></div></div>
-<h3 class="cardtitle">The Interface</h3>
-</a>
-
-<a class="topic-card" data-type="lesson" href="./content/Arduino/print_to_serial_monitor/print_to_serial_monitor.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/print_to_serial_monitor/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Topic</span></div></div>
-<h3 class="cardtitle">Intro to the Serial Monitor</h3>
+<a class="topic-card" data-type="lesson" href="./content/Arduino/fade/fade.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/fade/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">Fade and Intro to PWM</h3>
 </a>
 
 <a class="topic-card" data-type="lesson" href="./content/Arduino/button/button.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/button/images/button.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">sketch</span></div></div>
+<div class="topic-thumb"><img src="./content/Arduino/button/images/button.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
 <h3 class="cardtitle">Button</h3>
 </a>
 
-<a class="topic-card" data-type="external" href="https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/analog-in-with-an-arduino/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/analogread/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Sketch</span></div></div>
-<h3 class="cardtitle">AnalogRead with Potentiometer</h3>
+<a class="topic-card" data-type="external" href="https://makeabilitylab.github.io/physcomp/arduino/buttons.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/button/images/button_schematic.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">Buttons and Pull-Down Resistors</h3>
 </a>
 
-<a class="topic-card" data-type="lesson" href="./content/Arduino/map/map.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/map/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Function</span></div></div>
-<h3 class="cardtitle">map() function</h3>
+<a class="topic-card" data-type="external" href="https://makeabilitylab.github.io/physcomp/arduino/rgb-led.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_08/images/rgb-led_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">RGB LEDs</h3>
+</a>
+
+<a class="topic-card" data-type="assignment" href="./content/Assignments/Creative_Interfaces/creative_interfaces.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Assignments/Creative_Interfaces/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Assignment</span></div></div>
+<h3 class="cardtitle">Midterm: Creative Interfaces</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_08/images/oncontact_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Reading</span></div></div>
+<h3 class="cardtitle">The Interface as Artwork</h3>
 </a>
 
 </div>
-<p>Take a look at this TED Talk by Holly Cohen:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-We84cxubCY?si=fiqwsISlsHhsAIe6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
 </section>
 </div>
 </li>
@@ -201,17 +91,19 @@ Controller</a></p></li>
 
 <section id="supplementary-material" class="level3">
 <h3>Supplementary Material</h3>
-<p>ITP NYU course explaining digital output with Arduino Uno. Serves as
-a good review of what we have learned so far.</p>
+<p>ITP NYU course explaining digital input and output with the Arduino
+Uno. A good review of what we have learned so far.</p>
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/374067285?h=c6390e412a" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen>
 </iframe>
-<p>One button games: <a href="https://c1ic.mx/menu.html">link</a></p>
 </section>
 <section id="next-week" class="level3">
 <h3>Next Week</h3>
 <div class="callout callout-nextweek">
 <span class="callout-label">Looking Ahead</span>
-<p>We’ll continue with analog output and PWM.</p>
+<p>We’ll use the Nano 33 IoT’s built-in accelerometer, and turn the
+Arduino into a keyboard and mouse so your interface can control your
+computer. Both days include midterm studio time, so bring your interface
+materials and ideas.</p>
 </div>
 </section>
 </section></div>

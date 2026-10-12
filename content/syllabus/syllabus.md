@@ -120,14 +120,14 @@ In order to get the most out of this course, students are encouraged to spend ti
 <h3><a href="#week-7">Week 7</a><span>Arduino Introduction</span></h3>
 <ul>
 <li><time>Oct 5</time> Getting Familiar with the Arduino IDE. Blink Example. Powering an LED Circuit using 3V, and with digital pins.</li>
-<li><time>Oct 7</time> Printing to Serial Monitor. Button Input. Internet of Things. Wireless Button Input Workshop.</li>
+<li><time>Oct 7</time> Printing to Serial Monitor. Internet of Things. Wireless Button Input Workshop.</li>
 </ul>
 </li>
 
 <li class="sy-week" data-week="8">
 <h3><a href="#week-8">Week 8</a><span>Arduino Continued</span></h3>
 <ul>
-<li><time>Oct 12</time> Fade Examples. For Loops. Variables. Pulse Width Modulation. Oscilloscope demo. random() Function.</li>
+<li><time>Oct 12</time> Oscilloscope demo: analog vs. PWM fade. Button Sketch. if Statements. RGB LEDs. Introduce Midterm Assignment: Creative Interfaces.</li>
 <li><time>Oct 14</time> Introduce Midterm Assignment: Custom Interfaces.</li>
 </ul>
 </li>

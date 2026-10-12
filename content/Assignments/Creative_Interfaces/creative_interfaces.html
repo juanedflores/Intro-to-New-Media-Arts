@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Midterm: Creative Interfaces</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Midterm: Creative Interfaces</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#midterm-creative-interfaces"
+id="toc-midterm-creative-interfaces">Midterm: Creative Interfaces</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a>
+<ul>
+<li><a href="#timeline" id="toc-timeline">Timeline</a></li>
+<li><a href="#requirements" id="toc-requirements">Requirements</a></li>
+</ul></li>
+<li><a href="#what-are-interfaces" id="toc-what-are-interfaces">What Are
+Interfaces?</a>
+<ul>
+<li><a href="#formal-definition" id="toc-formal-definition">Formal
+Definition</a></li>
+<li><a href="#informal-definition" id="toc-informal-definition">Informal
+Definition</a></li>
+</ul></li>
+<li><a href="#the-challenge" id="toc-the-challenge">The
+Challenge</a></li>
+<li><a href="#the-assignment" id="toc-the-assignment">The Assignment</a>
+<ul>
+<li><a href="#arduino" id="toc-arduino">Arduino</a>
+<ul>
+<li><a href="#digitalread.ino"
+id="toc-digitalread.ino">DigitalRead.ino</a></li>
+<li><a href="#analogread.ino"
+id="toc-analogread.ino">AnalogRead.ino</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#switches-and-variable-resistors"
+id="toc-switches-and-variable-resistors">Switches and Variable
+Resistors</a>
+<ul>
+<li><a href="#switches" id="toc-switches">Switches</a>
+<ul>
+<li><a href="#push-button-switch" id="toc-push-button-switch">Push
+Button Switch</a></li>
+<li><a href="#toggle-switch" id="toc-toggle-switch">Toggle
+Switch</a></li>
+<li><a href="#tilt-switch" id="toc-tilt-switch">Tilt Switch</a></li>
+</ul></li>
+<li><a href="#variable-resistors" id="toc-variable-resistors">Variable
+Resistors</a></li>
+<li><a href="#custom-interfaces" id="toc-custom-interfaces">Custom
+Interfaces</a></li>
+</ul></li>
+<li><a href="#inspiration-examples"
+id="toc-inspiration-examples">Inspiration &amp; Examples</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="midterm-creative-interfaces" class="level1">
+        <h1>Midterm: Creative Interfaces</h1>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>We have looked at how switches (buttons) and variable
+        resistors (potentiometers) work. For your midterm assignment,
+        you will construct your own <strong>creative input
+        device</strong>, using the same electronic principles:</p>
+        <ul>
+        <li><strong>Button:</strong> makes or breaks a connection in a
+        circuit. Open vs. closed circuit.</li>
+        <li><strong>Potentiometer:</strong> a variable resistor. Also
+        think of photoresistors, Velostat, and graphite.</li>
+        </ul>
+        <p><a href="Creative_Interfaces_Slides/index.html">View the
+        midterm slides</a></p>
+        <section id="timeline" class="level3">
+        <h3>Timeline</h3>
+        <div class="timeline">
+        <ul>
+        <li><strong>October 12</strong> — Midterm introduced. The Button
+        sketch. RGB LEDs.</li>
+        <li><strong>October 19</strong> — The built-in accelerometer.
+        Midterm studio.</li>
+        <li><strong>October 21</strong> — Keyboard and mouse simulation.
+        Midterm studio.</li>
+        <li><strong>October 26</strong> — Topics in sound. Midterm
+        studio.</li>
+        <li><strong>October 28</strong> — Midterm Critique</li>
+        </ul>
+        </div>
+        </section>
+        <section id="requirements" class="level3">
+        <h3>Requirements</h3>
+        <ul class="task-list">
+        <li><label><input type="checkbox" checked="" />A physical
+        interface object</label></li>
+        <li><label><input type="checkbox" checked="" />Confirm it can be
+        read by one of the <a href="#arduino">two Arduino sketches</a>
+        below</label></li>
+        <li><label><input type="checkbox" checked="" />Project
+        documentation: pictures of the object by itself, and of it being
+        used</label></li>
+        <li><label><input type="checkbox" checked="" />An Are.na channel
+        called “Creative Interfaces” that describes your interface, how
+        it is used, and what it is for, with your images</label></li>
+        <li><label><input type="checkbox" checked="" />Participation in
+        the Midterm Critique on October 28</label></li>
+        </ul>
+        </section>
+        </section>
+        <section id="what-are-interfaces" class="level2">
+        <h2>What Are Interfaces?</h2>
+        <section id="formal-definition" class="level3">
+        <h3>Formal Definition</h3>
+        <p>When it comes to hardware, interfaces are the physical and
+        interactable means that bridge the communication between humans
+        and computers. They can take many forms, from traditional input
+        devices like keyboards and mice to more innovative and creative
+        designs that “enhance” user experience.</p>
+        <p>We can take a look around us and see many examples of them.
+        We use interfaces every day.</p>
+        <p><a href="https://dougengelbart.org/content/view/162/">Doug
+        Engelbart: The Mother of All Demos</a></p>
+        </section>
+        <section id="informal-definition" class="level3">
+        <h3>Informal Definition</h3>
+        <p>You can think of interfaces as the touchpoints, or the
+        computer’s “sensors”, that allow it to perceive the world around
+        it.</p>
+        </section>
+        </section>
+        <section id="the-challenge" class="level2">
+        <h2>The Challenge</h2>
+        <p>This is an art course, so we can stretch, challenge, discard,
+        or reinvent what an interface can be.</p>
+        <p>What if we challenged the word “enhance”?</p>
+        <p>What if we made something for people with disabilities? What
+        if it was for someone without hands, eyes, or ears? What if it
+        was for someone who could not speak? (<a
+        href="https://www.diyability.org/">DIYAbility</a>)</p>
+        <p>What if we made something that was not for humans? What if it
+        was for animals? Plants? For physical phenomena like wind or
+        light? For an imaginary being? (<a
+        href="https://vimeo.com/150344536">Video</a>)</p>
+        <p>What if we made something that was not even useful at all?
+        What if it was just for fun? For play? For aesthetics? For a
+        pointless task? For a ritual? For a protest?</p>
+        <p>What if it was wearable? Or portable? Or stationary? What if
+        it was anchored to a specific location? What if it was extremely
+        heavy? Or extremely light? Can you imagine an interface with a
+        bird’s feather?</p>
+        <p>What if it was large scale? Or tiny?</p>
+        <p>What if it used unusual materials? Or recycled materials? Or
+        everyday materials? Or organic materials? Can you imagine an
+        interface with a fork? Or with a banana?</p>
+        <p>What if it required more than one person to use? What if it
+        was made for a community?</p>
+        <p>What if it was extremely simple? Or extremely complex?</p>
+        </section>
+        <section id="the-assignment" class="level2">
+        <h2>The Assignment</h2>
+        <p>Design a physical interface that could be imagined to be
+        connected to a computer.</p>
+        <p>Be imaginative with your design, even if it is made with
+        materials like cardboard, paper, aluminum foil, or tape. Think
+        of it as a prototype for a more refined version of your
+        interface. Don’t let the materials limit your ideas.</p>
+        <p>We will share our work with our peers in our first class
+        critique on the due date, so your project should be ready to
+        present. Critiques usually take the full 2.5 hours of class.</p>
+        <section id="arduino" class="level3">
+        <h3>Arduino</h3>
+        <p>This assignment will not involve any major code writing
+        (unless you want to!), but we do need to confirm that your
+        interface can be read by the Arduino, and use the Serial Monitor
+        to print a reading based on interaction.</p>
+        <p>You can also use the Serial Monitor to print out an imagined
+        effect. For example, if the button is on,
+        <code>Serial.println("LEDs turn on")</code>; if the button is
+        off, <code>Serial.println("LEDs turn off")</code>.</p>
+        <p>You have the option of working with either a <strong>digital
+        input</strong> using <code>digitalRead()</code> (on/off: 2
+        possible states) or an <strong>analog input</strong> using
+        <code>analogRead()</code> (0–1023: 1024 possible states). Your
+        design must work with one of these two sketches:</p>
+        <section id="digitalread.ino" class="level4">
+        <h4>DigitalRead.ino</h4>
+        <p>Wire your switch the same way as the <a
+        href="../../Arduino/button/button.html">Button sketch</a>, with
+        the 10kΩ pull-down resistor.</p>
+        <pre class="arduino"><code>void setup() {
+  // Your switch should be connected to Pin 2
+  pinMode(2, INPUT);
+  // Using serial monitor to confirm input is working
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the state of your switch (is the circuit open or closed?)
+  int sensorValue = digitalRead(2);
+
+  // print results
+  Serial.println(sensorValue);
+}</code></pre>
+        </section>
+        <section id="analogread.ino" class="level4">
+        <h4>AnalogRead.ino</h4>
+        <p>Wire your variable resistor as a voltage divider, the same
+        way as the Velostat sensor in the <a
+        href="../../Workshops/Velostat_Workshop/velostat_workshop.html">DIY
+        Pressure Sensor Workshop</a>.</p>
+        <pre class="arduino"><code>void setup() {
+  // Using serial monitor to confirm input is working
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the value coming from your sensor (What voltage level is it? 0-3.3V)
+  int sensorValue = analogRead(A0);
+
+  // print results
+  Serial.println(sensorValue);
+}</code></pre>
+        </section>
+        </section>
+        </section>
+        <section id="switches-and-variable-resistors" class="level2">
+        <h2>Switches and Variable Resistors</h2>
+        <p>To get you to start thinking about what kind of interface you
+        want to create, here are some examples of switches and variable
+        resistors that you can use as a starting point.</p>
+        <p><a
+        href="https://www.instructables.com/Switches/">Instructables:
+        Switches</a></p>
+        <section id="switches" class="level3">
+        <h3>Switches</h3>
+        <section id="push-button-switch" class="level4">
+        <h4>Push Button Switch</h4>
+        <p><a
+        href="https://www.instructables.com/How-to-Make-a-Push-Button-Switch/">Instructables</a><br />
+        <a
+        href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Push+Button/356">Cardboard
+        Push Button</a><br />
+        <a
+        href="https://makeymakey.com/pages/stomp-switch-start-and-stop-timer">Stomp/Foot
+        Switch</a><br />
+        <a
+        href="https://www.diyability.org/guide/make-a-simple-capability-switch/">DIYAbility</a></p>
+        <p>Hint: Springs!</p>
+        </section>
+        <section id="toggle-switch" class="level4">
+        <h4>Toggle Switch</h4>
+        <p><a
+        href="https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/">Instructables</a><br />
+        <a
+        href="https://learn.browndoggadgets.com/Guide/Paper+Circuits+Cubes+-+Lever+Switch/522">Lever
+        Switch</a></p>
+        <p>Guides by Pete Prodoehl:</p>
+        <p><a
+        href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Slide+Switch/253">Slide
+        Switch</a><br />
+        <a
+        href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Knife+Switch/203">Cardboard
+        Knife Switch</a></p>
+        </section>
+        <section id="tilt-switch" class="level4">
+        <h4>Tilt Switch</h4>
+        <p><a
+        href="https://www.instructables.com/Build-your-own-tilt-switch/">Instructables</a><br />
+        <a href="https://www.youtube.com/watch?v=jEqb6r3WV30">YouTube
+        Video</a><br />
+        <a href="https://makeymakey.com/pages/diy-tilt-joystick">Tilt
+        Joystick</a></p>
+        </section>
+        </section>
+        <section id="variable-resistors" class="level3">
+        <h3>Variable Resistors</h3>
+        <ul>
+        <li>Potentiometer: <a
+        href="https://www.instructables.com/Make-a-Pencils-Lead-Potentiometer-Experimentatio/">Instructables</a></li>
+        <li>Photoresistor (LDR): <a
+        href="https://www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/">Instructables</a></li>
+        <li>Force Sensitive Resistor (FSR): <a
+        href="https://www.instructables.com/Velostat-Homemade-Pressure-Sensor-Mat/">Instructables</a>,
+        or the Velostat sensor from our <a
+        href="../../Workshops/Velostat_Workshop/velostat_workshop.html">DIY
+        Pressure Sensor Workshop</a></li>
+        <li>Flex Sensor: <a
+        href="https://www.instructables.com/Stickytape-Sensors/">Instructables</a></li>
+        </ul>
+        </section>
+        <section id="custom-interfaces" class="level3">
+        <h3>Custom Interfaces</h3>
+        <ul>
+        <li><a
+        href="https://learn.browndoggadgets.com/Guide/Crank+Counter/238">Crank
+        Counter</a></li>
+        <li><a
+        href="https://makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons">Therapy
+        Ball Controller</a></li>
+        <li><a
+        href="https://makeymakey.com/pages/hula-hoop-controller">Hula
+        Hoop Controller</a></li>
+        </ul>
+        <figure>
+        <img src="images/playdate.jpg"
+        alt="The Playdate, a handheld game console with a crank on its side" />
+        <figcaption aria-hidden="true">The Playdate, a handheld game
+        console with a crank on its side</figcaption>
+        </figure>
+        </section>
+        </section>
+        <section id="inspiration-examples" class="level2">
+        <h2>Inspiration &amp; Examples</h2>
+        <p>ART 150 student examples from the section taught by Sabrina
+        Raaf: <a
+        href="https://art150.nma-course.online/category/all-posts/creative-switch/">art150.nma</a></p>
+        <p><a
+        href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2">The
+        Interface as Artwork</a></p>
+        <p>One button games: <a
+        href="https://c1ic.mx/menu.html">c1ic.mx</a></p>
+        <p>Take a look at this TED Talk by Holly Cohen:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-We84cxubCY?si=fiqwsISlsHhsAIe6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

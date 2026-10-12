@@ -403,7 +403,11 @@ const WEEK_SECTIONS = [
   },
   { start: 6, title: "E-Textiles / Wearables" },
   { start: 7, title: "Intro to Arduino" },
-  { start: 8, title: "Midterm: Creative Interfaces" },
+  {
+    start: 8,
+    title: "Midterm: Creative Interfaces",
+    href: "content/Assignments/Creative_Interfaces/creative_interfaces.html",
+  },
   { start: 11, title: "Final Assignment" },
 ];
 

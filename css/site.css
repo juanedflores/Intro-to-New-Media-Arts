@@ -2195,3 +2195,34 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
 [data-theme="dark"] body > nav {
   box-shadow: inset 0 -1px 0 var(--rule);
 }
+
+/* Lesson pages (blog_template). The template pads every <code> by 15px,
+   which turns inline code into tall chips; keep that padding for blocks only.
+   The language/copy badge sits in the top-right corner of a code block, so
+   leave room above the first line or it covers long comments. */
+:not(pre) > code {
+  padding: 2px 6px;
+}
+pre.code-badge-pre code.hljs {
+  padding-top: 48px;
+}
+
+/* Embedded videos on lesson pages: ::: {.video-embed} around an <iframe>
+   and a caption. Full width at 16:9, whatever width/height the embed has. */
+.video-embed {
+  margin: 24px 0 36px;
+}
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+.video-embed p {
+  margin: 12px 0 0;
+  line-height: 1.45;
+}

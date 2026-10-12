@@ -67,7 +67,7 @@ Bring your Arduino Nano 33 IoT, a USB cable that fits it, and your Velostat sens
 ::: {.announcement type="materials"}
 - Laptop with the Arduino IDE installed
 - Arduino Nano 33 IoT and USB cable
-- Electronics Kit (breadboard, LEDs, 220Ω and 10kΩ resistors, jumper wires, push button)
+- Electronics Kit (breadboard, LEDs, 220Ω and 10kΩ resistors, jumper wires)
 - Your Velostat sensor from Monday
 :::
 
@@ -75,7 +75,6 @@ Bring your Arduino Nano 33 IoT, a USB cable that fits it, and your Velostat sens
 - Getting set up: the Arduino IDE, picking the board and port, uploading your first sketch
 - Blink: the built-in LED, then an LED on the breadboard
 - Reading sensors: `analogRead()` and printing values to the Serial Monitor and Serial Plotter
-- If there's time: the Button sketch with `digitalRead()`
 - Class Sensor Grid: everyone uploads the same sketch, joins the classroom router over Wi-Fi, and sends their Velostat sensor's readings to one shared screen. We need to make sure everyone is up and running.
 
 ### Topics
@@ -88,9 +87,6 @@ Bring your Arduino Nano 33 IoT, a USB cable that fits it, and your Velostat sens
 :::
 
 ::: {.card type="lesson" title="Print to Serial Monitor" thumb="./content/Arduino/print_to_serial_monitor/images/cover.png" href="./content/Arduino/print_to_serial_monitor/print_to_serial_monitor.html" tag="Arduino"}
-:::
-
-::: {.card type="lesson" title="Button" thumb="./content/Arduino/button/images/button.png" href="./content/Arduino/button/button.html" tag="Arduino"}
 :::
 
 ::: {.card type="workshop" title="Your Arduino on the Class Sensor Grid" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html#part-4-your-own-arduino-on-the-class-grid" tag="Workshop"}
