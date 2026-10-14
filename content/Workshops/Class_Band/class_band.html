@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Class Band</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Class Band</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#class-band" id="toc-class-band">Class Band</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#tools-materials" id="toc-tools-materials">Tools &amp;
+Materials</a></li>
+<li><a href="#wire-the-button" id="toc-wire-the-button">1. Wire the
+Button</a></li>
+<li><a href="#upload-the-sketch" id="toc-upload-the-sketch">2. Upload
+the Sketch</a></li>
+<li><a href="#play" id="toc-play">3. Play</a></li>
+<li><a href="#how-it-works" id="toc-how-it-works">How It Works</a></li>
+<li><a href="#troubleshooting"
+id="toc-troubleshooting">Troubleshooting</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="class-band" class="level1">
+        <h1>Class Band</h1>
+        <figure>
+        <img src="images/cover.jpg"
+        alt="The Class Band page on the projector: every student’s button plays its own sound and animation." />
+        <figcaption aria-hidden="true">The Class Band page on the
+        projector: every student’s button plays its own sound and
+        animation.</figcaption>
+        </figure>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>Let’s end the day by playing music together. Every one of you
+        wires a <strong>push button</strong> to your Arduino and sends
+        it over <strong>Wi-Fi</strong> to the projector, the same way we
+        sent our Velostat sensors to the Class Sensor Grid. Each board
+        gets its <strong>own sound and animation</strong>, like the keys
+        on <a href="https://patatap.com/">Patatap</a>. Press your button
+        and the whole room hears it.</p>
+        </section>
+        <section id="tools-materials" class="level2">
+        <h2>Tools &amp; Materials</h2>
+        <ul>
+        <li>Arduino Nano 33 IoT and USB cable</li>
+        <li>Breadboard</li>
+        <li>Push button</li>
+        <li>10kΩ resistor (bands: brown, black, orange)</li>
+        <li>Jumper wires</li>
+        </ul>
+        </section>
+        <section id="wire-the-button" class="level2">
+        <h2>1. Wire the Button</h2>
+        <p>This is the same circuit as Monday’s <strong>Button</strong>
+        sketch, with the button on <strong>pin 2</strong>.</p>
+        <ul>
+        <li>One leg of the button goes to <strong>3.3V</strong>.</li>
+        <li>The button’s other leg goes to <strong>pin 2</strong>.</li>
+        <li>The <strong>10kΩ resistor</strong> goes from <strong>pin
+        2</strong> to <strong>GND</strong>. This is the pull-down
+        resistor: it keeps pin 2 at LOW (0V) while the button isn’t
+        pressed.</li>
+        </ul>
+        <p>Push buttons have four legs. Place the button <strong>across
+        the middle gap</strong> of the breadboard: the two legs directly
+        across the gap from each other are always connected, so the
+        button joins two rows (columns 20 and 22 in the drawing).
+        Pressing it connects those two rows.</p>
+        <p><a href="images/button_circuit.png" target="_blank" title="Open the drawing full size"><img src="images/button_circuit.png" alt="Breadboard drawing: the Arduino Nano 33 IoT sits across the middle of the breadboard with its USB end to the left. A red wire runs from the Nano's 3.3V pin to the bottom + rail, and a black wire from its GND pin to the bottom – rail. A push button sits across the middle gap in columns 20 and 22. A red wire connects column 20 to the + rail. A blue wire connects the Nano's D2 pin to column 22, and a 10kΩ resistor runs from column 22 to the – rail." style="max-width:860px;width:100%;height:auto" /></a></p>
+        <p><em>Click the drawing to open it full size.</em></p>
+        <p>With the <strong>USB cable unplugged</strong>:</p>
+        <ol type="1">
+        <li><strong>Take the power module off</strong> your breadboard.
+        The Arduino powers this circuit through the + and – rails, and
+        the module would put its own power on them too.</li>
+        <li><strong>Red wire: 3.3V pin → bottom + rail.</strong>
+        <strong>3.3V</strong> is the second pin from the USB end, on the
+        same side as A0.</li>
+        <li><strong>Black wire: GND pin → bottom – rail.</strong> This
+        <strong>GND</strong> is on the same side, second from the far
+        end (next to VIN).</li>
+        <li><strong>Button across the middle gap</strong>, a few rows to
+        the right of the Nano.</li>
+        <li><strong>Red wire: one side of the button (column 20) → +
+        rail.</strong></li>
+        <li><strong>Blue wire: D2 pin → the other side of the button
+        (column 22).</strong> <strong>D2</strong> is on the other side
+        of the Nano, the eleventh pin from the USB end.</li>
+        <li><strong>10kΩ resistor: column 22 → – rail.</strong> It
+        shares the row with the blue wire, so it pulls pin 2 down to
+        GND.</li>
+        </ol>
+        <p>The pin names are printed on the Nano next to each pin, so
+        check them as you go. <strong>Don’t</strong> use the 5V or VUSB
+        pin.</p>
+        <p>When you press the button, pin 2 reads HIGH and the Arduino
+        sends <code>1023</code>. When you let go, it reads LOW and sends
+        <code>0</code>.</p>
+        </section>
+        <section id="upload-the-sketch" class="level2">
+        <h2>2. Upload the Sketch</h2>
+        <p>You already installed the <strong>WiFiNINA</strong> library
+        for the Class Sensor Grid. If you’re on a different computer,
+        install it from the <strong>Library Manager</strong>.</p>
+        <ol type="1">
+        <li>Make a new sketch (<strong>File</strong> &gt; <strong>New
+        Sketch</strong>), delete everything in it, and paste in the
+        whole sketch below.</li>
+        <li>Change <code>ROUTER_NAME</code> and
+        <code>ROUTER_PASSWORD</code> to the Wi-Fi name and password on
+        the board. Keep the quotes.</li>
+        <li>Choose <strong>Tools</strong> &gt; <strong>Board</strong>
+        &gt; <strong>Arduino SAMD Boards</strong> &gt; <strong>Arduino
+        Nano 33 IoT</strong>, and your board’s
+        <strong>Port</strong>.</li>
+        <li>Click <strong>Upload</strong>.</li>
+        <li>Open the <strong>Serial Monitor</strong> (115200 baud). It
+        prints your <strong>board ID</strong>, and <code>pressed</code>
+        / <code>released</code> as you use the button.</li>
+        </ol>
+        <p>The built-in LED blinks while the board joins the Wi-Fi and
+        stays on once it’s connected. Find the chip with your board ID
+        at the bottom of the projector screen: that’s your sound.</p>
+        <p><a href="../Velostat_Workshop/station/class_button/class_button.ino" download>Download
+        class_button.ino</a></p>
+        <pre class="arduino"><code>/*
+  Class Button (ART 150, Class Band)
+
+  Every student uploads this same sketch to their own Arduino Nano 33 IoT.
+  It reads one push button wired like Monday&#39;s Button sketch:
+
+      3.3V -&gt; button -&gt; pin 2 -&gt; 10k resistor -&gt; GND
+
+  and sends it over Wi-Fi to the teacher&#39;s laptop, where your button plays
+  its own sound and animation on the Class Band page. Pressed sends 1023,
+  released sends 0.
+
+  The only lines to change are the Wi-Fi name and password just below.
+
+  The Serial Monitor (115200 baud) prints &quot;pressed&quot; and &quot;released&quot; as you
+  press, even if the Wi-Fi doesn&#39;t connect. Lines starting with &quot;#&quot; tell
+  you what the Wi-Fi is doing, including your board&#39;s ID.
+
+  The built-in LED blinks while joining the Wi-Fi and stays on once
+  connected.
+
+  How it works: every board has a unique hardware address (its MAC
+  address), so the last six characters of it become this board&#39;s ID and
+  nobody has to pick a number. A press goes out the moment it happens, as
+  a line like &quot;B3F9A21,1023&quot; over UDP, and the button&#39;s state is repeated
+  about 15 times a second in case a message gets lost. The laptop&#39;s
+  relay.py announces itself on the network once a second; the board sends
+  straight to it once it hears that, and to the whole network until then.
+*/
+
+#include &lt;SPI.h&gt;
+#include &lt;WiFiNINA.h&gt;
+#include &lt;WiFiUdp.h&gt;
+
+// ---- change these two lines to the classroom router&#39;s 2.4 GHz network ----
+const char WIFI_NAME[] = &quot;ROUTER_NAME&quot;;
+const char WIFI_PASSWORD[] = &quot;ROUTER_PASSWORD&quot;;
+
+const int BUTTON_PIN = 2;
+const unsigned int UDP_PORT = 9000;     // relay.py listens here
+const unsigned int BEACON_PORT = 9001;  // relay.py announces itself here
+const unsigned long SEND_EVERY = 66;    // ms: repeat the state ~15 times a second
+const unsigned long DEBOUNCE = 15;      // ms the button must stay still to count
+
+int buttonState = LOW;         // the last state we sent
+int lastReading = LOW;         // the last raw reading
+unsigned long lastChange = 0;  // when the raw reading last changed
+unsigned long lastSend = 0;
+
+char boardId[7];  // e.g. &quot;3F9A21&quot;
+WiFiUDP udp;
+IPAddress broadcastIP;
+IPAddress relayIP;             // learned from the relay&#39;s announcements
+unsigned long lastBeacon = 0;  // when we last heard one
+bool relayKnown = false;
+unsigned long lastWifiTry = 0;
+bool wifiReady = false;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT);  // the 10k resistor pulls it LOW when not pressed
+
+  if (WiFi.status() == WL_NO_MODULE) {
+    Serial.println(&quot;# wifi: no Wi-Fi module found&quot;);
+    strcpy(boardId, &quot;000000&quot;);
+    return;
+  }
+  // the MAC address comes back last byte first: mac[0] is the end of it
+  byte mac[6];
+  WiFi.macAddress(mac);
+  snprintf(boardId, sizeof(boardId), &quot;%02X%02X%02X&quot;, mac[2], mac[1], mac[0]);
+  printId();
+
+  // an out-of-date Wi-Fi chip makes joining slow or flaky; say so at startup
+  String fw = WiFi.firmwareVersion();
+  if (fw &lt; WIFI_FIRMWARE_LATEST_VERSION) {
+    Serial.print(&quot;# wifi: chip firmware &quot;);
+    Serial.print(fw);
+    Serial.print(&quot; is out of date (Arduino IDE &gt; Tools &gt; Firmware Updater)&quot;);
+    Serial.println();
+  }
+  connectWifi();
+}
+
+void printId() {
+  Serial.print(&quot;# board ID: &quot;);
+  Serial.println(boardId);
+}
+
+// Join the network. Even when WiFi.begin() reports a failure, the Wi-Fi chip
+// keeps trying on its own, and on a weak signal that can take 20+ seconds.
+// Calling begin() again restarts that attempt from scratch, so we leave it
+// 30 seconds between tries (and keep printing readings meanwhile).
+void connectWifi() {
+  lastWifiTry = millis();
+  if (WiFi.status() == WL_NO_MODULE) return;
+  Serial.print(&quot;# wifi: joining \&quot;&quot;);
+  Serial.print(WIFI_NAME);
+  Serial.println(&quot;\&quot;...&quot;);
+  digitalWrite(LED_BUILTIN, HIGH);
+  int status = WiFi.begin(WIFI_NAME, WIFI_PASSWORD);
+  digitalWrite(LED_BUILTIN, LOW);
+  if (status == WL_CONNECTED) startSending();
+  else {
+    Serial.print(&quot;# wifi: could not join \&quot;&quot;);
+    Serial.print(WIFI_NAME);
+    Serial.println(&quot;\&quot; yet. Check the name and password; trying again in 30 s&quot;);
+  }
+}
+
+// Once on the network (whether our WiFi.begin() did it or the Wi-Fi chip
+// reconnected by itself), work out where to send and open the socket.
+void startSending() {
+  // send to the whole network (e.g. 192.168.1.255) until the relay is found
+  IPAddress ip = WiFi.localIP();
+  IPAddress mask = WiFi.subnetMask();
+  for (int i = 0; i &lt; 4; i++) {
+    broadcastIP[i] = ip[i] | (~mask[i] &amp; 0xFF);
+  }
+  WiFi.noLowPowerMode();  // keep the radio awake: steadier, faster sends
+  udp.begin(BEACON_PORT);  // listen for the relay; we send to UDP_PORT
+  wifiReady = true;
+  Serial.print(&quot;# wifi: joined, address &quot;);
+  Serial.println(ip);
+  printId();
+}
+
+// The relay sends &quot;RELAY&quot; to BEACON_PORT once a second.
+void listenForRelay() {
+  while (udp.parsePacket() &gt; 0) {
+    char buf[8] = { 0 };
+    udp.read(buf, sizeof(buf) - 1);
+    if (strncmp(buf, &quot;RELAY&quot;, 5) == 0) {
+      if (!relayKnown || udp.remoteIP() != relayIP) {
+        Serial.print(&quot;# wifi: found the class grid at &quot;);
+        Serial.println(udp.remoteIP());
+      }
+      relayIP = udp.remoteIP();
+      relayKnown = true;
+      lastBeacon = millis();
+    }
+  }
+}
+
+void send(const char *msg, int len) {
+  // straight to the laptop if we&#39;ve heard it lately, otherwise everyone
+  bool direct = relayKnown &amp;&amp; millis() - lastBeacon &lt; 5000;
+  udp.beginPacket(direct ? relayIP : broadcastIP, UDP_PORT);
+  udp.write((const uint8_t *)msg, len);
+  udp.endPacket();
+}
+
+void sendState() {
+  char line[20];
+  int len = snprintf(line, sizeof(line), &quot;B%s,%d&quot;, boardId, buttonState == HIGH ? 1023 : 0);
+  send(line, len);
+  lastSend = millis();
+}
+
+void loop() {
+  // keep the Wi-Fi up, and show its state on the built-in LED
+  if (WiFi.status() == WL_CONNECTED) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    if (!wifiReady) startSending();
+    // every 5 s, report the signal strength (closer to 0 is stronger;
+    // below about -75 dBm, presses start getting lost) as &quot;R3F9A21,-62&quot;
+    static unsigned long lastSignal = 0;
+    if (wifiReady &amp;&amp; millis() - lastSignal &gt; 5000) {
+      lastSignal = millis();
+      char msg[20];
+      int n = snprintf(msg, sizeof(msg), &quot;R%s,%ld&quot;, boardId, WiFi.RSSI());
+      send(msg, n);
+    }
+  } else if (WiFi.status() != WL_NO_MODULE) {
+    if (wifiReady) {
+      udp.stop();  // reopened by startSending() after reconnecting
+      wifiReady = false;
+      relayKnown = false;
+      Serial.println(&quot;# wifi: lost the connection, reconnecting&quot;);
+    }
+    digitalWrite(LED_BUILTIN, (millis() / 250) % 2);  // blink
+    if (millis() - lastWifiTry &gt; 30000) connectWifi();
+  }
+
+  // read the button, ignoring the quick flickers (bounce) of the contacts
+  int reading = digitalRead(BUTTON_PIN);
+  if (reading != lastReading) {
+    lastReading = reading;
+    lastChange = millis();
+  }
+  bool changed = false;
+  if (reading != buttonState &amp;&amp; millis() - lastChange &gt;= DEBOUNCE) {
+    buttonState = reading;
+    changed = true;
+    Serial.println(buttonState == HIGH ? &quot;pressed&quot; : &quot;released&quot;);
+  }
+
+  if (wifiReady) {
+    listenForRelay();
+    if (changed) {
+      sendState();
+      if (buttonState == HIGH) sendState();  // a press goes out twice, in case one is lost
+    } else if (millis() - lastSend &gt;= SEND_EVERY) {
+      sendState();
+    }
+  }
+  delay(1);
+}</code></pre>
+        </section>
+        <section id="play" class="level2">
+        <h2>3. Play</h2>
+        <ul>
+        <li>Press your button and listen for your sound. Your chip at
+        the bottom of the screen lights up.</li>
+        <li>Try playing together: one person keeps a steady beat on the
+        <strong>Kick</strong>, others answer on the
+        <strong>Snare</strong> and <strong>Hi-hat</strong>, and the
+        melodic sounds (<strong>Pluck</strong>, <strong>Bell</strong>,
+        <strong>Marimba</strong>) play a little more each time they’re
+        pressed.</li>
+        </ul>
+        </section>
+        <section id="how-it-works" class="level2">
+        <h2>How It Works</h2>
+        <ul>
+        <li><strong>Your board</strong> checks the button about a
+        thousand times a second. When the button changes, it sends a
+        short message like <code>B3F9A21,1023</code> over Wi-Fi right
+        away. It also repeats the button’s state about 15 times a
+        second, in case a message gets lost.</li>
+        <li><strong>My laptop</strong> runs a small python program
+        (<code>relay.py</code>) that receives every board’s messages and
+        passes them to a web page.</li>
+        <li><strong>The web page</strong> gives each new board a sound
+        and an animation. When a board’s number jumps up, it plays them.
+        The sounds are made in the browser with the <strong>Web Audio
+        API</strong>, and the animations are drawn on a
+        <strong>canvas</strong>, just like a p5.js sketch.</li>
+        </ul>
+        </section>
+        <section id="troubleshooting" class="level2">
+        <h2>Troubleshooting</h2>
+        <ul>
+        <li><strong>No chip with your board ID.</strong> Check that the
+        Serial Monitor says <code>found the class grid</code>. If it
+        says <code>could not join</code>, check the Wi-Fi name and
+        password, including capital letters.</li>
+        <li><strong>The Serial Monitor never says
+        <code>pressed</code>.</strong> Is the button across the middle
+        gap, with one leg on 3.3V and the other on pin 2? Try turning
+        the button 90 degrees.</li>
+        <li><strong>It says <code>pressed</code> all the time.</strong>
+        The 10kΩ resistor is missing, or it isn’t between pin 2 and
+        GND.</li>
+        <li><strong>Upload fails or the port is missing.</strong> Try
+        another USB cable (some only charge), or double-tap the Nano’s
+        reset button and pick the port again.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

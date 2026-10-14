@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title></title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">constrain() function</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#constrain" id="toc-constrain">constrain()</a>
+<ul>
+<li><a href="#what-it-does" id="toc-what-it-does">What it does</a></li>
+<li><a href="#why-we-need-it" id="toc-why-we-need-it">Why we need
+it</a></li>
+<li><a href="#parameters" id="toc-parameters">Parameters</a></li>
+<li><a href="#see-it-in-the-serial-plotter"
+id="toc-see-it-in-the-serial-plotter">See It in the Serial
+Plotter</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="constrain" class="level1">
+        <h1>constrain()</h1>
+        <section id="what-it-does" class="level2">
+        <h2>What it does</h2>
+        <p><code>constrain()</code> keeps a number <strong>inside a
+        range</strong>. If the number is too small, you get the lowest
+        value of the range. If it’s too big, you get the highest. If
+        it’s already inside, it doesn’t change.</p>
+        </section>
+        <section id="why-we-need-it" class="level2">
+        <h2>Why we need it</h2>
+        <p><a href="../map/map.html"><code>map()</code></a> converts a
+        number from one range to another, but it <strong>doesn’t keep
+        the result inside</strong> the new range. If the number you give
+        it is outside the range you told it about, the result ends up
+        outside too.</p>
+        <p>Say our photocell reads <strong>100</strong> when it’s
+        covered and <strong>800</strong> in normal light, so we
+        write:</p>
+        <pre class="arduino"><code>int brightness = map(lightValue, 100, 800, 0, 255);</code></pre>
+        <p>That works until the light goes past those numbers:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Light reading</th>
+        <th>map() gives</th>
+        <th>After constrain(…, 0, 255)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>450 (in between)</td>
+        <td>127</td>
+        <td>127 (no change)</td>
+        </tr>
+        <tr>
+        <td>900 (someone turns on a lamp)</td>
+        <td><strong>291</strong></td>
+        <td><strong>255</strong></td>
+        </tr>
+        <tr>
+        <td>50 (very dark)</td>
+        <td><strong>-18</strong></td>
+        <td><strong>0</strong></td>
+        </tr>
+        </tbody>
+        </table>
+        <p><code>analogWrite()</code> only takes values from <strong>0
+        to 255</strong>, so 291 and -18 aren’t valid brightnesses.
+        <code>constrain()</code> fixes them.</p>
+        </section>
+        <section id="parameters" class="level2">
+        <h2>Parameters</h2>
+        <pre class="arduino"><code>constrain(x, a, b)</code></pre>
+        <ul>
+        <li><code>x</code>: the number to keep inside the range</li>
+        <li><code>a</code>: the lowest it’s allowed to be</li>
+        <li><code>b</code>: the highest it’s allowed to be</li>
+        </ul>
+        <p>It returns:</p>
+        <ul>
+        <li><code>x</code>, if <code>x</code> is between <code>a</code>
+        and <code>b</code></li>
+        <li><code>a</code>, if <code>x</code> is less than
+        <code>a</code></li>
+        <li><code>b</code>, if <code>x</code> is greater than
+        <code>b</code></li>
+        </ul>
+        <p>You’ll usually see it right after <code>map()</code>, keeping
+        the result inside the same range you mapped to:</p>
+        <pre class="arduino"><code>int brightness = map(lightValue, darkest, brightest, 0, 255);
+brightness = constrain(brightness, 0, 255);</code></pre>
+        </section>
+        <section id="see-it-in-the-serial-plotter" class="level2">
+        <h2>See It in the Serial Plotter</h2>
+        <p>This sketch prints two numbers: what <code>map()</code>
+        gives, and what <code>constrain()</code> turns it into. Wire
+        your photocell to <strong>A0</strong> (3.3V → photocell → A0,
+        and a 10kΩ resistor from A0 to GND), upload, and open the
+        <strong>Serial Plotter</strong>.</p>
+        <pre class="arduino"><code>int sensorPin = A0;
+
+// a small range on purpose, so it&#39;s easy to go past both ends
+int darkest = 300;
+int brightest = 600;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int lightValue = analogRead(sensorPin);
+
+  int mapped = map(lightValue, darkest, brightest, 0, 255);
+  int constrained = constrain(mapped, 0, 255);
+
+  // two numbers on one line: the Serial Plotter draws two lines
+  Serial.print(mapped);
+  Serial.print(&quot; &quot;);
+  Serial.println(constrained);
+
+  delay(20);
+}</code></pre>
+        <p>Cover the sensor and shine a light on it. One line goes past
+        0 and 255; the other one stops flat at 0 and 255. That flat line
+        is <code>constrain()</code> at work.</p>
+        <blockquote class="info">
+        <span class="uk-label uk-label-warning">Info</span>
+        <p>
+        Check out the official Arduino documentation for the constrain()
+        function:
+        </p>
+        <a href="https://docs.arduino.cc/language-reference/en/functions/math/constrain/">constrain()</a>
+        </blockquote>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

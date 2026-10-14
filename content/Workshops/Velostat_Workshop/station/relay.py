@@ -6,12 +6,15 @@ Run this on the teacher's laptop while it is on the stations' Wi-Fi network:
     python3 relay.py        (or double-click start_sensor_grid.command)
     python3 relay.py --class    (the Class Sensor Grid: one tile per
                                  student board; start_class_grid.command)
+    python3 relay.py --band     (the Class Band: each student's button
+                                 plays a sound; start_class_band.command)
     python3 relay.py --no-browser    (don't open the page automatically)
 
 It does three things, using only Python's standard library:
   1. listens for Wi-Fi messages on UDP port 9000: the four stations' lines
      like "S1,412,0,873,15,600" (pressure_station) and students' boards'
-     lines like "B3F9A21,412" (class_sensor, one sensor each);
+     lines like "B3F9A21,412" (class_sensor, one sensor each, or
+     class_button, 1023 pressed and 0 released);
   2. serves the grid page at http://localhost:8000 (no internet needed)
      and opens it in the browser;
   3. streams every line to the page as it arrives (/events).
@@ -44,7 +47,9 @@ HERE = Path(__file__).resolve().parent
 # Serve the whole course site when this file sits inside it, so the page's
 # fonts load; otherwise just this folder.
 SITE = HERE.parents[3] if (HERE.parents[3] / "fonts").exists() else HERE
-PAGE_FILE = "class.html" if "--class" in sys.argv else "index.html"
+BAND = "--band" in sys.argv
+CLASS = "--class" in sys.argv or BAND  # students' boards, not the stations
+PAGE_FILE = "band.html" if BAND else "class.html" if CLASS else "index.html"
 PAGE = "/" + str((HERE / PAGE_FILE).relative_to(SITE)).replace("\\", "/")
 
 clients = set()
@@ -232,10 +237,10 @@ def main():
 
     url = f"http://localhost:{server.server_address[1]}{PAGE}"
     print()
-    print("  Class Sensor Grid relay is running" if "--class" in sys.argv else "  Sensor Grid relay is running")
+    print("  Class Band relay is running" if BAND else "  Class Sensor Grid relay is running" if CLASS else "  Sensor Grid relay is running")
     print(f"  Page:        {url}")
     print(f"  This laptop: {local_ip()} (boards send to UDP port {UDP_PORT})")
-    print("  Waiting for boards... (Ctrl+C to stop)" if "--class" in sys.argv else "  Waiting for stations... (Ctrl+C to stop)")
+    print("  Waiting for boards... (Ctrl+C to stop)" if CLASS else "  Waiting for stations... (Ctrl+C to stop)")
     print()
     if "--no-browser" not in sys.argv:
         threading.Timer(1.0, webbrowser.open, args=(url,)).start()

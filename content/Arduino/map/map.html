@@ -266,6 +266,8 @@
 case:</a></li>
 <li><a href="#parameters" id="toc-parameters">Parameters</a></li>
 <li><a href="#full-sketch" id="toc-full-sketch">Full Sketch</a></li>
+<li><a href="#staying-inside-the-range"
+id="toc-staying-inside-the-range">Staying Inside the Range</a></li>
 </ul></li>
 </ul></div>
         </div>
@@ -391,6 +393,16 @@ void loop() {
 
   Serial.println(&quot;&quot;);
 }</code></pre>
+        </section>
+        <section id="staying-inside-the-range" class="level2">
+        <h2>Staying Inside the Range</h2>
+        <p><code>map()</code> doesn’t keep the result inside the target
+        range. If <code>val</code> goes below <code>fromLow</code> or
+        above <code>fromHigh</code>, the result goes below
+        <code>toLow</code> or above <code>toHigh</code> too. To keep it
+        inside, use <a
+        href="../constrain/constrain.html"><code>constrain()</code></a>
+        right after <code>map()</code>.</p>
         <blockquote class="info">
         <span class="uk-label uk-label-warning">Info</span>
         <p>

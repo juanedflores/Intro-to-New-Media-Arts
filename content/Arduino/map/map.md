@@ -119,6 +119,10 @@ void loop() {
 }
 ```
 
+## Staying Inside the Range
+
+`map()` doesn't keep the result inside the target range. If `val` goes below `fromLow` or above `fromHigh`, the result goes below `toLow` or above `toHigh` too. To keep it inside, use [`constrain()`](../constrain/constrain.html) right after `map()`.
+
 <blockquote class="info">
 <span class="uk-label uk-label-warning">Info</span>
 <p>Check out the official Arduino documentation for the map() function:</p>

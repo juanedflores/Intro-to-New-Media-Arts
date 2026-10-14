@@ -24,8 +24,8 @@ Interfaces</strong>. The critique is on <strong>Wednesday, October
 <ul>
 <li>Laptop with the Arduino IDE installed</li>
 <li>Arduino Nano 33 IoT and USB cable</li>
-<li>Electronics Kit (breadboard, LEDs, RGB LED, 220Ω and 10kΩ resistors,
-jumper wires, push button)</li>
+<li>Electronics Kit (breadboard, LEDs, 220Ω and 10kΩ resistors, jumper
+wires, push button)</li>
 </ul>
 </div>
 </section>
@@ -42,8 +42,6 @@ Monitor</li>
 <code>digitalRead()</code>, and the pull-down resistor</li>
 <li><code>if</code> / <code>else</code> statements: making a decision
 based on the button’s state</li>
-<li>The RGB LED: three LEDs (red, green, blue) in one, wired to three
-pins, and mixing colors with <code>analogWrite()</code></li>
 <li>Introducing the midterm: Creative Interfaces</li>
 <li>What can be a switch? Looking at DIY switches and variable resistors
 as a starting point for your interface</li>
@@ -63,13 +61,8 @@ as a starting point for your interface</li>
 </a>
 
 <a class="topic-card" data-type="external" href="https://makeabilitylab.github.io/physcomp/arduino/buttons.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/button/images/button_schematic.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<div class="topic-thumb"><img src="./content/Arduino/button/images/button_schematic.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">External Resource</span></div></div>
 <h3 class="cardtitle">Buttons and Pull-Down Resistors</h3>
-</a>
-
-<a class="topic-card" data-type="external" href="https://makeabilitylab.github.io/physcomp/arduino/rgb-led.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/weeks/week_08/images/rgb-led_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
-<h3 class="cardtitle">RGB LEDs</h3>
 </a>
 
 <a class="topic-card" data-type="assignment" href="./content/Assignments/Creative_Interfaces/creative_interfaces.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
@@ -80,6 +73,99 @@ as a starting point for your interface</li>
 <a class="topic-card" data-type="external" href="https://liveinterfacesjournal.ulusofona.pt/the-interface-as-artwork/#elementor-toc__heading-anchor-2" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
 <div class="topic-thumb"><img src="./content/weeks/week_08/images/oncontact_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Reading</span></div></div>
 <h3 class="cardtitle">The Interface as Artwork</h3>
+</a>
+
+</div>
+</section>
+</div>
+</li>
+
+<li class="uk-open">
+<a class="uk-accordion-title" href="#">WEDNESDAY</a>
+<div class="uk-accordion-content" style="padding-bottom:20px; margin-bottom:20px">
+<section id="announcements-1" class="level3">
+<h3>Announcements</h3>
+<div class="callout callout-reminder">
+<span class="callout-label">Reminder</span>
+<p>The midterm critique for <strong>Creative Interfaces</strong> is on
+<strong>Wednesday, October 28</strong>. Start sketching ideas for your
+interface: what will the person touch, and what will it make happen?</p>
+</div>
+<div class="callout callout-materials">
+<span class="callout-label">Materials Needed</span>
+<ul>
+<li>Laptop with the Arduino IDE installed</li>
+<li>Arduino Nano 33 IoT and USB cable</li>
+<li>Electronics Kit (breadboard, RGB LED, passive buzzer, photoresistor,
+potentiometer, push button, 220Ω and 10kΩ resistors, jumper wires)</li>
+</ul>
+</div>
+</section>
+<section id="agenda-1" class="level3">
+<h3>Agenda</h3>
+<ul>
+<li>The RGB LED: three LEDs (red, green, blue) in one package, wired to
+three PWM pins, and mixing colors with <code>analogWrite()</code></li>
+<li>Two kinds of RGB LED: common cathode (long leg to GND) and common
+anode (long leg to 3.3V, where LOW turns a color on), and how to test
+which one you have</li>
+<li>RGB sketches: blinking through colors with
+<code>digitalWrite()</code>, fading each color at its own speed, then
+mixing colors with a potentiometer and a photocell</li>
+<li>New functions: <code>map()</code> to convert a reading from one
+range to another, and <code>constrain()</code> to keep it inside a
+range</li>
+<li>The passive buzzer: a tiny speaker that only makes sound when we
+send it a wave. How it differs from an active buzzer, and how it
+connects back to PWM.</li>
+<li><code>tone()</code> and <code>noTone()</code>: frequency (pitch) and
+duration, and playing a short melody</li>
+<li>Build a light theremin: a photoresistor in a voltage divider, read
+with <code>analogRead()</code>, sets the pitch of the buzzer with
+<code>map()</code> and <code>tone()</code>. Then calibrating the sensor
+to the light in the room.</li>
+<li>Midterm brainstorm: sharing early ideas for your interface</li>
+<li>Class Band: everyone wires a button to pin 2, joins the classroom
+router over Wi-Fi, and plays their own sound and animation on the
+projector, Patatap-style</li>
+</ul>
+</section>
+<section id="topics-1" class="level3">
+<h3>Topics</h3>
+<div class="topics-grid">
+<a class="topic-card" data-type="lesson" href="./content/Arduino/rgb_led/rgb_led.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/rgb_led/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">RGB LED</h3>
+</a>
+
+<a class="topic-card" data-type="lesson" href="./content/Arduino/map/map.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/map/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">map()</h3>
+</a>
+
+<a class="topic-card" data-type="lesson" href="./content/Arduino/constrain/constrain.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/constrain/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">constrain()</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://makeabilitylab.github.io/physcomp/arduino/rgb-led.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_08/images/rgb-led_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">External Resource</span></div></div>
+<h3 class="cardtitle">RGB LEDs (Makeability Lab)</h3>
+</a>
+
+<a class="topic-card" data-type="lesson" href="./content/Arduino/buzzer_speaker/buzzer_speaker.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/buzzer_speaker/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">Passive Buzzer and Light Theremin</h3>
+</a>
+
+<a class="topic-card" data-type="workshop" href="./content/Workshops/Class_Band/class_band.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Workshops/Class_Band/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Workshop</span></div></div>
+<h3 class="cardtitle">Class Band</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/buzzer_speaker/images/buzzer.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">External Resource</span></div></div>
+<h3 class="cardtitle">Play a Melody with tone()</h3>
 </a>
 
 </div>
@@ -100,10 +186,11 @@ Uno. A good review of what we have learned so far.</p>
 <h3>Next Week</h3>
 <div class="callout callout-nextweek">
 <span class="callout-label">Looking Ahead</span>
-<p>We’ll use the Nano 33 IoT’s built-in accelerometer, and turn the
-Arduino into a keyboard and mouse so your interface can control your
-computer. Both days include midterm studio time, so bring your interface
-materials and ideas.</p>
+<p>Monday we’ll look at more custom switches, like the tilt switch,
+which turns on and off when you tip it, and DIY switches you can build
+into your interface. Wednesday we’ll use the Nano 33 IoT’s built-in
+accelerometer to measure tilt and movement. Both days include midterm
+studio time, so bring your interface materials and ideas.</p>
 </div>
 </section>
 </section></div>

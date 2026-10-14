@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Band - ART 150</title>
+    <link rel="icon" href="../../../../images/favicon.ico" />
+    <!--
+      Class Band: a Patatap-style instrument the whole class plays together.
+      Every student's Arduino Nano 33 IoT runs the class_button sketch and
+      sends its button as lines like "B3F9A21,1023" (pressed) or
+      "B3F9A21,0" (released). relay.py --band (start_class_band.command)
+      receives them and serves this page. Each board that connects gets its
+      own sound and animation; every melodic sound uses the same pentatonic
+      scale, so any combination of presses sounds good together.
+
+      Boards running class_sensor (the Velostat sketch) work too: a hard
+      squeeze counts as a press.
+
+      No internet needed: the sounds are made in the browser (Web Audio).
+      The keys A-Z play the sounds too, for trying it out without boards.
+    -->
+    <style>
+      @font-face {
+        font-family: "Alegreya";
+        src: url("../../../../fonts/alegreya/Alegreya-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Bold.ttf") format("truetype");
+        font-weight: 700;
+      }
+
+      :root {
+        --ink: #ece8e0;
+        --muted: #9aa1ae;
+        --panel: rgba(17, 19, 24, 0.82);
+        --rule: #343a46;
+        --yellow: #fbc740;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: #111318;
+        color: var(--ink);
+        font-family: "Alegreya Sans", "Helvetica Neue", Arial, sans-serif;
+        overflow: hidden;
+      }
+      canvas {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      /* ---------- the players: one chip per board ---------- */
+      #players {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px 16px 14px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+        transition: opacity 0.3s;
+      }
+      #players.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .chip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px 6px 8px;
+        border-radius: 999px;
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        font-size: 15px;
+        line-height: 1.1;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.08s, opacity 0.3s;
+      }
+      .chip .dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--c);
+        flex: none;
+      }
+      .chip b {
+        font-weight: 700;
+      }
+      .chip span {
+        color: var(--muted);
+      }
+      .chip.on {
+        transform: scale(1.12);
+        background: var(--c);
+        color: #111318;
+      }
+      .chip.on span {
+        color: #111318;
+      }
+      .chip.quiet {
+        opacity: 0.35;
+      }
+
+      /* ---------- top-right status and buttons ---------- */
+      #bar {
+        position: fixed;
+        top: 12px;
+        right: 14px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        font-size: 14px;
+        transition: opacity 0.3s;
+      }
+      #bar.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #status {
+        color: var(--muted);
+        background: var(--panel);
+        padding: 6px 10px;
+        border-radius: 6px;
+      }
+      button {
+        font: inherit;
+        color: var(--ink);
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        border-color: var(--muted);
+      }
+
+      /* ---------- start screen (browsers need a click before sound) ---------- */
+      #start {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: rgba(17, 19, 24, 0.9);
+        cursor: pointer;
+        text-align: center;
+        padding: 16px;
+      }
+      #start h1 {
+        font-family: "Alegreya", Georgia, serif;
+        font-weight: 800;
+        font-size: clamp(48px, 10vw, 120px);
+        margin: 0;
+        color: var(--yellow);
+      }
+      #start p {
+        font-size: clamp(18px, 2.4vw, 26px);
+        margin: 12px 0 0;
+      }
+      #start .small {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      dialog {
+        max-width: 620px;
+        background: #1c2028;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        padding: 22px 26px;
+        font-size: 16px;
+        line-height: 1.45;
+      }
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+      }
+      dialog h2 {
+        font-family: "Alegreya", Georgia, serif;
+        margin: 0 0 8px;
+      }
+      dialog h3 {
+        margin: 16px 0 4px;
+      }
+      dialog ol,
+      dialog ul {
+        padding-left: 22px;
+        margin: 4px 0;
+      }
+      kbd,
+      code {
+        background: #111318;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        padding: 0 5px;
+        font-size: 0.92em;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <div id="players"></div>
+    <div id="bar">
+      <span id="status">Waiting for boards</span>
+      <button id="full" type="button" title="Full screen (Shift+F)">Full screen</button>
+      <button id="help" type="button" title="Setup instructions (?)">Setup</button>
+    </div>
+
+    <div id="start">
+      <div>
+        <h1>Class Band</h1>
+        <p>Click anywhere to turn on the sound</p>
+        <p class="small">Then press your button, or try the keys A–Z</p>
+      </div>
+    </div>
+
+    <dialog id="setup">
+      <h2>Setting up the Class Band</h2>
+      <p>Every student uploads the same <code>class_button</code> sketch. Each board sends its button over Wi-Fi to this laptop, and each board gets its own sound and animation, in the order the boards connect.</p>
+      <h3>In class</h3>
+      <ol>
+        <li>Plug in the router and join this laptop to its network.</li>
+        <li>Double-click <code>start_class_band.command</code> in the <code>station</code> folder. This page opens. Click it once to turn on the sound.</li>
+        <li>Students wire a button to <b>pin 2</b> (3.3V → button → pin 2, 10kΩ from pin 2 to GND), type the Wi-Fi name and password into the sketch, and upload.</li>
+      </ol>
+      <h3>Players</h3>
+      <ul>
+        <li>Each board gets a chip at the bottom with its name and its sound. Names come from the Class Sensor Grid (same browser), or the board ID.</li>
+        <li><b>Click a chip</b> to give that board the next sound. <b>Shift-click</b> to rename it.</li>
+        <li>Boards running the Velostat <code>class_sensor</code> sketch work too: a hard squeeze is a press.</li>
+      </ul>
+      <h3>Keys</h3>
+      <p><kbd>A</kbd>–<kbd>Z</kbd> play the sounds · <kbd>Space</kbd> new colors · <kbd>Shift</kbd>+<kbd>H</kbd> hide the chips and buttons · <kbd>Shift</kbd>+<kbd>F</kbd> full screen · <kbd>?</kbd> this help</p>
+      <form method="dialog"><button>Got it</button></form>
+    </dialog>
+
+    <script>
+      const PRESS_ABOVE = 600; // a reading above this is a press...
+      const RELEASE_BELOW = 300; // ...and it has to drop below this before the next one
+      const QUIET_AFTER = 1500; // ms without a reading = board went quiet
+      const NAME_KEY = "art150-class-sensor-names"; // shared with the Class Sensor Grid
+      const VOICE_KEY = "art150-class-band-voices";
+
+      // ---------- colors (Space switches palettes, like Patatap) ----------
+      const PALETTES = [
+        { bg: "#111318", c: ["#e8574a", "#fbc740", "#4d84de", "#a07ad6", "#ece8e0", "#5cc8a8"] },
+        { bg: "#f1e9da", c: ["#e8574a", "#2c3f89", "#fbc740", "#1f1f1f", "#4d84de", "#d96aa0"] },
+        { bg: "#2c3f89", c: ["#fbc740", "#ece8e0", "#e8574a", "#9fd3ff", "#ffb3a7", "#111318"] },
+        { bg: "#e8574a", c: ["#111318", "#fbc740", "#ece8e0", "#2c3f89", "#ffd9a0", "#6a1d18"] },
+        { bg: "#1d3b2f", c: ["#f4d35e", "#ee964b", "#f95738", "#ece8e0", "#7fd1b9", "#0d1f18"] },
+      ];
+      let palette = 0;
+      const pal = () => PALETTES[palette];
+      const col = (i) => pal().c[i % pal().c.length];
+
+      // ---------- sound: everything is made with Web Audio ----------
+      let ac = null;
+      let out = null;
+      let noiseBuf = null;
+      function startAudio() {
+        if (ac) return ac.resume();
+        ac = new (window.AudioContext || window.webkitAudioContext)();
+        // a compressor keeps 20 buttons at once from distorting
+        const comp = ac.createDynamicsCompressor();
+        comp.threshold.value = -18;
+        comp.ratio.value = 6;
+        out = ac.createGain();
+        out.gain.value = 0.7;
+        out.connect(comp).connect(ac.destination);
+        noiseBuf = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+        const d = noiseBuf.getChannelData(0);
+        for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+      }
+
+      const hz = (midi) => 440 * Math.pow(2, (midi - 69) / 12);
+      // C major pentatonic: C D E G A
+      const SCALE = [0, 2, 4, 7, 9];
+      const note = (degree, base = 60) => base + SCALE[((degree % 5) + 5) % 5] + 12 * Math.floor(degree / 5);
+
+      function env(g, t, attack, peak, decay) {
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(peak, t + attack);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + attack + decay);
+      }
+      function osc(type, freq, t, attack, peak, decay, dest = out) {
+        const o = ac.createOscillator();
+        const g = ac.createGain();
+        o.type = type;
+        o.frequency.setValueAtTime(freq, t);
+        env(g, t, attack, peak, decay);
+        o.connect(g).connect(dest);
+        o.start(t);
+        o.stop(t + attack + decay + 0.05);
+        return o;
+      }
+      function noise(t, filterType, freq, q, attack, peak, decay) {
+        const s = ac.createBufferSource();
+        s.buffer = noiseBuf;
+        const f = ac.createBiquadFilter();
+        f.type = filterType;
+        f.frequency.setValueAtTime(freq, t);
+        f.Q.value = q;
+        const g = ac.createGain();
+        env(g, t, attack, peak, decay);
+        s.connect(f).connect(g).connect(out);
+        s.start(t);
+        s.stop(t + attack + decay + 0.05);
+        return f;
+      }
+      function filtered(type, freq, cutoff, t, attack, peak, decay) {
+        const f = ac.createBiquadFilter();
+        f.type = "lowpass";
+        f.frequency.setValueAtTime(cutoff, t);
+        f.frequency.exponentialRampToValueAtTime(Math.max(80, cutoff / 6), t + attack + decay);
+        f.connect(out);
+        return osc(type, freq, t, attack, peak, decay, f);
+      }
+
+      // ---------- the voices: one sound + one animation each ----------
+      // `n` counts that voice's presses, so the melodic ones walk through
+      // a little phrase instead of repeating one note.
+      const VOICES = [
+        { name: "Kick", anim: "disc", play(t) {
+          const o = osc("sine", 150, t, 0.003, 0.9, 0.45);
+          o.frequency.exponentialRampToValueAtTime(42, t + 0.3);
+        } },
+        { name: "Snare", anim: "burst", play(t) {
+          noise(t, "bandpass", 1800, 0.8, 0.002, 0.7, 0.2);
+          osc("triangle", 190, t, 0.002, 0.4, 0.12);
+        } },
+        { name: "Hi-hat", anim: "confetti", play(t) {
+          noise(t, "highpass", 7500, 0.7, 0.001, 0.45, 0.07);
+        } },
+        { name: "Clap", anim: "flash", play(t) {
+          for (let i = 0; i < 3; i++) noise(t + i * 0.012, "bandpass", 1400, 1.2, 0.001, 0.6, 0.05);
+          noise(t + 0.036, "bandpass", 1400, 1.2, 0.001, 0.5, 0.18);
+        } },
+        { name: "Bass", anim: "wipe", play(t, n) {
+          const steps = [0, 0, 3, 4];
+          filtered("sawtooth", hz(note(steps[n % 4], 36)), 900, t, 0.005, 0.5, 0.45);
+        } },
+        { name: "Pluck", anim: "ring", play(t, n) {
+          const steps = [0, 2, 4, 3, 5, 4, 2, 1];
+          filtered("triangle", hz(note(steps[n % 8], 60)), 4000, t, 0.003, 0.5, 0.5);
+        } },
+        { name: "Bell", anim: "rings", play(t, n) {
+          const f = hz(note([4, 7, 5, 9][n % 4], 72));
+          // a simple FM bell: one sine wobbling another
+          const mod = ac.createOscillator();
+          const mg = ac.createGain();
+          mod.frequency.value = f * 3.5;
+          mg.gain.setValueAtTime(f * 2, t);
+          mg.gain.exponentialRampToValueAtTime(1, t + 1.2);
+          const o = osc("sine", f, t, 0.002, 0.35, 1.6);
+          mod.connect(mg).connect(o.frequency);
+          mod.start(t);
+          mod.stop(t + 1.7);
+        } },
+        { name: "Marimba", anim: "dots", play(t, n) {
+          const f = hz(note([0, 4, 2, 5, 3, 7][n % 6], 60));
+          osc("sine", f, t, 0.002, 0.6, 0.35);
+          osc("sine", f * 4, t, 0.001, 0.12, 0.06);
+        } },
+        { name: "Zap", anim: "zigzag", play(t) {
+          const o = filtered("square", 1800, 3000, t, 0.002, 0.25, 0.3);
+          o.frequency.exponentialRampToValueAtTime(90, t + 0.28);
+        } },
+        { name: "Chord", anim: "sun", play(t, n) {
+          const roots = [0, 3, 4, 2];
+          const r = roots[n % 4];
+          [0, 2, 4].forEach((k, i) => filtered("sawtooth", hz(note(r + k, 60)), 2600, t, 0.01, 0.16, 0.7));
+        } },
+        { name: "Pad", anim: "bars", play(t, n) {
+          const r = [0, 3, 1, 4][n % 4];
+          [0, 2, 4].forEach((k) => osc("sine", hz(note(r + k, 60)), t, 0.25, 0.14, 1.6));
+        } },
+        { name: "Whoosh", anim: "sweep", play(t) {
+          const f = noise(t, "bandpass", 300, 2, 0.25, 0.5, 0.45);
+          f.frequency.exponentialRampToValueAtTime(5000, t + 0.6);
+        } },
+        { name: "Blip", anim: "spinner", play(t, n) {
+          const base = [0, 2, 4][n % 3];
+          [0, 1, 2].forEach((k) => osc("square", hz(note(base + k * 2, 84)), t + k * 0.06, 0.002, 0.12, 0.08));
+        } },
+        { name: "Tom", anim: "squares", play(t, n) {
+          const o = osc("sine", [220, 180, 150][n % 3], t, 0.002, 0.8, 0.35);
+          o.frequency.exponentialRampToValueAtTime(70, t + 0.3);
+        } },
+        { name: "Cowbell", anim: "triangle", play(t) {
+          const f = ac.createBiquadFilter();
+          f.type = "bandpass";
+          f.frequency.value = 800;
+          f.connect(out);
+          osc("square", 540, t, 0.001, 0.25, 0.25, f);
+          osc("square", 800, t, 0.001, 0.25, 0.25, f);
+        } },
+        { name: "Drop", anim: "bubbles", play(t, n) {
+          const o = osc("sine", hz(note([2, 4, 5, 7][n % 4], 60)), t, 0.002, 0.5, 0.18);
+          o.frequency.exponentialRampToValueAtTime(hz(note([2, 4, 5, 7][n % 4], 72)) * 1.5, t + 0.12);
+        } },
+      ];
+
+      // ---------- animations ----------
+      const canvas = document.getElementById("stage");
+      const g = canvas.getContext("2d");
+      let W = 0;
+      let H = 0;
+      let flashAlpha = 0;
+      let flashColor = "#fff";
+      function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      window.addEventListener("resize", resize);
+      resize();
+
+      const effects = [];
+      const rand = (a, b) => a + Math.random() * (b - a);
+      const ease = (x) => 1 - Math.pow(1 - x, 3); // fast, then slow
+      const S = () => Math.min(W, H);
+
+      // each one returns { life (seconds), draw(p) } where p goes 0 -> 1
+      const ANIMS = {
+        disc(c) {
+          const x = W / 2, y = H / 2;
+          return { life: 0.5, draw(p) {
+            g.fillStyle = c;
+            g.beginPath();
+            g.arc(x, y, S() * 0.42 * ease(p) * (1 - p * 0.3), 0, Math.PI * 2);
+            g.globalAlpha = 1 - p;
+            g.fill();
+          } };
+        },
+        burst(c) {
+          const x = rand(0.25, 0.75) * W, y = rand(0.25, 0.75) * H;
+          const parts = Array.from({ length: 22 }, () => ({ a: rand(0, Math.PI * 2), d: rand(0.15, 0.4), r: rand(4, 12) }));
+          return { life: 0.7, draw(p) {
+            g.fillStyle = c;
+            g.globalAlpha = 1 - p;
+            for (const q of parts) {
+              const d = S() * q.d * ease(p);
+              g.beginPath();
+              g.arc(x + Math.cos(q.a) * d, y + Math.sin(q.a) * d, q.r * (1 - p * 0.6), 0, Math.PI * 2);
+              g.fill();
+            }
+          } };
+        },
+        confetti(c) {
+          const bits = Array.from({ length: 40 }, () => ({ x: rand(0, W), y: rand(-0.2, 0.3) * H, v: rand(0.5, 1.1), w: rand(4, 10), a: rand(0, 6) }));
+          return { life: 0.8, draw(p) {
+            g.fillStyle = c;
+            g.globalAlpha = 1 - p;
+            for (const b of bits) {
+              g.save();
+              g.translate(b.x, b.y + p * H * b.v * 0.6);
+              g.rotate(b.a + p * 6);
+              g.fillRect(-b.w / 2, -b.w / 4, b.w, b.w / 2);
+              g.restore();
+            }
+          } };
+        },
+        flash(c) {
+          flashColor = c;
+          flashAlpha = 0.85;
+          return { life: 0.01, draw() {} };
+        },
+        wipe(c) {
+          const fromLeft = Math.random() < 0.5;
+          return { life: 0.55, draw(p) {
+            g.fillStyle = c;
+            const a = ease(Math.min(1, p * 2));
+            const b = ease(Math.max(0, p * 2 - 1));
+            const x0 = W * b, x1 = W * a;
+            if (fromLeft) g.fillRect(x0, 0, x1 - x0, H);
+            else g.fillRect(W - x1, 0, x1 - x0, H);
+          } };
+        },
+        ring(c) {
+          const x = rand(0.2, 0.8) * W, y = rand(0.2, 0.8) * H;
+          return { life: 0.8, draw(p) {
+            g.strokeStyle = c;
+            g.lineWidth = 18 * (1 - p) + 1;
+            g.beginPath();
+            g.arc(x, y, S() * 0.3 * ease(p), 0, Math.PI * 2);
+            g.stroke();
+          } };
+        },
+        rings(c) {
+          const x = W / 2, y = H / 2;
+          return { life: 1.4, draw(p) {
+            g.strokeStyle = c;
+            g.lineWidth = 4;
+            g.globalAlpha = 1 - p;
+            for (let i = 0; i < 4; i++) {
+              const q = Math.max(0, p * 1.4 - i * 0.12);
+              g.beginPath();
+              g.arc(x, y, S() * 0.55 * ease(Math.min(1, q)), 0, Math.PI * 2);
+              g.stroke();
+            }
+          } };
+        },
+        dots(c) {
+          const y = rand(0.2, 0.8) * H;
+          return { life: 0.7, draw(p) {
+            g.fillStyle = c;
+            const n = 12;
+            for (let i = 0; i < n; i++) {
+              const q = Math.min(1, Math.max(0, p * 2 - i / n));
+              const r = 14 * Math.sin(q * Math.PI);
+              if (r <= 0) continue;
+              g.beginPath();
+              g.arc((W * (i + 0.5)) / n, y - Math.sin(q * Math.PI) * 40, r, 0, Math.PI * 2);
+              g.fill();
+            }
+          } };
+        },
+        zigzag(c) {
+          const y = rand(0.25, 0.75) * H;
+          const amp = rand(30, 80);
+          return { life: 0.6, draw(p) {
+            g.strokeStyle = c;
+            g.lineWidth = 8;
+            g.lineJoin = "round";
+            g.globalAlpha = 1 - Math.max(0, p - 0.5) * 2;
+            g.beginPath();
+            const n = 14;
+            const shown = Math.ceil(n * ease(Math.min(1, p * 1.6)));
+            for (let i = 0; i <= shown; i++) {
+              const px = (W * i) / n;
+              const py = y + (i % 2 ? amp : -amp);
+              i ? g.lineTo(px, py) : g.moveTo(px, py);
+            }
+            g.stroke();
+          } };
+        },
+        sun(c) {
+          const x = W / 2, y = H / 2;
+          const spin = rand(0, 1);
+          return { life: 0.8, draw(p) {
+            g.strokeStyle = c;
+            g.lineWidth = 6;
+            g.lineCap = "round";
+            g.globalAlpha = 1 - p;
+            const n = 16;
+            for (let i = 0; i < n; i++) {
+              const a = ((i / n) + spin) * Math.PI * 2;
+              const r0 = S() * 0.1 + S() * 0.35 * ease(p);
+              const r1 = r0 + S() * 0.08;
+              g.beginPath();
+              g.moveTo(x + Math.cos(a) * r0, y + Math.sin(a) * r0);
+              g.lineTo(x + Math.cos(a) * r1, y + Math.sin(a) * r1);
+              g.stroke();
+            }
+          } };
+        },
+        bars(c) {
+          return { life: 1.6, draw(p) {
+            g.fillStyle = c;
+            g.globalAlpha = 0.85 * Math.sin(p * Math.PI);
+            const n = 7;
+            for (let i = 0; i < n; i++) {
+              const h = (H / n) * 0.5 * Math.sin(Math.min(1, p * 2 + i * 0.05) * Math.PI * 0.5);
+              g.fillRect(0, (H * (i + 0.5)) / n - h / 2, W, h);
+            }
+          } };
+        },
+        sweep(c) {
+          return { life: 0.8, draw(p) {
+            g.strokeStyle = c;
+            g.lineWidth = 6;
+            g.globalAlpha = 1 - p;
+            for (let i = 0; i < 5; i++) {
+              const y = H * (0.3 + i * 0.1);
+              const x = -W * 0.3 + W * 1.6 * ease(Math.max(0, p - i * 0.04));
+              g.beginPath();
+              g.moveTo(x - W * 0.35, y);
+              g.lineTo(x, y);
+              g.stroke();
+            }
+          } };
+        },
+        spinner(c) {
+          const x = rand(0.25, 0.75) * W, y = rand(0.25, 0.75) * H;
+          const sides = 3 + Math.floor(rand(0, 4));
+          return { life: 0.7, draw(p) {
+            g.strokeStyle = c;
+            g.lineWidth = 7;
+            g.lineJoin = "round";
+            const r = S() * 0.2 * (1 - ease(p)) + 4;
+            g.beginPath();
+            for (let i = 0; i <= sides; i++) {
+              const a = p * Math.PI * 3 + (i / sides) * Math.PI * 2;
+              const px = x + Math.cos(a) * r, py = y + Math.sin(a) * r;
+              i ? g.lineTo(px, py) : g.moveTo(px, py);
+            }
+            g.stroke();
+          } };
+        },
+        squares(c) {
+          const x = rand(0.2, 0.8) * W, y = rand(0.2, 0.8) * H;
+          return { life: 0.6, draw(p) {
+            g.fillStyle = c;
+            g.globalAlpha = 1 - p;
+            const s = S() * 0.32 * ease(p);
+            g.save();
+            g.translate(x, y);
+            g.rotate(p * 1.2);
+            g.fillRect(-s / 2, -s / 2, s, s);
+            g.restore();
+          } };
+        },
+        triangle(c) {
+          const y = rand(0.25, 0.75) * H;
+          const ltr = Math.random() < 0.5;
+          return { life: 0.5, draw(p) {
+            g.fillStyle = c;
+            const s = S() * 0.16;
+            const x = ltr ? -s + (W + 2 * s) * ease(p) : W + s - (W + 2 * s) * ease(p);
+            const d = ltr ? 1 : -1;
+            g.beginPath();
+            g.moveTo(x + d * s, y);
+            g.lineTo(x - d * s * 0.6, y - s * 0.8);
+            g.lineTo(x - d * s * 0.6, y + s * 0.8);
+            g.fill();
+          } };
+        },
+        bubbles(c) {
+          const bs = Array.from({ length: 10 }, () => ({ x: rand(0.1, 0.9) * W, r: rand(8, 26), v: rand(0.4, 0.9) }));
+          return { life: 1.0, draw(p) {
+            g.strokeStyle = c;
+            g.lineWidth = 4;
+            g.globalAlpha = 1 - p;
+            for (const b of bs) {
+              g.beginPath();
+              g.arc(b.x + Math.sin(p * 8 + b.r) * 10, H * (1.05 - p * b.v), b.r, 0, Math.PI * 2);
+              g.stroke();
+            }
+          } };
+        },
+      };
+
+      function trigger(v, n) {
+        const voice = VOICES[v];
+        if (ac) voice.play(ac.currentTime + 0.005, n);
+        const e = ANIMS[voice.anim](col(v));
+        e.born = performance.now();
+        effects.push(e);
+        if (effects.length > 150) effects.shift(); // keep it smooth with many players
+      }
+
+      function frame(now) {
+        g.globalAlpha = 1;
+        g.fillStyle = pal().bg;
+        g.fillRect(0, 0, W, H);
+        for (let i = effects.length - 1; i >= 0; i--) {
+          const e = effects[i];
+          const p = (now - e.born) / 1000 / e.life;
+          if (p >= 1) {
+            effects.splice(i, 1);
+            continue;
+          }
+          g.save();
+          e.draw(Math.max(0, p));
+          g.restore();
+        }
+        if (flashAlpha > 0.01) {
+          g.globalAlpha = flashAlpha;
+          g.fillStyle = flashColor;
+          g.fillRect(0, 0, W, H);
+          flashAlpha *= 0.82;
+        }
+        g.globalAlpha = 1;
+        updateQuiet(now);
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+
+      // ---------- players: boards, their names and their voices ----------
+      function load(key) {
+        try {
+          return JSON.parse(localStorage.getItem(key) || "{}");
+        } catch (e) {
+          return {};
+        }
+      }
+      function save(key, v) {
+        try {
+          localStorage.setItem(key, JSON.stringify(v));
+        } catch (e) {}
+      }
+      let names = load(NAME_KEY);
+      const voiceOf = load(VOICE_KEY); // board ID -> voice index, so a reload keeps everyone's sound
+      const playersEl = document.getElementById("players");
+      const boards = new Map(); // id -> { pressed, presses, lastSeen, el }
+      const pressCount = new Array(VOICES.length).fill(0);
+
+      function nextFreeVoice() {
+        const used = new Set([...boards.keys()].map((id) => voiceOf[id]));
+        for (let i = 0; i < VOICES.length; i++) if (!used.has(i)) return i;
+        return boards.size % VOICES.length; // more players than voices: share
+      }
+      function paintChip(id) {
+        const b = boards.get(id);
+        const v = voiceOf[id];
+        b.el.style.setProperty("--c", col(v));
+        b.el.innerHTML = `<i class="dot"></i><b></b><span></span>`;
+        b.el.querySelector("b").textContent = names[id] || id;
+        b.el.querySelector("span").textContent = VOICES[v].name;
+      }
+      function addBoard(id) {
+        if (voiceOf[id] === undefined) {
+          voiceOf[id] = nextFreeVoice();
+          save(VOICE_KEY, voiceOf);
+        }
+        const el = document.createElement("div");
+        el.className = "chip";
+        el.title = "Click: next sound · Shift-click: rename";
+        const b = { pressed: false, lastSeen: performance.now(), el };
+        boards.set(id, b);
+        el.addEventListener("click", (e) => {
+          if (e.shiftKey) {
+            const n = prompt("Name for board " + id, names[id] || "");
+            if (n === null) return;
+            names = load(NAME_KEY); // pick up names typed on the Sensor Grid meanwhile
+            if (n.trim()) names[id] = n.trim().slice(0, 24);
+            else delete names[id];
+            save(NAME_KEY, names);
+          } else {
+            voiceOf[id] = (voiceOf[id] + 1) % VOICES.length;
+            save(VOICE_KEY, voiceOf);
+            press(id);
+          }
+          paintChip(id);
+        });
+        playersEl.appendChild(el);
+        paintChip(id);
+        updateStatus();
+        return b;
+      }
+      function press(id) {
+        const b = boards.get(id);
+        const v = voiceOf[id];
+        trigger(v, pressCount[v]++);
+        b.el.classList.add("on");
+        clearTimeout(b.offTimer);
+        b.offTimer = setTimeout(() => b.el.classList.remove("on"), 140);
+      }
+      function updateQuiet(now) {
+        boards.forEach((b) => b.el.classList.toggle("quiet", now - b.lastSeen > QUIET_AFTER));
+      }
+
+      function handleLine(line) {
+        const m = /^B([0-9A-F]{6}),(\d{1,4})$/.exec(line.trim());
+        if (!m) return;
+        const id = m[1];
+        const value = Number(m[2]);
+        const b = boards.get(id) || addBoard(id);
+        b.lastSeen = performance.now();
+        if (!b.pressed && value > PRESS_ABOVE) {
+          b.pressed = true;
+          press(id);
+        } else if (b.pressed && value < RELEASE_BELOW) {
+          b.pressed = false;
+        }
+      }
+
+      // ---------- Wi-Fi: lines from relay.py --band ----------
+      const statusEl = document.getElementById("status");
+      let relay = false;
+      let relayLost = false;
+      function updateStatus() {
+        if (!relay) statusEl.textContent = "No relay: keys A–Z only";
+        else if (relayLost) statusEl.textContent = "Lost the relay, reconnecting…";
+        else if (!boards.size) statusEl.textContent = "Waiting for boards";
+        else statusEl.textContent = boards.size + (boards.size === 1 ? " player" : " players");
+      }
+      fetch("/relay-info", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((info) => {
+          if (!info || !info.relay) return updateStatus();
+          relay = true;
+          updateStatus();
+          const events = new EventSource("/events");
+          events.onmessage = (e) => handleLine(e.data);
+          events.onopen = () => {
+            relayLost = false;
+            updateStatus();
+          };
+          events.onerror = () => {
+            relayLost = true; // EventSource retries by itself
+            updateStatus();
+          };
+        })
+        .catch(updateStatus);
+
+      // ---------- keys, buttons and the start screen ----------
+      const startEl = document.getElementById("start");
+      const setup = document.getElementById("setup");
+      startEl.addEventListener("click", () => {
+        startAudio();
+        startEl.remove();
+      });
+      function toggleFull() {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else document.documentElement.requestFullscreen().catch(() => {});
+      }
+      function toggleHidden() {
+        playersEl.classList.toggle("hidden");
+        document.getElementById("bar").classList.toggle("hidden");
+      }
+      document.getElementById("full").addEventListener("click", toggleFull);
+      document.getElementById("help").addEventListener("click", () => setup.showModal());
+      window.addEventListener("keydown", (e) => {
+        if (e.metaKey || e.ctrlKey || e.altKey || e.repeat || setup.open) return;
+        if (startEl.isConnected) {
+          startAudio();
+          startEl.remove();
+        }
+        const k = e.key.toLowerCase();
+        if (k === " ") {
+          e.preventDefault();
+          palette = (palette + 1) % PALETTES.length;
+          boards.forEach((b, id) => paintChip(id));
+        } else if (k === "f" && e.shiftKey) toggleFull();
+        else if (k === "h" && e.shiftKey) toggleHidden();
+        else if (k === "?" || k === "/") setup.showModal();
+        else if (k.length === 1 && k >= "a" && k <= "z") {
+          const v = (k.charCodeAt(0) - 97) % VOICES.length;
+          trigger(v, pressCount[v]++);
+        }
+      });
+    </script>
+  </body>
+</html>

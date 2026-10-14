@@ -1,0 +1,26 @@
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of the photocell voltage divider: the Nano's 3.3V pin goes to one leg of the photocell. The photocell's other leg connects to pin A0 and to a 10 kilohm resistor, whose other end goes to GND. More light on the photocell gives a higher reading on A0." style="max-width:560px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+  <rect x="0" y="0" width="560" height="300" fill="#fff" />
+  <rect x="20" y="30" width="100" height="240" rx="8" fill="#e8f1f4" stroke="#2c3f89" stroke-width="3" />
+  <text x="70" y="146" text-anchor="middle" fill="#2c3f89" font-weight="700">Nano</text>
+  <text x="70" y="163" text-anchor="middle" fill="#2c3f89" font-weight="700">33 IoT</text>
+  <g fill="none" stroke-width="3" stroke-linejoin="round">
+    <!-- 3.3V to the photocell -->
+    <path d="M120 60 H380 V85" stroke="#c0392b" />
+    <!-- photocell: a resistor in a circle, with light arrows -->
+    <path d="M380 85 l10 5 l-20 10 l20 10 l-20 10 l20 10 l-10 5 V150" stroke="#2c3f89" />
+    <circle cx="380" cy="110" r="30" stroke="#2c3f89" stroke-width="2" />
+    <path d="M446 58 l-28 24 m6 -12 l-6 12 l12 -4 M462 76 l-28 24 m6 -12 l-6 12 l12 -4" stroke="#d39000" stroke-width="2.5" />
+    <!-- A0 taps the point between the two -->
+    <path d="M120 150 H380" stroke="#d39000" />
+    <!-- 10k resistor to GND -->
+    <path d="M380 150 V180 l10 5 l-20 10 l20 10 l-20 10 l20 10 l-10 5 V240 H120" stroke="#2c3f89" />
+  </g>
+  <circle cx="380" cy="150" r="5" fill="#2c3f89" />
+  <text x="128" y="52" fill="#c0392b" font-weight="700">3.3V</text>
+  <text x="128" y="142" fill="#b07800" font-weight="700">A0</text>
+  <text x="128" y="232" fill="#1d2433" font-weight="700">GND</text>
+  <text x="422" y="122" fill="#2c3f89" font-weight="700">photocell</text>
+  <text x="404" y="214" fill="#2c3f89" font-weight="700">10kΩ</text>
+  <text x="250" y="142" text-anchor="middle" fill="#666">the reading</text>
+  <text x="280" y="285" text-anchor="middle" fill="#666">more light → less resistance in the photocell → higher reading on A0</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of a common anode RGB LED: the LED's common leg, the longest, goes to 3.3V. Its red, green and blue legs each go through a 220 ohm resistor to Arduino pins D6, D5 and D3. A pin set LOW lets current flow from 3.3V through that color, turning it on." style="max-width:560px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+  <rect x="0" y="0" width="560" height="250" fill="#fff" />
+  <g fill="none" stroke="#2c3f89" stroke-width="3" stroke-linejoin="round">
+  <rect x="20" y="30" width="100" height="200" rx="8" fill="#e8f1f4" />
+  <path d="M120 60 H160" />
+  <path d="M160 60 h12 l6 -10 l12 20 l12 -20 l12 20 l12 -20 l6 10 h12" />
+  <path d="M244 60 H308" />
+  <path d="M338 46 L338 74 L310 60 Z" fill="#e8574a" stroke="#e8574a" />
+  <path d="M308 46 V74" stroke="#e8574a" />
+  <path d="M338 60 H430" />
+  <text x="124" y="52" stroke="none" fill="#2c3f89" font-weight="700">D6</text>
+  <text x="202" y="90" stroke="none" fill="#666" text-anchor="middle">220Ω</text>
+  <text x="372" y="52" stroke="none" fill="#e8574a" font-weight="700">red</text>
+  <path d="M120 115 H160" />
+  <path d="M160 115 h12 l6 -10 l12 20 l12 -20 l12 20 l12 -20 l6 10 h12" />
+  <path d="M244 115 H308" />
+  <path d="M338 101 L338 129 L310 115 Z" fill="#3aa36b" stroke="#3aa36b" />
+  <path d="M308 101 V129" stroke="#3aa36b" />
+  <path d="M338 115 H430" />
+  <text x="124" y="107" stroke="none" fill="#2c3f89" font-weight="700">D5</text>
+  <text x="202" y="145" stroke="none" fill="#666" text-anchor="middle">220Ω</text>
+  <text x="372" y="107" stroke="none" fill="#3aa36b" font-weight="700">green</text>
+  <path d="M120 170 H160" />
+  <path d="M160 170 h12 l6 -10 l12 20 l12 -20 l12 20 l12 -20 l6 10 h12" />
+  <path d="M244 170 H308" />
+  <path d="M338 156 L338 184 L310 170 Z" fill="#4d84de" stroke="#4d84de" />
+  <path d="M308 156 V184" stroke="#4d84de" />
+  <path d="M338 170 H430" />
+  <text x="124" y="162" stroke="none" fill="#2c3f89" font-weight="700">D3</text>
+  <text x="202" y="200" stroke="none" fill="#666" text-anchor="middle">220Ω</text>
+  <text x="372" y="162" stroke="none" fill="#4d84de" font-weight="700">blue</text>
+  <path d="M430 60 V220 H120" stroke="#c0392b" />
+  <circle cx="430" cy="115" r="4" fill="#2c3f89" />
+  <circle cx="430" cy="170" r="4" fill="#2c3f89" />
+  <rect x="296" y="36" width="56" height="160" rx="10" stroke="#999" stroke-width="1.5" stroke-dasharray="5 4" />
+  <text x="124" y="212" stroke="none" fill="#c0392b" font-weight="700">3.3V</text>
+  </g>
+  <text x="70" y="135" text-anchor="middle" fill="#2c3f89" font-weight="700">Nano</text>
+  <text x="70" y="152" text-anchor="middle" fill="#2c3f89" font-weight="700">33 IoT</text>
+  <text x="324" y="214" text-anchor="middle" fill="#666">common anode</text>
+  <text x="442" y="135" fill="#2c3f89">common leg</text>
+  <text x="442" y="152" fill="#2c3f89">(the longest)</text>
+  <text x="442" y="169" fill="#c0392b">to 3.3V</text>
+</svg>

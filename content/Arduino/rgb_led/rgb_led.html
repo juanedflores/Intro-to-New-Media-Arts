@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>RGB LED</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text"></a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#rgb-led" id="toc-rgb-led">RGB LED</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#two-kinds-of-rgb-led" id="toc-two-kinds-of-rgb-led">Two
+Kinds of RGB LED</a>
+<ul>
+<li><a href="#which-one-do-i-have" id="toc-which-one-do-i-have">Which
+One Do I Have?</a></li>
+<li><a href="#pick-your-led" id="toc-pick-your-led">Pick Your
+LED</a></li>
+</ul></li>
+<li><a href="#wiring-the-rgb-led" id="toc-wiring-the-rgb-led">Wiring the
+RGB LED</a></li>
+<li><a href="#blink-colors" id="toc-blink-colors">1. Blink
+Colors</a></li>
+<li><a href="#fade-rgb" id="toc-fade-rgb">2. Fade RGB</a></li>
+<li><a href="#potentiometer-rgb" id="toc-potentiometer-rgb">3.
+Potentiometer RGB</a></li>
+<li><a href="#photocell-rgb" id="toc-photocell-rgb">4. Photocell
+RGB</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <style>
+          /* show only the version for the LED picked below (common cathode by default) */
+          html:not([data-led="anode"]) .led-anode,
+          html[data-led="anode"] .led-cathode {
+            display: none;
+          }
+          .led-picker {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin: 1em 0;
+          }
+          .led-picker span {
+            font-weight: 700;
+            margin-right: 4px;
+          }
+          .led-picker button {
+            font: inherit;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 2px solid var(--blue);
+            background: var(--paper);
+            color: var(--blue);
+            cursor: pointer;
+          }
+          .led-picker button[aria-pressed="true"] {
+            background: var(--blue);
+            color: var(--paper);
+          }
+          .led-diagrams {
+            display: grid;
+            gap: 20px;
+            max-width: 560px;
+          }
+          .led-diagrams p {
+            margin: 0.2em 0 0;
+          }
+        </style>
+        <section id="rgb-led" class="level1">
+        <h1>RGB LED</h1>
+        <figure>
+        <img src="images/cover.png"
+        alt="Red, green and blue light overlapping: where they mix they make yellow, cyan, magenta, and white in the middle." />
+        <figcaption aria-hidden="true">Red, green and blue light
+        overlapping: where they mix they make yellow, cyan, magenta, and
+        white in the middle.</figcaption>
+        </figure>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>An <strong>RGB LED</strong> is three LEDs in one package: a
+        <strong>red</strong>, a <strong>green</strong> and a
+        <strong>blue</strong> one. By turning each one on, off, or
+        somewhere in between, we can mix almost any color, the same way
+        a screen mixes red, green and blue pixels.</p>
+        <p>We’ll build up in four small sketches:</p>
+        <ol type="1">
+        <li><strong>Blink Colors:</strong> cycle through the colors you
+        can make with each color fully on or off.</li>
+        <li><strong>Fade RGB:</strong> each color fades up and down with
+        <code>analogWrite()</code>, each at its own speed.</li>
+        <li><strong>Potentiometer RGB:</strong> a knob mixes the
+        colors.</li>
+        <li><strong>Photocell RGB:</strong> the light in the room mixes
+        the colors. Next, we’ll use this same photocell to play the <a
+        href="../buzzer_speaker/buzzer_speaker.html">buzzer</a>.</li>
+        </ol>
+        <p>For more diagrams and videos, see the Makeability Lab’s <a
+        href="https://makeabilitylab.github.io/physcomp/arduino/rgb-led.html">RGB
+        LED</a> lesson.</p>
+        </section>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <ul>
+        <li>Arduino Nano 33 IoT and USB cable</li>
+        <li>Breadboard</li>
+        <li>RGB LED</li>
+        <li>Three 220Ω resistors (bands: red, red, brown)</li>
+        <li>Potentiometer</li>
+        <li>Photoresistor (photocell) and a 10kΩ resistor (bands: brown,
+        black, orange)</li>
+        <li>Jumper wires</li>
+        </ul>
+        </section>
+        <section id="two-kinds-of-rgb-led" class="level2">
+        <h2>Two Kinds of RGB LED</h2>
+        <p>An RGB LED has <strong>four legs</strong>: one for each
+        color, plus one <strong>common</strong> leg shared by all three.
+        The common leg is the <strong>longest</strong> one. Usually the
+        order is: red, common, green, blue.</p>
+        <p>There are two kinds, and they look exactly the same. The
+        difference is where the common leg goes:</p>
+        <ul>
+        <li><strong>Common cathode:</strong> the common leg goes to
+        <strong>GND</strong>. Current flows <strong>out of</strong> the
+        Arduino’s pin, through the LED, to GND. This works just like the
+        regular LEDs we’ve used so far: <code>HIGH</code> turns a color
+        on.</li>
+        <li><strong>Common anode:</strong> the common leg goes to
+        <strong>3.3V</strong>. Current flows from 3.3V, through the LED,
+        and <strong>into</strong> the Arduino’s pin. Everything is
+        flipped: <code>LOW</code> turns a color on.</li>
+        </ul>
+        <div class="led-diagrams">
+        <div>
+        <img src="images/rgb_common_cathode.svg" alt="Schematic of a common cathode RGB LED: the common leg, the longest, goes to GND. The red, green and blue legs each go through a 220 ohm resistor to pins D6, D5 and D3. A pin set HIGH turns that color on." style="width:100%;height:auto" />
+        <p>
+        <strong>Common cathode:</strong> common leg to
+        <strong>GND</strong>
+        </p>
+        </div>
+        <div>
+        <img src="images/rgb_common_anode.svg" alt="Schematic of a common anode RGB LED: the common leg, the longest, goes to 3.3V. The red, green and blue legs each go through a 220 ohm resistor to pins D6, D5 and D3. A pin set LOW turns that color on." style="width:100%;height:auto" />
+        <p>
+        <strong>Common anode:</strong> common leg to
+        <strong>3.3V</strong>
+        </p>
+        </div>
+        </div>
+        <p>Look at which way the LED symbols point: the triangle points
+        the way the current flows. In common cathode, it flows from the
+        pins toward GND. In common anode, it flows from 3.3V toward the
+        pins.</p>
+        <section id="which-one-do-i-have" class="level3">
+        <h3>Which One Do I Have?</h3>
+        <p>You can test it without any code, using the Arduino only for
+        power:</p>
+        <ol type="1">
+        <li>Put the LED in the breadboard, each leg in its own row.</li>
+        <li>Connect the <strong>longest leg</strong> to
+        <strong>GND</strong>, and the <strong>red leg</strong> through a
+        <strong>220Ω resistor</strong> to <strong>3.3V</strong>.</li>
+        <li>If red lights up, you have a <strong>common cathode</strong>
+        LED.</li>
+        <li>If not, swap them: longest leg to <strong>3.3V</strong>, and
+        the red leg through the resistor to <strong>GND</strong>. If red
+        lights up now, you have a <strong>common anode</strong>
+        LED.</li>
+        </ol>
+        </section>
+        <section id="pick-your-led" class="level3">
+        <h3>Pick Your LED</h3>
+        <p>Choose the kind you have, and the wiring and code below will
+        change to match it. This page remembers your choice.</p>
+        <div class="led-picker" role="group"
+        aria-label="Which RGB LED do you have?">
+        <p><span>My RGB LED is:</span>
+        <button type="button" data-led="cathode" aria-pressed="true">Common
+        cathode</button>
+        <button type="button" data-led="anode" aria-pressed="false">Common
+        anode</button></p>
+        </div>
+        </section>
+        </section>
+        <section id="wiring-the-rgb-led" class="level2">
+        <h2>Wiring the RGB LED</h2>
+        <p>Each color leg gets its <strong>own 220Ω resistor</strong>,
+        and its own pin. We use pins <strong>6</strong>,
+        <strong>5</strong> and <strong>3</strong> because they can do
+        PWM (<code>analogWrite()</code>), which we need for fading and
+        mixing.</p>
+        <div class="led-anode">
+        <ul>
+        <li><strong>Longest leg</strong> → <strong>3.3V</strong></li>
+        <li><strong>Red</strong> leg → 220Ω resistor → <strong>pin
+        6</strong></li>
+        <li><strong>Green</strong> leg → 220Ω resistor → <strong>pin
+        5</strong></li>
+        <li><strong>Blue</strong> leg → 220Ω resistor → <strong>pin
+        3</strong></li>
+        </ul>
+        <p><img src="images/rgb_common_anode.svg" alt="Schematic of a common anode RGB LED: the common leg, the longest, goes to 3.3V. The red, green and blue legs each go through a 220 ohm resistor to pins D6, D5 and D3." style="max-width:560px;width:100%;height:auto" /></p>
+        </div>
+        <div class="led-cathode">
+        <ul>
+        <li><strong>Longest leg</strong> → <strong>GND</strong></li>
+        <li><strong>Red</strong> leg → 220Ω resistor → <strong>pin
+        6</strong></li>
+        <li><strong>Green</strong> leg → 220Ω resistor → <strong>pin
+        5</strong></li>
+        <li><strong>Blue</strong> leg → 220Ω resistor → <strong>pin
+        3</strong></li>
+        </ul>
+        <p><img src="images/rgb_common_cathode.svg" alt="Schematic of a common cathode RGB LED: the common leg, the longest, goes to GND. The red, green and blue legs each go through a 220 ohm resistor to pins D6, D5 and D3." style="max-width:560px;width:100%;height:auto" /></p>
+        </div>
+        <p>Bend the legs apart a little and put each one in its
+        <strong>own row</strong> of the breadboard, then add the
+        resistors and wires to those rows. Keep this wiring for all four
+        sketches.</p>
+        <blockquote class="info">
+        <span class="uk-label">Note</span>
+        <p>
+        <strong>A note about 3.3V:</strong> green and blue LEDs need
+        more voltage to light up than red ones. The Nano 33 IoT only
+        gives 3.3V, so green and blue may look <strong>dimmer</strong>
+        than red, and mixed colors may lean red.
+        </p>
+        </blockquote>
+        </section>
+        <section id="blink-colors" class="level2">
+        <h2>1. Blink Colors</h2>
+        <table>
+        <colgroup>
+        <col style="width: 33%" />
+        <col style="width: 33%" />
+        <col style="width: 33%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th></th>
+        <th>Common cathode</th>
+        <th>Common anode</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Turn a color <strong>on</strong></td>
+        <td><code>digitalWrite(pin, HIGH)</code></td>
+        <td><code>digitalWrite(pin, LOW)</code></td>
+        </tr>
+        <tr>
+        <td>Turn a color <strong>off</strong></td>
+        <td><code>digitalWrite(pin, LOW)</code></td>
+        <td><code>digitalWrite(pin, HIGH)</code></td>
+        </tr>
+        <tr>
+        <td><strong>Full</strong> brightness</td>
+        <td><code>analogWrite(pin, 255)</code></td>
+        <td><code>analogWrite(pin, 0)</code></td>
+        </tr>
+        <tr>
+        <td><strong>Off</strong></td>
+        <td><code>analogWrite(pin, 0)</code></td>
+        <td><code>analogWrite(pin, 255)</code></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>With each color either fully <strong>on</strong> or fully
+        <strong>off</strong>, we can make 7 colors: red, green and blue,
+        and the mixes yellow, cyan, magenta and white. This sketch shows
+        each one for a second, like the Blink sketch with three
+        LEDs.</p>
+        <div class="led-anode">
+        <p><em>Showing the code for a <strong>common anode</strong> LED.
+        <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-cathode">
+        <p><em>Showing the code for a <strong>common cathode</strong>
+        LED. <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-anode">
+        <pre class="arduino"><code>// Blink Colors: show each color for one second.
+// Our RGB LED is common anode: LOW turns a color ON, HIGH turns it OFF.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+  // red
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+  delay(1000);
+
+  // green
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, HIGH);
+  delay(1000);
+
+  // blue
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, LOW);
+  delay(1000);
+
+  // yellow (red + green)
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, HIGH);
+  delay(1000);
+
+  // cyan (green + blue)
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, LOW);
+  delay(1000);
+
+  // magenta (red + blue)
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, LOW);
+  delay(1000);
+
+  // white (all three)
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, LOW);
+  delay(1000);
+}</code></pre>
+        </div>
+        <div class="led-cathode">
+        <pre class="arduino"><code>// Blink Colors: show each color for one second.
+// Our RGB LED is common cathode: HIGH turns a color ON, LOW turns it OFF.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+  // red
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, LOW);
+  delay(1000);
+
+  // green
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, LOW);
+  delay(1000);
+
+  // blue
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, HIGH);
+  delay(1000);
+
+  // yellow (red + green)
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, LOW);
+  delay(1000);
+
+  // cyan (green + blue)
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+  delay(1000);
+
+  // magenta (red + blue)
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, HIGH);
+  delay(1000);
+
+  // white (all three)
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+  delay(1000);
+}</code></pre>
+        </div>
+        <p>Each color takes <strong>three</strong>
+        <code>digitalWrite()</code> lines, one for each leg, and then a
+        <code>delay()</code>.</p>
+        <div class="led-anode">
+        <p>Remember that with a common anode LED, <strong>LOW</strong>
+        means on. So for red, the red pin is <code>LOW</code> and the
+        other two are <code>HIGH</code>.</p>
+        </div>
+        <p><strong>Try it:</strong> add your own color to the sequence,
+        change the order, or make the <code>delay()</code> shorter to
+        flash through them faster.</p>
+        </section>
+        <section id="fade-rgb" class="level2">
+        <h2>2. Fade RGB</h2>
+        <p>This is Monday’s <strong>Fade</strong> sketch, three times:
+        one <code>brightness</code> and one <code>fadeAmount</code> for
+        each color. Each color fades by a different amount (1, 3 and 5),
+        so they fade at <strong>different speeds</strong>, drift in and
+        out of step, and the mix keeps changing.</p>
+        <div class="led-anode">
+        <p><em>Showing the code for a <strong>common anode</strong> LED.
+        <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-cathode">
+        <p><em>Showing the code for a <strong>common cathode</strong>
+        LED. <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-anode">
+        <pre class="arduino"><code>// Fade RGB: the Fade sketch, three times. Each color fades up and down
+// at its own speed, so the mix keeps changing.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+
+int redBrightness = 0;
+int greenBrightness = 0;
+int blueBrightness = 0;
+
+// each color fades by a different amount, so each one has its own speed
+int redFadeAmount = 1;    // slow
+int greenFadeAmount = 3;  // medium
+int blueFadeAmount = 5;   // fast
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+  // common anode: 255 is OFF and 0 is full brightness,
+  // so we send 255 minus the brightness
+  analogWrite(redPin, 255 - redBrightness);
+  analogWrite(greenPin, 255 - greenBrightness);
+  analogWrite(bluePin, 255 - blueBrightness);
+
+  redBrightness = redBrightness + redFadeAmount;
+  greenBrightness = greenBrightness + greenFadeAmount;
+  blueBrightness = blueBrightness + blueFadeAmount;
+
+  // reverse the direction of each fade at the ends
+  if (redBrightness &lt;= 0 || redBrightness &gt;= 255) {
+    redFadeAmount = -redFadeAmount;
+  }
+  if (greenBrightness &lt;= 0 || greenBrightness &gt;= 255) {
+    greenFadeAmount = -greenFadeAmount;
+  }
+  if (blueBrightness &lt;= 0 || blueBrightness &gt;= 255) {
+    blueFadeAmount = -blueFadeAmount;
+  }
+
+  delay(20);
+}</code></pre>
+        </div>
+        <div class="led-cathode">
+        <pre class="arduino"><code>// Fade RGB: the Fade sketch, three times. Each color fades up and down
+// at its own speed, so the mix keeps changing.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+
+int redBrightness = 0;
+int greenBrightness = 0;
+int blueBrightness = 0;
+
+// each color fades by a different amount, so each one has its own speed
+int redFadeAmount = 1;    // slow
+int greenFadeAmount = 3;  // medium
+int blueFadeAmount = 5;   // fast
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+  analogWrite(redPin, redBrightness);
+  analogWrite(greenPin, greenBrightness);
+  analogWrite(bluePin, blueBrightness);
+
+  redBrightness = redBrightness + redFadeAmount;
+  greenBrightness = greenBrightness + greenFadeAmount;
+  blueBrightness = blueBrightness + blueFadeAmount;
+
+  // reverse the direction of each fade at the ends
+  if (redBrightness &lt;= 0 || redBrightness &gt;= 255) {
+    redFadeAmount = -redFadeAmount;
+  }
+  if (greenBrightness &lt;= 0 || greenBrightness &gt;= 255) {
+    greenFadeAmount = -greenFadeAmount;
+  }
+  if (blueBrightness &lt;= 0 || blueBrightness &gt;= 255) {
+    blueFadeAmount = -blueFadeAmount;
+  }
+
+  delay(20);
+}</code></pre>
+        </div>
+        <div class="led-anode">
+        <p>Because the LED is common anode, we send
+        <code>255 - redBrightness</code>: when
+        <code>redBrightness</code> is 255 (full), we send
+        <code>255 - 255 = 0</code>, which is full brightness for a
+        common anode LED.</p>
+        </div>
+        <p><strong>Try it:</strong></p>
+        <ul>
+        <li>Change the three <code>fadeAmount</code> values. (Keep them
+        numbers that divide evenly into 255, like 1, 3, 5, 15 or 17, so
+        each fade lands exactly on 0 and 255.)</li>
+        <li>Change <code>delay(20)</code> to make everything faster or
+        slower.</li>
+        </ul>
+        </section>
+        <section id="potentiometer-rgb" class="level2">
+        <h2>3. Potentiometer RGB</h2>
+        <p>Now <strong>you</strong> control the mix. As you turn the
+        knob, red fades out while blue fades in, passing through purple
+        in the middle.</p>
+        <p><strong>Add the potentiometer:</strong> one outer leg →
+        <strong>3.3V</strong>, the other outer leg →
+        <strong>GND</strong>, the middle leg → <strong>A0</strong>.</p>
+        <div class="led-anode">
+        <p><em>Showing the code for a <strong>common anode</strong> LED.
+        <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-cathode">
+        <p><em>Showing the code for a <strong>common cathode</strong>
+        LED. <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-anode">
+        <pre class="arduino"><code>// Potentiometer RGB: turn the knob to go from red, through purple, to blue.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+int potPin = A0;
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int potValue = analogRead(potPin);  // 0-1023
+  Serial.println(potValue);
+
+  // as the knob turns, red goes down while blue goes up
+  int redBrightness = map(potValue, 0, 1023, 255, 0);
+  int blueBrightness = map(potValue, 0, 1023, 0, 255);
+
+  // common anode: send 255 minus the brightness
+  analogWrite(redPin, 255 - redBrightness);
+  analogWrite(greenPin, 255);  // green stays off
+  analogWrite(bluePin, 255 - blueBrightness);
+
+  delay(10);
+}</code></pre>
+        </div>
+        <div class="led-cathode">
+        <pre class="arduino"><code>// Potentiometer RGB: turn the knob to go from red, through purple, to blue.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+int potPin = A0;
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int potValue = analogRead(potPin);  // 0-1023
+  Serial.println(potValue);
+
+  // as the knob turns, red goes down while blue goes up
+  int redBrightness = map(potValue, 0, 1023, 255, 0);
+  int blueBrightness = map(potValue, 0, 1023, 0, 255);
+
+  analogWrite(redPin, redBrightness);
+  analogWrite(greenPin, 0);    // green stays off
+  analogWrite(bluePin, blueBrightness);
+
+  delay(10);
+}</code></pre>
+        </div>
+        <p><strong>New function: <a
+        href="../map/map.html"><code>map()</code></a>.</strong> It turns
+        the knob’s range (0 to 1023) into a brightness (0 to 255):</p>
+        <pre class="arduino"><code>map(potValue, 0, 1023, 0, 255)
+//  the number, its range,   the range we want</code></pre>
+        <p>Notice that red’s <code>map()</code> goes <strong>from 255 to
+        0</strong>: the more you turn, the less red.</p>
+        <p><strong>Try it:</strong> make the knob go from <strong>red to
+        green</strong>, or from <strong>green to blue</strong>,
+        instead.</p>
+        </section>
+        <section id="photocell-rgb" class="level2">
+        <h2>4. Photocell RGB</h2>
+        <p>Same idea, but now the <strong>light in the room</strong>
+        turns the knob. Cover the sensor with your hand and the LED
+        fades between colors.</p>
+        <p><strong>Swap the potentiometer for the photocell</strong>,
+        wired as a voltage divider: <strong>3.3V</strong> → photocell →
+        <strong>A0</strong>, and a <strong>10kΩ resistor</strong> from
+        A0 to <strong>GND</strong>. More light gives a
+        <strong>higher</strong> reading.</p>
+        <p><img src="images/photocell_divider.svg" alt="Schematic of the photocell voltage divider: the Nano's 3.3V pin goes to one leg of the photocell. The photocell's other leg connects to pin A0 and to a 10 kilohm resistor, whose other end goes to GND. More light on the photocell gives a higher reading on A0." style="max-width:560px;width:100%;height:auto" /></p>
+        <p>Every room has different light, so first find your sensor’s
+        range: upload the sketch, open the <strong>Serial
+        Monitor</strong>, and note the reading in normal light and the
+        reading with your hand covering the sensor. Then change
+        <code>darkest</code> and <code>brightest</code> to your numbers
+        and upload again.</p>
+        <div class="led-anode">
+        <p><em>Showing the code for a <strong>common anode</strong> LED.
+        <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-cathode">
+        <p><em>Showing the code for a <strong>common cathode</strong>
+        LED. <a href="#pick-your-led">Switch</a></em></p>
+        </div>
+        <div class="led-anode">
+        <pre class="arduino"><code>// Photocell RGB: the same idea as the potentiometer sketch, but the light
+// in the room turns the knob. Cover the sensor with your hand to change
+// the color.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+int sensorPin = A0;
+
+// change these to the numbers you see in the Serial Monitor
+int darkest = 100;    // reading with your hand covering the sensor
+int brightest = 800;  // reading in normal light
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int lightValue = analogRead(sensorPin);
+  Serial.println(lightValue);
+
+  int redBrightness = map(lightValue, darkest, brightest, 0, 255);
+  redBrightness = constrain(redBrightness, 0, 255);  // keep it between 0 and 255
+  int blueBrightness = 255 - redBrightness;
+
+  // common anode: send 255 minus the brightness
+  analogWrite(redPin, 255 - redBrightness);
+  analogWrite(greenPin, 255);  // green stays off
+  analogWrite(bluePin, 255 - blueBrightness);
+
+  delay(10);
+}</code></pre>
+        </div>
+        <div class="led-cathode">
+        <pre class="arduino"><code>// Photocell RGB: the same idea as the potentiometer sketch, but the light
+// in the room turns the knob. Cover the sensor with your hand to change
+// the color.
+
+int redPin = 6;
+int greenPin = 5;
+int bluePin = 3;
+int sensorPin = A0;
+
+// change these to the numbers you see in the Serial Monitor
+int darkest = 100;    // reading with your hand covering the sensor
+int brightest = 800;  // reading in normal light
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int lightValue = analogRead(sensorPin);
+  Serial.println(lightValue);
+
+  int redBrightness = map(lightValue, darkest, brightest, 0, 255);
+  redBrightness = constrain(redBrightness, 0, 255);  // keep it between 0 and 255
+  int blueBrightness = 255 - redBrightness;
+
+  analogWrite(redPin, redBrightness);
+  analogWrite(greenPin, 0);    // green stays off
+  analogWrite(bluePin, blueBrightness);
+
+  delay(10);
+}</code></pre>
+        </div>
+        <p><strong>New function: <a
+        href="../constrain/constrain.html"><code>constrain()</code></a>.</strong>
+        <code>map()</code> doesn’t stop at 0 and 255: if the room gets
+        brighter than <code>brightest</code>, it gives numbers above
+        255, and darker than <code>darkest</code> gives numbers below 0.
+        <code>constrain(redBrightness, 0, 255)</code> keeps the
+        brightness between 0 and 255.</p>
+        <p><strong>Try it:</strong> make a <strong>night light</strong>
+        that turns on (white) only when the room is dark. (Hint: an
+        <code>if</code> statement that checks
+        <code>lightValue</code>.)</p>
+        <p><strong>Next:</strong> keep the photocell where it is. In the
+        <a href="../buzzer_speaker/buzzer_speaker.html">Passive
+        Buzzer</a> lesson, we’ll use the same reading to set the
+        <strong>pitch</strong> of a sound instead of a color.</p>
+        <script>
+          // Pick Your LED: show the common anode or common cathode version of the
+          // wiring and code, and remember the choice in this browser.
+          (function () {
+            var KEY = "art150-rgb-led-type";
+            function pick(type) {
+              document.documentElement.setAttribute("data-led", type);
+              document.querySelectorAll(".led-picker button").forEach(function (b) {
+                b.setAttribute("aria-pressed", b.getAttribute("data-led") === type ? "true" : "false");
+              });
+            }
+            var saved = null;
+            try {
+              saved = localStorage.getItem(KEY);
+            } catch (e) {}
+            pick(saved === "anode" ? "anode" : "cathode");
+            document.querySelectorAll(".led-picker button").forEach(function (b) {
+              b.addEventListener("click", function () {
+                var type = b.getAttribute("data-led");
+                pick(type);
+                try {
+                  localStorage.setItem(KEY, type);
+                } catch (e) {}
+              });
+            });
+          })();
+        </script>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

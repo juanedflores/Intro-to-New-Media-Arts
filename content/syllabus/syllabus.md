@@ -127,23 +127,23 @@ In order to get the most out of this course, students are encouraged to spend ti
 <li class="sy-week" data-week="8">
 <h3><a href="#week-8">Week 8</a><span>Arduino Continued</span></h3>
 <ul>
-<li><time>Oct 12</time> Oscilloscope demo: analog vs. PWM fade. Button Sketch. if Statements. RGB LEDs. Introduce Midterm Assignment: Creative Interfaces.</li>
-<li><time>Oct 14</time> Introduce Midterm Assignment: Custom Interfaces.</li>
+<li><time>Oct 12</time> Oscilloscope demo: analog vs. PWM fade. Button Sketch. if Statements. Introduce Midterm Assignment: Creative Interfaces.</li>
+<li><time>Oct 14</time> RGB LEDs (common cathode and common anode). map() and constrain(). Passive Buzzer and tone(). Light Theremin with a Photocell. Midterm brainstorm. Class Band.</li>
 </ul>
 </li>
 
 <li class="sy-week" data-week="9">
-<h3><a href="#week-9">Week 9</a><span>Arduino Continued (Servo Motors)</span></h3>
+<h3><a href="#week-9">Week 9</a><span>Custom Switches and the Accelerometer</span></h3>
 <ul>
-<li><time>Oct 19</time> Servo Motors. Sweep example. Midterm Studio.</li>
-<li><time>Oct 21</time> Topics in Light. RGB LEDs. Photocells. Neopixels. Midterm Studio.</li>
+<li><time>Oct 19</time> Custom Switches: tilt switch and DIY switches for your interface. Midterm Studio.</li>
+<li><time>Oct 21</time> The Nano 33 IoT's built-in Accelerometer and Gyroscope. Midterm Studio.</li>
 </ul>
 </li>
 
 <li class="sy-week" data-week="10">
 <h3><a href="#week-10">Week 10</a><span>Sound and Midterm Critique</span></h3>
 <ul>
-<li><time>Oct 26</time> Topics in Sound. Piezo Buzzer. Microphone. Midterm Studio.</li>
+<li><time>Oct 26</time> Topics in Sound. Microphone. Midterm Studio.</li>
 <li><time>Oct 28</time> <b class="sy-due">Midterm Critique</b></li>
 </ul>
 </li>
@@ -152,7 +152,7 @@ In order to get the most out of this course, students are encouraged to spend ti
 <h3><a href="#week-11">Week 11</a><span>Making a Speaker Workshop</span></h3>
 <ul>
 <li><time>Nov 2</time> Topics in Sound (continued). Making a speaker.</li>
-<li><time>Nov 4</time> Arduino Accelerometer and Gyroscope. Arduino as a Keyboard or Mouse.</li>
+<li><time>Nov 4</time> Arduino as a Keyboard or Mouse.</li>
 </ul>
 <p class="sy-note"><b>Reminder</b> Final Projects Research due Nov 9th.</p>
 </li>
