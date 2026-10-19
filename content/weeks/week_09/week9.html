@@ -1,39 +1,192 @@
 <div id="ArticleBodyMain"><section id="week-9" class="level1">
 <h1>Week 9</h1>
-<div class="marquee">
-<p>
-Midterm Studio / Demos / Arduino to Computer Communication
-</p>
-</div>
 <ul uk-accordion style="padding-bottom: 5vh">
 <li class="uk-open">
-<a class="uk-accordion-title" href="#">MONDAY & WEDNESDAY</a>
+<a class="uk-accordion-title" href="#">MONDAY</a>
 <div class="uk-accordion-content" style="padding-bottom:20px; margin-bottom:20px">
 <section id="announcements" class="level3">
 <h3>Announcements</h3>
 <div class="callout callout-reminder">
 <span class="callout-label">Reminder</span>
-<p>Midterm projects are due at the start of class on March 18th!</p>
+<p>The midterm critique for <strong>Creative Interfaces</strong> is next
+week, on <strong>Wednesday, October 28</strong>. Today we make custom
+switches and go over the accelerometer, then work on your interface.</p>
+</div>
+<div class="callout callout-tip">
+<span class="callout-label">Tip</span>
+<p>New: the <strong><a
+href="./content/Arduino/cheat_sheet/cheat_sheet.html">Arduino Cheat
+Sheet</a></strong>, with every function, pattern and circuit we’ve used
+so far on one page. Keep it open while you build.</p>
+</div>
+<div class="callout callout-materials">
+<span class="callout-label">Materials Needed</span>
+<ul>
+<li>Laptop with the Arduino IDE installed</li>
+<li>Arduino Nano 33 IoT and USB cable</li>
+<li>Electronics Kit (breadboard, 10kΩ resistors, jumper wires, alligator
+clips)</li>
+<li>Your midterm materials, and any cardboard you can bring</li>
+</ul>
 </div>
 </section>
 <section id="agenda" class="level3">
 <h3>Agenda</h3>
 <ul>
-<li>Work on your midterm project (Midterm Assignment (Due March
-18th))</li>
+<li><strong>Switches that think outside the box.</strong> A switch is
+just two pieces of metal that touch, so anything that moves can be one:
+a flicked spring, a bouncing ball, a door, a book, a hug. We’ll look at
+a gallery of examples from artists, musicians and designers, then build
+our own custom switches.</li>
+<li><strong>The tilt switch and the accelerometer.</strong> A tilt
+switch knows <em>if</em> it’s tipped: a metal ball inside closes the
+switch, wired just like a push button. The Nano’s built-in accelerometer
+measures <em>how much</em> it’s tipped, as numbers for x, y and z.</li>
+<li><strong>Midterm studio.</strong> Which of these could your interface
+use?</li>
 </ul>
 </section>
 <section id="topics" class="level3">
 <h3>Topics</h3>
 <div class="topics-grid">
-<a class="topic-card" data-type="lesson" href="./content/Arduino/Keyboard/Keyboard.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/Keyboard/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Step by Step</span><span class="topic-tag">Arduino Examples</span></div></div>
-<h3 class="cardtitle">KEYBOARD CONTROL</h3>
+<a class="topic-card" data-type="lesson" href="./content/Assignments/Switch_Gallery/switch_gallery.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Assignments/Switch_Gallery/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Gallery</span></div></div>
+<h3 class="cardtitle">Custom Switches & Interfaces: A Gallery</h3>
 </a>
 
-<a class="topic-card" data-type="lesson" href="./content/Arduino/Chataigne/Chataigne.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/Arduino/Chataigne/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Step by Step</span><span class="topic-tag">3rd Party Software</span><span class="topic-tag">Arduino Examples</span></div></div>
-<h3 class="cardtitle">CHATAIGNE PLAY AUDIO FILES</h3>
+<a class="topic-card" data-type="workshop" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Workshops/Velostat_Workshop/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Workshop</span></div></div>
+<h3 class="cardtitle">DIY Pressure Sensor (Velostat)</h3>
+</a>
+
+<a class="topic-card" data-type="lesson" href="./content/Arduino/cheat_sheet/cheat_sheet.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/cheat_sheet/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">Arduino Cheat Sheet</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://learn.adafruit.com/tilt-sensor" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/tilt_switch_cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">External Resource</span></div></div>
+<h3 class="cardtitle">Tilt Sensor</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/accelerometer_cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">External Resource</span></div></div>
+<h3 class="cardtitle">Accessing Accelerometer Data on Nano 33 IoT</h3>
+</a>
+
+<a class="topic-card" data-type="lesson" href="./content/Arduino/button/button.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/button/images/button.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">Button</h3>
+</a>
+
+</div>
+</section>
+<section id="switch-tutorials" class="level3">
+<h3>Switch Tutorials</h3>
+<div class="topics-grid">
+<a class="topic-card" data-type="external" href="https://www.instructables.com/Switches/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/instructables_switches_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Instructables: Switches</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://www.instructables.com/How-to-Make-a-Push-Button-Switch/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/push_button_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Push Button Switch</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Push+Button/356" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/cardboard_push_button_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Cardboard Push Button</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://makeymakey.com/pages/stomp-switch-start-and-stop-timer" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/stomp_switch_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Stomp/Foot Switch</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://www.diyability.org/guide/make-a-simple-capability-switch/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/capability_switch_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Simple Capability Switch (DIYAbility)</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://www.instructables.com/how-to-make-a-homemade-ONOFF-switch/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/toggle_switch_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Homemade On/Off Toggle Switch</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://learn.browndoggadgets.com/Guide/Paper+Circuits+Cubes+-+Lever+Switch/522" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/lever_switch_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Lever Switch</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Slide+Switch/253" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/slide_switch_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Cardboard Slide Switch</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://learn.browndoggadgets.com/Guide/Switch+-+Cardboard+Knife+Switch/203" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/knife_switch_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Cardboard Knife Switch</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://www.instructables.com/Build-your-own-tilt-switch/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/diy_tilt_switch_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Build Your Own Tilt Switch</h3>
+</a>
+
+<a class="topic-card" data-type="video" href="https://www.youtube.com/watch?v=jEqb6r3WV30" style="--accent: #fbc740; --tag-bg: #fbc740; --tag-fg: #1d2433">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/tilt_video_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Video</span></div></div>
+<h3 class="cardtitle">DIY Tilt Switch (Video)</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://makeymakey.com/pages/diy-tilt-joystick" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/tilt_joystick_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">DIY Tilt Joystick</h3>
+</a>
+
+</div>
+</section>
+<section id="variable-resistor-tutorials" class="level3">
+<h3>Variable Resistor Tutorials</h3>
+<div class="topics-grid">
+<a class="topic-card" data-type="external" href="https://www.instructables.com/Make-a-Pencils-Lead-Potentiometer-Experimentatio/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/pencil_pot_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Pencil Lead Potentiometer</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://www.instructables.com/How-to-use-a-photoresistor-or-photocell-Arduino-Tu/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/photoresistor_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Photoresistor (LDR)</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://www.instructables.com/Velostat-Homemade-Pressure-Sensor-Mat/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/velostat_mat_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Velostat Pressure Sensor Mat</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://www.instructables.com/Stickytape-Sensors/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/flex_sensor_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Sticky Tape Flex Sensor</h3>
+</a>
+
+</div>
+</section>
+<section id="custom-interface-tutorials" class="level3">
+<h3>Custom Interface Tutorials</h3>
+<div class="topics-grid">
+<a class="topic-card" data-type="external" href="https://learn.browndoggadgets.com/Guide/Crank+Counter/238" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/crank_counter_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Crank Counter</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://makeymakey.com/blogs/how-to-instructions/balance-weight-shifting-ball-controller-as-assistive-technology-by-katie-butzu-and-mark-lyons" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/therapy_ball_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Therapy Ball Controller</h3>
+</a>
+
+<a class="topic-card" data-type="external" href="https://makeymakey.com/pages/hula-hoop-controller" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/weeks/week_09/images/hula_hoop_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Tutorial</span></div></div>
+<h3 class="cardtitle">Hula Hoop Controller</h3>
 </a>
 
 </div>
@@ -43,17 +196,14 @@ Midterm Studio / Demos / Arduino to Computer Communication
 
 </ul>
 
-<section id="supplementary-material" class="level3">
-<h3>Supplementary Material</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HDWxq1v6A2k?si=ZIgVkgKEBfu_l4lA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</section>
 <section id="next-week" class="level3">
 <h3>Next Week</h3>
 <div class="callout callout-nextweek">
 <span class="callout-label">Looking Ahead</span>
-<p>We’ll continue with midterm demos and move into new sensor
-topics.</p>
+<p>Monday is about sound: a microphone that reacts to loudness, and a
+small speaker you can play with <code>tone()</code>. Then midterm
+studio. Wednesday is the <strong>midterm critique</strong>: bring your
+finished interface, ready to show.</p>
 </div>
 </section>
 </section></div>

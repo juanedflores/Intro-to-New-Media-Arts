@@ -1,0 +1,32 @@
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic: the piezo connects between a node and GND, with a 1 megohm resistor across it. From that node, a 10 kilohm resistor goes to pin A0. A 3.3 volt Zener diode connects from A0 to GND, with its band toward A0. These parts keep the piezo's voltage spikes safe for the Nano's 3.3V pin." style="max-width:600px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+  <rect width="600" height="300" fill="#fff"/>
+  <rect x="20" y="40" width="100" height="230" rx="8" fill="#e8f1f4" stroke="#2c3f89" stroke-width="3"/>
+  <text x="70" y="146" text-anchor="middle" fill="#2c3f89" font-weight="700">Nano</text>
+  <text x="70" y="163" text-anchor="middle" fill="#2c3f89" font-weight="700">33 IoT</text>
+  <g fill="none" stroke-width="3" stroke-linejoin="round">
+    <path d="M120 110 H240" stroke="#d39000"/>
+    <path d="M240 110 H285 l5 -10 l10 20 l10 -20 l10 20 l10 -20 l5 10 H440 H520" stroke="#2c3f89"/>
+    <path d="M240 110 V165" stroke="#2c3f89"/>
+    <path d="M240 190 V240" stroke="#2c3f89"/>
+    <path d="M440 110 V170" stroke="#2c3f89"/>
+    <path d="M440 200 V240" stroke="#2c3f89"/>
+    <path d="M520 110 V150 l10 5 l-20 10 l20 10 l-20 10 l20 10 l-10 5 V240" stroke="#2c3f89"/>
+    <path d="M120 240 H520" stroke="#1d2433"/>
+  </g>
+  <!-- Zener diode, band (cathode) up toward A0 -->
+  <path d="M226 190 L254 190 L240 166 Z" fill="#2c3f89"/>
+  <path d="M222 170 L226 165 H254 L258 160" fill="none" stroke="#2c3f89" stroke-width="3"/>
+  <!-- piezo: two plates with the crystal between -->
+  <path d="M418 170 H462 M418 200 H462" stroke="#5b6472" stroke-width="4"/>
+  <rect x="426" y="176" width="28" height="18" fill="#d0d4da" stroke="#5b6472" stroke-width="2"/>
+  <circle cx="240" cy="110" r="5" fill="#2c3f89"/><circle cx="440" cy="110" r="5" fill="#2c3f89"/>
+  <circle cx="240" cy="240" r="5" fill="#2c3f89"/><circle cx="440" cy="240" r="5" fill="#2c3f89"/>
+  <text x="128" y="102" fill="#b07800" font-weight="700">A0</text>
+  <text x="128" y="232" fill="#1d2433" font-weight="700">GND</text>
+  <text x="310" y="94" text-anchor="middle" fill="#2c3f89" font-weight="700">10kΩ</text>
+  <text x="266" y="176" fill="#2c3f89" font-weight="700">3.3V Zener</text>
+  <text x="266" y="192" fill="#666">band toward A0</text>
+  <text x="470" y="190" fill="#5b6472" font-weight="700">piezo</text>
+  <text x="540" y="200" fill="#2c3f89" font-weight="700">1MΩ</text>
+  <text x="300" y="285" text-anchor="middle" fill="#666">the 10kΩ and the Zener keep the piezo's spikes at a safe 3.3V or less</text>
+</svg>

@@ -4,6 +4,8 @@ title: map() function
 
 # map()
 
+![](images/cover.png){alt="map() converts a number from one range to another: here, 0 to 1023 becomes 0 to 255."}
+
 ## What it does
 
 map() re-maps a number from one range to another.

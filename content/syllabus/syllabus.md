@@ -135,23 +135,23 @@ In order to get the most out of this course, students are encouraged to spend ti
 <li class="sy-week" data-week="9">
 <h3><a href="#week-9">Week 9</a><span>Custom Switches and the Accelerometer</span></h3>
 <ul>
-<li><time>Oct 19</time> Custom Switches: tilt switch and DIY switches for your interface. Midterm Studio.</li>
-<li><time>Oct 21</time> The Nano 33 IoT's built-in Accelerometer and Gyroscope. Midterm Studio.</li>
+<li><time>Oct 19</time> Tilt switch and the built-in Accelerometer. Custom Switches: cardboard switches, the Doorstop Spring Switch and the Bouncing Ball Sensor. Midterm Studio.</li>
+<li><time>Oct 21</time> Midterm Studio. MPR121 capacitive touch board.</li>
 </ul>
 </li>
 
 <li class="sy-week" data-week="10">
 <h3><a href="#week-10">Week 10</a><span>Sound and Midterm Critique</span></h3>
 <ul>
-<li><time>Oct 26</time> Topics in Sound. Microphone. Midterm Studio.</li>
+<li><time>Oct 26</time> Topics in Sound: microphone and speaker. Midterm Studio.</li>
 <li><time>Oct 28</time> <b class="sy-due">Midterm Critique</b></li>
 </ul>
 </li>
 
 <li class="sy-week" data-week="11">
-<h3><a href="#week-11">Week 11</a><span>Making a Speaker Workshop</span></h3>
+<h3><a href="#week-11">Week 11</a><span>Servo Motors and the Arduino as a Keyboard</span></h3>
 <ul>
-<li><time>Nov 2</time> Topics in Sound (continued). Making a speaker.</li>
+<li><time>Nov 2</time> Servo Motors. Final project ideas.</li>
 <li><time>Nov 4</time> Arduino as a Keyboard or Mouse.</li>
 </ul>
 <p class="sy-note"><b>Reminder</b> Final Projects Research due Nov 9th.</p>

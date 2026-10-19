@@ -4,6 +4,8 @@ title: constrain() function
 
 # constrain()
 
+![](images/cover.png){alt="constrain() keeps a number inside a range: -18 becomes 0, and 291 becomes 255."}
+
 ## What it does
 
 `constrain()` keeps a number **inside a range**. If the number is too small, you get the lowest value of the range. If it's too big, you get the highest. If it's already inside, it doesn't change.

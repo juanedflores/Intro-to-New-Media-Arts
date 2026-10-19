@@ -1035,6 +1035,78 @@ blockquote.error > p {
   font-weight: 700;
   color: var(--ink);
 }
+
+/* ---------- review cards (week pages) ----------
+   js/load_pages.js marks a card that already appeared in an earlier week:
+   it sits under a "Review from earlier weeks" divider at the end of the
+   day's cards, with a grey thumbnail, a quieter title and a badge naming
+   the week it's from. Hover or focus brings the color back. */
+.review-divider {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 -4px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.review-divider::after {
+  content: "";
+  flex: 1;
+  border-top: 2px dashed var(--rule);
+}
+.topic-card.is-review {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-top: 5px solid var(--rule);
+  box-shadow: none;
+}
+.topic-card.is-review .topic-thumb {
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition:
+    filter 0.25s,
+    opacity 0.25s;
+}
+.topic-card.is-review .cardtitle {
+  color: var(--muted);
+  transition: color 0.25s;
+}
+.topic-card.is-review:hover,
+.topic-card.is-review:focus-visible {
+  background: var(--paper);
+  border-top-color: var(--accent);
+}
+.topic-card.is-review:hover .topic-thumb,
+.topic-card.is-review:focus-visible .topic-thumb {
+  filter: none;
+  opacity: 1;
+}
+.topic-card.is-review:hover .cardtitle,
+.topic-card.is-review:focus-visible .cardtitle {
+  color: var(--ink);
+}
+.review-badge {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  padding: 2px 9px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
 .topic-card .cardtitle {
   /* space below is margin, not padding: the line clamp clips at the padding
      edge, so bottom padding would show a sliver of the cut-off line */

@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Arduino Cheat Sheet</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text"></a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#arduino-cheat-sheet" id="toc-arduino-cheat-sheet">Arduino
+Cheat Sheet</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#the-shape-of-a-sketch" id="toc-the-shape-of-a-sketch">The
+Shape of a Sketch</a></li>
+<li><a href="#variables" id="toc-variables">Variables</a></li>
+<li><a href="#pins" id="toc-pins">Pins</a></li>
+<li><a href="#making-decisions" id="toc-making-decisions">Making
+Decisions</a></li>
+<li><a href="#time" id="toc-time">Time</a></li>
+<li><a href="#serial-monitor-and-serial-plotter"
+id="toc-serial-monitor-and-serial-plotter">Serial Monitor and Serial
+Plotter</a></li>
+<li><a href="#working-with-numbers"
+id="toc-working-with-numbers">Working with Numbers</a></li>
+<li><a href="#sound" id="toc-sound">Sound</a></li>
+<li><a href="#the-accelerometer" id="toc-the-accelerometer">The
+Accelerometer</a></li>
+<li><a href="#useful-patterns" id="toc-useful-patterns">Useful
+Patterns</a></li>
+<li><a href="#circuits" id="toc-circuits">Circuits</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <style>
+          /* keep each table's column widths (set by the dashes in its separator row),
+             and let long code wrap instead of stretching its column */
+          table { table-layout: fixed; width: 100%; }
+          td code { white-space: normal; overflow-wrap: anywhere; }
+        </style>
+        <section id="arduino-cheat-sheet" class="level1">
+        <h1>Arduino Cheat Sheet</h1>
+        <p><img src="images/cover.png"
+        alt="A sheet of paper with colored lines of code and a check mark." /></p>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>Everything we’ve used so far with the <strong>Arduino Nano 33
+        IoT</strong>, on one page. Each section links back to the lesson
+        where we first used it. Keep this open while you build your
+        midterm.</p>
+        </section>
+        <section id="the-shape-of-a-sketch" class="level2">
+        <h2>The Shape of a Sketch</h2>
+        <p>Every sketch has two parts:</p>
+        <pre class="arduino"><code>void setup() {
+  // runs once, when the board starts: set up pins and Serial here
+}
+
+void loop() {
+  // runs over and over, forever
+}</code></pre>
+        <ul>
+        <li>Every instruction ends with a <strong>semicolon</strong>
+        <code>;</code></li>
+        <li>Curly braces <code>{ }</code> group lines together. Every
+        <code>{</code> needs a matching <code>}</code>.</li>
+        <li>Arduino is <strong>case sensitive</strong>:
+        <code>Serial</code> works, <code>serial</code> doesn’t.
+        <code>digitalWrite</code>, not <code>digitalwrite</code>.</li>
+        <li><code>// a comment</code> is ignored by the Arduino: it’s a
+        note for people. <code>/* ... */</code> comments out several
+        lines.</li>
+        </ul>
+        <p>Lessons: <a
+        href="../getting_setup/getting_setup.html">Getting Set Up</a>,
+        <a href="../blink/blink.html">Blink</a></p>
+        </section>
+        <section id="variables" class="level2">
+        <h2>Variables</h2>
+        <p>A variable is a name that holds a value.</p>
+        <table>
+        <colgroup>
+        <col style="width: 20%" />
+        <col style="width: 45%" />
+        <col style="width: 35%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Type</th>
+        <th>Holds</th>
+        <th>Example</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>int</code></td>
+        <td>whole numbers</td>
+        <td><code>int brightness = 0;</code></td>
+        </tr>
+        <tr>
+        <td><code>float</code></td>
+        <td>numbers with a decimal point</td>
+        <td><code>float seconds = 0.6;</code></td>
+        </tr>
+        <tr>
+        <td><code>unsigned long</code></td>
+        <td>very big whole numbers, never negative (for
+        <code>millis()</code>)</td>
+        <td><code>unsigned long lastHit = 0;</code></td>
+        </tr>
+        <tr>
+        <td><code>const int</code></td>
+        <td>a number that never changes, like a pin</td>
+        <td><code>const int buttonPin = 2;</code></td>
+        </tr>
+        </tbody>
+        </table>
+        <ul>
+        <li><code>=</code> <strong>stores</strong> a value:
+        <code>brightness = 255;</code></li>
+        <li><code>==</code> <strong>compares</strong> two values:
+        <code>if (brightness == 255)</code></li>
+        <li>Change a variable using its own value:
+        <code>count = count + 1;</code></li>
+        </ul>
+        </section>
+        <section id="pins" class="level2">
+        <h2>Pins</h2>
+        <table>
+        <colgroup>
+        <col style="width: 35%" />
+        <col style="width: 40%" />
+        <col style="width: 25%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Function</th>
+        <th>What it does</th>
+        <th>Values</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>pinMode(pin, OUTPUT);</code></td>
+        <td>makes a pin an output (in <code>setup()</code>)</td>
+        <td><code>OUTPUT</code> or <code>INPUT</code></td>
+        </tr>
+        <tr>
+        <td><code>digitalWrite(pin, HIGH);</code></td>
+        <td>turns a pin on (3.3V) or off (0V)</td>
+        <td><code>HIGH</code> or <code>LOW</code></td>
+        </tr>
+        <tr>
+        <td><code>digitalRead(pin)</code></td>
+        <td>reads a pin: is it on or off?</td>
+        <td><code>HIGH</code> or <code>LOW</code></td>
+        </tr>
+        <tr>
+        <td><code>analogRead(A0)</code></td>
+        <td>reads a voltage on an analog pin (A0–A7)</td>
+        <td><code>0</code> (0V) to <code>1023</code> (3.3V)</td>
+        </tr>
+        <tr>
+        <td><code>analogWrite(pin, 127);</code></td>
+        <td>dims an output with PWM</td>
+        <td><code>0</code> (off) to <code>255</code> (full)</td>
+        </tr>
+        </tbody>
+        </table>
+        <ul>
+        <li><code>analogWrite()</code> only works on the <strong>PWM
+        pins</strong>: <strong>2, 3, 5, 6, 9, 10, 11, 12, A2, A3,
+        A5</strong>.</li>
+        <li><code>LED_BUILTIN</code> is the small LED on the board
+        itself.</li>
+        <li><strong>The 3.3V rule:</strong> the Nano 33 IoT’s pins only
+        take <strong>3.3V</strong>. Never connect 5V (or a sensor that
+        sends back 5V) to a pin.</li>
+        </ul>
+        <p>Lessons: <a href="../blink/blink.html">Blink</a>, <a
+        href="../fade/fade.html">Fade and Intro to PWM</a>, <a
+        href="../button/button.html">Button</a></p>
+        </section>
+        <section id="making-decisions" class="level2">
+        <h2>Making Decisions</h2>
+        <pre class="arduino"><code>if (sensorValue &gt; 500) {
+  // runs when the condition is true
+} else if (sensorValue &gt; 100) {
+  // runs when the first one is false, and this one is true
+} else {
+  // runs when none of the above are true
+}</code></pre>
+        <table>
+        <colgroup>
+        <col style="width: 35%" />
+        <col style="width: 65%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Compare</th>
+        <th>Means</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>a == b</code></td>
+        <td>equal to</td>
+        </tr>
+        <tr>
+        <td><code>a != b</code></td>
+        <td>not equal to</td>
+        </tr>
+        <tr>
+        <td><code>a &gt; b</code>, <code>a &lt; b</code></td>
+        <td>greater than, less than</td>
+        </tr>
+        <tr>
+        <td><code>a &gt;= b</code>, <code>a &lt;= b</code></td>
+        <td>greater than or equal to, less than or equal to</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>Combine conditions with
+        <strong><code>&amp;&amp;</code></strong> (both must be true) or
+        <strong><code>||</code></strong> (at least one must be
+        true):</p>
+        <pre class="arduino"><code>if (brightness &lt;= 0 || brightness &gt;= 255) {
+  fadeAmount = -fadeAmount;  // turn around at either end
+}</code></pre>
+        <p>Lesson: <a href="../button/button.html">Button</a></p>
+        </section>
+        <section id="time" class="level2">
+        <h2>Time</h2>
+        <table>
+        <colgroup>
+        <col style="width: 30%" />
+        <col style="width: 70%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Function</th>
+        <th>What it does</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>delay(1000);</code></td>
+        <td>waits, in milliseconds (1000 ms = 1 second). Nothing else
+        happens while it waits.</td>
+        </tr>
+        <tr>
+        <td><code>millis()</code></td>
+        <td>the number of milliseconds since the board started. Store it
+        in an <code>unsigned long</code>.</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong>Doing something every so often, without
+        <code>delay()</code></strong>, so the sketch keeps reading
+        sensors in between:</p>
+        <pre class="arduino"><code>unsigned long lastTime = 0;
+
+void loop() {
+  if (millis() - lastTime &gt; 500) {  // has it been half a second?
+    lastTime = millis();
+    // do something
+  }
+}</code></pre>
+        <p>Workshops: <a
+        href="../../Workshops/Doorstop_Switch/doorstop_switch.html">Doorstop
+        Spring Switch</a>, <a
+        href="../../Workshops/Bouncing_Ball/bouncing_ball.html">Bouncing
+        Ball Sensor</a></p>
+        </section>
+        <section id="serial-monitor-and-serial-plotter" class="level2">
+        <h2>Serial Monitor and Serial Plotter</h2>
+        <table>
+        <colgroup>
+        <col style="width: 35%" />
+        <col style="width: 65%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Function</th>
+        <th>What it does</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>Serial.begin(9600);</code></td>
+        <td>starts talking to the computer (in
+        <code>setup()</code>)</td>
+        </tr>
+        <tr>
+        <td><code>Serial.print(value);</code></td>
+        <td>prints a value, and stays on the same line</td>
+        </tr>
+        <tr>
+        <td><code>Serial.println(value);</code></td>
+        <td>prints a value, then starts a new line</td>
+        </tr>
+        </tbody>
+        </table>
+        <ul>
+        <li><strong>Serial Monitor</strong> shows the numbers as text.
+        <strong>Serial Plotter</strong> draws them as a graph.</li>
+        <li>The speed in the Monitor or Plotter (for example
+        <strong>9600 baud</strong>) must match the number in
+        <code>Serial.begin()</code>.</li>
+        <li>To graph <strong>two values</strong> at once, print them on
+        one line with a space between:</li>
+        </ul>
+        <pre class="arduino"><code>Serial.print(mapped);
+Serial.print(&quot; &quot;);
+Serial.println(constrained);</code></pre>
+        <p>Lesson: <a
+        href="../print_to_serial_monitor/print_to_serial_monitor.html">Print
+        to Serial Monitor</a></p>
+        </section>
+        <section id="working-with-numbers" class="level2">
+        <h2>Working with Numbers</h2>
+        <table>
+        <colgroup>
+        <col style="width: 42%" />
+        <col style="width: 33%" />
+        <col style="width: 25%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Function</th>
+        <th>What it does</th>
+        <th>Example</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>map(value, fromLow, fromHigh, toLow, toHigh)</code></td>
+        <td>converts a number from one range to another</td>
+        <td><code>map(sensorValue, 0, 1023, 0, 255)</code></td>
+        </tr>
+        <tr>
+        <td><code>constrain(x, low, high)</code></td>
+        <td>keeps a number inside a range</td>
+        <td><code>constrain(brightness, 0, 255)</code></td>
+        </tr>
+        <tr>
+        <td><code>random(min, max)</code></td>
+        <td>a random whole number from <code>min</code> up to (not
+        including) <code>max</code></td>
+        <td><code>random(200, 2000)</code></td>
+        </tr>
+        </tbody>
+        </table>
+        <p><code>map()</code> doesn’t stop at the ends of the range, so
+        use <code>constrain()</code> right after it:</p>
+        <pre class="arduino"><code>int brightness = map(lightValue, darkest, brightest, 0, 255);
+brightness = constrain(brightness, 0, 255);</code></pre>
+        <p>Lessons: <a href="../map/map.html">map()</a>, <a
+        href="../constrain/constrain.html">constrain()</a></p>
+        </section>
+        <section id="sound" class="level2">
+        <h2>Sound</h2>
+        <table>
+        <colgroup>
+        <col style="width: 40%" />
+        <col style="width: 60%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Function</th>
+        <th>What it does</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>tone(pin, frequency);</code></td>
+        <td>plays a note (in hertz) until <code>noTone()</code></td>
+        </tr>
+        <tr>
+        <td><code>tone(pin, frequency, duration);</code></td>
+        <td>plays a note for a number of milliseconds</td>
+        </tr>
+        <tr>
+        <td><code>noTone(pin);</code></td>
+        <td>stops the sound</td>
+        </tr>
+        </tbody>
+        </table>
+        <ul>
+        <li>262 Hz is middle C, 440 Hz is the A above it. Higher numbers
+        are higher notes.</li>
+        <li>Use a <strong>passive</strong> buzzer or a speaker. An
+        <strong>active</strong> buzzer only beeps at its own pitch.</li>
+        </ul>
+        <p>Lesson: <a
+        href="../buzzer_speaker/buzzer_speaker.html">Passive Buzzer and
+        Light Theremin</a></p>
+        </section>
+        <section id="the-accelerometer" class="level2">
+        <h2>The Accelerometer</h2>
+        <p>The Nano 33 IoT has an accelerometer built in. Install the
+        <strong>Arduino_LSM6DS3</strong> library (Library Manager),
+        then:</p>
+        <pre class="arduino"><code>#include &lt;Arduino_LSM6DS3.h&gt;
+
+void setup() {
+  Serial.begin(9600);
+  IMU.begin();  // start the accelerometer
+}
+
+void loop() {
+  float x, y, z;
+  if (IMU.accelerationAvailable()) {  // is there a new reading?
+    IMU.readAcceleration(x, y, z);    // fills in x, y and z
+    Serial.print(x);
+    Serial.print(&quot; &quot;);
+    Serial.print(y);
+    Serial.print(&quot; &quot;);
+    Serial.println(z);
+  }
+}</code></pre>
+        <ul>
+        <li>The values are in <strong>g</strong> (1 g is the pull of
+        gravity). Lying flat, <code>z</code> is about 1 and
+        <code>x</code> and <code>y</code> are about 0. Tilt the board
+        and the 1 g moves to <code>x</code> or <code>y</code>.</li>
+        <li>The library’s examples (<strong>File</strong> &gt;
+        <strong>Examples</strong> &gt; <strong>Arduino_LSM6DS3</strong>)
+        wait for the Serial Monitor with <code>while (!Serial);</code>.
+        Remove that line if your project runs without a computer, or it
+        will wait forever.</li>
+        </ul>
+        <p>Guide: <a
+        href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer">Accessing
+        Accelerometer Data on Nano 33 IoT</a></p>
+        </section>
+        <section id="useful-patterns" class="level2">
+        <h2>Useful Patterns</h2>
+        <p><strong>Count a press only once</strong> (the moment the
+        button goes from not pressed to pressed):</p>
+        <pre class="arduino"><code>int lastState = LOW;
+
+void loop() {
+  int state = digitalRead(buttonPin);
+  if (state == HIGH &amp;&amp; lastState == LOW) {
+    // just pressed!
+  }
+  lastState = state;
+}</code></pre>
+        <p><strong>Fade up and down</strong> (the Fade sketch):</p>
+        <pre class="arduino"><code>analogWrite(ledPin, brightness);
+brightness = brightness + fadeAmount;
+if (brightness &lt;= 0 || brightness &gt;= 255) {
+  fadeAmount = -fadeAmount;
+}
+delay(30);</code></pre>
+        <p><strong>Sensor in, something out:</strong></p>
+        <pre class="arduino"><code>int reading = analogRead(A0);                  // 1. read
+int pitch = map(reading, 100, 800, 200, 2000); // 2. convert
+pitch = constrain(pitch, 200, 2000);           // 3. keep it in range
+tone(speakerPin, pitch);                       // 4. use it</code></pre>
+        </section>
+        <section id="circuits" class="level2">
+        <h2>Circuits</h2>
+        <table>
+        <colgroup>
+        <col style="width: 28%" />
+        <col style="width: 72%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Part</th>
+        <th>How to wire it</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><strong>LED</strong></td>
+        <td>pin → <strong>220Ω</strong> resistor → LED long leg; LED
+        short leg → GND</td>
+        </tr>
+        <tr>
+        <td><strong>Button</strong></td>
+        <td>3.3V → button → pin, and <strong>10kΩ</strong> from the pin
+        to GND (the <strong>pull-down</strong> keeps the pin LOW when
+        not pressed)</td>
+        </tr>
+        <tr>
+        <td><strong>Analog sensor</strong> (photocell, Velostat)</td>
+        <td>3.3V → sensor → A0, and <strong>10kΩ</strong> from A0 to GND
+        (a <strong>voltage divider</strong>)</td>
+        </tr>
+        <tr>
+        <td><strong>Potentiometer</strong></td>
+        <td>outer legs to 3.3V and GND, middle leg → A0</td>
+        </tr>
+        <tr>
+        <td><strong>RGB LED</strong></td>
+        <td>each color leg → its own <strong>220Ω</strong> → a PWM pin;
+        long leg → GND (common cathode) or 3.3V (common anode)</td>
+        </tr>
+        <tr>
+        <td><strong>Passive buzzer</strong></td>
+        <td>pin → buzzer → GND</td>
+        </tr>
+        <tr>
+        <td><strong>Piezo (knock sensor)</strong></td>
+        <td>needs a 1MΩ, a 10kΩ and a 3.3V Zener: see the <a
+        href="../../Workshops/Bouncing_Ball/bouncing_ball.html">Bouncing
+        Ball Sensor</a></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>Lessons: <a href="../button/button.html">Button</a>, <a
+        href="../rgb_led/rgb_led.html">RGB LED</a>, <a
+        href="../../Workshops/Velostat_Workshop/velostat_workshop.html">DIY
+        Pressure Sensor</a></p>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong>Red error when you click Verify:</strong> read the
+        first error. Usually a missing <code>;</code>, a missing
+        <code>}</code> or a typo in a name (check capital letters).</li>
+        <li><strong>Upload fails, or no port shows up:</strong> try
+        another USB cable (some only charge), pick the board and port
+        again under <strong>Tools</strong>, or double-tap the reset
+        button on the Nano.</li>
+        <li><strong>The Serial Monitor shows nonsense
+        characters:</strong> the baud rate doesn’t match
+        <code>Serial.begin()</code>.</li>
+        <li><strong>A button or switch reads random values:</strong> the
+        pull-down resistor is missing, and the pin is “floating”.</li>
+        <li><strong><code>analogWrite()</code> doesn’t dim:</strong> the
+        pin isn’t a PWM pin.</li>
+        <li><strong>One press counts many times:</strong> the switch is
+        bouncing. Count only the moment it changes, and add a short
+        <code>delay()</code> or wait with <code>millis()</code>.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two drawings of the doorstop spring switch. On the left, at rest: a doorstop spring stands upright on a cardboard base, with a copper ring held around its tip by a cardboard arm. The spring doesn't touch the ring, so pin 2 reads LOW. On the right, flicked: the spring bends and its tip touches the ring, connecting 3.3V to pin 2, which reads HIGH." style="max-width:640px;width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect width="640" height="400" fill="#fff"/>
+  <text x="150" y="40" text-anchor="middle" font-weight="700" font-size="17" fill="#1d2433">At rest</text>
+  <text x="150" y="62" text-anchor="middle" font-size="14" fill="#666">no contact: pin 2 reads LOW</text>
+  <rect x="60" y="300" width="180" height="36" rx="3" fill="#c8a06a" stroke="#8a6a3e" stroke-width="2"/>
+  <rect x="70" y="102" width="14" height="198" fill="#d9b886" stroke="#8a6a3e" stroke-width="1.5"/>
+  <rect x="70" y="92" width="66" height="12" fill="#d9b886" stroke="#8a6a3e" stroke-width="1.5"/>
+  <path d="M150.0 300.0 L159.0 294.3 L141.0 288.6 L159.0 282.9 L141.0 277.2 L159.0 271.6 L141.0 265.9 L159.0 260.2 L141.0 254.5 L159.0 248.8 L141.0 243.1 L159.0 237.4 L141.0 231.8 L159.0 226.1 L141.0 220.4 L159.0 214.7 L141.0 209.0 L159.0 203.3 L141.0 197.6 L159.0 191.9 L141.0 186.2 L159.0 180.6 L141.0 174.9 L159.0 169.2 L141.0 163.5 L159.0 157.8 L141.0 152.1 L159.0 146.4 L141.0 140.8 L159.0 135.1 L141.0 129.4 L159.0 123.7 L150.0 118.0" fill="none" stroke="#5b6472" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="150" cy="116" r="5" fill="#5b6472"/>
+  <ellipse cx="150" cy="110" rx="30" ry="9" fill="none" stroke="#c87533" stroke-width="5"/>
+  <path d="M144 302 q-30 30 -70 60" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <text x="70" y="380" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="700">spring to 3.3V</text>
+  <path d="M180 110 q60 0 70 40" fill="none" stroke="#2f64b7" stroke-width="3"/>
+  <text x="250" y="170" text-anchor="middle" font-size="13" fill="#2f64b7" font-weight="700">ring to pin 2</text>
+  <text x="470" y="40" text-anchor="middle" font-weight="700" font-size="17" fill="#1d2433">Flicked</text>
+  <text x="470" y="62" text-anchor="middle" font-size="14" fill="#d53f32">spring touches the ring: HIGH</text>
+  <rect x="380" y="300" width="180" height="36" rx="3" fill="#c8a06a" stroke="#8a6a3e" stroke-width="2"/>
+  <rect x="390" y="102" width="14" height="198" fill="#d9b886" stroke="#8a6a3e" stroke-width="1.5"/>
+  <rect x="390" y="92" width="66" height="12" fill="#d9b886" stroke="#8a6a3e" stroke-width="1.5"/>
+  <path d="M470.0 300.0 L480.6 297.5 L465.8 285.6 L484.7 285.9 L469.7 274.4 L488.6 274.3 L473.3 263.2 L492.2 262.8 L476.6 252.0 L495.5 251.2 L479.7 240.9 L498.5 239.6 L482.4 229.7 L501.3 228.0 L484.9 218.5 L503.7 216.4 L487.2 207.3 L505.9 204.9 L489.1 196.2 L507.8 193.3 L490.8 185.0 L509.4 181.7 L492.2 173.9 L510.7 170.1 L493.3 162.7 L511.7 158.5 L494.1 151.6 L512.4 146.9 L494.7 140.4 L512.9 135.3 L495.0 129.3 L513.0 123.7 L504.0 118.0" fill="none" stroke="#5b6472" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="504" cy="116" r="5" fill="#5b6472"/>
+  <ellipse cx="470" cy="110" rx="30" ry="9" fill="none" stroke="#c87533" stroke-width="5"/>
+  <path d="M464 302 q-30 30 -70 60" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <text x="390" y="380" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="700">spring to 3.3V</text>
+  <path d="M500 110 q60 0 70 40" fill="none" stroke="#2f64b7" stroke-width="3"/>
+  <text x="570" y="170" text-anchor="middle" font-size="13" fill="#2f64b7" font-weight="700">ring to pin 2</text>
+  <circle cx="500" cy="112" r="9" fill="none" stroke="#d53f32" stroke-width="2.5"/>
+  <path d="M530 150 q14 -10 0 -24 M540 156 q22 -16 0 -38" fill="none" stroke="#999" stroke-width="2"/>
+</svg>

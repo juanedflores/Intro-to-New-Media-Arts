@@ -1,0 +1,25 @@
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic: the Nano's 3.3V pin goes to the doorstop spring. The copper ring is the other side of the switch and connects to pin D2, which also goes through a 10 kilohm pull-down resistor to GND. When the spring touches the ring, pin 2 reads HIGH." style="max-width:560px;width:100%;height:auto;font-family:Inter,sans-serif;font-size:13px">
+  <rect x="0" y="0" width="560" height="300" fill="#fff" />
+  <rect x="20" y="30" width="100" height="240" rx="8" fill="#e8f1f4" stroke="#2c3f89" stroke-width="3" />
+  <text x="70" y="146" text-anchor="middle" fill="#2c3f89" font-weight="700">Nano</text>
+  <text x="70" y="163" text-anchor="middle" fill="#2c3f89" font-weight="700">33 IoT</text>
+  <g fill="none" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M120 60 H380 V80" stroke="#c0392b" />
+    <!-- the switch: spring (left contact) and ring (right contact), drawn as an open switch -->
+    <circle cx="380" cy="84" r="4" fill="#2c3f89" stroke="#2c3f89"/>
+    <path d="M380 84 L404 120" stroke="#5b6472" stroke-width="4"/>
+    <circle cx="380" cy="130" r="4" fill="#2c3f89" stroke="#2c3f89"/>
+    <path d="M380 134 V150" stroke="#2c3f89" />
+    <path d="M120 150 H380" stroke="#d39000" />
+    <path d="M380 150 V180 l10 5 l-20 10 l20 10 l-20 10 l20 10 l-10 5 V240 H120" stroke="#2c3f89" />
+  </g>
+  <circle cx="380" cy="150" r="5" fill="#2c3f89" />
+  <text x="128" y="52" fill="#c0392b" font-weight="700">3.3V</text>
+  <text x="128" y="142" fill="#b07800" font-weight="700">D2</text>
+  <text x="128" y="232" fill="#1d2433" font-weight="700">GND</text>
+  <text x="418" y="92" fill="#5b6472" font-weight="700">spring</text>
+  <text x="400" y="134" fill="#c87533" font-weight="700">ring</text>
+  <text x="404" y="214" fill="#2c3f89" font-weight="700">10kΩ</text>
+  <text x="250" y="142" text-anchor="middle" fill="#666">the reading</text>
+  <text x="280" y="285" text-anchor="middle" fill="#666">the same circuit as a push button: the spring and ring are the two sides of the switch</text>
+</svg>

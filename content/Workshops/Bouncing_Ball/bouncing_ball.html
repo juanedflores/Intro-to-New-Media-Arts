@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Bouncing Ball Sensor</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Bouncing Ball Sensor</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#bouncing-ball-sensor"
+id="toc-bouncing-ball-sensor">Bouncing Ball Sensor</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a>
+<ul>
+<li><a href="#steps" id="toc-steps">Steps</a></li>
+</ul></li>
+<li><a href="#how-it-works" id="toc-how-it-works">How It Works</a></li>
+<li><a href="#tools-materials" id="toc-tools-materials">Tools &amp;
+Materials</a></li>
+<li><a href="#part-1-build-the-drum" id="toc-part-1-build-the-drum">Part
+1: Build the Drum</a></li>
+<li><a href="#part-2-wire-it-to-the-arduino"
+id="toc-part-2-wire-it-to-the-arduino">Part 2: Wire It to the
+Arduino</a></li>
+<li><a href="#part-3-see-the-hits" id="toc-part-3-see-the-hits">Part 3:
+See the Hits</a></li>
+<li><a href="#part-4-bounce-beep" id="toc-part-4-bounce-beep">Part 4:
+Bounce Beep</a></li>
+<li><a href="#part-5-bounce-melody" id="toc-part-5-bounce-melody">Part
+5: Bounce Melody</a></li>
+<li><a href="#troubleshooting"
+id="toc-troubleshooting">Troubleshooting</a></li>
+<li><a href="#going-further" id="toc-going-further">Going
+Further</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="bouncing-ball-sensor" class="level1">
+        <h1>Bouncing Ball Sensor</h1>
+        <figure>
+        <img src="images/cover.png"
+        alt="A red ball bouncing across a cardboard drum, each bounce lower than the last, with a piezo disc under the drum." />
+        <figcaption aria-hidden="true">A red ball bouncing across a
+        cardboard drum, each bounce lower than the last, with a piezo
+        disc under the drum.</figcaption>
+        </figure>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>Drop a ball on a cardboard drum and the Arduino hears every
+        bounce. Under the drum is a <strong>piezo</strong>: a thin disc
+        that makes a small voltage whenever it’s bent or shaken. Each
+        time the ball lands, the cardboard flexes, the piezo makes a
+        spike of voltage, and <code>analogRead()</code> sees it.</p>
+        <p>Any ball works: a bouncy rubber ball, a ping pong ball, a
+        tennis ball. And because the piezo tells us <strong>how
+        hard</strong> each bounce hit and <strong>when</strong> it
+        happened, we can do more than count: we can play a note for each
+        bounce, and even measure <strong>how high</strong> the ball
+        bounced.</p>
+        <section id="steps" class="level3">
+        <h3>Steps</h3>
+        <ol type="1">
+        <li>Build the drum: cardboard with a piezo taped
+        underneath.</li>
+        <li>Wire the piezo to A0, with three parts that keep the Nano
+        safe.</li>
+        <li>See the hits in the Serial Plotter.</li>
+        <li>Bounce Beep: a note for every bounce, higher for harder
+        hits.</li>
+        <li>Bounce Melody: measure each bounce’s height and turn it into
+        a falling melody.</li>
+        </ol>
+        </section>
+        </section>
+        <section id="how-it-works" class="level2">
+        <h2>How It Works</h2>
+        <p><img src="images/how_it_works.svg" alt="A ball bouncing on a cardboard drum, with a piezo taped under the middle of the drum's top. The bounces get lower and closer together. Next to it, a Serial Plotter graph shows one sharp spike per bounce, each spike smaller and closer to the last." style="max-width:640px;width:100%;height:auto" /></p>
+        <p>A <strong>piezo</strong> turns movement into voltage. (It
+        also works the other way around: send it a voltage and it moves
+        and makes a sound, which is how a buzzer works.) When the ball
+        lands, the cardboard bends for an instant, the piezo bends with
+        it, and it makes a short <strong>spike</strong> of voltage. A
+        harder bounce bends it more and makes a taller spike.</p>
+        <p>As the ball settles, its bounces get <strong>lower</strong>
+        and <strong>closer together</strong>, so the spikes in the
+        Serial Plotter get smaller and closer together too.</p>
+        </section>
+        <section id="tools-materials" class="level2">
+        <h2>Tools &amp; Materials</h2>
+        <ul>
+        <li>Arduino Nano 33 IoT, USB cable and breadboard</li>
+        <li><strong>Piezo element with wires</strong> (Adafruit <a
+        href="https://www.adafruit.com/product/1739">1739</a>), or any
+        piezo disc with wires</li>
+        <li><strong>1MΩ resistor</strong> (bands: brown, black,
+        green)</li>
+        <li><strong>10kΩ resistor</strong> (bands: brown, black,
+        orange)</li>
+        <li><strong>3.3V Zener diode</strong> (1N4728A): it looks like a
+        regular diode, with a band on one end</li>
+        <li>A <strong>ball</strong>: a bouncy rubber ball, a ping pong
+        ball or a tennis ball</li>
+        <li><strong>Cardboard</strong>: a box lid, or a stiff sheet
+        raised on four small blocks so the middle can flex</li>
+        <li>Masking tape, jumper wires</li>
+        <li><strong>Passive buzzer</strong> or <strong>STEMMA
+        Speaker</strong>, for Parts 4 and 5</li>
+        </ul>
+        </section>
+        <section id="part-1-build-the-drum" class="level2">
+        <h2>Part 1: Build the Drum</h2>
+        <ol type="1">
+        <li><strong>Find a drum.</strong> A shoebox lid or a small box
+        works well: the top needs to flex a little when the ball lands,
+        with air underneath it. A flat sheet of cardboard on the table
+        won’t work, because the table stops it from bending.</li>
+        <li><strong>Tape the piezo underneath the top, in the
+        middle.</strong> Press it flat against the cardboard and tape
+        over it firmly. The piezo has to bend <strong>with</strong> the
+        cardboard, so it shouldn’t wobble or hang loose.</li>
+        <li><strong>Run the two wires out</strong> the side of the box,
+        and tape them down so they don’t pull on the piezo.</li>
+        </ol>
+        </section>
+        <section id="part-2-wire-it-to-the-arduino" class="level2">
+        <h2>Part 2: Wire It to the Arduino</h2>
+        <p><img src="images/schematic.svg" alt="Schematic: the piezo connects between a node and GND, with a 1 megohm resistor across it. From that node, a 10 kilohm resistor goes to pin A0. A 3.3 volt Zener diode connects from A0 to GND, with its band toward A0." style="max-width:600px;width:100%;height:auto" /></p>
+        <blockquote class="warning">
+        <span class="uk-label"
+        style="color:black; background:#fac100">Warning</span>
+        <p>
+        A piezo hit hard can make a spike of <strong>much more than
+        3.3V</strong> for an instant, and the Nano 33 IoT’s pins only
+        take 3.3V. Don’t connect the piezo straight to A0: always use
+        the 10kΩ resistor and the Zener diode below.
+        </p>
+        </blockquote>
+        <p>What each part does:</p>
+        <ul>
+        <li><strong>1MΩ resistor, across the piezo:</strong> lets the
+        charge from each spike drain away, so the reading drops back to
+        0 between bounces. Without it, the reading would drift.</li>
+        <li><strong>10kΩ resistor, between the piezo and A0:</strong>
+        limits how much current a big spike can push toward the
+        pin.</li>
+        <li><strong>3.3V Zener diode, from A0 to GND:</strong> if a
+        spike goes above 3.3V, the Zener lets the extra flow to GND, so
+        A0 never sees more than about 3.3V. <strong>The band goes toward
+        A0</strong>: if it’s backwards, it acts like a regular diode and
+        cuts every spike off at about 0.7V, so the readings never go
+        above about 200.</li>
+        </ul>
+        <p>On the breadboard, use three rows:</p>
+        <ol type="1">
+        <li><strong>Piezo row:</strong> the piezo’s <strong>red</strong>
+        wire, one leg of the <strong>1MΩ</strong>, and one leg of the
+        <strong>10kΩ</strong>.</li>
+        <li><strong>A0 row:</strong> the other leg of the
+        <strong>10kΩ</strong>, the <strong>banded</strong> end of the
+        <strong>Zener</strong>, and a wire to <strong>A0</strong>.</li>
+        <li><strong>GND row:</strong> the piezo’s <strong>black</strong>
+        wire, the other leg of the <strong>1MΩ</strong>, the other end
+        of the <strong>Zener</strong>, and a wire to the Nano’s
+        <strong>GND</strong>.</li>
+        </ol>
+        </section>
+        <section id="part-3-see-the-hits" class="level2">
+        <h2>Part 3: See the Hits</h2>
+        <p>Upload this sketch and open the <strong>Serial
+        Plotter</strong>, set to <strong>115200 baud</strong>.</p>
+        <pre class="arduino"><code>// See the Hits: graph the piezo in the Serial Plotter.
+// Each bounce shows up as a sharp spike.
+
+int piezoPin = A0;
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  Serial.println(analogRead(piezoPin));
+}</code></pre>
+        <p>Bounce the ball on the drum. Each bounce shows up as a sharp
+        spike. Notice:</p>
+        <ul>
+        <li>How tall the spikes get for a hard bounce compared to a soft
+        one.</li>
+        <li>The <strong>noise</strong> when nothing is happening: small
+        bumps near 0. Tapping the table makes spikes too: the piezo
+        feels everything.</li>
+        <li>How the spikes get smaller and closer together as the ball
+        settles.</li>
+        </ul>
+        <p>Write down roughly how tall the noise is. In the next
+        sketches, <code>threshold</code> needs to be
+        <strong>above</strong> the noise and <strong>below</strong> a
+        soft bounce.</p>
+        </section>
+        <section id="part-4-bounce-beep" class="level2">
+        <h2>Part 4: Bounce Beep</h2>
+        <p>Now every bounce plays a note, and a harder bounce plays a
+        higher one. Connect your speaker to <strong>pin 8</strong>
+        (passive buzzer: other leg to GND; STEMMA Speaker: power to
+        3.3V, ground to GND, signal to pin 8).</p>
+        <pre class="arduino"><code>// Bounce Beep: every bounce plays a beep. A harder bounce plays a higher note.
+
+int piezoPin = A0;
+int speakerPin = 8;
+
+int threshold = 40;   // readings above this count as a hit (raise it if quiet sounds trigger it)
+int deadTime = 60;    // milliseconds to ignore after a hit, while the surface stops ringing
+
+int bounces = 0;
+
+void setup() {
+  pinMode(speakerPin, OUTPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  int reading = analogRead(piezoPin);
+
+  if (reading &gt; threshold) {
+    // a hit: keep reading for 5 milliseconds to find how strong it was
+    int peak = reading;
+    unsigned long start = millis();
+    while (millis() - start &lt; 5) {
+      int r = analogRead(piezoPin);
+      if (r &gt; peak) {
+        peak = r;
+      }
+    }
+
+    bounces = bounces + 1;
+    Serial.print(&quot;Bounce &quot;);
+    Serial.print(bounces);
+    Serial.print(&quot;: strength &quot;);
+    Serial.println(peak);
+
+    // a stronger hit plays a higher note
+    int pitch = map(peak, threshold, 1023, 200, 2000);
+    pitch = constrain(pitch, 200, 2000);
+    tone(speakerPin, pitch, 50);
+
+    delay(deadTime);
+  }
+}</code></pre>
+        <p>How it works:</p>
+        <ul>
+        <li>When a reading goes above <code>threshold</code>, we have a
+        hit. We keep reading for 5 more milliseconds to find the
+        <strong>peak</strong>, the tallest point of the spike, which
+        tells us how hard the ball hit.</li>
+        <li><code>map()</code> and <code>constrain()</code> turn the
+        peak into a pitch.</li>
+        <li>After a hit, <code>delay(deadTime)</code> waits 60
+        milliseconds. The cardboard keeps ringing for a moment after
+        each bounce, and without the wait, one bounce would count as
+        several.</li>
+        </ul>
+        <p><strong>Try it:</strong></p>
+        <ul>
+        <li>If quiet sounds or table taps trigger it, raise
+        <code>threshold</code>. If soft bounces are missed, lower
+        it.</li>
+        <li>If one bounce counts twice, raise <code>deadTime</code>. If
+        fast bounces at the end are missed, lower it.</li>
+        </ul>
+        </section>
+        <section id="part-5-bounce-melody" class="level2">
+        <h2>Part 5: Bounce Melody</h2>
+        <p>The time between two bounces tells us how high the ball went
+        in between: the ball spends half of that time going up and half
+        coming down. From physics, something falling for a time
+        <em>s</em> falls a distance of ½ × g × <em>s</em>², where
+        <strong>g = 9.8 m/s²</strong> is gravity. With <em>s</em> =
+        <em>t</em> ÷ 2:</p>
+        <p><strong>height = 9.8 × t × t ÷ 8</strong> (in meters, with
+        <em>t</em> in seconds)</p>
+        <p>So a gap of 0.6 seconds between bounces means the ball rose
+        about <strong>44 cm</strong>, and a gap of 0.2 seconds means
+        about <strong>5 cm</strong>.</p>
+        <p>This sketch measures every gap with <code>millis()</code>,
+        works out the height, and plays a note: a higher bounce plays a
+        higher note. Drop the ball and listen to the melody fall as it
+        settles.</p>
+        <pre class="arduino"><code>// Bounce Melody: measure how high the ball bounced from the time between
+// two bounces, and play a note for each bounce. As the ball settles, the
+// bounces get lower and closer together, and the melody falls.
+
+int piezoPin = A0;
+int speakerPin = 8;
+
+int threshold = 40;
+int deadTime = 60;
+
+unsigned long lastHit = 0;  // when the last bounce happened (milliseconds)
+
+void setup() {
+  pinMode(speakerPin, OUTPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  int reading = analogRead(piezoPin);
+
+  if (reading &gt; threshold) {
+    unsigned long now = millis();
+    float seconds = (now - lastHit) / 1000.0;  // time since the last bounce
+    lastHit = now;
+
+    if (seconds &lt; 2.0) {
+      // the ball went up and came back down in that time, so it rose for half of it:
+      // height = 9.8 × t × t ÷ 8   (in meters; × 100 for centimeters)
+      float heightCm = 9.8 * seconds * seconds / 8.0 * 100.0;
+      Serial.print(&quot;Bounce height: &quot;);
+      Serial.print(heightCm);
+      Serial.println(&quot; cm&quot;);
+
+      // a higher bounce plays a higher note
+      int pitch = map((int)heightCm, 0, 50, 200, 2000);
+      pitch = constrain(pitch, 200, 2000);
+      tone(speakerPin, pitch, 80);
+    } else {
+      // more than 2 seconds since the last bounce: this is a new drop
+      Serial.println(&quot;New drop!&quot;);
+      tone(speakerPin, 2000, 80);
+    }
+
+    delay(deadTime);
+  }
+}</code></pre>
+        <p>Two new things:</p>
+        <ul>
+        <li><strong><code>float</code></strong> is a kind of variable
+        for numbers with a decimal point, like <code>0.6</code> or
+        <code>44.1</code>. An <code>int</code> can only hold whole
+        numbers, and our times and heights need decimals.</li>
+        <li><strong><code>(int)heightCm</code></strong> turns a
+        <code>float</code> into an <code>int</code> (dropping the
+        decimals), because <code>map()</code> works with whole
+        numbers.</li>
+        </ul>
+        <p>The first bounce after a drop has no bounce before it to
+        measure from, so the sketch says “New drop!”. A gap of more than
+        2 seconds also counts as a new drop.</p>
+        <p><strong>Try it:</strong> drop the ball from a measured
+        height, like 50 cm. Is the first measured bounce lower than
+        where you dropped it from? How much height does the ball lose on
+        each bounce? A ping pong ball and a rubber ball lose different
+        amounts.</p>
+        </section>
+        <section id="troubleshooting" class="level2">
+        <h2>Troubleshooting</h2>
+        <ul>
+        <li><strong>The spikes never go above about 200, even for hard
+        bounces.</strong> The Zener is backwards: its band must face the
+        A0 row.</li>
+        <li><strong>The Serial Plotter shows only 0.</strong>
+        <ul>
+        <li>Is the piezo taped flat to the cardboard? If it hangs loose,
+        it doesn’t bend.</li>
+        <li>Check that the piezo row and the A0 row are connected
+        through the 10kΩ resistor.</li>
+        </ul></li>
+        <li><strong>The reading never drops back to 0, or slowly
+        drifts.</strong> The 1MΩ resistor is missing, or isn’t across
+        the piezo (piezo row to GND row).</li>
+        <li><strong>It triggers when nothing is bouncing.</strong> Raise
+        <code>threshold</code>. Footsteps and typing on the same table
+        can shake the drum: put it on a folded towel.</li>
+        <li><strong>One bounce plays two notes.</strong> Raise
+        <code>deadTime</code>.</li>
+        <li><strong>The heights look wrong.</strong> Very light balls
+        (like ping pong balls) are slowed down by the air, so they come
+        back sooner than the formula expects, and their heights read a
+        little low.</li>
+        </ul>
+        </section>
+        <section id="going-further" class="level2">
+        <h2>Going Further</h2>
+        <ul>
+        <li><strong>A drum kit:</strong> tape piezos under several boxes
+        (or several spots of one big box), each on its own analog pin
+        (A0, A1, A2, A3) with its own resistors and Zener, each playing
+        its own sound.</li>
+        <li><strong>A knock lock:</strong> the classic Arduino
+        <strong>Knock</strong> example, where a secret pattern of knocks
+        unlocks something.</li>
+        <li><strong>Games:</strong> a ping pong scoreboard that counts
+        bounces, a “keep it bouncing” game, or a target with a piezo
+        under each zone.</li>
+        <li><strong>Send it to p5.js:</strong> print the strength and
+        height of each bounce to Serial, and draw them in a p5.js
+        sketch.</li>
+        <li><strong>Not just balls:</strong> footsteps on a floor tile,
+        raindrops on a box, a door knocker.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Doorstop Spring Switch</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Doorstop Spring Switch</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#doorstop-spring-switch"
+id="toc-doorstop-spring-switch">Doorstop Spring Switch</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a>
+<ul>
+<li><a href="#steps" id="toc-steps">Steps</a></li>
+</ul></li>
+<li><a href="#how-it-works" id="toc-how-it-works">How It Works</a></li>
+<li><a href="#tools-materials" id="toc-tools-materials">Tools &amp;
+Materials</a></li>
+<li><a href="#part-1-build-the-switch"
+id="toc-part-1-build-the-switch">Part 1: Build the Switch</a></li>
+<li><a href="#part-2-wire-it-to-the-arduino"
+id="toc-part-2-wire-it-to-the-arduino">Part 2: Wire It to the
+Arduino</a></li>
+<li><a href="#part-3-count-the-bounces"
+id="toc-part-3-count-the-bounces">Part 3: Count the Bounces</a></li>
+<li><a href="#part-4-make-it-boing" id="toc-part-4-make-it-boing">Part
+4: Make It Boing</a></li>
+<li><a href="#part-5-count-flicks-not-bounces"
+id="toc-part-5-count-flicks-not-bounces">Part 5: Count Flicks, Not
+Bounces</a></li>
+<li><a href="#troubleshooting"
+id="toc-troubleshooting">Troubleshooting</a></li>
+<li><a href="#going-further" id="toc-going-further">Going
+Further</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="doorstop-spring-switch" class="level1">
+        <h1>Doorstop Spring Switch</h1>
+        <figure>
+        <img src="images/cover.png"
+        alt="A doorstop spring standing on a cardboard base, flicked so it touches a copper ring around its tip." />
+        <figcaption aria-hidden="true">A doorstop spring standing on a
+        cardboard base, flicked so it touches a copper ring around its
+        tip.</figcaption>
+        </figure>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>A <strong>doorstop spring</strong> is the springy coil you
+        find screwed into a wall or baseboard so a door doesn’t hit it.
+        Flick it and it wobbles back and forth with a “boing” sound.
+        Today we turn one into a <strong>switch</strong>: we put a metal
+        ring around its tip, and every time the spring wobbles into the
+        ring, it closes a circuit, just like pressing a button.</p>
+        <p>A button is pressed once. A flicked spring touches the ring
+        <strong>many times</strong> in a row as it settles, and a harder
+        flick makes more touches. That makes it a great switch for
+        playful interfaces: an instrument, a game controller, or
+        anything that should react to a flick, a knock or a breeze.</p>
+        <section id="steps" class="level3">
+        <h3>Steps</h3>
+        <ol type="1">
+        <li>Build the switch: the spring, a cardboard base, and a copper
+        ring.</li>
+        <li>Wire it to the Arduino, the same way as a push button.</li>
+        <li>Count the bounces in the Serial Monitor.</li>
+        <li>Make it boing: a short sound on every touch.</li>
+        <li>Count flicks instead of bounces, and turn the strength of a
+        flick into a note.</li>
+        </ol>
+        </section>
+        </section>
+        <section id="how-it-works" class="level2">
+        <h2>How It Works</h2>
+        <p><img src="images/how_it_works.svg" alt="Two drawings of the doorstop spring switch. At rest, the spring stands upright and doesn't touch the copper ring around its tip, so pin 2 reads LOW. Flicked, the spring bends and its tip touches the ring, connecting 3.3V to pin 2, which reads HIGH." style="max-width:640px;width:100%;height:auto" /></p>
+        <p>The spring and the ring are the <strong>two sides of a
+        switch</strong>:</p>
+        <ul>
+        <li>The <strong>spring</strong> is connected to
+        <strong>3.3V</strong>.</li>
+        <li>The <strong>ring</strong> is connected to <strong>pin
+        2</strong>.</li>
+        <li>When they don’t touch, a <strong>10kΩ pull-down
+        resistor</strong> keeps pin 2 at LOW (0V), just like in Monday’s
+        Button sketch.</li>
+        <li>When the spring touches the ring, current flows from 3.3V to
+        pin 2, and it reads HIGH.</li>
+        </ul>
+        <p>Doorstop springs are made of steel, which conducts
+        electricity, so the whole spring works as a wire.</p>
+        </section>
+        <section id="tools-materials" class="level2">
+        <h2>Tools &amp; Materials</h2>
+        <p>From the <strong>hardware store</strong> (about $1–2
+        each):</p>
+        <ul>
+        <li><strong>Doorstop spring</strong>, the coiled kind with a
+        screw at the base and a rubber cap on the tip</li>
+        </ul>
+        <p>From your <strong>electronics kit</strong>:</p>
+        <ul>
+        <li>Arduino Nano 33 IoT, USB cable and breadboard</li>
+        <li><strong>10kΩ resistor</strong> (bands: brown, black,
+        orange)</li>
+        <li><strong>Jumper wires</strong> and <strong>alligator
+        clips</strong></li>
+        <li><strong>Passive buzzer</strong> or <strong>STEMMA
+        Speaker</strong>, for Parts 4 and 5</li>
+        </ul>
+        <p>Provided by the lab:</p>
+        <ul>
+        <li><strong>Cardboard</strong>, scissors or a box cutter, and
+        masking tape or hot glue</li>
+        <li><strong>Copper tape</strong> (or bare solid-core wire, or
+        aluminum foil) for the ring</li>
+        <li><strong>Multimeter</strong>, to check that your spring
+        conducts</li>
+        </ul>
+        </section>
+        <section id="part-1-build-the-switch" class="level2">
+        <h2>Part 1: Build the Switch</h2>
+        <ol type="1">
+        <li><strong>Pull the rubber cap off the tip of the
+        spring.</strong> The metal tip needs to touch the ring, and
+        rubber doesn’t conduct. If the spring is painted, sand a small
+        spot at the tip and at the base so bare metal shows.</li>
+        <li><strong>Make a base.</strong> Stack and glue two or three
+        layers of cardboard, about 10 cm square. A heavier base keeps
+        the spring from tipping the whole thing over when you flick
+        it.</li>
+        <li><strong>Mount the spring.</strong> Push the screw at the
+        bottom of the spring through the cardboard and tape or glue it
+        underneath so it stands straight up and doesn’t wobble at the
+        base.</li>
+        <li><strong>Make the ring.</strong> Cut a cardboard strip about
+        2 cm wide. Cut a hole in it a little bigger than the spring’s
+        tip (about 2 cm across), and line the inside of the hole with
+        <strong>copper tape</strong> so it makes a metal ring. You can
+        also bend a loop of bare wire.</li>
+        <li><strong>Hold the ring around the tip.</strong> Fold a
+        cardboard post or arm, and tape it to the base so the ring sits
+        around the tip of the spring <strong>without touching
+        it</strong>. Leave a gap of a few millimeters all around.</li>
+        <li><strong>Check it with a multimeter</strong> (continuity
+        mode, the one that beeps): put one probe on the base of the
+        spring and one on the copper ring. It should be silent at rest
+        and <strong>beep when you push the spring into the
+        ring</strong>.</li>
+        </ol>
+        <p>The size of the gap changes how the switch feels: a small gap
+        makes it touch even with a gentle flick, a big gap needs a hard
+        flick.</p>
+        </section>
+        <section id="part-2-wire-it-to-the-arduino" class="level2">
+        <h2>Part 2: Wire It to the Arduino</h2>
+        <p><img src="images/schematic.svg" alt="Schematic: the Nano's 3.3V pin goes to the doorstop spring. The copper ring is the other side of the switch and connects to pin D2, which also goes through a 10 kilohm pull-down resistor to GND." style="max-width:560px;width:100%;height:auto" /></p>
+        <p>This is the <strong>same circuit as a push button</strong>,
+        with the spring and the ring as the two sides of the switch:</p>
+        <ul>
+        <li><strong>Spring</strong> → <strong>3.3V</strong> (an
+        alligator clip on the bottom coils of the spring)</li>
+        <li><strong>Ring</strong> → <strong>pin 2</strong> (an alligator
+        clip on the copper tape)</li>
+        <li><strong>10kΩ resistor</strong> from <strong>pin 2</strong>
+        to <strong>GND</strong></li>
+        </ul>
+        <p>Tip: tape the alligator clips’ wires down to the base, so
+        they don’t pull on the spring or the ring.</p>
+        </section>
+        <section id="part-3-count-the-bounces" class="level2">
+        <h2>Part 3: Count the Bounces</h2>
+        <p>Upload this sketch and open the <strong>Serial
+        Monitor</strong> (9600 baud). Every time the spring touches the
+        ring, the count goes up, and the built-in LED blinks.</p>
+        <pre class="arduino"><code>// Bounce Counter: count every time the spring touches the ring.
+
+int springPin = 2;
+
+int lastState = LOW;  // was the spring touching the ring last time?
+int contacts = 0;     // how many times it has touched so far
+
+void setup() {
+  pinMode(springPin, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int state = digitalRead(springPin);
+
+  // the built-in LED is on while the spring touches the ring
+  digitalWrite(LED_BUILTIN, state);
+
+  // count it only when the spring goes from not touching to touching
+  if (state == HIGH &amp;&amp; lastState == LOW) {
+    contacts = contacts + 1;
+    Serial.println(contacts);
+  }
+  lastState = state;
+}</code></pre>
+        <p>Flick the spring once and watch the numbers: <strong>one
+        flick counts many times</strong>, maybe 5, maybe 30. The spring
+        wobbles in and out of the ring as it settles, and the Arduino
+        checks the pin thousands of times a second, so it sees every
+        touch.</p>
+        <p>This is called <strong>bouncing</strong>, and every switch
+        does it a little, even a push button (its metal contacts bounce
+        for a few milliseconds). Usually we have to filter it out. With
+        a spring, the bounces are the fun part.</p>
+        <p>Notice that <code>loop()</code> has <strong>no
+        <code>delay()</code></strong>: the spring touches the ring for
+        only a few milliseconds at a time, and a <code>delay()</code>
+        would make the Arduino miss them.</p>
+        </section>
+        <section id="part-4-make-it-boing" class="level2">
+        <h2>Part 4: Make It Boing</h2>
+        <p>Now every touch plays a very short beep, so one flick sounds
+        like a buzzy, rhythmic “brrrr” that slows down as the spring
+        settles.</p>
+        <p>Connect your speaker to <strong>pin 8</strong>:</p>
+        <ul>
+        <li><strong>Passive buzzer:</strong> one leg to <strong>pin
+        8</strong>, the other to <strong>GND</strong> (like the <a
+        href="../../Arduino/buzzer_speaker/buzzer_speaker.html">Passive
+        Buzzer</a> lesson).</li>
+        <li><strong>STEMMA Speaker:</strong> power to
+        <strong>3.3V</strong>, ground to <strong>GND</strong>, signal to
+        <strong>pin 8</strong>, using alligator clips. Turn the volume
+        knob with a small screwdriver if it’s too quiet.</li>
+        </ul>
+        <pre class="arduino"><code>// Spring Boing: play a short click of sound every time the spring touches the ring.
+
+int springPin = 2;
+int speakerPin = 8;
+
+int lastState = LOW;
+
+void setup() {
+  pinMode(springPin, INPUT);
+  pinMode(speakerPin, OUTPUT);
+}
+
+void loop() {
+  int state = digitalRead(springPin);
+
+  if (state == HIGH &amp;&amp; lastState == LOW) {
+    tone(speakerPin, 880, 15);  // a very short beep: 880 Hz for 15 milliseconds
+  }
+  lastState = state;
+}</code></pre>
+        <p><strong>Try it:</strong></p>
+        <ul>
+        <li>Change <code>880</code> to a different pitch, or make it
+        random with <code>random(200, 2000)</code>.</li>
+        <li>Make the beep longer or shorter by changing
+        <code>15</code>.</li>
+        </ul>
+        </section>
+        <section id="part-5-count-flicks-not-bounces" class="level2">
+        <h2>Part 5: Count Flicks, Not Bounces</h2>
+        <p>What if you want the spring to work like a button:
+        <strong>one flick, one action</strong>? We count the bounces,
+        and when the spring has been quiet for 300 milliseconds, we
+        decide the flick is over. Then we use the number of bounces as
+        the <strong>strength</strong> of the flick: a harder flick plays
+        a higher note.</p>
+        <pre class="arduino"><code>// Flick Strength: count the bounces in one flick, then play a note.
+// A harder flick makes the spring bounce more, so it plays a higher note.
+
+int springPin = 2;
+int speakerPin = 8;
+
+int lastState = LOW;
+int bounces = 0;               // bounces in the current flick
+unsigned long lastBounce = 0;  // when the last bounce happened (in milliseconds)
+
+void setup() {
+  pinMode(springPin, INPUT);
+  pinMode(speakerPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int state = digitalRead(springPin);
+
+  if (state == HIGH &amp;&amp; lastState == LOW) {
+    bounces = bounces + 1;
+    lastBounce = millis();  // remember when it happened
+  }
+  lastState = state;
+
+  // no bounce for 300 milliseconds: the spring has settled, so the flick is over
+  if (bounces &gt; 0 &amp;&amp; millis() - lastBounce &gt; 300) {
+    Serial.print(&quot;Flick! Bounces: &quot;);
+    Serial.println(bounces);
+
+    int pitch = map(bounces, 1, 30, 200, 2000);
+    pitch = constrain(pitch, 200, 2000);
+    tone(speakerPin, pitch, 300);
+
+    bounces = 0;  // get ready for the next flick
+  }
+}</code></pre>
+        <p>Two new things:</p>
+        <ul>
+        <li><strong><code>millis()</code></strong> gives the number of
+        milliseconds since the Arduino started. We save it in
+        <code>lastBounce</code> at every bounce. Then
+        <code>millis() - lastBounce</code> tells us how long it’s been
+        since the last one, <strong>without</strong> using
+        <code>delay()</code>, so we don’t miss any bounces while
+        waiting.</li>
+        <li><code>unsigned long</code> is a kind of variable for very
+        big, never-negative numbers. <code>millis()</code> gets big fast
+        (there are 86,400,000 milliseconds in a day), so we store it in
+        an <code>unsigned long</code> instead of an
+        <code>int</code>.</li>
+        </ul>
+        <p><code>map()</code> and <code>constrain()</code> turn the
+        number of bounces (1 to 30) into a pitch (200 to 2000 Hz). Open
+        the Serial Monitor to see how many bounces your flicks make, and
+        change the <code>30</code> to fit your spring.</p>
+        <p><strong>Try it:</strong> flick it softly, then hard. Can you
+        play a melody by controlling how hard you flick?</p>
+        </section>
+        <section id="troubleshooting" class="level2">
+        <h2>Troubleshooting</h2>
+        <ul>
+        <li><strong>Nothing happens when the spring touches the
+        ring.</strong>
+        <ul>
+        <li>Is the rubber cap off the tip? Is the spring painted? Sand a
+        spot at the tip and where the alligator clip holds it.</li>
+        <li>Check with the multimeter: it should beep between the
+        spring’s base and the ring when they touch.</li>
+        <li>Is the ring connected to <strong>pin 2</strong>, and the
+        10kΩ resistor in the same row as pin 2?</li>
+        </ul></li>
+        <li><strong>It counts all the time, even when nothing is
+        touching.</strong> The 10kΩ resistor is missing, or isn’t
+        connected between pin 2 and GND. Without it, pin 2 “floats” and
+        reads random values.</li>
+        <li><strong>It reads HIGH all the time.</strong> The spring is
+        resting against the ring. Make the hole bigger or center the
+        ring around the tip.</li>
+        <li><strong>The whole base tips over.</strong> Add more
+        cardboard layers, or tape the base to the table.</li>
+        <li><strong>No sound.</strong> Check that the speaker is on
+        <strong>pin 8</strong> and <strong>GND</strong>. A passive
+        buzzer needs <code>tone()</code>; the kit’s active buzzer only
+        beeps at one pitch.</li>
+        </ul>
+        </section>
+        <section id="going-further" class="level2">
+        <h2>Going Further</h2>
+        <ul>
+        <li><strong>An instrument:</strong> build three or four springs,
+        each on its own pin, each with its own note.</li>
+        <li><strong>Join the Class Band:</strong> replace the button in
+        the <a href="../Class_Band/class_band.html">Class Band</a>
+        sketch with your spring.</li>
+        <li><strong>Different springs:</strong> springs of different
+        lengths and stiffness wobble at different speeds. A longer
+        spring wobbles slower and bounces longer.</li>
+        <li><strong>Not just flicks:</strong> put the spring where
+        something else will move it: a door, a fan, a pet, the wind,
+        footsteps on a table.</li>
+        <li><strong>Hear the spring itself:</strong> doorstop springs
+        make great sounds on their own. Experimental musicians and sound
+        artists often amplify them with a contact microphone.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

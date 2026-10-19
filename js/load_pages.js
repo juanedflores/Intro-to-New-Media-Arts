@@ -382,9 +382,79 @@ function loadWeek(n, fromHistory) {
         doc.getElementById("ArticleBodyMain") ||
         doc.getElementById("ArticleBody");
       $("#right-col").html(article ? article.innerHTML : "");
+      shownWeek = n;
+      markReviewCards(n);
     },
     "text",
   );
+}
+
+// ---------- review cards (week pages) ----------
+// A topic card that already appeared in an earlier week is review: it moves
+// under a "Review from earlier weeks" divider at the end of the day's cards,
+// looks quieter (see .is-review in css/site.css) and names the week it's
+// from. Links are compared by page, so "#part-4" on a workshop still counts.
+var shownWeek = null;
+var weekLinksCache = {};
+
+function pageKey(href) {
+  return (href || "").replace(/^\.\//, "").split("#")[0].split("?")[0];
+}
+
+// the pages linked from week n's cards (fetched once, then remembered)
+function weekLinks(n) {
+  if (!weekLinksCache[n]) {
+    var dir = "week_" + String(n).padStart(2, "0");
+    weekLinksCache[n] = fetch("content/weeks/" + dir + "/week" + n + ".html")
+      .then(function (r) {
+        return r.ok ? r.text() : "";
+      })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        return Array.from(doc.querySelectorAll("a.topic-card")).map(function (a) {
+          return pageKey(a.getAttribute("href"));
+        });
+      })
+      .catch(function () {
+        return [];
+      });
+  }
+  return weekLinksCache[n];
+}
+
+function markReviewCards(n) {
+  var earlier = [];
+  for (var i = 1; i < n; i++) earlier.push(weekLinks(i));
+  Promise.all(earlier).then(function (lists) {
+    if (shownWeek !== n) return; // the visitor moved on to another week
+    var firstWeek = {};
+    lists.forEach(function (keys, i) {
+      keys.forEach(function (k) {
+        if (!(k in firstWeek)) firstWeek[k] = i + 1;
+      });
+    });
+    document.querySelectorAll("#right-col .topics-grid").forEach(function (grid) {
+      var review = Array.from(grid.querySelectorAll(":scope > a.topic-card")).filter(
+        function (card) {
+          return pageKey(card.getAttribute("href")) in firstWeek;
+        },
+      );
+      if (!review.length) return;
+      var divider = document.createElement("p");
+      divider.className = "review-divider";
+      divider.textContent = "Review from earlier weeks";
+      grid.appendChild(divider);
+      review.forEach(function (card) {
+        var week = firstWeek[pageKey(card.getAttribute("href"))];
+        var badge = document.createElement("span");
+        badge.className = "review-badge";
+        badge.textContent = "Review · Week " + week;
+        card.classList.add("is-review");
+        card.appendChild(badge);
+        grid.appendChild(card); // after the divider, keeping their order
+      });
+    });
+  });
 }
 
 // Which week starts each section, for the headers in the week nav. Weeks

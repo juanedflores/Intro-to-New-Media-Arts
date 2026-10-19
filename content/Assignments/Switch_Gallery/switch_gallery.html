@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Custom Switches &amp; Interfaces</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Custom Switches &amp; Interfaces</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#custom-switches-interfaces"
+id="toc-custom-switches-interfaces">Custom Switches &amp; Interfaces</a>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#switches-in-unexpected-places"
+id="toc-switches-in-unexpected-places">Switches in Unexpected
+Places</a></li>
+<li><a href="#variable-resistors-and-motion"
+id="toc-variable-resistors-and-motion">Variable Resistors and
+Motion</a></li>
+<li><a href="#cardboard-mechanisms"
+id="toc-cardboard-mechanisms">Cardboard Mechanisms</a></li>
+<li><a href="#build-your-own" id="toc-build-your-own">Build Your Own</a>
+<ul>
+<li><a href="#questions-for-your-interface"
+id="toc-questions-for-your-interface">Questions for Your
+Interface</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="custom-switches-interfaces" class="level1">
+        <h1>Custom Switches &amp; Interfaces</h1>
+        <figure>
+        <img src="images/cover.png"
+        alt="Eight small drawings of custom switches: a doorstop spring, a bouncing ball, cardboard keys, a tilt switch, a glove, a banana, a magnet and an accelerometer." />
+        <figcaption aria-hidden="true">Eight small drawings of custom
+        switches: a doorstop spring, a bouncing ball, cardboard keys, a
+        tilt switch, a glove, a banana, a magnet and an
+        accelerometer.</figcaption>
+        </figure>
+        <section id="summary" class="level2">
+        <h2>Summary</h2>
+        <p>A switch is just two pieces of metal that touch. A sensor is
+        just something that changes when the world changes. Artists,
+        musicians and designers have built switches and sensors into
+        gloves, cardboard, doorknobs and bowls of water, and some of the
+        most memorable interfaces come from a simple idea used in an
+        unexpected place.</p>
+        <p>Look at each example and ask: <strong>what is the switch or
+        sensor, what does the person do to it, and what
+        happens?</strong> Then think about your own interface for the
+        midterm.</p>
+        </section>
+        <section id="switches-in-unexpected-places" class="level2">
+        <h2>Switches in Unexpected Places</h2>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/SIfumZa2TKY" title="Michel Waisvisz: The Hands" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Michel Waisvisz, <em>The Hands</em> (first performed
+        1984)</strong><br />
+        Built at STEIM in Amsterdam, <em>The Hands</em> are two
+        controllers strapped to the performer’s hands. Waisvisz played
+        electronic music by moving his hands, arms and fingers, instead
+        of sitting at a keyboard.</p>
+        <p><strong>The switches:</strong> push buttons under the
+        fingers, <strong>mercury tilt switches</strong> that sense how
+        the wrists and arms are turned (a liquid metal version of our
+        ball tilt switch), and an ultrasonic sensor that measures the
+        distance between the hands.</p>
+        </div>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/E4tYpXVTjxA" title="Touché: Enhancing Touch Interaction on Humans, Screens, Liquids, and Everyday Objects" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Disney Research and Carnegie Mellon University,
+        <em>Touché</em> (2012)</strong><br />
+        A doorknob that knows how you’re holding it, a table that knows
+        how you’re touching it, even a glass of water that reacts to
+        your finger. <em>Touché</em> can turn almost any object, and
+        even your own body, into a touch sensor with a single wire.</p>
+        <p><strong>The sensor:</strong> capacitive touch, like the
+        MPR121 touch board, taken further. Instead of only
+        <em>touching</em> or <em>not touching</em>, it can tell apart
+        one finger, a whole hand or a grip.</p>
+        </div>
+        </section>
+        <section id="variable-resistors-and-motion" class="level2">
+        <h2>Variable Resistors and Motion</h2>
+        <div class="video-embed">
+        <iframe src="https://player.vimeo.com/video/43025087" title="Laetitia Sonami: Lady&#39;s Glove" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+        </iframe>
+        <p><strong>Laetitia Sonami, <em>Lady’s Glove</em></strong><br />
+        Sound artist Laetitia Sonami performs with a glove she built and
+        rebuilt over many versions. Every small movement of her fingers,
+        hand and arm shapes the sound. She began making it partly as a
+        playful answer to the bulky, high-tech gloves of virtual
+        reality.</p>
+        <p><strong>The sensors:</strong> <strong>bend sensors</strong>
+        on the fingers (variable resistors that change as they bend,
+        read with <code>analogRead()</code> just like our Velostat
+        sensor), and <strong>accelerometers</strong> on the wrists.</p>
+        </div>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/kCV0FzG9Clw" title="Imogen Heap demonstrates her Mi.Mu gesture-control gloves" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Imogen Heap and the MI.MU team, <em>Mi.Mu gloves</em>
+        (2014)</strong><br />
+        Musician Imogen Heap wanted to make music on stage by moving,
+        more like dancing than pressing buttons. Raising a hand can
+        climb through a scale, and a pinch and a twist can sweep a
+        filter.</p>
+        <p><strong>The sensors:</strong> bend sensors that track each
+        finger, and a board with an <strong>accelerometer</strong>, a
+        gyroscope and a compass that tracks how the hands move and
+        point, sent to the computer over Wi-Fi.</p>
+        </div>
+        </section>
+        <section id="cardboard-mechanisms" class="level2">
+        <h2>Cardboard Mechanisms</h2>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/a8YhOUsWn5w" title="Nintendo Labo Variety Kit Overview Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Nintendo, <em>Nintendo Labo</em>
+        (2018)</strong><br />
+        Kits of flat cardboard sheets that you fold into a piano, a
+        fishing rod, a motorbike handle or a robot backpack. The game
+        controller slots inside, and the cardboard becomes the
+        interface.</p>
+        <p><strong>The mechanisms:</strong> cardboard keys, levers,
+        sliders and strings. Each moving part carries a small reflective
+        sticker, and a tiny camera in the controller watches which
+        stickers move. The controller’s accelerometer and gyroscope
+        sense how the whole thing is tilted and shaken.<br />
+        <em>(Video: overview trailer, uploaded by GameXplain.)</em></p>
+        </div>
+        <p><strong>Google, <em>Google Cardboard</em>
+        (2014)</strong><br />
+        A virtual reality viewer folded from cardboard, with a phone
+        inside as the screen. The first version had no electronics at
+        all for its button: just two magnets.</p>
+        <p><strong>The switch:</strong> one magnet glued inside the
+        cardboard and a ring magnet on the outside. Sliding the outer
+        magnet changes the magnetic field, and the phone’s built-in
+        <strong>compass</strong> senses the change as a button press. <a
+        href="https://www.kjmagnetics.com/blog/google-cardboard">How the
+        magnet button works (K&amp;J Magnetics)</a></p>
+        </section>
+        <section id="build-your-own" class="level2">
+        <h2>Build Your Own</h2>
+        <p>Every example above started with something simple: two
+        contacts that touch, a sensor that bends, a magnet that moves.
+        Try these, then make one that’s yours.</p>
+        <div class="topics-grid">
+        <a class="topic-card" data-type="workshop" href="../../Workshops/Doorstop_Switch/doorstop_switch.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../Workshops/Doorstop_Switch/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Workshop</span></div></div>
+        <h3 class="cardtitle">Doorstop Spring Switch</h3>
+        </a>
+
+        <a class="topic-card" data-type="workshop" href="../../Workshops/Bouncing_Ball/bouncing_ball.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../Workshops/Bouncing_Ball/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Workshop</span></div></div>
+        <h3 class="cardtitle">Bouncing Ball Sensor</h3>
+        </a>
+
+        <a class="topic-card" data-type="workshop" href="../../Workshops/Velostat_Workshop/velostat_workshop.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../Workshops/Velostat_Workshop/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Workshop</span></div></div>
+        <h3 class="cardtitle">DIY Pressure Sensor (Velostat)</h3>
+        </a>
+
+        <a class="topic-card" data-type="assignment" href="../Creative_Interfaces/creative_interfaces.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../Creative_Interfaces/images/cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Assignment</span></div></div>
+        <h3 class="cardtitle">Midterm: Creative Interfaces</h3>
+        </a>
+
+        </div>
+        <section id="questions-for-your-interface" class="level3">
+        <h3>Questions for Your Interface</h3>
+        <ul>
+        <li>What’s the <strong>simplest switch</strong> that could do
+        what you want: two contacts, a ball, a spring, a magnet?</li>
+        <li>Does it need to be <strong>on/off</strong> (a switch) or
+        <strong>how much</strong> (a variable resistor or an
+        accelerometer)?</li>
+        <li>What <strong>material</strong> does the person touch:
+        cardboard, fabric, water, their own body?</li>
+        <li>What <strong>movement</strong> triggers it: a press, a
+        flick, a tilt, a squeeze, a bounce, a breath?</li>
+        </ul>
+        </section>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

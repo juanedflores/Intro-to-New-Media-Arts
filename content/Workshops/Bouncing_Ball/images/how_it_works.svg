@@ -1,0 +1,16 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ball bouncing on a cardboard drum, with a piezo taped under the middle of the drum's top. The bounces get lower and closer together. Next to it, a Serial Plotter graph shows one sharp spike per bounce, each spike smaller and closer to the last." style="max-width:640px;width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect width="640" height="360" fill="#fff"/>
+  <text x="185" y="36" text-anchor="middle" font-weight="700" font-size="16" fill="#1d2433">Bounce on the drum…</text>
+  <text x="490" y="36" text-anchor="middle" font-weight="700" font-size="16" fill="#1d2433">…see it on A0</text>
+  <path d="M50 236 Q100.0 16 150 236" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5 5"/><path d="M150 236 Q187.5 96 225 236" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5 5"/><path d="M225 236 Q252.5 152 280 236" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5 5"/><path d="M280 236 Q299.0 188 318 236" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5 5"/><path d="M318 236 Q329.0 212 340 236" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="100" cy="126" r="14" fill="#e8574a"/>
+  <rect x="40" y="250" width="300" height="10" fill="#d9b886" stroke="#8a6a3e" stroke-width="2"/>
+  <rect x="44" y="260" width="12" height="40" fill="#c8a06a" stroke="#8a6a3e" stroke-width="1.5"/>
+  <rect x="324" y="260" width="12" height="40" fill="#c8a06a" stroke="#8a6a3e" stroke-width="1.5"/>
+  <ellipse cx="190" cy="266" rx="34" ry="6" fill="#d0d4da" stroke="#5b6472" stroke-width="2"/>
+  <path d="M215 270 q30 30 70 36" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <path d="M205 271 q30 36 70 46" fill="none" stroke="#1d2433" stroke-width="2.5"/>
+  <text x="190" y="330" text-anchor="middle" font-size="13" fill="#5b6472" font-weight="700">piezo taped underneath the top</text>
+  <line x1="20" y1="300" x2="360" y2="300" stroke="#bbb" stroke-width="2"/>
+  <rect x="370" y="80" width="240" height="190" rx="6" fill="#111318"/><text x="490" y="104" text-anchor="middle" font-size="13" fill="#ece8e0">Serial Plotter</text><line x1="385" y1="250" x2="595" y2="250" stroke="#343a46" stroke-width="1"/><polyline points="385 250 402.0 250 405.0 140 409.0 252 413.0 250 462.0 250 465.0 170 469.0 252 473.0 250 510.0 250 513.0 195 517.0 252 521.0 250 547.0 250 550.0 215 554.0 252 558.0 250 574.0 250 577.0 230 581.0 252 585.0 250 595 250" fill="none" stroke="#fbc740" stroke-width="2.5" stroke-linejoin="round"/><text x="490" y="292" text-anchor="middle" font-size="13" fill="#555">each bounce is a spike,</text><text x="490" y="310" text-anchor="middle" font-size="13" fill="#555">smaller and closer together</text>
+</svg>
