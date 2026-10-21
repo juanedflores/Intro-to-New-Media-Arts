@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accelerometer Coffee Cup</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.min.js"></script>
+    <style>
+      body { margin: 0; background: #111; color: #eee; font-family: monospace; overflow: hidden; }
+      #ui { position: fixed; top: 12px; left: 12px; }
+      button { font: inherit; padding: 6px 12px; cursor: pointer; }
+      #readout { margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="ui">
+      <button id="connect">Connect Arduino</button>
+      <div id="readout">not connected (mouse controls the cup)</div>
+    </div>
+
+    <script>
+      // accelerometer values in g's, updated by the serial reader below
+      let ax = 0;
+      let ay = 0;
+      let az = 1;
+      let connected = false;
+
+      // smoothed rotation angles
+      let roll = 0;
+      let pitch = 0;
+
+      // textures cut out of the photos in images/
+      let sleeveImg;
+      let lidImg;
+
+      // how many slices go around the cup. more = rounder
+      const SIDES = 48;
+
+      function preload() {
+        sleeveImg = loadImage("images/sleeve.jpg");
+        lidImg = loadImage("images/lid.jpg");
+      }
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight, WEBGL);
+        textureMode(NORMAL); // texture coordinates go from 0 to 1
+        noStroke();
+      }
+
+      function draw() {
+        background(17);
+
+        let targetRoll, targetPitch;
+        if (connected) {
+          // gravity always points down, so the tilt angles come from
+          // how much of it lands on each axis
+          targetRoll = atan2(ay, az);
+          targetPitch = atan2(-ax, sqrt(ay * ay + az * az));
+        } else {
+          // no Arduino yet: tilt with the mouse
+          targetRoll = map(mouseY, 0, height, -QUARTER_PI, QUARTER_PI);
+          targetPitch = map(mouseX, 0, width, -QUARTER_PI, QUARTER_PI);
+        }
+
+        // ease toward the new angles so the cup doesn't jitter
+        roll = lerp(roll, targetRoll, 0.2);
+        pitch = lerp(pitch, targetPitch, 0.2);
+
+        ambientLight(120);
+        directionalLight(255, 255, 255, -0.4, 0.6, -1);
+
+        rotateX(-0.35); // look down at the lid a little
+        rotateX(roll);
+        rotateZ(pitch);
+
+        drawCup();
+      }
+
+      // In WEBGL, y points DOWN, so the bottom of the cup is +y and the top is -y.
+      function drawCup() {
+        rotateY(-2.6); // spin the cup so the logo faces us
+
+        // white paper cup: narrow at the bottom, wide at the top
+        fill(235);
+        ring(68, 150, 92, -105);
+        disc(68, 150, 1); // bottom
+
+        // cardboard sleeve, wrapped in the photo strip
+        texture(sleeveImg);
+        ring(77, 95, 86, -30);
+
+        // black plastic lid
+        fill(25);
+        ring(95, -105, 100, -112); // rim that snaps over the cup
+        ring(100, -112, 100, -125);
+        ring(100, -125, 88, -132);
+        ring(88, -132, 84, -168); // the raised part you drink from
+
+        texture(lidImg);
+        disc(84, -168, -1);
+      }
+
+      // A tube between two circles (like a lampshade).
+      // r1/y1 is one circle, r2/y2 is the other. Whatever fill() or
+      // texture() is active gets wrapped around it.
+      function ring(r1, y1, r2, y2) {
+        // tilt the normals to match the slope so the light shades it right
+        let slope = (r1 - r2) / (y1 - y2);
+        beginShape(TRIANGLE_STRIP);
+        for (let i = 0; i <= SIDES; i++) {
+          let a = (i / SIDES) * TWO_PI;
+          let u = i / SIDES;
+          normal(cos(a), -slope, -sin(a));
+          vertex(r1 * cos(a), y1, -r1 * sin(a), u, 1);
+          vertex(r2 * cos(a), y2, -r2 * sin(a), u, 0);
+        }
+        endShape();
+      }
+
+      // A flat circle at height y. facing = 1 points down, -1 points up.
+      // The texture is mapped like a round sticker.
+      function disc(r, y, facing) {
+        beginShape(TRIANGLE_FAN);
+        normal(0, facing, 0);
+        vertex(0, y, 0, 0.5, 0.5);
+        for (let i = 0; i <= SIDES; i++) {
+          let a = (i / SIDES) * TWO_PI;
+          vertex(r * cos(a), y, r * sin(a), 0.5 + 0.5 * cos(a), 0.5 + 0.5 * sin(a));
+        }
+        endShape();
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+      // ---------- Web Serial: read "x,y,z" lines from the Arduino ----------
+      const readout = document.getElementById("readout");
+
+      document.getElementById("connect").addEventListener("click", async () => {
+        if (!("serial" in navigator)) {
+          readout.textContent = "Web Serial needs Chrome or Edge.";
+          return;
+        }
+        const port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+
+        const decoder = new TextDecoderStream();
+        port.readable.pipeTo(decoder.writable);
+        const reader = decoder.readable.getReader();
+
+        connected = true;
+        let buffer = "";
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buffer += value;
+          const lines = buffer.split("\n");
+          buffer = lines.pop(); // keep the unfinished line for next time
+          for (const line of lines) {
+            const parts = line.trim().split(",").map(Number);
+            if (parts.length === 3 && parts.every(Number.isFinite)) {
+              [ax, ay, az] = parts;
+              readout.textContent = `x ${ax.toFixed(2)}  y ${ay.toFixed(2)}  z ${az.toFixed(2)}`;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

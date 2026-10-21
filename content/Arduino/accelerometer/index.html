@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accelerometer 3D</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.min.js"></script>
+    <style>
+      body { margin: 0; background: #111; color: #eee; font-family: monospace; overflow: hidden; }
+      #ui { position: fixed; top: 12px; left: 12px; }
+      button { font: inherit; padding: 6px 12px; cursor: pointer; }
+      #readout { margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="ui">
+      <button id="connect">Connect Arduino</button>
+      <div id="readout">not connected (mouse controls the box)</div>
+    </div>
+
+    <script>
+      // accelerometer values in g's, updated by the serial reader below
+      let ax = 0;
+      let ay = 0;
+      let az = 1;
+      let connected = false;
+
+      // smoothed rotation angles
+      let roll = 0;
+      let pitch = 0;
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight, WEBGL);
+      }
+
+      function draw() {
+        background(17);
+
+        let targetRoll, targetPitch;
+        if (connected) {
+          // gravity always points down, so the tilt angles come from
+          // how much of it lands on each axis
+          targetRoll = atan2(ay, az);
+          targetPitch = atan2(-ax, sqrt(ay * ay + az * az));
+        } else {
+          // no Arduino yet: tilt with the mouse
+          targetRoll = map(mouseY, 0, height, -QUARTER_PI, QUARTER_PI);
+          targetPitch = map(mouseX, 0, width, -QUARTER_PI, QUARTER_PI);
+        }
+
+        // ease toward the new angles so the box doesn't jitter
+        roll = lerp(roll, targetRoll, 0.2);
+        pitch = lerp(pitch, targetPitch, 0.2);
+
+        rotateX(HALF_PI * 0.5); // look down at the board a little
+        rotateX(roll);
+        rotateZ(pitch);
+
+        normalMaterial();
+        box(250, 30, 120); // roughly the shape of a Nano
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+      // ---------- Web Serial: read "x,y,z" lines from the Arduino ----------
+      const readout = document.getElementById("readout");
+
+      document.getElementById("connect").addEventListener("click", async () => {
+        if (!("serial" in navigator)) {
+          readout.textContent = "Web Serial needs Chrome or Edge.";
+          return;
+        }
+        const port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+
+        const decoder = new TextDecoderStream();
+        port.readable.pipeTo(decoder.writable);
+        const reader = decoder.readable.getReader();
+
+        connected = true;
+        let buffer = "";
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buffer += value;
+          const lines = buffer.split("\n");
+          buffer = lines.pop(); // keep the unfinished line for next time
+          for (const line of lines) {
+            const parts = line.trim().split(",").map(Number);
+            if (parts.length === 3 && parts.every(Number.isFinite)) {
+              [ax, ay, az] = parts;
+              readout.textContent = `x ${ax.toFixed(2)}  y ${ay.toFixed(2)}  z ${az.toFixed(2)}`;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
