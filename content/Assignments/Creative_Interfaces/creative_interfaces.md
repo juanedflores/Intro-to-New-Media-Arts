@@ -20,7 +20,7 @@ We have looked at how switches (buttons) and variable resistors (potentiometers)
 - **October 12** — Midterm introduced. The Button sketch. RGB LEDs.
 - **October 19** — The built-in accelerometer. Midterm studio.
 - **October 21** — Keyboard and mouse simulation. Midterm studio.
-- **October 26** — Topics in sound. Midterm studio.
+- **October 26** — Midterm studio.
 - **October 28** — Midterm Critique
 :::
 

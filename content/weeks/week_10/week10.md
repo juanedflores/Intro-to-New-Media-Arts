@@ -4,23 +4,47 @@ title: Week 10
 
 # Week 10
 
-<div class="marquee"><p>Midterm Studio Crunch Time / Critique</p></div>
-
 ::: {.days}
 
 ::: {.day title="MONDAY" open="true"}
 
 ### Announcements
 ::: {.announcement type="reminder"}
-Monday is the last day to work on Midterms! Be ready to present for the critique this Wednesday.
+Today is the **last day of class time** to work on your midterm. The critique for **Creative Interfaces** is this **Wednesday, October 28**, so come ready to present.
+:::
+
+::: {.announcement type="tip"}
+Before you leave today, make sure your interface can be read by one of the two midterm sketches (`digitalRead()` on pin 2, or `analogRead()` on A0) and shows up in the Serial Monitor. The **[Arduino Cheat Sheet](./content/Arduino/cheat_sheet/cheat_sheet.html)** has the wiring for both.
 :::
 
 ::: {.announcement type="materials"}
-- Take out everything you need to work on Midterm.
+- Your midterm materials and tools
 :::
 
 ### Agenda
-- Midterm Studio (Last class time day to work on midterm projects)
+- **Midterm studio.** The whole class is open work time. I'll come around to help with wiring, code and building.
+- **Check your input.** Test your interface with the midterm sketch and the Serial Monitor. Does the reading change when someone uses it the way you intend?
+- **Document as you go.** Take photos of your interface by itself and of it being used. You'll need them for your Are.na channel.
+
+### Topics
+::: {.topics}
+
+::: {.card type="assignment" title="Midterm: Creative Interfaces" thumb="./content/Assignments/Creative_Interfaces/images/cover.jpg" href="./content/Assignments/Creative_Interfaces/creative_interfaces.html" tag="Assignment"}
+:::
+
+::: {.card type="lesson" title="Arduino Cheat Sheet" thumb="./content/Arduino/cheat_sheet/images/cover.png" href="./content/Arduino/cheat_sheet/cheat_sheet.html" tag="Arduino"}
+:::
+
+::: {.card type="lesson" title="Button" thumb="./content/Arduino/button/images/button.png" href="./content/Arduino/button/button.html" tag="Arduino"}
+:::
+
+::: {.card type="workshop" title="DIY Pressure Sensor (Velostat)" thumb="./content/Workshops/Velostat_Workshop/images/cover.jpg" href="./content/Workshops/Velostat_Workshop/velostat_workshop.html" tag="Workshop"}
+:::
+
+::: {.card type="lesson" title="Custom Switches & Interfaces: A Gallery" thumb="./content/Assignments/Switch_Gallery/images/cover.png" href="./content/Assignments/Switch_Gallery/switch_gallery.html" tag="Gallery"}
+:::
+
+:::
 
 :::
 
@@ -28,52 +52,41 @@ Monday is the last day to work on Midterms! Be ready to present for the critique
 
 ### Announcements
 ::: {.announcement type="reminder"}
-Remember to post your project documentation (photos, videos) and a description on Blackboard!
+**Midterm Critique** today. Your interface doesn't need to be wired to the Arduino for the critique, but you're welcome to wire it up and show it working if you'd like.
+:::
+
+::: {.announcement type="reminder"}
+Post your **"Creative Interfaces"** channel on Are.na before class: photos of your interface by itself and of it being used, plus a description of how it is used and what it is for. Your channel is what your midterm will be graded on, and your work will be displayed in a digital exhibit in the class **[Gallery](./content/gallery.html)** online.
+:::
+
+::: {.announcement type="materials"}
+- Your finished interface
+- Optional: laptop, Arduino Nano 33 IoT and USB cable, if you're showing it wired up
 :::
 
 ### Agenda
-- Midterm Critique
+- **Setup (first 15 minutes).** Get your interface ready to show, and plug it in if you're wiring it up.
+- **Midterm Critique.** Each person presents their interface, explains their intentions and the interactions, and the class tries it if they can. Then we discuss. Critiques usually take the full class.
+- **When you present, tell us:**
+  - What is it, and who (or what) is it for?
+  - How do you use it? Show us the interactions.
+  - What would the Arduino read: on/off, or a range of values?
+  - If you could build the dream version, what would it do in the world?
+- **When you respond,** describe what you notice first, then ask questions, then offer suggestions.
 
+### Topics
+::: {.topics}
+
+::: {.card type="assignment" title="Midterm: Creative Interfaces" thumb="./content/Assignments/Creative_Interfaces/images/cover.jpg" href="./content/Assignments/Creative_Interfaces/creative_interfaces.html" tag="Assignment"}
 :::
 
 :::
 
-<!-- ### Thursday Agenda: -->
-<!---->
-<!-- - Midterm Studio: 30 mins -->
-<!-- - Midterm Critiques: ~60-90 mins -->
-<!-- - Post Midterm Documentation to Blackboard: 30 mins -->
-<!---->
-<!-- How to Critique in an Art Classroom:  -->
-<!---->
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/9neybpOvjaQ?si=39zhth3vy1onWFvx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-<!---->
-<!-- --- -->
-<!---->
-<!-- Example of Midterm Documentation Post for Blackboard: -->
-<!---->
-<!-- <span style="color: blue">[header image: An image that shows off your interface]</span> -->
-<!---->
-<!-- **Description:** -->
-<!---->
-<!-- <span style="color: blue">[This is where you will write a short description of what your interface does, inspirations, thoughts, etc.]</span> -->
-<!---->
-<!-- Ex: London design studio Glithero has created a playful take on illumination, designing a lamp that turns on via a game of dominoes. -->
-<!---->
-<!-- **Demonstration on How To Use:** -->
-<!---->
-<!-- <span style="color: blue"> [This is where you will put more documentation showing your interface being used. The steps needed, how to hold it, etc.] </span> -->
-<!---->
-<!-- **Imagined Final Product Description. What would it do in the world?:** -->
-<!---->
-<!-- <span style="color: blue"> -->
-<!-- [This is where you will imagine what the effect of your interface is. You May have already hooked up and LED, but if you could make your dream project, what would it do?] -->
-<!-- </span> -->
-<!---->
-<!-- Ex: Beyond being a playful interactive object, the concept behind the design intended to make visible the technical process of lighting. “With so much technology in our lives it is easy to take for granted that even simple things such as turning on a light are made possible by the physical properties of materials”, explains Tim Simpson, co-founder of the design studio. -->
+:::
+
+:::
 
 ### Next Week
 ::: {.nextweek}
-<!-- placeholder - edit with next week's actual plan -->
-We'll move past midterms and into new project work.
+With the midterm done, we turn toward the final project. Monday we'll look at servo motors and start talking about final project ideas. Wednesday we'll use the Arduino as a keyboard or mouse.
 :::
