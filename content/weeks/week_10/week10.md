@@ -59,6 +59,23 @@ Before you leave today, make sure your interface can be read by one of the two m
 Post your **"Creative Interfaces"** channel on Are.na before class: photos of your interface by itself and of it being used, plus a description of how it is used and what it is for. Your channel is what your midterm will be graded on, and your work will be displayed in a digital exhibit in the class **[Gallery](./content/gallery.html)** online.
 :::
 
+::: {.announcement type="tip"}
+**Add a Description block to your channel.** It's the title and text shown next to your work in the **[Creative Interfaces Gallery](./content/Assignments/Creative_Interfaces/gallery/index.html)**.
+
+1. In your "Creative Interfaces" channel, add a new **text block**.
+2. On the first line, write the title of your work. Below it, write a few sentences about what it is, how it is used and what it's for.
+3. Give the block the title **Description**.
+
+For example:
+
+```
+Plant Doorbell
+A flower pot that rings a bell when the soil gets dry.
+```
+
+New posts show up in the gallery the next time the page loads.
+:::
+
 ::: {.announcement type="materials"}
 - Your finished interface
 - Optional: laptop, Arduino Nano 33 IoT and USB cable, if you're showing it wired up
@@ -78,6 +95,9 @@ Post your **"Creative Interfaces"** channel on Are.na before class: photos of yo
 ::: {.topics}
 
 ::: {.card type="assignment" title="Midterm: Creative Interfaces" thumb="./content/Assignments/Creative_Interfaces/images/cover.jpg" href="./content/Assignments/Creative_Interfaces/creative_interfaces.html" tag="Assignment"}
+:::
+
+::: {.card type="lesson" title="Creative Interfaces Gallery" thumb="./content/Assignments/Creative_Interfaces/images/cover.jpg" href="./content/Assignments/Creative_Interfaces/gallery/index.html" tag="Gallery"}
 :::
 
 :::

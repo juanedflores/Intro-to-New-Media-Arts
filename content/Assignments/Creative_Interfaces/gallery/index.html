@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Interfaces Gallery</title>
+    <link
+      rel="shortcut icon"
+      href="../../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+    <style>
+      /* same look as the Drawing Machines gallery
+         (content/Assignments/Drawing_Bot/gallery/index.html) */
+      @font-face {
+        font-family: "Alegreya";
+        src: url("../../../../fonts/alegreya/Alegreya-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Italic.ttf") format("truetype");
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: swap;
+      }
+
+      :root {
+        --wall: #faf1e6;
+        --ink: #1f1f24;
+        --muted: #6b6a66;
+        --rule: #d9d4c7;
+        --frame: #2a2622;
+        --mat: #fbfaf7;
+        --label: #ffffff;
+        --accent: #fbc740;
+        --blue: #2f64b7;
+        --red: #d53f32;
+        --shadow:
+          0 1px 2px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.18);
+        --bar-h: 0px; /* height of the critique bar while it's open */
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: var(--wall);
+        color: var(--ink);
+        font-family: "Alegreya Sans", system-ui, sans-serif;
+        font-variant-numeric: lining-nums;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      a {
+        color: var(--blue);
+      }
+
+      /* ---------- header ---------- */
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        background: var(--accent);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      .topbar a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .topbar a:hover {
+        text-decoration: underline;
+      }
+      .topbar .sep {
+        opacity: 0.4;
+      }
+      .topbar .critique-toggle {
+        margin-left: auto;
+        padding: 3px 10px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        cursor: pointer;
+      }
+      .topbar .critique-toggle[aria-pressed="true"] {
+        background: var(--ink);
+        color: var(--accent);
+      }
+
+      header.intro {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 64px 24px 32px;
+      }
+      header.intro .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      header.intro h1 {
+        font-family: "Alegreya", Georgia, serif;
+        font-size: clamp(44px, 7.5vw, 92px);
+        color: var(--red);
+        line-height: 0.95;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 12px 0 20px;
+      }
+      header.intro p {
+        max-width: 640px;
+        margin: 0;
+        color: #3b3a37;
+        font-size: 17px;
+      }
+      header.intro p.status {
+        margin-top: 12px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+      .status button {
+        padding: 0;
+        border: none;
+        background: none;
+        color: var(--blue);
+        font: inherit;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      /* ---------- critique bar ----------
+         Picks who presents next, at random and without repeats. Who has
+         gone is remembered in this browser (localStorage). */
+
+      .critique {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--frame);
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      }
+      .critique[hidden] {
+        display: none;
+      }
+      .critique-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 20px;
+      }
+      .critique .now {
+        flex: 1 1 260px;
+        min-width: 0;
+      }
+      .critique .now small {
+        display: block;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .critique .now strong {
+        display: block;
+        font-family: "Alegreya", Georgia, serif;
+        font-size: clamp(24px, 4vw, 36px);
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+      }
+      .critique button {
+        padding: 7px 16px;
+        border: 2px solid var(--accent);
+        border-radius: 6px;
+        background: transparent;
+        color: #fff;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .critique button.pick {
+        background: var(--accent);
+        color: var(--ink);
+        font-size: 18px;
+      }
+      .critique .left {
+        font-size: 14px;
+        color: #d9d4c7;
+      }
+      .roster {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .roster[hidden] {
+        display: none;
+      }
+      .roster p {
+        flex-basis: 100%;
+        margin: 0 0 2px;
+        font-size: 13px;
+        color: #d9d4c7;
+      }
+      .critique .roster button {
+        padding: 3px 10px;
+        border-width: 1px;
+        border-color: #6b6a66;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .critique .roster #start-over {
+        margin-left: auto;
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .critique .roster button[aria-pressed="true"] {
+        border-color: transparent;
+        color: #8f8a82;
+        text-decoration: line-through;
+      }
+
+      /* ---------- index strip ---------- */
+
+      nav.index {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8px 24px 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+        gap: 10px;
+      }
+      nav.index a {
+        position: relative;
+        display: block;
+        aspect-ratio: 4 / 3;
+        background: var(--mat);
+        border: 3px solid var(--frame);
+        overflow: hidden;
+      }
+      nav.index a.empty {
+        border-style: dashed;
+        border-color: var(--rule);
+      }
+      nav.index img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.25s;
+      }
+      nav.index a:hover img {
+        transform: scale(1.06);
+      }
+      nav.index span {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        max-width: calc(100% - 8px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background: var(--frame);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 1px 5px;
+      }
+
+      /* ---------- exhibits ---------- */
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+      }
+
+      .exhibit {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+        gap: 48px;
+        align-items: center;
+        padding: 72px 0;
+        border-top: 1px solid var(--rule);
+        scroll-margin-top: calc(var(--bar-h) + 16px);
+      }
+      .exhibit:nth-child(even) .artwork {
+        order: 2;
+      }
+      .artwork {
+        position: sticky;
+        top: calc(var(--bar-h) + 24px);
+      }
+
+      .frame {
+        display: block;
+        width: 100%;
+        background: var(--frame);
+        padding: 14px;
+        box-shadow: var(--shadow);
+        border-radius: 2px;
+      }
+      .frame .mat {
+        position: relative;
+        background: var(--mat);
+        padding: 7%;
+        box-shadow:
+          inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+          inset 0 3px 8px rgba(0, 0, 0, 0.12);
+      }
+      .slide img,
+      .slide video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        background: var(--mat);
+      }
+      .exhibit.empty .frame {
+        background: #8f8a82;
+        box-shadow: none;
+      }
+      .exhibit.empty .mat span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 4 / 3;
+        padding: 16px;
+        border: 2px dashed var(--rule);
+        color: var(--muted);
+        text-align: center;
+        font-size: 15px;
+      }
+
+      /* the student presenting right now */
+      .exhibit.presenting .label {
+        border-left-color: var(--red);
+        box-shadow: 0 0 0 3px var(--red);
+      }
+
+      .side {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .label {
+        background: var(--label);
+        padding: 24px 26px 22px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        border-left: 6px solid var(--accent);
+      }
+      .label .no {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .label h2 {
+        margin: 4px 0 2px;
+        font-family: "Alegreya", Georgia, serif;
+        font-size: 28px;
+        line-height: 1.15;
+        font-weight: 800;
+      }
+      .label .artist {
+        margin: 0 0 4px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .label h3 {
+        margin: 18px 0 6px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      .label .about {
+        margin-top: 14px;
+      }
+      .label .about p {
+        margin: 0 0 10px;
+        font-size: 15px;
+        white-space: pre-line;
+      }
+      .label .channel-link {
+        display: inline-block;
+        margin-top: 14px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      /* ---------- image sliders ---------- */
+
+      .slides {
+        position: relative;
+      }
+      .track {
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+      }
+      .track::-webkit-scrollbar {
+        display: none;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .track {
+          scroll-behavior: smooth;
+        }
+      }
+      .slide {
+        position: relative;
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: zoom-in;
+      }
+      .slide.video {
+        cursor: default;
+      }
+      .slide .kind {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.94);
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      .step {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 34px;
+        height: 34px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--ink);
+        font: inherit;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        transition: opacity 0.2s;
+      }
+      .step.prev {
+        left: 8px;
+      }
+      .step.next {
+        right: 8px;
+      }
+      .step:disabled {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .dots {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: var(--rule);
+        cursor: pointer;
+      }
+      .dot[aria-current="true"] {
+        background: var(--ink);
+      }
+
+      footer {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 24px 64px;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ---------- lightbox ---------- */
+
+      dialog {
+        border: none;
+        padding: 0;
+        background: transparent;
+        max-width: 100vw;
+        max-height: 100vh;
+        width: 100vw;
+        height: 100vh;
+      }
+      dialog::backdrop {
+        background: rgba(20, 18, 16, 0.92);
+      }
+      .lb {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 56px 16px 24px;
+      }
+      .lb img {
+        max-width: 100%;
+        max-height: calc(100vh - 120px);
+        object-fit: contain;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+      .lb p {
+        color: #e8e4da;
+        margin: 14px 0 0;
+        font-size: 14px;
+        text-align: center;
+      }
+      .lb button {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: none;
+        font: inherit;
+        font-size: 22px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .lb button:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .lb .close {
+        top: 12px;
+        right: 12px;
+      }
+      .lb .prev {
+        left: 12px;
+        top: 50%;
+      }
+      .lb .next {
+        right: 12px;
+        top: 50%;
+      }
+
+      /* ---------- small screens ---------- */
+
+      @media (max-height: 600px) {
+        .artwork {
+          position: static;
+        }
+      }
+
+      @media (max-width: 820px) {
+        header.intro {
+          padding: 40px 16px 24px;
+        }
+        .critique-inner {
+          padding: 10px 16px;
+        }
+        nav.index {
+          padding: 8px 16px 32px;
+          grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+        }
+        main {
+          padding: 0 16px 56px;
+        }
+        .exhibit {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          padding: 48px 0;
+        }
+        .exhibit:nth-child(even) .artwork {
+          order: 0;
+        }
+        .artwork {
+          position: static;
+        }
+        .frame {
+          padding: 9px;
+        }
+        .label {
+          padding: 20px;
+        }
+        footer {
+          padding: 24px 16px 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <a href="../../../../index.html">ART 150</a>
+      <span class="sep">/</span>
+      <a href="../../../gallery.html">Gallery</a>
+      <span class="sep">/</span>
+      <span>Creative Interfaces</span>
+      <button class="critique-toggle" aria-pressed="false" aria-controls="critique">
+        Critique
+      </button>
+    </div>
+
+    <section class="critique" id="critique" aria-label="Critique: who presents next" hidden>
+      <div class="critique-inner">
+        <div class="now" aria-live="polite">
+          <small>Now presenting</small>
+          <strong id="now">Press Pick to start</strong>
+        </div>
+        <button class="pick" id="pick">Pick next</button>
+        <span class="left" id="left"></span>
+        <button id="roster-toggle" aria-expanded="false" aria-controls="roster">Roster</button>
+        <div class="roster" id="roster" hidden></div>
+      </div>
+    </section>
+
+    <header class="intro">
+      <div class="kicker">Intro to New Media Art &middot; Fall 2026 &middot; Midterm</div>
+      <h1>Creative<br />Interfaces</h1>
+      <p>
+        Interfaces that stretch how we talk to computers: for different bodies,
+        for animals and plants, or just for play. Each one is built to be read
+        by an Arduino as a switch (on/off) or a sensor (a range of values).
+      </p>
+      <p class="status" id="status">Loading documentation from Are.na…</p>
+    </header>
+
+    <nav class="index" id="index" aria-label="Jump to a student"></nav>
+
+    <main id="gallery"></main>
+
+    <footer>
+      Photos, videos, titles and descriptions come straight from each
+      student's &ldquo;Creative Interfaces&rdquo; channel (the title and text
+      beside each frame are its &ldquo;Description&rdquo; block) on
+      <a href="https://www.are.na/art-150-fall-2026" target="_blank" rel="noopener">Are.na</a>,
+      so new posts show up here the next time the page loads. Midterm critique,
+      October 28, 2026. This class is instructed by Juan Flores.
+    </footer>
+
+    <dialog id="lightbox" aria-label="Image viewer">
+      <div class="lb">
+        <button class="close" aria-label="Close">&times;</button>
+        <button class="prev" aria-label="Previous image">&larr;</button>
+        <img alt="" />
+        <p></p>
+        <button class="next" aria-label="Next image">&rarr;</button>
+      </div>
+    </dialog>
+
+    <script>
+      // The class, in the order of the Are.na Studios snapshot
+      // (content/arena/build_arena_data.py). Keep in sync by hand.
+      const STUDENTS = [
+        { name: "Abdullah Abid", slug: "abdullah-abid" },
+        { name: "Akxell Mendoza", slug: "akxell-mendoza" },
+        { name: "Amy Lora", slug: "amy-lora" },
+        { name: "Arisbeth Aceves", slug: "arisbeth-aceves" },
+        { name: "Ben Broz", slug: "ben-broz" },
+        { name: "Dang Nguyen", slug: "dang-nguyen-vqo2zbznbq0" },
+        { name: "Denise Burciaga", slug: "denise-burciaga" },
+        { name: "Hillary Samaniego", slug: "hillary-samaniego" },
+        { name: "Itzel Garcia", slug: "itzel-garcia-s-8gtpf_grs" },
+        { name: "Jing Chen", slug: "jing-chen-_twncguy20i" },
+        { name: "Julia Szafranski", slug: "julia-szafranski" },
+        { name: "Kirtan Patel", slug: "kirtan-patel-ylp_92zih8w" },
+        { name: "Lucas Lee", slug: "lucas-lee-cd24req3nfo" },
+        { name: "Maurizio Brown", slug: "maurizio-brown" },
+        { name: "Mia Espinoza", slug: "mia-espinoza" },
+        { name: "Nataly Rios", slug: "nataly-rios" },
+        { name: "Panthi Patel", slug: "panthi-patel" },
+        { name: "Quang Duc Lam Nguyen", slug: "quang-duc-lam-nguyen" },
+        { name: "Selah Morales", slug: "selah-morales" },
+        { name: "Vi Bao Truong", slug: "vi-bao-truong" },
+      ];
+
+      // A student whose midterm channel has some other name: their Are.na
+      // slug → the channel's slug (the last part of the channel's URL).
+      const CHANNEL_OVERRIDES = {};
+
+      // How a midterm channel is recognized by its title, best match first.
+      const TITLE_MATCHES = [/creative\s*interface/i, /interface/i, /mid\s*-?\s*term/i];
+
+      const API = "https://api.are.na/v3";
+      const CACHE_KEY = "creativeInterfaces.gallery";
+      const CRITIQUE_KEY = "creativeInterfaces.critique";
+      const FRESH_MS = 2 * 60 * 1000; // reuse what was loaded in the last 2 minutes
+
+      const esc = (s) =>
+        String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      const text = (field) => (field && typeof field === "object" ? field.plain || field.markdown || "" : field || "");
+
+      function store(key, value) {
+        try {
+          if (value === undefined) return JSON.parse(localStorage.getItem(key));
+          localStorage.setItem(key, JSON.stringify(value));
+        } catch (e) {
+          return null;
+        }
+      }
+
+      // ---------- Are.na ----------
+      // Visitors read Are.na as guests: 30 requests a minute. A full load is
+      // about 40 (each student's channel list, then their midterm channel),
+      // so when Are.na says to slow down we wait and carry on.
+
+      const statusEl = document.getElementById("status");
+      let waitingNote = "";
+
+      async function api(path) {
+        for (let attempt = 0; attempt < 6; attempt++) {
+          const r = await fetch(API + path);
+          if (r.status === 429) {
+            const secs = Number(r.headers.get("Retry-After")) || 20;
+            waitingNote = ` Are.na asked us to slow down, so the rest will appear in about ${secs} seconds.`;
+            await sleep(secs * 1000);
+            waitingNote = "";
+            continue;
+          }
+          if (r.status === 404) return null;
+          if (!r.ok) throw new Error(`${r.status} ${path}`);
+          return r.json();
+        }
+        throw new Error(`gave up on ${path}`);
+      }
+
+      function rank(c) {
+        const i = TITLE_MATCHES.findIndex((re) => re.test(c.title || ""));
+        return i === -1 ? Infinity : i;
+      }
+
+      // A file name posing as a title ("uploads/…/IMG_2041.jpg") says nothing.
+      const realTitle = (t) => (t && !/(^uploads\/|\.(jpe?g|png|gif|heic|webp|mov|mp4)$)/i.test(t) ? t : "");
+
+      function block(b) {
+        const img = b.image || {};
+        const att = b.attachment || {};
+        const out = {
+          type: b.type,
+          title: realTitle(b.title),
+          description: text(b.description),
+          url: `https://www.are.na/block/${b.id}`,
+        };
+        if (img.src) {
+          out.thumb = (img.small && img.small.src) || img.src;
+          out.large = (img.large && img.large.src) || img.src;
+        }
+        if (b.type === "Text") out.text = text(b.content);
+        if (b.type === "Attachment" && /^video\//.test(att.content_type || "")) out.video = att.url;
+        if (b.source && b.source.url) out.source = b.source.url;
+        return out;
+      }
+
+      async function loadStudent(s) {
+        let chan;
+        if (CHANNEL_OVERRIDES[s.slug]) {
+          chan = await api(`/channels/${CHANNEL_OVERRIDES[s.slug]}`);
+        } else {
+          const list = await api(`/users/${s.slug}/contents?type=Channel&per=100`);
+          const matches = ((list && list.data) || [])
+            .filter((c) => c.visibility !== "private" && rank(c) < Infinity)
+            .sort((a, b) => rank(a) - rank(b) || (b.counts?.contents || 0) - (a.counts?.contents || 0));
+          chan = matches[0];
+        }
+        if (!chan) return { channel: null, blocks: [] };
+        const contents = await api(`/channels/${chan.slug}/contents?per=60`);
+        return {
+          channel: {
+            title: (chan.title || "").trim(),
+            slug: chan.slug,
+            url: `https://www.are.na/${s.slug}/${chan.slug}`,
+            description: text(chan.description),
+          },
+          blocks: ((contents && contents.data) || []).filter((b) => b.type !== "Channel").map(block),
+        };
+      }
+
+      // ---------- rendering ----------
+
+      const gallery = document.getElementById("gallery");
+      const index = document.getElementById("index");
+      const entries = {}; // student slug → { channel, blocks }
+
+      const pictures = (e) => (e ? e.blocks.filter((b) => b.thumb || b.video) : []);
+
+      function slideHTML(b, k) {
+        if (b.video) {
+          return `<div class="slide video" data-k="${k}">
+            <video src="${esc(b.video)}" ${b.large ? `poster="${esc(b.large)}"` : ""} controls preload="metadata" playsinline></video>
+          </div>`;
+        }
+        // links and embedded videos open where they live
+        const out = b.type === "Embed" ? "Video" : b.type === "Link" ? "Link" : "";
+        const tag = out ? `<a class="kind" href="${esc(b.source || b.url)}" target="_blank" rel="noopener">${out} ↗</a>` : "";
+        return `<div class="slide" data-k="${k}" role="button" tabindex="0" aria-label="Enlarge ${esc(b.title || "image")}">
+          <img src="${esc(b.large)}" alt="${esc(b.title || b.description || "")}" loading="lazy">${tag}
+        </div>`;
+      }
+
+      // Each channel has one block titled "Description" (any case): its
+      // first line is the work's title, the rest is the text beside the
+      // frame. A single line is taken as the text, with no title.
+      function describe(e) {
+        const d = e.blocks.find((b) => /^\s*description\s*$/i.test(b.title || ""));
+        if (!d) return null;
+        const lines = (d.text || d.description || "").split("\n");
+        const first = lines.findIndex((l) => l.trim());
+        if (first === -1) return { title: "", text: "" };
+        // drop markdown around the title line: "# Title", "**Title**"
+        const title = lines[first].replace(/^\s*#+\s*/, "").replace(/^[*_]+|[*_]+$/g, "").trim();
+        const text = lines.slice(first + 1).join("\n").trim();
+        return text ? { title, text } : { title: "", text: title };
+      }
+
+      function exhibitHTML(s, n) {
+        const e = entries[s.slug];
+        const pics = pictures(e);
+        const no = `<p class="no">No. ${n}</p>`;
+        if (!e || !e.channel) {
+          const msg = e ? "No “Creative Interfaces” channel on Are.na yet" : "Checking Are.na…";
+          return `<section class="exhibit empty" id="${esc(s.slug)}">
+            <div class="artwork"><div class="frame"><div class="mat"><span>${msg}</span></div></div></div>
+            <div class="side"><div class="label">${no}<h2>${esc(s.name)}</h2>
+              <a class="channel-link" href="https://www.are.na/${esc(s.slug)}" target="_blank" rel="noopener">Are.na profile ↗</a>
+            </div></div>
+          </section>`;
+        }
+        const desc = describe(e);
+        // no Description block yet: fall back to the channel's description
+        // and any text posts
+        const notes = (desc ? [desc.text] : [e.channel.description, ...e.blocks.filter((b) => b.type === "Text").map((b) => b.text)])
+          .map((t) => (t || "").trim())
+          .filter(Boolean);
+        const about = notes.length ? `<div class="about">${notes.map((t) => `<p>${esc(t)}</p>`).join("")}</div>` : "";
+        const art = pics.length
+          ? `<div class="slides">
+              <div class="track">${pics.map(slideHTML).join("")}</div>
+              ${pics.length > 1 ? `<button class="step prev" aria-label="Previous">&larr;</button><button class="step next" aria-label="Next">&rarr;</button>` : ""}
+            </div>`
+          : `<span>No photos posted yet</span>`;
+        return `<section class="exhibit${pics.length ? "" : " empty"}" id="${esc(s.slug)}">
+          <div class="artwork">
+            <div class="frame"><div class="mat">${art}</div></div>
+            ${pics.length > 1 ? `<div class="dots">${pics.map((_, k) => `<button class="dot" aria-label="Image ${k + 1}"></button>`).join("")}</div>` : ""}
+          </div>
+          <div class="side"><div class="label">
+            ${no}<h2>${esc((desc && desc.title) || "Untitled")}</h2>
+            <p class="artist">${esc(s.name)}</p>
+            ${about}
+            <a class="channel-link" href="${esc(e.channel.url)}" target="_blank" rel="noopener">See the channel on Are.na ↗</a>
+          </div></div>
+        </section>`;
+      }
+
+      function indexHTML(s) {
+        const pic = pictures(entries[s.slug]).find((b) => b.thumb);
+        return pic
+          ? `<a href="#${esc(s.slug)}"><img src="${esc(pic.thumb)}" alt="" loading="lazy"><span>${esc(s.name)}</span></a>`
+          : `<a class="empty" href="#${esc(s.slug)}"><span>${esc(s.name)}</span></a>`;
+      }
+
+      // Arrows and dots for one exhibit's slides.
+      function wireSlides(ex) {
+        const track = ex.querySelector(".track");
+        if (!track) return;
+        const slides = [...track.children];
+        const prev = ex.querySelector(".step.prev");
+        const next = ex.querySelector(".step.next");
+        const dots = [...ex.querySelectorAll(".dot")];
+        const at = () => Math.round(track.scrollLeft / track.clientWidth);
+        const go = (i) => track.scrollTo({ left: Math.max(0, Math.min(slides.length - 1, i)) * track.clientWidth });
+        function update() {
+          const i = at();
+          if (prev) prev.disabled = i === 0;
+          if (next) next.disabled = i === slides.length - 1;
+          dots.forEach((d, j) => d.setAttribute("aria-current", j === i));
+          // a video that slides out of view stops playing
+          slides.forEach((s, j) => j !== i && s.querySelector("video")?.pause());
+        }
+        if (prev) prev.addEventListener("click", () => go(at() - 1));
+        if (next) next.addEventListener("click", () => go(at() + 1));
+        dots.forEach((d, j) => d.addEventListener("click", () => go(j)));
+        track.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+        update();
+      }
+
+      function renderStudent(s) {
+        const n = STUDENTS.indexOf(s) + 1;
+        const old = document.getElementById(s.slug);
+        const tmp = document.createElement("div");
+        tmp.innerHTML = exhibitHTML(s, n);
+        const ex = tmp.firstElementChild;
+        if (old) old.replaceWith(ex);
+        else gallery.appendChild(ex);
+        if (critique.now === s.slug) ex.classList.add("presenting");
+        wireSlides(ex);
+        index.children[n - 1].outerHTML = indexHTML(s);
+      }
+
+      function renderAll() {
+        index.innerHTML = STUDENTS.map(indexHTML).join("");
+        gallery.innerHTML = "";
+        STUDENTS.forEach(renderStudent);
+      }
+
+      function showStatus(loading, done) {
+        // an empty channel doesn't count as posted
+        const posted = STUDENTS.filter((s) => entries[s.slug] && entries[s.slug].blocks.length).length;
+        if (loading) {
+          statusEl.textContent = `Loading documentation from Are.na… ${done} of ${STUDENTS.length} checked.${waitingNote}`;
+        } else {
+          statusEl.innerHTML = `${posted} of ${STUDENTS.length} students have posted their documentation. <button id="refresh">Check Are.na again</button>`;
+        }
+      }
+
+      let loading = false;
+      async function refresh() {
+        if (loading) return;
+        loading = true;
+        let done = 0;
+        showStatus(true, done);
+        const ticker = setInterval(() => showStatus(true, done), 1000);
+        const queue = [...STUDENTS];
+        // three at a time: quick, and gentle enough on the rate limit
+        await Promise.all(
+          [1, 2, 3].map(async () => {
+            for (let s; (s = queue.shift()); ) {
+              try {
+                entries[s.slug] = await loadStudent(s);
+              } catch (err) {
+                console.warn(s.slug, err);
+                entries[s.slug] = entries[s.slug] || { channel: null, blocks: [] };
+              }
+              done++;
+              renderStudent(s);
+            }
+          })
+        );
+        clearInterval(ticker);
+        store(CACHE_KEY, { time: Date.now(), entries });
+        loading = false;
+        showStatus(false);
+      }
+
+      statusEl.addEventListener("click", (e) => {
+        if (e.target.id === "refresh") refresh();
+      });
+
+      // ---------- lightbox ----------
+
+      const dlg = document.getElementById("lightbox");
+      let lbPics = [];
+      let lbAt = 0;
+      function show(i) {
+        lbAt = (i + lbPics.length) % lbPics.length;
+        const b = lbPics[lbAt];
+        dlg.querySelector("img").src = b.large;
+        dlg.querySelector("p").textContent = [b.title, b.description].filter(Boolean).join(" · ");
+      }
+      function openLightbox(slide) {
+        const slug = slide.closest(".exhibit").id;
+        lbPics = pictures(entries[slug]).filter((b) => !b.video);
+        const b = pictures(entries[slug])[Number(slide.dataset.k)];
+        show(lbPics.indexOf(b));
+        dlg.showModal();
+      }
+      gallery.addEventListener("click", (e) => {
+        const slide = e.target.closest(".slide:not(.video)");
+        if (slide && !e.target.closest("a")) openLightbox(slide);
+      });
+      gallery.addEventListener("keydown", (e) => {
+        const slide = e.target.closest(".slide:not(.video)");
+        if (slide && (e.key === "Enter" || e.key === " ")) {
+          e.preventDefault();
+          openLightbox(slide);
+        }
+      });
+      dlg.querySelector(".close").addEventListener("click", () => dlg.close());
+      dlg.querySelector(".prev").addEventListener("click", () => show(lbAt - 1));
+      dlg.querySelector(".next").addEventListener("click", () => show(lbAt + 1));
+      dlg.addEventListener("click", (e) => {
+        if (e.target === dlg || e.target.classList.contains("lb")) dlg.close();
+      });
+      dlg.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") show(lbAt - 1);
+        if (e.key === "ArrowRight") show(lbAt + 1);
+      });
+
+      // ---------- critique picker ----------
+
+      const bar = document.getElementById("critique");
+      const toggle = document.querySelector(".critique-toggle");
+      const nowEl = document.getElementById("now");
+      const leftEl = document.getElementById("left");
+      const roster = document.getElementById("roster");
+      const rosterToggle = document.getElementById("roster-toggle");
+      const critique = Object.assign({ open: false, now: "", done: [] }, store(CRITIQUE_KEY));
+
+      const nameOf = (slug) => (STUDENTS.find((s) => s.slug === slug) || {}).name || "";
+
+      function renderCritique() {
+        bar.hidden = !critique.open;
+        toggle.setAttribute("aria-pressed", critique.open);
+        const left = STUDENTS.filter((s) => !critique.done.includes(s.slug)).length;
+        nowEl.textContent = critique.now ? nameOf(critique.now) : left ? "Press Pick to start" : "Everyone has presented!";
+        leftEl.textContent = `${left} of ${STUDENTS.length} left`;
+        roster.innerHTML =
+          `<p>Crossed out names won't be picked. Click a name to cross it out (for someone absent) or bring it back.</p>` +
+          STUDENTS.map(
+            (s) => `<button data-slug="${esc(s.slug)}" aria-pressed="${critique.done.includes(s.slug)}">${esc(s.name)}</button>`
+          ).join("") +
+          `<button id="start-over">Start over</button>`;
+        document.querySelectorAll(".exhibit").forEach((ex) => ex.classList.toggle("presenting", ex.id === critique.now));
+        document.documentElement.style.setProperty("--bar-h", critique.open ? `${bar.offsetHeight}px` : "0px");
+        store(CRITIQUE_KEY, critique);
+      }
+
+      function pick() {
+        const left = STUDENTS.filter((s) => !critique.done.includes(s.slug));
+        if (!left.length) {
+          critique.now = "";
+          renderCritique();
+          return;
+        }
+        const s = left[Math.floor(Math.random() * left.length)];
+        critique.done.push(s.slug);
+        critique.now = s.slug;
+        renderCritique();
+        document.getElementById(s.slug)?.scrollIntoView({ block: "start" });
+      }
+
+      toggle.addEventListener("click", () => {
+        critique.open = !critique.open;
+        renderCritique();
+      });
+      document.getElementById("pick").addEventListener("click", pick);
+      rosterToggle.addEventListener("click", () => {
+        roster.hidden = !roster.hidden;
+        rosterToggle.setAttribute("aria-expanded", !roster.hidden);
+        renderCritique();
+      });
+      roster.addEventListener("click", (e) => {
+        const b = e.target.closest("button");
+        if (!b) return;
+        if (b.id === "start-over") {
+          critique.done = [];
+          critique.now = "";
+        } else {
+          const slug = b.dataset.slug;
+          critique.done = critique.done.includes(slug)
+            ? critique.done.filter((x) => x !== slug)
+            : critique.done.concat(slug);
+          if (critique.now === slug) critique.now = "";
+        }
+        renderCritique();
+      });
+      window.addEventListener("resize", () => {
+        if (critique.open) document.documentElement.style.setProperty("--bar-h", `${bar.offsetHeight}px`);
+      });
+
+      // ---------- start ----------
+      // Show what this browser loaded last time right away, then check
+      // Are.na for anything new.
+
+      const cached = store(CACHE_KEY);
+      if (cached && cached.entries) Object.assign(entries, cached.entries);
+      renderAll();
+      renderCritique();
+      if (cached && Date.now() - cached.time < FRESH_MS) showStatus(false);
+      else refresh();
+      if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+    </script>
+  </body>
+</html>

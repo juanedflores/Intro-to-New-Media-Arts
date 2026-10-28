@@ -30,6 +30,7 @@ We have looked at how switches (buttons) and variable resistors (potentiometers)
 - [x] Confirm it can be read by one of the [two Arduino sketches](#arduino) below
 - [x] Project documentation: pictures of the object by itself, and of it being used
 - [x] An Are.na channel called "Creative Interfaces" that describes your interface, how it is used, and what it is for, with your images
+- [x] In that channel, one Text block with the title **Description**. Its first line is the title of your work, and the lines after it are a short text describing it. This is what appears next to your work in the class [Gallery](../../gallery.html).
 - [x] Participation in the Midterm Critique on October 28
 
 ## What Are Interfaces?
