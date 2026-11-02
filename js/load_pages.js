@@ -478,7 +478,11 @@ const WEEK_SECTIONS = [
     title: "Midterm: Creative Interfaces",
     href: "content/Assignments/Creative_Interfaces/creative_interfaces.html",
   },
-  { start: 11, title: "Final Assignment" },
+  {
+    start: 11,
+    title: "Final Project",
+    href: "content/Assignments/Final_Project/final_project.html",
+  },
 ];
 
 function navLink(href, title) {

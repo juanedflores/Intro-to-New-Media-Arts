@@ -4,81 +4,56 @@ title: Week 11
 
 # Week 11
 
-<div class="marquee"><p>Sound Art / Servo Motors / Piezoelectric Microphone</p></div>
-
 ::: {.days}
 
-::: {.day title="MONDAY"}
-
-### Announcements
-::: {.announcement type="materials"}
-- You will need a device that plays audio through a headphone jack.
-:::
-
-### Agenda
-- Reorienting Ourselves (Syllabus)
-- Introducing the Final Project
-- Sound Art Overview
-- Knock Example and Demos
-- Build a Speaker Workshop.
-
-### Topics
-::: {.topics}
-
-::: {.card type="lesson" title="DIY SPEAKER WORKSHOP" thumb="./content/Blog/CustomSpeakerWorkshop/images/cover.webp" href="./content/Blog/CustomSpeakerWorkshop/CustomSpeakerWorkshop.html" tag="Workshop"}
-:::
-
-::: {.card type="lesson" title="SOUND ART" thumb="./content/weeks/week_11/images/electrical-walk_cover.jpg" href="./content/slides/sound_art_slides/index.html" target="_blank" tag="Slides"}
-:::
-
-:::
-
-:::
-
-::: {.day title="WEDNESDAY" open="true"}
+::: {.day title="MONDAY" open="true"}
 
 ### Announcements
 ::: {.announcement type="reminder"}
-Remember to create your "Final Project" channel in Are.na! Proposals are due by the beginning of class next Wednesday. See the Blackboard Final Project assignment for more info. We are taking look a look at these together at the beginning of class.
+We're starting the **[Final Project](./content/Assignments/Final_Project/final_project.html)** today. This week, create an Are.na channel called **"Final Project"** and put your research, sketches and inspiration there.
+:::
+
+::: {.announcement type="reminder"}
+**Final Project Proposals are due next Monday, November 9.** Post yours in the **[Final Project Proposals](https://canvas.uic.edu/courses/51541/assignments/450955){target="_blank"}** thread on Canvas.
+:::
+
+::: {.announcement type="gallery"}
+The **[Creative Interfaces Gallery](./content/Assignments/Creative_Interfaces/gallery/index.html)** is up. It's a saved copy of your Are.na channel, and I'll update it next Monday, November 9. Make sure your channel is up to date by then, including your photos and Description block.
 :::
 
 ::: {.announcement type="materials"}
-You will need your electronics kits. Specifically:
-
-- Arduino
-- Breadboard
-- Power Module
-- Servo Motor
-- Jumper Cables
-- Piezoelectric Sensor
-- LED + Resistor
+- Laptop with the Arduino IDE installed
+- Arduino Nano 33 IoT and USB cable
+- Electronics Kit (breadboard, servo motor, power supply module, photoresistor, potentiometer, jumper wires)
 :::
 
 ### Agenda
-- Remaining Midterm Presentations
-- Using the Piezoelectric Sensor as a sound/vibration sensor.
-- Servo Motor & PWM
+- **Midterm gallery.** We'll start by looking through the [Creative Interfaces Gallery](./content/Assignments/Creative_Interfaces/gallery/index.html) together.
+- **Final project proposals.** Here's what's left in the semester: proposals are due **Monday, November 9**, then we have studio time, and final projects are due, with critiques, on **Wednesday, December 2**. We'll go over the Final Project page and what goes in a proposal, then start brainstorming:
+  - What is it, and who (or what) is it for?
+  - How does someone interact with it?
+  - What does it sense, and how does it respond: with light, sound or movement?
+  - What do you already know how to build, and what would you need to learn?
+- **Servo motors.** The vibration motor on your Drawing Machine just spins. A servo turns to the exact angle you tell it to. We'll wire one up, move it with `write()`, then sweep it back and forth with a `for` loop.
+- **Control it with a sensor.** Turn a potentiometer or photoresistor reading into an angle with `map(analogRead(A0), 0, 1023, 0, 180)`. Then try wiring up your midterm interface: what could it move?
 
 ### Topics
 ::: {.topics}
 
-::: {.card type="lesson" title="Intro to Analag Output: Fade Example" thumb="./content/Arduino/fade/images/led.png" href="./content/Arduino/fade/fade.html" tags="Arduino Example,Output / Actuator"}
+::: {.card type="assignment" title="Final Project" thumb="./content/Assignments/Final_Project/images/cover.png" href="./content/Assignments/Final_Project/final_project.html" tag="Assignment"}
 :::
 
-::: {.card type="lesson" title="Servo Sweep Example" thumb="./content/Arduino/sweep/images/cover.webp" href="./content/Arduino/sweep/sweep.html" tags="Arduino Example,Output / Actuator"}
+::: {.card type="lesson" title="Servo Motors: Sweep" thumb="./content/Arduino/sweep/images/cover.webp" href="./content/Arduino/sweep/sweep.html" tag="Arduino"}
 :::
 
-::: {.card type="external" title="Knock Example" thumb="./content/Arduino/knock/images/cover.webp" href="https://docs.arduino.cc/built-in-examples/sensors/Knock/" target="_blank" tags="Arduino Example,Input / Sensor"}
+::: {.card type="lesson" title="map()" thumb="./content/Arduino/map/images/cover.png" href="./content/Arduino/map/map.html" tag="Arduino"}
+:::
+
+::: {.card type="lesson" title="Arduino Cheat Sheet" thumb="./content/Arduino/cheat_sheet/images/cover.png" href="./content/Arduino/cheat_sheet/cheat_sheet.html" tag="Arduino"}
 :::
 
 :::
 
 :::
 
-:::
-
-### Next Week
-::: {.nextweek}
-<!-- placeholder - edit with next week's actual plan -->
-We'll continue with sound art and begin work toward final projects.
 :::

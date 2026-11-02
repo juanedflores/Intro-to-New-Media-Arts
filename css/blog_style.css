@@ -382,6 +382,12 @@ hr {
   scroll-margin-top: 80px;
 }
 
+/* an intro paragraph right under the page title lines up with the sections;
+   a cover image there stays full width */
+.level1 > p:not(:has(> img)) {
+  padding: 0 20px;
+}
+
 .level3 {
   margin-bottom: 10px;
   scroll-margin-top: 80px;

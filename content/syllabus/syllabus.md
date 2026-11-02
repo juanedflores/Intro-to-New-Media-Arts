@@ -160,7 +160,7 @@ In order to get the most out of this course, students are encouraged to spend ti
 <li class="sy-week" data-week="12">
 <h3><a href="#week-12">Week 12</a><span>Start Final Project Planning. Sensors and Movement</span></h3>
 <ul>
-<li><time>Nov 9</time> <b class="sy-due">Due:</b> Final Project Proposals Posted on Blackboard.</li>
+<li><time>Nov 9</time> <b class="sy-due">Due:</b> Final Project Proposals Posted on Canvas.</li>
 <li><time>Nov 11</time> Studio Time.</li>
 </ul>
 </li>
@@ -182,10 +182,10 @@ In order to get the most out of this course, students are encouraged to spend ti
 </li>
 
 <li class="sy-week" data-week="15">
-<h3><a href="#week-15">Week 15</a><span>Final Projects Critiques / Documentation / Submission</span></h3>
+<h3><a href="#week-15">Week 15</a><span>Final Project Studio Time / Critique / Documentation / Submission</span></h3>
 <ul>
-<li><time>Nov 30</time> <b class="sy-due">Final Projects Critique</b></li>
-<li><time>Dec 2</time> <b class="sy-due">Final Projects Critique</b></li>
+<li><time>Nov 30</time> Studio Time.</li>
+<li><time>Dec 2</time> <b class="sy-due">Due:</b> Final Projects and Critique.</li>
 </ul>
 </li>
 

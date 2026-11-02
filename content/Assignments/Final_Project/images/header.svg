@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="872" viewBox="0 0 1280 872">
+  <!-- Final Project header. Labels are Alegreya Sans (fonts/alegreya): install it or point fontconfig there, then
+       rsvg-convert -w 1280 header.svg -o header.png -->
+  <rect width="1280" height="872" fill="#f2dcbf"/>
+  <text x="225.0" y="66" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="42" fill="#2f64b7">Someone interacts</text>
+  <text x="1055.0" y="66" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="42" fill="#d53f32">Your code responds</text>
+  <g fill="none" stroke="#6f6a78" stroke-width="4" stroke-dasharray="9 9" stroke-linecap="round">
+    <path d="M432 180.0 C470.5 180.0 470.5 408.0 515 408.0"/>
+    <path d="M765 408.0 C809.5 408.0 809.5 180.0 848 180.0"/>
+    <path d="M432 372.0 C470.5 372.0 470.5 442.6666666666667 515 442.6666666666667"/>
+    <path d="M765 442.6666666666667 C809.5 442.6666666666667 809.5 372.0 848 372.0"/>
+    <path d="M432 564.0 C470.5 564.0 470.5 477.3333333333333 515 477.3333333333333"/>
+    <path d="M765 477.3333333333333 C809.5 477.3333333333333 809.5 564.0 848 564.0"/>
+    <path d="M432 756.0 C470.5 756.0 470.5 512.0 515 512.0"/>
+    <path d="M765 512.0 C809.5 512.0 809.5 756.0 848 756.0"/>
+  </g>
+  <g>
+    <rect x="616" y="360" width="48" height="30" rx="4" fill="#9a9aa2"/>
+    <rect x="515" y="380" width="250" height="160" rx="12" fill="#2f64b7"/>
+    <rect x="602" y="422" width="76" height="76" rx="8" fill="#1d2433"/>
+    <circle cx="616" cy="436" r="4.5" fill="#6f6a78"/>
+    <g fill="#fbc740"><circle cx="545" cy="398" r="6"/><circle cx="577" cy="398" r="6"/><circle cx="609" cy="398" r="6"/><circle cx="641" cy="398" r="6"/><circle cx="673" cy="398" r="6"/><circle cx="705" cy="398" r="6"/><circle cx="737" cy="398" r="6"/><circle cx="545" cy="522" r="6"/><circle cx="577" cy="522" r="6"/><circle cx="609" cy="522" r="6"/><circle cx="641" cy="522" r="6"/><circle cx="673" cy="522" r="6"/><circle cx="705" cy="522" r="6"/><circle cx="737" cy="522" r="6"/></g>
+    <text x="640" y="594" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="42" fill="#1d2433">Arduino</text>
+  </g>
+
+  <g>
+    <rect x="24" y="92" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(122.0 162)">
+      <rect x="-54" y="12" width="108" height="36" rx="10" fill="#1d2433"/>
+      <rect x="-34" y="-6" width="68" height="22" rx="4" fill="#3d4250"/>
+      <path d="M-29 -4 a29 40 0 0 1 58 0 z" fill="#d53f32"/>
+      <path d="M-15 -20 a14 16 0 0 1 12 -11" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="4" stroke-linecap="round"/></g>
+    <text x="122.0" y="252" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Button</text>
+  </g>
+
+  <g>
+    <rect x="230" y="92" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(328.0 162)">
+      <g transform="rotate(-24)">
+        <path d="M-46 -8 H-74 M-46 8 H-74" stroke="#5f6570" stroke-width="6" stroke-linecap="round"/>
+        <rect x="-46" y="-22" width="100" height="44" rx="22" fill="#3d4250"/>
+        <rect x="-38" y="-14" width="84" height="28" rx="14" fill="#fffaf3"/>
+        <circle cx="30" cy="0" r="12" fill="#fbc740" stroke="#d6a020" stroke-width="3"/>
+      </g></g>
+    <text x="328.0" y="252" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Tilt Switch</text>
+  </g>
+
+  <g>
+    <rect x="24" y="284" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(122.0 354)">
+      <rect x="-34" y="42" width="68" height="10" rx="3" fill="#c8763b"/>
+      <path d="M0 42 L-17 34 L17 26 L-17 18 L17 10 L-17 2 L17 -6 L-17 -14 L17 -22 L0 -30" fill="none" stroke="#5f6570" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="0" cy="-38" rx="25" ry="9" fill="none" stroke="#c8763b" stroke-width="6"/></g>
+    <text x="122.0" y="444" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Custom Switch</text>
+  </g>
+
+  <g>
+    <rect x="230" y="284" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(328.0 354)">
+      <rect x="-62" y="-34" width="124" height="82" rx="8" fill="#1b8a9a"/>
+      <g fill="#fbc740">
+        <circle cx="-44" cy="33" r="6.5"/><circle cx="-26" cy="33" r="6.5"/><circle cx="-8" cy="33" r="6.5"/>
+        <circle cx="10" cy="33" r="6.5"/><circle cx="28" cy="33" r="6.5"/><circle cx="46" cy="33" r="6.5"/>
+      </g>
+      <circle cx="0" cy="-6" r="9" fill="#fff"/>
+      <circle cx="0" cy="-6" r="19" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="4"/>
+      <path d="M-27 -14 a29 29 0 0 1 54 0" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/></g>
+    <text x="328.0" y="444" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Touch Board</text>
+  </g>
+
+  <g>
+    <rect x="24" y="476" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(122.0 546)">
+      <path d="M-22 26 V52 M0 30 V52 M22 26 V52" stroke="#9a9aa2" stroke-width="7" stroke-linecap="round"/>
+      <circle cy="-4" r="40" fill="#2f64b7"/>
+      <circle cy="-4" r="27" fill="#1d2433"/>
+      <path d="M0 -4 L15 -22" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>
+    <text x="122.0" y="636" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Potentiometer</text>
+  </g>
+
+  <g>
+    <rect x="230" y="476" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(328.0 546)">
+      <path d="M-20 30 V52 M4 30 V52" stroke="#9a9aa2" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="-8" cy="6" r="30" fill="#efc48c" stroke="#8a6a3a" stroke-width="3"/>
+      <path d="M-26 -8 H10 V1 H-26 V10 H10 V19 H-26" fill="none" stroke="#8a3b22" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="42" cy="-30" r="13" fill="#fbc740"/>
+      <path d="M42.0 -49.0 L42.0 -58.0" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M55.4 -43.4 L61.8 -49.8" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M61.0 -30.0 L70.0 -30.0" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M55.4 -16.6 L61.8 -10.2" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M23.0 -30.0 L14.0 -30.0" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M28.6 -43.4 L22.2 -49.8" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/></g>
+    <text x="328.0" y="636" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Photoresistor</text>
+  </g>
+
+  <g>
+    <rect x="24" y="668" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(122.0 738)">
+      <rect x="-64" y="4" width="128" height="11" rx="2" fill="#c8763b"/>
+      <rect x="-64" y="15" width="128" height="16" fill="#1d2433"/>
+      <rect x="-64" y="31" width="128" height="11" rx="2" fill="#c8763b"/>
+      <path d="M0 -50 L0 -6 M7.7 -20.0 L0 -6 L-7.7 -20.0" fill="none" stroke="#d53f32" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="122.0" y="828" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Pressure Sensor</text>
+  </g>
+
+  <g>
+    <rect x="230" y="668" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(328.0 738)">
+      <path d="M0 0 L58 0 M46.6 -6.2 L58 0 L46.6 6.2" fill="none" stroke="#d53f32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M0 0 L0 -50 M-6.2 -38.6 L0 -50 L6.2 -38.6" fill="none" stroke="#3f9d63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M0 0 L-42 38 M-29.4 35.0 L-42 38 L-37.7 25.7" fill="none" stroke="#2f64b7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="-20" y="-20" width="40" height="40" rx="6" fill="#1b8a9a"/>
+      <circle cx="-10" cy="-10" r="3" fill="#fff"/></g>
+    <text x="328.0" y="828" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Accelerometer</text>
+  </g>
+
+  <g>
+    <rect x="854" y="92" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(952.0 162)">
+      <path d="M-11 20 V52 M11 20 V42" stroke="#9a9aa2" stroke-width="6" stroke-linecap="round"/>
+      <path d="M-24 12 V-14 a24 24 0 0 1 48 0 V12 z" fill="#d53f32"/>
+      <rect x="-30" y="10" width="60" height="10" rx="3" fill="#a92e24"/>
+      <path d="M-12 -18 a12 13 0 0 1 9 -9" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="4" stroke-linecap="round"/>
+      <path d="M-31.0 -25.3 L-42.3 -29.4" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M-18.9 -41.0 L-25.8 -50.9" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M0.0 -47.0 L0.0 -59.0" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M18.9 -41.0 L25.8 -50.9" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/><path d="M31.0 -25.3 L42.3 -29.4" stroke="#d6a020" stroke-width="5" stroke-linecap="round"/></g>
+    <text x="952.0" y="252" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">LED</text>
+  </g>
+
+  <g>
+    <rect x="1060" y="92" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(1158.0 162)">
+      <path d="M-20 26 V52 M-7 26 V48 M7 26 V52 M20 26 V48" stroke="#9a9aa2" stroke-width="5" stroke-linecap="round"/>
+      <g fill-opacity=".78">
+        <circle cx="0" cy="-24" r="25" fill="#e23b2e"/>
+        <circle cx="-18" cy="6" r="25" fill="#2fb35a"/>
+        <circle cx="18" cy="6" r="25" fill="#2f64d7"/>
+      </g></g>
+    <text x="1158.0" y="252" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">RGB LED</text>
+  </g>
+
+  <g>
+    <rect x="854" y="284" width="402" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(1055.0 354)">
+      <circle cx="-44" cy="0" r="42" fill="#1d2433"/>
+      <circle cx="-44" cy="0" r="27" fill="#3d4250"/>
+      <circle cx="-44" cy="0" r="8" fill="#1d2433"/>
+      <g fill="none" stroke="#d53f32" stroke-width="6" stroke-linecap="round">
+        <path d="M12 -18 a26 26 0 0 1 0 36"/><path d="M28 -32 a46 46 0 0 1 0 64"/><path d="M44 -44 a64 64 0 0 1 0 88"/>
+      </g>
+      <g fill="#2f64b7" stroke="#2f64b7">
+        <ellipse cx="102" cy="26" rx="11" ry="8.5" transform="rotate(-20 102 26)" stroke="none"/>
+        <path d="M112 24 V-30 L134 -22" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <ellipse cx="-134" cy="20" rx="10" ry="8" transform="rotate(-20 -134 20)" stroke="none"/>
+        <path d="M-125 18 V-28 L-107 -21" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </g></g>
+    <text x="1055.0" y="444" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Buzzer</text>
+  </g>
+
+  <g>
+    <rect x="854" y="476" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(952.0 546)">
+      <path d="M-46 -6 H-70 M-46 6 H-70" stroke-width="4" stroke-linecap="round" stroke="#d53f32"/>
+      <path d="M-46 6 H-70" stroke-width="4" stroke-linecap="round" stroke="#1d2433"/>
+      <rect x="-46" y="-20" width="66" height="40" rx="6" fill="#9a9aa2"/>
+      <rect x="20" y="-4" width="12" height="8" fill="#5f6570"/>
+      <path d="M32 -22 H46 a18 22 0 0 1 0 44 H32 z" fill="#d6a020" transform="translate(0 -9)"/>
+      <g fill="none" stroke="#d53f32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-40 -34 l9 -8 l9 8 l9 -8 l9 8 l9 -8 l9 8"/>
+        <path d="M-40 34 l9 8 l9 -8 l9 8 l9 -8 l9 8 l9 -8"/>
+      </g></g>
+    <text x="952.0" y="636" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Vibration Motor</text>
+  </g>
+
+  <g>
+    <rect x="1060" y="476" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(1158.0 546)">
+      <rect x="-48" y="-6" width="84" height="54" rx="7" fill="#1d2433"/>
+      <path d="M-16 8 L36 -24" stroke="#2f64b7" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="-16" cy="8" r="11" fill="#fbc740"/>
+      <path d="M58 4 A74 74 0 0 0 16 -52" fill="none" stroke="#d53f32" stroke-width="6" stroke-linecap="round"/>
+      <path d="M16 -52 L32 -50 M16 -52 L22 -37" fill="none" stroke="#d53f32" stroke-width="6" stroke-linecap="round"/></g>
+    <text x="1158.0" y="636" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Servo Motor</text>
+  </g>
+
+  <g>
+    <rect x="854" y="668" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(952.0 738)">
+      <rect x="-66" y="-48" width="132" height="98" rx="7" fill="#1d2433"/>
+      <rect x="-66" y="-48" width="132" height="20" rx="7" fill="#3d4250"/>
+      <rect x="-66" y="-36" width="132" height="8" fill="#3d4250"/>
+      <circle cx="-54" cy="-38" r="4" fill="#d53f32"/><circle cx="-41" cy="-38" r="4" fill="#fbc740"/><circle cx="-28" cy="-38" r="4" fill="#3f9d63"/>
+      <g font-family="Menlo" font-weight="700" font-size="20" fill="#7fe0a0">
+        <text x="-54" y="-8">512</text><text x="-54" y="14">538</text><text x="-54" y="36">497</text>
+      </g></g>
+    <text x="952.0" y="828" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Serial Monitor</text>
+  </g>
+
+  <g>
+    <rect x="1060" y="668" width="196" height="176" rx="16" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+    <g transform="translate(1158.0 738)">
+      <g fill="none" stroke="#2f64b7" stroke-width="11" stroke-linecap="round">
+        <path d="M-58 -14 a82 82 0 0 1 116 0"/><path d="M-37 8 a52 52 0 0 1 74 0"/><path d="M-17 28 a24 24 0 0 1 34 0"/>
+      </g>
+      <circle cx="0" cy="46" r="9" fill="#2f64b7"/></g>
+    <text x="1158.0" y="828" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#1d2433">Wi-Fi</text>
+  </g>
+</svg>
