@@ -73,7 +73,7 @@ Plant Doorbell
 A flower pot that rings a bell when the soil gets dry.
 ```
 
-New posts show up in the gallery the next time the page loads.
+The gallery is a saved copy of your channels, so if you post or change something after the critique, let me know and I'll update it.
 :::
 
 ::: {.announcement type="materials"}

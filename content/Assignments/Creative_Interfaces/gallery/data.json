@@ -1,0 +1,625 @@
+{
+ "group": "https://www.are.na/art-150-fall-2026",
+ "updated": "2026-11-02",
+ "students": [
+  {
+   "name": "Abdullah Abid",
+   "slug": "abdullah-abid",
+   "channel": {
+    "title": "Creative Interface",
+    "slug": "creative-interface-uwgt1ndaviq",
+    "url": "https://www.are.na/abdullah-abid/creative-interface-uwgt1ndaviq",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52023793",
+     "text": "This interface turns on the light when the door closes and turns it off when you open the door. I call it 'Behind Closed Doors,' an artistic concept representing someones 'inner world'."
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52023757",
+     "thumb": "images/abdullah-abid/52023757_thumb.jpg",
+     "large": "images/abdullah-abid/52023757.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52023756",
+     "thumb": "images/abdullah-abid/52023756_thumb.jpg",
+     "large": "images/abdullah-abid/52023756.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Akxell Mendoza",
+   "slug": "akxell-mendoza",
+   "channel": {
+    "title": "creative interfaces",
+    "slug": "creative-interfaces-vqqt11hdcaq",
+    "url": "https://www.are.na/akxell-mendoza/creative-interfaces-vqqt11hdcaq",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "interactive box button",
+     "description": "description: This box is an interactive button, it may look like a box but its a functional button ready to be used",
+     "url": "https://www.are.na/block/52023445",
+     "thumb": "images/akxell-mendoza/52023445_thumb.jpg",
+     "large": "images/akxell-mendoza/52023445.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Amy Lora",
+   "slug": "amy-lora",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-rbyerq684o0",
+    "url": "https://www.are.na/amy-lora/creative-interfaces-rbyerq684o0",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "IMG_5499",
+     "description": "",
+     "url": "https://www.are.na/block/52030335",
+     "thumb": "images/amy-lora/52030335_thumb.jpg",
+     "large": "images/amy-lora/52030335.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "IMG_5502",
+     "description": "",
+     "url": "https://www.are.na/block/52030330",
+     "thumb": "images/amy-lora/52030330_thumb.jpg",
+     "large": "images/amy-lora/52030330.jpg"
+    },
+    {
+     "type": "Text",
+     "title": "Steering Wheel",
+     "description": "",
+     "url": "https://www.are.na/block/52023584",
+     "text": "Steering Wheel\nIf you turn the wheel left the light turns on, ones you stop it from going left it will turn off. "
+    }
+   ]
+  },
+  {
+   "name": "Arisbeth Aceves",
+   "slug": "arisbeth-aceves",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-cxjgpjwf0ce",
+    "url": "https://www.are.na/arisbeth-aceves/creative-interfaces-cxjgpjwf0ce",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "Description",
+     "description": "",
+     "url": "https://www.are.na/block/52023182",
+     "text": "Vending Machine\nThis is a vending machine. First, insert a coin into the coin slot internal LED light should turn on. Next pull the knob down a buzzer sensor should dictate. Lastly candy should come out. "
+    },
+    {
+     "type": "Image",
+     "title": "IMG_1927",
+     "description": "",
+     "url": "https://www.are.na/block/52022926",
+     "thumb": "images/arisbeth-aceves/52022926_thumb.jpg",
+     "large": "images/arisbeth-aceves/52022926.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "IMG_1924",
+     "description": "",
+     "url": "https://www.are.na/block/52022914",
+     "thumb": "images/arisbeth-aceves/52022914_thumb.jpg",
+     "large": "images/arisbeth-aceves/52022914.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "IMG_1925",
+     "description": "",
+     "url": "https://www.are.na/block/52022884",
+     "thumb": "images/arisbeth-aceves/52022884_thumb.jpg",
+     "large": "images/arisbeth-aceves/52022884.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "IMG_1926",
+     "description": "",
+     "url": "https://www.are.na/block/52022882",
+     "thumb": "images/arisbeth-aceves/52022882_thumb.jpg",
+     "large": "images/arisbeth-aceves/52022882.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Ben Broz",
+   "slug": "ben-broz",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-4j6oxq4nwfe",
+    "url": "https://www.are.na/ben-broz/creative-interfaces-4j6oxq4nwfe",
+    "description": ""
+   },
+   "blocks": []
+  },
+  {
+   "name": "Dang Nguyen",
+   "slug": "dang-nguyen-vqo2zbznbq0",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-kikxljf-2d0",
+    "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/creative-interfaces-kikxljf-2d0",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52030739",
+     "text": "The first one I made is the light sensor with a slider to block all light, it can change the resistance , as the idea just to have a slider for interact"
+    },
+    {
+     "type": "Image",
+     "title": "70d64624-53cc-4aa4-a2d9-494ed8439198",
+     "description": "",
+     "url": "https://www.are.na/block/52030724",
+     "thumb": "images/dang-nguyen-vqo2zbznbq0/52030724_thumb.jpg",
+     "large": "images/dang-nguyen-vqo2zbznbq0/52030724.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "f7f8b84f-78f3-495c-8e68-76adef2871eb",
+     "description": "",
+     "url": "https://www.are.na/block/52030720",
+     "thumb": "images/dang-nguyen-vqo2zbznbq0/52030720_thumb.jpg",
+     "large": "images/dang-nguyen-vqo2zbznbq0/52030720.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "f953abe7-f5c2-4f73-bd44-3ee92dc57b93",
+     "description": "",
+     "url": "https://www.are.na/block/52030705",
+     "thumb": "images/dang-nguyen-vqo2zbznbq0/52030705_thumb.jpg",
+     "large": "images/dang-nguyen-vqo2zbznbq0/52030705.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Hillary Samaniego",
+   "slug": "hillary-samaniego",
+   "channel": {
+    "title": "Creative Interface",
+    "slug": "creative-interface-e0uihs8qsus",
+    "url": "https://www.are.na/hillary-samaniego/creative-interface-e0uihs8qsus",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "Cutting Board",
+     "description": "Every time the knife interacts with the cutting board, it'll light up the LED. ",
+     "url": "https://www.are.na/block/52022592",
+     "thumb": "images/hillary-samaniego/52022592_thumb.png",
+     "large": "images/hillary-samaniego/52022592.png"
+    }
+   ]
+  },
+  {
+   "name": "Itzel Garcia",
+   "slug": "itzel-garcia-s-8gtpf_grs",
+   "channel": {
+    "title": "MIDTERM PROJECT",
+    "slug": "midterm-project-y5xtoerok3g",
+    "url": "https://www.are.na/itzel-garcia-s-8gtpf_grs/midterm-project-y5xtoerok3g",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "Flower Switch",
+     "description": "Make flower open and bloom to control game and switch",
+     "url": "https://www.are.na/block/52022687",
+     "thumb": "images/itzel-garcia-s-8gtpf_grs/52022687_thumb.jpg",
+     "large": "images/itzel-garcia-s-8gtpf_grs/52022687.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Jing Chen",
+   "slug": "jing-chen-_twncguy20i",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-d3v6j7k-ucm",
+    "url": "https://www.are.na/jing-chen-_twncguy20i/creative-interfaces-d3v6j7k-ucm",
+    "description": "Two-choice game\nArduino will randomly assign a button for winning, and the player must choose one of two options. Winning will result in a green light and sound effect, while losing will result in a red light and sound effect. The button will be randomly assigned again after the player has made their choice."
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "IMG_2485",
+     "description": "",
+     "url": "https://www.are.na/block/52025602",
+     "thumb": "images/jing-chen-_twncguy20i/52025602_thumb.jpg",
+     "large": "images/jing-chen-_twncguy20i/52025602.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Kirtan Patel",
+   "slug": "kirtan-patel-ylp_92zih8w",
+   "channel": {
+    "title": "Creative Interface",
+    "slug": "creative-interface-tovyphm9xvg",
+    "url": "https://www.are.na/kirtan-patel-ylp_92zih8w/creative-interface-tovyphm9xvg",
+    "description": "AI Motion Paint"
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "ChatGPT Image Oct 28, 2026, 04_22_47 PM",
+     "description": "",
+     "url": "https://www.are.na/block/52022136",
+     "thumb": "images/kirtan-patel-ylp_92zih8w/52022136_thumb.jpg",
+     "large": "images/kirtan-patel-ylp_92zih8w/52022136.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021683",
+     "thumb": "images/kirtan-patel-ylp_92zih8w/52021683_thumb.jpg",
+     "large": "images/kirtan-patel-ylp_92zih8w/52021683.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021682",
+     "thumb": "images/kirtan-patel-ylp_92zih8w/52021682_thumb.jpg",
+     "large": "images/kirtan-patel-ylp_92zih8w/52021682.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021681",
+     "thumb": "images/kirtan-patel-ylp_92zih8w/52021681_thumb.jpg",
+     "large": "images/kirtan-patel-ylp_92zih8w/52021681.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021680",
+     "thumb": "images/kirtan-patel-ylp_92zih8w/52021680_thumb.jpg",
+     "large": "images/kirtan-patel-ylp_92zih8w/52021680.jpg"
+    },
+    {
+     "type": "Text",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021500",
+     "text": "Motion Paint\nInteractive Art with Arduino\nMotion Paint is an interactive art project that lets users draw colorful, glowing designs using hand movements tracked by a webcam.\nBuilt with Arduino and Python, it features a flex sensor for swirling effects, a knob to control brush size, a button to switch modes, copper touch pads, and colorful LED lights that respond to interactions.\nThe project combines physical controls, motion tracking, and digital art to create a fun, hands-on drawing experience."
+    }
+   ]
+  },
+  {
+   "name": "Lucas Lee",
+   "slug": "lucas-lee-cd24req3nfo",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-ftwa5riozwm",
+    "url": "https://www.are.na/lucas-lee-cd24req3nfo/creative-interfaces-ftwa5riozwm",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52023743",
+     "text": "drawing machine that completes a circuit with graphite"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52023728",
+     "thumb": "images/lucas-lee-cd24req3nfo/52023728_thumb.jpg",
+     "large": "images/lucas-lee-cd24req3nfo/52023728.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Maurizio Brown",
+   "slug": "maurizio-brown",
+   "channel": {
+    "title": "Creative Interface",
+    "slug": "creative-interface-udv3ysy36ei",
+    "url": "https://www.are.na/maurizio-brown/creative-interface-udv3ysy36ei",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "Description",
+     "description": "",
+     "url": "https://www.are.na/block/52021543",
+     "text": "Gizmo\nThis is a physical axis-gizmo that sends out variable voltage to an RGB LED depending on how close the probe is to the center of the gizmo on different axes.\nEach of the three axes correspond to a different color input on the LED. The probe inputs voltage to the axis when they make contact, and the axis is made of carbon Velostat, making the axes act as variable resistors that change voltage depending on where the probe is located on each axis.\nA further iteration on this device could be used for inputting location in 3d space into a device, or measuring the dimensions of an object."
+    },
+    {
+     "type": "Image",
+     "title": "MIDTERM_PHOTO_V1",
+     "description": "",
+     "url": "https://www.are.na/block/52021518",
+     "thumb": "images/maurizio-brown/52021518_thumb.jpg",
+     "large": "images/maurizio-brown/52021518.jpg"
+    },
+    {
+     "type": "Attachment",
+     "title": "MIDTERM_VID",
+     "description": "",
+     "url": "https://www.are.na/block/52021512",
+     "thumb": "images/maurizio-brown/52021512_thumb.png",
+     "large": "images/maurizio-brown/52021512.png",
+     "video": "images/maurizio-brown/52021512_video.mp4"
+    }
+   ]
+  },
+  {
+   "name": "Mia Espinoza",
+   "slug": "mia-espinoza",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces",
+    "url": "https://www.are.na/mia-espinoza/creative-interfaces",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "Cocinita",
+     "description": "",
+     "url": "https://www.are.na/block/52022346",
+     "thumb": "images/mia-espinoza/52022346_thumb.png",
+     "large": "images/mia-espinoza/52022346.png"
+    },
+    {
+     "type": "Text",
+     "title": "Description",
+     "description": "",
+     "url": "https://www.are.na/block/52021290",
+     "text": "Cocinita\nMiniature kitchen with a red light in the oven that gets activated when Deer gets near the oven"
+    }
+   ]
+  },
+  {
+   "name": "Nataly Rios",
+   "slug": "nataly-rios",
+   "channel": {
+    "title": "creative interface/midterm",
+    "slug": "creative-interface-midterm",
+    "url": "https://www.are.na/nataly-rios/creative-interface-midterm",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52022089",
+     "text": "Needoh Player\nMy project mixes the joys of squishing a needoh and playing music. \nBackstory: I love the song Jennifer and was introduced to it in middle school. I love needohs and squishing them, and I discovered them earlier this month.  \nThe overall idea was that when I squish the needoh, it plays the song, and when I let go, it pauses. Unfortunately, I couldn't figure it out. "
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52022003",
+     "thumb": "images/nataly-rios/52022003_thumb.jpg",
+     "large": "images/nataly-rios/52022003.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "25163A8F-877B-4517-9369-D021B07EA97F",
+     "description": "",
+     "url": "https://www.are.na/block/52021888",
+     "thumb": "images/nataly-rios/52021888_thumb.png",
+     "large": "images/nataly-rios/52021888.png"
+    }
+   ]
+  },
+  {
+   "name": "Panthi Patel",
+   "slug": "panthi-patel",
+   "channel": {
+    "title": "Creative Interface",
+    "slug": "creative-interface-syzdn2f-mjs",
+    "url": "https://www.are.na/panthi-patel/creative-interface-syzdn2f-mjs",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021416",
+     "text": "Cartoonish Scissor \nWhen performing the motion of handling scissors, a cartoon sound plays. If you keep doing it back and forth, it will keep playing. "
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021664",
+     "thumb": "images/panthi-patel/52021664_thumb.jpg",
+     "large": "images/panthi-patel/52021664.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021361",
+     "thumb": "images/panthi-patel/52021361_thumb.jpg",
+     "large": "images/panthi-patel/52021361.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "",
+     "description": "",
+     "url": "https://www.are.na/block/52021354",
+     "thumb": "images/panthi-patel/52021354_thumb.jpg",
+     "large": "images/panthi-patel/52021354.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Quang Duc Lam Nguyen",
+   "slug": "quang-duc-lam-nguyen",
+   "channel": {
+    "title": "Creative Interface",
+    "slug": "creative-interface-kojikccvtwg",
+    "url": "https://www.are.na/quang-duc-lam-nguyen/creative-interface-kojikccvtwg",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "Frankenstein Tilt-Switches",
+     "description": "",
+     "url": "https://www.are.na/block/52023516",
+     "text": "Frankenstein Tilt-Switches\nPringle boxes turned into Frankenstein heads that turn on after each shake.\n(made to play Geometry Dash)"
+    },
+    {
+     "type": "Image",
+     "title": "1793223319564_403540458376638754_5323535547562165339_88dc4a0459299cfe5fc8e19905c4575d",
+     "description": "",
+     "url": "https://www.are.na/block/52023564",
+     "thumb": "images/quang-duc-lam-nguyen/52023564_thumb.jpg",
+     "large": "images/quang-duc-lam-nguyen/52023564.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "1793223319851_403540458376638754_5323535547562165339_ba376547a52ed398a4db65dc28351182",
+     "description": "",
+     "url": "https://www.are.na/block/52023563",
+     "thumb": "images/quang-duc-lam-nguyen/52023563_thumb.jpg",
+     "large": "images/quang-duc-lam-nguyen/52023563.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "1793223319778_403540458376638754_5323535547562165339_e846f59a3b87a45b2de720c1848e698f",
+     "description": "",
+     "url": "https://www.are.na/block/52023562",
+     "thumb": "images/quang-duc-lam-nguyen/52023562_thumb.jpg",
+     "large": "images/quang-duc-lam-nguyen/52023562.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "1793223319654_403540458376638754_5323535547562165339_03e6a0390ae382137c4011902104b247",
+     "description": "",
+     "url": "https://www.are.na/block/52023561",
+     "thumb": "images/quang-duc-lam-nguyen/52023561_thumb.jpg",
+     "large": "images/quang-duc-lam-nguyen/52023561.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "1793223319924_403540458376638754_5323535547562165339_c49614e8711fc5d5400a36a2b45e9fb0",
+     "description": "",
+     "url": "https://www.are.na/block/52023560",
+     "thumb": "images/quang-duc-lam-nguyen/52023560_thumb.jpg",
+     "large": "images/quang-duc-lam-nguyen/52023560.jpg"
+    }
+   ]
+  },
+  {
+   "name": "Selah Morales",
+   "slug": "selah-morales",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-ed1krbe2_p0",
+    "url": "https://www.are.na/selah-morales/creative-interfaces-ed1krbe2_p0",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "Picking up phone",
+     "description": "",
+     "url": "https://www.are.na/block/52022544",
+     "thumb": "images/selah-morales/52022544_thumb.jpg",
+     "large": "images/selah-morales/52022544.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "Idle phone",
+     "description": "",
+     "url": "https://www.are.na/block/52022525",
+     "thumb": "images/selah-morales/52022525_thumb.jpg",
+     "large": "images/selah-morales/52022525.jpg"
+    },
+    {
+     "type": "Text",
+     "title": "Description",
+     "description": "",
+     "url": "https://www.are.na/block/52022037",
+     "text": "Call Back\nThis is a rotary phone where the idea is that when a person picks up the phone, a buzzer would go off, like feedback on a regular phone. Another idea I had was to have the dial dim or brighten a light when turned. "
+    }
+   ]
+  },
+  {
+   "name": "Vi Bao Truong",
+   "slug": "vi-bao-truong",
+   "channel": {
+    "title": "Creative Interfaces",
+    "slug": "creative-interfaces-mhen6bzt1j8",
+    "url": "https://www.are.na/vi-bao-truong/creative-interfaces-mhen6bzt1j8",
+    "description": ""
+   },
+   "blocks": [
+    {
+     "type": "Text",
+     "title": "Rotating score counter.",
+     "description": "When the wheel rotates one round, the LED will turn on, the Buzzer will make a sound, and the Serial Monitor will count the score.",
+     "url": "https://www.are.na/block/52021625",
+     "text": "Rotating score counter.\nWhen the wheel rotates one round, the LED will turn on, the Buzzer will make a sound, and the Serial Monitor will count the score."
+    },
+    {
+     "type": "Image",
+     "title": "image",
+     "description": "",
+     "url": "https://www.are.na/block/52022726",
+     "thumb": "images/vi-bao-truong/52022726_thumb.png",
+     "large": "images/vi-bao-truong/52022726.png"
+    },
+    {
+     "type": "Image",
+     "title": "image",
+     "description": "",
+     "url": "https://www.are.na/block/52022244",
+     "thumb": "images/vi-bao-truong/52022244_thumb.png",
+     "large": "images/vi-bao-truong/52022244.png"
+    },
+    {
+     "type": "Image",
+     "title": "image",
+     "description": "",
+     "url": "https://www.are.na/block/52021690",
+     "thumb": "images/vi-bao-truong/52021690_thumb.png",
+     "large": "images/vi-bao-truong/52021690.png"
+    }
+   ]
+  }
+ ]
+}

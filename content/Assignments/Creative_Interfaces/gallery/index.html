@@ -57,7 +57,6 @@
         --red: #d53f32;
         --shadow:
           0 1px 2px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.18);
-        --bar-h: 0px; /* height of the critique bar while it's open */
       }
 
       * {
@@ -102,20 +101,6 @@
       .topbar .sep {
         opacity: 0.4;
       }
-      .topbar .critique-toggle {
-        margin-left: auto;
-        padding: 3px 10px;
-        border: 2px solid var(--ink);
-        border-radius: 999px;
-        background: transparent;
-        color: var(--ink);
-        font: inherit;
-        cursor: pointer;
-      }
-      .topbar .critique-toggle[aria-pressed="true"] {
-        background: var(--ink);
-        color: var(--accent);
-      }
 
       header.intro {
         max-width: 1200px;
@@ -148,111 +133,6 @@
         margin-top: 12px;
         font-size: 15px;
         color: var(--muted);
-      }
-      .status button {
-        padding: 0;
-        border: none;
-        background: none;
-        color: var(--blue);
-        font: inherit;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-
-      /* ---------- critique bar ----------
-         Picks who presents next, at random and without repeats. Who has
-         gone is remembered in this browser (localStorage). */
-
-      .critique {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: var(--frame);
-        color: #fff;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-      }
-      .critique[hidden] {
-        display: none;
-      }
-      .critique-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 12px 24px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 10px 20px;
-      }
-      .critique .now {
-        flex: 1 1 260px;
-        min-width: 0;
-      }
-      .critique .now small {
-        display: block;
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-      .critique .now strong {
-        display: block;
-        font-family: "Alegreya", Georgia, serif;
-        font-size: clamp(24px, 4vw, 36px);
-        line-height: 1.1;
-        overflow-wrap: anywhere;
-      }
-      .critique button {
-        padding: 7px 16px;
-        border: 2px solid var(--accent);
-        border-radius: 6px;
-        background: transparent;
-        color: #fff;
-        font: inherit;
-        font-weight: 800;
-        cursor: pointer;
-      }
-      .critique button.pick {
-        background: var(--accent);
-        color: var(--ink);
-        font-size: 18px;
-      }
-      .critique .left {
-        font-size: 14px;
-        color: #d9d4c7;
-      }
-      .roster {
-        flex-basis: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .roster[hidden] {
-        display: none;
-      }
-      .roster p {
-        flex-basis: 100%;
-        margin: 0 0 2px;
-        font-size: 13px;
-        color: #d9d4c7;
-      }
-      .critique .roster button {
-        padding: 3px 10px;
-        border-width: 1px;
-        border-color: #6b6a66;
-        border-radius: 999px;
-        font-size: 14px;
-        font-weight: 700;
-      }
-      .critique .roster #start-over {
-        margin-left: auto;
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-      .critique .roster button[aria-pressed="true"] {
-        border-color: transparent;
-        color: #8f8a82;
-        text-decoration: line-through;
       }
 
       /* ---------- index strip ---------- */
@@ -317,14 +197,14 @@
         align-items: center;
         padding: 72px 0;
         border-top: 1px solid var(--rule);
-        scroll-margin-top: calc(var(--bar-h) + 16px);
+        scroll-margin-top: 16px;
       }
       .exhibit:nth-child(even) .artwork {
         order: 2;
       }
       .artwork {
         position: sticky;
-        top: calc(var(--bar-h) + 24px);
+        top: 24px;
       }
 
       .frame {
@@ -365,12 +245,6 @@
         color: var(--muted);
         text-align: center;
         font-size: 15px;
-      }
-
-      /* the student presenting right now */
-      .exhibit.presenting .label {
-        border-left-color: var(--red);
-        box-shadow: 0 0 0 3px var(--red);
       }
 
       .side {
@@ -607,9 +481,6 @@
         header.intro {
           padding: 40px 16px 24px;
         }
-        .critique-inner {
-          padding: 10px 16px;
-        }
         nav.index {
           padding: 8px 16px 32px;
           grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
@@ -647,23 +518,7 @@
       <a href="../../../gallery.html">Gallery</a>
       <span class="sep">/</span>
       <span>Creative Interfaces</span>
-      <button class="critique-toggle" aria-pressed="false" aria-controls="critique">
-        Critique
-      </button>
     </div>
-
-    <section class="critique" id="critique" aria-label="Critique: who presents next" hidden>
-      <div class="critique-inner">
-        <div class="now" aria-live="polite">
-          <small>Now presenting</small>
-          <strong id="now">Press Pick to start</strong>
-        </div>
-        <button class="pick" id="pick">Pick next</button>
-        <span class="left" id="left"></span>
-        <button id="roster-toggle" aria-expanded="false" aria-controls="roster">Roster</button>
-        <div class="roster" id="roster" hidden></div>
-      </div>
-    </section>
 
     <header class="intro">
       <div class="kicker">Intro to New Media Art &middot; Fall 2026 &middot; Midterm</div>
@@ -673,7 +528,7 @@
         for animals and plants, or just for play. Each one is built to be read
         by an Arduino as a switch (on/off) or a sensor (a range of values).
       </p>
-      <p class="status" id="status">Loading documentation from Are.na…</p>
+      <p class="status" id="status">Loading…</p>
     </header>
 
     <nav class="index" id="index" aria-label="Jump to a student"></nav>
@@ -681,12 +536,12 @@
     <main id="gallery"></main>
 
     <footer>
-      Photos, videos, titles and descriptions come straight from each
-      student's &ldquo;Creative Interfaces&rdquo; channel (the title and text
-      beside each frame are its &ldquo;Description&rdquo; block) on
-      <a href="https://www.are.na/art-150-fall-2026" target="_blank" rel="noopener">Are.na</a>,
-      so new posts show up here the next time the page loads. Midterm critique,
-      October 28, 2026. This class is instructed by Juan Flores.
+      Photos, videos, titles and descriptions come from each student's
+      &ldquo;Creative Interfaces&rdquo; channel (the title and text beside each
+      frame are its &ldquo;Description&rdquo; block) on
+      <a href="https://www.are.na/art-150-fall-2026" target="_blank" rel="noopener">Are.na</a>.
+      Midterm critique, October 28, 2026. This class is instructed by Juan
+      Flores.
     </footer>
 
     <dialog id="lightbox" aria-label="Image viewer">
@@ -700,132 +555,12 @@
     </dialog>
 
     <script>
-      // The class, in the order of the Are.na Studios snapshot
-      // (content/arena/build_arena_data.py). Keep in sync by hand.
-      const STUDENTS = [
-        { name: "Abdullah Abid", slug: "abdullah-abid" },
-        { name: "Akxell Mendoza", slug: "akxell-mendoza" },
-        { name: "Amy Lora", slug: "amy-lora" },
-        { name: "Arisbeth Aceves", slug: "arisbeth-aceves" },
-        { name: "Ben Broz", slug: "ben-broz" },
-        { name: "Dang Nguyen", slug: "dang-nguyen-vqo2zbznbq0" },
-        { name: "Denise Burciaga", slug: "denise-burciaga" },
-        { name: "Hillary Samaniego", slug: "hillary-samaniego" },
-        { name: "Itzel Garcia", slug: "itzel-garcia-s-8gtpf_grs" },
-        { name: "Jing Chen", slug: "jing-chen-_twncguy20i" },
-        { name: "Julia Szafranski", slug: "julia-szafranski" },
-        { name: "Kirtan Patel", slug: "kirtan-patel-ylp_92zih8w" },
-        { name: "Lucas Lee", slug: "lucas-lee-cd24req3nfo" },
-        { name: "Maurizio Brown", slug: "maurizio-brown" },
-        { name: "Mia Espinoza", slug: "mia-espinoza" },
-        { name: "Nataly Rios", slug: "nataly-rios" },
-        { name: "Panthi Patel", slug: "panthi-patel" },
-        { name: "Quang Duc Lam Nguyen", slug: "quang-duc-lam-nguyen" },
-        { name: "Selah Morales", slug: "selah-morales" },
-        { name: "Vi Bao Truong", slug: "vi-bao-truong" },
-      ];
-
-      // A student whose midterm channel has some other name: their Are.na
-      // slug → the channel's slug (the last part of the channel's URL).
-      const CHANNEL_OVERRIDES = {};
-
-      // How a midterm channel is recognized by its title, best match first.
-      const TITLE_MATCHES = [/creative\s*interface/i, /interface/i, /mid\s*-?\s*term/i];
-
-      const API = "https://api.are.na/v3";
-      const CACHE_KEY = "creativeInterfaces.gallery";
-      const CRITIQUE_KEY = "creativeInterfaces.critique";
-      const FRESH_MS = 2 * 60 * 1000; // reuse what was loaded in the last 2 minutes
+      // The class and each student's midterm channel, saved from Are.na by
+      // build_gallery_data.py.
+      let STUDENTS = [];
 
       const esc = (s) =>
         String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-      const text = (field) => (field && typeof field === "object" ? field.plain || field.markdown || "" : field || "");
-
-      function store(key, value) {
-        try {
-          if (value === undefined) return JSON.parse(localStorage.getItem(key));
-          localStorage.setItem(key, JSON.stringify(value));
-        } catch (e) {
-          return null;
-        }
-      }
-
-      // ---------- Are.na ----------
-      // Visitors read Are.na as guests: 30 requests a minute. A full load is
-      // about 40 (each student's channel list, then their midterm channel),
-      // so when Are.na says to slow down we wait and carry on.
-
-      const statusEl = document.getElementById("status");
-      let waitingNote = "";
-
-      async function api(path) {
-        for (let attempt = 0; attempt < 6; attempt++) {
-          const r = await fetch(API + path);
-          if (r.status === 429) {
-            const secs = Number(r.headers.get("Retry-After")) || 20;
-            waitingNote = ` Are.na asked us to slow down, so the rest will appear in about ${secs} seconds.`;
-            await sleep(secs * 1000);
-            waitingNote = "";
-            continue;
-          }
-          if (r.status === 404) return null;
-          if (!r.ok) throw new Error(`${r.status} ${path}`);
-          return r.json();
-        }
-        throw new Error(`gave up on ${path}`);
-      }
-
-      function rank(c) {
-        const i = TITLE_MATCHES.findIndex((re) => re.test(c.title || ""));
-        return i === -1 ? Infinity : i;
-      }
-
-      // A file name posing as a title ("uploads/…/IMG_2041.jpg") says nothing.
-      const realTitle = (t) => (t && !/(^uploads\/|\.(jpe?g|png|gif|heic|webp|mov|mp4)$)/i.test(t) ? t : "");
-
-      function block(b) {
-        const img = b.image || {};
-        const att = b.attachment || {};
-        const out = {
-          type: b.type,
-          title: realTitle(b.title),
-          description: text(b.description),
-          url: `https://www.are.na/block/${b.id}`,
-        };
-        if (img.src) {
-          out.thumb = (img.small && img.small.src) || img.src;
-          out.large = (img.large && img.large.src) || img.src;
-        }
-        if (b.type === "Text") out.text = text(b.content);
-        if (b.type === "Attachment" && /^video\//.test(att.content_type || "")) out.video = att.url;
-        if (b.source && b.source.url) out.source = b.source.url;
-        return out;
-      }
-
-      async function loadStudent(s) {
-        let chan;
-        if (CHANNEL_OVERRIDES[s.slug]) {
-          chan = await api(`/channels/${CHANNEL_OVERRIDES[s.slug]}`);
-        } else {
-          const list = await api(`/users/${s.slug}/contents?type=Channel&per=100`);
-          const matches = ((list && list.data) || [])
-            .filter((c) => c.visibility !== "private" && rank(c) < Infinity)
-            .sort((a, b) => rank(a) - rank(b) || (b.counts?.contents || 0) - (a.counts?.contents || 0));
-          chan = matches[0];
-        }
-        if (!chan) return { channel: null, blocks: [] };
-        const contents = await api(`/channels/${chan.slug}/contents?per=60`);
-        return {
-          channel: {
-            title: (chan.title || "").trim(),
-            slug: chan.slug,
-            url: `https://www.are.na/${s.slug}/${chan.slug}`,
-            description: text(chan.description),
-          },
-          blocks: ((contents && contents.data) || []).filter((b) => b.type !== "Channel").map(block),
-        };
-      }
 
       // ---------- rendering ----------
 
@@ -833,7 +568,7 @@
       const index = document.getElementById("index");
       const entries = {}; // student slug → { channel, blocks }
 
-      const pictures = (e) => (e ? e.blocks.filter((b) => b.thumb || b.video) : []);
+      const pictures = (e) => e.blocks.filter((b) => b.thumb || b.video);
 
       function slideHTML(b, k) {
         if (b.video) {
@@ -868,10 +603,9 @@
         const e = entries[s.slug];
         const pics = pictures(e);
         const no = `<p class="no">No. ${n}</p>`;
-        if (!e || !e.channel) {
-          const msg = e ? "No “Creative Interfaces” channel on Are.na yet" : "Checking Are.na…";
+        if (!e.channel) {
           return `<section class="exhibit empty" id="${esc(s.slug)}">
-            <div class="artwork"><div class="frame"><div class="mat"><span>${msg}</span></div></div></div>
+            <div class="artwork"><div class="frame"><div class="mat"><span>No “Creative Interfaces” channel on Are.na</span></div></div></div>
             <div class="side"><div class="label">${no}<h2>${esc(s.name)}</h2>
               <a class="channel-link" href="https://www.are.na/${esc(s.slug)}" target="_blank" rel="noopener">Are.na profile ↗</a>
             </div></div>
@@ -938,65 +672,17 @@
 
       function renderStudent(s) {
         const n = STUDENTS.indexOf(s) + 1;
-        const old = document.getElementById(s.slug);
         const tmp = document.createElement("div");
         tmp.innerHTML = exhibitHTML(s, n);
         const ex = tmp.firstElementChild;
-        if (old) old.replaceWith(ex);
-        else gallery.appendChild(ex);
-        if (critique.now === s.slug) ex.classList.add("presenting");
+        gallery.appendChild(ex);
         wireSlides(ex);
-        index.children[n - 1].outerHTML = indexHTML(s);
       }
 
       function renderAll() {
         index.innerHTML = STUDENTS.map(indexHTML).join("");
-        gallery.innerHTML = "";
         STUDENTS.forEach(renderStudent);
       }
-
-      function showStatus(loading, done) {
-        // an empty channel doesn't count as posted
-        const posted = STUDENTS.filter((s) => entries[s.slug] && entries[s.slug].blocks.length).length;
-        if (loading) {
-          statusEl.textContent = `Loading documentation from Are.na… ${done} of ${STUDENTS.length} checked.${waitingNote}`;
-        } else {
-          statusEl.innerHTML = `${posted} of ${STUDENTS.length} students have posted their documentation. <button id="refresh">Check Are.na again</button>`;
-        }
-      }
-
-      let loading = false;
-      async function refresh() {
-        if (loading) return;
-        loading = true;
-        let done = 0;
-        showStatus(true, done);
-        const ticker = setInterval(() => showStatus(true, done), 1000);
-        const queue = [...STUDENTS];
-        // three at a time: quick, and gentle enough on the rate limit
-        await Promise.all(
-          [1, 2, 3].map(async () => {
-            for (let s; (s = queue.shift()); ) {
-              try {
-                entries[s.slug] = await loadStudent(s);
-              } catch (err) {
-                console.warn(s.slug, err);
-                entries[s.slug] = entries[s.slug] || { channel: null, blocks: [] };
-              }
-              done++;
-              renderStudent(s);
-            }
-          })
-        );
-        clearInterval(ticker);
-        store(CACHE_KEY, { time: Date.now(), entries });
-        loading = false;
-        showStatus(false);
-      }
-
-      statusEl.addEventListener("click", (e) => {
-        if (e.target.id === "refresh") refresh();
-      });
 
       // ---------- lightbox ----------
 
@@ -1038,89 +724,23 @@
         if (e.key === "ArrowRight") show(lbAt + 1);
       });
 
-      // ---------- critique picker ----------
-
-      const bar = document.getElementById("critique");
-      const toggle = document.querySelector(".critique-toggle");
-      const nowEl = document.getElementById("now");
-      const leftEl = document.getElementById("left");
-      const roster = document.getElementById("roster");
-      const rosterToggle = document.getElementById("roster-toggle");
-      const critique = Object.assign({ open: false, now: "", done: [] }, store(CRITIQUE_KEY));
-
-      const nameOf = (slug) => (STUDENTS.find((s) => s.slug === slug) || {}).name || "";
-
-      function renderCritique() {
-        bar.hidden = !critique.open;
-        toggle.setAttribute("aria-pressed", critique.open);
-        const left = STUDENTS.filter((s) => !critique.done.includes(s.slug)).length;
-        nowEl.textContent = critique.now ? nameOf(critique.now) : left ? "Press Pick to start" : "Everyone has presented!";
-        leftEl.textContent = `${left} of ${STUDENTS.length} left`;
-        roster.innerHTML =
-          `<p>Crossed out names won't be picked. Click a name to cross it out (for someone absent) or bring it back.</p>` +
-          STUDENTS.map(
-            (s) => `<button data-slug="${esc(s.slug)}" aria-pressed="${critique.done.includes(s.slug)}">${esc(s.name)}</button>`
-          ).join("") +
-          `<button id="start-over">Start over</button>`;
-        document.querySelectorAll(".exhibit").forEach((ex) => ex.classList.toggle("presenting", ex.id === critique.now));
-        document.documentElement.style.setProperty("--bar-h", critique.open ? `${bar.offsetHeight}px` : "0px");
-        store(CRITIQUE_KEY, critique);
-      }
-
-      function pick() {
-        const left = STUDENTS.filter((s) => !critique.done.includes(s.slug));
-        if (!left.length) {
-          critique.now = "";
-          renderCritique();
-          return;
-        }
-        const s = left[Math.floor(Math.random() * left.length)];
-        critique.done.push(s.slug);
-        critique.now = s.slug;
-        renderCritique();
-        document.getElementById(s.slug)?.scrollIntoView({ block: "start" });
-      }
-
-      toggle.addEventListener("click", () => {
-        critique.open = !critique.open;
-        renderCritique();
-      });
-      document.getElementById("pick").addEventListener("click", pick);
-      rosterToggle.addEventListener("click", () => {
-        roster.hidden = !roster.hidden;
-        rosterToggle.setAttribute("aria-expanded", !roster.hidden);
-        renderCritique();
-      });
-      roster.addEventListener("click", (e) => {
-        const b = e.target.closest("button");
-        if (!b) return;
-        if (b.id === "start-over") {
-          critique.done = [];
-          critique.now = "";
-        } else {
-          const slug = b.dataset.slug;
-          critique.done = critique.done.includes(slug)
-            ? critique.done.filter((x) => x !== slug)
-            : critique.done.concat(slug);
-          if (critique.now === slug) critique.now = "";
-        }
-        renderCritique();
-      });
-      window.addEventListener("resize", () => {
-        if (critique.open) document.documentElement.style.setProperty("--bar-h", `${bar.offsetHeight}px`);
-      });
-
       // ---------- start ----------
-      // Show what this browser loaded last time right away, then check
-      // Are.na for anything new.
 
-      const cached = store(CACHE_KEY);
-      if (cached && cached.entries) Object.assign(entries, cached.entries);
-      renderAll();
-      renderCritique();
-      if (cached && Date.now() - cached.time < FRESH_MS) showStatus(false);
-      else refresh();
-      if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+      const statusEl = document.getElementById("status");
+      fetch("data.json")
+        .then((r) => r.json())
+        .then((data) => {
+          STUDENTS = data.students;
+          STUDENTS.forEach((s) => (entries[s.slug] = s));
+          renderAll();
+          const saved = new Date(`${data.updated}T12:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+          statusEl.textContent = `Documentation saved from Are.na on ${saved}.`;
+          if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+        })
+        .catch((err) => {
+          console.warn(err);
+          statusEl.textContent = "Couldn't load the gallery (data.json).";
+        });
     </script>
   </body>
 </html>
