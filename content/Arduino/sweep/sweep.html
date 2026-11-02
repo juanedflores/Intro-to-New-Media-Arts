@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="pandoc" />
 
-    <title></title>
+    <title>Sweep and Intro to Servo Motors</title>
 
     <!-- UIKit files -->
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
@@ -241,7 +241,7 @@
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text">Sweep</a>-->
+      <!--  <a class="uk-text">Sweep and Intro to Servo Motors</a>-->
       <!--</h2>-->
     </nav>
 
@@ -259,11 +259,14 @@
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div><ul>
-<li><a href="#sweep" id="toc-sweep">Sweep</a>
+<li><a href="#sweep-and-intro-to-servo-motors"
+id="toc-sweep-and-intro-to-servo-motors">Sweep and Intro to Servo
+Motors</a>
 <ul>
 <li><a href="#intro" id="toc-intro">Intro</a></li>
 <li><a href="#the-servo-motor" id="toc-the-servo-motor">The Servo
 Motor</a></li>
+<li><a href="#wiring" id="toc-wiring">Wiring</a></li>
 <li><a href="#minimal-example" id="toc-minimal-example">Minimal
 Example</a>
 <ul>
@@ -271,24 +274,13 @@ Example</a>
 <li><a href="#play-around" id="toc-play-around">Play Around</a></li>
 </ul></li>
 <li><a href="#the-full-sweep-example"
-id="toc-the-full-sweep-example">The Full Sweep Example</a>
-<ul>
-<li><a href="#breakdown-1" id="toc-breakdown-1">Breakdown</a>
-<ul>
-<li><a href="#variables" id="toc-variables">Variables</a></li>
-<li><a href="#the-loop-function" id="toc-the-loop-function">The Loop
-Function</a></li>
-<li><a href="#for-loops" id="toc-for-loops">for loops</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#section" id="toc-section"></a></li>
-<li><a href="#section-1" id="toc-section-1"></a></li>
+id="toc-the-full-sweep-example">The Full Sweep Example</a></li>
+<li><a href="#for-loops" id="toc-for-loops">For Loops</a></li>
 <li><a href="#further-material" id="toc-further-material">Further
 Material</a>
 <ul>
-<li><a href="#nyu-itp-physical-computing-video-on-servo-control"
-id="toc-nyu-itp-physical-computing-video-on-servo-control">NYU ITP
-Physical Computing Video on Servo Control</a></li>
+<li><a href="#video-tutorials" id="toc-video-tutorials">Video
+Tutorials</a></li>
 </ul></li>
 </ul></li>
 </ul></div>
@@ -297,126 +289,128 @@ Physical Computing Video on Servo Control</a></li>
 
       <!-- BODY -->
       <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
-        <section id="sweep" class="level1">
-        <h1>Sweep</h1>
+        <section id="sweep-and-intro-to-servo-motors" class="level1">
+        <h1>Sweep and Intro to Servo Motors</h1>
         <section id="intro" class="level2">
         <h2>Intro</h2>
-        <p>First of all, keep in mind the official Arduino Documentation
-        for a more complete reference:</p>
-        <div class="uk-margin" style="padding: 30px; width: 100%;">
-        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-        <li style="width: 50%; margin: auto; padding-left: 0;">
-        <div class="uk-transition-toggle">
-        <a target="_blank" href="https://docs.arduino.cc/learn/electronics/servo-motors/">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
-        style="background: #7fcbcd; opacity: 100;">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-        <h4>
-        Servo Motor Basics
-        </h4>
-        <div style="display: inline">
-        <p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-        <span class="uk-label"
-        style="background-color: #7fcbcd">Docs</span></p>
+        <p>The official Arduino documentation is a more complete
+        reference:</p>
+        <div class="topics-grid">
+        <a class="topic-card" data-type="external" href="https://docs.arduino.cc/learn/electronics/servo-motors/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../../images/arduino_docs.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Docs</span></div></div>
+        <h3 class="cardtitle">Servo Motor Basics</h3>
+        </a>
+
+        <a class="topic-card" data-type="external" href="https://docs.arduino.cc/language-reference/en/structure/control-structure/for/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../../images/arduino_docs.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Docs</span></div></div>
+        <h3 class="cardtitle">For Loop</h3>
+        </a>
+
         </div>
-        </div>
-        </div>
-        <p></a></p>
-        </div>
-        </li>
-        </ul>
-        </div>
-        <p>This will involve using the <strong>Servo library</strong>.
-        Make sure it is installed. If not, locate it in the library
-        manager.
-        (<a target="_blank" href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library/">Don’t
+        <p>This lesson uses the <strong>Servo library</strong>. Make
+        sure it is installed. If not, locate it in the library manager.
+        (<a
+        href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library/">Don’t
         know how to install a library?</a>)</p>
-        <p>Now, let’s locate the built-in example.</p>
-        <p>Go to:</p>
+        <p>To open the example, go to:</p>
         <p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
         <strong>Servo</strong> &gt; <strong>Sweep</strong></p>
         </section>
         <section id="the-servo-motor" class="level2">
         <h2>The Servo Motor</h2>
-        <p><strong>What is a servo motor?</strong></p>
-        <p>Earlier we have used a vibration motor which is a simple DC
-        motor with an unbalanced, eccentric weight attached to the
-        shaft. A DC motor shaft will turn if supplied a constant DC
-        voltage (like from a 9V battery).</p>
+        <p>Earlier we used a vibration motor, which is a simple DC motor
+        with an unbalanced, eccentric weight attached to the shaft. A DC
+        motor’s shaft turns when it is supplied a constant DC voltage
+        (like from a 9V battery).</p>
         <p>A servo motor is a specialized motor designed for
         <strong>precise control</strong> of rotary motion. There are two
-        type of servo motors that I would like to point out:</p>
+        types of servo motors that I would like to point out:</p>
         <ul>
-        <li><strong>Positional (Standard Rotation)</strong>: Control
-        angle position with a range limit of 180 degrees.</li>
-        <li><strong>Continuous Rotation</strong>: Control speed with a
-        limit of only being able to turn in one direction. It can turn a
-        full 360 degree rotation continuously.</li>
+        <li><strong>Positional (Standard Rotation):</strong> Control the
+        angle, within a range of 180 degrees.</li>
+        <li><strong>Continuous Rotation:</strong> Control the speed and
+        direction. It can keep turning a full 360 degrees.</li>
         </ul>
-        <p><img width="80%" src="./images/type.png"></p>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/XrEN1oszq_Y?si=-p6DCq-V1enld0YW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        <p><img src="images/type.png" alt="Two drawings of a servo motor. A regular servo's arm swings back and forth through a limited angle. A continuous rotation servo's arm turns all the way around." style="max-width:80%;height:auto" /></p>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/XrEN1oszq_Y" title="Positional vs Continuous Rotation Servo Motors" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
-        <p>Both types look exactly the same, and are both powered using
-        a <strong>Pulse Width Modulation (PWM)</strong> signal.</p>
-        <p>Check out the Fade example post for a refresher on PWM.</p>
-        <div class="uk-margin" style="padding: 30px; width: 100%;">
-        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-        <li style="width: 50%; margin: auto; padding-left: 0;">
-        <div class="uk-transition-toggle">
-        <a target="_blank" href="../../Arduino/fade/fade.html">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
-        style="background: #7fcbcd; opacity: 100;">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-        <h4>
-        Fade and Intro to PWM
-        </h4>
-        <div style="display: inline">
-        <p><img src="../../Arduino/fade/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
-        <span class="uk-label" style="background-color: #7fcbcd">Arduino
-        Example</span></p>
+        <p><strong>Positional vs Continuous Rotation Servo
+        Motors</strong><br />
+        Science Buddies.</p>
         </div>
-        </div>
-        </div>
-        <p></a></p>
-        </div>
-        </li>
+        <p>Both types look exactly the same, and both are controlled
+        using a <strong>Pulse Width Modulation (PWM)</strong> signal.
+        The servo gets its power from a separate wire. The signal only
+        tells it what to do: on a positional servo, the width of each
+        pulse sets the angle. The Servo library sends these pulses for
+        you, so you don’t need <code>analogWrite()</code>.</p>
+        <p>Check out <a href="../fade/fade.html">Fade and Intro to
+        PWM</a> for a refresher on PWM.</p>
+        </section>
+        <section id="wiring" class="level2">
+        <h2>Wiring</h2>
+        <p>For this lesson, please collect the following:</p>
+        <ul>
+        <li>Arduino Nano 33 IoT and USB cable</li>
+        <li>Servo motor</li>
+        <li>Jumper wires</li>
         </ul>
-        </div>
+        <p>A servo has three wires:</p>
+        <ul>
+        <li><strong>Brown or black</strong> wire →
+        <strong>GND</strong></li>
+        <li><strong>Red</strong> wire → <strong>Vin</strong></li>
+        <li><strong>Orange, yellow or white</strong> wire → pin
+        <strong>D9</strong></li>
+        </ul>
+        <p>The servo needs about 5V, and the Nano’s 3.3V pin isn’t
+        enough. <strong>Vin</strong> gets 5V from the USB while the
+        board is plugged in (see <a
+        href="../blink/blink.html#v-vs-3.3v">5V vs 3.3V</a>). Only
+        connect the red wire to Vin, never to a numbered pin. Those pins
+        only take 3.3V.</p>
+        <p><strong>If the servo shakes or the Arduino restarts,</strong>
+        the servo may be pulling more power than the USB can give. This
+        is more likely with a heavy load or more than one servo. Power
+        the servo from the <a
+        href="../../Workshops/Breadboard_Circuits/breadboard_circuits.html#part-2-powering-the-breadboard">breadboard
+        power supply module</a> set to 5V instead:</p>
+        <ul>
+        <li><strong>Red</strong> wire → <strong>+</strong> rail</li>
+        <li><strong>Brown or black</strong> wire → <strong>–</strong>
+        rail</li>
+        <li><strong>–</strong> rail → the Nano’s <strong>GND</strong>,
+        so they share a ground</li>
+        <li><strong>Orange, yellow or white</strong> wire → pin
+        <strong>D9</strong>, the same as before</li>
+        </ul>
+        <p>Don’t connect the <strong>+</strong> rail to the Nano.</p>
         </section>
         <section id="minimal-example" class="level2">
         <h2>Minimal Example</h2>
-        <div class="sourceCode" id="cb1"><pre
-        class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Servo.h&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Servo myservo<span class="op">;</span>  <span class="co">// create servo object to control a servo</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> setup<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  myservo<span class="op">.</span>attach<span class="op">(</span><span class="dv">9</span><span class="op">);</span>  <span class="co">// attaches the servo on pin 9 to the servo object</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> loop<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  myservo<span class="op">.</span>write<span class="op">(</span><span class="dv">180</span><span class="op">);</span>  <span class="co">// tell servo to go to position in variable &#39;pos&#39;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-        <section id="breakdown" class="level4">
-        <h4>Breakdown</h4>
-        <hr />
-        <div class="sourceCode" id="cb2"><pre
-        class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Servo.h&gt;</span></span></code></pre></div>
+        <pre class="arduino"><code>#include &lt;Servo.h&gt;
+
+Servo myservo;  // create servo object to control a servo
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
+
+void loop() {
+  myservo.write(180);  // tell the servo to go to 180 degrees
+}</code></pre>
+        <section id="breakdown" class="level3">
+        <h3>Breakdown</h3>
+        <pre class="arduino"><code>#include &lt;Servo.h&gt;</code></pre>
         <p>To include the library, you have to write this statement.
         <code>#include</code> is written followed by the name of the
-        file that has the code of the library written. This
-        <code>Servo.h</code> file is the servo library. It is surrounded
-        by these angle brackets.</p>
-        <p>Abound <code>#include</code>:
-        <a target="\_blank" href="https://www.arduino.cc/reference/en/language/structure/further-syntax/include/">From
-        the Arduino Website</a></p>
-        <hr />
-        <div class="sourceCode" id="cb3"><pre
-        class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Servo myservo<span class="op">;</span>  <span class="co">// create servo object to control a servo</span></span></code></pre></div>
+        file that has the code of the library. This <code>Servo.h</code>
+        file is the Servo library. It is surrounded by angle brackets.
+        <a
+        href="https://docs.arduino.cc/language-reference/en/structure/further-syntax/include/">More
+        about <code>#include</code></a>.</p>
+        <pre class="arduino"><code>Servo myservo;  // create servo object to control a servo</code></pre>
         <p>For this library, there is an object called Servo, and it is
         given the variable name <code>myservo</code>.</p>
         <blockquote>
@@ -432,19 +426,15 @@ Physical Computing Video on Servo Control</a></li>
         Servo that has the properties of a servo motor, with actions
         like <code>attach()</code> and <code>write()</code>.</p>
         </blockquote>
-        <hr />
-        <div class="sourceCode" id="cb4"><pre
-        class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>myservo<span class="op">.</span>attach<span class="op">(</span><span class="dv">9</span><span class="op">);</span>  <span class="co">// attaches the servo on pin 9 to the servo object</span></span></code></pre></div>
+        <pre class="arduino"><code>myservo.attach(9);  // attaches the servo on pin 9 to the servo object</code></pre>
         <p>As said in the comment, this line tells Arduino that this
         servo is connected to pin 9.</p>
-        <hr />
-        <div class="sourceCode" id="cb5"><pre
-        class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>myservo<span class="op">.</span>write<span class="op">(</span><span class="dv">180</span><span class="op">);</span>  <span class="co">// tell servo to go to position in variable &#39;pos&#39;</span></span></code></pre></div>
+        <pre class="arduino"><code>myservo.write(180);  // tell the servo to go to 180 degrees</code></pre>
         <p>The <code>write()</code> method changes the position of the
-        servo and takes an angle between 0 - 180 degrees.</p>
+        servo and takes an angle between 0 and 180 degrees.</p>
         </section>
-        <section id="play-around" class="level4">
-        <h4>Play Around</h4>
+        <section id="play-around" class="level3">
+        <h3>Play Around</h3>
         <p>Try changing the number in <code>write()</code> to see where
         the servo moves.</p>
         </section>
@@ -473,116 +463,65 @@ void loop() {
     delay(15);                       // waits 15 ms for the servo to reach the position
   }
 }</code></pre>
-        <section id="breakdown-1" class="level3">
-        <h3>Breakdown</h3>
-        <section id="variables" class="level4">
-        <h4>Variables</h4>
         <p>A variable is defined to store the angle position.</p>
         <pre class="arduino"><code>int pos = 0;    // variable to store the servo position</code></pre>
         </section>
-        <section id="the-loop-function" class="level4">
-        <h4>The Loop Function</h4>
-        <pre class="arduino"><code>void loop() {
-  for (pos = 0; pos &lt;= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable &#39;pos&#39;
-    delay(15);                       // waits 15 ms for the servo to reach the position
-  }
-  for (pos = 180; pos &gt;= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable &#39;pos&#39;
-    delay(15);                       // waits 15 ms for the servo to reach the position
-  }
-}</code></pre>
-        <p>This sketch is using a <strong>for loop</strong>.</p>
-        </section>
-        <section id="for-loops" class="level4">
-        <h4>for loops</h4>
-        <div class="uk-margin" style="padding: 30px; width: 100%;">
-        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-        <li style="width: 50%; margin: auto; padding-left: 0;">
-        <div class="uk-transition-toggle">
-        <a target="_blank" href="https://docs.arduino.cc/language-reference/en/structure/control-structure/for/">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
-        style="background: #7fcbcd; opacity: 100;">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-        <h4>
-        For Loop
-        </h4>
-        <div style="display: inline">
-        <p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-        <span class="uk-label"
-        style="background-color: #7fcbcd">Docs</span></p>
-        </div>
-        </div>
-        </div>
-        <p></a></p>
-        </div>
-        </li>
-        </ul>
-        </div>
-        <p>The structure of a for loop is this:</p>
+        <section id="for-loops" class="level2">
+        <h2>For Loops</h2>
+        <p>The <code>loop()</code> function in this sketch is using two
+        <strong>for loops</strong>. The structure of a for loop is
+        this:</p>
         <pre class="arduino"><code>for (initialization; condition; increment) {
     // statement(s);
 }</code></pre>
         <p>There are three things that need to be specified within the
-        parantheses <code>()</code>.</p>
-        <p><strong>initialization</strong></p>
-        <p>You need to initialize a variable with a starting value.
-        <code>i</code> is used often by convention. This is like a setup
-        function as it happens first and only happens once.</p>
-        <p><strong>condition</strong></p>
-        <p>Each time through the loop, a condition is tested. If it is
-        <em>true</em>, then whatever is within the curly brackets is
-        executed.</p>
-        <p><strong>increment</strong></p>
-        <p>After each loop, the variable defined in the initalization
-        section is incremented by a certain amount.</p>
-        <hr />
+        parentheses <code>()</code>:</p>
+        <ul>
+        <li><strong>initialization:</strong> You need to initialize a
+        variable with a starting value. <code>i</code> is used often by
+        convention. This is like a setup function, as it happens first
+        and only happens once.</li>
+        <li><strong>condition:</strong> Each time through the loop, a
+        condition is tested. If it is <em>true</em>, then whatever is
+        within the curly brackets is executed.</li>
+        <li><strong>increment:</strong> After each loop, the variable
+        defined in the initialization is incremented by a certain
+        amount.</li>
+        </ul>
         <p>So in our example:</p>
-        <pre class="arduino"><code>for (pos = 0; pos &lt;= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+        <pre class="arduino"><code>for (pos = 0; pos &lt;= 180; pos += 1) {
     // the code executed if true
 }</code></pre>
-        <p><br></p>
-        </section>
-        </section>
-        </section>
-        <section id="section" class="level2 uk-text-center">
-        <h2></h2>
-        <p><strong><code>pos = 0</code></strong></p>
-        <p>The <code>pos</code> variable starts with an <em>initial</em>
-        value of 0.</p>
-        <p><strong><code>pos &lt;= 180</code></strong></p>
-        <p>The <em>condition</em>: Checks to see if <code>pos</code> is
-        <strong>less than or equal to</strong> 180.</p>
-        <p><strong><code>pos += 1</code></strong></p>
-        <p>If the condition is true: Executes whatever is within the
-        curly brackets of the loop, and <code>pos</code> is
-        <em>incremented</em> by 1.</p>
-        </section>
-        <section id="section-1" class="level2">
-        <h2></h2>
-        <p>(The loop repeats until the condition is false, which is when
+        <ul>
+        <li><strong><code>pos = 0</code>:</strong> The <code>pos</code>
+        variable starts with an <em>initial</em> value of 0.</li>
+        <li><strong><code>pos &lt;= 180</code>:</strong> The
+        <em>condition</em> checks to see if <code>pos</code> is
+        <strong>less than or equal to</strong> 180.</li>
+        <li><strong><code>pos += 1</code>:</strong> If the condition is
+        true, whatever is within the curly brackets is executed, and
+        <code>pos</code> is <em>incremented</em> by 1.</li>
+        </ul>
+        <p>The loop repeats until the condition is false, which is when
         <code>pos</code> reaches the value of 181. 181 is no longer less
-        than or equal to 180)</p>
-        <p>We then exit the for loop and continue.</p>
-        <p>The second for loop is the same except <code>pos</code> is
+        than or equal to 180. We then exit the for loop and
+        continue.</p>
+        <p>The second for loop is the same, except <code>pos</code> is
         given an initial value of 180, the condition checks to see if
         <code>pos</code> is <strong>greater than or equal to</strong> 0,
-        and then <strong>decrements</strong> pos if true (decreases the
-        value by 1).</p>
+        and <code>pos</code> is <strong>decremented</strong> (decreased
+        by 1) each time.</p>
         </section>
         <section id="further-material" class="level2">
         <h2>Further Material</h2>
-        <section id="nyu-itp-physical-computing-video-on-servo-control"
-        class="level3">
-        <h3>NYU ITP Physical Computing Video on Servo Control</h3>
-        <div style="padding:56.25% 0 0 0;position:relative;">
-        <iframe src="https://player.vimeo.com/video/372278570?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Analog Output - Servo">
+        <section id="video-tutorials" class="level3">
+        <h3>Video Tutorials</h3>
+        <div class="video-embed">
+        <iframe src="https://player.vimeo.com/video/372278570" title="Analog Output - Servo" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
+        <p><strong>Analog Output - Servo</strong><br />
+        NYU ITP Physical Computing. A video on servo control.</p>
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
         </section>
         </section>
         </section>

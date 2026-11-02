@@ -1,87 +1,80 @@
 ---
-title: Sweep
+title: Sweep and Intro to Servo Motors
+heading: Sweep and Intro to Servo Motors
 ---
 
-# Sweep
+# Sweep and Intro to Servo Motors
 
 ## Intro
 
-First of all, keep in mind the official Arduino Documentation for a more complete reference:
+The official Arduino documentation is a more complete reference:
 
-<div class="uk-margin" style="padding: 30px; width: 100%;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+::: {.topics}
 
-<li style="width: 50%; margin: auto; padding-left: 0;">
-<div class="uk-transition-toggle">
-<a target="_blank" href="https://docs.arduino.cc/learn/electronics/servo-motors/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge  uk-transition-scale-up" style="background: #7fcbcd; opacity: 100;">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>Servo Motor Basics</h4>
-<div style="display: inline">
-<img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Docs</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.card type="external" title="Servo Motor Basics" thumb="../../../images/arduino_docs.svg" href="https://docs.arduino.cc/learn/electronics/servo-motors/" tag="Docs"}
+:::
 
-</ul>
-</div>
+::: {.card type="external" title="For Loop" thumb="../../../images/arduino_docs.svg" href="https://docs.arduino.cc/language-reference/en/structure/control-structure/for/" tag="Docs"}
+:::
 
-This will involve using the **Servo library**. Make sure it is installed. If not, locate it in the library manager. (<a target="_blank" href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library/">Don't know how to install a library?</a>)
+:::
 
-Now, let's locate the built-in example.
+This lesson uses the **Servo library**. Make sure it is installed. If not, locate it in the library manager. ([Don't know how to install a library?](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library/))
 
-Go to:
+To open the example, go to:
 
 **File** > **Examples** > **Servo** > **Sweep**
 
 ## The Servo Motor
 
-**What is a servo motor?**
+Earlier we used a vibration motor, which is a simple DC motor with an unbalanced, eccentric weight attached to the shaft. A DC motor's shaft turns when it is supplied a constant DC voltage (like from a 9V battery).
 
-Earlier we have used a vibration motor which is a simple DC motor with an unbalanced, eccentric weight attached to the shaft. A DC motor shaft will turn if supplied a constant DC voltage (like from a 9V battery).
+A servo motor is a specialized motor designed for **precise control** of rotary motion. There are two types of servo motors that I would like to point out:
 
-A servo motor is a specialized motor designed for **precise control** of rotary motion. There are two type of servo motors that I would like to point out:
+- **Positional (Standard Rotation):** Control the angle, within a range of 180 degrees.
+- **Continuous Rotation:** Control the speed and direction. It can keep turning a full 360 degrees.
 
-- **Positional (Standard Rotation)**: Control angle position with a range limit of 180 degrees.
-- **Continuous Rotation**: Control speed with a limit of only being able to turn in one direction. It can turn a full 360 degree rotation continuously.
+<img src="images/type.png" alt="Two drawings of a servo motor. A regular servo's arm swings back and forth through a limited angle. A continuous rotation servo's arm turns all the way around." style="max-width:80%;height:auto" />
 
-<img width="80%" src="./images/type.png">
+::: {.video-embed}
+<iframe src="https://www.youtube.com/embed/XrEN1oszq_Y" title="Positional vs Continuous Rotation Servo Motors" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/XrEN1oszq_Y?si=-p6DCq-V1enld0YW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+**Positional vs Continuous Rotation Servo Motors**  
+Science Buddies.
+:::
 
-Both types look exactly the same, and are both powered using a **Pulse Width Modulation (PWM)** signal.
+Both types look exactly the same, and both are controlled using a **Pulse Width Modulation (PWM)** signal. The servo gets its power from a separate wire. The signal only tells it what to do: on a positional servo, the width of each pulse sets the angle. The Servo library sends these pulses for you, so you don't need `analogWrite()`.
 
-Check out the Fade example post for a refresher on PWM.
+Check out [Fade and Intro to PWM](../fade/fade.html) for a refresher on PWM.
 
-<div class="uk-margin" style="padding: 30px; width: 100%;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+## Wiring
 
-<li style="width: 50%; margin: auto; padding-left: 0;">
-<div class="uk-transition-toggle">
-<a target="_blank" href="../../Arduino/fade/fade.html">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge  uk-transition-scale-up" style="background: #7fcbcd; opacity: 100;">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>Fade and Intro to PWM</h4>
-<div style="display: inline">
-<img src="../../Arduino/fade/images/cover.jpg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Arduino Example</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+For this lesson, please collect the following:
 
-</ul>
-</div>
+- Arduino Nano 33 IoT and USB cable
+- Servo motor
+- Jumper wires
+
+A servo has three wires:
+
+- **Brown or black** wire → **GND**
+- **Red** wire → **Vin**
+- **Orange, yellow or white** wire → pin **D9**
+
+The servo needs about 5V, and the Nano's 3.3V pin isn't enough. **Vin** gets 5V from the USB while the board is plugged in (see [5V vs 3.3V](../blink/blink.html#v-vs-3.3v)). Only connect the red wire to Vin, never to a numbered pin. Those pins only take 3.3V.
+
+**If the servo shakes or the Arduino restarts,** the servo may be pulling more power than the USB can give. This is more likely with a heavy load or more than one servo. Power the servo from the [breadboard power supply module](../../Workshops/Breadboard_Circuits/breadboard_circuits.html#part-2-powering-the-breadboard) set to 5V instead:
+
+- **Red** wire → **+** rail
+- **Brown or black** wire → **–** rail
+- **–** rail → the Nano's **GND**, so they share a ground
+- **Orange, yellow or white** wire → pin **D9**, the same as before
+
+Don't connect the **+** rail to the Nano.
 
 ## Minimal Example
 
-```c
+```arduino
 #include <Servo.h>
 
 Servo myservo;  // create servo object to control a servo
@@ -91,51 +84,41 @@ void setup() {
 }
 
 void loop() {
-  myservo.write(180);  // tell servo to go to position in variable 'pos'
+  myservo.write(180);  // tell the servo to go to 180 degrees
 }
 ```
 
-#### Breakdown
+### Breakdown
 
----
-
-```c
+```arduino
 #include <Servo.h>
 ```
 
-To include the library, you have to write this statement. `#include` is written followed by the name of the file that has the code of the library written. This `Servo.h` file is the servo library. It is surrounded by these angle brackets.
+To include the library, you have to write this statement. `#include` is written followed by the name of the file that has the code of the library. This `Servo.h` file is the Servo library. It is surrounded by angle brackets. [More about `#include`](https://docs.arduino.cc/language-reference/en/structure/further-syntax/include/).
 
-Abound `#include`: <a target="\_blank" href="https://www.arduino.cc/reference/en/language/structure/further-syntax/include/">From the Arduino Website</a>
-
---- 
-
-```c
+```arduino
 Servo myservo;  // create servo object to control a servo
 ```
 
-For this library, there is an object called Servo, and it is given the variable name `myservo`. 
+For this library, there is an object called Servo, and it is given the variable name `myservo`.
 
-> The Arduino language is an **Object-Oriented Programming** language. An object is similar to a data type, except that it is a *data structure*. It is more of a defined thing with certain defined attributes. For example, an object called Human might have properties such as age, height, name, etc. and can perform actions like `human.walk()`, `human.sleep()`, `human.eat()`. 
-> 
+> The Arduino language is an **Object-Oriented Programming** language. An object is similar to a data type, except that it is a *data structure*. It is more of a defined thing with certain defined attributes. For example, an object called Human might have properties such as age, height, name, etc. and can perform actions like `human.walk()`, `human.sleep()`, `human.eat()`.
+>
 > In this Servo library, there is an object defined called Servo that has the properties of a servo motor, with actions like `attach()` and `write()`.
 
----
-
-```c
+```arduino
 myservo.attach(9);  // attaches the servo on pin 9 to the servo object
 ```
 
 As said in the comment, this line tells Arduino that this servo is connected to pin 9.
 
----
-
-```c
-myservo.write(180);  // tell servo to go to position in variable 'pos'
+```arduino
+myservo.write(180);  // tell the servo to go to 180 degrees
 ```
 
-The `write()` method changes the position of the servo and takes an angle between 0 - 180 degrees.
+The `write()` method changes the position of the servo and takes an angle between 0 and 180 degrees.
 
-#### Play Around
+### Play Around
 
 Try changing the number in `write()` to see where the servo moves.
 
@@ -166,59 +149,15 @@ void loop() {
 }
 ```
 
-### Breakdown
-
-#### Variables
-
 A variable is defined to store the angle position.
 
 ```arduino
 int pos = 0;    // variable to store the servo position
 ```
 
-#### The Loop Function
+## For Loops
 
-```arduino
-void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15 ms for the servo to reach the position
-  }
-  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15 ms for the servo to reach the position
-  }
-}
-```
-
-This sketch is using a **for loop**.
-
-#### for loops
-
-<div class="uk-margin" style="padding: 30px; width: 100%;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-
-<li style="width: 50%; margin: auto; padding-left: 0;">
-<div class="uk-transition-toggle">
-<a target="_blank" href="https://docs.arduino.cc/language-reference/en/structure/control-structure/for/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge  uk-transition-scale-up" style="background: #7fcbcd; opacity: 100;">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>For Loop</h4>
-<div style="display: inline">
-<img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Docs</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
-
-</ul>
-</div>
-
-The structure of a for loop is this:
+The `loop()` function in this sketch is using two **for loops**. The structure of a for loop is this:
 
 ```arduino
 for (initialization; condition; increment) {
@@ -226,59 +165,35 @@ for (initialization; condition; increment) {
 }
 ```
 
-There are three things that need to be specified within the parantheses `()`.
+There are three things that need to be specified within the parentheses `()`:
 
-**initialization**
-
-You need to initialize a variable with a starting value. `i` is used often by convention. This is like a setup function as it happens first and only happens once.
-
-**condition**
-
-Each time through the loop, a condition is tested. If it is *true*, then whatever is within the curly brackets is executed.
-
-**increment**
-
-After each loop, the variable defined in the initalization section is incremented by a certain amount.
-
----
+- **initialization:** You need to initialize a variable with a starting value. `i` is used often by convention. This is like a setup function, as it happens first and only happens once.
+- **condition:** Each time through the loop, a condition is tested. If it is *true*, then whatever is within the curly brackets is executed.
+- **increment:** After each loop, the variable defined in the initialization is incremented by a certain amount.
 
 So in our example:
 
 ```arduino
-for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+for (pos = 0; pos <= 180; pos += 1) {
     // the code executed if true
 }
 ```
 
-<br>
+- **`pos = 0`:** The `pos` variable starts with an *initial* value of 0.
+- **`pos <= 180`:** The *condition* checks to see if `pos` is **less than or equal to** 180.
+- **`pos += 1`:** If the condition is true, whatever is within the curly brackets is executed, and `pos` is *incremented* by 1.
 
-<div class="uk-text-center">
+The loop repeats until the condition is false, which is when `pos` reaches the value of 181. 181 is no longer less than or equal to 180. We then exit the for loop and continue.
 
-##
-
-**`pos = 0`**
-
-The `pos` variable starts with an *initial* value of 0.
-
-**`pos <= 180`**
-
-The *condition*: Checks to see if `pos` is **less than or equal to** 180.
-
-**`pos += 1`**
-
-If the condition is true: Executes whatever is within the curly brackets of the loop, and `pos` is *incremented* by 1.
-</div>
-
-##
-
-(The loop repeats until the condition is false, which is when `pos` reaches the value of 181. 181 is no longer less than or equal to 180)
-
-We then exit the for loop and continue.
-
-The second for loop is the same except `pos` is given an initial value of 180, the condition checks to see if `pos` is **greater than or equal to** 0, and then **decrements** pos if true (decreases the value by 1).
+The second for loop is the same, except `pos` is given an initial value of 180, the condition checks to see if `pos` is **greater than or equal to** 0, and `pos` is **decremented** (decreased by 1) each time.
 
 ## Further Material
 
-### NYU ITP Physical Computing Video on Servo Control
+### Video Tutorials
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/372278570?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Analog Output - Servo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+::: {.video-embed}
+<iframe src="https://player.vimeo.com/video/372278570" title="Analog Output - Servo" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**Analog Output - Servo**  
+NYU ITP Physical Computing. A video on servo control.
+:::
