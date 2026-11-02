@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>DC Motors with the DRV8871 Driver</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">DC Motors with the DRV8871 Driver</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#dc-motors-with-the-drv8871-driver"
+id="toc-dc-motors-with-the-drv8871-driver">DC Motors with the DRV8871
+Driver</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#choosing-a-motor-and-power-supply"
+id="toc-choosing-a-motor-and-power-supply">Choosing a Motor and Power
+Supply</a></li>
+<li><a href="#wiring" id="toc-wiring">Wiring</a></li>
+<li><a href="#how-it-works" id="toc-how-it-works">How It Works</a></li>
+<li><a href="#example-forward-and-reverse"
+id="toc-example-forward-and-reverse">Example: Forward and Reverse</a>
+<ul>
+<li><a href="#play-around" id="toc-play-around">Play Around</a></li>
+</ul></li>
+<li><a href="#example-control-the-speed-with-a-sensor"
+id="toc-example-control-the-speed-with-a-sensor">Example: Control the
+Speed with a Sensor</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="dc-motors-with-the-drv8871-driver" class="level1">
+        <h1>DC Motors with the DRV8871 Driver</h1>
+        <p><img src="images/cover.png"
+        alt="An Arduino connected to a motor driver board, which spins a DC motor. A separate power supply feeds the driver." /></p>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p>A <a href="../sweep/sweep.html">servo</a> turns to an angle.
+        A <strong>DC motor</strong> just keeps spinning, which is what
+        you want for wheels, fans or anything that needs to keep
+        turning.</p>
+        <p>A DC motor needs much more power than an Arduino pin can
+        give, so we use a <strong>motor driver</strong>. The Arduino
+        sends a small signal, and the driver uses it to switch a
+        separate, stronger power supply on and off for the motor. It can
+        also reverse the motor’s direction.</p>
+        <p>This lesson uses the <a
+        href="https://www.adafruit.com/product/3190">Adafruit
+        DRV8871</a>. For a more complete reference, see the <a
+        href="https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout">Adafruit
+        guide</a> and the <a
+        href="https://www.ti.com/lit/ds/symlink/drv8871.pdf">DRV8871
+        datasheet</a>.</p>
+        </section>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <p>For this lesson, please collect the following:</p>
+        <ul>
+        <li>Arduino Nano 33 IoT and USB cable</li>
+        <li>Adafruit DRV8871 motor driver</li>
+        <li>DC motor</li>
+        <li>A power supply for the motor, 6.5V or more</li>
+        <li>A barrel jack to screw terminal adapter, if your power
+        supply has a round plug</li>
+        <li>Jumper wires and a small screwdriver</li>
+        </ul>
+        <p>The driver’s screw terminals come soldered on, but you need
+        to solder on the header pins for IN1 and IN2. See the <a
+        href="../../Workshops/Soldering_Workshop/soldering_workshop.html">Soldering
+        Workshop</a> if you need a refresher.</p>
+        </section>
+        <section id="choosing-a-motor-and-power-supply" class="level2">
+        <h2>Choosing a Motor and Power Supply</h2>
+        <ul>
+        <li><strong>Voltage:</strong> The driver needs <strong>6.5V to
+        45V</strong>, so it won’t run from the USB. The breadboard power
+        supply module won’t work either, since it only gives 5V or 3.3V.
+        Choose a supply that matches your motor: a 12V motor needs a 12V
+        supply.</li>
+        <li><strong>Low-voltage motors:</strong> If your motor is rated
+        below 6.5V, you can lower its average voltage with
+        <code>analogWrite()</code>. For example, 170 out of 255 on a 9V
+        supply averages about 6V. A motor rated for 6.5V or more is a
+        better match, though.</li>
+        <li><strong>Current:</strong> Check your motor’s <strong>stall
+        current</strong>, the current it pulls when it can’t turn. Your
+        supply should be able to give at least that much. The 9V adapter
+        in your kit gives 1A, so it is only enough for small motors. The
+        driver limits the current to about 2A.</li>
+        </ul>
+        </section>
+        <section id="wiring" class="level2">
+        <h2>Wiring</h2>
+        <p><img src="images/wiring.png" alt="Wiring diagram. The Nano's D9 pin goes to the driver's IN1, and D10 goes to IN2. The power supply's plus goes to the driver's plus Power terminal, and its minus goes to the driver's minus Power terminal. The Nano's GND also goes to the driver's minus Power terminal, so they share a ground. The motor connects to the driver's two motor terminals." style="width:100%;height:auto" /></p>
+        <ul>
+        <li>Power supply <strong>+</strong> → driver’s
+        <strong>+</strong> Power terminal</li>
+        <li>Power supply <strong>–</strong> → driver’s
+        <strong>–</strong> Power terminal</li>
+        <li>Nano <strong>GND</strong> → driver’s <strong>–</strong>
+        Power terminal as well, so they share a ground</li>
+        <li>Nano <strong>D9</strong> → driver’s
+        <strong>IN1</strong></li>
+        <li>Nano <strong>D10</strong> → driver’s
+        <strong>IN2</strong></li>
+        <li>Motor’s two wires → driver’s two motor terminals</li>
+        </ul>
+        <p>The drawing puts the Nano’s pins next to each other to keep
+        the wires clear. On the real board they are in different places,
+        so go by the labels printed on your Nano.</p>
+        <p><strong>Keep the motor’s power away from the Nano.</strong>
+        Power the Nano from the USB, and don’t connect the driver’s
+        <strong>+</strong> Power terminal to Vin or to any pin. The
+        Nano’s pins only take 3.3V. The one wire they share is the
+        ground.</p>
+        </section>
+        <section id="how-it-works" class="level2">
+        <h2>How It Works</h2>
+        <p>The two inputs decide what the motor does:</p>
+        <ul>
+        <li><strong>IN1 HIGH, IN2 LOW:</strong> Forward</li>
+        <li><strong>IN1 LOW, IN2 HIGH:</strong> Reverse</li>
+        <li><strong>Both LOW:</strong> Coast to a stop. The driver also
+        goes to sleep until you send it a signal again.</li>
+        <li><strong>Both HIGH:</strong> Brake to a quick stop</li>
+        </ul>
+        <p>To control the speed, use <code>analogWrite()</code> on one
+        input instead of <code>HIGH</code>. This is the same PWM we used
+        in <a href="../fade/fade.html">Fade</a>, so pins 9 and 10 both
+        work. The higher the number, the faster the motor spins.</p>
+        </section>
+        <section id="example-forward-and-reverse" class="level2">
+        <h2>Example: Forward and Reverse</h2>
+        <pre class="arduino"><code>int in1 = 9;   // PWM pin to the driver&#39;s IN1
+int in2 = 10;  // PWM pin to the driver&#39;s IN2
+
+void setup() {
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+}
+
+void loop() {
+  // forward at about half speed
+  analogWrite(in1, 128);
+  digitalWrite(in2, LOW);
+  delay(2000);
+
+  // coast to a stop
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  delay(1000);
+
+  // reverse at about half speed
+  digitalWrite(in1, LOW);
+  analogWrite(in2, 128);
+  delay(2000);
+
+  // coast to a stop
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  delay(1000);
+}</code></pre>
+        <section id="play-around" class="level3">
+        <h3>Play Around</h3>
+        <p>Try changing the <code>128</code> to see how the speed
+        changes. What is the lowest number that gets your motor to
+        start? Below that, it may just hum without turning.</p>
+        </section>
+        </section>
+        <section id="example-control-the-speed-with-a-sensor"
+        class="level2">
+        <h2>Example: Control the Speed with a Sensor</h2>
+        <p>Connect a potentiometer or photoresistor to
+        <strong>A0</strong>. The <a
+        href="../cheat_sheet/cheat_sheet.html">Arduino Cheat Sheet</a>
+        has the wiring for both. Then use <a
+        href="../map/map.html">map()</a> to turn its reading into a
+        speed:</p>
+        <pre class="arduino"><code>int in1 = 9;        // PWM pin to the driver&#39;s IN1
+int in2 = 10;       // PWM pin to the driver&#39;s IN2
+int sensorPin = A0;
+
+void setup() {
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  digitalWrite(in2, LOW);  // keep IN2 low so the motor only goes forward
+}
+
+void loop() {
+  int reading = analogRead(sensorPin);
+  int motorSpeed = map(reading, 0, 1023, 0, 255);
+  analogWrite(in1, motorSpeed);
+  delay(10);
+}</code></pre>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong>The motor doesn’t move:</strong> Check that the
+        Nano’s GND is connected to the driver’s <strong>–</strong> Power
+        terminal, that the supply is on and gives at least 6.5V, and
+        that the screw terminals are tight. Then try a higher speed
+        number.</li>
+        <li><strong>The motor stops when it has to work hard:</strong>
+        It may be pulling more current than the supply can give. The
+        driver also shuts itself off to protect itself if it gets too
+        much current, too hot or too little voltage. Try a stronger
+        supply or a lighter load.</li>
+        <li><strong>The motor spins the wrong way:</strong> Swap its two
+        wires, or swap IN1 and IN2 in your code.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

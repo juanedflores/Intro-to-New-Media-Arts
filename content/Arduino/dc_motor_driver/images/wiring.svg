@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="570" viewBox="0 0 1280 570">
+  <!-- Labels are Alegreya Sans (fonts/alegreya). -->
+  <rect width="1280" height="570" fill="#f2dcbf"/>
+
+  <path d="M340 380 H545" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#d6a020"/>
+  <path d="M340 420 H545" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#3f9d63"/>
+  <path d="M340 340 H455 V200 H625" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#1d2433"/>
+  <path d="M625 130 V250" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#1d2433"/>
+  <circle cx="625" cy="200" r="11" fill="#1d2433"/>
+  <path d="M735 130 V250" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#d53f32"/>
+  <path d="M849 352 H985" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#5f6570"/>
+  <path d="M849 408 H985" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#5f6570"/>
+<rect x="40" y="358.0" width="40" height="44" rx="4" fill="#9a9aa2"/><rect x="70" y="305" width="270" height="150" rx="12" fill="#2f64b7"/><circle cx="96.0" cy="321" r="6" fill="#fbc740"/><circle cx="132.3" cy="321" r="6" fill="#fbc740"/><circle cx="168.7" cy="321" r="6" fill="#fbc740"/><circle cx="205.0" cy="321" r="6" fill="#fbc740"/><circle cx="241.3" cy="321" r="6" fill="#fbc740"/><circle cx="277.7" cy="321" r="6" fill="#fbc740"/><circle cx="314.0" cy="321" r="6" fill="#fbc740"/><circle cx="96.0" cy="439" r="6" fill="#fbc740"/><circle cx="132.3" cy="439" r="6" fill="#fbc740"/><circle cx="168.7" cy="439" r="6" fill="#fbc740"/><circle cx="205.0" cy="439" r="6" fill="#fbc740"/><circle cx="241.3" cy="439" r="6" fill="#fbc740"/><circle cx="277.7" cy="439" r="6" fill="#fbc740"/><circle cx="314.0" cy="439" r="6" fill="#fbc740"/><rect x="175.0" y="350.0" width="60" height="60" rx="7" fill="#1d2433"/>
+<text x="205.0" y="251" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="40" fill="#1d2433">Arduino</text>
+<text x="205.0" y="289" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="32" fill="#5f6570">Nano 33 IoT</text>
+<text x="60" y="505" text-anchor="start" font-family="Alegreya Sans" font-weight="700" font-size="30" fill="#5f6570">USB to your laptop</text>
+<circle cx="340" cy="340" r="9" fill="#fffaf3" stroke="#1d2433" stroke-width="3"/>
+<text x="322" y="351" text-anchor="end" font-family="Alegreya Sans" font-weight="800" font-size="32" fill="#fff">GND</text>
+<circle cx="340" cy="380" r="9" fill="#fffaf3" stroke="#1d2433" stroke-width="3"/>
+<text x="322" y="391" text-anchor="end" font-family="Alegreya Sans" font-weight="800" font-size="32" fill="#fff">D9</text>
+<circle cx="340" cy="420" r="9" fill="#fffaf3" stroke="#1d2433" stroke-width="3"/>
+<text x="322" y="431" text-anchor="end" font-family="Alegreya Sans" font-weight="800" font-size="32" fill="#fff">D10</text>
+
+  <rect x="580" y="244" width="200" height="44" rx="5" fill="#2e9c6a"/>
+  <rect x="807" y="318" width="48" height="124" rx="5" fill="#2e9c6a"/>
+  <rect x="545" y="280" width="270" height="200" rx="12" fill="#1d2433"/>
+<text x="717" y="406" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="38" fill="#fff">DRV8871</text>
+<text x="680.0" y="528" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="34" fill="#5f6570">Motor driver</text>
+<text x="625" y="316" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="40" fill="#fbc740">–</text>
+<text x="735" y="316" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="40" fill="#fbc740">+</text>
+<text x="680.0" y="320" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="28" fill="#fff">Power</text>
+<circle cx="545" cy="380" r="9" fill="#fffaf3" stroke="#1d2433" stroke-width="3"/>
+<text x="563" y="390" text-anchor="start" font-family="Alegreya Sans" font-weight="800" font-size="26" fill="#fff">IN1</text>
+<circle cx="545" cy="420" r="9" fill="#fffaf3" stroke="#1d2433" stroke-width="3"/>
+<text x="563" y="430" text-anchor="start" font-family="Alegreya Sans" font-weight="800" font-size="26" fill="#fff">IN2</text>
+
+  <rect x="525" y="28" width="310" height="102" rx="12" fill="#fffaf3" stroke="#8a6a3a" stroke-width="4"/>
+<text x="680.0" y="70" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="32" fill="#1d2433">Motor power supply</text>
+<text x="680.0" y="108" text-anchor="middle" font-family="Alegreya Sans" font-weight="700" font-size="30" fill="#d53f32">6.5V or more</text>
+<text x="599" y="172" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="38" fill="#1d2433">–</text>
+<text x="761" y="172" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="38" fill="#d53f32">+</text>
+<text x="255" y="192" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="36" fill="#d53f32">Shared ground</text>
+<path d="M365 180 H440" fill="none" stroke="#d53f32" stroke-width="5" stroke-linecap="round"/>
+<path d="M440 180 L428 171 M440 180 L428 189" fill="none" stroke="#d53f32" stroke-width="5" stroke-linecap="round"/>
+<g transform="translate(985 380) scale(1.0)">
+    <rect x="0" y="-62" width="170" height="124" rx="14" fill="#9a9aa2"/>
+    <rect x="0" y="-62" width="30" height="124" rx="10" fill="#5f6570"/>
+    <rect x="170" y="-11" width="48" height="22" rx="4" fill="#5f6570"/>
+    <path d="M238 -40 A52 52 0 0 1 238 40" fill="none" stroke="#d53f32" stroke-width="7" stroke-linecap="round"/>
+    <path d="M238 40 L222 37 M238 40 L235 24" fill="none" stroke="#d53f32" stroke-width="7" stroke-linecap="round"/>
+  </g>
+<text x="1070" y="492" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="36" fill="#1d2433">DC motor</text>
+</svg>
