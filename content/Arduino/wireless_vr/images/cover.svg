@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="A 9V battery wired to an Arduino Nano, which sends Wi-Fi waves to a VR world of cones, poles and a sun.">
+  <!-- No text, and everything inside x 100-700, so the card's 4:3 crop keeps it all. Same palette as Final_Project/images/cover.png. -->
+  <rect width="800" height="450" fill="#f2dcbf"/>
+  <defs>
+    <clipPath id="window"><rect x="492" y="92" width="196" height="266" rx="14"/></clipPath>
+  </defs>
+
+  <!-- battery -->
+  <rect x="136" y="256" width="17" height="15" rx="3" fill="#9a9aa2"/>
+  <rect x="168" y="256" width="17" height="15" rx="3" fill="#9a9aa2"/>
+  <rect x="118" y="268" width="84" height="130" rx="9" fill="#1d2433"/>
+  <rect x="118" y="340" width="84" height="58" rx="9" fill="#fbc740"/>
+  <rect x="118" y="340" width="84" height="16" fill="#fbc740"/>
+
+  <!-- battery clip wires -->
+  <path d="M145 258 C 145 232, 196 246, 196 214" fill="none" stroke="#d53f32" stroke-width="6" stroke-linecap="round"/>
+  <path d="M177 258 C 177 238, 226 248, 226 214" fill="none" stroke="#1d2433" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Nano: VIN and GND are the corner pins at the far end from the USB -->
+  <rect x="368" y="144" width="16" height="44" rx="3" fill="#9a9aa2"/>
+  <rect x="174" y="112" width="198" height="110" rx="12" fill="#2f64b7"/>
+  <g fill="#fbc740">
+    <circle cx="196" cy="128" r="5"/><circle cx="226" cy="128" r="5"/><circle cx="256" cy="128" r="5"/><circle cx="286" cy="128" r="5"/><circle cx="316" cy="128" r="5"/><circle cx="346" cy="128" r="5"/>
+    <circle cx="196" cy="206" r="5"/><circle cx="226" cy="206" r="5"/><circle cx="256" cy="206" r="5"/><circle cx="286" cy="206" r="5"/><circle cx="316" cy="206" r="5"/><circle cx="346" cy="206" r="5"/>
+  </g>
+  <rect x="244" y="141" width="52" height="52" rx="7" fill="#1d2433"/>
+  <circle cx="254" cy="151" r="3" fill="#9a9aa2"/>
+
+  <!-- Wi-Fi -->
+  <g fill="none" stroke="#d53f32" stroke-width="7" stroke-linecap="round">
+    <path d="M402 141 Q416 167 402 193"/>
+    <path d="M424 124 Q448 167 424 210"/>
+    <path d="M446 107 Q480 167 446 227"/>
+  </g>
+
+  <!-- the world, in a window -->
+  <g clip-path="url(#window)">
+    <rect x="492" y="92" width="196" height="266" fill="#fffaf3"/>
+    <circle cx="640" cy="150" r="26" fill="#fbc740"/>
+    <rect x="492" y="266" width="196" height="92" fill="#e6c79c"/>
+    <path d="M512 272 L546 164 L580 272 Z" fill="#2f64b7"/>
+    <path d="M604 276 L632 206 L660 276 Z" fill="#1d2433"/>
+    <rect x="583" y="196" width="6" height="86" fill="#1d2433"/>
+    <circle cx="586" cy="184" r="17" fill="#d53f32"/>
+    <path d="M520 346 A 38 38 0 0 1 596 346" fill="none" stroke="#d53f32" stroke-width="9"/>
+    <g fill="#c98f4e">
+      <ellipse cx="628" cy="312" rx="12" ry="4"/><ellipse cx="664" cy="340" rx="12" ry="4"/><ellipse cx="510" cy="300" rx="8" ry="3"/>
+    </g>
+  </g>
+  <rect x="492" y="92" width="196" height="266" rx="14" fill="none" stroke="#1d2433" stroke-width="6"/>
+</svg>

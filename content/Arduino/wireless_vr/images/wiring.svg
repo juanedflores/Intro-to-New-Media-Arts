@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Wiring diagram. The USB cable is unplugged. A 9V battery clip's red wire goes to the Nano's VIN pin, the corner pin farthest from the USB port. Its black wire goes to the GND pin right next to VIN.">
+  <!-- Labels are Alegreya Sans (fonts/alegreya). Pins on this side, from the USB end: D13, 3V3, AREF, A0-A7, VUSB, RST, GND, VIN. -->
+  <rect width="1200" height="600" fill="#f2dcbf"/>
+
+  <!-- wires -->
+  <path d="M768 408 C 768 372, 889 386, 889 306" fill="none" stroke="#1d2433" stroke-width="9" stroke-linecap="round"/>
+  <path d="M838 408 C 838 376, 945 390, 945 306" fill="none" stroke="#d53f32" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Nano -->
+  <text x="520" y="96" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="40" fill="#1d2433">Arduino Nano 33 IoT</text>
+  <rect x="58" y="172" width="70" height="72" rx="5" fill="#9a9aa2"/>
+  <rect x="120" y="126" width="850" height="176" rx="14" fill="#2f64b7"/>
+  <rect x="420" y="168" width="110" height="90" rx="9" fill="#1d2433"/>
+  <g fill="#fbc740">
+    <circle cx="165" cy="146" r="7"/><circle cx="221" cy="146" r="7"/><circle cx="276" cy="146" r="7"/><circle cx="332" cy="146" r="7"/><circle cx="388" cy="146" r="7"/><circle cx="444" cy="146" r="7"/><circle cx="499" cy="146" r="7"/><circle cx="555" cy="146" r="7"/><circle cx="611" cy="146" r="7"/><circle cx="666" cy="146" r="7"/><circle cx="722" cy="146" r="7"/><circle cx="778" cy="146" r="7"/><circle cx="834" cy="146" r="7"/><circle cx="889" cy="146" r="7"/><circle cx="945" cy="146" r="7"/>
+    <circle cx="165" cy="284" r="7"/><circle cx="221" cy="284" r="7"/><circle cx="276" cy="284" r="7"/><circle cx="332" cy="284" r="7"/><circle cx="388" cy="284" r="7"/><circle cx="444" cy="284" r="7"/><circle cx="499" cy="284" r="7"/><circle cx="555" cy="284" r="7"/><circle cx="611" cy="284" r="7"/><circle cx="666" cy="284" r="7"/><circle cx="722" cy="284" r="7"/><circle cx="778" cy="284" r="7"/><circle cx="834" cy="284" r="7"/>
+  </g>
+  <circle cx="889" cy="284" r="11" fill="#fffaf3" stroke="#1d2433" stroke-width="4"/>
+  <circle cx="945" cy="284" r="11" fill="#fffaf3" stroke="#d53f32" stroke-width="4"/>
+  <text x="889" y="262" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="30" fill="#fff">GND</text>
+  <text x="945" y="228" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="30" fill="#fff">VIN</text>
+  <path d="M945 236 V 266" stroke="#fff" stroke-width="3"/>
+
+  <!-- USB note -->
+  <text x="58" y="346" font-family="Alegreya Sans" font-weight="700" font-size="30" fill="#5f6570">USB port: leave it unplugged</text>
+
+  <!-- battery, lying on its side with the clip on top -->
+  <rect x="750" y="404" width="36" height="22" rx="4" fill="#9a9aa2"/>
+  <rect x="820" y="404" width="36" height="22" rx="4" fill="#9a9aa2"/>
+  <rect x="680" y="422" width="270" height="128" rx="12" fill="#1d2433"/>
+  <path d="M880 422 H938 A12 12 0 0 1 950 434 V538 A12 12 0 0 1 938 550 H880 Z" fill="#fbc740"/>
+  <text x="780" y="508" text-anchor="middle" font-family="Alegreya Sans" font-weight="800" font-size="62" fill="#fff">9V</text>
+
+  <!-- wire labels -->
+  <text x="656" y="384" text-anchor="end" font-family="Alegreya Sans" font-weight="800" font-size="32" fill="#1d2433">black wire to GND</text>
+  <text x="976" y="384" text-anchor="start" font-family="Alegreya Sans" font-weight="800" font-size="32" fill="#d53f32">red wire to VIN</text>
+</svg>

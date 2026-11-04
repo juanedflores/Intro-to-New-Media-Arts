@@ -8,13 +8,16 @@ Run this on the teacher's laptop while it is on the stations' Wi-Fi network:
                                  student board; start_class_grid.command)
     python3 relay.py --band     (the Class Band: each student's button
                                  plays a sound; start_class_band.command)
+    python3 relay.py --tilt     (Tilt World: one board's accelerometer moves
+                                 you through a VR world; start_tilt_world.command)
     python3 relay.py --no-browser    (don't open the page automatically)
 
 It does three things, using only Python's standard library:
   1. listens for Wi-Fi messages on UDP port 9000: the four stations' lines
      like "S1,412,0,873,15,600" (pressure_station) and students' boards'
      lines like "B3F9A21,412" (class_sensor, one sensor each, or
-     class_button, 1023 pressed and 0 released);
+     class_button, 1023 pressed and 0 released), and tilt_world's lines
+     like "V3F9A21,-120,30,980";
   2. serves the grid page at http://localhost:8000 (no internet needed)
      and opens it in the browser;
   3. streams every line to the page as it arrives (/events).
@@ -39,6 +42,7 @@ BEACON_PORT = 9001  # stations listen here to learn this laptop's address
 HTTP_PORTS = range(8000, 8011)  # first free one wins
 LINE = re.compile(r"^S([1-4]),[0-9,]+$")
 BOARD = re.compile(r"^B([0-9A-F]{6}),[0-9]{1,4}$")  # a student's board
+MOTION = re.compile(r"^V([0-9A-F]{6}),-?[0-9]{1,5},-?[0-9]{1,5},-?[0-9]{1,5}$")  # x, y, z
 # a station's or board's Wi-Fi strength, dBm
 SIGNAL = re.compile(r"^R([1-4]|[0-9A-F]{6}),(-?[0-9]+)$")
 WEAK = -75  # below this, readings start getting lost
@@ -46,10 +50,11 @@ WEAK = -75  # below this, readings start getting lost
 HERE = Path(__file__).resolve().parent
 # Serve the whole course site when this file sits inside it, so the page's
 # fonts load; otherwise just this folder.
-SITE = HERE.parents[3] if (HERE.parents[3] / "fonts").exists() else HERE
+SITE = HERE.parents[3] if len(HERE.parents) > 3 and (HERE.parents[3] / "fonts").exists() else HERE
 BAND = "--band" in sys.argv
-CLASS = "--class" in sys.argv or BAND  # students' boards, not the stations
-PAGE_FILE = "band.html" if BAND else "class.html" if CLASS else "index.html"
+TILT = "--tilt" in sys.argv
+CLASS = "--class" in sys.argv or BAND or TILT  # students' boards, not the stations
+PAGE_FILE = "tilt_world.html" if TILT else "band.html" if BAND else "class.html" if CLASS else "index.html"
 PAGE = "/" + str((HERE / PAGE_FILE).relative_to(SITE)).replace("\\", "/")
 
 clients = set()
@@ -89,7 +94,7 @@ def listen_udp():
         if sig:
             report_signal(sig.group(1), int(sig.group(2)))
             continue
-        m = LINE.match(line) or BOARD.match(line)
+        m = LINE.match(line) or BOARD.match(line) or MOTION.match(line)
         if not m:
             continue
         n = m.group(1)
@@ -237,7 +242,7 @@ def main():
 
     url = f"http://localhost:{server.server_address[1]}{PAGE}"
     print()
-    print("  Class Band relay is running" if BAND else "  Class Sensor Grid relay is running" if CLASS else "  Sensor Grid relay is running")
+    print("  Tilt World relay is running" if TILT else "  Class Band relay is running" if BAND else "  Class Sensor Grid relay is running" if CLASS else "  Sensor Grid relay is running")
     print(f"  Page:        {url}")
     print(f"  This laptop: {local_ip()} (boards send to UDP port {UDP_PORT})")
     print("  Waiting for boards... (Ctrl+C to stop)" if CLASS else "  Waiting for stations... (Ctrl+C to stop)")

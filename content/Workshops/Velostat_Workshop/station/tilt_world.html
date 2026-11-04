@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tilt World</title>
+    <!-- A copy of A-Frame sits next to this page so it works on the classroom
+         router, which has no internet. -->
+    <script src="aframe-v1.8.0.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../../fonts/alegreya/AlegreyaSans-Bold.ttf");
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #f2dcbf;
+      }
+      #hud {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: rgba(29, 36, 51, 0.82);
+        color: #fffaf3;
+        font: 700 18px/1.35 "Alegreya Sans", sans-serif;
+        pointer-events: none;
+      }
+      #hud.hidden {
+        display: none;
+      }
+      #numbers {
+        font-variant-numeric: tabular-nums;
+        color: #fbc740;
+      }
+      #keys {
+        margin-top: 4px;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+    </style>
+    <script>
+      const THREE = AFRAME.THREE;
+
+      // ---------- how the tilt feels ----------
+      const DEAD_ZONE = 6; // degrees of tilt that do nothing, so level means stop
+      const FULL_TILT = 35; // degrees of tilt for top speed
+      const MAX_SPEED = 9; // meters per second
+      const MAX_TURN = 1.1; // radians per second
+      const QUIET_AFTER = 1500; // ms with no messages before we stop moving
+
+      // ---------- what the board is doing ----------
+      const tilt = { roll: 0, pitch: 0, level: { roll: 0, pitch: 0 } };
+      const raw = { x: 0, y: 0, z: 1 };
+      const flips = JSON.parse(localStorage.getItem("tiltWorldFlips") || '{"turn":1,"go":1}');
+      const boards = new Map(); // board ID -> when we last heard it
+      let active = null;
+      let relay = false;
+      let relayLost = false;
+      let messages = 0;
+      let perSecond = 0;
+      let mouse = { x: 0, y: 0 };
+
+      function handleLine(line) {
+        const m = /^V([0-9A-F]{6}),(-?\d+),(-?\d+),(-?\d+)$/.exec(line);
+        if (!m) return; // the relay can carry other boards' lines too
+        boards.set(m[1], performance.now());
+        if (!active) active = m[1];
+        if (m[1] !== active) return;
+        messages++;
+        raw.x = +m[2] / 1000;
+        raw.y = +m[3] / 1000;
+        raw.z = +m[4] / 1000;
+      }
+
+      // Gravity always points down, so the tilt comes from how much of it
+      // lands on each axis. This is the same math as the accelerometer page.
+      function boardAngles() {
+        return {
+          roll: THREE.MathUtils.radToDeg(Math.atan2(raw.y, raw.z)), // + is left side down
+          pitch: THREE.MathUtils.radToDeg(Math.atan2(raw.x, Math.hypot(raw.y, raw.z))), // + is nose up
+        };
+      }
+
+      function boardIsLive() {
+        return active && performance.now() - boards.get(active) < QUIET_AFTER;
+      }
+
+      // Past the dead zone, a tilt becomes a number from -1 to 1.
+      function shape(degrees) {
+        const size = Math.abs(degrees);
+        if (size < DEAD_ZONE) return 0;
+        return Math.sign(degrees) * Math.min((size - DEAD_ZONE) / (FULL_TILT - DEAD_ZONE), 1);
+      }
+
+      // ---------- the world ----------
+      const PALETTE = { navy: 0x1d2433, blue: 0x2f64b7, red: 0xd53f32, yellow: 0xfbc740, cream: 0xf2dcbf, sand: 0xe6c79c };
+      const TILE = 130; // the world repeats every this many meters, past the fog
+
+      function groundTexture() {
+        const canvas = document.createElement("canvas");
+        canvas.width = canvas.height = 128;
+        const g = canvas.getContext("2d");
+        g.fillStyle = "#e6c79c";
+        g.fillRect(0, 0, 128, 128);
+        g.fillStyle = "#c98f4e";
+        g.beginPath();
+        g.arc(64, 64, 7, 0, Math.PI * 2);
+        g.fill();
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        texture.colorSpace = THREE.SRGBColorSpace;
+        texture.anisotropy = 8;
+        return texture;
+      }
+
+      function solid(color) {
+        return new THREE.MeshStandardMaterial({ color, roughness: 0.85, metalness: 0 });
+      }
+
+      // Three kinds of things to move through, all made of simple shapes.
+      function makeThing(i, mats, geoms) {
+        const group = new THREE.Group();
+        const kind = i % 7;
+        if (kind < 3) {
+          // a tall pole with a ball floating above it
+          const h = 3 + Math.random() * 6;
+          const pole = new THREE.Mesh(geoms.pole, mats.navy);
+          pole.scale.y = h;
+          pole.position.y = h / 2;
+          const ball = new THREE.Mesh(geoms.ball, i % 2 ? mats.yellow : mats.red);
+          ball.scale.setScalar(0.7 + Math.random() * 1.1);
+          ball.position.y = h + 1.4;
+          group.add(pole, ball);
+          group.userData = { float: ball, base: ball.position.y, phase: Math.random() * 6.28 };
+        } else if (kind < 6) {
+          // a cone, like a paper tree
+          const h = 4 + Math.random() * 7;
+          const cone = new THREE.Mesh(geoms.cone, i % 2 ? mats.blue : mats.navy);
+          cone.scale.set(h * 0.32, h, h * 0.32);
+          cone.position.y = h / 2;
+          group.add(cone);
+        } else {
+          // an arch to go through
+          const arch = new THREE.Mesh(geoms.arch, mats.red);
+          arch.scale.setScalar(1 + Math.random() * 0.6);
+          group.add(arch);
+          group.rotation.y = Math.random() * Math.PI;
+        }
+        group.position.set((Math.random() - 0.5) * TILE, 0, (Math.random() - 0.5) * TILE);
+        return group;
+      }
+
+      // A small Nano in front of you, tilting exactly like the real one.
+      function makeBoard(mats) {
+        const board = new THREE.Group();
+        const pcb = new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.012, 0.32), mats.blue);
+        const chip = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.012, 0.05), mats.navy);
+        chip.position.set(0, 0.012, 0.02);
+        const usb = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.022, 0.04), solid(0x9a9aa2));
+        usb.position.set(0, 0.012, -0.16); // the USB end points away from you
+        board.add(pcb, chip, usb);
+        const pin = new THREE.BoxGeometry(0.008, 0.008, 0.008);
+        for (let i = 0; i < 15; i++) {
+          for (const side of [-1, 1]) {
+            const p = new THREE.Mesh(pin, mats.yellow);
+            p.position.set(side * 0.056, 0.008, -0.14 + i * 0.02);
+            board.add(p);
+          }
+        }
+        return board;
+      }
+
+      AFRAME.registerComponent("tilt-world", {
+        init() {
+          const scene = this.el.object3D;
+          const mats = {
+            navy: solid(PALETTE.navy),
+            blue: solid(PALETTE.blue),
+            red: solid(PALETTE.red),
+            yellow: solid(PALETTE.yellow),
+          };
+          const geoms = {
+            pole: new THREE.CylinderGeometry(0.14, 0.14, 1, 10),
+            ball: new THREE.SphereGeometry(1, 24, 16),
+            cone: new THREE.ConeGeometry(1, 1, 24),
+            arch: new THREE.TorusGeometry(4, 0.35, 12, 40, Math.PI),
+          };
+
+          this.groundTex = groundTexture();
+          this.groundTex.repeat.set(100, 100);
+          this.ground = new THREE.Mesh(
+            new THREE.PlaneGeometry(400, 400),
+            new THREE.MeshStandardMaterial({ map: this.groundTex, roughness: 1 })
+          );
+          this.ground.rotation.x = -Math.PI / 2;
+          scene.add(this.ground);
+
+          this.things = [];
+          for (let i = 0; i < 150; i++) {
+            const thing = makeThing(i, mats, geoms);
+            scene.add(thing);
+            this.things.push(thing);
+          }
+
+          // the sun stays the same distance away, like a real one
+          this.sun = new THREE.Mesh(
+            new THREE.SphereGeometry(14, 32, 16),
+            new THREE.MeshBasicMaterial({ color: PALETTE.yellow, fog: false })
+          );
+          scene.add(this.sun);
+
+          this.yaw = 0;
+          this.rig = document.getElementById("rig").object3D;
+          this.bank = document.getElementById("bank").object3D;
+          this.board = makeBoard(mats);
+          this.board.position.set(0, 1.25, -0.72);
+          this.rig.add(this.board);
+        },
+
+        tick(time, dt) {
+          if (!dt || dt > 500) return; // a hidden tab shouldn't jump you forward
+          const seconds = dt / 1000;
+
+          // where the tilt should be: the board, or the mouse if there's no board
+          let wantRoll = 0;
+          let wantPitch = 0;
+          if (boardIsLive()) {
+            const a = boardAngles();
+            wantRoll = a.roll - tilt.level.roll;
+            wantPitch = a.pitch - tilt.level.pitch;
+          } else if (!active) {
+            wantRoll = -mouse.x * FULL_TILT;
+            wantPitch = mouse.y * FULL_TILT;
+          }
+
+          // ease toward it so the view doesn't jitter
+          const ease = 1 - Math.exp(-dt / 110);
+          tilt.roll += (wantRoll - tilt.roll) * ease;
+          tilt.pitch += (wantPitch - tilt.pitch) * ease;
+
+          // Like a bicycle: tip to the left to turn left, nose down to go forward.
+          this.yaw += shape(tilt.roll) * flips.turn * MAX_TURN * seconds;
+          const speed = -shape(tilt.pitch) * flips.go * MAX_SPEED;
+          const pos = this.rig.position;
+          pos.x -= Math.sin(this.yaw) * speed * seconds;
+          pos.z -= Math.cos(this.yaw) * speed * seconds;
+          this.rig.rotation.y = this.yaw;
+
+          // in a headset, tipping your view makes people sick, so only do it on a screen
+          const inHeadset = this.el.is("vr-mode");
+          this.bank.rotation.z = inHeadset ? 0 : THREE.MathUtils.degToRad(tilt.roll) * flips.turn * 0.18;
+
+          this.board.rotation.set(THREE.MathUtils.degToRad(tilt.pitch), 0, THREE.MathUtils.degToRad(tilt.roll));
+
+          // The ground and sun come with you. Things that fall behind the fog
+          // reappear ahead, so the world never ends.
+          const CELL = 4; // one ground texture repeat
+          this.ground.position.set(Math.round(pos.x / CELL) * CELL, 0, Math.round(pos.z / CELL) * CELL);
+          this.sun.position.set(pos.x - 70, 55, pos.z - 170);
+          const half = TILE / 2;
+          for (const thing of this.things) {
+            const p = thing.position;
+            if (p.x - pos.x > half) p.x -= TILE;
+            else if (p.x - pos.x < -half) p.x += TILE;
+            if (p.z - pos.z > half) p.z -= TILE;
+            else if (p.z - pos.z < -half) p.z += TILE;
+            const f = thing.userData;
+            if (f.float) f.float.position.y = f.base + Math.sin(time / 900 + f.phase) * 0.5;
+          }
+        },
+      });
+
+      // ---------- the words in the corner ----------
+      function updateHud() {
+        const status = document.getElementById("status");
+        const numbers = document.getElementById("numbers");
+        if (boardIsLive()) {
+          status.textContent = `Board ${active}, ${perSecond} messages a second over Wi-Fi`;
+          numbers.textContent = `x ${raw.x.toFixed(2)}  y ${raw.y.toFixed(2)}  z ${raw.z.toFixed(2)}`;
+        } else {
+          numbers.textContent = "";
+          if (active) status.textContent = `Board ${active} went quiet. Is its light on?`;
+          else if (relayLost) status.textContent = "Lost the relay, reconnecting…";
+          else if (relay) status.textContent = "Waiting for a board. Your mouse works until then.";
+          else status.textContent = "No board here: steer with your mouse.";
+        }
+      }
+      setInterval(() => {
+        perSecond = messages;
+        messages = 0;
+      }, 1000);
+      setInterval(updateHud, 200);
+
+      // ---------- keys ----------
+      document.addEventListener("keydown", (e) => {
+        const key = e.key.toLowerCase();
+        if (key === "c") {
+          tilt.level = boardAngles(); // however you're holding it now counts as level
+        } else if (key === "t" || key === "f") {
+          flips[key === "t" ? "turn" : "go"] *= -1;
+          localStorage.setItem("tiltWorldFlips", JSON.stringify(flips));
+        } else if (key === "n" && boards.size > 1) {
+          const ids = [...boards.keys()];
+          active = ids[(ids.indexOf(active) + 1) % ids.length];
+        } else if (key === "h") {
+          document.getElementById("hud").classList.toggle("hidden");
+        }
+      });
+
+      // no board: the mouse stands in for it, -1 to 1 from the center of the window
+      function pointer(e) {
+        mouse.x = (e.clientX / innerWidth) * 2 - 1;
+        mouse.y = (e.clientY / innerHeight) * 2 - 1;
+      }
+      addEventListener("pointermove", pointer);
+      addEventListener("pointerleave", () => (mouse = { x: 0, y: 0 }));
+
+      // ---------- the relay ----------
+      fetch("/relay-info", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((info) => {
+          if (!info || !info.relay) return;
+          relay = true;
+          const events = new EventSource("/events");
+          events.onmessage = (e) => handleLine(e.data);
+          events.onopen = () => (relayLost = false);
+          events.onerror = () => (relayLost = true); // EventSource retries by itself
+        })
+        .catch(() => {});
+    </script>
+  </head>
+  <body>
+    <div id="hud">
+      <div id="status">Starting…</div>
+      <div id="numbers"></div>
+      <div id="keys">C: this is level &nbsp; T: flip turning &nbsp; F: flip forward &nbsp; N: next board &nbsp; H: hide this</div>
+    </div>
+
+    <a-scene
+      tilt-world
+      background="color: #f2dcbf"
+      fog="type: exponential; color: #f2dcbf; density: 0.028"
+      loading-screen="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-entity light="type: ambient; color: #fff4e0; intensity: 1.4"></a-entity>
+      <a-entity light="type: directional; color: #ffffff; intensity: 2.2" position="-3 5 2"></a-entity>
+      <a-entity id="rig">
+        <a-entity id="bank">
+          <a-entity
+            id="head"
+            camera="fov: 72"
+            position="0 1.6 0"
+            look-controls="mouseEnabled: false; touchEnabled: false; magicWindowTrackingEnabled: false"
+          ></a-entity>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

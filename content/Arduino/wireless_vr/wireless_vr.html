@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Cut the Cord: Battery Power and Wireless VR</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Cut the Cord: Battery Power and Wireless
+VR</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#cut-the-cord" id="toc-cut-the-cord">Cut the Cord</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#upload-the-sketch" id="toc-upload-the-sketch">1. Upload
+the Sketch</a></li>
+<li><a href="#power-it-with-the-9v-battery"
+id="toc-power-it-with-the-9v-battery">2. Power It with the 9V
+Battery</a></li>
+<li><a href="#start-the-world" id="toc-start-the-world">3. Start the
+World</a></li>
+<li><a href="#how-it-works" id="toc-how-it-works">How It Works</a></li>
+<li><a href="#try-it" id="toc-try-it">Try It</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="cut-the-cord" class="level1">
+        <h1>Cut the Cord</h1>
+        <p><img src="images/cover.png"
+        alt="A 9V battery wired to an Arduino Nano, which sends Wi-Fi waves to a VR world of cones, poles and a sun." /></p>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p>So far, your Arduino has been tied to your laptop by a USB
+        cable. Let’s cut that cord. A <strong>9V battery</strong> powers
+        the board, and its built-in <strong>accelerometer</strong> sends
+        how it’s tilted over <strong>Wi-Fi</strong> to a laptop. Tilt
+        the board and you move through a VR world.</p>
+        <p><strong><a
+        href="../../Workshops/Velostat_Workshop/station/tilt_world.html"
+        target="_blank">Try the world with your mouse</a>.</strong> It
+        runs in your browser, with no Arduino needed.</p>
+        <p>Your final project doesn’t have to sit next to a laptop. What
+        could you build if your Arduino could go anywhere: inside a
+        ball, on your body or across the room?</p>
+        </section>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <ul>
+        <li>Arduino Nano 33 IoT, USB cable and breadboard</li>
+        <li><strong>9V battery</strong> and a <strong>9V battery
+        clip</strong> (the snap connector with a red and a black
+        wire)</li>
+        <li>Tape, to hold the battery and breadboard together</li>
+        <li>A laptop on the same Wi-Fi network as your board, running
+        the world. In class, I’ll run it on mine.</li>
+        </ul>
+        </section>
+        <section id="upload-the-sketch" class="level2">
+        <h2>1. Upload the Sketch</h2>
+        <p>You still need the USB cable for this step. You already
+        installed the <strong>WiFiNINA</strong> library for the Class
+        Sensor Grid. Also install <strong>Arduino_LSM6DS3</strong> from
+        the <strong>Library Manager</strong>.</p>
+        <ol type="1">
+        <li>Make a new sketch (<strong>File</strong> &gt; <strong>New
+        Sketch</strong>), delete everything in it, and paste in the
+        whole sketch below.</li>
+        <li>Change <code>ROUTER_NAME</code> and
+        <code>ROUTER_PASSWORD</code> to the Wi-Fi name and password on
+        the board. Keep the quotes.</li>
+        <li>Choose <strong>Tools</strong> &gt; <strong>Board</strong>
+        &gt; <strong>Arduino SAMD Boards</strong> &gt; <strong>Arduino
+        Nano 33 IoT</strong>, and your board’s
+        <strong>Port</strong>.</li>
+        <li>Click <strong>Upload</strong>.</li>
+        <li>Open the <strong>Serial Monitor</strong> (115200 baud). It
+        prints your <strong>board ID</strong>, and then
+        <code>Joined</code> when it’s on the Wi-Fi.</li>
+        </ol>
+        <p><a href="../../Workshops/Velostat_Workshop/station/tilt_world/tilt_world.ino" download>Download
+        tilt_world.ino</a></p>
+        <pre class="arduino"><code>/*
+  Tilt World (ART 150, Cut the Cord lesson)
+
+  Reads the Nano 33 IoT&#39;s built-in accelerometer and sends it over Wi-Fi to
+  the laptop running relay.py --tilt, where tilting the board moves you
+  through a VR world.
+
+  Upload this once over USB. Then unplug the USB cable and power the board
+  from a 9V battery: red wire to VIN, black wire to GND. The sketch stays in
+  the board&#39;s memory and starts by itself whenever it gets power.
+
+  With no computer attached, the built-in LED tells you what&#39;s happening:
+    - flashing: joining the Wi-Fi
+    - on:       connected and sending
+    - fast:     the accelerometer didn&#39;t start
+
+  The only lines to change are the Wi-Fi name and password just below.
+
+  How it works: about 30 times a second, the board sends a line like
+  &quot;V3F9A21,-120,30,980&quot; over UDP. That&#39;s this board&#39;s ID (the last six
+  characters of its hardware address), then x, y and z in thousandths of a g.
+  The laptop&#39;s relay.py announces itself on the network once a second. The
+  board sends straight to it once it hears that, and to the whole network
+  until then.
+*/
+
+#include &lt;SPI.h&gt;
+#include &lt;WiFiNINA.h&gt;
+#include &lt;WiFiUdp.h&gt;
+#include &lt;Arduino_LSM6DS3.h&gt;
+
+// ---- change these two lines to the classroom router&#39;s 2.4 GHz network ----
+const char WIFI_NAME[] = &quot;ROUTER_NAME&quot;;
+const char WIFI_PASSWORD[] = &quot;ROUTER_PASSWORD&quot;;
+
+const unsigned int UDP_PORT = 9000;     // relay.py listens here
+const unsigned int BEACON_PORT = 9001;  // relay.py announces itself here
+const unsigned long SEND_EVERY = 33;    // ms: about 30 messages a second
+
+WiFiUDP udp;
+char boardId[7];                // e.g. &quot;3F9A21&quot;
+IPAddress sendTo;               // the whole network, until we hear the relay
+bool wifiReady = false;
+unsigned long lastWifiTry = 0;
+unsigned long lastSend = 0;
+
+void setup() {
+  // Serial is fine on a battery, but never add &quot;while (!Serial);&quot; here:
+  // with no computer attached, the sketch would wait forever.
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+
+  if (!IMU.begin()) {
+    Serial.println(&quot;The accelerometer didn&#39;t start&quot;);
+    while (true) {
+      digitalWrite(LED_BUILTIN, millis() / 80 % 2);
+    }
+  }
+
+  // the MAC address comes back last byte first: mac[0] is the end of it
+  byte mac[6];
+  WiFi.macAddress(mac);
+  snprintf(boardId, sizeof(boardId), &quot;%02X%02X%02X&quot;, mac[2], mac[1], mac[0]);
+  Serial.print(&quot;Board ID: &quot;);
+  Serial.println(boardId);
+
+  joinWifi();
+}
+
+// Even when WiFi.begin() reports a failure, the Wi-Fi chip keeps trying on
+// its own, and on a weak signal that can take 20+ seconds. Calling begin()
+// again restarts that attempt, so we leave it 30 seconds between tries.
+void joinWifi() {
+  lastWifiTry = millis();
+  Serial.print(&quot;Joining &quot;);
+  Serial.println(WIFI_NAME);
+  WiFi.begin(WIFI_NAME, WIFI_PASSWORD);
+}
+
+// Once on the network, work out where to send and open the socket.
+void startSending() {
+  // send to the whole network (e.g. 192.168.1.255) until the relay is found
+  IPAddress ip = WiFi.localIP();
+  IPAddress mask = WiFi.subnetMask();
+  for (int i = 0; i &lt; 4; i++) {
+    sendTo[i] = ip[i] | (~mask[i] &amp; 0xFF);
+  }
+  WiFi.noLowPowerMode();   // keep the radio awake: steadier, faster sends
+  udp.begin(BEACON_PORT);  // listen for the relay; we send to UDP_PORT
+  wifiReady = true;
+  Serial.print(&quot;Joined, address &quot;);
+  Serial.println(ip);
+}
+
+void loop() {
+  if (WiFi.status() != WL_CONNECTED) {
+    wifiReady = false;
+    digitalWrite(LED_BUILTIN, millis() / 250 % 2);  // flash while joining
+    if (millis() - lastWifiTry &gt; 30000) {
+      joinWifi();
+    }
+    return;
+  }
+
+  digitalWrite(LED_BUILTIN, HIGH);
+  if (!wifiReady) {
+    startSending();
+  }
+
+  // the relay sends &quot;RELAY&quot; once a second: from then on, send straight to it
+  while (udp.parsePacket() &gt; 0) {
+    char buf[8] = { 0 };
+    udp.read(buf, sizeof(buf) - 1);
+    if (strncmp(buf, &quot;RELAY&quot;, 5) == 0) {
+      sendTo = udp.remoteIP();
+    }
+  }
+
+  if (millis() - lastSend &gt;= SEND_EVERY &amp;&amp; IMU.accelerationAvailable()) {
+    float x, y, z;
+    IMU.readAcceleration(x, y, z);
+
+    // whole numbers, because snprintf can&#39;t print decimals on this board
+    char line[32];
+    int len = snprintf(line, sizeof(line), &quot;V%s,%d,%d,%d&quot;, boardId,
+                       (int)(x * 1000), (int)(y * 1000), (int)(z * 1000));
+
+    udp.beginPacket(sendTo, UDP_PORT);
+    udp.write((const uint8_t *)line, len);
+    udp.endPacket();
+    lastSend = millis();
+  }
+}</code></pre>
+        </section>
+        <section id="power-it-with-the-9v-battery" class="level2">
+        <h2>2. Power It with the 9V Battery</h2>
+        <p>The sketch stays in the board’s memory, so from now on it
+        starts by itself whenever the board gets power. It doesn’t need
+        your laptop anymore.</p>
+        <p><img src="images/wiring.png" alt="Wiring diagram. The USB cable is unplugged. A 9V battery clip's red wire goes to the Nano's VIN pin, the corner pin farthest from the USB port. Its black wire goes to the GND pin right next to VIN." style="width:100%;height:auto" /></p>
+        <p>With the <strong>USB cable unplugged</strong> and the battery
+        <strong>not yet snapped on</strong>:</p>
+        <ul>
+        <li>Clip’s <strong>red</strong> wire → <strong>VIN</strong>, the
+        corner pin farthest from the USB port</li>
+        <li>Clip’s <strong>black</strong> wire → <strong>GND</strong>,
+        the pin right next to VIN</li>
+        </ul>
+        <p>Then check both wires, and snap on the battery. Tape the
+        battery to the breadboard, so the whole thing is one object you
+        can hold.</p>
+        <blockquote class="warning">
+        <span class="uk-label"
+        style="color:black; background:#fac100">Warning</span>
+        <p>
+        <strong>9V only goes to VIN.</strong> Every other pin takes 3.3V
+        at most, so 9V on 3.3V, VUSB or any other pin can destroy the
+        board. Swapping red and black can too, so check them before you
+        snap on the battery. If a servo’s red wire is on Vin from the
+        <a href="../sweep/sweep.html">Sweep</a> lesson, take it off
+        first: Vin is now 9V instead of the USB’s 5V.
+        </p>
+        </blockquote>
+        <p>Why VIN? The board has a regulator that turns the voltage on
+        VIN into the 3.3V it runs on, and 9V is well inside the range it
+        accepts.</p>
+        <p>The built-in LED now tells you what’s happening, since
+        there’s no Serial Monitor:</p>
+        <ul>
+        <li><strong>Flashing:</strong> joining the Wi-Fi</li>
+        <li><strong>On:</strong> connected and sending</li>
+        <li><strong>Flashing very fast:</strong> the accelerometer
+        didn’t start</li>
+        </ul>
+        <p><strong>Taking care of the battery.</strong> A 9V battery is
+        small and Wi-Fi uses a lot of power, so expect it to last hours,
+        not days. Unsnap it when you’re not using it, and always unsnap
+        it before you plug the USB cable back in to upload.</p>
+        </section>
+        <section id="start-the-world" class="level2">
+        <h2>3. Start the World</h2>
+        <p>In class, the world runs on my laptop and one board drives it
+        at a time.</p>
+        <p>To run it on your own laptop, join the same Wi-Fi network and
+        download these three files into one folder: <a
+        href="../../Workshops/Velostat_Workshop/station/relay.py"
+        download="">relay.py</a>, <a
+        href="../../Workshops/Velostat_Workshop/station/tilt_world.html"
+        download="">tilt_world.html</a> and <a
+        href="../../Workshops/Velostat_Workshop/station/aframe-v1.8.0.min.js"
+        download="">aframe-v1.8.0.min.js</a>. In that folder, run this
+        in the Terminal, and the page opens in your browser:</p>
+        <pre><code>python3 relay.py --tilt</code></pre>
+        <p>Hold the board flat with the USB port pointing away from you.
+        The corner of the page shows your board ID and how many messages
+        a second are arriving.</p>
+        <ul>
+        <li><strong>Tip it left or right</strong> to turn.</li>
+        <li><strong>Tip the USB end down</strong> to go forward, and up
+        to go back.</li>
+        <li><strong>Hold it level</strong> to stop.</li>
+        </ul>
+        <p>The small board on screen tilts along with the real one.
+        These keys help:</p>
+        <ul>
+        <li><strong>C:</strong> whatever angle you’re holding it at now
+        counts as level</li>
+        <li><strong>T / F:</strong> flip turning or forward, if it goes
+        the wrong way</li>
+        <li><strong>N:</strong> switch to the next board, if there’s
+        more than one</li>
+        <li><strong>H:</strong> hide the words</li>
+        </ul>
+        <p>The icon in the bottom corner makes it full screen. The world
+        is built with <a href="https://aframe.io/"
+        target="_blank">A-Frame</a>, a tool for making VR on the web,
+        and it runs here on a screen. A headset can only enter VR from a
+        secure (https) page, which this local page isn’t.</p>
+        </section>
+        <section id="how-it-works" class="level2">
+        <h2>How It Works</h2>
+        <ul>
+        <li><strong>The battery:</strong> VIN takes the place of the USB
+        cable as the board’s power.</li>
+        <li><strong>The tilt:</strong> An accelerometer feels gravity.
+        When the board is flat, gravity all lands on z. As you tip it,
+        some of that moves to x and y, and the math turns that into an
+        angle. Gravity can’t tell you which way you’re facing, though,
+        so we steer instead: tilting sets how fast you turn and
+        move.</li>
+        <li><strong>The Wi-Fi:</strong> About 30 times a second, the
+        board sends a short message like
+        <code>V3F9A21,-120,30,980</code>: its ID, then x, y and z in
+        thousandths of a g. <code>relay.py</code> on the laptop receives
+        these and passes them to the page.</li>
+        </ul>
+        </section>
+        <section id="try-it" class="level2">
+        <h2>Try It</h2>
+        <ul>
+        <li><strong>Hide it:</strong> Tape the board and battery inside
+        something: a ball, a hat, a puppet, a box. How does holding that
+        object change how the world feels?</li>
+        <li><strong>Pass it around:</strong> Hand it to someone else.
+        How long does it take them to work out the controls?</li>
+        <li><strong>Without the world:</strong> Battery power works for
+        any sketch. Take your midterm or your <a
+        href="../knock/knock.html">Knock</a> sketch off the USB cable
+        and see where it can go now.</li>
+        </ul>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong>The LED never comes on.</strong> Check that the
+        wires are on VIN and GND. Battery clip wires are thin and can
+        slip out of the breadboard, so tape them down. Then try a fresh
+        battery.</li>
+        <li><strong>The LED keeps flashing.</strong> The board can’t
+        join the Wi-Fi. Check the name and password, and that the
+        network is 2.4 GHz. Plug in the USB cable (battery off) and read
+        the Serial Monitor.</li>
+        <li><strong>The LED is on, but the page says it’s waiting for a
+        board.</strong> Make sure the laptop is on the same network as
+        the board and <code>relay.py</code> is running. If your Mac asks
+        whether Python can accept incoming connections, click
+        <strong>Allow</strong>.</li>
+        <li><strong>You keep moving when you hold it level.</strong>
+        Hold it the way you want and press <strong>C</strong>.</li>
+        <li><strong>It turns or moves the wrong way.</strong> Press
+        <strong>T</strong> or <strong>F</strong>.</li>
+        <li><strong>It stutters.</strong> Move closer to the
+        router.</li>
+        <li><strong>The page says the board went quiet.</strong> The
+        battery may be running out, or the wires may have slipped. Check
+        that the LED is still on.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>
