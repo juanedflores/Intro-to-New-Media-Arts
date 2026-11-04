@@ -152,7 +152,40 @@
     "url": "https://www.are.na/ben-broz/creative-interfaces-4j6oxq4nwfe",
     "description": ""
    },
-   "blocks": []
+   "blocks": [
+    {
+     "type": "Image",
+     "title": "Cooking With Circuits",
+     "description": "An interactive cooking game using physical cooking utensils to prepare virtual vegetables. Powered by an Arduino and Scratch.",
+     "url": "https://www.are.na/block/52269157",
+     "thumb": "images/ben-broz/52269157_thumb.jpg",
+     "large": "images/ben-broz/52269157.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "Turning The Knob (1 of 2)",
+     "description": "Turning the potentiometer changes the virtual stove.",
+     "url": "https://www.are.na/block/52269158",
+     "thumb": "images/ben-broz/52269158_thumb.jpg",
+     "large": "images/ben-broz/52269158.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "Turning The Knob (2 of 2)",
+     "description": "Turning the potentiometer changes the virtual stove.",
+     "url": "https://www.are.na/block/52269159",
+     "thumb": "images/ben-broz/52269159_thumb.jpg",
+     "large": "images/ben-broz/52269159.jpg"
+    },
+    {
+     "type": "Image",
+     "title": "Clicking The Tongs",
+     "description": "Collect vegetables by clicking the tongs.",
+     "url": "https://www.are.na/block/52269443",
+     "thumb": "images/ben-broz/52269443.gif",
+     "large": "images/ben-broz/52269443.gif"
+    }
+   ]
   },
   {
    "name": "Dang Nguyen",

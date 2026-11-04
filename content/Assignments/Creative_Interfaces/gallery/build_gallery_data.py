@@ -163,8 +163,10 @@ def block(b, slug):
         # straight from a phone can have GPS coordinates in them
         small = (img.get("small") or {}).get("src") or img["src"]
         large = (img.get("large") or {}).get("src") or img["src"]
-        out["thumb"] = save(small, slug, f"{b['id']}_thumb")
-        out["large"] = save(large, slug, str(b["id"]))
+        saved = save(large, slug, str(b["id"]))
+        # Are.na doesn't resize GIFs, so a second copy would be just as big
+        out["thumb"] = saved if img.get("content_type") == "image/gif" else save(small, slug, f"{b['id']}_thumb")
+        out["large"] = saved
     if b.get("type") == "Text":
         out["text"] = text_of(b.get("content"))
     if b.get("type") == "Attachment" and (att.get("content_type") or "").startswith("video/"):
