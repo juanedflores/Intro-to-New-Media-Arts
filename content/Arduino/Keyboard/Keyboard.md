@@ -1,36 +1,27 @@
 ---
-title: Intro to the Keyboard Library
+title: Keyboard and Mouse
+heading: Keyboard and Mouse
 mainlink: https://www.youtube.com/embed/PbKzEAgl-Fg?enablejsapi=1&amp;origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1
 ---
-# Keyboard
+# Keyboard and Mouse
 
 ## Intro
 
-First of all, keep in mind the official Arduino Documentation for a more complete reference:
+The Nano 33 IoT can act like a USB **keyboard** or **mouse**, and your computer can't tell the difference. That means anything you build can control anything on your computer: a game, a p5.js sketch, a slideshow or a music program, with no extra software.
 
-<div class="uk-margin" style="padding: 30px; width: 100%;">
-<ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
+The official Arduino documentation is a more complete reference:
 
-<li style="width: 50%; margin: auto; padding-left: 0;">
-<div class="uk-transition-toggle">
-<a href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge  uk-transition-scale-up" style="background: #7fcbcd; opacity: 100;">
-<div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-<h4>Keyboard</h4>
-<div style="display: inline">
-<img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-<span class="uk-label" style="background-color: #7fcbcd">Docs</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</li>
+::: {.topics}
 
-</ul>
-</div>
+::: {.card type="external" title="Keyboard" thumb="../../../images/arduino_docs.svg" href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/" tag="Docs"}
+:::
 
-Let's locate one of the built-in examples.
+::: {.card type="external" title="Mouse" thumb="../../../images/arduino_docs.svg" href="https://docs.arduino.cc/language-reference/en/functions/usb/Mouse/" tag="Docs"}
+:::
+
+:::
+
+Let's start with the keyboard, using one of the built-in examples.
 
 Go to:
 
@@ -164,7 +155,7 @@ Keyboard.write(65);
 <span class="uk-label">Note</span>
 <p>65 is the ASCII code for `A`.</p>
 <p>Check out a table with each character with its corresponding ASCII code.</p>
-<a>Ascii-Code.com</a>
+<a href="https://www.ascii-code.com/" target="_blank">Ascii-Code.com</a>
 
 </blockquote>
 
@@ -207,6 +198,8 @@ Try it! Type in the Serial Monitor and see it be replaced with a B when you pres
 ## Simulate Key Press with a Button
 
 We can modify the code to simulate a key press when receiving a `HIGH` state of a digitalInput (button/switch).
+
+Wire a push button to pin 2, as in the [Button](../button/button.html) lesson: 3.3V → button → pin 2, and a 10kΩ resistor from pin 2 to GND. Before you press it, click on an empty document, so the letters go somewhere safe.
 
 ```arduino
 #include "Keyboard.h"
@@ -254,7 +247,7 @@ According to the description, the up arrow key is used to jump, and the down arr
 
 In the Arduino Documentation, it tells us that we can use the const `KEY_UP_ARROW` and `KEY_DOWN_ARROW` for these keys.
 
-I modified to code to include one more button:
+I modified the code to include one more button. Wire it to pin 3 the same way, with its own 10kΩ resistor:
 
 ```arduino
 #include "Keyboard.h"
@@ -281,3 +274,97 @@ void loop() {
 }
 ```
 
+## Mouse
+
+The **Mouse** library works the same way as the Keyboard library. If it isn't installed, find it in the Library Manager.
+
+### Click with a Button
+
+Keep your button on pin 2.
+
+```arduino
+#include "Mouse.h"
+
+int buttonPin = 2;
+int lastState = LOW;   // the button's state the last time we checked
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  // initialize control over the mouse:
+  Mouse.begin();
+}
+
+void loop() {
+  int buttonState = digitalRead(buttonPin);
+
+  // only click at the moment the button goes from not pressed to pressed
+  if (buttonState == HIGH && lastState == LOW) {
+    Mouse.click();
+  }
+  lastState = buttonState;
+
+  delay(10);
+}
+```
+
+`Mouse.click()` presses and lets go of the left mouse button. The `lastState` variable means one press makes one click. Without it, holding the button would click about 100 times a second.
+
+### Move with Tilt
+
+Your Nano has an accelerometer built in, so you don't need any more parts. This sketch uses the same **Arduino_LSM6DS3** library as the [accelerometer tutorial](https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer){target="_blank"} from Week 9. If it isn't installed, find it in the Library Manager.
+
+<blockquote class="warning">
+<span class="uk-label" style="color:black; background:#fac100">Warning</span>
+<p>A sketch that keeps moving the mouse can take over your cursor, and then you can't click Upload. That's why this one only moves the cursor while you <strong>hold the button</strong>.</p>
+</blockquote>
+
+```arduino
+#include "Mouse.h"
+#include <Arduino_LSM6DS3.h>
+
+int buttonPin = 2;   // the cursor only moves while you hold this button
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  IMU.begin();
+  Mouse.begin();
+}
+
+void loop() {
+  float x, y, z;
+
+  if (digitalRead(buttonPin) == HIGH && IMU.accelerationAvailable()) {
+    IMU.readAcceleration(x, y, z);
+
+    // a tilt reads between -1 and 1, so these are between -10 and 10
+    int moveX = -y * 10;
+    int moveY = -x * 10;
+    Mouse.move(moveX, moveY);
+  }
+
+  delay(10);
+}
+```
+
+Hold the board flat with the USB port pointing away from you, press the button and tilt.
+
+- **`Mouse.move(moveX, moveY)`** moves the cursor that far from where it is now.
+- **`int`** can't hold decimals, so a very small tilt becomes `0`. That's why the cursor stays still when the board is nearly level.
+
+If the cursor goes the wrong way, remove the minus sign from that line. To change the speed, change the `10`.
+
+## Try It
+
+- **Knock to click:** Add `Mouse.click();` inside the `if` of your [Knock](../knock/knock.html) sketch, along with the `#include` and `Mouse.begin()`.
+- **Your midterm as a controller:** Your midterm interface is already wired for pin 2 or A0. What could it control on your computer?
+- **Change the slide:** Use `Keyboard.write(KEY_RIGHT_ARROW)` to move through a slideshow.
+- **Your own p5.js sketch:** p5.js can already respond to keys and the mouse, so your Arduino can control your sketch with no extra code.
+
+## When Something Goes Wrong
+
+- **The keyboard or mouse gets out of control.** Unplug the USB cable.
+- **You can't upload, because the sketch keeps typing or moving.** Double-tap the reset button on the Nano. This stops your sketch so you can upload a fixed one. If the port disappears, choose it again under **Tools** > **Port**.
+- **`Keyboard.h` or `Mouse.h`: No such file or directory.** Install that library from the Library Manager.
+- **Nothing happens when you press the button.** Check the wiring with the [Button](../button/button.html) sketch first.
+- **One press clicks twice.** Change `delay(10)` to `delay(20)`.
+- **Your Mac opens a Keyboard Setup Assistant window.** It thinks you plugged in a new keyboard. You can close it.

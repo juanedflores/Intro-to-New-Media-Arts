@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="A 9V battery wired to an Arduino Nano's VIN pin, with no USB cable. Light falls on the board and a buzzer plays sound.">
+  <!-- No text, and everything inside x 100-700, so the card's 4:3 crop keeps it all. Same palette as Final_Project/images/cover.png. -->
+  <rect width="800" height="450" fill="#f2dcbf"/>
+
+  <!-- battery -->
+  <rect x="136" y="256" width="17" height="15" rx="3" fill="#9a9aa2"/>
+  <rect x="168" y="256" width="17" height="15" rx="3" fill="#9a9aa2"/>
+  <rect x="118" y="268" width="84" height="130" rx="9" fill="#1d2433"/>
+  <rect x="118" y="340" width="84" height="58" rx="9" fill="#fbc740"/>
+  <rect x="118" y="340" width="84" height="16" fill="#fbc740"/>
+
+  <!-- battery clip wires -->
+  <path d="M145 258 C 145 232, 196 246, 196 214" fill="none" stroke="#d53f32" stroke-width="6" stroke-linecap="round"/>
+  <path d="M177 258 C 177 238, 226 248, 226 214" fill="none" stroke="#1d2433" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Nano: VIN and GND are the corner pins at the far end from the USB -->
+  <rect x="368" y="144" width="16" height="44" rx="3" fill="#9a9aa2"/>
+  <rect x="174" y="112" width="198" height="110" rx="12" fill="#2f64b7"/>
+  <g fill="#fbc740">
+    <circle cx="196" cy="128" r="5"/><circle cx="226" cy="128" r="5"/><circle cx="256" cy="128" r="5"/><circle cx="286" cy="128" r="5"/><circle cx="316" cy="128" r="5"/><circle cx="346" cy="128" r="5"/>
+    <circle cx="196" cy="206" r="5"/><circle cx="226" cy="206" r="5"/><circle cx="256" cy="206" r="5"/><circle cx="286" cy="206" r="5"/><circle cx="316" cy="206" r="5"/><circle cx="346" cy="206" r="5"/>
+  </g>
+  <rect x="244" y="141" width="52" height="52" rx="7" fill="#1d2433"/>
+  <circle cx="254" cy="151" r="3" fill="#9a9aa2"/>
+
+  <!-- light from above -->
+  <circle cx="300" cy="46" r="24" fill="#fbc740"/>
+  <g stroke="#d6a020" stroke-width="6" stroke-linecap="round">
+    <path d="M258 46 H242"/><path d="M342 46 H358"/><path d="M270 78 L258 90"/><path d="M330 78 L342 90"/><path d="M300 86 V100"/>
+  </g>
+
+  <!-- wire to the buzzer -->
+  <path d="M346 214 C 346 290, 420 300, 452 276" fill="none" stroke="#5f6570" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 8"/>
+
+  <!-- buzzer -->
+  <circle cx="490" cy="256" r="44" fill="#1d2433"/>
+  <circle cx="490" cy="256" r="24" fill="#5f6570"/>
+  <circle cx="490" cy="256" r="9" fill="#1d2433"/>
+
+  <!-- sound -->
+  <g fill="none" stroke="#d53f32" stroke-width="7" stroke-linecap="round">
+    <path d="M552 226 Q566 256 552 286"/>
+    <path d="M578 208 Q602 256 578 304"/>
+    <path d="M604 190 Q638 256 604 322"/>
+  </g>
+</svg>

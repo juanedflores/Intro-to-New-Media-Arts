@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>VIN: Running Without a Laptop</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">VIN: Running Without a Laptop</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#vin-running-without-a-laptop"
+id="toc-vin-running-without-a-laptop">VIN: Running Without a Laptop</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#build-the-light-theremin"
+id="toc-build-the-light-theremin">1. Build the Light Theremin</a></li>
+<li><a href="#upload-the-sketch" id="toc-upload-the-sketch">2. Upload
+the Sketch</a></li>
+<li><a href="#power-it-through-vin" id="toc-power-it-through-vin">3.
+Power It Through VIN</a>
+<ul>
+<li><a href="#with-a-9v-battery" id="toc-with-a-9v-battery">With a 9V
+Battery</a></li>
+<li><a href="#with-your-power-supply-module"
+id="toc-with-your-power-supply-module">With Your Power Supply
+Module</a></li>
+</ul></li>
+<li><a href="#play-it" id="toc-play-it">4. Play It</a></li>
+<li><a href="#how-vin-works" id="toc-how-vin-works">How VIN
+Works</a></li>
+<li><a href="#try-it" id="toc-try-it">Try It</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="vin-running-without-a-laptop" class="level1">
+        <h1>VIN: Running Without a Laptop</h1>
+        <p><img src="images/cover.png"
+        alt="A 9V battery wired to an Arduino Nano&#39;s VIN pin, with no USB cable. Light falls on the board and a buzzer plays sound." /></p>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p>So far, your laptop has powered your Arduino through the USB
+        cable. But your sketch is stored on the board itself, so you
+        only need the laptop to upload it. Give the board power another
+        way, and it starts your sketch by itself.</p>
+        <p>The <strong>VIN</strong> pin is one way in. We’ll take the <a
+        href="../buzzer_speaker/buzzer_speaker.html">Light Theremin</a>
+        you built in Week 8 and run it without a laptop, so you can
+        carry it around the room. There’s no new code and no new
+        circuit.</p>
+        <p>What could your final project do if it didn’t have to stay
+        next to a laptop?</p>
+        </section>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <ul>
+        <li>Arduino Nano 33 IoT, USB cable and breadboard</li>
+        <li>From your kit: passive buzzer, photoresistor, 10kΩ resistor
+        and jumper wires</li>
+        <li>A power source, either:
+        <ul>
+        <li>a <strong>9V battery</strong> and a <strong>9V battery
+        clip</strong> (the snap connector with a red and a black wire),
+        or</li>
+        <li>your kit’s <strong>power supply module</strong> and
+        <strong>9V adapter</strong></li>
+        </ul></li>
+        </ul>
+        </section>
+        <section id="build-the-light-theremin" class="level2">
+        <h2>1. Build the Light Theremin</h2>
+        <p>This is the same circuit as the <a
+        href="../buzzer_speaker/buzzer_speaker.html">Buzzer
+        lesson</a>:</p>
+        <ul>
+        <li>Buzzer <strong>+</strong> leg → pin <strong>D8</strong></li>
+        <li>Buzzer <strong>−</strong> leg → <strong>GND</strong></li>
+        <li><strong>3.3V</strong> → one leg of the photoresistor</li>
+        <li>Other leg of the photoresistor → <strong>A0</strong>, and
+        also → <strong>10kΩ resistor</strong> →
+        <strong>GND</strong></li>
+        </ul>
+        </section>
+        <section id="upload-the-sketch" class="level2">
+        <h2>2. Upload the Sketch</h2>
+        <p>With the USB cable plugged in, upload the version that
+        calibrates itself. For the first 5 seconds after it gets power,
+        it measures the light while the built-in LED is on. That means
+        it adjusts to wherever you are when you turn it on.</p>
+        <pre class="arduino"><code>int buzzerPin = 8;
+int sensorPin = A0;
+
+int lowest = 1023;   // start high, so any reading will be lower
+int highest = 0;     // start low, so any reading will be higher
+
+void setup() {
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+
+  // calibrate for 5 seconds while the LED is on
+  digitalWrite(LED_BUILTIN, HIGH);
+  while (millis() &lt; 5000) {
+    int lightValue = analogRead(sensorPin);
+    if (lightValue &lt; lowest) {
+      lowest = lightValue;
+    }
+    if (lightValue &gt; highest) {
+      highest = lightValue;
+    }
+  }
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+void loop() {
+  int lightValue = analogRead(sensorPin);
+  int pitch = map(lightValue, lowest, highest, 200, 2000);
+  pitch = constrain(pitch, 200, 2000);
+  tone(buzzerPin, pitch);
+  delay(10);
+}</code></pre>
+        <p>Make sure it works on USB before you go on: wave your hand
+        over the sensor while the LED is on, then play it.</p>
+        </section>
+        <section id="power-it-through-vin" class="level2">
+        <h2>3. Power It Through VIN</h2>
+        <p>Unplug the USB cable first, then choose one of these.</p>
+        <section id="with-a-9v-battery" class="level3">
+        <h3>With a 9V Battery</h3>
+        <p><img src="images/wiring.png" alt="Wiring diagram. The USB cable is unplugged. A 9V battery clip's red wire goes to the Nano's VIN pin, the corner pin farthest from the USB port. Its black wire goes to the GND pin right next to VIN." style="width:100%;height:auto" /></p>
+        <p>With the battery <strong>not yet snapped on</strong>:</p>
+        <ul>
+        <li>Clip’s <strong>red</strong> wire → the <strong>VIN</strong>
+        pin’s row, the corner pin farthest from the USB port</li>
+        <li>Clip’s <strong>black</strong> wire → the
+        <strong>GND</strong> pin’s row, right next to VIN</li>
+        </ul>
+        <p>Check both wires, then snap on the battery. The clip’s wires
+        are thin, so tape them down if they slip out of the
+        breadboard.</p>
+        <blockquote class="warning">
+        <span class="uk-label"
+        style="color:black; background:#fac100">Warning</span>
+        <p>
+        <strong>9V only goes to VIN.</strong> Every other pin takes 3.3V
+        at most, so 9V on any other pin can destroy the board. Swapping
+        red and black can too. Keep the red wire off the + rail, because
+        your + rail may be connected to the 3.3V pin. If a servo’s red
+        wire is on VIN from the <a href="../sweep/sweep.html">Sweep</a>
+        lesson, take it off first: VIN now has 9V instead of the USB’s
+        5V.
+        </p>
+        </blockquote>
+        <p>A 9V battery is small, so unsnap it when you’re done. Always
+        unsnap it before you plug the USB cable back in.</p>
+        </section>
+        <section id="with-your-power-supply-module" class="level3">
+        <h3>With Your Power Supply Module</h3>
+        <p>This frees you from the laptop, but you’re still near a wall
+        outlet.</p>
+        <ol type="1">
+        <li><strong>Set up the module</strong> as in the <a
+        href="../../Workshops/Breadboard_Circuits/breadboard_circuits.html">Breadboard
+        Circuits</a> workshop, with both jumpers on <strong>5V</strong>
+        and the power off.</li>
+        <li><strong>Take off any wire between the Nano’s 3.3V pin and
+        the + rail.</strong> The + rail now has 5V on it, and 5V on the
+        3.3V pin can destroy the board. Connect the photoresistor
+        straight to the 3.3V pin’s row instead.</li>
+        <li><strong>+ rail → VIN</strong>, and <strong>– rail →
+        GND</strong>.</li>
+        <li>Plug in the adapter and press the module’s power
+        button.</li>
+        </ol>
+        </section>
+        </section>
+        <section id="play-it" class="level2">
+        <h2>4. Play It</h2>
+        <p>The built-in LED comes on for 5 seconds as soon as the board
+        gets power. Wave your hand over the sensor while it’s on, so the
+        sketch sees the brightest and darkest light you’ll use. When the
+        LED goes off, play it.</p>
+        <p>Now carry it around. What does it sound like near a window,
+        under a table or in someone’s shadow? Each new place has
+        different light, so disconnect the power and reconnect it to
+        calibrate again.</p>
+        </section>
+        <section id="how-vin-works" class="level2">
+        <h2>How VIN Works</h2>
+        <p>In the <a href="../sweep/sweep.html">Sweep</a> lesson, we
+        used VIN to get 5V from the USB out to a servo. It also works as
+        a way in. The board has a <strong>regulator</strong> that turns
+        the voltage on VIN into the 3.3V the board runs on, and that’s
+        why VIN can take 9V when the other pins can’t.</p>
+        <p>Your 3.3V pin still gives 3.3V, so the rest of your circuit
+        doesn’t change.</p>
+        </section>
+        <section id="try-it" class="level2">
+        <h2>Try It</h2>
+        <ul>
+        <li><strong>Any sketch:</strong> This works for everything
+        you’ve made. Try your <a href="../knock/knock.html">Knock</a>
+        sketch or your midterm.</li>
+        <li><strong>Hide it:</strong> Put the board and battery inside a
+        box, a ball or a hat. How does that change what people think it
+        is?</li>
+        <li><strong>Tilt instead of light:</strong> Swap the
+        photoresistor for the board’s built-in <a
+        href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer"
+        target="_blank">accelerometer</a>, so tilting the board changes
+        the pitch. This is where having no cable really helps.</li>
+        </ul>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong>Nothing happens.</strong> Check that the board’s
+        power light is on. If it isn’t, check the wires on VIN and GND,
+        then try a fresh battery. If you’re using the module, make sure
+        its jumpers are on 5V and its power is on.</li>
+        <li><strong>It works on USB but not on VIN.</strong> Look for
+        <code>while (!Serial);</code> in your sketch and remove it. That
+        line waits for a laptop to connect, so with no laptop it waits
+        forever.</li>
+        <li><strong>It only plays one pitch, or barely changes.</strong>
+        The sketch didn’t see enough change in the light during those 5
+        seconds. Disconnect the power, reconnect it, and wave your hand
+        over the sensor while the LED is on.</li>
+        <li><strong>It’s quiet.</strong> Try playing it in a quieter
+        spot, or see the note about volume in the <a
+        href="../buzzer_speaker/buzzer_speaker.html">Buzzer
+        lesson</a>.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

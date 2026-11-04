@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="pandoc" />
 
-    <title></title>
+    <title>Knock</title>
 
     <!-- UIKit files -->
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
@@ -241,7 +241,7 @@
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text">Knock Example</a>-->
+      <!--  <a class="uk-text">Knock</a>-->
       <!--</h2>-->
     </nav>
 
@@ -262,6 +262,18 @@
 <li><a href="#knock" id="toc-knock">Knock</a>
 <ul>
 <li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#wiring" id="toc-wiring">Wiring</a></li>
+<li><a href="#see-your-numbers" id="toc-see-your-numbers">See Your
+Numbers</a></li>
+<li><a href="#the-knock-example" id="toc-the-knock-example">The Knock
+Example</a>
+<ul>
+<li><a href="#how-it-works" id="toc-how-it-works">How It Works</a></li>
+</ul></li>
+<li><a href="#play-around" id="toc-play-around">Play Around</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
 </ul></li>
 </ul></div>
         </div>
@@ -273,6 +285,221 @@
         <h1>Knock</h1>
         <section id="intro" class="level2">
         <h2>Intro</h2>
+        <p>A <a href="../microphones/microphones.html">contact
+        microphone</a> is usually just a <strong>piezo</strong>, a thin
+        disc that makes a small voltage whenever it’s bent or shaken.
+        Tape one to a table or a box, and the Arduino can tell when
+        someone knocks on it.</p>
+        <p>The official Arduino documentation is a more complete
+        reference:</p>
+        <div class="topics-grid">
+        <a class="topic-card" data-type="external" href="https://docs.arduino.cc/built-in-examples/sensors/Knock/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../../images/arduino_docs.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Docs</span></div></div>
+        <h3 class="cardtitle">Knock</h3>
+        </a>
+
+        </div>
+        <p>To open the example, go to:</p>
+        <p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
+        <strong>06.Sensors</strong> &gt; <strong>Knock</strong></p>
+        </section>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <p>For this lesson, please collect the following:</p>
+        <ul>
+        <li>Arduino Nano 33 IoT, USB cable and breadboard</li>
+        <li><strong>Piezo disc with wires</strong></li>
+        <li><strong>1MΩ resistor</strong> (bands: brown, black,
+        green)</li>
+        <li><strong>10kΩ resistor</strong> (bands: brown, black,
+        orange)</li>
+        <li><strong>3.3V Zener diode</strong> (1N4728A): it looks like a
+        regular diode, with a band on one end</li>
+        <li>Masking tape and jumper wires</li>
+        </ul>
+        </section>
+        <section id="wiring" class="level2">
+        <h2>Wiring</h2>
+        <blockquote class="warning">
+        <span class="uk-label"
+        style="color:black; background:#fac100">Warning</span>
+        <p>
+        The Arduino documentation only shows the 1MΩ resistor. Don’t
+        stop there: a hard knock can make a spike of <strong>much more
+        than 3.3V</strong> for an instant, and the Nano 33 IoT’s pins
+        only take 3.3V. Never connect the piezo straight to A0. Always
+        use the 10kΩ resistor and the Zener diode too.
+        </p>
+        </blockquote>
+        <p><img src="../../Workshops/Bouncing_Ball/images/schematic.svg" alt="Schematic: the piezo connects between a node and GND, with a 1 megohm resistor across it. From that node, a 10 kilohm resistor goes to pin A0. A 3.3 volt Zener diode connects from A0 to GND, with its band toward A0." style="max-width:600px;width:100%;height:auto" /></p>
+        <p>With the <strong>USB cable unplugged</strong>, use three rows
+        on the breadboard:</p>
+        <ol type="1">
+        <li><strong>Piezo row:</strong> the piezo’s <strong>red</strong>
+        wire, one leg of the <strong>1MΩ</strong>, and one leg of the
+        <strong>10kΩ</strong>.</li>
+        <li><strong>A0 row:</strong> the other leg of the
+        <strong>10kΩ</strong>, the <strong>banded</strong> end of the
+        <strong>Zener</strong>, and a wire to <strong>A0</strong>.</li>
+        <li><strong>GND row:</strong> the piezo’s <strong>black</strong>
+        wire, the other leg of the <strong>1MΩ</strong>, the other end
+        of the <strong>Zener</strong>, and a wire to the Nano’s
+        <strong>GND</strong>.</li>
+        </ol>
+        <p>What each part does:</p>
+        <ul>
+        <li><strong>1MΩ resistor:</strong> lets the charge from each
+        knock drain away, so the reading drops back to 0.</li>
+        <li><strong>10kΩ resistor:</strong> limits how much current a
+        big spike can push toward the pin.</li>
+        <li><strong>3.3V Zener diode:</strong> if a spike goes above
+        3.3V, the extra flows to GND, so A0 stays safe. <strong>The band
+        goes toward A0.</strong></li>
+        </ul>
+        <p>Then tape the piezo flat against a table or a box, with tape
+        over the whole disc. It has to bend along with the surface, so
+        it shouldn’t hang loose.</p>
+        </section>
+        <section id="see-your-numbers" class="level2">
+        <h2>See Your Numbers</h2>
+        <p>Before using the Knock example, let’s see what the piezo
+        actually does. Upload this sketch and open the <strong>Serial
+        Plotter</strong>.</p>
+        <pre class="arduino"><code>void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println(analogRead(A0));
+}</code></pre>
+        <p>Knock on the surface. Each knock makes a sharp spike, and the
+        reading drops back down right after. Notice:</p>
+        <ul>
+        <li>How tall a soft knock is compared to a hard one.</li>
+        <li>The small bumps when nobody is knocking. This is
+        <strong>noise</strong>.</li>
+        <li>How your other movements show up too, like typing or setting
+        something down on the same table.</li>
+        </ul>
+        <p>There’s no <code>delay()</code> in this sketch on purpose. A
+        spike only lasts a moment, and a delay could miss it.</p>
+        </section>
+        <section id="the-knock-example" class="level2">
+        <h2>The Knock Example</h2>
+        <p>Now upload the Knock example. Here’s the code, without the
+        long comment at the top of the file:</p>
+        <pre class="arduino"><code>// these constants won&#39;t change:
+const int ledPin = 13;       // LED connected to digital pin 13
+const int knockSensor = A0;  // the piezo is connected to analog pin 0
+const int threshold = 100;   // threshold value to decide when the detected sound is a knock or not
+
+// these variables will change:
+int sensorReading = 0;  // variable to store the value read from the sensor pin
+int ledState = LOW;     // variable used to store the last LED status, to toggle the light
+
+void setup() {
+  pinMode(ledPin, OUTPUT);  // declare the ledPin as as OUTPUT
+  Serial.begin(9600);       // use the serial port
+}
+
+void loop() {
+  // read the sensor and store it in the variable sensorReading:
+  sensorReading = analogRead(knockSensor);
+
+  // if the sensor reading is greater than the threshold:
+  if (sensorReading &gt;= threshold) {
+    // toggle the status of the ledPin:
+    ledState = !ledState;
+    // update the LED pin itself:
+    digitalWrite(ledPin, ledState);
+    // send the string &quot;Knock!&quot; back to the computer, followed by newline
+    Serial.println(&quot;Knock!&quot;);
+    delay(100);  // delay to avoid overloading the serial port buffer
+  }
+}</code></pre>
+        <p>Open the <strong>Serial Monitor</strong> and knock. Each
+        knock should print <code>Knock!</code> and switch the Nano’s
+        built-in LED on or off.</p>
+        <section id="how-it-works" class="level3">
+        <h3>How It Works</h3>
+        <ul>
+        <li><strong><code>const int</code></strong> is a variable that
+        can never change. Pin 13 is the Nano’s built-in LED, so you
+        don’t need to wire one.</li>
+        <li><strong><code>threshold</code></strong> is the line between
+        noise and a knock. A reading at or above 100 counts as a
+        knock.</li>
+        <li><strong><code>ledState = !ledState;</code></strong> flips
+        the state. The <code>!</code> means “not”, so <code>LOW</code>
+        becomes <code>HIGH</code> and <code>HIGH</code> becomes
+        <code>LOW</code>.</li>
+        <li><strong><code>delay(100)</code></strong> waits a tenth of a
+        second after each knock. This also helps keep one knock from
+        counting more than once, since the surface keeps shaking for a
+        moment after you hit it.</li>
+        </ul>
+        </section>
+        </section>
+        <section id="play-around" class="level2">
+        <h2>Play Around</h2>
+        <p>Change <code>threshold</code> using the numbers you saw in
+        the Serial Plotter. It needs to be above the noise and below
+        your softest knock. What happens at <code>20</code>? At
+        <code>500</code>?</p>
+        <p>Then move the piezo. Try a table, a box, a door, a window or
+        a piece of cardboard. Which one gives you the tallest
+        spikes?</p>
+        <p>Now make a knock do something. All of these go inside the
+        <code>if</code>, in place of the LED code or next to it:</p>
+        <ul>
+        <li><strong>Make a sound:</strong> Connect a passive buzzer or
+        STEMMA Speaker to pin 8, as in the <a
+        href="../buzzer_speaker/buzzer_speaker.html">Buzzer lesson</a>,
+        and add <code>tone(8, 440, 100);</code>. If the sound sets off
+        another knock, you’ve made your own feedback loop, like <em><a
+        href="../microphones/microphones.html">Pendulum Music</a></em>.
+        To stop it, move the speaker away from the surface or raise
+        <code>threshold</code>.</li>
+        <li><strong>Move something:</strong> Switch a <a
+        href="../sweep/sweep.html">servo</a> between <code>0</code> and
+        <code>180</code> on each knock. You can use the
+        <code>ledState</code> variable to decide which one.</li>
+        <li><strong>Press a key:</strong> Follow the <a
+        href="../Keyboard/Keyboard.html">Keyboard lesson</a> and add
+        <code>Keyboard.write(KEY_UP_ARROW);</code> to jump in the Dino
+        game by knocking on the table. Get your <code>threshold</code>
+        right first, because every false knock presses the key in
+        whatever window is open, including your sketch.</li>
+        </ul>
+        <p>Want to know <strong>how hard</strong> someone knocked, or
+        how much time passed between knocks? The <a
+        href="../../Workshops/Bouncing_Ball/bouncing_ball.html">Bouncing
+        Ball Sensor</a> workshop uses the same circuit to do both.</p>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong>The Serial Plotter only shows 0.</strong> Piezo
+        wires are thin and can slip out of the breadboard, so check
+        those first. Then check that the piezo is taped flat, and that
+        the piezo row and the A0 row are connected through the 10kΩ
+        resistor.</li>
+        <li><strong>The readings never go above about 200, even for hard
+        knocks.</strong> The Zener is backwards. Its band must face the
+        A0 row.</li>
+        <li><strong><code>Knock!</code> prints nonstop.</strong> The 1MΩ
+        resistor may be missing or in the wrong place: it goes from the
+        piezo row to the GND row. If it’s wired correctly, raise
+        <code>threshold</code>.</li>
+        <li><strong>One knock prints twice, or the LED seems to do
+        nothing.</strong> One knock is counting more than once, so the
+        LED turns on and back off. Raise the <code>delay(100)</code> to
+        <code>delay(200)</code>.</li>
+        <li><strong>It triggers when nobody is knocking.</strong>
+        Footsteps and typing can shake the table too. Raise
+        <code>threshold</code>, or move the piezo to something
+        else.</li>
+        </ul>
         </section>
         </section>
       </div>

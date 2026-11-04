@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="pandoc" />
 
-    <title></title>
+    <title>Keyboard and Mouse</title>
 
     <!-- UIKit files -->
     <link rel="stylesheet" href="../../../css/uikit.min.css" />
@@ -241,7 +241,7 @@
         </ul>
       </div>
       <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
-      <!--  <a class="uk-text">Intro to the Keyboard Library</a>-->
+      <!--  <a class="uk-text">Keyboard and Mouse</a>-->
       <!--</h2>-->
     </nav>
 
@@ -259,7 +259,8 @@
         <div class="uk-offcanvas-bar">
           <h3 style="color: white">Table of Contents</h3>
           <div><ul>
-<li><a href="#keyboard" id="toc-keyboard">Keyboard</a>
+<li><a href="#keyboard-and-mouse" id="toc-keyboard-and-mouse">Keyboard
+and Mouse</a>
 <ul>
 <li><a href="#intro" id="toc-intro">Intro</a></li>
 <li><a href="#keyboardserial-code-breakdown"
@@ -281,6 +282,16 @@ Button</a></li>
 <li><a href="#using-special-keys-and-keyboard-modifiers-shift-ctrl-etc"
 id="toc-using-special-keys-and-keyboard-modifiers-shift-ctrl-etc">Using
 Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</a></li>
+<li><a href="#mouse" id="toc-mouse">Mouse</a>
+<ul>
+<li><a href="#click-with-a-button" id="toc-click-with-a-button">Click
+with a Button</a></li>
+<li><a href="#move-with-tilt" id="toc-move-with-tilt">Move with
+Tilt</a></li>
+</ul></li>
+<li><a href="#try-it" id="toc-try-it">Try It</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
 </ul></li>
 </ul></div>
         </div>
@@ -288,38 +299,31 @@ Special Keys and Keyboard Modifiers (Shift, Ctrl, etc)</a></li>
 
       <!-- BODY -->
       <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
-        <section id="keyboard" class="level1">
-        <h1>Keyboard</h1>
+        <section id="keyboard-and-mouse" class="level1">
+        <h1>Keyboard and Mouse</h1>
         <section id="intro" class="level2">
         <h2>Intro</h2>
-        <p>First of all, keep in mind the official Arduino Documentation
-        for a more complete reference:</p>
-        <div class="uk-margin" style="padding: 30px; width: 100%;">
-        <ul class="uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-small uk-grid-match" uk-grid="masonry: pack">
-        <li style="width: 50%; margin: auto; padding-left: 0;">
-        <div class="uk-transition-toggle">
-        <a href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-transition-scale-up"
-        style="background: #7fcbcd; opacity: 100;">
-        <div
-        class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge">
-        <h4>
-        Keyboard
-        </h4>
-        <div style="display: inline">
-        <p><img src="../../images/arduino_docs.svg" alt="" style="padding-bottom: 10px" uk-image />
-        <span class="uk-label"
-        style="background-color: #7fcbcd">Docs</span></p>
+        <p>The Nano 33 IoT can act like a USB <strong>keyboard</strong>
+        or <strong>mouse</strong>, and your computer can’t tell the
+        difference. That means anything you build can control anything
+        on your computer: a game, a p5.js sketch, a slideshow or a music
+        program, with no extra software.</p>
+        <p>The official Arduino documentation is a more complete
+        reference:</p>
+        <div class="topics-grid">
+        <a class="topic-card" data-type="external" href="https://docs.arduino.cc/language-reference/en/functions/usb/Keyboard/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../../images/arduino_docs.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Docs</span></div></div>
+        <h3 class="cardtitle">Keyboard</h3>
+        </a>
+
+        <a class="topic-card" data-type="external" href="https://docs.arduino.cc/language-reference/en/functions/usb/Mouse/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+        <div class="topic-thumb"><img src="../../../images/arduino_docs.svg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Docs</span></div></div>
+        <h3 class="cardtitle">Mouse</h3>
+        </a>
+
         </div>
-        </div>
-        </div>
-        <p></a></p>
-        </div>
-        </li>
-        </ul>
-        </div>
-        <p>Let’s locate one of the built-in examples.</p>
+        <p>Let’s start with the keyboard, using one of the built-in
+        examples.</p>
         <p>Go to:</p>
         <p><strong>File</strong> &gt; <strong>Examples</strong> &gt;
         <strong>09.USB</strong> &gt; <strong>Keyboard</strong> &gt;
@@ -443,7 +447,7 @@ void loop() {
         Check out a table with each character with its corresponding
         ASCII code.
         </p>
-        <p><a>Ascii-Code.com</a></p>
+        <p><a href="https://www.ascii-code.com/" target="_blank">Ascii-Code.com</a></p>
         </blockquote>
         <blockquote class="warning">
         <span class="uk-label uk-label-warning">Warning</span>
@@ -493,6 +497,11 @@ void loop() {
         <h2>Simulate Key Press with a Button</h2>
         <p>We can modify the code to simulate a key press when receiving
         a <code>HIGH</code> state of a digitalInput (button/switch).</p>
+        <p>Wire a push button to pin 2, as in the <a
+        href="../button/button.html">Button</a> lesson: 3.3V → button →
+        pin 2, and a 10kΩ resistor from pin 2 to GND. Before you press
+        it, click on an empty document, so the letters go somewhere
+        safe.</p>
         <pre class="arduino"><code>#include &quot;Keyboard.h&quot;
 
 void setup() {
@@ -550,7 +559,8 @@ void loop() {
         <p>In the Arduino Documentation, it tells us that we can use the
         const <code>KEY_UP_ARROW</code> and <code>KEY_DOWN_ARROW</code>
         for these keys.</p>
-        <p>I modified to code to include one more button:</p>
+        <p>I modified the code to include one more button. Wire it to
+        pin 3 the same way, with its own 10kΩ resistor:</p>
         <pre class="arduino"><code>#include &quot;Keyboard.h&quot;
 
 void setup() {
@@ -573,6 +583,137 @@ void loop() {
 
   delay(10);
 }</code></pre>
+        </section>
+        <section id="mouse" class="level2">
+        <h2>Mouse</h2>
+        <p>The <strong>Mouse</strong> library works the same way as the
+        Keyboard library. If it isn’t installed, find it in the Library
+        Manager.</p>
+        <section id="click-with-a-button" class="level3">
+        <h3>Click with a Button</h3>
+        <p>Keep your button on pin 2.</p>
+        <pre class="arduino"><code>#include &quot;Mouse.h&quot;
+
+int buttonPin = 2;
+int lastState = LOW;   // the button&#39;s state the last time we checked
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  // initialize control over the mouse:
+  Mouse.begin();
+}
+
+void loop() {
+  int buttonState = digitalRead(buttonPin);
+
+  // only click at the moment the button goes from not pressed to pressed
+  if (buttonState == HIGH &amp;&amp; lastState == LOW) {
+    Mouse.click();
+  }
+  lastState = buttonState;
+
+  delay(10);
+}</code></pre>
+        <p><code>Mouse.click()</code> presses and lets go of the left
+        mouse button. The <code>lastState</code> variable means one
+        press makes one click. Without it, holding the button would
+        click about 100 times a second.</p>
+        </section>
+        <section id="move-with-tilt" class="level3">
+        <h3>Move with Tilt</h3>
+        <p>Your Nano has an accelerometer built in, so you don’t need
+        any more parts. This sketch uses the same
+        <strong>Arduino_LSM6DS3</strong> library as the <a
+        href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer"
+        target="_blank">accelerometer tutorial</a> from Week 9. If it
+        isn’t installed, find it in the Library Manager.</p>
+        <blockquote class="warning">
+        <span class="uk-label"
+        style="color:black; background:#fac100">Warning</span>
+        <p>
+        A sketch that keeps moving the mouse can take over your cursor,
+        and then you can’t click Upload. That’s why this one only moves
+        the cursor while you <strong>hold the button</strong>.
+        </p>
+        </blockquote>
+        <pre class="arduino"><code>#include &quot;Mouse.h&quot;
+#include &lt;Arduino_LSM6DS3.h&gt;
+
+int buttonPin = 2;   // the cursor only moves while you hold this button
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  IMU.begin();
+  Mouse.begin();
+}
+
+void loop() {
+  float x, y, z;
+
+  if (digitalRead(buttonPin) == HIGH &amp;&amp; IMU.accelerationAvailable()) {
+    IMU.readAcceleration(x, y, z);
+
+    // a tilt reads between -1 and 1, so these are between -10 and 10
+    int moveX = -y * 10;
+    int moveY = -x * 10;
+    Mouse.move(moveX, moveY);
+  }
+
+  delay(10);
+}</code></pre>
+        <p>Hold the board flat with the USB port pointing away from you,
+        press the button and tilt.</p>
+        <ul>
+        <li><strong><code>Mouse.move(moveX, moveY)</code></strong> moves
+        the cursor that far from where it is now.</li>
+        <li><strong><code>int</code></strong> can’t hold decimals, so a
+        very small tilt becomes <code>0</code>. That’s why the cursor
+        stays still when the board is nearly level.</li>
+        </ul>
+        <p>If the cursor goes the wrong way, remove the minus sign from
+        that line. To change the speed, change the <code>10</code>.</p>
+        </section>
+        </section>
+        <section id="try-it" class="level2">
+        <h2>Try It</h2>
+        <ul>
+        <li><strong>Knock to click:</strong> Add
+        <code>Mouse.click();</code> inside the <code>if</code> of your
+        <a href="../knock/knock.html">Knock</a> sketch, along with the
+        <code>#include</code> and <code>Mouse.begin()</code>.</li>
+        <li><strong>Your midterm as a controller:</strong> Your midterm
+        interface is already wired for pin 2 or A0. What could it
+        control on your computer?</li>
+        <li><strong>Change the slide:</strong> Use
+        <code>Keyboard.write(KEY_RIGHT_ARROW)</code> to move through a
+        slideshow.</li>
+        <li><strong>Your own p5.js sketch:</strong> p5.js can already
+        respond to keys and the mouse, so your Arduino can control your
+        sketch with no extra code.</li>
+        </ul>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong>The keyboard or mouse gets out of control.</strong>
+        Unplug the USB cable.</li>
+        <li><strong>You can’t upload, because the sketch keeps typing or
+        moving.</strong> Double-tap the reset button on the Nano. This
+        stops your sketch so you can upload a fixed one. If the port
+        disappears, choose it again under <strong>Tools</strong> &gt;
+        <strong>Port</strong>.</li>
+        <li><strong><code>Keyboard.h</code> or <code>Mouse.h</code>: No
+        such file or directory.</strong> Install that library from the
+        Library Manager.</li>
+        <li><strong>Nothing happens when you press the button.</strong>
+        Check the wiring with the <a
+        href="../button/button.html">Button</a> sketch first.</li>
+        <li><strong>One press clicks twice.</strong> Change
+        <code>delay(10)</code> to <code>delay(20)</code>.</li>
+        <li><strong>Your Mac opens a Keyboard Setup Assistant
+        window.</strong> It thinks you plugged in a new keyboard. You
+        can close it.</li>
+        </ul>
         </section>
         </section>
       </div>

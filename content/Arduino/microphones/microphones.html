@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Microphones</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Microphones</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#microphones" id="toc-microphones">Microphones</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#set-up-the-speaker" id="toc-set-up-the-speaker">Set Up the
+Speaker</a></li>
+<li><a href="#electret-microphone-the-air"
+id="toc-electret-microphone-the-air">Electret Microphone: The
+Air</a></li>
+<li><a href="#feedback-in-art" id="toc-feedback-in-art">Feedback in
+Art</a></li>
+<li><a href="#read-the-electret-with-the-arduino"
+id="toc-read-the-electret-with-the-arduino">Read the Electret with the
+Arduino</a></li>
+<li><a href="#contact-microphone-the-object"
+id="toc-contact-microphone-the-object">Contact Microphone: The
+Object</a></li>
+<li><a href="#laurie-anderson-the-handphone-table"
+id="toc-laurie-anderson-the-handphone-table">Laurie Anderson: The
+Handphone Table</a></li>
+<li><a href="#electromagnetic-pickup-fields"
+id="toc-electromagnetic-pickup-fields">Electromagnetic Pickup:
+Fields</a></li>
+<li><a href="#christina-kubisch-electrical-walks"
+id="toc-christina-kubisch-electrical-walks">Christina Kubisch:
+Electrical Walks</a></li>
+<li><a href="#next" id="toc-next">Next</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="microphones" class="level1">
+        <h1>Microphones</h1>
+        <p><img src="images/header.png"
+        alt="Three microphones wired to one speaker. An electret microphone hears waves in the air, a contact microphone taped to a box hears the box shake, and a coil hears the magnetic field around a charger." /></p>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p>A microphone turns something you can’t see into a voltage.
+        Send that voltage to an amplifier and a speaker, and you can
+        hear it.</p>
+        <p>We’ll plug three kinds into the same speaker. They all get
+        wired almost the same way, but each one listens to something
+        different:</p>
+        <ul>
+        <li>An <strong>electret microphone</strong> hears the air.</li>
+        <li>A <strong>contact microphone</strong> hears the object it’s
+        touching.</li>
+        <li>An <strong>electromagnetic pickup</strong> hears the
+        magnetic fields around anything that uses electricity.</li>
+        </ul>
+        <p>As you listen, think about your final project. What could it
+        listen to?</p>
+        </section>
+        <section id="set-up-the-speaker" class="level2">
+        <h2>Set Up the Speaker</h2>
+        <p>You don’t need any code to listen. The Arduino is only giving
+        power to the circuit, so we can hear exactly what each
+        microphone hears.</p>
+        <blockquote class="warning">
+        <span class="uk-label"
+        style="color:black; background:#fac100">Warning</span>
+        <p>
+        Turn the volume down before you plug anything in. The speaker
+        has a small volume adjustment that you turn with a screwdriver,
+        and feedback gets loud quickly.
+        </p>
+        </blockquote>
+        <p>Connect the <a
+        href="https://www.adafruit.com/product/3885">STEMMA Speaker</a>.
+        This part stays the same for all three microphones:</p>
+        <ul>
+        <li><strong>Red</strong> (power) → Nano
+        <strong>3.3V</strong></li>
+        <li><strong>Black</strong> (ground) → Nano
+        <strong>GND</strong></li>
+        <li><strong>White</strong> (signal) → the microphone you’re
+        trying</li>
+        </ul>
+        </section>
+        <section id="electret-microphone-the-air" class="level2">
+        <h2>Electret Microphone: The Air</h2>
+        <p>Sound is air moving. Inside an electret microphone is a very
+        thin sheet that moves with the air, and that movement makes a
+        very small voltage. It’s so small that these microphones usually
+        come on a board with an <strong>amplifier</strong>, which makes
+        the voltage big enough to use.</p>
+        <p>Wire it up:</p>
+        <ul>
+        <li><strong>VCC</strong> (or VDD) → Nano
+        <strong>3.3V</strong></li>
+        <li><strong>GND</strong> → Nano <strong>GND</strong></li>
+        <li><strong>OUT</strong> → speaker’s <strong>white</strong>
+        wire</li>
+        </ul>
+        <p>Talk into it or clap. Then move it slowly toward the speaker.
+        Where does it start to howl?</p>
+        <p>The microphone hears everything in the room, including the
+        speaker it’s plugged into. When it gets too close, this
+        happens:</p>
+        <ol type="1">
+        <li>The microphone hears the speaker.</li>
+        <li>The amplifier makes that sound bigger, and the speaker plays
+        it.</li>
+        <li>The microphone hears that louder sound, and it goes around
+        again.</li>
+        </ol>
+        <p>This loop is called <strong>feedback</strong>. In a fraction
+        of a second it grows into a howl, and it stops as soon as you
+        move the microphone away.</p>
+        </section>
+        <section id="feedback-in-art" class="level2">
+        <h2>Feedback in Art</h2>
+        <p>Feedback is usually a mistake that someone rushes to fix.
+        Steve Reich used it on purpose. As you watch, ask:
+        <strong>what’s in the loop?</strong></p>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/dLaZ8LRfmkg" title="Steve Reich: Pendulum Music, by Maya Kawasaki and Shintaro Shibayama" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Steve Reich, <em>Pendulum Music</em>
+        (1968)</strong><br />
+        This version is by Maya Kawasaki and Shintaro Shibayama. Reich
+        got the idea while swinging a live microphone like a lasso and
+        hearing it squeal as it passed a speaker. In the piece,
+        microphones hang from their cables above speakers. The
+        performers pull them back, let go, then sit and listen with the
+        audience. Each microphone makes a burst of feedback every time
+        it swings past its speaker, and the bursts drift in and out of
+        time with each other. The piece ends after the microphones have
+        stopped moving, when the performers pull the plug on the
+        amplifiers.</p>
+        <p>At a 1969 performance at the Whitney Museum, the performers
+        were the artists Richard Serra, Bruce Nauman and Michael Snow,
+        and the composer James Tenney.</p>
+        <p><strong>The loop:</strong> microphone, amplifier, speaker,
+        air and back to the microphone. Nobody plays a note. The
+        performers set up the system, and it plays itself.</p>
+        </div>
+        </section>
+        <section id="read-the-electret-with-the-arduino" class="level2">
+        <h2>Read the Electret with the Arduino</h2>
+        <p>The Arduino can listen too. Take the microphone’s
+        <strong>OUT</strong> wire off the speaker and connect it to
+        <strong>A0</strong>:</p>
+        <ul>
+        <li><strong>VCC</strong> (or VDD) → Nano
+        <strong>3.3V</strong></li>
+        <li><strong>GND</strong> → Nano <strong>GND</strong></li>
+        <li><strong>OUT</strong> → <strong>A0</strong></li>
+        </ul>
+        <p>Keep VCC on 3.3V. The microphone’s output can swing as high
+        as its power, and A0 only takes 3.3V.</p>
+        <p>A microphone’s reading swings up and down around a middle
+        value, so one reading doesn’t tell you how loud it is. This
+        sketch listens for 50 milliseconds and remembers the lowest and
+        highest readings. The bigger the difference between them, the
+        louder the sound. It’s the same idea as the calibration in the
+        <a href="../buzzer_speaker/buzzer_speaker.html">Light
+        Theremin</a>.</p>
+        <pre class="arduino"><code>// Electret microphone: how loud is it?
+// Wiring: VCC to 3.3V, GND to GND, OUT to A0
+
+int micPin = A0;
+int threshold = 100;   // loudness that turns on the LED (change this)
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  int lowest = 1023;   // start high, so any reading will be lower
+  int highest = 0;     // start low, so any reading will be higher
+
+  // listen for 50 milliseconds, remembering the lowest and highest readings
+  unsigned long start = millis();
+  while (millis() - start &lt; 50) {
+    int reading = analogRead(micPin);
+    if (reading &lt; lowest) {
+      lowest = reading;
+    }
+    if (reading &gt; highest) {
+      highest = reading;
+    }
+  }
+
+  // the bigger the swing, the louder the sound
+  int loudness = highest - lowest;
+  Serial.println(loudness);
+
+  if (loudness &gt; threshold) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+}</code></pre>
+        <p>Upload it and open the <strong>Serial Plotter</strong>. Talk,
+        clap and stay quiet, and watch the line. Then change
+        <code>threshold</code> so it’s above the noise in the room and
+        below a clap. The built-in LED should come on when you clap.</p>
+        <p>Try making it do something:</p>
+        <ul>
+        <li><strong>Make a sound:</strong> Connect a passive buzzer to
+        pin 8 and use <code>map(loudness, 0, 500, 200, 2000)</code> to
+        turn loudness into a pitch for <code>tone()</code>. The
+        microphone will hear the buzzer too, so you’ve made your own
+        feedback loop.</li>
+        <li><strong>Move something:</strong> Use <code>map()</code> the
+        same way to turn loudness into an angle for a <a
+        href="../sweep/sweep.html">servo</a>.</li>
+        </ul>
+        </section>
+        <section id="contact-microphone-the-object" class="level2">
+        <h2>Contact Microphone: The Object</h2>
+        <p>A contact microphone is usually just a
+        <strong>piezo</strong>, a thin disc that makes a small voltage
+        whenever it’s bent or shaken. It hears very little of the air.
+        Instead, it hears the vibrations in whatever it’s taped to.</p>
+        <p>Wire it up:</p>
+        <ul>
+        <li>Build the circuit from the <a
+        href="../knock/knock.html">Knock</a> lesson, with the 1MΩ
+        resistor, the 10kΩ resistor and the Zener diode.</li>
+        <li>Connect the speaker’s <strong>white</strong> wire to the row
+        that would go to A0.</li>
+        </ul>
+        <p>Tape one to a table and you can hear knocks, scratches and
+        footsteps. Tape one to a box, a window or a <a
+        href="../../Workshops/Doorstop_Switch/doorstop_switch.html">doorstop
+        spring</a> and you hear the inside of that object, often with
+        sounds you wouldn’t notice with your ears. Tap it, scratch it
+        and drag things across it.</p>
+        <p>Then hold the speaker against the object. Can you get
+        feedback?</p>
+        <p>The Arduino can read a piezo too. That’s what we do in the <a
+        href="../knock/knock.html">Knock</a> lesson.</p>
+        </section>
+        <section id="laurie-anderson-the-handphone-table"
+        class="level2">
+        <h2>Laurie Anderson: The Handphone Table</h2>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/dElYX_yiyBQ" title="Laurie Anderson: The Handphone Table, Festival Archipel 2023" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Laurie Anderson, <em>The Handphone Table</em>
+        (1978)</strong><br />
+        Shown here at Festival Archipel in Geneva in 2023. You sit at a
+        table, put your elbows in the hollows on the tabletop and cover
+        your ears with your hands. Then you hear sound through the bones
+        of your arms. Anderson got the idea when she rested her head on
+        her hands while using an electric typewriter.</p>
+        <p><strong>What’s listening:</strong> your own body. A contact
+        microphone hears vibrations moving through an object. This piece
+        runs that idea the other way, sending vibrations through a table
+        and into your bones.</p>
+        </div>
+        </section>
+        <section id="electromagnetic-pickup-fields" class="level2">
+        <h2>Electromagnetic Pickup: Fields</h2>
+        <p>An electromagnetic pickup is a <strong>coil</strong> of wire.
+        When the magnetic field near a coil changes, it makes a voltage
+        in the wire. Chargers, screens, motors and lights all make
+        changing magnetic fields as they run. You can’t hear those
+        fields, but a coil and an amplifier turn them into sound.</p>
+        <p>A <a
+        href="../../Blog/CustomSpeakerWorkshop/CustomSpeakerWorkshop.html">speaker</a>
+        is the same idea running backward: a voltage in its coil makes
+        it move. Guitar pickups use coils too.</p>
+        <p>Any coil of wire can do this, and the more turns it has, the
+        more it hears. A <strong>telephone pickup coil</strong> is a
+        ready-made one with a lot of turns, made for recording phone
+        calls. We don’t have enough pickups for everyone, so I’ll
+        demonstrate this one with a coil of wire.</p>
+        <p>Wire it up:</p>
+        <ul>
+        <li>One end of the coil → speaker’s <strong>white</strong>
+        wire</li>
+        <li>Other end of the coil → Nano <strong>GND</strong> (it
+        doesn’t matter which end goes where)</li>
+        </ul>
+        <p>If the wire has a clear coating, like magnet wire, sand the
+        ends first so they make contact.</p>
+        <p>A coil makes a very small voltage, so this one needs more
+        volume than the other two. Start by moving a magnet near the
+        coil. The moving magnet changes the field, so you should hear a
+        thump. Then hold the coil close to a phone charger, a laptop or
+        a screen, and move it around. The sound can change a lot in just
+        a few centimeters. Then bring it near the speaker itself.</p>
+        <p>Only hold the coil near the outside of things. It doesn’t
+        need to touch anything, so never open a device or touch bare
+        wires.</p>
+        <p>Coils can make feedback too. Here’s <em>Pendulum Music</em>
+        again, with coils swinging instead of microphones:</p>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/1KvU7vxKFcA" title="Steve Reich: Pendulum Music (DIY), by Tero Parviainen" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Tero Parviainen, <em>Pendulum Music</em>
+        (DIY)</strong><br />
+        Made with two telephone pickup coils and two small
+        battery-powered guitar amps.</p>
+        <p><strong>The loop:</strong> coil, amplifier, the speaker’s
+        magnetic field and back to the coil. A coil can’t really hear
+        the air, so this loop runs through magnetic fields instead of
+        sound.</p>
+        </div>
+        </section>
+        <section id="christina-kubisch-electrical-walks" class="level2">
+        <h2>Christina Kubisch: Electrical Walks</h2>
+        <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/k2Yjfdnbtgw" title="Christina Kubisch: Discovering new sounds" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <p><strong>Christina Kubisch, <em><a
+        href="https://christinakubisch.de/electrical-walks"
+        target="_blank">Electrical Walks</a></em> (since
+        2003)</strong><br />
+        Kubisch has worked with electromagnetic induction since the late
+        1970s, and in 2003 she took it out into the city. You borrow a
+        pair of headphones with coils built in, take a map and start
+        walking. You hear the fields around you: lights, anti-theft
+        gates, ATMs, surveillance cameras, neon signs and transit lines.
+        In this video from the San Francisco Museum of Modern Art, she
+        talks about how she discovered electromagnetic induction.</p>
+        <p><strong>What’s listening:</strong> coils in the headphones.
+        It isn’t a recording. You’re hearing the fields around you as
+        you walk through them.</p>
+        </div>
+        <div class="video-embed">
+        <iframe src="https://player.vimeo.com/video/54846163" title="Christina Kubisch: Electrical Walks, an introduction" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+        </iframe>
+        <p><strong>An introduction to <em>Electrical Walks</em> (about
+        11 minutes)</strong><br />
+        Kubisch’s own introduction to the series.</p>
+        </div>
+        <p><strong>It happened here.</strong> In 2007, Kubisch brought
+        <em>Electrical Walks</em> to the Loop, right next to our campus,
+        with Chicago’s Experimental Sound Studio. You can still see the
+        <a
+        href="https://electricalwalks.org/maps/2007/14_Chicago/Chicago_brochure-v1e.pdf"
+        target="_blank">brochure and map</a>. Its advice also works for
+        your own pickup: “Walk slowly, and sometimes just stop and turn
+        your head around – electromagnetic fields can vary greatly
+        within very short distances.”</p>
+        <p><strong>Listen for yourself.</strong> The project’s site has
+        an <a
+        href="https://electricalwalks.org/electromagnetic-sounds-archive/"
+        target="_blank">archive of electromagnetic sounds</a> and
+        virtual walks through <a
+        href="https://electricalwalks.org/virtual-walk-oslo/"
+        target="_blank">Oslo</a> and <a
+        href="https://electricalwalks.org/virtual-walk-tbilisi/"
+        target="_blank">Tbilisi</a>.</p>
+        </section>
+        <section id="next" class="level2">
+        <h2>Next</h2>
+        <p>In the <a href="../knock/knock.html">Knock</a> lesson, we’ll
+        connect a contact microphone to the Arduino, so your code can
+        respond when someone knocks on something.</p>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>
