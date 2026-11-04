@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Teachable Machine Bridge</title>
+    <script src="https://unpkg.com/ml5@1.4.0/dist/ml5.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../fonts/alegreya/AlegreyaSans-Regular.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Alegreya Sans";
+        src: url("../../../fonts/alegreya/AlegreyaSans-ExtraBold.ttf");
+        font-weight: 800;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f2dcbf;
+        color: #1d2433;
+        font: 400 19px/1.4 "Alegreya Sans", sans-serif;
+      }
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 20px 48px;
+      }
+      h1 {
+        margin: 0 0 4px;
+        font-size: 38px;
+        font-weight: 800;
+        color: #2f64b7;
+      }
+      h2 {
+        margin: 0 0 8px;
+        font-size: 22px;
+        font-weight: 800;
+      }
+      .intro {
+        margin: 0 0 20px;
+      }
+      .columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+      @media (max-width: 760px) {
+        .columns {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      .panel {
+        background: #fffaf3;
+        border-radius: 10px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+      }
+      input[type="url"] {
+        flex: 1;
+        min-width: 0;
+        padding: 8px 10px;
+        border: 2px solid #1d2433;
+        border-radius: 6px;
+        font: inherit;
+        font-size: 16px;
+      }
+      button {
+        padding: 8px 14px;
+        border: 0;
+        border-radius: 6px;
+        background: #2f64b7;
+        color: #fff;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      button:disabled {
+        background: #9a9aa2;
+        cursor: default;
+      }
+      .status {
+        min-height: 1.4em;
+        margin: 8px 0 0;
+        font-size: 17px;
+      }
+      .status.problem {
+        color: #b52d22;
+        font-weight: 800;
+      }
+      #frame {
+        display: none;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto 12px;
+        border-radius: 8px;
+        background: #1d2433;
+      }
+      .class-row {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr) 52px;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+      .letter {
+        width: 34px;
+        height: 34px;
+        border-radius: 6px;
+        background: #1d2433;
+        color: #fff;
+        font-weight: 800;
+        line-height: 34px;
+        text-align: center;
+      }
+      .class-row.sent .letter {
+        background: #d53f32;
+      }
+      .class-name {
+        overflow: hidden;
+        font-size: 17px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .track {
+        height: 10px;
+        border-radius: 5px;
+        background: #e6c79c;
+      }
+      .fill {
+        width: 0;
+        height: 100%;
+        border-radius: 5px;
+        background: #2f64b7;
+      }
+      .percent {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      label {
+        display: block;
+        margin-top: 12px;
+        font-size: 17px;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      #sent {
+        margin: 10px 0 0;
+        font-size: 24px;
+        font-weight: 800;
+      }
+      #log {
+        height: 110px;
+        margin: 6px 0 0;
+        padding: 8px;
+        overflow-y: auto;
+        border-radius: 6px;
+        background: #1d2433;
+        color: #fbc740;
+        font: 14px/1.35 monospace;
+        white-space: pre-wrap;
+      }
+      .small {
+        margin: 6px 0 0;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Teachable Machine Bridge</h1>
+      <p class="intro">
+        Your model watches the webcam, and this page sends your Arduino one letter over the USB cable.
+        The camera picture stays on this computer.
+      </p>
+
+      <div class="columns">
+        <div>
+          <section class="panel">
+            <h2>1. Paste your model's link</h2>
+            <div class="row">
+              <input id="link" type="url" placeholder="https://teachablemachine.withgoogle.com/models/..." />
+              <button id="load">Load</button>
+            </div>
+            <p id="modelStatus" class="status"></p>
+          </section>
+
+          <section class="panel">
+            <h2>2. Start the camera</h2>
+            <button id="camera">Start Camera</button>
+            <p id="cameraStatus" class="status"></p>
+          </section>
+
+          <section class="panel">
+            <h2>3. Connect your Arduino</h2>
+            <button id="connect">Connect Arduino</button>
+            <p class="small">Close the Serial Monitor first. Only one program can use the board at a time.</p>
+            <p id="arduinoStatus" class="status"></p>
+          </section>
+        </div>
+
+        <div>
+          <section class="panel">
+            <h2>What it sees</h2>
+            <canvas id="frame" width="224" height="224"></canvas>
+            <div id="classes"><p class="small">Load a model to see its classes here.</p></div>
+            <label>
+              Only send a letter when it's at least <strong id="sureValue">80</strong>% sure
+              <input id="sure" type="range" min="50" max="99" value="80" />
+            </label>
+            <p id="sent">Sent to Arduino: nothing yet</p>
+          </section>
+
+          <section class="panel">
+            <h2>From your Arduino</h2>
+            <p class="small">Anything your sketch prints with <code>Serial.println()</code> shows up here.</p>
+            <div id="log"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const STEADY_MS = 300; // a new answer has to last this long before it's sent
+
+      const el = (id) => document.getElementById(id);
+      const frame = el("frame");
+      const frameContext = frame.getContext("2d", { willReadFrequently: true });
+      const video = document.createElement("video");
+      video.playsInline = true;
+      video.muted = true;
+
+      let classifier = null;
+      let labels = []; // in the same order as your classes in Teachable Machine
+      let rows = {}; // label -> its row on the page
+      let cameraOn = false;
+      let writer = null; // sends to the Arduino
+      let candidate = null; // the letter it currently thinks it sees
+      let candidateSince = 0;
+      let current = null; // the last letter it was sure about
+      let sent = null; // the last letter the Arduino actually got
+
+      function say(id, message, problem = false) {
+        el(id).textContent = message;
+        el(id).classList.toggle("problem", problem);
+      }
+
+      // ---------- 1. the model ----------
+
+      // Returns the model's folder, or null if this isn't a Teachable Machine link.
+      function modelFolder(text) {
+        const match = text
+          .trim()
+          .match(/^(?:https:\/\/)?teachablemachine\.withgoogle\.com\/models\/([\w-]+)(?:\/.*)?$/);
+        return match ? `https://teachablemachine.withgoogle.com/models/${match[1]}/` : null;
+      }
+
+      async function loadModel() {
+        if (el("load").disabled) return;
+        const folder = modelFolder(el("link").value);
+        if (!folder) {
+          say("modelStatus", "That doesn't look like a Teachable Machine link. It should start with https://teachablemachine.withgoogle.com/models/", true);
+          return;
+        }
+        el("load").disabled = true;
+        say("modelStatus", "Loading your model…");
+        try {
+          const response = await fetch(folder + "metadata.json");
+          if (!response.ok) throw new Error("no model at that link");
+          const metadata = await response.json();
+          const loaded = await ml5.imageClassifier(folder + "model.json");
+          classifier = loaded;
+          labels = metadata.labels;
+          showClasses();
+          localStorage.setItem("tmBridgeLink", folder);
+          say("modelStatus", `Loaded, with ${labels.length} classes.`);
+        } catch (error) {
+          console.error(error);
+          say("modelStatus", "Couldn't load that model. Check the link, and that you clicked Upload my model in Teachable Machine.", true);
+        }
+        el("load").disabled = false;
+      }
+
+      function letterFor(label) {
+        return String.fromCharCode(65 + labels.indexOf(label)); // A, B, C...
+      }
+
+      function showClasses() {
+        const box = el("classes");
+        box.textContent = "";
+        rows = {};
+        candidate = current = sent = null;
+        el("sent").textContent = "Sent to Arduino: nothing yet";
+        for (const label of labels) {
+          const row = document.createElement("div");
+          row.className = "class-row";
+          const letter = document.createElement("div");
+          letter.className = "letter";
+          letter.textContent = letterFor(label);
+          const middle = document.createElement("div");
+          const name = document.createElement("div");
+          name.className = "class-name";
+          name.textContent = label; // class names are text, never HTML
+          const track = document.createElement("div");
+          track.className = "track";
+          const fill = document.createElement("div");
+          fill.className = "fill";
+          track.append(fill);
+          middle.append(name, track);
+          const percent = document.createElement("div");
+          percent.className = "percent";
+          percent.textContent = "0%";
+          row.append(letter, middle, percent);
+          box.append(row);
+          rows[label] = { row, fill, percent };
+        }
+      }
+
+      // ---------- 2. the camera ----------
+
+      async function startCamera() {
+        el("camera").disabled = true;
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+          video.srcObject = stream;
+          await video.play();
+          cameraOn = true;
+          frame.style.display = "block";
+          say("cameraStatus", "");
+          el("camera").textContent = "Camera On";
+          drawFrame();
+          classifyLoop();
+        } catch (error) {
+          console.error(error);
+          el("camera").disabled = false;
+          say("cameraStatus", "Couldn't open the camera. Allow it in your browser's address bar and close other apps that use it.", true);
+        }
+      }
+
+      // Teachable Machine trains on a mirrored square from the middle of the
+      // picture, so the model should see the same thing here.
+      function drawFrame() {
+        const side = Math.min(video.videoWidth, video.videoHeight);
+        if (side > 0) {
+          const x = (video.videoWidth - side) / 2;
+          const y = (video.videoHeight - side) / 2;
+          frameContext.setTransform(-1, 0, 0, 1, frame.width, 0);
+          frameContext.drawImage(video, x, y, side, side, 0, 0, frame.width, frame.height);
+        }
+        requestAnimationFrame(drawFrame);
+      }
+
+      async function classifyLoop() {
+        if (classifier && video.videoWidth > 0) {
+          try {
+            showResults(await classifier.classify(frame));
+          } catch (error) {
+            console.error(error);
+          }
+        }
+        setTimeout(classifyLoop, 100);
+      }
+
+      function showResults(results) {
+        let best = results[0];
+        for (const result of results) {
+          if (result.confidence > best.confidence) best = result;
+          const row = rows[result.label];
+          if (row) {
+            const percent = Math.round(result.confidence * 100);
+            row.fill.style.width = percent + "%";
+            row.percent.textContent = percent + "%";
+          }
+        }
+
+        // Unsure answers don't count, and a new answer has to last a moment,
+        // so one blurry frame doesn't send the Arduino the wrong letter.
+        const sure = best.confidence * 100 >= Number(el("sure").value);
+        const letter = sure && labels.includes(best.label) ? letterFor(best.label) : null;
+        const now = performance.now();
+        if (letter !== candidate) {
+          candidate = letter;
+          candidateSince = now;
+        }
+        if (candidate && candidate !== current && now - candidateSince >= STEADY_MS) {
+          current = candidate;
+          sendCurrent();
+        }
+      }
+
+      // ---------- 3. the Arduino ----------
+
+      async function connectArduino() {
+        if (!("serial" in navigator)) {
+          say("arduinoStatus", "This browser can't talk to USB boards. Please use Chrome or Edge.", true);
+          return;
+        }
+        let port;
+        try {
+          port = await navigator.serial.requestPort({ filters: [{ usbVendorId: 0x2341 }] });
+        } catch (error) {
+          say("arduinoStatus", "No board chosen. Is your Arduino plugged in?", true);
+          return;
+        }
+        try {
+          await port.open({ baudRate: 9600 });
+        } catch (error) {
+          console.error(error);
+          say("arduinoStatus", "Couldn't open the board. Close the Serial Monitor, then try again.", true);
+          return;
+        }
+        writer = port.writable.getWriter();
+        el("connect").disabled = true;
+        el("connect").textContent = "Connected";
+        say("arduinoStatus", "Connected.");
+        sent = null;
+        sendCurrent(); // tell it right away what the model sees now
+        listen(port);
+      }
+
+      async function sendCurrent() {
+        if (!current) return;
+        for (const label of labels) {
+          rows[label].row.classList.toggle("sent", letterFor(label) === current);
+        }
+        if (!writer) {
+          el("sent").textContent = `Ready to send: ${current} (connect your Arduino)`;
+          return;
+        }
+        if (current === sent) return;
+        const letter = current;
+        try {
+          await writer.write(new TextEncoder().encode(letter));
+          sent = letter;
+          el("sent").textContent = `Sent to Arduino: ${letter}`;
+        } catch (error) {
+          lostArduino();
+        }
+      }
+
+      // Show whatever the sketch prints. This also notices if the board is unplugged.
+      async function listen(port) {
+        const decoder = new TextDecoder();
+        const log = el("log");
+        try {
+          const reader = port.readable.getReader();
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            log.textContent = (log.textContent + decoder.decode(value)).slice(-2000);
+            log.scrollTop = log.scrollHeight;
+          }
+        } catch (error) {
+          lostArduino();
+        }
+      }
+
+      function lostArduino() {
+        if (!writer) return;
+        writer = null;
+        el("connect").disabled = false;
+        el("connect").textContent = "Connect Arduino";
+        say("arduinoStatus", "Lost the Arduino. Plug it back in, reload this page and connect again.", true);
+      }
+
+      // ---------- buttons ----------
+
+      el("load").addEventListener("click", loadModel);
+      el("link").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") loadModel();
+      });
+      el("camera").addEventListener("click", startCamera);
+      el("connect").addEventListener("click", connectArduino);
+      el("sure").addEventListener("input", () => {
+        el("sureValue").textContent = el("sure").value;
+      });
+      el("link").value = localStorage.getItem("tmBridgeLink") || "";
+    </script>
+  </body>
+</html>

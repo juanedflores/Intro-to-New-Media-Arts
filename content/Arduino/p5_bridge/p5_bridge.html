@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>p5.js Bridge: Connect Your Arduino to the Browser</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">p5.js Bridge: Connect Your Arduino to the
+Browser</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#p5.js-bridge" id="toc-p5.js-bridge">p5.js Bridge</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#set-up-the-p5.js-web-editor"
+id="toc-set-up-the-p5.js-web-editor">Set Up the p5.js Web
+Editor</a></li>
+<li><a href="#part-1-arduino-to-p5.js"
+id="toc-part-1-arduino-to-p5.js">Part 1: Arduino to p5.js</a></li>
+<li><a href="#part-2-p5.js-to-arduino"
+id="toc-part-2-p5.js-to-arduino">Part 2: p5.js to Arduino</a></li>
+<li><a href="#part-3-sending-several-numbers"
+id="toc-part-3-sending-several-numbers">Part 3: Sending Several
+Numbers</a></li>
+<li><a href="#part-4-your-own-teachable-machine-sketch"
+id="toc-part-4-your-own-teachable-machine-sketch">Part 4: Your Own
+Teachable Machine Sketch</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="p5.js-bridge" class="level1">
+        <h1>p5.js Bridge</h1>
+        <p><img src="images/cover.png"
+        alt="An Arduino and a browser window running a p5.js sketch, connected by a USB cable with arrows going both ways." /></p>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p><a href="https://p5js.org/" target="_blank">p5.js</a> is a
+        way to draw and make interactive things with code in your
+        browser. A p5.js sketch looks a lot like an Arduino sketch:
+        <code>setup()</code> runs once, and <code>draw()</code> runs
+        over and over, like <code>loop()</code>.</p>
+        <p>Your Arduino and a p5.js sketch can talk to each other
+        through the USB cable. This is the same <strong>serial</strong>
+        connection the Serial Monitor uses, so your sensors can control
+        what’s on screen, and what’s on screen can control your
+        Arduino.</p>
+        <p>We’ll use a library called <a
+        href="https://github.com/gohai/p5.webserial"
+        target="_blank">p5.webserial</a>, which handles the connection
+        for you.</p>
+        </section>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <ul>
+        <li>Arduino Nano 33 IoT and USB cable</li>
+        <li>Chrome or Edge</li>
+        <li>A potentiometer or photoresistor on A0, wired as in the <a
+        href="../cheat_sheet/cheat_sheet.html">Arduino Cheat
+        Sheet</a></li>
+        </ul>
+        </section>
+        <section id="set-up-the-p5.js-web-editor" class="level2">
+        <h2>Set Up the p5.js Web Editor</h2>
+        <ol type="1">
+        <li>Go to the <a href="https://editor.p5js.org/"
+        target="_blank">p5.js Web Editor</a>. You don’t need an account
+        to try it, but you need one to save your work.</li>
+        <li>Click the <strong>&gt;</strong> arrow next to the file name
+        to see your files, then open <strong>index.html</strong>.</li>
+        <li>Paste this line right after the line that loads p5.js (it
+        ends in <code>p5.js</code>):</li>
+        </ol>
+        <div class="sourceCode" id="cb1"><pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://unpkg.com/@gohai/p5.webserial@1/libraries/p5.webserial.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div>
+        <ol start="4" type="1">
+        <li>Go back to <strong>sketch.js</strong>. You’ll paste each
+        p5.js sketch below in there.</li>
+        </ol>
+        <blockquote class="warning">
+        <span class="uk-label"
+        style="color:black; background:#fac100">Warning</span>
+        <p>
+        <strong>Close the Serial Monitor and Serial Plotter</strong>
+        before you connect. Only one program can use the board at a
+        time. To upload a new Arduino sketch, stop your p5.js sketch
+        first.
+        </p>
+        </blockquote>
+        </section>
+        <section id="part-1-arduino-to-p5.js" class="level2">
+        <h2>Part 1: Arduino to p5.js</h2>
+        <p>Let’s make a circle grow and shrink with your sensor.</p>
+        <p><strong>Arduino:</strong> this sends a reading about 50 times
+        a second, as a line of text.</p>
+        <pre class="arduino"><code>void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println(analogRead(A0));
+  delay(20);
+}</code></pre>
+        <p><strong>p5.js:</strong></p>
+        <div class="sourceCode" id="cb3"><pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> port<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> reading <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">400</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  port <span class="op">=</span> <span class="fu">createSerial</span>()<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">// browsers only let you choose a board after you click something</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> button <span class="op">=</span> <span class="fu">createButton</span>(<span class="st">&quot;Connect Arduino&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  button<span class="op">.</span><span class="fu">mousePressed</span>(connectArduino)<span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">connectArduino</span>() {</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>port<span class="op">.</span><span class="fu">opened</span>()) {</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    port<span class="op">.</span><span class="fu">open</span>(<span class="st">&quot;Arduino&quot;</span><span class="op">,</span> <span class="dv">9600</span>)<span class="op">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">240</span>)<span class="op">;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">// get one line of text from the Arduino, if a whole line has arrived</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> message <span class="op">=</span> port<span class="op">.</span><span class="fu">readUntil</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (message<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    reading <span class="op">=</span> <span class="bu">Number</span>(message)<span class="op">;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> size <span class="op">=</span> <span class="fu">map</span>(reading<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1023</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">380</span>)<span class="op">;</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">circle</span>(width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> height <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> size)<span class="op">;</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+        <p>Click the play button, then <strong>Connect Arduino</strong>.
+        Choose your board in the list and click
+        <strong>Connect</strong>. Now turn the potentiometer, or cover
+        the photoresistor.</p>
+        <ul>
+        <li><strong><code>port.readUntil("\n")</code></strong> gives you
+        one line of text. <code>Serial.println()</code> ends each line
+        with <code>\n</code>, so you get one reading at a time. It gives
+        you empty text if no whole line has arrived yet.</li>
+        <li><strong><code>Number(message)</code></strong> turns the text
+        <code>"512"</code> into the number <code>512</code>.</li>
+        <li><strong><code>map()</code></strong> works just like it does
+        on the Arduino.</li>
+        </ul>
+        </section>
+        <section id="part-2-p5.js-to-arduino" class="level2">
+        <h2>Part 2: p5.js to Arduino</h2>
+        <p>Now let’s go the other way: clicking in the browser turns on
+        the Arduino’s built-in LED.</p>
+        <p><strong>Arduino:</strong> this is the same
+        <code>Serial.read()</code> from the <a
+        href="../Keyboard/Keyboard.html">Keyboard</a> lesson.</p>
+        <pre class="arduino"><code>void setup() {
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  if (Serial.available() &gt; 0) {
+    char letter = Serial.read();
+
+    if (letter == &#39;A&#39;) {
+      digitalWrite(LED_BUILTIN, HIGH);
+    }
+    if (letter == &#39;B&#39;) {
+      digitalWrite(LED_BUILTIN, LOW);
+    }
+  }
+}</code></pre>
+        <p><strong>p5.js:</strong></p>
+        <div class="sourceCode" id="cb5"><pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> port<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> ledOn <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> canvas <span class="op">=</span> <span class="fu">createCanvas</span>(<span class="dv">400</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  canvas<span class="op">.</span><span class="fu">mousePressed</span>(toggleLed)<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  port <span class="op">=</span> <span class="fu">createSerial</span>()<span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> button <span class="op">=</span> <span class="fu">createButton</span>(<span class="st">&quot;Connect Arduino&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  button<span class="op">.</span><span class="fu">mousePressed</span>(connectArduino)<span class="op">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">connectArduino</span>() {</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>port<span class="op">.</span><span class="fu">opened</span>()) {</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    port<span class="op">.</span><span class="fu">open</span>(<span class="st">&quot;Arduino&quot;</span><span class="op">,</span> <span class="dv">9600</span>)<span class="op">;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">toggleLed</span>() {</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>port<span class="op">.</span><span class="fu">opened</span>()) {</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  ledOn <span class="op">=</span> <span class="op">!</span>ledOn<span class="op">;</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (ledOn) {</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    port<span class="op">.</span><span class="fu">write</span>(<span class="st">&quot;A&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    port<span class="op">.</span><span class="fu">write</span>(<span class="st">&quot;B&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (ledOn) {</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background</span>(<span class="dv">251</span><span class="op">,</span> <span class="dv">199</span><span class="op">,</span> <span class="dv">64</span>)<span class="op">;</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background</span>(<span class="dv">29</span><span class="op">,</span> <span class="dv">36</span><span class="op">,</span> <span class="dv">51</span>)<span class="op">;</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+        <p>Connect, then click on the canvas. The canvas and the LED
+        should change together.</p>
+        </section>
+        <section id="part-3-sending-several-numbers" class="level2">
+        <h2>Part 3: Sending Several Numbers</h2>
+        <p>To send more than one number, put commas between them on one
+        line. Your board’s built-in accelerometer is a good example,
+        because it has three numbers and needs no wiring. Install
+        <strong>Arduino_LSM6DS3</strong> from the Library Manager if you
+        don’t have it.</p>
+        <p><strong>Arduino:</strong></p>
+        <pre class="arduino"><code>#include &lt;Arduino_LSM6DS3.h&gt;
+
+void setup() {
+  Serial.begin(9600);
+  IMU.begin();
+}
+
+void loop() {
+  float x, y, z;
+
+  if (IMU.accelerationAvailable()) {
+    IMU.readAcceleration(x, y, z);
+    Serial.print(x);
+    Serial.print(&quot;,&quot;);
+    Serial.print(y);
+    Serial.print(&quot;,&quot;);
+    Serial.println(z);
+  }
+
+  delay(20);
+}</code></pre>
+        <p><strong>p5.js:</strong> tilting the board moves the
+        circle.</p>
+        <div class="sourceCode" id="cb7"><pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> port<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> tiltX <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> tiltY <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">400</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  port <span class="op">=</span> <span class="fu">createSerial</span>()<span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> button <span class="op">=</span> <span class="fu">createButton</span>(<span class="st">&quot;Connect Arduino&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  button<span class="op">.</span><span class="fu">mousePressed</span>(connectArduino)<span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">connectArduino</span>() {</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>port<span class="op">.</span><span class="fu">opened</span>()) {</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    port<span class="op">.</span><span class="fu">open</span>(<span class="st">&quot;Arduino&quot;</span><span class="op">,</span> <span class="dv">9600</span>)<span class="op">;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">240</span>)<span class="op">;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> message <span class="op">=</span> port<span class="op">.</span><span class="fu">readUntil</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (message<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">// &quot;0.12,-0.34,0.98&quot; becomes three separate pieces</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> parts <span class="op">=</span> message<span class="op">.</span><span class="fu">split</span>(<span class="st">&quot;,&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    tiltX <span class="op">=</span> <span class="bu">Number</span>(parts[<span class="dv">0</span>])<span class="op">;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    tiltY <span class="op">=</span> <span class="bu">Number</span>(parts[<span class="dv">1</span>])<span class="op">;</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> circleX <span class="op">=</span> <span class="fu">map</span>(tiltY<span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width)<span class="op">;</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> circleY <span class="op">=</span> <span class="fu">map</span>(tiltX<span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> height)<span class="op">;</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">circle</span>(circleX<span class="op">,</span> circleY<span class="op">,</span> <span class="dv">60</span>)<span class="op">;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+        <p>If the circle moves the wrong way, swap the last two numbers
+        in that <code>map()</code>, like
+        <code>map(tiltY, -1, 1, width, 0)</code>.</p>
+        </section>
+        <section id="part-4-your-own-teachable-machine-sketch"
+        class="level2">
+        <h2>Part 4: Your Own Teachable Machine Sketch</h2>
+        <p>The <a
+        href="../teachable_machine/teachable_machine.html">Teachable
+        Machine</a> tutorial has a page that does this for you. To build
+        your own, you can use your model in a p5.js sketch with another
+        library called <a href="https://ml5js.org/"
+        target="_blank">ml5.js</a>. Follow that tutorial first to train
+        your model and get its link.</p>
+        <p>In <strong>index.html</strong>, add ml5.js along with
+        p5.webserial:</p>
+        <div class="sourceCode" id="cb8"><pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://unpkg.com/ml5@1.4.0/dist/ml5.min.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div>
+        <p><strong>Arduino:</strong> use the same sketch as in Part
+        2.</p>
+        <p><strong>p5.js:</strong> change <code>modelLink</code> to your
+        link, and change <code>"Class 1"</code> to the name of your own
+        class.</p>
+        <div class="sourceCode" id="cb9"><pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> modelLink <span class="op">=</span> <span class="st">&quot;https://teachablemachine.withgoogle.com/models/YOUR_MODEL/&quot;</span><span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> port<span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> video<span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> label <span class="op">=</span> <span class="st">&quot;Loading your model...&quot;</span><span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> lastLabel <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createCanvas</span>(<span class="dv">320</span><span class="op">,</span> <span class="dv">280</span>)<span class="op">;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  video <span class="op">=</span> <span class="fu">createCapture</span>(VIDEO<span class="op">,</span> { <span class="dt">flipped</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  video<span class="op">.</span><span class="fu">size</span>(<span class="dv">320</span><span class="op">,</span> <span class="dv">240</span>)<span class="op">;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  video<span class="op">.</span><span class="fu">hide</span>()<span class="op">;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  port <span class="op">=</span> <span class="fu">createSerial</span>()<span class="op">;</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> button <span class="op">=</span> <span class="fu">createButton</span>(<span class="st">&quot;Connect Arduino&quot;</span>)<span class="op">;</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  button<span class="op">.</span><span class="fu">mousePressed</span>(connectArduino)<span class="op">;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="co">// flipped: Teachable Machine mirrors the webcam when you train</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> classifier <span class="op">=</span> <span class="cf">await</span> ml5<span class="op">.</span><span class="fu">imageClassifier</span>(modelLink <span class="op">+</span> <span class="st">&quot;model.json&quot;</span><span class="op">,</span> { <span class="dt">flipped</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  classifier<span class="op">.</span><span class="fu">classifyStart</span>(video<span class="op">,</span> gotResult)<span class="op">;</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">connectArduino</span>() {</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>port<span class="op">.</span><span class="fu">opened</span>()) {</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    port<span class="op">.</span><span class="fu">open</span>(<span class="st">&quot;Arduino&quot;</span><span class="op">,</span> <span class="dv">9600</span>)<span class="op">;</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co">// this runs each time the model has a new answer</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">gotResult</span>(results) {</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  label <span class="op">=</span> results[<span class="dv">0</span>]<span class="op">.</span><span class="at">label</span><span class="op">;</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="co">// only send a letter when the answer changes</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (label <span class="op">!==</span> lastLabel <span class="op">&amp;&amp;</span> port<span class="op">.</span><span class="fu">opened</span>()) {</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (label <span class="op">===</span> <span class="st">&quot;Class 1&quot;</span>) {</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>      port<span class="op">.</span><span class="fu">write</span>(<span class="st">&quot;A&quot;</span>)<span class="op">;</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>      port<span class="op">.</span><span class="fu">write</span>(<span class="st">&quot;B&quot;</span>)<span class="op">;</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>    lastLabel <span class="op">=</span> label<span class="op">;</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">background</span>(<span class="dv">255</span>)<span class="op">;</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">image</span>(video<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">320</span><span class="op">,</span> <span class="dv">240</span>)<span class="op">;</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textSize</span>(<span class="dv">24</span>)<span class="op">;</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">text</span>(label<span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">270</span>)<span class="op">;</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+        <p><code>results</code> is a list of every class, with the most
+        likely one first. Each one has a <code>label</code> and a
+        <code>confidence</code> from 0 to 1. To only trust answers the
+        model is sure about, check <code>results[0].confidence</code>
+        too.</p>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong><code>createSerial is not defined</code>.</strong>
+        The p5.webserial line is missing from
+        <strong>index.html</strong>, or it’s above the line that loads
+        p5.js.</li>
+        <li><strong><code>ml5 is not defined</code>.</strong> The ml5.js
+        line is missing from <strong>index.html</strong>.</li>
+        <li><strong>The list of boards is empty.</strong> Check the USB
+        cable, since some only charge, and use Chrome or Edge.</li>
+        <li><strong>It won’t connect, or nothing arrives.</strong> Close
+        the Serial Monitor and Serial Plotter. Then stop your p5.js
+        sketch, play it again and reconnect.</li>
+        <li><strong>The Arduino IDE can’t upload.</strong> Stop your
+        p5.js sketch first, because it’s holding the connection.</li>
+        <li><strong>The circle doesn’t change.</strong> Open the Serial
+        Monitor (with your p5.js sketch stopped) and check that the
+        Arduino is sending numbers.</li>
+        <li><strong>You’re using a different version of p5.js.</strong>
+        The Web Editor uses p5.js 2 by default. These sketches were
+        tested with p5.js 2.3 and 1.11, so either one should work.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

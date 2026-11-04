@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
+
+    <title>Teachable Machine: Teach Your Arduino to Recognize
+Things</title>
+
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../../css/uikit.min.css" />
+    <script src="../../../js/uikit.min.js"></script>
+
+    <!-- MathJax -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Favicon (pages built from this template sit at content/<section>/<page>/) -->
+    <link rel="icon" href="../../../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../../images/apple-touch-icon.png" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../../css/pojoaque.css" />
+    <script src="../../../js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../../../images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      body,
+      html {
+        background: rgb(210, 230, 250);
+      }
+    </style>
+
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll("p code").forEach((el) => {
+          el.classList.add("language-plaintext");
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <style>
+      #left-col {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #222;
+        width: 260px;
+        z-index: 1;
+      }
+
+      .bar-wrap {
+        padding: 2rem;
+      }
+
+      #right-col {
+        margin-left: 260px;
+      }
+
+      .uk-navbar-container {
+        z-index: 2;
+      }
+
+      #canvas-button {
+        display: none;
+      }
+
+      .uk-logo {
+        font-size: 1.7em;
+      }
+
+      @media screen and (max-width: 700px) {
+        #right-col {
+          margin-left: 0px;
+        }
+
+        #left-col {
+          visibility: hidden;
+        }
+
+        #canvas-button {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 494px) {
+        .uk-logo {
+          font-size: 1em;
+        }
+
+        .uk-navbar-nav > li > a {
+          font-size: 10px;
+        }
+      }
+    </style>
+
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
+
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
+
+      code {
+        padding: 15px;
+      }
+
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #4444dd !important;
+        opacity: 0.9 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
+
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
+
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+    <!--background: #555 !important;-->
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../../css/blog_style.css" />
+    <link rel="stylesheet" href="../../../css/site.css" />
+    <script src="../../../js/theme.js"></script>
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body class="uk-background-fixed">
+    <!-- NAV AND HEADING -->
+    <nav
+      class="uk-flex uk-flex-left"
+      uk-sticky
+      style="background-color: rgb(197, 75, 59); height: 80"
+    >
+      <button
+        id="menu_button"
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none; background: rgb(243, 201, 91)"
+        uk-toggle="target: #blog-toc"
+      >
+        <span
+          class="fas fa-bars fa-2xl"
+          style="color: #4444dd; background: rgb(243, 201, 91)"
+        ></span>
+      </button>
+
+      
+      <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="../../../index.html"
+          >INTRO TO NEW MEDIA ART</a
+        >
+        <ul class="uk-navbar-nav">
+          <!-- every page built from this template sits at content/<section>/<page>/ -->
+          <li><a href="../../../index.html">Home / Week Overview</a></li>
+          <li><a href="../../arena.html">Are.na Studios</a></li>
+          <li><a href="../../arduino_sketches.html">Arduino</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <!--<h2 id="heading" style="pointer-events: none" class="uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left" style="font-family: 'Inter-ExtraLight', serif; color: black">-->
+      <!--  <a class="uk-text">Teachable Machine: Teach Your Arduino to
+Recognize Things</a>-->
+      <!--</h2>-->
+    </nav>
+
+    <!-- OFFCANVAS -->
+    <div
+      class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m"
+      id="contentArea"
+    >
+      <!-- TABLE OF CONTENTS -->
+      <div
+        id="blog-toc"
+        style="top: 80px"
+        uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;"
+      >
+        <div class="uk-offcanvas-bar">
+          <h3 style="color: white">Table of Contents</h3>
+          <div><ul>
+<li><a href="#teachable-machine" id="toc-teachable-machine">Teachable
+Machine</a>
+<ul>
+<li><a href="#intro" id="toc-intro">Intro</a></li>
+<li><a href="#materials" id="toc-materials">Materials</a></li>
+<li><a href="#train-your-model" id="toc-train-your-model">1. Train Your
+Model</a></li>
+<li><a href="#get-your-models-link" id="toc-get-your-models-link">2. Get
+Your Model’s Link</a></li>
+<li><a href="#upload-the-arduino-sketch"
+id="toc-upload-the-arduino-sketch">3. Upload the Arduino Sketch</a></li>
+<li><a href="#open-the-bridge" id="toc-open-the-bridge">4. Open the
+Bridge</a></li>
+<li><a href="#make-it-do-something" id="toc-make-it-do-something">5.
+Make It Do Something</a></li>
+<li><a href="#when-something-goes-wrong"
+id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
+</ul></li>
+</ul></div>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-overflow-auto" style="overflow-y: scroll">
+        <section id="teachable-machine" class="level1">
+        <h1>Teachable Machine</h1>
+        <p><img src="images/cover.png"
+        alt="A webcam sends a picture to a laptop running a model, and the laptop sends one letter over a USB cable to an Arduino, which lights an LED." /></p>
+        <section id="intro" class="level2">
+        <h2>Intro</h2>
+        <p><a href="https://teachablemachine.withgoogle.com/"
+        target="_blank">Teachable Machine</a> lets you train a computer
+        to recognize things by showing it examples, with no code. You
+        could show it a thumbs up and a thumbs down, your face and an
+        empty chair, or a red cup and a blue cup.</p>
+        <p>Your laptop runs the model, and it tells your Arduino what it
+        sees by sending one letter over the USB cable. Your Arduino just
+        needs to know what to do with each letter.</p>
+        <p>Your board doesn’t run the model itself. Even Teachable
+        Machine’s smallest model for microcontrollers is about 500 KB,
+        and the Nano 33 IoT holds 256 KB. So your laptop and USB cable
+        need to stay connected the whole time.</p>
+        </section>
+        <section id="materials" class="level2">
+        <h2>Materials</h2>
+        <ul>
+        <li>Arduino Nano 33 IoT and USB cable</li>
+        <li>A laptop with a webcam, connected to the internet</li>
+        <li><strong>Chrome</strong> or <strong>Edge</strong>. Other
+        browsers may not be able to talk to the Arduino.</li>
+        </ul>
+        </section>
+        <section id="train-your-model" class="level2">
+        <h2>1. Train Your Model</h2>
+        <ol type="1">
+        <li>Go to <a
+        href="https://teachablemachine.withgoogle.com/train/image"
+        target="_blank">Teachable Machine’s image project</a> and choose
+        <strong>Standard image model</strong> if it asks.</li>
+        <li>Rename <strong>Class 1</strong> and <strong>Class 2</strong>
+        to the things you want to recognize. Click <strong>Add a
+        class</strong> for more. Your classes get the letters
+        <strong>A</strong>, <strong>B</strong>, <strong>C</strong> and
+        so on, from top to bottom.</li>
+        <li>For each class, click <strong>Webcam</strong> and use
+        <strong>Hold to Record</strong>. Move around as you record, so
+        it sees different angles and distances.</li>
+        <li>Click <strong>Train Model</strong>, and leave the tab open
+        until it’s done.</li>
+        <li>Test it in the <strong>Preview</strong> panel. If it gets
+        confused, add more examples and train again.</li>
+        </ol>
+        <p><strong>Add a class for “nothing.”</strong> Record the empty
+        background, with nothing you care about in view. Otherwise, the
+        model has to choose one of your classes even when nothing is
+        there.</p>
+        <p><strong>Train it where you’ll show it.</strong> A model
+        learns the lighting and background along with your object, so
+        record in the room where you’ll use it.</p>
+        </section>
+        <section id="get-your-models-link" class="level2">
+        <h2>2. Get Your Model’s Link</h2>
+        <ol type="1">
+        <li>Click <strong>Export Model</strong>.</li>
+        <li>Under <strong>Upload (shareable link)</strong>, click
+        <strong>Upload my model</strong>.</li>
+        <li>Wait for it to finish, then copy the link under <strong>Your
+        sharable link:</strong>.</li>
+        </ol>
+        <blockquote class="info">
+        <span class="uk-label">Note</span>
+        <p>
+        Teachable Machine says your training samples aren’t sent to any
+        servers. Only the finished model is uploaded, and anyone with
+        the link can use it.
+        </p>
+        </blockquote>
+        </section>
+        <section id="upload-the-arduino-sketch" class="level2">
+        <h2>3. Upload the Arduino Sketch</h2>
+        <p>Each time the model becomes sure of something new, your
+        Arduino gets one letter. This sketch turns the built-in LED on
+        for <strong>A</strong> and off for <strong>B</strong>.</p>
+        <pre class="arduino"><code>// Teachable Machine: do something with each letter
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  if (Serial.available() &gt; 0) {
+    char letter = Serial.read();
+
+    if (letter == &#39;A&#39;) {
+      digitalWrite(LED_BUILTIN, HIGH);
+    }
+    if (letter == &#39;B&#39;) {
+      digitalWrite(LED_BUILTIN, LOW);
+    }
+  }
+}</code></pre>
+        <p>This is the same <code>Serial.read()</code> from the <a
+        href="../Keyboard/Keyboard.html">Keyboard</a> lesson. There, you
+        typed letters into the Serial Monitor. Here, the bridge page
+        types them for you.</p>
+        <p>After uploading, <strong>close the Serial Monitor</strong>.
+        Only one program can use the board at a time.</p>
+        </section>
+        <section id="open-the-bridge" class="level2">
+        <h2>4. Open the Bridge</h2>
+        <p><strong><a href="bridge.html" target="_blank">Open the
+        Teachable Machine Bridge</a></strong> in Chrome or Edge.</p>
+        <ol type="1">
+        <li>Paste your link and click <strong>Load</strong>. Your
+        classes show up with their letters.</li>
+        <li>Click <strong>Start Camera</strong> and allow the
+        camera.</li>
+        <li>Click <strong>Connect Arduino</strong>, choose your board in
+        the list and click <strong>Connect</strong>.</li>
+        </ol>
+        <p>Now show the camera your classes. The bars show how sure the
+        model is, and your Arduino’s LED changes when the letter
+        changes.</p>
+        <p>The slider sets how sure the model has to be before it sends
+        a letter. Raise it if the letter changes when it shouldn’t.
+        Lower it if the letter never changes.</p>
+        </section>
+        <section id="make-it-do-something" class="level2">
+        <h2>5. Make It Do Something</h2>
+        <p>Once the LED works, change what each letter does. For
+        example, here’s a <a href="../sweep/sweep.html">servo</a> that
+        moves to a different angle for each class. Wire it as in the
+        Sweep lesson, with the signal wire on pin 9.</p>
+        <pre class="arduino"><code>// Teachable Machine: move a servo with each letter
+
+#include &lt;Servo.h&gt;
+
+Servo myservo;
+
+void setup() {
+  Serial.begin(9600);
+  myservo.attach(9);
+}
+
+void loop() {
+  if (Serial.available() &gt; 0) {
+    char letter = Serial.read();
+
+    if (letter == &#39;A&#39;) {
+      myservo.write(0);
+    }
+    if (letter == &#39;B&#39;) {
+      myservo.write(90);
+    }
+    if (letter == &#39;C&#39;) {
+      myservo.write(180);
+    }
+  }
+}</code></pre>
+        <p>More ideas:</p>
+        <ul>
+        <li><strong>Make a sound:</strong> Connect a passive buzzer to
+        pin 8. Use <code>tone(8, 440);</code> for one letter and
+        <code>noTone(8);</code> for another.</li>
+        <li><strong>Light it up:</strong> Choose a color on your <a
+        href="../rgb_led/rgb_led.html">RGB LED</a> for each class.</li>
+        <li><strong>Press a key:</strong> Use
+        <code>Keyboard.write()</code> from the <a
+        href="../Keyboard/Keyboard.html">Keyboard and Mouse</a> lesson,
+        so your model can play a game.</li>
+        </ul>
+        <p>Want to change how the page looks or what it does? The <a
+        href="../p5_bridge/p5_bridge.html">p5.js Bridge</a> tutorial
+        shows how to build your own.</p>
+        </section>
+        <section id="when-something-goes-wrong" class="level2">
+        <h2>When Something Goes Wrong</h2>
+        <ul>
+        <li><strong>“Couldn’t load that model.”</strong> Check that you
+        copied the whole link and clicked <strong>Upload my
+        model</strong>. If you changed your classes, click
+        <strong>Update my cloud model</strong> in Teachable
+        Machine.</li>
+        <li><strong>“Couldn’t open the board.”</strong> Close the Serial
+        Monitor, and close any other page that’s connected to your
+        Arduino.</li>
+        <li><strong>Your board isn’t in the list.</strong> Check the USB
+        cable, since some only charge, and use Chrome or Edge.</li>
+        <li><strong>The bars move, but the LED doesn’t.</strong> Look at
+        <strong>Sent to Arduino</strong> on the page. If it changes,
+        check that your sketch uses the same letters. If it doesn’t,
+        your model isn’t sure enough, so lower the slider.</li>
+        <li><strong>It works in Teachable Machine but not here.</strong>
+        Check that your classes are in the order you expect, since the
+        top class is <strong>A</strong>. Make sure you loaded the newest
+        version of your model too.</li>
+        <li><strong>It only sort of works.</strong> Add more examples
+        with different angles, distances and lighting. Check your
+        “nothing” class too.</li>
+        <li><strong>You want to see what your sketch is doing.</strong>
+        The Serial Monitor has to stay closed, so use
+        <code>Serial.println()</code>, and it shows up under
+        <strong>From your Arduino</strong> on the bridge page.</li>
+        </ul>
+        </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlightjs badge -->
+    <script src="../../../js/highlightjs-badge.js"></script>
+
+    <script>
+      // apply HighlightJS
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+
+      // add HighlightJS-badge (options are optional)
+      var options = {
+        // optional
+        contentSelector: "#ArticleBody",
+
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: "fas fa-solid fa-clone",
+        // CSS class(es) used to render the done icon.
+        checkIconClass: "fas fa-check text-success",
+      };
+      window.highlightJsBadge(options);
+    </script>
+
+    <script src="../../../js/styling.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <!--<script>-->
+    <!--  UIkit.offcanvas('.uk-offcanvas-bar').show();-->
+    <!--</script>-->
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="An Arduino and a browser window running a p5.js sketch, connected by a USB cable with arrows going both ways.">
+  <!-- No text, and everything inside x 100-700, so the card's 4:3 crop keeps it all. -->
+  <rect width="800" height="450" fill="#f2dcbf"/>
+  <!-- Nano -->
+  <rect x="112" y="160" width="170" height="110" rx="12" fill="#2f64b7"/>
+  <g fill="#fbc740"><circle cx="134" cy="176" r="5"/><circle cx="164" cy="176" r="5"/><circle cx="194" cy="176" r="5"/><circle cx="224" cy="176" r="5"/><circle cx="256" cy="176" r="5"/><circle cx="134" cy="254" r="5"/><circle cx="164" cy="254" r="5"/><circle cx="194" cy="254" r="5"/><circle cx="224" cy="254" r="5"/><circle cx="256" cy="254" r="5"/></g>
+  <rect x="172" y="190" width="50" height="50" rx="7" fill="#1d2433"/>
+  <rect x="278" y="194" width="18" height="42" rx="3" fill="#9a9aa2"/>
+  <!-- cable -->
+  <path d="M296 215 H420" fill="none" stroke="#1d2433" stroke-width="8" stroke-linecap="round"/>
+  <!-- arrows both ways -->
+  <path d="M322 180 H394 M380 168 L394 180 L380 192" fill="none" stroke="#d53f32" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M394 250 H322 M336 238 L322 250 L336 262" fill="none" stroke="#2f64b7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- browser window with a sketch -->
+  <rect x="424" y="110" width="264" height="214" rx="12" fill="#1d2433"/>
+  <circle cx="444" cy="130" r="5" fill="#d53f32"/><circle cx="462" cy="130" r="5" fill="#fbc740"/><circle cx="480" cy="130" r="5" fill="#9a9aa2"/>
+  <rect x="436" y="148" width="240" height="164" rx="5" fill="#fffaf3"/>
+  <circle cx="556" cy="230" r="56" fill="#d53f32"/>
+  <circle cx="506" cy="186" r="18" fill="#2f64b7"/>
+  <rect x="598" y="262" width="46" height="30" rx="4" fill="#fbc740"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="A webcam sends a picture to a laptop running a model, and the laptop sends one letter over a USB cable to an Arduino, which lights an LED.">
+  <!-- No text except the letter, and everything inside x 100-700, so the card's 4:3 crop keeps it all. -->
+  <rect width="800" height="450" fill="#f2dcbf"/>
+  <!-- webcam -->
+  <rect x="112" y="150" width="96" height="74" rx="14" fill="#1d2433"/>
+  <circle cx="160" cy="187" r="24" fill="#9a9aa2"/>
+  <circle cx="160" cy="187" r="13" fill="#2f64b7"/>
+  <rect x="150" y="224" width="20" height="30" fill="#1d2433"/>
+  <rect x="124" y="252" width="72" height="12" rx="4" fill="#1d2433"/>
+  <path d="M216 187 H262" fill="none" stroke="#5f6570" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 8"/>
+  <!-- laptop with class bars -->
+  <rect x="270" y="110" width="190" height="136" rx="10" fill="#1d2433"/>
+  <rect x="282" y="122" width="166" height="112" rx="4" fill="#fffaf3"/>
+  <rect x="296" y="140" width="116" height="16" rx="8" fill="#2f64b7"/>
+  <rect x="296" y="170" width="44" height="16" rx="8" fill="#d53f32"/>
+  <rect x="296" y="200" width="20" height="16" rx="8" fill="#fbc740"/>
+  <path d="M250 246 H480 L496 268 H234 Z" fill="#5f6570"/>
+  <!-- cable and the letter -->
+  <path d="M480 256 C 520 256, 530 196, 566 196" fill="none" stroke="#1d2433" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="514" cy="150" r="26" fill="#d53f32"/>
+  <path d="M514 133 L503 166 M514 133 L525 166 M507 155 H521" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <!-- Nano -->
+  <rect x="558" y="176" width="18" height="40" rx="3" fill="#9a9aa2"/>
+  <rect x="572" y="146" width="118" height="100" rx="10" fill="#2f64b7"/>
+  <rect x="610" y="172" width="44" height="44" rx="6" fill="#1d2433"/>
+  <g fill="#fbc740"><circle cx="590" cy="160" r="4"/><circle cx="612" cy="160" r="4"/><circle cx="634" cy="160" r="4"/><circle cx="656" cy="160" r="4"/><circle cx="674" cy="160" r="4"/><circle cx="590" cy="232" r="4"/><circle cx="612" cy="232" r="4"/><circle cx="634" cy="232" r="4"/><circle cx="656" cy="232" r="4"/><circle cx="674" cy="232" r="4"/></g>
+  <!-- LED on -->
+  <circle cx="632" cy="296" r="22" fill="#fbc740"/>
+  <rect x="622" y="316" width="20" height="14" rx="3" fill="#1d2433"/>
+  <path d="M632 250 V272" stroke="#5f6570" stroke-width="4" stroke-dasharray="6 6"/>
+  <g stroke="#d6a020" stroke-width="5" stroke-linecap="round"><path d="M594 296 H582"/><path d="M670 296 H682"/><path d="M604 268 L595 259"/><path d="M660 268 L669 259"/></g>
+</svg>
