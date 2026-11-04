@@ -43,6 +43,7 @@ researching after class.</p>
 - [Adafruit Learning System](https://learn.adafruit.com/) Step-by-step guides for nearly every part Adafruit sells.
 - [SparkFun Tutorials](https://learn.sparkfun.com/tutorials) Clear explanations of the basics: voltage, resistors, soldering and more.
 - [Arduino Project Hub](https://projecthub.arduino.cc/) Projects shared by the Arduino community, with code and wiring.
+- [TensorFlow Lite for Microcontrollers](https://experiments.withgoogle.com/collection/tfliteformicrocontrollers) Projects that run machine learning on tiny boards, often with Arduino, like an air snare and a squat counter.
 - [Arduino Language Reference](https://docs.arduino.cc/language-reference/) Every Arduino function, with examples.
 - [Instructables](https://www.instructables.com/) How-tos for making almost anything.
 - [Hackaday](https://hackaday.com/) Daily hardware hacks and projects.
