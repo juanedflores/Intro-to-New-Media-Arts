@@ -229,16 +229,23 @@ ol li {
 /* Cover image: an image placed directly after a post's H1 in markdown.
    The image runs edge to edge, flush under the heading. Its caption sits
    on the photo's bottom-right corner as a small dark label, readable on
-   light and dark photos alike. */
-.level1 > h1 + figure {
+   light and dark photos alike. An image without a caption comes out of
+   pandoc as a lone <img> in a <p> instead of a <figure>, so it gets the
+   same treatment, minus the framed look other images in a <p> get. */
+.level1 > h1 + figure,
+.level1 > h1 + p:has(> img:only-child) {
   position: relative;
   margin: 0 0 10px;
 }
 
-.level1 > h1 + figure > img {
+.level1 > h1 + figure > img,
+.level1 > h1 + p > img:only-child {
   display: block;
   width: 100%;
   margin: 0 !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .level1 > h1 + figure > figcaption {
