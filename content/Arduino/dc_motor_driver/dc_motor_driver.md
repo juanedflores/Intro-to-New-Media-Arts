@@ -13,14 +13,14 @@ A [servo](../sweep/sweep.html) turns to an angle. A **DC motor** just keeps spin
 
 A DC motor needs much more power than an Arduino pin can give, so we use a **motor driver**. The Arduino sends a small signal, and the driver uses it to switch a separate, stronger power supply on and off for the motor. It can also reverse the motor's direction.
 
-This lesson uses the [Adafruit DRV8871](https://www.adafruit.com/product/3190). For a more complete reference, see the [Adafruit guide](https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout) and the [DRV8871 datasheet](https://www.ti.com/lit/ds/symlink/drv8871.pdf).
+This lesson uses the [Adafruit DRV8871 DC Motor Driver Breakout Board](https://www.adafruit.com/product/3190). For a more complete reference, see the [Adafruit guide](https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout) and the [DRV8871 datasheet](https://www.ti.com/lit/ds/symlink/drv8871.pdf).
 
 ## Materials
 
 For this lesson, please collect the following:
 
 - Arduino Nano 33 IoT and USB cable
-- Adafruit DRV8871 motor driver
+- Adafruit DRV8871 DC Motor Driver Breakout Board
 - DC motor
 - A power supply for the motor, 6.5V or more
 - A barrel jack to screw terminal adapter, if your power supply has a round plug
@@ -32,7 +32,7 @@ The driver's screw terminals come soldered on, but you need to solder on the hea
 
 - **Voltage:** The driver needs **6.5V to 45V**, so it won't run from the USB. The breadboard power supply module won't work either, since it only gives 5V or 3.3V. Choose a supply that matches your motor: a 12V motor needs a 12V supply.
 - **Low-voltage motors:** If your motor is rated below 6.5V, you can lower its average voltage with `analogWrite()`. For example, 170 out of 255 on a 9V supply averages about 6V. A motor rated for 6.5V or more is a better match, though.
-- **Current:** Check your motor's **stall current**, the current it pulls when it can't turn. Your supply should be able to give at least that much. The 9V adapter in your kit gives 1A, so it is only enough for small motors. The driver limits the current to about 2A.
+- **Current:** Check your motor's **stall current**, the current it pulls when it can't turn. Your supply should be able to give at least that much. The 9V adapter in your kit gives 1A, so it is only enough for small motors. The board is sold as "3.6A Max," but that is only the most it can handle for a moment. Adafruit sets it to limit the current to about 2A, so plan around 2A.
 
 ## Wiring
 

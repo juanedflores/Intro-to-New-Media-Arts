@@ -303,8 +303,9 @@ id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
         separate, stronger power supply on and off for the motor. It can
         also reverse the motor’s direction.</p>
         <p>This lesson uses the <a
-        href="https://www.adafruit.com/product/3190">Adafruit
-        DRV8871</a>. For a more complete reference, see the <a
+        href="https://www.adafruit.com/product/3190">Adafruit DRV8871 DC
+        Motor Driver Breakout Board</a>. For a more complete reference,
+        see the <a
         href="https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout">Adafruit
         guide</a> and the <a
         href="https://www.ti.com/lit/ds/symlink/drv8871.pdf">DRV8871
@@ -315,7 +316,7 @@ id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
         <p>For this lesson, please collect the following:</p>
         <ul>
         <li>Arduino Nano 33 IoT and USB cable</li>
-        <li>Adafruit DRV8871 motor driver</li>
+        <li>Adafruit DRV8871 DC Motor Driver Breakout Board</li>
         <li>DC motor</li>
         <li>A power supply for the motor, 6.5V or more</li>
         <li>A barrel jack to screw terminal adapter, if your power
@@ -344,7 +345,9 @@ id="toc-when-something-goes-wrong">When Something Goes Wrong</a></li>
         current</strong>, the current it pulls when it can’t turn. Your
         supply should be able to give at least that much. The 9V adapter
         in your kit gives 1A, so it is only enough for small motors. The
-        driver limits the current to about 2A.</li>
+        board is sold as “3.6A Max,” but that is only the most it can
+        handle for a moment. Adafruit sets it to limit the current to
+        about 2A, so plan around 2A.</li>
         </ul>
         </section>
         <section id="wiring" class="level2">

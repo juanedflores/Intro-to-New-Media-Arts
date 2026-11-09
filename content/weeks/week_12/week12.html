@@ -1,86 +1,73 @@
 <div id="ArticleBodyMain"><section id="week-12" class="level1">
 <h1>Week 12</h1>
-<div class="marquee">
-<p>
-Neopixels / Accelerometer &amp; Gyroscope / Temperature / Sensor
-Overview
-</p>
-</div>
 <ul uk-accordion style="padding-bottom: 5vh">
 <li class="uk-open">
 <a class="uk-accordion-title" href="#">MONDAY</a>
 <div class="uk-accordion-content" style="padding-bottom:20px; margin-bottom:20px">
 <section id="announcements" class="level3">
 <h3>Announcements</h3>
+<div class="callout callout-reminder">
+<span class="callout-label">Reminder</span>
+<p><strong>Final Project Proposals are due today.</strong> If you
+haven’t yet, post yours in the <strong><a
+href="https://canvas.uic.edu/courses/51541/assignments/450955"
+target="_blank">Final Project Proposals</a></strong> thread on
+Canvas.</p>
+</div>
 <div class="callout callout-materials">
 <span class="callout-label">Materials Needed</span>
 <ul>
-<li>Electronics Kits</li>
-<li>Arduino w/Breadboard + Power Modules</li>
-<li>Neopixels</li>
+<li>Your proposal and your “Final Project” channel on Are.na</li>
+<li>Laptop with the Arduino IDE installed</li>
+<li>Arduino Nano 33 IoT and USB cable</li>
+<li>Electronics Kit</li>
 </ul>
 </div>
 </section>
 <section id="agenda" class="level3">
 <h3>Agenda</h3>
 <ul>
-<li>Check In (Reminders + Announcements)</li>
-<li>Last Midterm Presentations</li>
-<li>Gyroscope + Accelerometer</li>
-<li>Neopixels</li>
-<li>Last Sensor Overview</li>
+<li><strong>Share your proposals.</strong> Everyone shows their idea,
+and we give each other feedback. As you listen, think about:
+<ul>
+<li>How does someone interact with it?</li>
+<li>What does it sense, and how does it respond: with light, sound or
+movement?</li>
+<li>What’s the hardest part to build, and what’s a simple way to test it
+first?</li>
+</ul></li>
+<li><strong>DC motors.</strong> A quick demo. The vibration motor on
+your Drawing Machine is a tiny DC motor with an off-balance weight on
+it. A bigger DC motor needs more power than the Arduino can give, so
+I’ll connect one to the Arduino Nano 33 IoT through an Adafruit DRV8871
+motor driver. The driver switches a separate power supply on and off for
+the motor, so the Arduino can set its speed with
+<code>analogWrite()</code> and reverse its direction. If your project
+needs wheels, a fan or anything else that keeps turning, this is
+how.</li>
+<li><strong>What’s next.</strong> We’ll go over the rest of the semester
+on the <a
+href="./content/Assignments/Final_Project/final_project.html">Final
+Project</a> page. Next week you’ll start testing your idea with a rough
+physical version.</li>
 </ul>
 </section>
 <section id="topics" class="level3">
 <h3>Topics</h3>
 <div class="topics-grid">
-<a class="topic-card" data-type="external" href="https://docs.arduino.cc/tutorials/nano-33-iot/imu-accelerometer/" target="_blank" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/weeks/week_12/images/motion-sensor_cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino Example</span><span class="topic-tag">Output / Actuator</span></div></div>
-<h3 class="cardtitle">ACCELEROMETER / GYROSCOPE</h3>
+<a class="topic-card" data-type="assignment" href="./content/Assignments/Final_Project/final_project.html" style="--accent: #d53f32; --tag-bg: #d53f32; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Assignments/Final_Project/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Assignment</span></div></div>
+<h3 class="cardtitle">Final Project</h3>
 </a>
 
-<a class="topic-card" data-type="external" href="https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use" target="_blank" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/weeks/week_12/images/adafruit-1461_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino Example</span><span class="topic-tag">Output / Actuator</span></div></div>
-<h3 class="cardtitle">NEOPIXELS</h3>
+<a class="topic-card" data-type="lesson" href="./content/Arduino/dc_motor_driver/dc_motor_driver.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/dc_motor_driver/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">DC Motors</h3>
 </a>
 
-<a class="topic-card" data-type="external" href="https://www.circuito.io/blog/arduino-sensors-explained/" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/weeks/week_12/images/arduino-sensor_cover.jpg" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Resource</span></div></div>
-<h3 class="cardtitle">Sensors Overview</h3>
-</a>
-
-</div>
-</section>
-</div>
-</li>
-
-<li class="uk-open">
-<a class="uk-accordion-title" href="#">WEDNESDAY</a>
-<div class="uk-accordion-content" style="padding-bottom:20px; margin-bottom:20px">
-<section id="announcements-1" class="level3">
-<h3>Announcements</h3>
-<div class="callout callout-materials">
-<span class="callout-label">Materials Needed</span>
-<ul>
-<li>You will need your electronics kits.</li>
-</ul>
-</div>
-</section>
-<section id="agenda-1" class="level3">
-<h3>Agenda</h3>
-<ul>
-<li>Midterm Proposals</li>
-<li>Ultrasonic Range Sensor</li>
-<li>Try Out Sensors in our Supply / Experiment / Talk about Finals 1 on
-1</li>
-</ul>
-</section>
-<section id="topics-1" class="level3">
-<h3>Topics</h3>
-<div class="topics-grid">
-<a class="topic-card" data-type="external" href="https://gist.github.com/flakas/3294829" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
-<div class="topic-thumb"><img src="./content/weeks/week_12/images/hc-sr04_cover.gif" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino Example</span><span class="topic-tag">Input / Sensor</span></div></div>
-<h3 class="cardtitle">Ultrasonic Range Sensor</h3>
+<a class="topic-card" data-type="lesson" href="./content/Arduino/cheat_sheet/cheat_sheet.html" style="--accent: #2f64b7; --tag-bg: #2f64b7; --tag-fg: #ffffff">
+<div class="topic-thumb"><img src="./content/Arduino/cheat_sheet/images/cover.png" alt="" loading="lazy" /><div class="topic-tags"><span class="topic-tag">Arduino</span></div></div>
+<h3 class="cardtitle">Arduino Cheat Sheet</h3>
 </a>
 
 </div>
@@ -94,8 +81,9 @@ Overview
 <h3>Next Week</h3>
 <div class="callout callout-nextweek">
 <span class="callout-label">Looking Ahead</span>
-<p>We’ll continue exploring sensors as we move toward final
-projects.</p>
+<p>Week 13 is about testing your idea. Build a rough physical version
+that shows your idea can work, and upload photos to your “Final Project”
+channel on Are.na by the end of the week.</p>
 </div>
 </section>
 </section></div>
