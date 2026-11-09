@@ -13,6 +13,7 @@ because requests are spaced out to avoid the rate limit.
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -31,7 +32,6 @@ STUDENTS = [
     "arisbeth-aceves",
     "ben-broz",
     "dang-nguyen-vqo2zbznbq0",
-    "denise-burciaga",
     "hillary-samaniego",
     "itzel-garcia-s-8gtpf_grs",
     "jing-chen-_twncguy20i",
@@ -74,10 +74,13 @@ def get(path):
 def kind(title):
     """Group channels by what the assignment asked for."""
     t = title.lower()
+    if "final" in t:
+        return "final"
+    # same titles the Creative Interfaces gallery looks for
+    if re.search(r"interface|mid\s*-?\s*term", t):
+        return "midterm"
     if "research" in t:
         return "research"
-    if "portfolio" in t:
-        return "portfolio"
     if any(w in t for w in ("draw", "robot", "machine", "bot", "snail", "paint")):
         return "drawing"
     return "other"

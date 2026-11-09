@@ -1,6 +1,6 @@
 {
  "group": "https://www.are.na/art-150-fall-2026",
- "updated": "2026-10-01",
+ "updated": "2026-11-09",
  "students": [
   {
    "name": "Abdullah Abid",
@@ -11,7 +11,7 @@
     {
      "title": "MyPortfolio",
      "slug": "myportfolio-gtz9sse3s04",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/abdullah-abid/myportfolio-gtz9sse3s04",
      "count": 3,
      "updated": "2026-09-02T21:58:10Z",
@@ -50,6 +50,38 @@
      "count": 0,
      "updated": "2026-09-02T21:12:11Z",
      "blocks": []
+    },
+    {
+     "title": "Creative Interface",
+     "slug": "creative-interface-uwgt1ndaviq",
+     "kind": "midterm",
+     "url": "https://www.are.na/abdullah-abid/creative-interface-uwgt1ndaviq",
+     "count": 3,
+     "updated": "2026-10-28T21:43:56Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52023793",
+       "text": "This interface turns on the light when the door closes and turns it off when you open the door. I call it 'Behind Closed Doors,' an artistic concept representing someones 'inner world'."
+      },
+      {
+       "type": "Image",
+       "title": "IMG_8612.jpg",
+       "url": "https://www.are.na/block/52023757",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzc1Ny9vcmlnaW5hbF82MTJmMzYwODhmNmZhN2IyNGM0ZTUyNTJlN2EzNmYwYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzc1Ny9vcmlnaW5hbF82MTJmMzYwODhmNmZhN2IyNGM0ZTUyNTJlN2EzNmYwYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "IMG_8610.jpg",
+       "url": "https://www.are.na/block/52023756",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzc1Ni9vcmlnaW5hbF9jZGExNzExNjg5ODBkZWI1OTYxZjYyZjE3YWQ4OTk1Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzc1Ni9vcmlnaW5hbF9jZGExNzExNjg5ODBkZWI1OTYxZjYyZjE3YWQ4OTk1Ny5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      }
+     ]
     }
    ]
   },
@@ -65,7 +97,7 @@
      "kind": "research",
      "url": "https://www.are.na/akxell-mendoza/research-for-new-media-art",
      "count": 3,
-     "updated": "2026-09-02T21:22:11Z",
+     "updated": "2026-10-20T07:30:05Z",
      "blocks": [
       {
        "type": "Image",
@@ -96,11 +128,21 @@
     {
      "title": "mid term",
      "slug": "mid-term-9nyyhlp3tf4",
-     "kind": "other",
+     "kind": "midterm",
      "url": "https://www.are.na/akxell-mendoza/mid-term-9nyyhlp3tf4",
-     "count": 0,
-     "updated": "2026-09-02T21:13:17Z",
-     "blocks": []
+     "count": 1,
+     "updated": "2026-10-28T21:31:03Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "interactive box button",
+       "url": "https://www.are.na/block/52022900",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjkwMC9vcmlnaW5hbF9lNTUwYjUyYzdhYTEzMjg2M2MxMzAzN2JjMWQ3Mjk5Yy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjkwMC9vcmlnaW5hbF9lNTUwYjUyYzdhYTEzMjg2M2MxMzAzN2JjMWQ3Mjk5Yy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75,
+       "description": "description: This box is an interactive button, it may look like a box but its a functional button ready to be used"
+      }
+     ]
     },
     {
      "title": "Robot project",
@@ -117,6 +159,25 @@
        "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODAzMi9vcmlnaW5hbF9jMmMyYTBmYTljODFjOWU2ZTMxMTkzYjAyNzViNTMyYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1ODAzMi9vcmlnaW5hbF9jMmMyYTBmYTljODFjOWU2ZTMxMTkzYjAyNzViNTMyYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
        "ratio": 0.75
+      }
+     ]
+    },
+    {
+     "title": "creative interfaces",
+     "slug": "creative-interfaces-vqqt11hdcaq",
+     "kind": "midterm",
+     "url": "https://www.are.na/akxell-mendoza/creative-interfaces-vqqt11hdcaq",
+     "count": 1,
+     "updated": "2026-10-28T21:35:48Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "interactive box button",
+       "url": "https://www.are.na/block/52023445",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzQ0NS9vcmlnaW5hbF8zNmQ1Y2VmZjhhMmI4OWY3YzA4ZjBjN2ZiZGNjN2RkNS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzQ0NS9vcmlnaW5hbF8zNmQ1Y2VmZjhhMmI4OWY3YzA4ZjBjN2ZiZGNjN2RkNS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75,
+       "description": "description: This box is an interactive button, it may look like a box but its a functional button ready to be used"
       }
      ]
     }
@@ -165,11 +226,43 @@
     {
      "title": "Portfolio",
      "slug": "portfolio-dekjsfsa3xq",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/amy-lora/portfolio-dekjsfsa3xq",
      "count": 0,
      "updated": "2026-09-02T21:17:50Z",
      "blocks": []
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-rbyerq684o0",
+     "kind": "midterm",
+     "url": "https://www.are.na/amy-lora/creative-interfaces-rbyerq684o0",
+     "count": 3,
+     "updated": "2026-10-28T23:33:44Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "IMG_5499",
+       "url": "https://www.are.na/block/52030335",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDMzNS9vcmlnaW5hbF8zMDE5N2ViNTU4YzA2ZWJjOTJiNThlZWMwZDA4NGVjNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDMzNS9vcmlnaW5hbF8zMDE5N2ViNTU4YzA2ZWJjOTJiNThlZWMwZDA4NGVjNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "IMG_5502",
+       "url": "https://www.are.na/block/52030330",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDMzMC9vcmlnaW5hbF80MDgyYmQ5YjgyMjAxNjBlMWNjZDhiMGJkZjVlZGRlMy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDMzMC9vcmlnaW5hbF80MDgyYmQ5YjgyMjAxNjBlMWNjZDhiMGJkZjVlZGRlMy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Text",
+       "title": "Steering Wheel",
+       "url": "https://www.are.na/block/52023584",
+       "text": "Steering Wheel\nIf you turn the wheel left the light turns on, ones you stop it from going left it will turn off. "
+      }
+     ]
     }
    ]
   },
@@ -242,6 +335,88 @@
        "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg3MS9vcmlnaW5hbF8zNzRmMWQ1NWUyMDY1NmQwYjZlMzRiNDlkMzhjNzY3Zi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI4Nzg3MS9vcmlnaW5hbF8zNzRmMWQ1NWUyMDY1NmQwYjZlMzRiNDlkMzhjNzY3Zi53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
        "ratio": 0.7636
+      }
+     ]
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-cxjgpjwf0ce",
+     "kind": "midterm",
+     "url": "https://www.are.na/arisbeth-aceves/creative-interfaces-cxjgpjwf0ce",
+     "count": 5,
+     "updated": "2026-10-28T21:33:21Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "Description",
+       "url": "https://www.are.na/block/52023182",
+       "text": "Vending Machine\nThis is a vending machine. First, insert a coin into the coin slot internal LED light should turn on. Next pull the knob down a buzzer sensor should dictate. Lastly candy should come out. "
+      },
+      {
+       "type": "Image",
+       "title": "IMG_1927",
+       "url": "https://www.are.na/block/52022926",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjkyNi9vcmlnaW5hbF81MWQ2YjEzNjkxYTZjODVlZjE5YThlZTAxYmFjZjdjMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjkyNi9vcmlnaW5hbF81MWQ2YjEzNjkxYTZjODVlZjE5YThlZTAxYmFjZjdjMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "IMG_1924",
+       "url": "https://www.are.na/block/52022914",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjkxNC9vcmlnaW5hbF9hODgzMjk0N2Y3ZmFkZmE3M2NlMWMzN2U4ZTI1MzI5YS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjkxNC9vcmlnaW5hbF9hODgzMjk0N2Y3ZmFkZmE3M2NlMWMzN2U4ZTI1MzI5YS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "IMG_1925",
+       "url": "https://www.are.na/block/52022884",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjg4NC9vcmlnaW5hbF85YzI4MjA2ZjFiZDg1ZTQxNzNkMWVhMzA1NDY1MjYyMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjg4NC9vcmlnaW5hbF85YzI4MjA2ZjFiZDg1ZTQxNzNkMWVhMzA1NDY1MjYyMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "IMG_1926",
+       "url": "https://www.are.na/block/52022882",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjg4Mi9vcmlnaW5hbF9jMGNhMmI1NWY3ZTE3NTQzZjE1MmVmZDkxNmE2NzMyYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjg4Mi9vcmlnaW5hbF9jMGNhMmI1NWY3ZTE3NTQzZjE1MmVmZDkxNmE2NzMyYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      }
+     ]
+    },
+    {
+     "title": "Final Project",
+     "slug": "final-project-twdyndjldee",
+     "kind": "final",
+     "url": "https://www.are.na/arisbeth-aceves/final-project-twdyndjldee",
+     "count": 3,
+     "updated": "2026-11-05T03:39:17Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52357702",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjM1NzcwMi9vcmlnaW5hbF9mZjYzN2IzNzM5Y2M5Y2JhYmI0YThiN2MyMmVlMmZmOS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjM1NzcwMi9vcmlnaW5hbF9mZjYzN2IzNzM5Y2M5Y2JhYmI0YThiN2MyMmVlMmZmOS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3324
+      },
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52357635",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjM1NzYzNS9vcmlnaW5hbF81NDJlNmFhOTI3YzA5Yjg2NzcwZTFiNjU1OWQzMzcwYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjM1NzYzNS9vcmlnaW5hbF81NDJlNmFhOTI3YzA5Yjg2NzcwZTFiNjU1OWQzMzcwYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.8182
+      },
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52357610",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjM1NzYxMC9vcmlnaW5hbF9lMWE3NGQ1NTQ1YWRjOGMzYzMyN2E2NzVlYTE0YTg0My5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjM1NzYxMC9vcmlnaW5hbF9lMWE3NGQ1NTQ1YWRjOGMzYzMyN2E2NzVlYTE0YTg0My5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7821
       }
      ]
     }
@@ -455,6 +630,118 @@
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDI3OTU0Mi9vcmlnaW5hbF82NGVhNWYxYmJmNGJlZTg4NGY1MWY4NDViZTMxYjJiMS53ZWJwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
        "ratio": 1.0,
        "description": "2014 Album cover of ...BECAUSE IM YOUNG ARROGANT AND HATE EVERYTHING YOU STAND FOR"
+      }
+     ]
+    },
+    {
+     "title": "Drawing Machine",
+     "slug": "drawing-machine-1iphomujktq",
+     "kind": "drawing",
+     "url": "https://www.are.na/ben-broz/drawing-machine-1iphomujktq",
+     "count": 7,
+     "updated": "2026-10-19T21:26:58Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Application",
+       "url": "https://www.are.na/block/51591900",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTkwMC9vcmlnaW5hbF8yZmExM2Y2MzA4YzBjY2I3NmVhZDI4M2RkMzkyMDhiYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTkwMC9vcmlnaW5hbF8yZmExM2Y2MzA4YzBjY2I3NmVhZDI4M2RkMzkyMDhiYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "First Day Training",
+       "url": "https://www.are.na/block/51592180",
+       "thumb": "https://d2w9rnfcy7mm78.cloudfront.net/51592180/original_56bb67c5561e2e0da66ad266927e571a.gif?1792445214",
+       "large": "https://d2w9rnfcy7mm78.cloudfront.net/51592180/original_56bb67c5561e2e0da66ad266927e571a.gif?1792445214",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "Job Task",
+       "url": "https://www.are.na/block/51591806",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwNi9vcmlnaW5hbF9kODFlMzZmOTliMTdjNjA0YmYxNDE1MmJiMWFlN2FiMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwNi9vcmlnaW5hbF9kODFlMzZmOTliMTdjNjA0YmYxNDE1MmJiMWFlN2FiMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.38
+      },
+      {
+       "type": "Image",
+       "title": "On The Clock",
+       "url": "https://www.are.na/block/51592018",
+       "thumb": "https://d2w9rnfcy7mm78.cloudfront.net/51592018/original_6874d3dd216ad9bf861f07f2c6a98dd7.gif?1792444977",
+       "large": "https://d2w9rnfcy7mm78.cloudfront.net/51592018/original_6874d3dd216ad9bf861f07f2c6a98dd7.gif?1792444977",
+       "ratio": 1.4938
+      },
+      {
+       "type": "Image",
+       "title": "Performance Review",
+       "url": "https://www.are.na/block/51591807",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwNy9vcmlnaW5hbF9mZTU0YzAyODU4N2YwZWZkZjAwYTYxZjQ4MGNiZjA4OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwNy9vcmlnaW5hbF9mZTU0YzAyODU4N2YwZWZkZjAwYTYxZjQ4MGNiZjA4OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3042
+      },
+      {
+       "type": "Image",
+       "title": "Finished the Job",
+       "url": "https://www.are.na/block/51591808",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwOC9vcmlnaW5hbF9kMjc0MTBjMWE5Y2MxNmVkZDU1NjY3YTM1OTBlZWRjMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwOC9vcmlnaW5hbF9kMjc0MTBjMWE5Y2MxNmVkZDU1NjY3YTM1OTBlZWRjMC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.4327
+      },
+      {
+       "type": "Image",
+       "title": "Clocking Out",
+       "url": "https://www.are.na/block/51591809",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwOS9vcmlnaW5hbF9hOWM3NDExZmVhZDAxNDlkMzk2ODI5ZTNlNzVlOTA0ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTU5MTgwOS9vcmlnaW5hbF9hOWM3NDExZmVhZDAxNDlkMzk2ODI5ZTNlNzVlOTA0ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      }
+     ]
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-4j6oxq4nwfe",
+     "kind": "midterm",
+     "url": "https://www.are.na/ben-broz/creative-interfaces-4j6oxq4nwfe",
+     "count": 4,
+     "updated": "2026-11-02T22:31:35Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Cooking With Circuits",
+       "url": "https://www.are.na/block/52269157",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjI2OTE1Ny9vcmlnaW5hbF81YmNmYmRmMzhlMGM2ZjFiZTVmYzEwMTk4MWNiMmZlMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjI2OTE1Ny9vcmlnaW5hbF81YmNmYmRmMzhlMGM2ZjFiZTVmYzEwMTk4MWNiMmZlMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.9251,
+       "description": "An interactive cooking game using physical cooking utensils to prepare virtual vegetables. Powered by an Arduino and Scratch."
+      },
+      {
+       "type": "Image",
+       "title": "Turning The Knob (1 of 2)",
+       "url": "https://www.are.na/block/52269158",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjI2OTE1OC9vcmlnaW5hbF8zMjAyNjQwMmJlNGUyNjk5ZDRmYjA4ZTAyOTZlY2NiZi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjI2OTE1OC9vcmlnaW5hbF8zMjAyNjQwMmJlNGUyNjk5ZDRmYjA4ZTAyOTZlY2NiZi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.2379,
+       "description": "Turning the potentiometer changes the virtual stove."
+      },
+      {
+       "type": "Image",
+       "title": "Turning The Knob (2 of 2)",
+       "url": "https://www.are.na/block/52269159",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjI2OTE1OS9vcmlnaW5hbF84Y2NiYWRjNjE0OTYwZTY5NGFhNjA4YTZjN2M0OTljZi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjI2OTE1OS9vcmlnaW5hbF84Y2NiYWRjNjE0OTYwZTY5NGFhNjA4YTZjN2M0OTljZi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3695,
+       "description": "Turning the potentiometer changes the virtual stove."
+      },
+      {
+       "type": "Image",
+       "title": "Clicking The Tongs",
+       "url": "https://www.are.na/block/52269443",
+       "thumb": "https://d2w9rnfcy7mm78.cloudfront.net/52269443/original_bb50e53dabd36b992cfe2973ee20be16.gif?1793658650",
+       "large": "https://d2w9rnfcy7mm78.cloudfront.net/52269443/original_bb50e53dabd36b992cfe2973ee20be16.gif?1793658650",
+       "ratio": 0.5621,
+       "description": "Collect vegetables by clicking the tongs."
       }
      ]
     }
@@ -671,62 +958,44 @@
        "ratio": 0.6
       }
      ]
-    }
-   ]
-  },
-  {
-   "name": "Denise Burciaga",
-   "slug": "denise-burciaga",
-   "initials": "DB",
-   "url": "https://www.are.na/denise-burciaga",
-   "channels": [
+    },
     {
-     "title": "Research",
-     "slug": "research-jyk2knfw56y",
-     "kind": "research",
-     "url": "https://www.are.na/denise-burciaga/research-jyk2knfw56y",
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-kikxljf-2d0",
+     "kind": "midterm",
+     "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/creative-interfaces-kikxljf-2d0",
      "count": 4,
-     "updated": "2026-09-09T21:33:55Z",
+     "updated": "2026-10-28T23:47:25Z",
      "blocks": [
       {
-       "type": "Link",
-       "title": "Refik Anadol",
-       "url": "https://www.are.na/block/50130764",
-       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMDc2NC9vcmlnaW5hbF9iYWRhMjRkM2MwZjczMmFmMDc3MTY0MWY2NjEwNDIyYy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
-       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMDc2NC9vcmlnaW5hbF9iYWRhMjRkM2MwZjczMmFmMDc3MTY0MWY2NjEwNDIyYy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
-       "ratio": 1.0,
-       "source": "https://refikanadol.com/works/visions-of-america-ameriques/",
-       "description": "Visions of America: Amériques"
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52030739",
+       "text": "The first one I made is the light sensor with a slider to block all light, it can change the resistance , as the idea just to have a slider for interact"
       },
       {
-       "type": "Link",
-       "title": "Blend — Gabe BC",
-       "url": "https://www.are.na/block/50131136",
-       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTEzNi9vcmlnaW5hbF9kMmRhODc3MmY2NjRhZDYyNjJlZDNiMjg5NDU5MmFhOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
-       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTEzNi9vcmlnaW5hbF9kMmRhODc3MmY2NjRhZDYyNjJlZDNiMjg5NDU5MmFhOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
-       "ratio": 1.0,
-       "source": "https://www.gabebc.com/blend",
-       "description": "Video Sculpture work by Gabe BC"
+       "type": "Image",
+       "title": "70d64624-53cc-4aa4-a2d9-494ed8439198",
+       "url": "https://www.are.na/block/52030724",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDcyNC9vcmlnaW5hbF9hY2ViNGZiYThiYWMyMzgwMTVkMGIyNzAzNzhjMzBlYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDcyNC9vcmlnaW5hbF9hY2ViNGZiYThiYWMyMzgwMTVkMGIyNzAzNzhjMzBlYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.5625
       },
       {
-       "type": "Link",
-       "title": "Jitterbox — Gabe BC",
-       "url": "https://www.are.na/block/50131625",
-       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTYyNS9vcmlnaW5hbF9hYWU3ZGQ3ZWUyNjA4ZTRlZWRhNzhmNjdhZmY1M2UwNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
-       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTYyNS9vcmlnaW5hbF9hYWU3ZGQ3ZWUyNjA4ZTRlZWRhNzhmNjdhZmY1M2UwNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
-       "ratio": 1.0,
-       "source": "https://www.gabebc.com/jitterbox",
-       "description": "Video Sculpture work by Gabe BC"
+       "type": "Image",
+       "title": "f7f8b84f-78f3-495c-8e68-76adef2871eb",
+       "url": "https://www.are.na/block/52030720",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDcyMC9vcmlnaW5hbF9iMjI1MWRjMDY3ZGVhMzc2ZjQ3YTBiMTIzOWJmNTMxNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDcyMC9vcmlnaW5hbF9iMjI1MWRjMDY3ZGVhMzc2ZjQ3YTBiMTIzOWJmNTMxNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
       },
       {
-       "type": "Link",
-       "title": "A Point Just Passed — Gabe BC",
-       "url": "https://www.are.na/block/50131223",
-       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTIyMy9vcmlnaW5hbF9hMjZiNDI5YTc5ZDgyNWE4MzA4OTNmMDE4MmNjZThmZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
-       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDEzMTIyMy9vcmlnaW5hbF9hMjZiNDI5YTc5ZDgyNWE4MzA4OTNmMDE4MmNjZThmZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
-       "ratio": 1.0,
-       "source": "https://www.gabebc.com/a-point-just-passed",
-       "description": "Video Sculpture work by Gabe BC"
+       "type": "Image",
+       "title": "f953abe7-f5c2-4f73-bd44-3ee92dc57b93",
+       "url": "https://www.are.na/block/52030705",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDcwNS9vcmlnaW5hbF85ODgyYWU1OGMyOWUxZDliZDc3MTZiZTFiMGY4YjQxZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAzMDcwNS9vcmlnaW5hbF85ODgyYWU1OGMyOWUxZDliZDc3MTZiZTFiMGY4YjQxZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
       }
      ]
     }
@@ -774,6 +1043,60 @@
        "description": "https://www.theccma.org/who-is-frida (https://www.theccma.org/who-is-frida)\nHer painting style reflects her cultural roots. Her self-portrait have a deep significance of her persona, depicting her pain & suffering. She wasn't into surrealism, she was more into reality. "
       }
      ]
+    },
+    {
+     "title": "Creative Interface",
+     "slug": "creative-interface-e0uihs8qsus",
+     "kind": "midterm",
+     "url": "https://www.are.na/hillary-samaniego/creative-interface-e0uihs8qsus",
+     "count": 1,
+     "updated": "2026-10-28T21:27:05Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Cutting Board",
+       "url": "https://www.are.na/block/52022592",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjU5Mi9vcmlnaW5hbF8yNGVmOTVlMDBmODc3MWMxNTNlZTYwYWVlMTVlNWNhZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjU5Mi9vcmlnaW5hbF8yNGVmOTVlMDBmODc3MWMxNTNlZTYwYWVlMTVlNWNhZS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333,
+       "description": "Every time the knife interacts with the cutting board, it'll light up the LED. "
+      }
+     ]
+    },
+    {
+     "title": "Drawing Bot",
+     "slug": "drawing-bot",
+     "kind": "drawing",
+     "url": "https://www.are.na/hillary-samaniego/drawing-bot",
+     "count": 2,
+     "updated": "2026-10-28T21:35:27Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Horse Spinner",
+       "url": "https://www.are.na/block/52023427",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzQyNy9vcmlnaW5hbF9kMmE0ZDM2Mzk4NTU0YWM1ZmJlNmYyMjhmMTNjMWJhNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzQyNy9vcmlnaW5hbF9kMmE0ZDM2Mzk4NTU0YWM1ZmJlNmYyMjhmMTNjMWJhNy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "Pattern",
+       "url": "https://www.are.na/block/52023315",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzMxNS9vcmlnaW5hbF80YjhjY2Y4MzYwMTJkMDMxZDFiNmVlZWM1MWQ2MGYzNi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzMxNS9vcmlnaW5hbF80YjhjY2Y4MzYwMTJkMDMxZDFiNmVlZWM1MWQ2MGYzNi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      }
+     ]
+    },
+    {
+     "title": "Final Project",
+     "slug": "final-project-kqabh3usb5a",
+     "kind": "final",
+     "url": "https://www.are.na/hillary-samaniego/final-project-kqabh3usb5a",
+     "count": 0,
+     "updated": "2026-11-02T23:29:37Z",
+     "blocks": []
     }
    ]
   },
@@ -875,6 +1198,25 @@
        "ratio": 0.75
       }
      ]
+    },
+    {
+     "title": "MIDTERM PROJECT",
+     "slug": "midterm-project-y5xtoerok3g",
+     "kind": "midterm",
+     "url": "https://www.are.na/itzel-garcia-s-8gtpf_grs/midterm-project-y5xtoerok3g",
+     "count": 1,
+     "updated": "2026-10-28T21:28:10Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Flower Switch",
+       "url": "https://www.are.na/block/52022687",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjY4Ny9vcmlnaW5hbF8wOWI2N2MyZjgwZjcyZjQ4YzNhMjI1MWNlZWZiNWY4My5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjY4Ny9vcmlnaW5hbF8wOWI2N2MyZjgwZjcyZjQ4YzNhMjI1MWNlZWZiNWY4My5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75,
+       "description": "Make flower open and bloom to control game and switch"
+      }
+     ]
     }
    ]
   },
@@ -911,7 +1253,7 @@
     {
      "title": "ART150 portfolio",
      "slug": "art150-portfolio",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/jing-chen-_twncguy20i/art150-portfolio",
      "count": 1,
      "updated": "2026-09-02T21:14:12Z",
@@ -959,6 +1301,24 @@
        "ratio": 1.3333
       }
      ]
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-d3v6j7k-ucm",
+     "kind": "midterm",
+     "url": "https://www.are.na/jing-chen-_twncguy20i/creative-interfaces-d3v6j7k-ucm",
+     "count": 1,
+     "updated": "2026-10-28T22:10:58Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "IMG_2485",
+       "url": "https://www.are.na/block/52025602",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyNTYwMi9vcmlnaW5hbF8wMDhhODIwMDBjNGJhMzRiNGJmNzI4ODYyNjVjY2NjMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyNTYwMi9vcmlnaW5hbF8wMDhhODIwMDBjNGJhMzRiNGJmNzI4ODYyNjVjY2NjMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      }
+     ]
     }
    ]
   },
@@ -971,7 +1331,7 @@
     {
      "title": "Portfolio",
      "slug": "portfolio-w6cuyghipja",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/julia-szafranski/portfolio-w6cuyghipja",
      "count": 4,
      "updated": "2026-09-11T23:10:35Z",
@@ -1282,9 +1642,90 @@
      "slug": "drawing-machine-1zrpngekp6m",
      "kind": "drawing",
      "url": "https://www.are.na/kirtan-patel-ylp_92zih8w/drawing-machine-1zrpngekp6m",
-     "count": 0,
-     "updated": "2026-09-28T21:17:02Z",
-     "blocks": []
+     "count": 3,
+     "updated": "2026-10-14T20:06:06Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "art 150 proj 1 img 3",
+       "url": "https://www.are.na/block/51410045",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTQxMDA0NS9vcmlnaW5hbF85YjYyODZmZDhlYWY2YmM2MmUxYWEzMDJhNjUzMTkxYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTQxMDA0NS9vcmlnaW5hbF85YjYyODZmZDhlYWY2YmM2MmUxYWEzMDJhNjUzMTkxYy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.5625
+      },
+      {
+       "type": "Image",
+       "title": "art 150 proj 1 img 2",
+       "url": "https://www.are.na/block/51410044",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTQxMDA0NC9vcmlnaW5hbF85ZDgyYTU3MzdkMTMxNGQ5MTJjMWIxY2JmNTZlYzcxZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTQxMDA0NC9vcmlnaW5hbF85ZDgyYTU3MzdkMTMxNGQ5MTJjMWIxY2JmNTZlYzcxZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.5625
+      },
+      {
+       "type": "Image",
+       "title": "art 150 proj 1 img 1",
+       "url": "https://www.are.na/block/51410043",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTQxMDA0My9vcmlnaW5hbF9jNjM3ZWUyNjBjZWI2Mjc4NTVlNjI1N2RmMTNjNjljMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MTQxMDA0My9vcmlnaW5hbF9jNjM3ZWUyNjBjZWI2Mjc4NTVlNjI1N2RmMTNjNjljMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.5625
+      }
+     ]
+    },
+    {
+     "title": "Creative Interface",
+     "slug": "creative-interface-tovyphm9xvg",
+     "kind": "midterm",
+     "url": "https://www.are.na/kirtan-patel-ylp_92zih8w/creative-interface-tovyphm9xvg",
+     "count": 6,
+     "updated": "2026-10-29T01:30:41Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "ChatGPT Image Oct 28, 2026, 04_22_47 PM",
+       "url": "https://www.are.na/block/52022136",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjEzNi9vcmlnaW5hbF8wOWFmOTFkMmY5MzQ3MGYyN2RiNDY5ZGQ5MTcwNWZjOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjEzNi9vcmlnaW5hbF8wOWFmOTFkMmY5MzQ3MGYyN2RiNDY5ZGQ5MTcwNWZjOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "ChatGPT Image Oct 28, 2026, 04_18_32 PM.jpg",
+       "url": "https://www.are.na/block/52021683",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4My9vcmlnaW5hbF82YTRhN2U0ZThkZTUwNDRkMDliNTUwNDY5NWViNjBmNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4My9vcmlnaW5hbF82YTRhN2U0ZThkZTUwNDRkMDliNTUwNDY5NWViNjBmNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "ChatGPT Image Oct 28, 2026, 04_18_36 PM.jpg",
+       "url": "https://www.are.na/block/52021682",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4Mi9vcmlnaW5hbF84N2E5NTA3YWIwM2ZhZjQ3Y2Y1NGRkNTMwOTA0ZWI3MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4Mi9vcmlnaW5hbF84N2E5NTA3YWIwM2ZhZjQ3Y2Y1NGRkNTMwOTA0ZWI3MS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "ChatGPT Image Oct 28, 2026, 04_18_40 PM.jpg",
+       "url": "https://www.are.na/block/52021681",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4MS9vcmlnaW5hbF83MWQ0MjQxMjAwOGRlOWM2ZGI5MmFjODExOTE4Mjg3OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4MS9vcmlnaW5hbF83MWQ0MjQxMjAwOGRlOWM2ZGI5MmFjODExOTE4Mjg3OS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "ChatGPT Image Oct 28, 2026, 04_18_44 PM.jpg",
+       "url": "https://www.are.na/block/52021680",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4MC9vcmlnaW5hbF9kNzUzMGNlM2JkMTNkMWZkMTRkZjM3YjNmY2M0M2EwOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY4MC9vcmlnaW5hbF9kNzUzMGNlM2JkMTNkMWZkMTRkZjM3YjNmY2M0M2EwOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52021500",
+       "text": "Motion Paint\nInteractive Art with Arduino\nMotion Paint is an interactive art project that lets users draw colorful, glowing designs using hand movements tracked by a webcam.\nBuilt with Arduino and Python, it features a flex sensor for swirling effects, a knob to control brush size, a button to switch modes, copper touch pads, and colorful LED lights that respond to interactions.\nThe project combines physical controls, motion tracking, and digital art to create a fun, hands-on drawing experience."
+      }
+     ]
     }
    ]
   },
@@ -1335,6 +1776,30 @@
        "ratio": 0.9862
       }
      ]
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-ftwa5riozwm",
+     "kind": "midterm",
+     "url": "https://www.are.na/lucas-lee-cd24req3nfo/creative-interfaces-ftwa5riozwm",
+     "count": 2,
+     "updated": "2026-10-28T21:44:15Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52023743",
+       "text": "drawing machine that completes a circuit with graphite"
+      },
+      {
+       "type": "Image",
+       "title": "uploads/bc9097ba-60fe-40cb-97b4-81c4f4251aca/20261028_163914.jpg",
+       "url": "https://www.are.na/block/52023728",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzcyOC9vcmlnaW5hbF81OTQ3ZTMzMTM5YjJiZjM1NDJkNTM3NDk4NmQyYzBjMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzcyOC9vcmlnaW5hbF81OTQ3ZTMzMTM5YjJiZjM1NDJkNTM3NDk4NmQyYzBjMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 2.1413
+      }
+     ]
     }
    ]
   },
@@ -1347,11 +1812,19 @@
     {
      "title": "Portfolio",
      "slug": "portfolio-immevkseofa",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/maurizio-brown/portfolio-immevkseofa",
-     "count": 1,
-     "updated": "2026-09-28T21:24:25Z",
+     "count": 2,
+     "updated": "2026-10-28T21:33:39Z",
      "blocks": [
+      {
+       "type": "Channel",
+       "title": "Creative Interface",
+       "slug": "creative-interface-udv3ysy36ei",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/creative-interface-udv3ysy36ei",
+       "count": 3
+      },
       {
        "type": "Channel",
        "title": "Drawing Machine Project",
@@ -1543,9 +2016,17 @@
      "slug": "electronics-pmodweqg8vc",
      "kind": "other",
      "url": "https://www.are.na/maurizio-brown/electronics-pmodweqg8vc",
-     "count": 1,
-     "updated": "2026-09-10T01:54:30Z",
+     "count": 2,
+     "updated": "2026-10-28T21:33:35Z",
      "blocks": [
+      {
+       "type": "Channel",
+       "title": "Creative Interface",
+       "slug": "creative-interface-udv3ysy36ei",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/creative-interface-udv3ysy36ei",
+       "count": 3
+      },
       {
        "type": "Attachment",
        "title": "20260909_182358",
@@ -1562,9 +2043,17 @@
      "slug": "art-projects-ui_vwypvmyi",
      "kind": "other",
      "url": "https://www.are.na/maurizio-brown/art-projects-ui_vwypvmyi",
-     "count": 1,
-     "updated": "2026-09-28T21:17:31Z",
+     "count": 2,
+     "updated": "2026-10-28T21:33:38Z",
      "blocks": [
+      {
+       "type": "Channel",
+       "title": "Creative Interface",
+       "slug": "creative-interface-udv3ysy36ei",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/creative-interface-udv3ysy36ei",
+       "count": 3
+      },
       {
        "type": "Channel",
        "title": "Drawing Machine Project",
@@ -1630,6 +2119,38 @@
        "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwOC9vcmlnaW5hbF9mZDg3MjI0NmE1Y2YxNDhiMjAyNjA5MjItMi1yYnF4YjEucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDY0MzMwOC9vcmlnaW5hbF9mZDg3MjI0NmE1Y2YxNDhiMjAyNjA5MjItMi1yYnF4YjEucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
        "ratio": 0.5621
+      }
+     ]
+    },
+    {
+     "title": "Creative Interface",
+     "slug": "creative-interface-udv3ysy36ei",
+     "kind": "midterm",
+     "url": "https://www.are.na/maurizio-brown/creative-interface-udv3ysy36ei",
+     "count": 3,
+     "updated": "2026-10-28T21:33:39Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "Description",
+       "url": "https://www.are.na/block/52021543",
+       "text": "Gizmo\nThis is a physical axis-gizmo that sends out variable voltage to an RGB LED depending on how close the probe is to the center of the gizmo on different axes.\nEach of the three axes correspond to a different color input on the LED. The probe inputs voltage to the axis when they make contact, and the axis is made of carbon Velostat, making the axes act as variable resistors that change voltage depending on where the probe is located on each axis.\nA further iteration on this device could be used for inputting location in 3d space into a device, or measuring the dimensions of an object."
+      },
+      {
+       "type": "Image",
+       "title": "MIDTERM_PHOTO_V1",
+       "url": "https://www.are.na/block/52021518",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTUxOC9vcmlnaW5hbF9iNjM2NDMzNjkxMDg3MDA0ZGFmZGFiYWNhNWI5NGRkZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTUxOC9vcmlnaW5hbF9iNjM2NDMzNjkxMDg3MDA0ZGFmZGFiYWNhNWI5NGRkZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.7973
+      },
+      {
+       "type": "Attachment",
+       "title": "MIDTERM_VID",
+       "url": "https://www.are.na/block/52021512",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTUxMi9vcmlnaW5hbF8xNmVmODk3ZTY3YzRhZGQ4MjAyNjEwMjgtMi1wempmOWsucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTUxMi9vcmlnaW5hbF8xNmVmODk3ZTY3YzRhZGQ4MjAyNjEwMjgtMi1wempmOWsucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "ratio": 0.5625
       }
      ]
     }
@@ -1740,6 +2261,75 @@
        "ratio": 1.7778
       }
      ]
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces",
+     "kind": "midterm",
+     "url": "https://www.are.na/mia-espinoza/creative-interfaces",
+     "count": 2,
+     "updated": "2026-10-28T21:24:46Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Cocinita",
+       "url": "https://www.are.na/block/52022346",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjM0Ni9vcmlnaW5hbF8zMmE5N2YzNjhlMjBiODY4MTM0YjdhNDY2YmRlYTViZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjM0Ni9vcmlnaW5hbF8zMmE5N2YzNjhlMjBiODY4MTM0YjdhNDY2YmRlYTViZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
+      },
+      {
+       "type": "Text",
+       "title": "Description",
+       "url": "https://www.are.na/block/52021290",
+       "text": "Cocinita\nMiniature kitchen with a red light in the oven that gets activated when Deer gets near the oven"
+      }
+     ]
+    },
+    {
+     "title": "Final Project",
+     "slug": "final-project-3_tc31cltlg",
+     "kind": "final",
+     "url": "https://www.are.na/mia-espinoza/final-project-3_tc31cltlg",
+     "count": 4,
+     "updated": "2026-11-09T04:52:58Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "⊹",
+       "url": "https://www.are.na/block/52521476",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTQ3Ni9vcmlnaW5hbF83ODg0Y2FhNWI1ZDg3N2Q0YmM2NWRmNTViYjFlOGYzMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTQ3Ni9vcmlnaW5hbF83ODg0Y2FhNWI1ZDg3N2Q0YmM2NWRmNTViYjFlOGYzMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778,
+       "description": "Other things that inspired me"
+      },
+      {
+       "type": "Image",
+       "title": "Ceramic Horse House",
+       "url": "https://www.are.na/block/52521430",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTQzMC9vcmlnaW5hbF81Mzc2NTM0MDRiN2I1N2UwNGJjZTU0ODRmMDAyZTE2Mi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTQzMC9vcmlnaW5hbF81Mzc2NTM0MDRiN2I1N2UwNGJjZTU0ODRmMDAyZTE2Mi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.8,
+       "description": "Found on Tumblr"
+      },
+      {
+       "type": "Image",
+       "title": "Main Inspo",
+       "url": "https://www.are.na/block/52521289",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTI4OS9vcmlnaW5hbF9hYWVlMjVkYTQ2Nzc0M2Y1OTM5M2EyMTlhMTAxMjg0MC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTI4OS9vcmlnaW5hbF9hYWVlMjVkYTQ2Nzc0M2Y1OTM5M2EyMTlhMTAxMjg0MC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333,
+       "description": "Found on Tumblr"
+      },
+      {
+       "type": "Image",
+       "title": "Final Project Proposal",
+       "url": "https://www.are.na/block/52521215",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTIxNS9vcmlnaW5hbF9mNjA5M2E5OWFmODA5YTVkY2JiY2Q5MDkyYmZmNWQ3ZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjUyMTIxNS9vcmlnaW5hbF9mNjA5M2E5OWFmODA5YTVkY2JiY2Q5MDkyYmZmNWQ3ZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0
+      }
+     ]
     }
    ]
   },
@@ -1752,7 +2342,7 @@
     {
      "title": "portfolio art 150",
      "slug": "portfolio-art-150",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/nataly-rios/portfolio-art-150",
      "count": 1,
      "updated": "2026-09-28T23:20:15Z",
@@ -1864,6 +2454,38 @@
        "ratio": 0.75
       }
      ]
+    },
+    {
+     "title": "creative interface/midterm",
+     "slug": "creative-interface-midterm",
+     "kind": "midterm",
+     "url": "https://www.are.na/nataly-rios/creative-interface-midterm",
+     "count": 3,
+     "updated": "2026-10-28T21:22:42Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52022089",
+       "text": "Needoh Player\nMy project mixes the joys of squishing a needoh and playing music. \nBackstory: I love the song Jennifer and was introduced to it in middle school. I love needohs and squishing them, and I discovered them earlier this month.  \nThe overall idea was that when I squish the needoh, it plays the song, and when I let go, it pauses. Unfortunately, I couldn't figure it out. "
+      },
+      {
+       "type": "Image",
+       "title": "IMG_2525.jpg",
+       "url": "https://www.are.na/block/52022003",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjAwMy9vcmlnaW5hbF8yYzlmY2M4OWIxZTExZDFlZmNkODc2MjE5ZWNjNDJiOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjAwMy9vcmlnaW5hbF8yYzlmY2M4OWIxZTExZDFlZmNkODc2MjE5ZWNjNDJiOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "25163A8F-877B-4517-9369-D021B07EA97F",
+       "url": "https://www.are.na/block/52021888",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTg4OC9vcmlnaW5hbF9lMmU4Yjk5YTY3NjcxNjFkYjg3NmU1YTAzMzg5MTVmMC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTg4OC9vcmlnaW5hbF9lMmU4Yjk5YTY3NjcxNjFkYjg3NmU1YTAzMzg5MTVmMC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.6
+      }
+     ]
     }
    ]
   },
@@ -1876,7 +2498,7 @@
     {
      "title": "Portfolio",
      "slug": "portfolio-sbkn9xyfpbc",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/panthi-patel/portfolio-sbkn9xyfpbc",
      "count": 0,
      "updated": "2026-09-02T21:11:47Z",
@@ -1951,6 +2573,46 @@
        "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzkzOS9vcmlnaW5hbF80OWZhNThhMDA1ODZlMGY2MzZhMTAzYTg3ODQwNzJhMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg1NzkzOS9vcmlnaW5hbF80OWZhNThhMDA1ODZlMGY2MzZhMTAzYTg3ODQwNzJhMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
        "ratio": 1.3333
+      }
+     ]
+    },
+    {
+     "title": "Creative Interface",
+     "slug": "creative-interface-syzdn2f-mjs",
+     "kind": "midterm",
+     "url": "https://www.are.na/panthi-patel/creative-interface-syzdn2f-mjs",
+     "count": 4,
+     "updated": "2026-10-28T21:19:11Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52021416",
+       "text": "Cartoonish Scissor \nWhen performing the motion of handling scissors, a cartoon sound plays. If you keep doing it back and forth, it will keep playing. "
+      },
+      {
+       "type": "Image",
+       "title": "IMG_2133.jpg",
+       "url": "https://www.are.na/block/52021664",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY2NC9vcmlnaW5hbF9kNmRhNTIxMGJlNWE0ZGM2NzA3MTU0OGYxMDY0YzM2Zi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY2NC9vcmlnaW5hbF9kNmRhNTIxMGJlNWE0ZGM2NzA3MTU0OGYxMDY0YzM2Zi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "IMG_2130.jpg",
+       "url": "https://www.are.na/block/52021361",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTM2MS9vcmlnaW5hbF9lN2NmNTNjNmUyMWYxYzg3NmFmYzZmMzM3ZWJjNDBmYi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTM2MS9vcmlnaW5hbF9lN2NmNTNjNmUyMWYxYzg3NmFmYzZmMzM3ZWJjNDBmYi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "IMG_2131.jpg",
+       "url": "https://www.are.na/block/52021354",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTM1NC9vcmlnaW5hbF9mZDY2ZTQyNThkNjJhMWYxYzA3NDk5YzBmYzY3NjE0MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTM1NC9vcmlnaW5hbF9mZDY2ZTQyNThkNjJhMWYxYzA3NDk5YzBmYzY3NjE0MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
       }
      ]
     }
@@ -2046,6 +2708,62 @@
      "count": 0,
      "updated": "2026-09-29T21:16:11Z",
      "blocks": []
+    },
+    {
+     "title": "Creative Interface",
+     "slug": "creative-interface-kojikccvtwg",
+     "kind": "midterm",
+     "url": "https://www.are.na/quang-duc-lam-nguyen/creative-interface-kojikccvtwg",
+     "count": 6,
+     "updated": "2026-10-28T21:38:18Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "Frankenstein Tilt-Switches",
+       "url": "https://www.are.na/block/52023516",
+       "text": "Frankenstein Tilt-Switches\nPringle boxes turned into Frankenstein heads that turn on after each shake.\n(made to play Geometry Dash)"
+      },
+      {
+       "type": "Image",
+       "title": "1793223319564_403540458376638754_5323535547562165339_88dc4a0459299cfe5fc8e19905c4575d",
+       "url": "https://www.are.na/block/52023564",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2NC9vcmlnaW5hbF9mYTA2NWE0YTIyZDljMzQyMTg3NzJjMDA3NWRlMjQyMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2NC9vcmlnaW5hbF9mYTA2NWE0YTIyZDljMzQyMTg3NzJjMDA3NWRlMjQyMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "1793223319851_403540458376638754_5323535547562165339_ba376547a52ed398a4db65dc28351182",
+       "url": "https://www.are.na/block/52023563",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2My9vcmlnaW5hbF9kOWJmZmQyNmJjMjg4OWExMzM5NDNjN2ZlMWE0MjZmNi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2My9vcmlnaW5hbF9kOWJmZmQyNmJjMjg4OWExMzM5NDNjN2ZlMWE0MjZmNi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "1793223319778_403540458376638754_5323535547562165339_e846f59a3b87a45b2de720c1848e698f",
+       "url": "https://www.are.na/block/52023562",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2Mi9vcmlnaW5hbF8yMDM4YWQwYzQyN2EyMjEwZGQ1MDhhM2ZhOWRjNWRiNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2Mi9vcmlnaW5hbF8yMDM4YWQwYzQyN2EyMjEwZGQ1MDhhM2ZhOWRjNWRiNC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "1793223319654_403540458376638754_5323535547562165339_03e6a0390ae382137c4011902104b247",
+       "url": "https://www.are.na/block/52023561",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2MS9vcmlnaW5hbF82ZGZkNmU5MzZkOTVmZGU3MjQ1ZmIyMzk1MTc1ODQ1ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2MS9vcmlnaW5hbF82ZGZkNmU5MzZkOTVmZGU3MjQ1ZmIyMzk1MTc1ODQ1ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "1793223319924_403540458376638754_5323535547562165339_c49614e8711fc5d5400a36a2b45e9fb0",
+       "url": "https://www.are.na/block/52023560",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2MC9vcmlnaW5hbF8zOTczOTJkOTJjMzNlYTlkZWYzNzlmNzUwZWY0YzI3NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2MC9vcmlnaW5hbF8zOTczOTJkOTJjMzNlYTlkZWYzNzlmNzUwZWY0YzI3NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      }
+     ]
     }
    ]
   },
@@ -2097,6 +2815,38 @@
      "count": 0,
      "updated": "2026-09-28T21:16:48Z",
      "blocks": []
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-ed1krbe2_p0",
+     "kind": "midterm",
+     "url": "https://www.are.na/selah-morales/creative-interfaces-ed1krbe2_p0",
+     "count": 3,
+     "updated": "2026-10-28T21:26:32Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Picking up phone",
+       "url": "https://www.are.na/block/52022544",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjU0NC9vcmlnaW5hbF9iNTQyMmNmZmJhYzY5ZDUxYWMwMDQwYzg2MzM3YjhkZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjU0NC9vcmlnaW5hbF9iNTQyMmNmZmJhYzY5ZDUxYWMwMDQwYzg2MzM3YjhkZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Image",
+       "title": "Idle phone",
+       "url": "https://www.are.na/block/52022525",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjUyNS9vcmlnaW5hbF8wMDJkN2MxOTU3YTU2OWFmNmZlODlkMzc3MDAyMDlkYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjUyNS9vcmlnaW5hbF8wMDJkN2MxOTU3YTU2OWFmNmZlODlkMzc3MDAyMDlkYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
+      {
+       "type": "Text",
+       "title": "Description",
+       "url": "https://www.are.na/block/52022037",
+       "text": "Call Back\nThis is a rotary phone where the idea is that when a person picks up the phone, a buzzer would go off, like feedback on a regular phone. Another idea I had was to have the dial dim or brighten a light when turned. "
+      }
+     ]
     }
    ]
   },
@@ -2109,17 +2859,16 @@
     {
      "title": "Portfolio",
      "slug": "portfolio-g-3phju01fa",
-     "kind": "portfolio",
+     "kind": "other",
      "url": "https://www.are.na/vi-bao-truong/portfolio-g-3phju01fa",
      "count": 1,
-     "updated": "2026-09-02T21:32:46Z",
+     "updated": "2026-10-28T04:32:53Z",
      "blocks": [
       {
        "type": "Text",
-       "title": "",
+       "title": "Midterm Art 150",
        "url": "https://www.are.na/block/50067694",
-       "text": "Midterm Art 150",
-       "description": "Midterm Art 150"
+       "text": "Midterm Art 150"
       }
      ]
     },
@@ -2154,6 +2903,47 @@
        "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0MTk3MTQ5MS9vcmlnaW5hbF84NDJiMzU0ZTljMzI0NjlmMjlkNzM1YzhkOWUxYWVhNi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0MTk3MTQ5MS9vcmlnaW5hbF84NDJiMzU0ZTljMzI0NjlmMjlkNzM1YzhkOWUxYWVhNi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
        "ratio": 0.5627
+      }
+     ]
+    },
+    {
+     "title": "Creative Interfaces",
+     "slug": "creative-interfaces-mhen6bzt1j8",
+     "kind": "midterm",
+     "url": "https://www.are.na/vi-bao-truong/creative-interfaces-mhen6bzt1j8",
+     "count": 4,
+     "updated": "2026-10-28T21:31:35Z",
+     "blocks": [
+      {
+       "type": "Text",
+       "title": "Rotating score counter.",
+       "url": "https://www.are.na/block/52021625",
+       "text": "Rotating score counter.\nWhen the wheel rotates one round, the LED will turn on, the Buzzer will make a sound, and the Serial Monitor will count the score.",
+       "description": "When the wheel rotates one round, the LED will turn on, the Buzzer will make a sound, and the Serial Monitor will count the score."
+      },
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52022726",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjcyNi9vcmlnaW5hbF80MWRmNDA3MzZiZWNkZjViYjBjOGYxMGNmY2M3NDNiMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjcyNi9vcmlnaW5hbF80MWRmNDA3MzZiZWNkZjViYjBjOGYxMGNmY2M3NDNiMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      },
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52022244",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjI0NC9vcmlnaW5hbF9mZWUzNzcwNDgxNmFjMjI4YjFmMDFhZjA0YWMzNWU5Ni5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjI0NC9vcmlnaW5hbF9mZWUzNzcwNDgxNmFjMjI4YjFmMDFhZjA0YWMzNWU5Ni5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.6897
+      },
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52021690",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY5MC9vcmlnaW5hbF9mYjM0MmZkY2ZlZjk5ZTg2YzU3NDc1NzUwNGUwNmVkMS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMTY5MC9vcmlnaW5hbF9mYjM0MmZkY2ZlZjk5ZTg2YzU3NDc1NzUwNGUwNmVkMS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
       }
      ]
     }

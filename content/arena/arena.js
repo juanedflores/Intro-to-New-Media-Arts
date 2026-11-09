@@ -12,7 +12,13 @@
   const filterButtons = [...document.querySelectorAll(".filters button")];
   const viewer = document.getElementById("viewer");
 
-  const KIND_LABEL = { research: "Research", portfolio: "Portfolio", drawing: "Drawing Machine", other: "Other" };
+  const KIND_LABEL = {
+    research: "Research",
+    drawing: "Drawing Machine",
+    midterm: "Midterm",
+    final: "Final Project",
+    other: "Other",
+  };
   const TYPE_TAG = { Link: "Link", Attachment: "File", Embed: "Video", Channel: "Channel" };
 
   let data = null;
