@@ -1,6 +1,6 @@
 {
  "group": "https://www.are.na/art-150-fall-2026",
- "updated": "2026-11-09",
+ "updated": "2026-11-11",
  "students": [
   {
    "name": "Abdullah Abid",
@@ -391,9 +391,31 @@
      "slug": "final-project-twdyndjldee",
      "kind": "final",
      "url": "https://www.are.na/arisbeth-aceves/final-project-twdyndjldee",
-     "count": 3,
-     "updated": "2026-11-05T03:39:17Z",
+     "count": 6,
+     "updated": "2026-11-09T22:25:10Z",
      "blocks": [
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52588223",
+       "text": "I want to make a vending machine using an Arduino. The plan is that someone inserts a coin, presses a button to choose a candy, and the machine dispenses it.  When the coin is inserted there will be a motor to dispense the candy. "
+      },
+      {
+       "type": "Image",
+       "title": "arduino-pir-servo-featured",
+       "url": "https://www.are.na/block/52587646",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzY0Ni9vcmlnaW5hbF9mNDMzNmE3MDQzMTk1NTMxZjk3YmMyYTU4Y2IzN2Q4MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzY0Ni9vcmlnaW5hbF9mNDMzNmE3MDQzMTk1NTMxZjk3YmMyYTU4Y2IzN2Q4MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
+      },
+      {
+       "type": "Image",
+       "title": "IMG_2017",
+       "url": "https://www.are.na/block/52587376",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzM3Ni9vcmlnaW5hbF9hNmI2MWI1YjgyNjY5MTUxZjVhYmUzOTBiNGVjMmRjMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzM3Ni9vcmlnaW5hbF9hNmI2MWI1YjgyNjY5MTUxZjVhYmUzOTBiNGVjMmRjMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.75
+      },
       {
        "type": "Image",
        "title": "image",
@@ -776,9 +798,25 @@
      "slug": "my-art-vejacn623wo",
      "kind": "other",
      "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/my-art-vejacn623wo",
-     "count": 19,
-     "updated": "2026-09-02T21:55:49Z",
+     "count": 21,
+     "updated": "2026-11-09T22:37:37Z",
      "blocks": [
+      {
+       "type": "Image",
+       "title": "sogetawayback",
+       "url": "https://www.are.na/block/52588858",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4ODg1OC9vcmlnaW5hbF8wZjFhYzRjYTNlNmNiOTBiZDAyMDJmOGE1MWQ4ZjA0MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4ODg1OC9vcmlnaW5hbF8wZjFhYzRjYTNlNmNiOTBiZDAyMDJmOGE1MWQ4ZjA0MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.9379
+      },
+      {
+       "type": "Image",
+       "title": "sogetaway",
+       "url": "https://www.are.na/block/52588829",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4ODgyOS9vcmlnaW5hbF8zNDUwZTBjZTUxMWIzYmU0MmMyZDY2YmJhYjBkZmExNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4ODgyOS9vcmlnaW5hbF8zNDUwZTBjZTUxMWIzYmU0MmMyZDY2YmJhYjBkZmExNy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.6554
+      },
       {
        "type": "Attachment",
        "title": "rococo2 hohoho",
@@ -998,6 +1036,21 @@
        "ratio": 1.7778
       }
      ]
+    },
+    {
+     "title": "Final project",
+     "slug": "final-project-djgfe8mptca",
+     "kind": "final",
+     "url": "https://www.are.na/dang-nguyen-vqo2zbznbq0/final-project-djgfe8mptca",
+     "count": 1,
+     "updated": "2026-11-09T22:39:42Z",
+     "blocks": [
+      {
+       "type": "Attachment",
+       "title": "Project Proposal",
+       "url": "https://www.are.na/block/52588906"
+      }
+     ]
     }
    ]
   },
@@ -1094,9 +1147,51 @@
      "slug": "final-project-kqabh3usb5a",
      "kind": "final",
      "url": "https://www.are.na/hillary-samaniego/final-project-kqabh3usb5a",
-     "count": 0,
-     "updated": "2026-11-02T23:29:37Z",
-     "blocks": []
+     "count": 5,
+     "updated": "2026-11-09T23:40:06Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52591356",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU5MTM1Ni9vcmlnaW5hbF83MDBlZmJlNWE2YzA3NTgzYTI3YmE3MTE0NjUzODJlOS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU5MTM1Ni9vcmlnaW5hbF83MDBlZmJlNWE2YzA3NTgzYTI3YmE3MTE0NjUzODJlOS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.7778
+      },
+      {
+       "type": "Image",
+       "title": "Excavator",
+       "url": "https://www.are.na/block/52590912",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU5MDkxMi9vcmlnaW5hbF80OTZkZWVkYTc4YzBmNWExOGRiNTkyYWRhY2IxNDVmOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU5MDkxMi9vcmlnaW5hbF80OTZkZWVkYTc4YzBmNWExOGRiNTkyYWRhY2IxNDVmOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0
+      },
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52590841",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU5MDg0MS9vcmlnaW5hbF8zNjk2M2JlZjhiMjEyMDk4NzRkMDUxZTZiN2RkZjNiMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU5MDg0MS9vcmlnaW5hbF8zNjk2M2JlZjhiMjEyMDk4NzRkMDUxZTZiN2RkZjNiMi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3389
+      },
+      {
+       "type": "Image",
+       "title": "Joystick",
+       "url": "https://www.are.na/block/52589743",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTc0My9vcmlnaW5hbF80ZGNmZmU0MmY2ZDE1OWEzNDMwODdjYjQ5NWZkMzEwMC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTc0My9vcmlnaW5hbF80ZGNmZmU0MmY2ZDE1OWEzNDMwODdjYjQ5NWZkMzEwMC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.0,
+       "description": "Controlling a servo with a joystick? "
+      },
+      {
+       "type": "Image",
+       "title": "Functional claw",
+       "url": "https://www.are.na/block/52589659",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTY1OS9vcmlnaW5hbF9hMjVmZGQ0M2IzMTQ4NDVlNzI5ZTgyNWYyYmZlYjY4YS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTY1OS9vcmlnaW5hbF9hMjVmZGQ0M2IzMTQ4NDVlNzI5ZTgyNWYyYmZlYjY4YS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.3333
+      }
+     ]
     }
    ]
   },
@@ -1215,6 +1310,25 @@
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMjY4Ny9vcmlnaW5hbF8wOWI2N2MyZjgwZjcyZjQ4YzNhMjI1MWNlZWZiNWY4My5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
        "ratio": 0.75,
        "description": "Make flower open and bloom to control game and switch"
+      }
+     ]
+    },
+    {
+     "title": "FINAL PROJECT ART 150",
+     "slug": "final-project-art-150",
+     "kind": "final",
+     "url": "https://www.are.na/itzel-garcia-s-8gtpf_grs/final-project-art-150",
+     "count": 1,
+     "updated": "2026-11-09T22:19:07Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "Final proposal",
+       "url": "https://www.are.na/block/52587319",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzMxOS9vcmlnaW5hbF81NDI1YmVlZmRhZGI3NzQ3NzU4NGUzYTViMjc4MmMzMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzMxOS9vcmlnaW5hbF81NDI1YmVlZmRhZGI3NzQ3NzU4NGUzYTViMjc4MmMzMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.7918,
+       "description": "Make this look like a pc gaming setup, connect a game or video. Add sensors to make this work and connect to arduino."
       }
      ]
     }
@@ -1726,6 +1840,38 @@
        "text": "Motion Paint\nInteractive Art with Arduino\nMotion Paint is an interactive art project that lets users draw colorful, glowing designs using hand movements tracked by a webcam.\nBuilt with Arduino and Python, it features a flex sensor for swirling effects, a knob to control brush size, a button to switch modes, copper touch pads, and colorful LED lights that respond to interactions.\nThe project combines physical controls, motion tracking, and digital art to create a fun, hands-on drawing experience."
       }
      ]
+    },
+    {
+     "title": "Final Project",
+     "slug": "final-project-iaecixdevtq",
+     "kind": "final",
+     "url": "https://www.are.na/kirtan-patel-ylp_92zih8w/final-project-iaecixdevtq",
+     "count": 3,
+     "updated": "2026-11-09T23:01:34Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "image",
+       "url": "https://www.are.na/block/52589615",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTYxNS9vcmlnaW5hbF8zODM2MmRhYzQ2NzU0NDkwZmVmYmY2YjA0YThhMzE3ZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTYxNS9vcmlnaW5hbF8zODM2MmRhYzQ2NzU0NDkwZmVmYmY2YjA0YThhMzE3ZC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 2.7003
+      },
+      {
+       "type": "Text",
+       "title": "",
+       "url": "https://www.are.na/block/52589602",
+       "text": "Resonance — An Interactive Digital Sculpture\nFor my final project, I plan to create Resonance, an interactive installation combining a handmade electronic control console with a living digital sculpture displayed on my laptop. The sculpture will resemble a glowing, flower-like organism that grows and transforms through human interaction.\nTwo participants will interact using rhythm-sensitive pads, wireless motion controllers, RFID tokens, touch sensors, and breath detection. I also plan to include LED matrices, vibration feedback, and servo-operated compartments that reveal interactive objects."
+      },
+      {
+       "type": "Attachment",
+       "title": "art 150 fianl proposal",
+       "url": "https://www.are.na/block/52589586",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTU4Ni9vcmlnaW5hbF8wOTJmOTNhYTdjZGU5YzYyMjAyNjExMDktMi10bGRlMS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4OTU4Ni9vcmlnaW5hbF8wOTJmOTNhYTdjZGU5YzYyMjAyNjExMDktMi10bGRlMS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 2.0826
+      }
+     ]
     }
    ]
   },
@@ -1814,9 +1960,17 @@
      "slug": "portfolio-immevkseofa",
      "kind": "other",
      "url": "https://www.are.na/maurizio-brown/portfolio-immevkseofa",
-     "count": 2,
-     "updated": "2026-10-28T21:33:39Z",
+     "count": 3,
+     "updated": "2026-11-09T22:28:23Z",
      "blocks": [
+      {
+       "type": "Channel",
+       "title": "Final Project",
+       "slug": "final-project-54plby46cu8",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/final-project-54plby46cu8",
+       "count": 0
+      },
       {
        "type": "Channel",
        "title": "Creative Interface",
@@ -2016,9 +2170,17 @@
      "slug": "electronics-pmodweqg8vc",
      "kind": "other",
      "url": "https://www.are.na/maurizio-brown/electronics-pmodweqg8vc",
-     "count": 2,
-     "updated": "2026-10-28T21:33:35Z",
+     "count": 3,
+     "updated": "2026-11-09T22:28:25Z",
      "blocks": [
+      {
+       "type": "Channel",
+       "title": "Final Project",
+       "slug": "final-project-54plby46cu8",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/final-project-54plby46cu8",
+       "count": 0
+      },
       {
        "type": "Channel",
        "title": "Creative Interface",
@@ -2043,9 +2205,17 @@
      "slug": "art-projects-ui_vwypvmyi",
      "kind": "other",
      "url": "https://www.are.na/maurizio-brown/art-projects-ui_vwypvmyi",
-     "count": 2,
-     "updated": "2026-10-28T21:33:38Z",
+     "count": 3,
+     "updated": "2026-11-09T22:28:24Z",
      "blocks": [
+      {
+       "type": "Channel",
+       "title": "Final Project",
+       "slug": "final-project-54plby46cu8",
+       "owner": "maurizio-brown",
+       "url": "https://www.are.na/maurizio-brown/final-project-54plby46cu8",
+       "count": 0
+      },
       {
        "type": "Channel",
        "title": "Creative Interface",
@@ -2153,6 +2323,15 @@
        "ratio": 0.5625
       }
      ]
+    },
+    {
+     "title": "Final Project",
+     "slug": "final-project-54plby46cu8",
+     "kind": "final",
+     "url": "https://www.are.na/maurizio-brown/final-project-54plby46cu8",
+     "count": 0,
+     "updated": "2026-11-09T22:28:25Z",
+     "blocks": []
     }
    ]
   },
@@ -2486,6 +2665,24 @@
        "ratio": 1.6
       }
      ]
+    },
+    {
+     "title": "Final Project",
+     "slug": "final-project-mcgoapxhday",
+     "kind": "final",
+     "url": "https://www.are.na/nataly-rios/final-project-mcgoapxhday",
+     "count": 1,
+     "updated": "2026-11-09T22:28:04Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "6188644B-5D1F-4B6A-9F3F-DE11EACD61D9_1_201_a.jpg",
+       "url": "https://www.are.na/block/52587933",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzkzMy9vcmlnaW5hbF9mYjVmNTVkMDE1MTQzMDE0MjVhZmE0ZTYzM2U0MTc5NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjU4NzkzMy9vcmlnaW5hbF9mYjVmNTVkMDE1MTQzMDE0MjVhZmE0ZTYzM2U0MTc5NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 1.32
+      }
+     ]
     }
    ]
   },
@@ -2762,6 +2959,30 @@
        "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2MC9vcmlnaW5hbF8zOTczOTJkOTJjMzNlYTlkZWYzNzlmNzUwZWY0YzI3NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
        "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjAyMzU2MC9vcmlnaW5hbF8zOTczOTJkOTJjMzNlYTlkZWYzNzlmNzUwZWY0YzI3NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
        "ratio": 0.75
+      }
+     ]
+    },
+    {
+     "title": "Final Project",
+     "slug": "final-project-lcwtih5stye",
+     "kind": "final",
+     "url": "https://www.are.na/quang-duc-lam-nguyen/final-project-lcwtih5stye",
+     "count": 2,
+     "updated": "2026-11-11T02:58:40Z",
+     "blocks": [
+      {
+       "type": "Image",
+       "title": "art150_Christmas",
+       "url": "https://www.are.na/block/52637784",
+       "thumb": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjYzNzc4NC9vcmlnaW5hbF8xMzk0MTU1MDFmYTExODBiZjNkZDAxMDVkYmU5NmVhOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+       "large": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MjYzNzc4NC9vcmlnaW5hbF8xMzk0MTU1MDFmYTExODBiZjNkZDAxMDVkYmU5NmVhOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+       "ratio": 0.8102
+      },
+      {
+       "type": "Text",
+       "title": "Christmas",
+       "url": "https://www.are.na/block/52591438",
+       "text": "Christmas! \nIdea: Its christmas! you have a present box, the heavier it is or the more presents there are, the more the child spins!, on top of that, if family and friends are nearby, christmas tree and furnace lights up!\n- Person in the middle attached to an arduino motor, spins when you shake the presents box with something inside (If theres a way to measure weight - current that would be even better)\n- Laptop hidden behind decorative cardboard. \n- Use simple materials for decoration (background would probably be colored cardboard."
       }
      ]
     }

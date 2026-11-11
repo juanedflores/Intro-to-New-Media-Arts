@@ -66,11 +66,10 @@
   const channelsFor = (student) =>
     student.channels.filter((c) => kind === "all" || c.kind === kind);
 
-  const visual = (b) => b.thumb || b.type === "Text" || b.type === "Channel";
-
   // Up to `max` blocks for a stack's prints, alternating between channels
   // so a student's stack shows a bit of everything. Photos come first;
-  // text notes and nested channels only fill in when there aren't enough.
+  // text notes, nested channels and files without a preview only fill in
+  // when there aren't enough.
   function pickPrints(channels, max) {
     const roundRobin = (test) => {
       const queues = channels.map((c) => c.blocks.filter(test));
@@ -78,7 +77,7 @@
       while (queues.some((q) => q.length)) for (const q of queues) if (q.length) out.push(q.shift());
       return out;
     };
-    return [...roundRobin((b) => b.thumb), ...roundRobin((b) => visual(b) && !b.thumb)].slice(0, max);
+    return [...roundRobin((b) => b.thumb), ...roundRobin((b) => !b.thumb)].slice(0, max);
   }
 
   function printHTML(b, extra = "") {
@@ -90,6 +89,10 @@
       return `<div class="print folder" ${extra}>${esc(b.title)}<small>${plural(b.count, "block")}</small></div>`;
     }
     const tag = TYPE_TAG[b.type] ? `<span class="kind">${TYPE_TAG[b.type]}</span>` : "";
+    if (!b.thumb) {
+      // a file or link Are.na has no preview image for (a PDF, say): its name instead
+      return `<div class="print file" ${extra}>${esc(b.title || TYPE_TAG[b.type] || b.type)}${tag}</div>`;
+    }
     return `<div class="print" ${extra}><img src="${esc(b.thumb)}" alt="${esc(b.title)}" loading="lazy">${tag}</div>`;
   }
 

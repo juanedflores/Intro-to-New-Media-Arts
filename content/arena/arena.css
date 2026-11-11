@@ -220,6 +220,14 @@ body > div > nav.uk-navbar-container {
   font-weight: 600;
   opacity: 0.7;
 }
+/* a file or link with no preview image: its name, centered */
+.print.file {
+  color: var(--brand-ink);
+  font-size: clamp(10px, 8cqmin, 15px);
+  font-weight: 800;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
 
 /* the tape label under each stack */
 .label {
