@@ -86,6 +86,7 @@ researching after class.</p>
 ::: {#rs-making .rs-section short="Making"}
 ## Making &amp; Materials
 
+- [Shane Hope](mailto:shope@uic.edu) Email shope@uic.edu to send a 3D print job, or to get advice on fabricating any part of your project.
 - [Smooth-On: Basics of Mold Making](https://www.smooth-on.com/howto/basics-mold-making/) Molding and casting, from the people who make the rubber.
 - [Acrylic Cheat Sheet](https://makezine.com/article/workshop/skill-builder-acrylic/) How to cut, glue and bend acrylic.
 - [Post-Processing 3D Prints](https://www.instructables.com/Post-Processing-3D-Printed-Objects/) Sanding, filling and painting printed parts.

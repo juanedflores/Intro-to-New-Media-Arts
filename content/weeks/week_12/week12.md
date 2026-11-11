@@ -44,33 +44,41 @@ title: Week 12
 
 :::
 
-<!-- ::: {.day title="WEDNESDAY" open="true"} -->
-<!---->
-<!-- ### Announcements -->
-<!-- ::: {.announcement type="reminder"} -->
-<!-- **Next week, start testing your idea.** Build a rough physical version that shows your idea can work, and upload photos to your "Final Project" channel on Are.na by the end of the week. -->
-<!-- ::: -->
-<!---->
-<!-- ::: {.announcement type="materials"} -->
-<!-- - Laptop with the Arduino IDE installed -->
-<!-- - Arduino Nano 33 IoT and USB cable -->
-<!-- - Electronics Kit -->
-<!-- - Any parts or materials you have for your project -->
-<!-- ::: -->
-<!---->
-<!-- ### Agenda -->
-<!-- - **Studio time.** Work on your final project. -->
-<!-- - **One-on-ones.** I'll come around to talk with each of you about how to build your project, using what's in the lab or what can be ordered online. Bring a list of the parts you think you'll need. -->
-<!---->
-<!-- ### Topics -->
-<!-- ::: {.topics} -->
-<!---->
-<!-- ::: {.card type="assignment" title="Final Project" thumb="./content/Assignments/Final_Project/images/cover.png" href="./content/Assignments/Final_Project/final_project.html" tag="Assignment"} -->
-<!-- ::: -->
-<!---->
-<!-- ::: -->
-<!---->
-<!-- ::: -->
+::: {.day title="WEDNESDAY" open="true"}
+
+### Announcements
+::: {.announcement type="reminder"}
+**Submit your final project proposal on Canvas** I will be writing a response when we meet 1-on-1 today and it will be graded as complete or incomplete.
+:::
+::: {.announcement type="reminder"}
+**Next week, start testing your idea.** Build a rough physical version that shows your idea can work, and upload photos to your "Final Project" channel on Are.na by the end of the week.
+:::
+
+::: {.announcement type="tip"}
+**Need something 3D printed or laser cut?** Email Shane Hope at [shope@uic.edu](mailto:shope@uic.edu). You can send Shane your 3D print jobs, or ask for advice on fabricating any part of your project. Shane's email is also on the [Resources](./index.html#resources) page.
+:::
+
+::: {.announcement type="materials"}
+- Laptop with the Arduino IDE installed
+- Arduino Nano 33 IoT and USB cable
+- Electronics Kit
+- Any parts or materials you have for your project
+:::
+
+### Agenda
+- **Show and tell.** I'm bringing in some things from home: pieces I made with 3D printing and laser cutting, and a project of mine that I'm installing for a show tomorrow. 
+- **Studio time.** Work on your final project.
+- **One-on-ones.** I'll come around to talk with each of you about how to build your project, using what's in the lab or what can be ordered online. Bring a list of the parts you think you'll need. I'll be writing my notes as a response to your proposal submission, so make sure you submit something by the time I meet with you today.
+
+### Topics
+::: {.topics}
+
+::: {.card type="assignment" title="Final Project" thumb="./content/Assignments/Final_Project/images/cover.png" href="./content/Assignments/Final_Project/final_project.html" tag="Assignment"}
+:::
+
+:::
+
+:::
 
 :::
 

@@ -1516,6 +1516,9 @@ body:has(#ListBody) > div > nav.uk-navbar-container {
   font-weight: 400;
   font-size: 0.85em;
 }
+.rs-section li > a[href^="mailto:"]:first-child::after {
+  content: none; /* a contact's email, not another site */
+}
 .rs-section li:hover {
   border-left-color: var(--red);
   background: var(--cream-light);
